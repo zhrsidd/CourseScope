@@ -46,7 +46,10 @@ them for 2027.
 
 - New name and mark: CourseScope — an open ring with a focal point. Favicon, header, footer, tab
   titles, metadata, social preview and methodology page all use it.
-- Production configuration committed in `.env.production`: live site URL and feedback form.
+- Hosted on **GitHub Pages** (<https://zhrsidd.github.io/CourseScope/>), built and deployed by GitHub
+  Actions only after the full check suite passes. Course and university links open directly and
+  survive a refresh. Canonical and share-card metadata are in the static HTML.
+- Production configuration committed in `.env.production`: site URL, feedback form, share image.
 - The entry year is saved under its own key (`ukcf.entryYear.v1`), and only when a visitor presses
   a year switch. Earlier builds saved their default year inside the profile on every visit, so a
   browser that had ever opened the site kept opening on 2028; that stored value is now ignored.
@@ -56,7 +59,7 @@ them for 2027.
 - Presentation fixes: long offer ranges no longer overlap their label on course cards; trust
   badges sit on their own line; the eligibility breakdown stacks on phones; a compact footer.
 - 835 assertions (up from 768) including brand, polish, entry-year and "changed nothing" regression checks;
-  182 browser checks (up from 109).
+  189 browser checks (up from 109).
 
 ## v0.9.0 — Release candidate (2026-09-28)
 

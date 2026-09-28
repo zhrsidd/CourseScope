@@ -806,6 +806,38 @@ log('\n21. v1.0.0 — ENTRY YEAR: FIRST VISIT, PERSISTENCE, STALE STORAGE');
 }
 
 /* ================================================================== */
+log('\n22. v1.0.0 — DEEP LINKS AND STATIC METADATA (GitHub Pages)');
+{
+  for (const [route, expect] of [
+    ['/course/ucl-physics-bsc--2027', /Physics[\s\S]*UCAS F300/],
+    ['/university/ucl', /University College London/],
+  ]) {
+    const { ctx, page } = await makeCtx({ width: 1440, height: 1000 });
+    await page.goto(`${BASE}/#${route}`, { waitUntil: 'networkidle' });
+    await page.waitForTimeout(500);
+    t(`direct link ${route} opens that page in a new tab`, expect.test(await main(page)));
+    await page.reload({ waitUntil: 'networkidle' });
+    await page.waitForTimeout(500);
+    t(`  …and a refresh keeps the same page`, expect.test(await main(page)) && page.url().endsWith(`#${route}`), page.url());
+    await ctx.close();
+  }
+  const { readFileSync } = await import('node:fs');
+  const envProd = Object.fromEntries(readFileSync('.env.production', 'utf8').split('\n')
+    .map((l) => l.match(/^(VITE_[A-Z_]+)=(.+)$/)).filter(Boolean).map((m) => [m[1], m[2].trim()]));
+  const { ctx, page } = await makeCtx({ width: 1440, height: 1000 });
+  const raw = await (await page.request.get(`${BASE}/`)).text();
+  t('static HTML carries the canonical link for crawlers',
+    raw.includes(`<link rel="canonical" href="${envProd.VITE_SITE_URL}">`));
+  t('  …and og:url, og:image and a large-image card',
+    raw.includes(`property="og:url" content="${envProd.VITE_SITE_URL}"`) &&
+    raw.includes(`property="og:image" content="${envProd.VITE_OG_IMAGE_URL}"`) &&
+    raw.includes('content="summary_large_image"'));
+  const img = await page.request.get(`${BASE}/social-preview.png`);
+  t('  …and the share image is served', img.ok() && /png/.test(img.headers()['content-type'] ?? ''));
+  await ctx.close();
+}
+
+/* ================================================================== */
 log(`\nPage errors:              ${pageErrors.length}`);
 for (const x of pageErrors.slice(0, 5)) log(`  ${x}`);
 log(`Console errors (product): ${consoleErrors.length}`);

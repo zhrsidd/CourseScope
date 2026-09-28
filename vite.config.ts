@@ -1,4 +1,4 @@
-import { defineConfig, loadEnv } from 'vite';
+import { defineConfig, loadEnv, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 import { viteSingleFile } from 'vite-plugin-singlefile';
 import path from 'node:path';
@@ -35,11 +35,51 @@ import path from 'node:path';
  *  BASE PATH defaults to './' — relative asset URLs.
  *
  *  Relative paths mean the built `dist/` works when served from a domain root,
- *  from a subdirectory, or straight off the filesystem, without rebuilding. It
- *  is the safest default when the final host is unknown, which it is. A host
- *  that needs an absolute base (some CDNs rewriting asset URLs) can set
- *  VITE_BASE_PATH.
+ *  from a subdirectory, or straight off the filesystem, without rebuilding.
+ *  Production is GitHub Pages at https://zhrsidd.github.io/CourseScope/ — a
+ *  sub-path — which relative assets handle with no extra configuration. A
+ *  host that needs an absolute base can set VITE_BASE_PATH.
+ *
+ *  Hash routing is what makes deep links work there: GitHub Pages serves only
+ *  real files and has no rewrite rules, and with HashRouter every route
+ *  (`/CourseScope/#/course/…`) requests the same index.html, so a course or
+ *  university link opens directly and survives a refresh.
  */
+/**
+ * Deployment metadata in the STATIC HTML. src/lib/site-meta.ts adds the same
+ * tags at runtime, but link-preview crawlers (Slack, WhatsApp, LinkedIn, X)
+ * do not run JavaScript, so on a real host the tags have to be in index.html
+ * itself. Emitted only for variables that are set; a build with none of them
+ * is unchanged. Values are escaped for an HTML attribute.
+ */
+function siteMetaPlugin(env: Record<string, string>): Plugin {
+  const attr = (v: string) => v.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+  return {
+    name: 'coursescope-site-meta',
+    transformIndexHtml(html) {
+      const tags: { tag: string; attrs: Record<string, string>; injectTo: 'head' }[] = [];
+      const site = (env.VITE_SITE_URL ?? '').trim();
+      const image = (env.VITE_OG_IMAGE_URL ?? '').trim();
+      if (site) {
+        tags.push({ tag: 'link', attrs: { rel: 'canonical', href: attr(site) }, injectTo: 'head' });
+        tags.push({ tag: 'meta', attrs: { property: 'og:url', content: attr(site) }, injectTo: 'head' });
+      }
+      if (image) {
+        tags.push({ tag: 'meta', attrs: { property: 'og:image', content: attr(image) }, injectTo: 'head' });
+        tags.push({ tag: 'meta', attrs: { name: 'twitter:image', content: attr(image) }, injectTo: 'head' });
+      }
+      // With an image configured, the static card is the large-image card too.
+      const out = image
+        ? html.replace(
+            '<meta name="twitter:card" content="summary" />',
+            '<meta name="twitter:card" content="summary_large_image" />',
+          )
+        : html;
+      return { html: out, tags };
+    },
+  };
+}
+
 export default defineConfig(({ mode }) => {
   /*
    * THE SINGLE-FILE BUILD IS A PRODUCTION BUILD. It runs under its own mode name
@@ -60,7 +100,7 @@ export default defineConfig(({ mode }) => {
   const base = env.VITE_BASE_PATH || './';
 
   return {
-    plugins: [react(), ...(mode === 'singlefile' ? [viteSingleFile()] : [])],
+    plugins: [react(), siteMetaPlugin(env), ...(mode === 'singlefile' ? [viteSingleFile()] : [])],
     base,
     resolve: {
       alias: { '@': path.resolve(__dirname, './src') },

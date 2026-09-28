@@ -22,11 +22,11 @@
     -->
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
     <!--
-      No canonical link, og:url or og:image HERE, on purpose. All three need an
-      absolute URL, and a relative or guessed one is worse than none.
-      src/lib/site-meta.ts adds canonical and og:url at boot from VITE_SITE_URL,
-      and og:image from VITE_OG_IMAGE_URL, and adds nothing for a variable that
-      is not set.
+      No canonical link, og:url or og:image written HERE. All three need an
+      absolute URL, so the build injects them from VITE_SITE_URL and
+      VITE_OG_IMAGE_URL (vite.config.ts, siteMetaPlugin) and injects nothing
+      for a variable that is not set. src/lib/site-meta.ts applies the same
+      values at runtime.
     -->
 
     <!--

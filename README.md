@@ -2,7 +2,7 @@
 
 **UK Physics & Engineering Course Finder — v1.0.0, initial public release.**
 
-Live: <https://claude.ai/artifact/ChyChvtkEFU9JYuJBaAmeH>
+Live: <https://zhrsidd.github.io/CourseScope/> · Repository: <https://github.com/zhrsidd/CourseScope>
 
 A searchable catalogue of UK undergraduate **Physics** and **Engineering** courses, built around
 A-Level entry requirements for students applying after Year 13.
@@ -29,7 +29,7 @@ admitted", and no admission probability anywhere in the codebase.
 | Universities | 22, **all** with verified data |
 | Assertions | 835 passing |
 | Production validation | 0 errors, 0 duplicates |
-| Browser QA | 182 checks passing, 0 page errors |
+| Browser QA | 189 checks passing, 0 page errors |
 
 ## Running it
 
@@ -54,7 +54,7 @@ npm run build          # typechecks again, then builds to dist/
 Then, with `npm run preview` running in another shell:
 
 ```bash
-npm run qa             # 182 browser checks: fresh state, legacy storage, mobile, brand, feedback,
+npm run qa             # 189 browser checks: fresh state, legacy storage, mobile, brand, feedback,
                        # accessibility, empty states, cycles, source links, performance
 ```
 
@@ -67,38 +67,40 @@ site* makes are to Google Fonts, and it renders correctly with system fonts when
 
 ## Deployment
 
-The app is a **static site** — no server, no API, no build-time data fetching. `dist/` can be served
-by any static host.
+Production is **GitHub Pages**: <https://zhrsidd.github.io/CourseScope/>.
 
-**Routing is hash-based** (`/#/course/...`), which is a deliberate choice rather than an oversight.
-The browser only ever requests `index.html`, so deep links work on any static host with **no rewrite
-rules**: no `_redirects`, no `try_files`, no 404-to-index trick. The cost is a `#` in every URL and
-crawlers seeing one page. Migrating to browser-history routing would need host-specific rewrite
-configuration that cannot be tested from here, so it is documented rather than done.
+`.github/workflows/ci.yml` runs on every push and pull request: clean install (`npm ci`),
+typecheck, the assertion suite (including catalogue validation and duplicate checks), the production
+build, and the browser QA suite against a production preview. On a push to `main` it then deploys
+**that same checked build** to Pages — the deploy job only runs after verification passes.
+One-time repository setting: *Settings → Pages → Build and deployment → Source: GitHub Actions*.
 
-**Asset paths are relative** (`base: './'`), so `dist/` works from a domain root, a subdirectory, or
-the filesystem without rebuilding.
+The app is a **static site** — no server, no API, no build-time data fetching.
+
+**Routing is hash-based** (`/CourseScope/#/course/...`), deliberately. GitHub Pages serves real files
+only and has no rewrite rules; with hash routing every route requests the same `index.html`, so a
+course or university link opens directly in a new tab and survives a refresh, with no 404 trick.
+
+**Asset paths are relative** (`base: './'`), so the same `dist/` works under `/CourseScope/`, at a
+domain root, or from the filesystem without rebuilding.
+
+**Metadata for crawlers.** Canonical, `og:url`, `og:image` and a large Twitter card are written into
+the built `index.html` (see `siteMetaPlugin` in `vite.config.ts`), because link-preview crawlers do
+not run JavaScript.
 
 ### Configuration
 
 Production values live in **`.env.production`**, which is committed because every value in it is
 public (Vite inlines them into the public bundle). `.env.example` documents every variable for
 deployments elsewhere. Vite reads these at **build** time, so changing one means rebuilding.
-`npm run build:singlefile` loads `.env.production` too (see `vite.config.ts`).
 
 | Variable | v1.0.0 production value | Effect when unset |
 |---|---|---|
-| `VITE_SITE_URL` | the live page URL | No canonical link and no `og:url` |
+| `VITE_SITE_URL` | `https://zhrsidd.github.io/CourseScope/` | No canonical link and no `og:url` |
 | `VITE_FEEDBACK_URL` | the project Typeform | Report-an-issue offers "Copy report" only, and says so |
 | `VITE_FEEDBACK_EMAIL` | not set (form is preferred) | Used only when no form URL is set |
-| `VITE_OG_IMAGE_URL` | not set — see below | Text-only share cards |
+| `VITE_OG_IMAGE_URL` | `…/CourseScope/social-preview.png` | Text-only share cards |
 | `VITE_BASE_PATH` | not set | Defaults to `./` |
-
-**Where v1.0.0 is deployed.** The live site is published as a claude.ai page, built with
-`npm run build:singlefile`. That host renders the app inside its own page shell, so the browser-tab
-icon and link-preview cards come from the host's page (showing the CourseScope title), not from
-`index.html`. For a self-hosted deployment, serve `dist/` and set `VITE_OG_IMAGE_URL` to the absolute
-URL of `dist/social-preview.png`; `favicon.svg` and all metadata then apply as written.
 
 `/admin` has no authentication and is not linked from any public navigation. It contains no private
 data and performs no destructive server actions — there is no server. Treat the route as internal.
@@ -141,7 +143,7 @@ src/
 data/               universities.json, courses.json, rankings.json, tests.json + SCHEMA.md
 scripts/            export-data.ts
 engine-check.ts     835 assertions over the engine, parser, importer, validation and brand
-smoke.v09.mjs       The supported QA suite — 182 release checks in a real browser
+smoke.v09.mjs       The supported QA suite — 189 release checks in a real browser
 smoke.mjs,          Historical per-batch regression walkthroughs, kept as a record of
 smoke.batch*.mjs,     what each batch was checked against. Still runnable, but
 smoke.v08.mjs         superseded by smoke.v09.mjs.
@@ -362,7 +364,7 @@ npm run release:verify              # all of the above, then a production build
 # Browser QA (needs Playwright: npm i -D playwright && npx playwright install chromium)
 npm run build
 npm run preview                     # serves the built app on http://127.0.0.1:4321
-npm run qa                          # 182 release checks against that preview
+npm run qa                          # 189 release checks against that preview
 ```
 
 `npm run qa` is the suite to run. The `smoke.batch*.mjs` scripts are the historical

@@ -155,7 +155,7 @@ export function feedbackUrl(context: FeedbackContext = {}): string {
  * frame's own internal address, which would mean nothing in a report.
  */
 export function currentPageUrl(pathname: string): string {
-  if (SITE_URL) return `${SITE_URL}#${pathname}`;
+  if (SITE_URL) return `${SITE_URL}#${pathname}`; // SITE_URL keeps its trailing slash: …/CourseScope/#/course/…
   if (typeof window === 'undefined') return pathname;
   return `${window.location.origin}${window.location.pathname}#${pathname}`;
 }

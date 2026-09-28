@@ -4,21 +4,36 @@ node_modules/
 # Build output
 dist/
 dist-single/
+# Generated: single-file bundle extracted for artifact publishing
+artifact.html
 
-# Local environment configuration — never commit a real .env.
-# .env.production IS committed: it holds only public values (a form link and
-# the public site URL) that are inlined into the public bundle anyway.
+# Caches
+.cache/
+.vite/
+*.tsbuildinfo
+.eslintcache
+
+# Local environment configuration — never commit a real .env or secrets.
+# .env.production IS committed: it holds only public values (the site URL, the
+# feedback form link and the share image) that are inlined into the public
+# bundle anyway.
 .env
 .env.*
 !.env.example
 !.env.production
+*.pem
+*.key
 
-# Test artefacts
+# Local QA artefacts
 shots/
+playwright-report/
+test-results/
+coverage/
 
-# Editor / OS noise
+# Editor / OS / machine-specific
 .DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
 *.log
-
-# Generated: single-file bundle extracted for artifact publishing
-artifact.html

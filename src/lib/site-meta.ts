@@ -34,8 +34,12 @@
 
 const env = (import.meta.env ?? {}) as Record<string, string | undefined>;
 
-/** The deployed origin, with any trailing slash removed. Empty when unknown. */
-export const SITE_URL: string = (env.VITE_SITE_URL ?? '').trim().replace(/\/+$/, '');
+/**
+ * The deployed site URL exactly as configured (keep its trailing slash for a
+ * sub-path site such as GitHub Pages: `https://user.github.io/CourseScope/`).
+ * Empty when unknown.
+ */
+export const SITE_URL: string = (env.VITE_SITE_URL ?? '').trim();
 
 /** True when this build knows where it is deployed. */
 export const HAS_SITE_URL: boolean = SITE_URL.length > 0;
@@ -43,14 +47,13 @@ export const HAS_SITE_URL: boolean = SITE_URL.length > 0;
 /**
  * The canonical form of SITE_URL. A bare origin gets its root slash
  * ("https://example.org/"); a URL with a path is used exactly as configured,
- * because appending a slash to a path can name a different page — the v1
- * deployment's page URL is one such case.
+ * because adding or removing a slash on a path can name a different page.
  */
 export const CANONICAL_URL: string = (() => {
   if (!HAS_SITE_URL) return '';
   try {
     const u = new URL(SITE_URL);
-    return u.pathname === '/' || u.pathname === '' ? `${u.origin}/` : SITE_URL;
+    return u.pathname === '/' || u.pathname === '' ? `${u.origin}/` : u.href;
   } catch {
     return '';
   }
