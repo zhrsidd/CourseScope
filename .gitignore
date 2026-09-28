@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-single/
+
+# Local environment configuration — never commit a real .env.
+# .env.production IS committed: it holds only public values (a form link and
+# the public site URL) that are inlined into the public bundle anyway.
+.env
+.env.*
+!.env.example
+!.env.production
+
+# Test artefacts
+shots/
+
+# Editor / OS noise
+.DS_Store
+*.log
+
+# Generated: single-file bundle extracted for artifact publishing
+artifact.html

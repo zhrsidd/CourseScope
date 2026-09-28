@@ -1,0 +1,925 @@
+[
+  {
+    "id": "cambridge",
+    "slug": "cambridge",
+    "name": "University of Cambridge",
+    "shortName": "Cambridge",
+    "initials": "CAM",
+    "city": "Cambridge",
+    "region": "East of England",
+    "country": "United Kingdom",
+    "website": "https://www.cam.ac.uk",
+    "admissionsUrl": null,
+    "departments": [
+      "Department of Physics (Cavendish Laboratory)",
+      "Department of Engineering"
+    ],
+    "admissionsOverview": {
+      "typicalOffer": "A*A*A (demo)",
+      "requiredSubjectsNote": "Mathematics and Physics normally required for physical-science and engineering routes.",
+      "furtherMathematics": "recommended",
+      "furtherMathematicsNote": "Strongly preferred where the school offers it.",
+      "gcseRequirements": null,
+      "englishLanguageRequirements": null,
+      "admissionsTestsNote": "Pre-registration admissions assessment used for most science and engineering courses.",
+      "interviews": "yes",
+      "interviewsNote": "Interviews are part of the standard process for shortlisted applicants.",
+      "internationalNotes": null,
+      "contextualOffer": {
+        "availability": "yes",
+        "details": "Published widening-participation schemes apply."
+      },
+      "applicationDeadline": "Earlier UCAS deadline (mid-October)",
+      "provenance": {
+        "verificationStatus": "demo",
+        "officialUrl": "https://www.cam.ac.uk",
+        "sourceUrl": null,
+        "sourceTitle": null,
+        "lastVerified": null,
+        "sources": []
+      }
+    },
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "oxford",
+    "slug": "oxford",
+    "name": "University of Oxford",
+    "shortName": "Oxford",
+    "initials": "OXF",
+    "city": "Oxford",
+    "region": "South East England",
+    "country": "United Kingdom",
+    "website": "https://www.ox.ac.uk",
+    "admissionsUrl": null,
+    "departments": [
+      "Department of Physics",
+      "Department of Engineering Science"
+    ],
+    "admissionsOverview": {
+      "typicalOffer": "A*AA (demo)",
+      "requiredSubjectsNote": "Mathematics and Physics normally required for Physics and Engineering Science.",
+      "furtherMathematics": "recommended",
+      "furtherMathematicsNote": "Helpful but the university states it is not required.",
+      "gcseRequirements": null,
+      "englishLanguageRequirements": null,
+      "admissionsTestsNote": "Subject-specific written test required before shortlisting.",
+      "interviews": "yes",
+      "interviewsNote": "Shortlisted applicants are interviewed in December.",
+      "internationalNotes": null,
+      "contextualOffer": {
+        "availability": "yes",
+        "details": "Contextual flags considered at shortlisting."
+      },
+      "applicationDeadline": "Earlier UCAS deadline (mid-October)",
+      "provenance": {
+        "verificationStatus": "demo",
+        "officialUrl": "https://www.ox.ac.uk",
+        "sourceUrl": null,
+        "sourceTitle": null,
+        "lastVerified": null,
+        "sources": []
+      }
+    },
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "imperial",
+    "slug": "imperial",
+    "name": "Imperial College London",
+    "shortName": "Imperial",
+    "initials": "ICL",
+    "city": "London",
+    "region": "London",
+    "country": "United Kingdom",
+    "website": "https://www.imperial.ac.uk",
+    "admissionsUrl": null,
+    "departments": [
+      "Department of Physics",
+      "Faculty of Engineering"
+    ],
+    "admissionsOverview": {
+      "typicalOffer": "A*A*A (demo)",
+      "requiredSubjectsNote": "Mathematics and Physics required across physics and most engineering routes.",
+      "furtherMathematics": "recommended",
+      "furtherMathematicsNote": null,
+      "gcseRequirements": "English and Mathematics at grade 4/C or above (demo).",
+      "englishLanguageRequirements": null,
+      "admissionsTestsNote": "Admissions tests are used for several departments; requirements vary by course.",
+      "interviews": "sometimes",
+      "interviewsNote": null,
+      "internationalNotes": "English language requirements apply to all applicants.",
+      "contextualOffer": {
+        "availability": "yes",
+        "details": null
+      },
+      "applicationDeadline": "UCAS equal consideration deadline (late January)",
+      "provenance": {
+        "verificationStatus": "demo",
+        "officialUrl": "https://www.imperial.ac.uk",
+        "sourceUrl": null,
+        "sourceTitle": null,
+        "lastVerified": null,
+        "sources": []
+      }
+    },
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "ucl",
+    "slug": "ucl",
+    "name": "University College London",
+    "shortName": "UCL",
+    "initials": "UCL",
+    "city": "London",
+    "region": "London",
+    "country": "United Kingdom",
+    "website": "https://www.ucl.ac.uk",
+    "admissionsUrl": null,
+    "departments": [
+      "Department of Physics and Astronomy",
+      "Faculty of Engineering Sciences"
+    ],
+    "admissionsOverview": {
+      "typicalOffer": "A*AA (demo)",
+      "requiredSubjectsNote": "Mathematics and Physics required for physics; Mathematics required for engineering.",
+      "furtherMathematics": "no-stated-preference",
+      "furtherMathematicsNote": null,
+      "gcseRequirements": null,
+      "englishLanguageRequirements": null,
+      "admissionsTestsNote": "No admissions test for most undergraduate science and engineering courses (demo).",
+      "interviews": "no",
+      "interviewsNote": null,
+      "internationalNotes": null,
+      "contextualOffer": {
+        "availability": "yes",
+        "details": "Access UCL scheme (demo)."
+      },
+      "applicationDeadline": "UCAS equal consideration deadline (late January)",
+      "provenance": {
+        "verificationStatus": "demo",
+        "officialUrl": "https://www.ucl.ac.uk",
+        "sourceUrl": null,
+        "sourceTitle": null,
+        "lastVerified": null,
+        "sources": []
+      }
+    },
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "manchester",
+    "slug": "manchester",
+    "name": "University of Manchester",
+    "shortName": "Manchester",
+    "initials": "MAN",
+    "city": "Manchester",
+    "region": "North West England",
+    "country": "United Kingdom",
+    "website": "https://www.manchester.ac.uk",
+    "admissionsUrl": null,
+    "departments": [
+      "Department of Physics and Astronomy",
+      "School of Engineering"
+    ],
+    "admissionsOverview": {
+      "typicalOffer": "AAA (demo)",
+      "requiredSubjectsNote": "Mathematics and Physics required for physics programmes.",
+      "furtherMathematics": "recommended",
+      "furtherMathematicsNote": null,
+      "gcseRequirements": null,
+      "englishLanguageRequirements": null,
+      "admissionsTestsNote": null,
+      "interviews": "no",
+      "interviewsNote": null,
+      "internationalNotes": null,
+      "contextualOffer": {
+        "availability": "yes",
+        "details": null
+      },
+      "applicationDeadline": "UCAS equal consideration deadline (late January)",
+      "provenance": {
+        "verificationStatus": "demo",
+        "officialUrl": "https://www.manchester.ac.uk",
+        "sourceUrl": null,
+        "sourceTitle": null,
+        "lastVerified": null,
+        "sources": []
+      }
+    },
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "edinburgh",
+    "slug": "edinburgh",
+    "name": "University of Edinburgh",
+    "shortName": "Edinburgh",
+    "initials": "EDI",
+    "city": "Edinburgh",
+    "region": "Scotland",
+    "country": "United Kingdom",
+    "website": "https://www.ed.ac.uk",
+    "admissionsUrl": null,
+    "departments": [
+      "School of Physics and Astronomy",
+      "School of Engineering"
+    ],
+    "admissionsOverview": {
+      "typicalOffer": "A*AA (demo)",
+      "requiredSubjectsNote": "Mathematics and Physics required.",
+      "furtherMathematics": "no-stated-preference",
+      "furtherMathematicsNote": null,
+      "gcseRequirements": null,
+      "englishLanguageRequirements": null,
+      "admissionsTestsNote": null,
+      "interviews": "no",
+      "interviewsNote": null,
+      "internationalNotes": "Scottish degrees are normally four years for a Bachelor’s and five for an integrated Master’s.",
+      "contextualOffer": {
+        "availability": "yes",
+        "details": null
+      },
+      "applicationDeadline": "UCAS equal consideration deadline (late January)",
+      "provenance": {
+        "verificationStatus": "demo",
+        "officialUrl": "https://www.ed.ac.uk",
+        "sourceUrl": null,
+        "sourceTitle": null,
+        "lastVerified": null,
+        "sources": []
+      }
+    },
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "bristol",
+    "slug": "bristol",
+    "name": "University of Bristol",
+    "shortName": "Bristol",
+    "initials": "BRI",
+    "city": "Bristol",
+    "region": "South West England",
+    "country": "United Kingdom",
+    "website": "https://www.bristol.ac.uk",
+    "admissionsUrl": null,
+    "departments": [
+      "School of Physics",
+      "Faculty of Engineering"
+    ],
+    "admissionsOverview": {
+      "typicalOffer": "AAA (demo)",
+      "requiredSubjectsNote": "Mathematics and Physics required for physics routes.",
+      "furtherMathematics": "recommended",
+      "furtherMathematicsNote": null,
+      "gcseRequirements": null,
+      "englishLanguageRequirements": null,
+      "admissionsTestsNote": null,
+      "interviews": "no",
+      "interviewsNote": null,
+      "internationalNotes": null,
+      "contextualOffer": {
+        "availability": "yes",
+        "details": "Bristol Scholars / contextual offer scheme (demo)."
+      },
+      "applicationDeadline": "UCAS equal consideration deadline (late January)",
+      "provenance": {
+        "verificationStatus": "demo",
+        "officialUrl": "https://www.bristol.ac.uk",
+        "sourceUrl": null,
+        "sourceTitle": null,
+        "lastVerified": null,
+        "sources": []
+      }
+    },
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "warwick",
+    "slug": "warwick",
+    "name": "University of Warwick",
+    "shortName": "Warwick",
+    "initials": "WAR",
+    "city": "Coventry",
+    "region": "West Midlands",
+    "country": "United Kingdom",
+    "website": "https://www.warwick.ac.uk",
+    "admissionsUrl": null,
+    "departments": [
+      "Department of Physics",
+      "School of Engineering"
+    ],
+    "admissionsOverview": {
+      "typicalOffer": "A*AA (demo)",
+      "requiredSubjectsNote": "Mathematics and Physics required for physics; Mathematics required for engineering.",
+      "furtherMathematics": "recommended",
+      "furtherMathematicsNote": "Alternative offers are published for applicants taking Further Mathematics (demo).",
+      "gcseRequirements": null,
+      "englishLanguageRequirements": null,
+      "admissionsTestsNote": null,
+      "interviews": "no",
+      "interviewsNote": null,
+      "internationalNotes": null,
+      "contextualOffer": {
+        "availability": "yes",
+        "details": null
+      },
+      "applicationDeadline": "UCAS equal consideration deadline (late January)",
+      "provenance": {
+        "verificationStatus": "demo",
+        "officialUrl": "https://www.warwick.ac.uk",
+        "sourceUrl": null,
+        "sourceTitle": null,
+        "lastVerified": null,
+        "sources": []
+      }
+    },
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "southampton",
+    "slug": "southampton",
+    "name": "University of Southampton",
+    "shortName": "Southampton",
+    "initials": "SOT",
+    "city": "Southampton",
+    "region": "South East England",
+    "country": "United Kingdom",
+    "website": "https://www.southampton.ac.uk",
+    "admissionsUrl": null,
+    "departments": [
+      "School of Physics and Astronomy",
+      "Faculty of Engineering and Physical Sciences"
+    ],
+    "admissionsOverview": {
+      "typicalOffer": "AAA (demo)",
+      "requiredSubjectsNote": "Mathematics and Physics required for physics and most engineering routes.",
+      "furtherMathematics": "no-stated-preference",
+      "furtherMathematicsNote": null,
+      "gcseRequirements": null,
+      "englishLanguageRequirements": null,
+      "admissionsTestsNote": null,
+      "interviews": "no",
+      "interviewsNote": null,
+      "internationalNotes": null,
+      "contextualOffer": {
+        "availability": "yes",
+        "details": null
+      },
+      "applicationDeadline": "UCAS equal consideration deadline (late January)",
+      "provenance": {
+        "verificationStatus": "demo",
+        "officialUrl": "https://www.southampton.ac.uk",
+        "sourceUrl": null,
+        "sourceTitle": null,
+        "lastVerified": null,
+        "sources": []
+      }
+    },
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "birmingham",
+    "slug": "birmingham",
+    "name": "University of Birmingham",
+    "shortName": "Birmingham",
+    "initials": "BHM",
+    "city": "Birmingham",
+    "region": "West Midlands",
+    "country": "United Kingdom",
+    "website": "https://www.birmingham.ac.uk",
+    "admissionsUrl": null,
+    "departments": [
+      "School of Physics and Astronomy",
+      "School of Engineering"
+    ],
+    "admissionsOverview": {
+      "typicalOffer": "AAA (demo)",
+      "requiredSubjectsNote": "Mathematics and Physics required for physics.",
+      "furtherMathematics": "no-stated-preference",
+      "furtherMathematicsNote": null,
+      "gcseRequirements": null,
+      "englishLanguageRequirements": null,
+      "admissionsTestsNote": null,
+      "interviews": "no",
+      "interviewsNote": null,
+      "internationalNotes": null,
+      "contextualOffer": {
+        "availability": "yes",
+        "details": null
+      },
+      "applicationDeadline": "UCAS equal consideration deadline (late January)",
+      "provenance": {
+        "verificationStatus": "demo",
+        "officialUrl": "https://www.birmingham.ac.uk",
+        "sourceUrl": null,
+        "sourceTitle": null,
+        "lastVerified": null,
+        "sources": []
+      }
+    },
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "leeds",
+    "slug": "leeds",
+    "name": "University of Leeds",
+    "shortName": "Leeds",
+    "initials": "LDS",
+    "city": "Leeds",
+    "region": "Yorkshire and the Humber",
+    "country": "United Kingdom",
+    "website": "https://www.leeds.ac.uk",
+    "admissionsUrl": null,
+    "departments": [
+      "School of Physics and Astronomy",
+      "Faculty of Engineering and Physical Sciences"
+    ],
+    "admissionsOverview": {
+      "typicalOffer": "AAA (demo)",
+      "requiredSubjectsNote": "Mathematics and Physics required for physics routes.",
+      "furtherMathematics": "not-required",
+      "furtherMathematicsNote": null,
+      "gcseRequirements": null,
+      "englishLanguageRequirements": null,
+      "admissionsTestsNote": null,
+      "interviews": "no",
+      "interviewsNote": null,
+      "internationalNotes": null,
+      "contextualOffer": {
+        "availability": "yes",
+        "details": "Access to Leeds (demo)."
+      },
+      "applicationDeadline": "UCAS equal consideration deadline (late January)",
+      "provenance": {
+        "verificationStatus": "demo",
+        "officialUrl": "https://www.leeds.ac.uk",
+        "sourceUrl": null,
+        "sourceTitle": null,
+        "lastVerified": null,
+        "sources": []
+      }
+    },
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "sheffield",
+    "slug": "sheffield",
+    "name": "University of Sheffield",
+    "shortName": "Sheffield",
+    "initials": "SHF",
+    "city": "Sheffield",
+    "region": "Yorkshire and the Humber",
+    "country": "United Kingdom",
+    "website": "https://www.sheffield.ac.uk",
+    "admissionsUrl": null,
+    "departments": [
+      "School of Mathematical and Physical Sciences",
+      "Faculty of Engineering"
+    ],
+    "admissionsOverview": {
+      "typicalOffer": "AAB (demo)",
+      "requiredSubjectsNote": "Mathematics and Physics required for physics.",
+      "furtherMathematics": "not-required",
+      "furtherMathematicsNote": null,
+      "gcseRequirements": null,
+      "englishLanguageRequirements": null,
+      "admissionsTestsNote": null,
+      "interviews": "no",
+      "interviewsNote": null,
+      "internationalNotes": null,
+      "contextualOffer": {
+        "availability": "yes",
+        "details": null
+      },
+      "applicationDeadline": "UCAS equal consideration deadline (late January)",
+      "provenance": {
+        "verificationStatus": "demo",
+        "officialUrl": "https://www.sheffield.ac.uk",
+        "sourceUrl": null,
+        "sourceTitle": null,
+        "lastVerified": null,
+        "sources": []
+      }
+    },
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "nottingham",
+    "slug": "nottingham",
+    "name": "University of Nottingham",
+    "shortName": "Nottingham",
+    "initials": "NOT",
+    "city": "Nottingham",
+    "region": "East Midlands",
+    "country": "United Kingdom",
+    "website": "https://www.nottingham.ac.uk",
+    "admissionsUrl": null,
+    "departments": [
+      "School of Physics and Astronomy",
+      "Faculty of Engineering"
+    ],
+    "admissionsOverview": {
+      "typicalOffer": "AAA (demo)",
+      "requiredSubjectsNote": "Mathematics and Physics required for physics.",
+      "furtherMathematics": "no-stated-preference",
+      "furtherMathematicsNote": null,
+      "gcseRequirements": null,
+      "englishLanguageRequirements": null,
+      "admissionsTestsNote": null,
+      "interviews": "no",
+      "interviewsNote": null,
+      "internationalNotes": null,
+      "contextualOffer": {
+        "availability": "yes",
+        "details": null
+      },
+      "applicationDeadline": "UCAS equal consideration deadline (late January)",
+      "provenance": {
+        "verificationStatus": "demo",
+        "officialUrl": "https://www.nottingham.ac.uk",
+        "sourceUrl": null,
+        "sourceTitle": null,
+        "lastVerified": null,
+        "sources": []
+      }
+    },
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "durham",
+    "slug": "durham",
+    "name": "Durham University",
+    "shortName": "Durham",
+    "initials": "DUR",
+    "city": "Durham",
+    "region": "North East England",
+    "country": "United Kingdom",
+    "website": "https://www.durham.ac.uk",
+    "admissionsUrl": null,
+    "departments": [
+      "Department of Physics",
+      "Department of Engineering"
+    ],
+    "admissionsOverview": {
+      "typicalOffer": "A*AA (demo)",
+      "requiredSubjectsNote": "Mathematics and Physics required for physics.",
+      "furtherMathematics": "recommended",
+      "furtherMathematicsNote": null,
+      "gcseRequirements": null,
+      "englishLanguageRequirements": null,
+      "admissionsTestsNote": null,
+      "interviews": "no",
+      "interviewsNote": null,
+      "internationalNotes": null,
+      "contextualOffer": {
+        "availability": "yes",
+        "details": null
+      },
+      "applicationDeadline": "UCAS equal consideration deadline (late January)",
+      "provenance": {
+        "verificationStatus": "demo",
+        "officialUrl": "https://www.durham.ac.uk",
+        "sourceUrl": null,
+        "sourceTitle": null,
+        "lastVerified": null,
+        "sources": []
+      }
+    },
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "bath",
+    "slug": "bath",
+    "name": "University of Bath",
+    "shortName": "Bath",
+    "initials": "BTH",
+    "city": "Bath",
+    "region": "South West England",
+    "country": "United Kingdom",
+    "website": "https://www.bath.ac.uk",
+    "admissionsUrl": null,
+    "departments": [
+      "Department of Physics",
+      "Faculty of Engineering and Design"
+    ],
+    "admissionsOverview": {
+      "typicalOffer": "A*AA (demo)",
+      "requiredSubjectsNote": "Mathematics and Physics required for physics and most engineering routes.",
+      "furtherMathematics": "no-stated-preference",
+      "furtherMathematicsNote": null,
+      "gcseRequirements": null,
+      "englishLanguageRequirements": null,
+      "admissionsTestsNote": null,
+      "interviews": "sometimes",
+      "interviewsNote": "Some engineering programmes invite applicants to an offer-holder day (demo).",
+      "internationalNotes": null,
+      "contextualOffer": {
+        "availability": "yes",
+        "details": null
+      },
+      "applicationDeadline": "UCAS equal consideration deadline (late January)",
+      "provenance": {
+        "verificationStatus": "demo",
+        "officialUrl": "https://www.bath.ac.uk",
+        "sourceUrl": null,
+        "sourceTitle": null,
+        "lastVerified": null,
+        "sources": []
+      }
+    },
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "glasgow",
+    "slug": "glasgow",
+    "name": "University of Glasgow",
+    "shortName": "Glasgow",
+    "initials": "GLA",
+    "city": "Glasgow",
+    "region": "Scotland",
+    "country": "United Kingdom",
+    "website": "https://www.gla.ac.uk",
+    "admissionsUrl": null,
+    "departments": [
+      "School of Physics and Astronomy",
+      "James Watt School of Engineering"
+    ],
+    "admissionsOverview": {
+      "typicalOffer": "AAB (demo)",
+      "requiredSubjectsNote": "Mathematics and Physics required.",
+      "furtherMathematics": "not-required",
+      "furtherMathematicsNote": null,
+      "gcseRequirements": null,
+      "englishLanguageRequirements": null,
+      "admissionsTestsNote": null,
+      "interviews": "no",
+      "interviewsNote": null,
+      "internationalNotes": "Scottish degrees run to four or five years; direct entry to year two is sometimes possible.",
+      "contextualOffer": {
+        "availability": "yes",
+        "details": null
+      },
+      "applicationDeadline": "UCAS equal consideration deadline (late January)",
+      "provenance": {
+        "verificationStatus": "demo",
+        "officialUrl": "https://www.gla.ac.uk",
+        "sourceUrl": null,
+        "sourceTitle": null,
+        "lastVerified": null,
+        "sources": []
+      }
+    },
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "st-andrews",
+    "slug": "st-andrews",
+    "name": "University of St Andrews",
+    "shortName": "St Andrews",
+    "initials": "STA",
+    "city": "St Andrews",
+    "region": "Scotland",
+    "country": "United Kingdom",
+    "website": "https://www.st-andrews.ac.uk",
+    "admissionsUrl": null,
+    "departments": [
+      "School of Physics and Astronomy"
+    ],
+    "admissionsOverview": {
+      "typicalOffer": "AAA (demo)",
+      "requiredSubjectsNote": "Mathematics and Physics required.",
+      "furtherMathematics": "no-stated-preference",
+      "furtherMathematicsNote": null,
+      "gcseRequirements": null,
+      "englishLanguageRequirements": null,
+      "admissionsTestsNote": null,
+      "interviews": "no",
+      "interviewsNote": null,
+      "internationalNotes": "Undergraduate degrees are four years.",
+      "contextualOffer": {
+        "availability": "yes",
+        "details": null
+      },
+      "applicationDeadline": "UCAS equal consideration deadline (late January)",
+      "provenance": {
+        "verificationStatus": "demo",
+        "officialUrl": "https://www.st-andrews.ac.uk",
+        "sourceUrl": null,
+        "sourceTitle": null,
+        "lastVerified": null,
+        "sources": []
+      }
+    },
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "kcl",
+    "slug": "kcl",
+    "name": "King's College London",
+    "shortName": "King's",
+    "initials": "KCL",
+    "city": "London",
+    "region": "London",
+    "country": "United Kingdom",
+    "website": "https://www.kcl.ac.uk",
+    "admissionsUrl": null,
+    "departments": [
+      "Department of Physics",
+      "Department of Engineering"
+    ],
+    "admissionsOverview": {
+      "typicalOffer": "A*AA (demo)",
+      "requiredSubjectsNote": "Mathematics and Physics required for physics.",
+      "furtherMathematics": "no-stated-preference",
+      "furtherMathematicsNote": null,
+      "gcseRequirements": null,
+      "englishLanguageRequirements": null,
+      "admissionsTestsNote": null,
+      "interviews": "no",
+      "interviewsNote": null,
+      "internationalNotes": null,
+      "contextualOffer": {
+        "availability": "yes",
+        "details": "K+ scheme (demo)."
+      },
+      "applicationDeadline": "UCAS equal consideration deadline (late January)",
+      "provenance": {
+        "verificationStatus": "demo",
+        "officialUrl": "https://www.kcl.ac.uk",
+        "sourceUrl": null,
+        "sourceTitle": null,
+        "lastVerified": null,
+        "sources": []
+      }
+    },
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "qmul",
+    "slug": "qmul",
+    "name": "Queen Mary University of London",
+    "shortName": "Queen Mary",
+    "initials": "QM",
+    "city": "London",
+    "region": "London",
+    "country": "United Kingdom",
+    "website": "https://www.qmul.ac.uk",
+    "admissionsUrl": null,
+    "departments": [
+      "School of Physical and Chemical Sciences",
+      "School of Engineering and Materials Science"
+    ],
+    "admissionsOverview": {
+      "typicalOffer": "AAB (demo)",
+      "requiredSubjectsNote": "Mathematics and Physics required for physics.",
+      "furtherMathematics": "not-required",
+      "furtherMathematicsNote": null,
+      "gcseRequirements": null,
+      "englishLanguageRequirements": null,
+      "admissionsTestsNote": null,
+      "interviews": "no",
+      "interviewsNote": null,
+      "internationalNotes": null,
+      "contextualOffer": {
+        "availability": "yes",
+        "details": null
+      },
+      "applicationDeadline": "UCAS equal consideration deadline (late January)",
+      "provenance": {
+        "verificationStatus": "demo",
+        "officialUrl": "https://www.qmul.ac.uk",
+        "sourceUrl": null,
+        "sourceTitle": null,
+        "lastVerified": null,
+        "sources": []
+      }
+    },
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "lancaster",
+    "slug": "lancaster",
+    "name": "Lancaster University",
+    "shortName": "Lancaster",
+    "initials": "LAN",
+    "city": "Lancaster",
+    "region": "North West England",
+    "country": "United Kingdom",
+    "website": "https://www.lancaster.ac.uk",
+    "admissionsUrl": null,
+    "departments": [
+      "Department of Physics",
+      "School of Engineering"
+    ],
+    "admissionsOverview": {
+      "typicalOffer": "AAB (demo)",
+      "requiredSubjectsNote": "Mathematics and Physics required for physics.",
+      "furtherMathematics": "not-required",
+      "furtherMathematicsNote": null,
+      "gcseRequirements": null,
+      "englishLanguageRequirements": null,
+      "admissionsTestsNote": null,
+      "interviews": "no",
+      "interviewsNote": null,
+      "internationalNotes": null,
+      "contextualOffer": {
+        "availability": "yes",
+        "details": null
+      },
+      "applicationDeadline": "UCAS equal consideration deadline (late January)",
+      "provenance": {
+        "verificationStatus": "demo",
+        "officialUrl": "https://www.lancaster.ac.uk",
+        "sourceUrl": null,
+        "sourceTitle": null,
+        "lastVerified": null,
+        "sources": []
+      }
+    },
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "loughborough",
+    "slug": "loughborough",
+    "name": "Loughborough University",
+    "shortName": "Loughborough",
+    "initials": "LBO",
+    "city": "Loughborough",
+    "region": "East Midlands",
+    "country": "United Kingdom",
+    "website": "https://www.lboro.ac.uk",
+    "admissionsUrl": null,
+    "departments": [
+      "School of Science (Physics)",
+      "Wolfson School of Mechanical, Electrical and Manufacturing Engineering",
+      "School of Architecture, Building and Civil Engineering"
+    ],
+    "admissionsOverview": {
+      "typicalOffer": "AAB (demo)",
+      "requiredSubjectsNote": "Mathematics required for engineering; Mathematics and Physics for physics.",
+      "furtherMathematics": "not-required",
+      "furtherMathematicsNote": null,
+      "gcseRequirements": null,
+      "englishLanguageRequirements": null,
+      "admissionsTestsNote": null,
+      "interviews": "no",
+      "interviewsNote": null,
+      "internationalNotes": null,
+      "contextualOffer": {
+        "availability": "yes",
+        "details": null
+      },
+      "applicationDeadline": "UCAS equal consideration deadline (late January)",
+      "provenance": {
+        "verificationStatus": "demo",
+        "officialUrl": "https://www.lboro.ac.uk",
+        "sourceUrl": null,
+        "sourceTitle": null,
+        "lastVerified": null,
+        "sources": []
+      }
+    },
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "york",
+    "slug": "york",
+    "name": "University of York",
+    "shortName": "York",
+    "initials": "YRK",
+    "city": "York",
+    "region": "Yorkshire and the Humber",
+    "country": "United Kingdom",
+    "website": "https://www.york.ac.uk",
+    "admissionsUrl": null,
+    "departments": [
+      "School of Physics, Engineering and Technology"
+    ],
+    "admissionsOverview": {
+      "typicalOffer": "AAA (demo)",
+      "requiredSubjectsNote": "Mathematics and Physics required for physics.",
+      "furtherMathematics": "not-required",
+      "furtherMathematicsNote": null,
+      "gcseRequirements": null,
+      "englishLanguageRequirements": null,
+      "admissionsTestsNote": null,
+      "interviews": "no",
+      "interviewsNote": null,
+      "internationalNotes": null,
+      "contextualOffer": {
+        "availability": "yes",
+        "details": null
+      },
+      "applicationDeadline": "UCAS equal consideration deadline (late January)",
+      "provenance": {
+        "verificationStatus": "demo",
+        "officialUrl": "https://www.york.ac.uk",
+        "sourceUrl": null,
+        "sourceTitle": null,
+        "lastVerified": null,
+        "sources": []
+      }
+    },
+    "verificationStatus": "demo"
+  }
+]

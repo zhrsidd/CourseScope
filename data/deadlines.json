@@ -1,0 +1,758 @@
+[
+  {
+    "id": "cambridge--deadline-earlier-ucas-deadline-2027-0",
+    "universityId": "cambridge",
+    "label": "Earlier UCAS deadline",
+    "date": null,
+    "applicationYear": "2027",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "Applies to every undergraduate course at this university, not the standard January date.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "cambridge--deadline-earlier-ucas-deadline-2028-1",
+    "universityId": "cambridge",
+    "label": "Earlier UCAS deadline",
+    "date": null,
+    "applicationYear": "2028",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "Applies to every undergraduate course at this university, not the standard January date.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "cambridge--deadline-admissions-assessment-registration-deadline-2027-0",
+    "universityId": "cambridge",
+    "label": "Admissions assessment registration deadline",
+    "date": null,
+    "applicationYear": "2027",
+    "appliesTo": {
+      "kind": "course-slugs",
+      "slugs": [
+        "cambridge-natural-sciences-physical",
+        "cambridge-engineering",
+        "cambridge-natural-sciences",
+        "cambridge-engineering-meng"
+      ]
+    },
+    "notes": "Registration closes well before the assessment itself. Course-specific, not university-wide.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "cambridge--deadline-admissions-assessment-registration-deadline-2028-1",
+    "universityId": "cambridge",
+    "label": "Admissions assessment registration deadline",
+    "date": null,
+    "applicationYear": "2028",
+    "appliesTo": {
+      "kind": "course-slugs",
+      "slugs": [
+        "cambridge-natural-sciences-physical",
+        "cambridge-engineering",
+        "cambridge-natural-sciences",
+        "cambridge-engineering-meng"
+      ]
+    },
+    "notes": "Registration closes well before the assessment itself. Course-specific, not university-wide.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "oxford--deadline-ucas-application-deadline-2027-0",
+    "universityId": "oxford",
+    "label": "UCAS application deadline",
+    "date": "2026-10-15",
+    "applicationYear": "2027",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "18:00 (BST). Applies to every undergraduate course at this university, not the standard January date.",
+    "sourceUrl": "https://www.ox.ac.uk/admissions/undergraduate/courses/course-listing/physics",
+    "sourceTitle": "Physics | University of Oxford",
+    "lastVerified": "2026-09-01",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "oxford--deadline-earlier-ucas-deadline-2028-0",
+    "universityId": "oxford",
+    "label": "Earlier UCAS deadline",
+    "date": null,
+    "applicationYear": "2028",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "Date for the 2028 cycle has not been recorded.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "oxford--deadline-admissions-test-registration-deadline-2027-0",
+    "universityId": "oxford",
+    "label": "Admissions test registration deadline",
+    "date": null,
+    "applicationYear": "2027",
+    "appliesTo": {
+      "kind": "course-slugs",
+      "slugs": [
+        "oxford-physics-mphys",
+        "oxford-engineering-science-meng"
+      ]
+    },
+    "notes": "Test registration is separate from the UCAS application and closes earlier.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "oxford--deadline-admissions-test-registration-deadline-2028-1",
+    "universityId": "oxford",
+    "label": "Admissions test registration deadline",
+    "date": null,
+    "applicationYear": "2028",
+    "appliesTo": {
+      "kind": "course-slugs",
+      "slugs": [
+        "oxford-physics-mphys",
+        "oxford-engineering-science-meng"
+      ]
+    },
+    "notes": "Test registration is separate from the UCAS application and closes earlier.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "imperial--deadline-ucas-equal-consideration-deadline-2027-0",
+    "universityId": "imperial",
+    "label": "UCAS equal consideration deadline",
+    "date": "2027-01-13",
+    "applicationYear": "2027",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "18:00 UK time.",
+    "sourceUrl": null,
+    "sourceTitle": "Imperial College London undergraduate course pages",
+    "lastVerified": null,
+    "verificationStatus": "partially-verified"
+  },
+  {
+    "id": "imperial--deadline-ucas-equal-consideration-deadline-2028-0",
+    "universityId": "imperial",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2028",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "Date for the 2028 cycle has not been recorded.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "ucl--deadline-ucas-equal-consideration-deadline-2027-0",
+    "universityId": "ucl",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2027",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "ucl--deadline-ucas-equal-consideration-deadline-2028-1",
+    "universityId": "ucl",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2028",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "manchester--deadline-ucas-equal-consideration-deadline-2027-0",
+    "universityId": "manchester",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2027",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "manchester--deadline-ucas-equal-consideration-deadline-2028-1",
+    "universityId": "manchester",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2028",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "edinburgh--deadline-ucas-equal-consideration-deadline-2027-0",
+    "universityId": "edinburgh",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2027",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "edinburgh--deadline-ucas-equal-consideration-deadline-2028-1",
+    "universityId": "edinburgh",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2028",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "bristol--deadline-ucas-equal-consideration-deadline-2027-0",
+    "universityId": "bristol",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2027",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "bristol--deadline-ucas-equal-consideration-deadline-2028-1",
+    "universityId": "bristol",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2028",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "warwick--deadline-ucas-equal-consideration-deadline-2027-0",
+    "universityId": "warwick",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2027",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "warwick--deadline-ucas-equal-consideration-deadline-2028-1",
+    "universityId": "warwick",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2028",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "southampton--deadline-ucas-equal-consideration-deadline-2027-0",
+    "universityId": "southampton",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2027",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "southampton--deadline-ucas-equal-consideration-deadline-2028-1",
+    "universityId": "southampton",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2028",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "birmingham--deadline-ucas-equal-consideration-deadline-2027-0",
+    "universityId": "birmingham",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2027",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "birmingham--deadline-ucas-equal-consideration-deadline-2028-1",
+    "universityId": "birmingham",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2028",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "leeds--deadline-ucas-equal-consideration-deadline-2027-0",
+    "universityId": "leeds",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2027",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "leeds--deadline-ucas-equal-consideration-deadline-2028-1",
+    "universityId": "leeds",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2028",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "sheffield--deadline-ucas-equal-consideration-deadline-2027-0",
+    "universityId": "sheffield",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2027",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "sheffield--deadline-ucas-equal-consideration-deadline-2028-1",
+    "universityId": "sheffield",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2028",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "nottingham--deadline-ucas-equal-consideration-deadline-2027-0",
+    "universityId": "nottingham",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2027",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "nottingham--deadline-ucas-equal-consideration-deadline-2028-1",
+    "universityId": "nottingham",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2028",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "durham--deadline-ucas-equal-consideration-deadline-2027-0",
+    "universityId": "durham",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2027",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "durham--deadline-ucas-equal-consideration-deadline-2028-1",
+    "universityId": "durham",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2028",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "bath--deadline-ucas-equal-consideration-deadline-2027-0",
+    "universityId": "bath",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2027",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": null,
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "bath--deadline-ucas-equal-consideration-deadline-2028-1",
+    "universityId": "bath",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2028",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": null,
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "bath--deadline-engineering-placement-year-application-deadline-2028-0",
+    "universityId": "bath",
+    "label": "Engineering placement-year application deadline",
+    "date": null,
+    "applicationYear": "2028",
+    "appliesTo": {
+      "kind": "subject-category",
+      "category": "engineering"
+    },
+    "notes": "Demo example of a deadline that applies to one subject area only.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "glasgow--deadline-ucas-equal-consideration-deadline-2027-0",
+    "universityId": "glasgow",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2027",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "glasgow--deadline-ucas-equal-consideration-deadline-2028-1",
+    "universityId": "glasgow",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2028",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "st-andrews--deadline-ucas-equal-consideration-deadline-2027-0",
+    "universityId": "st-andrews",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2027",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "st-andrews--deadline-ucas-equal-consideration-deadline-2028-1",
+    "universityId": "st-andrews",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2028",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "kcl--deadline-ucas-equal-consideration-deadline-2027-0",
+    "universityId": "kcl",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2027",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "kcl--deadline-ucas-equal-consideration-deadline-2028-1",
+    "universityId": "kcl",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2028",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "qmul--deadline-ucas-equal-consideration-deadline-2027-0",
+    "universityId": "qmul",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2027",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "qmul--deadline-ucas-equal-consideration-deadline-2028-1",
+    "universityId": "qmul",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2028",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "lancaster--deadline-ucas-equal-consideration-deadline-2027-0",
+    "universityId": "lancaster",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2027",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "lancaster--deadline-ucas-equal-consideration-deadline-2028-1",
+    "universityId": "lancaster",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2028",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "loughborough--deadline-ucas-equal-consideration-deadline-2027-0",
+    "universityId": "loughborough",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2027",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "loughborough--deadline-ucas-equal-consideration-deadline-2028-1",
+    "universityId": "loughborough",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2028",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "york--deadline-ucas-equal-consideration-deadline-2027-0",
+    "universityId": "york",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2027",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "york--deadline-ucas-equal-consideration-deadline-2028-1",
+    "universityId": "york",
+    "label": "UCAS equal consideration deadline",
+    "date": null,
+    "applicationYear": "2028",
+    "appliesTo": {
+      "kind": "all-courses"
+    },
+    "notes": "The standard UCAS deadline for courses starting the following autumn.",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "lastVerified": null,
+    "verificationStatus": "demo"
+  }
+]

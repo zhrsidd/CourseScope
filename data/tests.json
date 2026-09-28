@@ -1,0 +1,72 @@
+[
+  {
+    "code": "none",
+    "shortName": "None",
+    "fullName": "No admissions test",
+    "description": "The course does not use a pre-interview or pre-offer admissions test.",
+    "infoUrl": null
+  },
+  {
+    "code": "esat",
+    "shortName": "ESAT",
+    "fullName": "Engineering and Science Admissions Test",
+    "description": "Multiple-choice test in mathematics and science, used by some engineering and natural-science courses.",
+    "infoUrl": null
+  },
+  {
+    "code": "pat",
+    "shortName": "PAT",
+    "fullName": "Physics Aptitude Test",
+    "description": "Physics and mathematics test used by some physics and engineering courses.",
+    "infoUrl": null
+  },
+  {
+    "code": "tmua",
+    "shortName": "TMUA",
+    "fullName": "Test of Mathematics for University Admission",
+    "description": "Mathematical thinking and reasoning test. Some courses require it, others treat it as optional evidence.",
+    "infoUrl": null
+  },
+  {
+    "code": "step",
+    "shortName": "STEP",
+    "fullName": "Sixth Term Examination Paper",
+    "description": "Advanced mathematics examination usually taken after the A-Level exams and attached to an offer condition.",
+    "infoUrl": null
+  },
+  {
+    "code": "mat",
+    "shortName": "MAT",
+    "fullName": "Mathematics Admissions Test",
+    "description": "Mathematics test used mainly for mathematics and computer science routes.",
+    "infoUrl": null
+  },
+  {
+    "code": "university-specific",
+    "shortName": "University test",
+    "fullName": "University-specific assessment",
+    "description": "An assessment set and marked by the university itself.",
+    "infoUrl": null
+  },
+  {
+    "code": "other",
+    "shortName": "Other",
+    "fullName": "Other assessment",
+    "description": "Another form of assessment, named in the record’s details field.",
+    "infoUrl": null
+  },
+  {
+    "code": "not-announced",
+    "shortName": "Not yet announced",
+    "fullName": "Not yet announced for this cycle",
+    "description": "The university has not published test arrangements for this application year. Arrangements from an earlier year are not carried over.",
+    "infoUrl": null
+  },
+  {
+    "code": "unknown",
+    "shortName": "Unknown",
+    "fullName": "Not recorded",
+    "description": "This catalogue has not recorded the test arrangements for this course yet.",
+    "infoUrl": null
+  }
+]

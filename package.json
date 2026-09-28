@@ -1,0 +1,35 @@
+{
+  "name": "coursescope",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "CourseScope \u2014 compare UK university Physics and Engineering courses by published A-Level entry requirements, admissions tests and application routes.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "build:singlefile": "tsc --noEmit && vite build --mode singlefile",
+    "typecheck": "tsc --noEmit --pretty false",
+    "check": "esbuild engine-check.ts --bundle --format=esm --platform=node --outfile=node_modules/.cache/check.mjs --alias:@=./src --log-level=error && node node_modules/.cache/check.mjs",
+    "export:data": "esbuild scripts/export-data.ts --bundle --format=esm --platform=node --outfile=node_modules/.cache/export-data.mjs --alias:@=./src --log-level=error && node node_modules/.cache/export-data.mjs",
+    "preview": "vite preview",
+    "qa": "node smoke.v09.mjs",
+    "release:verify": "npm run typecheck && npm run check && npm run build"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.1",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.2",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.8",
+    "vite-plugin-singlefile": "^2.0.2"
+  }
+}

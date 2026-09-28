@@ -1,0 +1,102 @@
+/**
+ * ---------------------------------------------------------------------------
+ *  RELEASE MARKER AND CHANGELOG
+ * ---------------------------------------------------------------------------
+ *
+ *  v1.0.0 is the first public release, under the CourseScope name. Before v1,
+ *  every version was a statement that the data was still being closed out; the
+ *  version badge in the footer still exists so a student or a colleague can tell
+ *  which build they are looking at when they report something that looks wrong.
+ *
+ *  Two changelogs, deliberately separated:
+ *
+ *   · RELEASES is student-facing. It says what changed about the information,
+ *     in the words a reader who does not work on this would use.
+ *   · DEVELOPER_NOTES is not rendered anywhere in the student UI. It carries
+ *     the engineering detail that belongs in a repository rather than on a
+ *     page someone is using to choose a degree.
+ */
+
+export const APP_VERSION = 'v1.0.0';
+
+export const APP_VERSION_LABEL = 'v1.0.0 — initial public release';
+
+/**
+ * False from v1.0.0. It was set while the release gates were open; it was
+ * cleared only once a production URL and a real feedback destination were
+ * configured and the deployed build passed QA. The footer and the methodology
+ * page read it, so a pre-release build always says so out loud.
+ */
+export const IS_PRE_RELEASE = false;
+
+export interface ReleaseNote {
+  version: string;
+  date: string;
+  headline: string;
+  /** Student-facing. Plain language, about the information rather than the code. */
+  changes: string[];
+}
+
+export const RELEASES: ReleaseNote[] = [
+  {
+    version: 'v1.0.0',
+    date: '2026-09-28',
+    headline: 'CourseScope v1.0.0 — Initial Public Release',
+    changes: [
+      'CourseScope is the new name for this catalogue: a place to compare UK Physics and Engineering courses by what universities actually publish.',
+      'Every course’s identity and entry requirements come from the university’s own pages, and every checked course links to the page it was read from.',
+      'Entry requirements are tied to a single entry year. 2027 requirements are shown where published; 2028 is marked as not yet published rather than guessed.',
+      'Add your A-Level subjects and predicted grades once, and every course shows whether you meet its published academic requirements — with the reasons spelled out.',
+      'Subject requirements, admissions tests and interview policies are shown for each checked course, alongside its application route.',
+      'Compare courses side by side, and save courses and universities to a shortlist that stays in your browser.',
+      'Searching for a specialism such as Astrophysics finds it even when it is a pathway inside a broader degree, and tells you which course you would actually apply to.',
+      'Spotted something wrong? Every course has a “Report an issue” button that opens our feedback form with your report ready to paste in.',
+      'Meeting published entry requirements does not guarantee admission.',
+    ],
+  },
+  {
+    version: 'v0.9.0',
+    date: '2026-09-28',
+    headline: 'Release candidate',
+    changes: [
+      'Queen Mary University of London is now fully checked. Its 21 physics and engineering courses each carry their published offer, subject requirements, contextual offers and GCSE rule, read from Queen Mary’s own 2027 course pages.',
+      'We had been listing an “Astrophysics BSc” at Queen Mary. It is not a course you can apply to — Queen Mary offers Astrophysics as a stream you choose after your first year, inside the Physics degree. The listing has been corrected, and searching for Astrophysics now takes you to the Physics course and the code you would actually use.',
+      'Two Queen Mary UCAS codes we had been unsure about turned out to be wrong, and both are corrected: Biomedical Engineering is HBF2 and Materials Science and Engineering is J511.',
+      'King’s College London’s General Engineering BEng has been added, alongside the MEng it pairs with. H100 is the three-year BEng and H101 is the four-year MEng.',
+      'Four York courses that were marked as only partly checked are now fully checked. In each case the missing detail was something our tools could not read rather than something York had not published.',
+      'Every university in the catalogue now has checked admissions data. Six courses are still waiting, in every case because the university has not yet published its 2027 requirements.',
+      'A way to report a problem with any course is now set up properly, so corrections reach us.',
+    ],
+  },
+  {
+    version: 'v0.8',
+    date: '2026-09-23',
+    headline: 'Data closure and launch readiness',
+    changes: [
+      'Every course in the catalogue now has a source we can point to for the fact that it exists, separately from whether its entry requirements have been checked.',
+      'Eight courses that had been listed without any source behind them were investigated one by one. Three turned out to be real and are now fully checked, five keep their place with their identity confirmed, and none was deleted on a hunch.',
+      'Two of those eight were listed under the wrong name and the wrong UCAS code. Both are corrected.',
+      'York’s 22 engineering courses now carry their published offers, subject requirements, interview policies and contextual offers.',
+      'Lancaster’s 65 physics and engineering courses are now fully checked. Their subject requirements sit behind a part of the page that would not load before, and reading it turned up three genuinely different rules rather than one.',
+      'A new page explains where the data comes from, what each trust label means, and what the eligibility check does and does not tell you.',
+      'Every course page now has a “Report an issue” button, so you can tell us when something looks wrong.',
+    ],
+  },
+];
+
+/** Engineering detail. Never rendered in the student-facing UI. */
+export const DEVELOPER_NOTES: string[] = [
+  'v1.0.0: brand applied — CourseScope name, mark, favicon.svg, social-preview asset; all public strings read from src/lib/brand.ts.',
+  'v1.0.0: VITE_SITE_URL and VITE_FEEDBACK_URL configured for production; IS_PRE_RELEASE cleared.',
+  'v1.0.0: version assertions rewritten to require a consistent version/pre-release pair rather than "not v1".',
+  'v0.9: QMUL closed via rendered-browser access to its JS-rendered 2027 course finder — 21 records across three subject pages, each option separately coded.',
+  'v0.9: QMUL Astrophysics removed as an application; the four Physics streams are StudyOptions on F300/F303 and their variants.',
+  'v0.9: scaffold codes H160 and J500 confirmed wrong at QMUL (they belong to York, and to Manchester/Sheffield respectively); assertions now pin both the correction and the untouched originals.',
+  'v0.9: KCL General Engineering BEng H100 imported with its 2028 shell; H100/H101 pairing asserted in both directions.',
+  'v0.9: York H641, H662, H119 and H640 all resolved. H641’s "ABB" was the contextual offer misread as a typical offer; H640’s page existed at the slug a v0.8 text fetch reported as 404.',
+  'v0.9: partially-verified count is now 0. The assertion that live partials exist was replaced with behaviour assertions on a synthetic record, so a good outcome no longer reads as a regression.',
+  'v0.9: feedback destination is env-configured via VITE_FEEDBACK_EMAIL / VITE_FEEDBACK_URL; the UI degrades to copy-only when neither is set.',
+  'v0.8: added Provenance.identityVerification and identityNote — application identity verified independently of admissions requirements.',
+  'v0.8: added isPubliclyDiscoverable() and the courses/policyExcludedCourses split.',
+  'v0.8: removed the public footer link to /admin. The route still resolves; there is no authentication in this build and none was added.',
+];
