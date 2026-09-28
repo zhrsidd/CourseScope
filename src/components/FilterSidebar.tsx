@@ -484,6 +484,7 @@ export function FilterSidebar({
         ))}
       </FilterSection>
 
+      {universities.some((u) => u.rankings.length > 0) ? (
       <FilterSection title="University ranking">
         <p className="mb-2 text-xs text-ink-muted">
           Uses the overall ranking recorded for each university. Universities with no ranking data are
@@ -507,6 +508,7 @@ export function FilterSidebar({
           ))}
         </div>
       </FilterSection>
+      ) : null}
 
       <div className="pt-3">
         <CheckboxRow

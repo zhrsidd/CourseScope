@@ -76,13 +76,13 @@ function OutcomeIcon({ outcome }: { outcome: PartOutcome }) {
 export function PartRow({ part }: { part: EligibilityPart }) {
   const style = OUTCOME_STYLE[part.outcome];
   return (
-    <div className="grid grid-cols-[minmax(0,150px)_112px_1fr] items-start gap-3 border-b border-slate-100 py-2 last:border-0">
+    <div className="grid grid-cols-[minmax(0,1fr)_auto] sm:grid-cols-[minmax(0,150px)_112px_1fr] items-start gap-x-3 gap-y-1 border-b border-slate-100 py-2 last:border-0">
       <div className="text-sm font-medium text-ink">{part.label}</div>
       <div className={cx('flex items-center gap-1.5 whitespace-nowrap text-sm font-medium', style.tone)}>
         <OutcomeIcon outcome={part.outcome} />
         {style.label}
       </div>
-      <div className="text-sm leading-relaxed text-ink-muted">{part.detail}</div>
+      <div className="col-span-2 text-sm leading-relaxed text-ink-muted sm:col-span-1">{part.detail}</div>
     </div>
   );
 }
@@ -115,18 +115,18 @@ export function EligibilityBreakdown({ report }: { report: EligibilityReport }) 
 
   return (
     <div>
-      <div className="grid grid-cols-[minmax(0,150px)_112px_1fr] gap-3 border-b border-slate-200 pb-1.5">
+      <div className="grid grid-cols-[minmax(0,1fr)_auto] sm:grid-cols-[minmax(0,150px)_112px_1fr] gap-3 border-b border-slate-200 pb-1.5">
         <span className="label">Requirement</span>
         <span className="label">Result</span>
-        <span className="label">Detail</span>
+        <span className="label hidden sm:block">Detail</span>
       </div>
       {parts.map((p) => (
         <PartRow key={p.id} part={p} />
       ))}
-      <div className="grid grid-cols-[minmax(0,150px)_112px_1fr] items-start gap-3 border-t border-slate-200 pt-2">
+      <div className="grid grid-cols-[minmax(0,1fr)_auto] sm:grid-cols-[minmax(0,150px)_112px_1fr] items-start gap-x-3 gap-y-1 border-t border-slate-200 pt-2">
         <div className="text-sm font-medium text-ink">Admissions test</div>
         <div className="text-sm font-medium text-navy-800">{testLabel}</div>
-        <div className="text-sm leading-relaxed text-ink-muted">{test.detail}</div>
+        <div className="col-span-2 text-sm leading-relaxed text-ink-muted sm:col-span-1">{test.detail}</div>
       </div>
       <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-slate-200 pt-3">
         <span className="text-sm font-semibold text-ink">Final academic match</span>

@@ -6,6 +6,8 @@ import { EligibilityReasons } from '@/components/EligibilityReasons';
 import { InfoTooltip } from '@/components/InfoTooltip';
 import { SourceBadge, VerificationBadge } from '@/components/SourceBadge';
 import { ReportIssue } from '@/components/ReportIssue';
+import { SubjectGuidance } from '@/components/SubjectGuidance';
+import { subjectGuidanceFor } from '@/data';
 import { SubjectRequirementRow } from '@/components/SubjectRequirement';
 import { StudentProfilePanel } from '@/components/StudentProfilePanel';
 import { IconCompare, IconExternal, IconHeart, IconWarning } from '@/components/ui/icons';
@@ -95,6 +97,7 @@ export function CourseDetailPage() {
   const fmAdvisory = (ADVISORY_FURTHER_MATHS as readonly string[]).includes(course.furtherMathematics);
   const officialLink = course.provenance.sourceUrl ?? course.provenance.officialUrl;
   const deadlines = deadlinesForCourse(university, course);
+  const subjectGuidance = course ? subjectGuidanceFor(course.universityId) : null;
   usePageTitle(
     course ? `${course.name} (${course.awardLabel ?? course.degreeType}), ${university?.name ?? ''} ${course.applicationYear}` : 'Course',
   );
@@ -431,6 +434,11 @@ export function CourseDetailPage() {
             )}
           </Card>
 
+          {/* University-wide subject policy, where the university publishes one.
+              Its own card, after the course's requirements, so it can never be
+              read as part of them. */}
+          {subjectGuidance ? <SubjectGuidance guidance={subjectGuidance} /> : null}
+
           <Card className="p-4">
             <SectionTitle>Admissions test</SectionTitle>
             {course.admissionsTest.code === 'unknown' ? (
@@ -611,7 +619,7 @@ export function CourseDetailPage() {
                 ) : university?.admissionsOverview.applicationDeadline ? (
                   <span>{university.admissionsOverview.applicationDeadline}</span>
                 ) : (
-                  <NoData>Not recorded</NoData>
+                  <NoData>No checked deadline recorded — see the official page</NoData>
                 )}
               </DataRow>
               <DataRow label="Other UCAS codes">
@@ -646,11 +654,13 @@ export function CourseDetailPage() {
                 <InfoTooltip term="verification-status" />
               </span>
             </SectionTitle>
+            {/*
+              One provenance area: what the record says about itself (status,
+              date checked, the page it was read from), how we know the course
+              exists, and — last — the way to tell us it is wrong. Reporting is a
+              trust action, so it lives with the evidence rather than on its own.
+            */}
             <SourceBadge provenance={course.provenance} applicationYear={course.applicationYear} />
-            <p className="mt-3 text-xs leading-relaxed text-ink-muted">
-              Requirements are recorded per application cycle. Records from other years are stored
-              separately and are never presented as confirmed requirements for this one.
-            </p>
             {course.provenance.identityNote ? (
               <details className="mt-3 rounded border border-slate-200 bg-slate-50/60 px-2.5 py-1.5">
                 <summary className="cursor-pointer text-xs font-medium text-navy-700">
@@ -661,7 +671,14 @@ export function CourseDetailPage() {
                 </p>
               </details>
             ) : null}
-            <ReportIssue course={course} university={university} />
+            <p className="mt-3 text-xs leading-relaxed text-ink-muted">
+              Requirements are recorded per application cycle. Records from other years are stored
+              separately and are never presented as confirmed requirements for this one.
+            </p>
+            <div className="mt-3 border-t border-slate-200 pt-3" data-testid="course-report-issue">
+              {/* Keyed so the panel resets when moving to another course. */}
+              <ReportIssue key={course.id} course={course} university={university} />
+            </div>
           </Card>
           <StudentProfilePanel />
         </aside>

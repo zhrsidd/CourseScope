@@ -35,7 +35,13 @@ import {
 import { batch7ManchesterCourses } from './courses.real.batch7.manchester';
 import { shells2028 } from './courses.2028-shells';
 
-export { universities, universityById } from './universities';
+export {
+  universities,
+  universityById,
+  allUniversities,
+  publicUniversity,
+  HAS_PUBLIC_RANKINGS,
+} from './universities';
 export { PRIORITY_UNIVERSITY_IDS } from './courses.awaiting';
 export { batch1Courses } from './courses.real.batch1';
 export { batch2ImperialCourses } from './courses.real.batch2.imperial';
@@ -301,3 +307,10 @@ export const hasVerifiedData = courses.some(
  */
 export const CATALOGUE_DISCLAIMER =
   'An independent research tool, not affiliated with any university or with UCAS. Entry requirements are read from universities’ own pages and are tied to a single entry year. Meeting them does not guarantee an offer — interviews, admissions tests and competition for places all apply. Always confirm the final details with the university before you apply.';
+
+export {
+  subjectGuidanceFor,
+  SUBJECT_GUIDANCE_BY_UNIVERSITY,
+  UCL_A_LEVEL_SUBJECT_GUIDANCE,
+  type UniversitySubjectGuidance,
+} from './university-subject-guidance';

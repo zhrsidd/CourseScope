@@ -130,6 +130,7 @@ export function UniversityDetailPage() {
                           course={c}
                           university={universityById[c.universityId]}
                           eligibility={eligibility[c.id]}
+                          hideUniversity
                         />
                       ))}
                     </div>
@@ -145,6 +146,7 @@ export function UniversityDetailPage() {
                           course={c}
                           university={universityById[c.universityId]}
                           eligibility={eligibility[c.id]}
+                          hideUniversity
                         />
                       ))}
                     </div>
@@ -168,11 +170,11 @@ export function UniversityDetailPage() {
             </ul>
           </Card>
 
-          <Card className="p-4">
-            <SectionTitle>Rankings</SectionTitle>
-            {university.rankings.length === 0 ? (
-              <NoData>No ranking data entered</NoData>
-            ) : (
+          {/* Only verified rankings are served (src/data/universities.ts); with
+              none, the card is omitted rather than shown empty. */}
+          {university.rankings.length === 0 ? null : (
+            <Card className="p-4">
+              <SectionTitle>Rankings</SectionTitle>
               <div>
                 {university.rankings.map((r) => (
                   <RankingRow key={r.id} ranking={r} />
@@ -182,13 +184,24 @@ export function UniversityDetailPage() {
                   verification status. They are never averaged or combined.
                 </p>
               </div>
-            )}
-          </Card>
+            </Card>
+          )}
 
           <Card className="p-4">
             <SectionTitle>Application deadlines</SectionTitle>
             {deadlines.length === 0 ? (
-              <NoData>No deadlines recorded for {profile.applicationYear} entry</NoData>
+              <p className="text-sm text-ink-muted">
+                No checked deadline is recorded for {profile.applicationYear} entry. Check the{' '}
+                <a
+                  href={university.admissionsUrl ?? university.website}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="link"
+                >
+                  university’s admissions pages
+                </a>{' '}
+                or UCAS.
+              </p>
             ) : (
               <ul className="space-y-2">
                 {deadlines.map((d) => (
@@ -214,6 +227,9 @@ export function UniversityDetailPage() {
             </p>
           </Card>
 
+          {/* The university-wide overview is shown only once it has been checked.
+              Until then each course's own record is the authority. */}
+          {overview.provenance.verificationStatus !== 'verified' ? null : (
           <Card className="p-4">
             <SectionTitle>Admissions overview</SectionTitle>
             <p className="mb-3 rounded border border-navy-100 bg-navy-50/60 p-2 text-xs leading-relaxed text-navy-900">
@@ -291,6 +307,7 @@ export function UniversityDetailPage() {
               <span>Last verified: {formatDate(overview.provenance.lastVerified)}</span>
             </div>
           </Card>
+          )}
         </aside>
       </div>
     </div>

@@ -3,7 +3,6 @@ import type { Course, University } from '@/types';
 import { pluralise } from '@/lib/format';
 import { useApp } from '@/state/AppContext';
 import { RankingBadge } from './RankingBadge';
-import { VerificationBadge } from './SourceBadge';
 import { IconHeart, IconPin } from './ui/icons';
 import { Badge, Card, cx } from './ui/primitives';
 
@@ -61,11 +60,13 @@ export function UniversityCard({
         </button>
       </div>
 
-      <div className="mt-4 grid grid-cols-3 gap-2 rounded-md border border-slate-200 bg-slate-50/60 p-2.5">
-        <RankingBadge university={university} category="overall" showProvider={false} />
-        <RankingBadge university={university} category="physics-astronomy" showProvider={false} />
-        <RankingBadge university={university} category="engineering-technology" showProvider={false} />
-      </div>
+      {university.rankings.length > 0 ? (
+        <div className="mt-4 grid grid-cols-3 gap-2 rounded-md border border-slate-200 bg-slate-50/60 p-2.5">
+          <RankingBadge university={university} category="overall" showProvider={false} />
+          <RankingBadge university={university} category="physics-astronomy" showProvider={false} />
+          <RankingBadge university={university} category="engineering-technology" showProvider={false} />
+        </div>
+      ) : null}
 
       <div className="mt-3">
         <div className="label mb-1.5">Relevant departments</div>
@@ -94,9 +95,6 @@ export function UniversityCard({
         >
           View courses
         </Link>
-        <span className="ml-auto">
-          <VerificationBadge status={university.verificationStatus} />
-        </span>
       </div>
     </Card>
   );

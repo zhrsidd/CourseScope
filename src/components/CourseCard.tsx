@@ -24,6 +24,7 @@ export function CourseCard({
   university,
   eligibility,
   matchedRoutes = [],
+  hideUniversity = false,
 }: {
   course: Course;
   university: University | undefined;
@@ -34,6 +35,8 @@ export function CourseCard({
    * matched rather than pretending a second application exists.
    */
   matchedRoutes?: string[];
+  /** On a university's own page the university name on every card is noise. */
+  hideUniversity?: boolean;
 }) {
   const { profile, savedCourseIds, toggleSavedCourse, compareIds, toggleCompare } = useApp();
   const entries = filledGrades(profile);
@@ -45,17 +48,22 @@ export function CourseCard({
   const awaiting = course.provenance.verificationStatus === 'awaiting-data';
   const fmAdvisory = (ADVISORY_FURTHER_MATHS as readonly string[]).includes(course.furtherMathematics);
   const fmConditional = course.furtherMathematics === 'conditional';
+  const offerLabel = typicalOfferLabel(course);
+  /** A plain grade profile — short enough to sit beside the label. */
+  const compactOffer = offerLabel.length <= 8;
 
   return (
     <Card as="article" className="flex h-full flex-col p-4">
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
-          <Link
-            to={`/university/${university?.slug ?? course.universityId}`}
-            className="text-xs font-medium text-navy-700 hover:underline"
-          >
-            {university?.name ?? 'Unknown university'}
-          </Link>
+          {hideUniversity ? null : (
+            <Link
+              to={`/university/${university?.slug ?? course.universityId}`}
+              className="text-xs font-medium text-navy-700 hover:underline"
+            >
+              {university?.name ?? 'Unknown university'}
+            </Link>
+          )}
           <h3 className="mt-0.5 text-[15px] font-semibold leading-snug text-navy-950">
             <Link to={`/course/${course.id}`} className="hover:underline">
               {course.name}
@@ -91,7 +99,18 @@ export function CourseCard({
       ) : null}
 
       <div className="mt-3 space-y-2.5">
-        <div className="flex items-center justify-between gap-3 rounded-md border border-slate-200 bg-slate-50/60 px-3 py-2">
+        {/*
+          A grade profile ("A*AA") sits large on the right. Anything longer — a
+          range such as "from AAA to ABB in one set of exams", or a status line —
+          wraps on its own line under the label instead: as a non-shrinking
+          right-hand column it used to paint straight over the label.
+        */}
+        <div
+          className={cx(
+            'rounded-md border border-slate-200 bg-slate-50/60 px-3 py-2',
+            compactOffer && 'flex items-center justify-between gap-3',
+          )}
+        >
           <div className="min-w-0">
             <div className="label flex items-center gap-1">
               Typical A-Level offer
@@ -105,13 +124,18 @@ export function CourseCard({
           </div>
           <div
             className={cx(
-              'shrink-0 text-right font-semibold tabular-nums text-navy-950',
+              'tabular-nums',
+              compactOffer ? 'shrink-0 text-right' : 'mt-1 break-words',
+              // A status line ("2028 requirements not yet published") is not a
+              // grade and should not look like one: smaller, amber, not bold.
               notPublished || awaiting || !offer
                 ? 'text-[12px] font-medium text-amber-700'
-                : 'text-xl',
+                : compactOffer
+                  ? 'text-xl font-semibold text-navy-950'
+                  : 'text-[15px] font-semibold leading-snug text-navy-950',
             )}
           >
-            {typicalOfferLabel(course)}
+            {offerLabel}
           </div>
         </div>
 
@@ -150,16 +174,16 @@ export function CourseCard({
         </div>
       </div>
 
-      <dl className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2 text-xs sm:grid-cols-3">
+      <dl className="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-xs">
         <div>
-          <dt className="label flex items-center gap-1">
+          <dt className="label flex items-center gap-1 whitespace-nowrap">
             Further Maths
             <InfoTooltip term="further-maths" />
           </dt>
           <dd className="mt-0.5 text-ink">{FURTHER_MATHS_LABEL[course.furtherMathematics]}</dd>
         </div>
         <div>
-          <dt className="label flex items-center gap-1">
+          <dt className="label flex items-center gap-1 whitespace-nowrap">
             Admissions test
             <InfoTooltip term="admissions-test" />
           </dt>
@@ -193,7 +217,16 @@ export function CourseCard({
         <p className="mt-3 text-xs leading-relaxed text-ink-muted">{eligibility.summary}</p>
       ) : null}
 
+      {/*
+        Trust badges get their own line. Sharing a wrapping row with the buttons
+        made them land on a line of their own on narrow cards only, so two cards
+        side by side looked different for no reason.
+      */}
       <div className="mt-auto flex flex-wrap items-center gap-2 pt-4">
+        <VerificationBadge status={course.provenance.verificationStatus} provenance={course.provenance} />
+        {course.interview === 'yes' ? <Badge tone="navy">Interview</Badge> : null}
+      </div>
+      <div className="mt-2.5 flex flex-wrap items-center gap-2">
         <Link to={`/course/${course.id}`} className="btn-primary h-8 px-3 text-xs">
           View course
         </Link>
@@ -216,10 +249,6 @@ export function CourseCard({
           <IconHeart width={13} height={13} filled={saved} />
           {saved ? 'Saved' : 'Save'}
         </button>
-        <span className="ml-auto flex items-center gap-2">
-          {course.interview === 'yes' ? <Badge tone="navy">Interview</Badge> : null}
-          <VerificationBadge status={course.provenance.verificationStatus} provenance={course.provenance} />
-        </span>
       </div>
     </Card>
   );

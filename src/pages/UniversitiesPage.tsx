@@ -33,7 +33,7 @@ export function UniversitiesPage() {
       <PageHeader
         eyebrow="Catalogue"
         title="UK universities"
-        description="Universities in this catalogue offering undergraduate Physics or Engineering courses. Ranking positions are shown with their provider, year and category — figures from different providers are never combined."
+        description="Universities in this catalogue offering undergraduate Physics or Engineering courses."
         actions={
           <>
             <div className="relative">
@@ -55,7 +55,11 @@ export function UniversitiesPage() {
               label="Sort by"
               value={sort}
               onChange={setSort}
-              options={UNIVERSITY_SORT_OPTIONS}
+              options={
+                universities.some((u) => u.rankings.length > 0)
+                  ? UNIVERSITY_SORT_OPTIONS
+                  : UNIVERSITY_SORT_OPTIONS.filter((o) => !o.id.startsWith('rank-'))
+              }
             />
           </>
         }

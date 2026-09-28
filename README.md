@@ -27,9 +27,9 @@ admitted", and no admission probability anywhere in the codebase.
 | Verified | 563 |
 | Awaiting data | 6 — all waiting on a university to publish its 2027 cycle |
 | Universities | 22, **all** with verified data |
-| Assertions | 794 passing |
+| Assertions | 822 passing |
 | Production validation | 0 errors, 0 duplicates |
-| Browser QA | 129 checks passing, 0 page errors |
+| Browser QA | 165 checks passing, 0 page errors |
 
 ## Running it
 
@@ -47,14 +47,14 @@ Run these four, in order, from a clean checkout. All must pass before tagging.
 ```bash
 npm ci                 # never `npm install` for a release — use the lockfile
 npm run typecheck      # tsc --noEmit, strict, noUnusedLocals
-npm run check          # 794 engine, parser, importer, identity, validation and brand assertions
+npm run check          # 822 engine, parser, importer, identity, validation, brand and polish assertions
 npm run build          # typechecks again, then builds to dist/
 ```
 
 Then, with `npm run preview` running in another shell:
 
 ```bash
-npm run qa             # 129 browser checks: fresh state, legacy storage, mobile, brand,
+npm run qa             # 165 browser checks: fresh state, legacy storage, mobile, brand, feedback,
                        # accessibility, empty states, cycles, source links, performance
 ```
 
@@ -140,8 +140,8 @@ src/
                     Shortlist, About, Data manager
 data/               universities.json, courses.json, rankings.json, tests.json + SCHEMA.md
 scripts/            export-data.ts
-engine-check.ts     794 assertions over the engine, parser, importer, validation and brand
-smoke.v09.mjs       The supported QA suite — 129 release checks in a real browser
+engine-check.ts     822 assertions over the engine, parser, importer, validation and brand
+smoke.v09.mjs       The supported QA suite — 165 release checks in a real browser
 smoke.mjs,          Historical per-batch regression walkthroughs, kept as a record of
 smoke.batch*.mjs,     what each batch was checked against. Still runnable, but
 smoke.v08.mjs         superseded by smoke.v09.mjs.
@@ -356,13 +356,13 @@ a data file.
 
 ```bash
 npm run typecheck                   # TypeScript, strict, no emit
-npm run check                       # 794 assertions: engine, parser, importer, validation, brand
+npm run check                       # 822 assertions: engine, parser, importer, validation, brand, polish
 npm run release:verify              # all of the above, then a production build
 
 # Browser QA (needs Playwright: npm i -D playwright && npx playwright install chromium)
 npm run build
 npm run preview                     # serves the built app on http://127.0.0.1:4321
-npm run qa                          # 129 release checks against that preview
+npm run qa                          # 165 release checks against that preview
 ```
 
 `npm run qa` is the suite to run. The `smoke.batch*.mjs` scripts are the historical

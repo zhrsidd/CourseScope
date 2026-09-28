@@ -45,6 +45,9 @@ export function SearchPage() {
     hasVerifiedData,
   } = useApp();
 
+  // Ranking sorts are offered only when verified rankings exist to sort by.
+  const hasRankings = universities.some((u) => u.rankings.length > 0);
+
   const [params, setParams] = useSearchParams();
   const [filters, setFilters] = useState<FilterState>(() => {
     const base = defaultFilters(false);
@@ -210,7 +213,7 @@ export function SearchPage() {
               label="Sort by"
               value={filters.sort}
               onChange={(sort) => setFilters((f) => ({ ...f, sort }))}
-              options={SORT_OPTIONS}
+              options={hasRankings ? SORT_OPTIONS : SORT_OPTIONS.filter((o) => !o.id.startsWith('rank-'))}
             />
           </div>
 

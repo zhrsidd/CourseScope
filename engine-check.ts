@@ -38,6 +38,7 @@ import {
   courseById,
   testFixtureCourses,
   universities,
+  allUniversities,
   FIXTURE_IDS,
   LEEDS_NON_2027_PAGES,
 } from '@/data';
@@ -91,6 +92,11 @@ import {
   MARK_RING_PATH,
 } from '@/lib/brand';
 import { pageTitle } from '@/lib/page-title';
+import {
+  SUBJECT_GUIDANCE_BY_UNIVERSITY,
+  UCL_A_LEVEL_SUBJECT_GUIDANCE,
+  subjectGuidanceFor,
+} from '@/data';
 import type { ApplicationDeadline, Ranking, StudentProfile, University } from '@/types';
 
 const profile = (
@@ -1180,8 +1186,14 @@ check(
 );
 
 /* --- Deadlines from the batch --- */
-const oxford = universities.find((u) => u.id === 'oxford')!;
-const imperial = universities.find((u) => u.id === 'imperial')!;
+/*
+ * These assert the SEEDED deadline model, so they read `allUniversities`. From
+ * v1.0.0 the served `universities` list carries only verified university-level
+ * data (section 28), which removes the undated placeholder entries these
+ * checks deliberately look at.
+ */
+const oxford = allUniversities.find((u) => u.id === 'oxford')!;
+const imperial = allUniversities.find((u) => u.id === 'imperial')!;
 check(
   'Oxford has the supplied 2027 application deadline',
   oxford.applicationDeadlines.find((d) => d.applicationYear === '2027' && d.appliesTo.kind === 'all-courses')?.date,
@@ -5872,6 +5884,93 @@ check(
     JSON.stringify(brandVerdicts, Object.keys(brandVerdicts).sort()),
     JSON.stringify({ 'does-not-meet': 47, 'insufficient-information': 31, meets: 416, 'review-required': 75 }),
   );
+}
+
+
+/* ================================================================== */
+/* 28. v1.0.0 polish — UCL subject guidance, feedback, public data     */
+/* ================================================================== */
+{
+  const fs = await import('node:fs');
+  const { createHash } = await import('node:crypto');
+  const read = (f: string) => fs.readFileSync(f, 'utf8');
+
+  /* 28a. UCL guidance: one central source, official, dated, separate */
+  const g = UCL_A_LEVEL_SUBJECT_GUIDANCE;
+  check('UCL guidance is registered centrally for UCL', subjectGuidanceFor('ucl') === g, true);
+  check('  …and for no other university', Object.keys(SUBJECT_GUIDANCE_BY_UNIVERSITY).join(','), 'ucl');
+  check('  …sourced from an official ucl.ac.uk page', /^https:\/\/www\.ucl\.ac\.uk\//.test(g.source.url), true);
+  check('  …with a last-verified date', g.source.lastVerified, '2026-09-28');
+  check('  …three published groups, 88 subjects',
+    `${g.groups.length}/${g.groups.reduce((n, x) => n + x.subjects.length, 0)}`, '3/88');
+  check('  …which include the subjects UCL physics and engineering courses require',
+    ['Mathematics', 'Physics', 'Further Mathematics', 'Chemistry'].every((x) => g.groups.some((gr) => gr.subjects.includes(x))), true);
+  check('  …and name the three subjects UCL does not accept',
+    g.notAccepted?.subjects.join('|'), 'General Studies|Critical Thinking|Global Perspectives and Research');
+  check('  …with no subject listed twice', (() => {
+    const all = g.groups.flatMap((x) => x.subjects);
+    return all.length === new Set(all).size;
+  })(), true);
+  check('The subject list is maintained in ONE file, not copied into course records',
+    (() => {
+      const walk = (d: string): string[] =>
+        fs.readdirSync(d, { withFileTypes: true }).flatMap((e) =>
+          e.isDirectory() ? walk(`${d}/${e.name}`) : /\.tsx?$/.test(e.name) ? [`${d}/${e.name}`] : [],
+        );
+      // "Moving Image Art (CCEA specification)" only exists on UCL's policy page
+      return walk('src').filter((f) => read(f).includes('Moving Image Art (CCEA specification)')).join(',');
+    })(),
+    'src/data/university-subject-guidance.ts',
+  );
+  check('The eligibility engine never reads the guidance',
+    ['src/lib/eligibility.ts', 'src/lib/explain.ts', 'src/lib/filters.ts'].some((f) => /subject-guidance|subjectGuidanceFor/.test(read(f))),
+    false);
+  check('UCL course requirements are byte-for-byte what they were before the guidance was added',
+    createHash('sha256')
+      .update(JSON.stringify(courses.filter((c) => c.universityId === 'ucl').map((c) => ({
+        id: c.id, offers: c.offers, fm: c.furtherMathematics, test: c.admissionsTest,
+      }))))
+      .digest('hex'),
+    '71ed1a2075456dd5e20ed04329ae5fbcb456667e7114e337c8efe9bf935b018b');
+  check('  …and so is every course’s requirement set across the catalogue',
+    createHash('sha256').update(JSON.stringify(courses.map((c) => ({ id: c.id, offers: c.offers })))).digest('hex'),
+    'fdfbf536b142b7382aa264b662e935c4fec56376af3a6c6c26a8464036cd6802');
+  const uclPhysics = courses.find((c) => c.id === 'ucl-physics-bsc--2027')!;
+  check('UCL Physics still requires Mathematics and Physics — the general list does not dilute it',
+    uclPhysics.offers[0].subjectRequirements.filter((r) => r.required).map((r) => r.subject).sort().join('+'),
+    'Mathematics+Physics');
+
+  /* 28b. Feedback: real destination, three routes, no fake submission */
+  const reportSrc = read('src/components/ReportIssue.tsx');
+  check('Feedback: the form URL comes only from VITE_FEEDBACK_URL', /env\.VITE_FEEDBACK_URL/.test(reportSrc) && !/typeform\.com/.test(reportSrc), true);
+  check('  …and the production config sets it', /^VITE_FEEDBACK_URL=https:\/\/form\.typeform\.com\//m.test(read('.env.production')), true);
+  check('  …and nothing in the report flow submits a form or posts data',
+    /<form\b|type="submit"|fetch\(|XMLHttpRequest|sendBeacon/.test(reportSrc), false);
+  check('  …and the footer links to it on every page', /<FeedbackLink\b/.test(read('src/components/Footer.tsx')), true);
+  check('  …and so does the methodology page', /<FeedbackLink\b/.test(read('src/pages/AboutPage.tsx')), true);
+  check('  …and the course page puts it in the provenance panel',
+    /data-testid="course-report-issue"[\s\S]{0,120}<ReportIssue/.test(read('src/pages/CourseDetailPage.tsx')), true);
+
+  /* 28c. University-level placeholders are never served */
+  check('Served universities carry no unverified rankings',
+    universities.flatMap((u) => u.rankings).filter((r) => r.verificationStatus !== 'verified').length, 0);
+  check('  …no unverified deadlines',
+    universities.flatMap((u) => u.applicationDeadlines).filter((d) => d.verificationStatus !== 'verified').length, 0);
+  check('  …and no “(demo)” overview text',
+    universities.filter((u) => JSON.stringify(u.admissionsOverview).includes('(demo)')).length, 0);
+  check('  …while every seed is still kept, unpublished, for when it is verified',
+    `${allUniversities.flatMap((u) => u.rankings).length}/${allUniversities.flatMap((u) => u.applicationDeadlines).length}`, '67/49');
+  check('  …and the three verified deadlines are still shown',
+    universities.flatMap((u) => u.applicationDeadlines).length, 3);
+  check('  …with the same 22 universities served', universities.length, 22);
+
+  /* 28d. Polish changed nothing a student relies on */
+  check('Polish pass: catalogue still 1,132 applications, 563 verified',
+    `${courses.length}/${courses.filter((c) => c.provenance.verificationStatus === 'verified').length}`, '1132/563');
+  check('  …search still returns Physics 206, Engineering 357, Astrophysics 40',
+    `${search('Physics').length}/${search('Engineering').length}/${search('Astrophysics').length}`, '206/357/40');
+  check('  …University filter still narrows search as before (UCL: 21)',
+    search('', '2027', { universityIds: ['ucl'] }).length, 21);
 }
 
 console.log(failures === 0 ? '\nAll checks passed.' : `\n${failures} check(s) failed.`);

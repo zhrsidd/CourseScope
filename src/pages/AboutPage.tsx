@@ -4,8 +4,9 @@ import { CATALOGUE_DISCLAIMER } from '@/data';
 import { Card, PageHeader, SectionTitle } from '@/components/ui/primitives';
 import { VerificationBadge } from '@/components/SourceBadge';
 import { useApp } from '@/state/AppContext';
-import { APP_VERSION, RELEASES } from '@/data/version';
-import { BRAND_POSITIONING } from '@/lib/brand';
+import { APP_VERSION, IS_PRE_RELEASE, RELEASES } from '@/data/version';
+import { BRAND_NAME, BRAND_POSITIONING } from '@/lib/brand';
+import { FeedbackLink } from '@/components/ReportIssue';
 
 export function AboutPage() {
   usePageTitle('About the data');
@@ -29,9 +30,8 @@ export function AboutPage() {
         <Card className="p-4">
           <SectionTitle>Where the catalogue stands</SectionTitle>
           <p className="mb-3 text-sm leading-relaxed text-ink-muted">
-            {courses.length} course records across {universities.length} universities. University names,
-            cities, web addresses and course titles are real. Admissions information is only as good as
-            its verification status:
+            {courses.length} course records across {universities.length} universities. Admissions
+            information is only as good as its verification status:
           </p>
           <ul className="space-y-2">
             {VERIFICATION_STATUSES.filter((s) => counts[s] > 0).map((s) => (
@@ -47,6 +47,13 @@ export function AboutPage() {
             behind the fact that it exists — a university course page, or that university’s own
             course listing. That is a separate question from whether its entry requirements have
             been checked, and both are shown.
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-ink-muted">
+            <strong>University rankings, and university-wide admissions summaries, are not shown.</strong>{' '}
+            Neither has yet been checked against its publisher, and a figure nobody has verified does
+            not belong next to ones that have been. Each course's own record is the authority for its
+            requirements. Application deadlines are shown only where one has been read from the
+            university's own page.
           </p>
 
           <div className="mt-4 rounded border border-slate-200 bg-slate-50/60 p-3">
@@ -279,12 +286,21 @@ export function AboutPage() {
         <Card className="p-4">
           <SectionTitle>What changed recently</SectionTitle>
           <p className="mb-3 text-xs text-ink-muted">
-            This catalogue is still being completed. It is published as{' '}
-            <strong>{APP_VERSION}</strong> — not a finished release.
+            {IS_PRE_RELEASE ? (
+              <>
+                This catalogue is still being completed. It is published as{' '}
+                <strong>{APP_VERSION}</strong> — not a finished release.
+              </>
+            ) : (
+              <>
+                You are using <strong>{APP_VERSION}</strong>.
+              </>
+            )}
           </p>
           {RELEASES.map((r) => (
             <div key={r.version} className="border-t border-slate-100 pt-3 first:border-0 first:pt-0">
               <p className="text-sm font-semibold text-navy-950">
+                {r.version.startsWith('v1') ? `${BRAND_NAME} ` : ''}
                 {r.version} — {r.headline}{' '}
                 <span className="font-normal text-ink-faint">({r.date})</span>
               </p>
@@ -295,6 +311,17 @@ export function AboutPage() {
               </ul>
             </div>
           ))}
+        </Card>
+
+        <Card className="p-4">
+          <SectionTitle>Found an error?</SectionTitle>
+          <p className="text-sm leading-relaxed text-ink-muted">
+            If something here does not match what a university publishes — a grade, a subject, a
+            UCAS code, a broken link, a course that has closed or one that is missing — please tell
+            us. Every course page has a <strong>Found an error? Report it</strong> button in its
+            source panel that fills in the course details for you. For anything else:
+          </p>
+          <FeedbackLink className="btn-secondary mt-3 h-8 px-3 text-xs">Report an issue</FeedbackLink>
         </Card>
 
         <Card className="p-4">

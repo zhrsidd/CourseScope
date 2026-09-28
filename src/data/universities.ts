@@ -790,8 +790,68 @@ const SEEDS: UniversitySeed[] = [
   },
 ];
 
-export const universities: University[] = SEEDS.map(makeUniversity);
+/**
+ * Every university exactly as seeded, INCLUDING placeholder (demo) rankings,
+ * application deadlines and admissions overviews. Used by the assertions and
+ * nowhere in the public UI.
+ */
+export const allUniversities: University[] = SEEDS.map(makeUniversity);
+
+/*
+ * ---------------------------------------------------------------------------
+ *  v1 PUBLIC-DATA POLICY FOR UNIVERSITY-LEVEL FIELDS
+ * ---------------------------------------------------------------------------
+ *
+ *  The v0.8 public-data policy covered courses. It never reached the three
+ *  university-level datasets, and the v1 polish sweep found all three still
+ *  seeded from the original demo: 67 of 67 rankings, 46 of 49 application
+ *  deadlines and 22 of 22 admissions overviews were placeholders, shown on
+ *  public pages under a "Sample data" badge — "A*A*A (demo)" as Imperial's
+ *  typical offer, and QS positions nobody had read from QS. A placeholder with
+ *  a warning label is still a placeholder on a public research tool.
+ *
+ *  So the served list keeps only VERIFIED university-level data. Nothing is
+ *  deleted: the seeds stay in `allUniversities`, and anything verified later
+ *  appears on its own. The UI hides a section when it has nothing verified to
+ *  show (rankings, the university-wide overview) or says plainly that nothing
+ *  is recorded (deadlines), rather than rendering an empty frame.
+ *
+ *  Course-level admissions data is untouched by this — it has its own policy.
+ */
+const PLACEHOLDER_OVERVIEW = (u: University): University['admissionsOverview'] => ({
+  typicalOffer: null,
+  requiredSubjectsNote: null,
+  furtherMathematics: 'unknown',
+  furtherMathematicsNote: null,
+  gcseRequirements: null,
+  englishLanguageRequirements: null,
+  admissionsTestsNote: null,
+  interviews: 'not-stated',
+  interviewsNote: null,
+  internationalNotes: null,
+  contextualOffer: { availability: 'unknown', details: null },
+  applicationDeadline: null,
+  provenance: u.admissionsOverview.provenance,
+});
+
+export function publicUniversity(u: University): University {
+  return {
+    ...u,
+    rankings: u.rankings.filter((r) => r.verificationStatus === 'verified'),
+    applicationDeadlines: u.applicationDeadlines.filter((d) => d.verificationStatus === 'verified'),
+    admissionsOverview:
+      u.admissionsOverview.provenance.verificationStatus === 'verified'
+        ? u.admissionsOverview
+        : PLACEHOLDER_OVERVIEW(u),
+  };
+}
+
+/** The universities the public site serves. See the policy above. */
+export const universities: University[] = allUniversities.map(publicUniversity);
 
 export const universityById: Record<string, University> = Object.fromEntries(
   universities.map((u) => [u.id, u]),
 );
+
+/** True when the public site has any verified ranking to show at all. */
+export const HAS_PUBLIC_RANKINGS: boolean = universities.some((u) => u.rankings.length > 0);

@@ -268,7 +268,9 @@ const ROWS: Row[] = [
         <div className="text-[11px] font-medium uppercase tracking-wide text-ink-faint">
           Not used in headline eligibility
         </div>
-        {c.contextualOffer.details ? (
+        {/* contextualLabel already prints the details when the offer exists;
+            repeat them only where the label is a status line instead. */}
+        {c.contextualOffer.details && contextualLabel(c.contextualOffer) !== c.contextualOffer.details ? (
           <div className="text-xs leading-relaxed text-ink-muted">{c.contextualOffer.details}</div>
         ) : null}
       </div>
@@ -420,10 +422,14 @@ export function ComparisonTable({ courses }: { courses: Course[] }) {
     );
     return keys.length > 1 && new Set(keys).size > 1;
   };
+  // Ranking rows appear only when a compared university has a verified ranking
+  // to show; the public data serves none that are unverified.
+  const hasRankings = courses.some((c) => (universityById[c.universityId]?.rankings.length ?? 0) > 0);
+  const rows = hasRankings ? ROWS : ROWS.filter((row) => !row.id.startsWith('rank-'));
   const visibleRows = differencesOnly
-    ? ROWS.filter((row) => row.alwaysShow || rowDiffers(row))
-    : ROWS;
-  const hiddenCount = ROWS.length - visibleRows.length;
+    ? rows.filter((row) => row.alwaysShow || rowDiffers(row))
+    : rows;
+  const hiddenCount = rows.length - visibleRows.length;
 
   return (
     <div className="space-y-3">
@@ -439,8 +445,8 @@ export function ComparisonTable({ courses }: { courses: Course[] }) {
         </label>
         <p className="text-xs text-ink-muted" role="status" aria-live="polite">
           {differencesOnly
-            ? `${visibleRows.length} of ${ROWS.length} rows shown — ${hiddenCount} identical across these courses.`
-            : `All ${ROWS.length} rows shown.`}
+            ? `${visibleRows.length} of ${rows.length} rows shown — ${hiddenCount} identical across these courses.`
+            : `All ${rows.length} rows shown.`}
         </p>
       </div>
       <p className="text-xs leading-relaxed text-ink-muted">

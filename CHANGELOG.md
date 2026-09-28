@@ -28,7 +28,11 @@ themselves publish.
 - **2027/2028 separation.** No requirement from one cycle is ever shown under another.
 - **Source provenance.** Each checked course links to the official page it was read from, with the date it
   was checked and a visible trust status.
-- **Report an issue** on any course: opens the project's feedback form with the report ready to paste.
+- **Report an issue** from three places: a "Found an error? Report it" action in every course's
+  source panel (opens the feedback form with that course's details filled in), the footer of every
+  page, and the methodology page.
+- **UCL A-Level subject guidance** on every UCL course page: UCL's own list of preferred A-Level
+  subjects, read from ucl.ac.uk and kept separate from each course's own requirements.
 
 Six courses are listed without requirements because their universities have not yet published
 them for 2027.
@@ -40,8 +44,13 @@ them for 2027.
 - New name and mark: CourseScope — an open ring with a focal point. Favicon, header, footer, tab
   titles, metadata, social preview and methodology page all use it.
 - Production configuration committed in `.env.production`: live site URL and feedback form.
-- 794 assertions (up from 768) including brand and "branding changed nothing" regression checks;
-  129 browser checks (up from 109).
+- University rankings, and university-wide admissions summaries, are not shown: none has been
+  checked against its publisher yet. Application deadlines appear only where read from the
+  university's own page. (The placeholder values are kept in the source, unpublished.)
+- Presentation fixes: long offer ranges no longer overlap their label on course cards; trust
+  badges sit on their own line; the eligibility breakdown stacks on phones; a compact footer.
+- 822 assertions (up from 768) including brand, polish and "changed nothing" regression checks;
+  165 browser checks (up from 109).
 
 ## v0.9.0 — Release candidate (2026-09-28)
 

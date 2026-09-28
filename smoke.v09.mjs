@@ -402,7 +402,7 @@ const disclosureKb = await e.evaluate(() => {
 t('the Why? disclosure is keyboard focusable', disclosureKb === 'ok', disclosureKb);
 await goto(e, '/course/qmul-physics-bsc--2027');
 const reportKb = await e.evaluate(() => {
-  const b = [...document.querySelectorAll('button')].find((x) => /Report an issue/i.test(x.textContent ?? ''));
+  const b = [...document.querySelectorAll('button')].find((x) => /Report it|Report an issue/i.test(x.textContent ?? ''));
   if (!b) return 'absent';
   b.focus();
   return document.activeElement === b ? 'ok' : 'not-focusable';
@@ -449,13 +449,28 @@ for (const [w, h, label] of [[390, 844, 'phone 390px'], [820, 1180, 'tablet 820p
   await goto(page, '/course/qmul-materials-science-and-engineering-beng--2027');
   t('  long requirement text is present, not clipped away',
     /at least two A-Level subjects/i.test(await body(page)));
-  const reportBtn = page.getByRole('button', { name: /Report an issue/ }).first();
+  const reportBtn = page.getByRole('button', { name: /Report it|Report an issue/ }).first();
   if (await reportBtn.count()) {
     await reportBtn.click();
     await page.waitForTimeout(400);
     t('  report-issue panel opens', (await page.locator('textarea[readonly]').count()) > 0);
     t('  …without overflow', (await overflow(page)) <= 1, `${await overflow(page)}px`);
   }
+  /* v1 polish: UCL guidance, provenance panel and footer at this width */
+  await goto(page, '/course/ucl-physics-bsc--2027');
+  const gd = page.getByTestId('subject-guidance');
+  if (await gd.count()) {
+    await gd.locator('summary').click();
+    await page.waitForTimeout(250);
+    t('  UCL subject list expanded without overflow', (await overflow(page)) <= 1, `${await overflow(page)}px`);
+  }
+  const rb = page.getByTestId('course-report-issue').getByRole('button', { name: /Report it/ });
+  const rbox = await rb.boundingBox();
+  const vw = page.viewportSize().width;
+  t('  report action fully visible, not clipped', Boolean(rbox) && rbox.x >= 0 && rbox.x + rbox.width <= vw + 1,
+    rbox ? `${Math.round(rbox.x)}–${Math.round(rbox.x + rbox.width)} of ${vw}` : 'missing');
+  const fbox = await page.locator('footer [data-feedback-link]').boundingBox();
+  t('  footer report link visible', Boolean(fbox) && fbox.x + fbox.width <= vw + 1);
   /* the v0.8 tooltip regression must stay fixed */
   const tipOverflow = await page.evaluate(() => {
     const vw = document.documentElement.clientWidth;
@@ -589,21 +604,104 @@ log('\n20. v1.0.0 — CourseScope BRAND AND PRODUCTION CONFIG');
   t('methodology opens with the CourseScope positioning line',
     /CourseScope is an independent research tool for comparing published UK university entry requirements\./.test(await main(page)));
   t('inner page titles end with the brand', / · CourseScope$/.test(await page.title()), await page.title());
+  /* ---- Feedback: course page (inside the provenance panel) ---- */
   await goto(page, '/course/qmul-physics-bsc--2027');
-  await page.getByRole('button', { name: /Report an issue/ }).first().click();
+  const provenance = page.getByTestId('course-report-issue');
+  t('feedback: the course report action sits in the source and verification panel',
+    (await provenance.count()) === 1 && /Found an error\? Report it/.test(await provenance.innerText()));
+  await provenance.getByRole('button', { name: /Report it/ }).click();
   await page.waitForTimeout(300);
-  const formLink = page.getByRole('link', { name: 'Open the report form' });
-  t('feedback: a real form destination is configured', (await formLink.count()) === 1);
+  const formLink = page.getByRole('link', { name: /Open the report form/ });
+  t('  …and opens a real form destination, not a fake submit', (await formLink.count()) === 1
+    && (await page.locator('main button[type="submit"], main form').count()) === 0);
   const href = (await formLink.getAttribute('href')) ?? '';
-  t('  …pointing at the configured production form', href === prodEnv.VITE_FEEDBACK_URL, href);
+  const [base, frag = ''] = href.split('#');
+  const ctx20 = Object.fromEntries(new URLSearchParams(frag));
+  t('  …at the configured VITE_FEEDBACK_URL', base === prodEnv.VITE_FEEDBACK_URL, base);
+  t('  …carrying the course context as form hidden fields',
+    ctx20.university === 'Queen Mary University of London' && ctx20.record_id === 'qmul-physics-bsc--2027'
+      && ctx20.ucas_code === 'F300' && ctx20.entry_year === '2027' && Boolean(ctx20.award) && Boolean(ctx20.course)
+      && Boolean(ctx20.issue_type) && /#\/course\/qmul-physics-bsc--2027$/.test(ctx20.page ?? ''),
+    JSON.stringify(ctx20).slice(0, 160));
   t('  …opening in a new tab, not replacing the page', (await formLink.getAttribute('target')) === '_blank');
   const reportText = await page.locator('textarea[readonly]').first().inputValue();
-  t('  …with every required field in the report',
+  t('  …with every required field in the prepared report',
     ['Issue type:', 'University:', 'Course:', 'Award:', 'Entry year:', 'UCAS code:', 'Record ID:', 'Page:']
       .every((k) => reportText.includes(k)));
   const types = await page.locator('select[id^="issue-type-"] option').allInnerTexts();
   t('  …and all seven issue types', types.length === 7, types.length);
   t('  …and no copy-only fallback message', !/no reporting address configured/.test(await main(page)));
+  t('  …and the form address is shown for browsers that refuse new tabs',
+    (await page.getByTestId('report-form-address').innerText()) === prodEnv.VITE_FEEDBACK_URL);
+  /* The form host is not reachable from this sandbox, so its response is
+     stubbed: this checks that a new tab opens at the right address. */
+  await page.context().route(`${new URL(prodEnv.VITE_FEEDBACK_URL).origin}/**`,
+    (r) => r.fulfill({ status: 200, contentType: 'text/html', body: '<title>form</title>' }));
+  const [popup] = await Promise.all([
+    page.context().waitForEvent('page', { timeout: 5000 }).catch(() => null),
+    formLink.click(),
+  ]);
+  t('  …and clicking it opens the form in a new tab', Boolean(popup) && popup.url().startsWith(prodEnv.VITE_FEEDBACK_URL),
+    popup ? popup.url().slice(0, 80) : 'no new tab');
+  if (popup) await popup.close();
+
+  /* ---- Feedback: footer, on every page ---- */
+  for (const r of ['/', '/about', '/compare', '/shortlist', '/universities', '/university/ucl', '/course/ucl-physics-bsc--2027', '/nope']) {
+    await goto(page, r);
+    const fl = page.locator('footer [data-feedback-link]');
+    const fhref = (await fl.count()) === 1 ? (await fl.getAttribute('href')) ?? '' : '';
+    t(`footer “Report an issue” on ${r}`, (await fl.innerText().catch(() => '')) === 'Report an issue'
+      && fhref.startsWith(prodEnv.VITE_FEEDBACK_URL) && (await fl.getAttribute('target')) === '_blank', fhref.slice(0, 70));
+  }
+  await goto(page, '/');
+  const foot = await page.locator('footer').innerText();
+  t('footer carries CourseScope, Methodology and the data-source line',
+    /CourseScope/.test(foot) && /Methodology/.test(foot) && /Data sourced from official university pages/.test(foot));
+
+  /* ---- Feedback: methodology ---- */
+  await goto(page, '/about');
+  const aboutFb = page.locator('main [data-feedback-link]');
+  t('methodology has a report link to the same form',
+    (await aboutFb.count()) === 1 && ((await aboutFb.getAttribute('href')) ?? '').startsWith(prodEnv.VITE_FEEDBACK_URL));
+  t('methodology says v1.0.0 is not a pre-release', !/not a finished release/.test(await main(page)));
+
+  /* ---- UCL A-Level subject guidance ---- */
+  for (const id of ['ucl-physics-bsc--2027', 'ucl-mechanical-engineering-beng--2027', 'ucl-physics-bsc--2028']) {
+    await goto(page, `/course/${id}`);
+    const g = page.getByTestId('subject-guidance');
+    const txt = (await g.count()) ? await g.innerText() : '';
+    t(`UCL guidance on ${id}`, /UCL A-Level subject guidance/.test(txt) && /not this course’s requirements/.test(txt));
+    const src = await g.getByRole('link', { name: /View official UCL guidance/ }).getAttribute('href').catch(() => '');
+    t('  …linking to the official ucl.ac.uk source', /^https:\/\/www\.ucl\.ac\.uk\//.test(src ?? ''), src ?? 'none');
+  }
+  await goto(page, '/course/ucl-physics-bsc--2027');
+  const g = page.getByTestId('subject-guidance');
+  await g.locator('summary').click();
+  await page.waitForTimeout(200);
+  const list = await g.innerText();
+  t('  …the expanded list shows the official subjects', /Further Mathematics/.test(list) && /Sociology/.test(list) && /Welsh \(Second Language\)/.test(list));
+  t('  …and sits AFTER the course’s own requirements, as a separate card',
+    await page.evaluate(() => {
+      const req = [...document.querySelectorAll('h2,h3')].find((h) => /Entry requirements/.test(h.textContent ?? ''));
+      const gd = document.querySelector('[data-testid="subject-guidance"]');
+      return Boolean(req && gd && (req.compareDocumentPosition(gd) & Node.DOCUMENT_POSITION_FOLLOWING) && !req.closest('[data-testid="subject-guidance"]'));
+    }));
+  const reqBlock = await page.evaluate(() => {
+    const req = [...document.querySelectorAll('h2,h3')].find((h) => /Entry requirements/.test(h.textContent ?? ''));
+    return req?.closest('.surface')?.textContent ?? '';
+  });
+  t('  …and the course’s own subject requirements are unchanged (Mathematics A, Physics A)',
+    /Mathematics/.test(reqBlock) && /Physics/.test(reqBlock) && !/Sociology|Economics/.test(reqBlock));
+  await goto(page, '/course/imperial-physics-bsc--2027');
+  t('no UCL guidance on a non-UCL course', (await page.getByTestId('subject-guidance').count()) === 0);
+
+  /* ---- University-level placeholders are not served ---- */
+  await goto(page, '/university/imperial');
+  const uni = await main(page);
+  t('university page shows no sample rankings, sample deadlines or “(demo)” text',
+    !/Sample data|\(demo\)|demo value/i.test(uni) && !/Rankings/.test(uni), '');
+  await goto(page, '/universities');
+  t('universities list shows no placeholder ranking badges', !/sample|Not available/i.test(await main(page)));
   t('footer version is v1.0.0', /v1\.0\.0/.test(await page.locator('footer').innerText()));
   await ctx.close();
 }

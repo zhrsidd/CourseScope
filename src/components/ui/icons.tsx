@@ -100,3 +100,10 @@ export const IconPin = (p: P) => (
     <circle cx="12" cy="10" r="2.5" />
   </svg>
 );
+
+export const IconFlag = (p: P) => (
+  <svg {...base(p)}>
+    <path d="M5 21V4" />
+    <path d="M5 4h11l-2 4 2 4H5" />
+  </svg>
+);
