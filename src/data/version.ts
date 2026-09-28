@@ -46,6 +46,7 @@ export const RELEASES: ReleaseNote[] = [
       'CourseScope is the new name for this catalogue: a place to compare UK Physics and Engineering courses by what universities actually publish.',
       'Every course’s identity and entry requirements come from the university’s own pages, and every checked course links to the page it was read from.',
       'Entry requirements are tied to a single entry year. 2027 requirements are shown where published; 2028 is marked as not yet published rather than guessed.',
+      'CourseScope opens on 2027 entry, the cycle students are applying in now. Switch to 2028 at any time, and your choice is remembered.',
       'Add your A-Level subjects and predicted grades once, and every course shows whether you meet its published academic requirements — with the reasons spelled out.',
       'Subject requirements, admissions tests and interview policies are shown for each checked course, alongside its application route.',
       'Compare courses side by side, and save courses and universities to a shortlist that stays in your browser.',

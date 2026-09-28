@@ -30,6 +30,7 @@ import {
 import { VERDICT_LABEL } from '@/lib/eligibility';
 import { INTERVIEW_LABEL } from '@/lib/format';
 import { InfoTooltip } from './InfoTooltip';
+import { useApp } from '@/state/AppContext';
 import { IconChevron, IconSearch } from './ui/icons';
 import { Badge, CheckboxRow, Segmented, cx } from './ui/primitives';
 
@@ -139,6 +140,7 @@ export function FilterSidebar({
    */
   eligibility: Record<string, EligibilityReport>;
 }) {
+  const { setProfile } = useApp();
   const [uniQuery, setUniQuery] = useState('');
   const set = <K extends keyof FilterState>(key: K, value: FilterState[K]) =>
     onChange({ ...filters, [key]: value });
@@ -212,7 +214,13 @@ export function FilterSidebar({
             type="button"
             className="text-xs text-navy-700 hover:underline"
             onClick={() =>
-              onChange({ ...defaultFilters(hasVerifiedData), query: filters.query, sort: filters.sort })
+              onChange({
+                ...defaultFilters(hasVerifiedData),
+                query: filters.query,
+                sort: filters.sort,
+                // Reset clears filters, not the student's chosen entry year.
+                applicationYear: filters.applicationYear,
+              })
             }
           >
             Reset
@@ -228,7 +236,13 @@ export function FilterSidebar({
         <Segmented<ApplicationYear>
           size="sm"
           value={filters.applicationYear}
-          onChange={(y) => set('applicationYear', y)}
+          onChange={(y) => {
+            set('applicationYear', y);
+            // The entry year is ONE saved choice, whichever switch sets it. Without
+            // this, picking 2028 here was forgotten on reload while the same
+            // choice in "Your A-Levels" was remembered.
+            setProfile((prev) => (prev.applicationYear === y ? prev : { ...prev, applicationYear: y }));
+          }}
           options={APPLICATION_YEARS.map((y) => ({ id: y, label: `${y} entry` }))}
         />
       </div>

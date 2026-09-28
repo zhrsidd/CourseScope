@@ -1,3 +1,4 @@
+import { DEFAULT_APPLICATION_YEAR } from './entry-year';
 import type {
   AdmissionsTestCode,
   ApplicationYear,
@@ -90,7 +91,7 @@ export const RESULT_PAGE_SIZE = 40;
 export function defaultFilters(hasVerifiedData = false): FilterState {
   return {
     query: '',
-    applicationYear: '2028',
+    applicationYear: DEFAULT_APPLICATION_YEAR,
     universityIds: [],
     categories: [],
     subcategories: [],

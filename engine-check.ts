@@ -66,6 +66,7 @@ import {
   defaultFilters,
   matchedStudyOptionNames,
   RESULT_PAGE_SIZE,
+  APPLICATION_YEARS as APPLICATION_YEARS_FOR_CHECK,
   type FilterState,
 } from '@/lib/filters';
 import { explainEligibility, keyEligibilityReason, reviewKind } from '@/lib/explain';
@@ -5971,6 +5972,22 @@ check(
     `${search('Physics').length}/${search('Engineering').length}/${search('Astrophysics').length}`, '206/357/40');
   check('  …University filter still narrows search as before (UCL: 21)',
     search('', '2027', { universityIds: ['ucl'] }).length, 21);
+}
+
+
+/* ================================================================== */
+/* 29. v1.0.0 launch — first-visit entry year                          */
+/* ================================================================== */
+{
+  const { emptyStudentProfile, isStudentProfile } = await import('@/lib/grades');
+  const { DEFAULT_APPLICATION_YEAR } = await import('@/lib/entry-year');
+  check('A first-time visitor starts on 2027 entry', DEFAULT_APPLICATION_YEAR, '2027');
+  check('  …in both the empty profile and the default filters',
+    `${emptyStudentProfile().applicationYear}/${defaultFilters().applicationYear}`, '2027/2027');
+  const saved2028 = { ...emptyStudentProfile(), applicationYear: '2028' };
+  check('  …while a saved 2028 profile is still accepted as-is, not reset',
+    isStudentProfile(JSON.parse(JSON.stringify(saved2028))) && saved2028.applicationYear === '2028', true);
+  check('  …and 2028 remains a selectable cycle', APPLICATION_YEARS_FOR_CHECK.includes('2028'), true);
 }
 
 console.log(failures === 0 ? '\nAll checks passed.' : `\n${failures} check(s) failed.`);

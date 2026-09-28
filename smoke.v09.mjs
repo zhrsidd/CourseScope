@@ -267,7 +267,7 @@ log('\n18. SOURCE-LINK QA — ONE VERIFIED 2027 COURSE PER UNIVERSITY');
  * localhost URL, or an empty link label.
  *
  * Collected from the 2027 search results rather than from university pages,
- * because a university page lists the app's default year (2028) and a 2028 shell
+ * because a university page lists the visitor's chosen year, and a 2028 shell
  * correctly has no requirements and therefore no source link.
  */
 await goto(e, '/');
@@ -615,10 +615,13 @@ log('\n20. v1.0.0 — CourseScope BRAND AND PRODUCTION CONFIG');
   t('  …and opens a real form destination, not a fake submit', (await formLink.count()) === 1
     && (await page.locator('main button[type="submit"], main form').count()) === 0);
   const href = (await formLink.getAttribute('href')) ?? '';
-  const [base, frag = ''] = href.split('#');
-  const ctx20 = Object.fromEntries(new URLSearchParams(frag));
+  const u20 = new URL(href);
+  const base = `${u20.origin}${u20.pathname}`;
+  const ctx20 = Object.fromEntries(u20.searchParams);
   t('  …at the configured VITE_FEEDBACK_URL', base === prodEnv.VITE_FEEDBACK_URL, base);
-  t('  …carrying the course context as form hidden fields',
+  t('  …carrying all eight hidden-field query params',
+    ['university','course','award','ucas_code','entry_year','record_id','issue_type','page'].every((k) => k in ctx20), Object.keys(ctx20).join(','));
+  t('  …with the right course context',
     ctx20.university === 'Queen Mary University of London' && ctx20.record_id === 'qmul-physics-bsc--2027'
       && ctx20.ucas_code === 'F300' && ctx20.entry_year === '2027' && Boolean(ctx20.award) && Boolean(ctx20.course)
       && Boolean(ctx20.issue_type) && /#\/course\/qmul-physics-bsc--2027$/.test(ctx20.page ?? ''),
@@ -704,6 +707,45 @@ log('\n20. v1.0.0 — CourseScope BRAND AND PRODUCTION CONFIG');
   t('universities list shows no placeholder ranking badges', !/sample|Not available/i.test(await main(page)));
   t('footer version is v1.0.0', /v1\.0\.0/.test(await page.locator('footer').innerText()));
   await ctx.close();
+}
+
+/* ================================================================== */
+log('\n21. v1.0.0 — FIRST-VISIT ENTRY YEAR');
+{
+  const { ctx, page } = await makeCtx({ width: 1440, height: 1000 });
+  await goto(page, '/');
+  const pressed = async () => page.evaluate(() => {
+    const b = [...document.querySelectorAll('button[aria-pressed="true"], [aria-checked="true"], button.bg-navy-900')]
+      .map((x) => (x.textContent ?? '').trim()).filter((t) => /^20\d\d entry$/.test(t));
+    return b[0] ?? null;
+  });
+  const firstYear = await pressed();
+  t('a first-time visitor lands on 2027 entry', firstYear === '2027 entry', String(firstYear));
+  t('  …and sees 2027 courses first', /2027/.test(await page.locator('main article').first().innerText()));
+  await page.getByRole('button', { name: '2028 entry', exact: true }).first().click();
+  await page.waitForTimeout(500);
+  t('2028 is one click away', (await pressed()) === '2028 entry');
+  t('  …and 2028 still shows requirements as not yet published',
+    /not yet published/i.test(await page.locator('main article').first().innerText()));
+  await page.reload({ waitUntil: 'networkidle' });
+  await page.waitForTimeout(500);
+  t('a returning visitor keeps their saved 2028 choice', (await pressed()) === '2028 entry', String(await pressed()));
+  await ctx.close();
+  /* A profile saved by an earlier build, with 2028 chosen, is honoured as-is. */
+  const { ctx: c2, page: p2 } = await makeCtx({ width: 1440, height: 1000 });
+  await p2.addInitScript(() => {
+    if (!sessionStorage.getItem('seeded')) {
+      localStorage.setItem('ukcf.profile.v1', JSON.stringify({
+        aLevels: [{ id: 'al-1', subject: 'Mathematics', grade: 'A' }], gcses: [],
+        applicationYear: '2028', schoolOffersFurtherMathematics: null, notes: '',
+      }));
+      sessionStorage.setItem('seeded', '1');
+    }
+  });
+  await goto(p2, '/');
+  const y2 = await p2.evaluate(() => [...document.querySelectorAll('button')].filter((b) => /^20\d\d entry$/.test((b.textContent ?? '').trim()) && /bg-navy-900/.test(b.className)).map((b) => b.textContent.trim())[0] ?? null);
+  t('an existing saved profile with 2028 is not overwritten', y2 === '2028 entry', String(y2));
+  await c2.close();
 }
 
 /* ================================================================== */

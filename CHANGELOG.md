@@ -15,6 +15,8 @@ themselves publish.
   and checked against the page they link to.
 - **Entry-year-aware requirements.** Requirements are tied to a single entry year. 2027 is shown
   where published; 2028 is marked as not yet published rather than guessed.
+- **Starts on 2027 entry**, the cycle students are applying in now; 2028 is one click away, and
+  your choice is remembered.
 - **Student grade profile.** Add your A-Level subjects and predicted grades once; they stay in your
   browser.
 - **Eligibility explanations.** Every course shows whether you meet its published academic
@@ -29,8 +31,9 @@ themselves publish.
 - **Source provenance.** Each checked course links to the official page it was read from, with the date it
   was checked and a visible trust status.
 - **Report an issue** from three places: a "Found an error? Report it" action in every course's
-  source panel (opens the feedback form with that course's details filled in), the footer of every
-  page, and the methodology page.
+  source panel, the footer of every page, and the methodology page. The form is sent the course's
+  details as URL parameters (`university`, `course`, `award`, `ucas_code`, `entry_year`,
+  `record_id`, `issue_type`, `page`).
 - **UCL A-Level subject guidance** on every UCL course page: UCL's own list of preferred A-Level
   subjects, read from ucl.ac.uk and kept separate from each course's own requirements.
 
@@ -49,8 +52,8 @@ them for 2027.
   university's own page. (The placeholder values are kept in the source, unpublished.)
 - Presentation fixes: long offer ranges no longer overlap their label on course cards; trust
   badges sit on their own line; the eligibility breakdown stacks on phones; a compact footer.
-- 822 assertions (up from 768) including brand, polish and "changed nothing" regression checks;
-  165 browser checks (up from 109).
+- 826 assertions (up from 768) including brand, polish and "changed nothing" regression checks;
+  172 browser checks (up from 109).
 
 ## v0.9.0 — Release candidate (2026-09-28)
 

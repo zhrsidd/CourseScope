@@ -1,3 +1,4 @@
+import { DEFAULT_APPLICATION_YEAR } from './entry-year';
 import { A_LEVEL_GRADES, GRADE_VALUE, type ALevelGrade, type StudentProfile } from '@/types';
 
 export function isGrade(value: string): value is ALevelGrade {
@@ -134,7 +135,7 @@ export function emptyStudentProfile(): StudentProfile {
       { id: 'al-3', subject: '', grade: null },
     ],
     gcses: [],
-    applicationYear: '2028',
+    applicationYear: DEFAULT_APPLICATION_YEAR,
     schoolOffersFurtherMathematics: null,
     notes: '',
   };

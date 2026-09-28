@@ -22,12 +22,14 @@
  *
  *  CONTEXT TRAVELS TWO WAYS, so it arrives whatever the form is set up to do:
  *
- *   · In the URL fragment, as Typeform hidden fields (`#university=…&course=…`).
- *     Typeform reads hidden fields from the fragment; a form that has not
- *     declared a field simply ignores it, so this is safe before the form is
- *     configured. The fragment is never sent to any server by the browser. Only
- *     catalogue facts go in it — never anything the reader typed about
- *     themselves.
+ *   · As query parameters Typeform reads as hidden fields
+ *     (`?university=…&course=…&record_id=…`). Typeform accepts hidden fields
+ *     from the query string or the fragment; the query string is its
+ *     recommended form for non-personal values, and these are all public
+ *     catalogue facts — never anything the reader typed about themselves. A
+ *     form records only the parameters it has declared (Typeform: Workflow →
+ *     URL parameters) and ignores the rest, so this is harmless before the
+ *     form is set up and starts capturing the moment it is.
  *   · As the full prepared report on the clipboard, to paste into the form's
  *     free-text answer. This is what works with no form configuration at all.
  *
@@ -113,20 +115,34 @@ export function courseFeedbackContext(
   };
 }
 
+/** The hidden-field names the form is sent, in a stable order. */
+export const FEEDBACK_PARAMS = [
+  'university',
+  'course',
+  'award',
+  'ucas_code',
+  'entry_year',
+  'record_id',
+  'issue_type',
+  'page',
+] as const satisfies readonly (keyof FeedbackContext)[];
+
 /**
- * The form URL with context as Typeform hidden fields in the fragment. Returns
- * the bare URL when there is no context, and never touches a URL that already
- * has a fragment of its own.
+ * The form URL with context as Typeform hidden-field query parameters. Empty
+ * values are left out. Parameters already on the configured URL are kept, and
+ * any fragment on it stays at the end where it belongs.
  */
 export function feedbackUrl(context: FeedbackContext = {}): string {
   if (!REPORT_URL) return '';
-  if (REPORT_URL.includes('#')) return REPORT_URL;
-  const params = new URLSearchParams();
-  for (const [k, v] of Object.entries(context)) {
+  const [beforeHash, hash = ''] = REPORT_URL.split('#');
+  const [base, existing = ''] = beforeHash.split('?');
+  const params = new URLSearchParams(existing);
+  for (const k of FEEDBACK_PARAMS) {
+    const v = context[k];
     if (v) params.set(k, v);
   }
-  const fragment = params.toString();
-  return fragment ? `${REPORT_URL}#${fragment}` : REPORT_URL;
+  const query = params.toString();
+  return `${base}${query ? `?${query}` : ''}${hash ? `#${hash}` : ''}`;
 }
 
 /**
