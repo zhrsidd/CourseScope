@@ -55,10 +55,26 @@ jobs:
 
       - name: Browser QA against the production preview
         run: |
-          npx vite preview --port 4321 --strictPort > preview.log 2>&1 &
-          for i in $(seq 1 30); do curl -sf http://127.0.0.1:4321/ > /dev/null && break; sleep 1; done
+          npm run preview -- --port 4321 --strictPort --host 127.0.0.1 > preview.log 2>&1 &
+          up=""
+          for i in $(seq 1 60); do
+            if curl -sf http://127.0.0.1:4321/ > /dev/null; then up=1; break; fi
+            sleep 1
+          done
+          if [ -z "$up" ]; then
+            echo "::error::preview server never came up on 127.0.0.1:4321"
+            cat preview.log
+            exit 1
+          fi
           node smoke.v09.mjs | tee qa.log
-          grep -q "RELEASE QA RESULT: .* 0 fail, 0 page errors, 0 product console errors" qa.log
+          status=0
+          grep -q "RELEASE QA RESULT: .* 0 fail, 0 page errors, 0 product console errors" qa.log || status=1
+          if [ "$status" -ne 0 ]; then
+            echo "::group::preview.log"
+            cat preview.log
+            echo "::endgroup::"
+          fi
+          exit $status
 
       - name: Upload the checked build for deployment
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
