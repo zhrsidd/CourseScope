@@ -13,6 +13,8 @@ import { evaluateCatalogue } from '@/lib/eligibility';
 import { emptyStudentProfile, isStudentProfile } from '@/lib/grades';
 import { validateCatalogue, type ValidationReport } from '@/lib/validation';
 import { isStringArray, useLocalStorage } from '@/hooks/useLocalStorage';
+import { initialEntryYear, saveEntryYear } from '@/lib/entry-year';
+import type { ApplicationYear } from '@/types';
 
 export const MAX_COMPARE = 5;
 
@@ -31,7 +33,12 @@ interface AppState {
 
   profile: StudentProfile;
   setProfile: (updater: StudentProfile | ((prev: StudentProfile) => StudentProfile)) => void;
+  /** Clears grades and subjects. Leaves the chosen entry year alone. */
   resetProfile: () => void;
+  /** The one entry year every switch shows. See src/lib/entry-year.ts. */
+  entryYear: ApplicationYear;
+  /** Record an explicit entry-year choice. The only thing that saves it. */
+  setEntryYear: (year: ApplicationYear) => void;
   eligibility: Record<string, EligibilityReport>;
 
   savedCourseIds: string[];
@@ -58,11 +65,41 @@ export function AppProvider({ children }: { children: ReactNode }) {
    * discarded for that key alone, so a bad profile never clears a good
    * shortlist. See src/hooks/useLocalStorage.ts for why this is not optional.
    */
-  const [profile, setProfile, resetProfile] = useLocalStorage<StudentProfile>(
+  const [storedProfile, setStoredProfile, resetStoredProfile] = useLocalStorage<StudentProfile>(
     'ukcf.profile.v1',
     emptyStudentProfile(),
     isStudentProfile,
   );
+
+  /*
+   * The entry year is held apart from the stored profile, read synchronously
+   * on first render (so nothing renders a wrong year first), and saved only by
+   * setEntryYear — i.e. only when a person presses a year switch. The
+   * profile's own stored `applicationYear` is never consulted: it may be a
+   * default an older build wrote on mount. See src/lib/entry-year.ts.
+   */
+  const [entryYear, setEntryYearState] = useState<ApplicationYear>(initialEntryYear);
+  const setEntryYear = useCallback((year: ApplicationYear) => {
+    setEntryYearState(year);
+    saveEntryYear(year);
+  }, []);
+
+  /** Everything downstream sees one profile whose year is the chosen year. */
+  const profile = useMemo<StudentProfile>(
+    () => ({ ...storedProfile, applicationYear: entryYear }),
+    [storedProfile, entryYear],
+  );
+  const setProfile = useCallback(
+    (updater: StudentProfile | ((prev: StudentProfile) => StudentProfile)) => {
+      const current = { ...storedProfile, applicationYear: entryYear };
+      const next = typeof updater === 'function' ? updater(current) : updater;
+      // A year change arriving through the profile is still an explicit choice.
+      if (next.applicationYear !== entryYear) setEntryYear(next.applicationYear);
+      setStoredProfile(next);
+    },
+    [storedProfile, entryYear, setEntryYear, setStoredProfile],
+  );
+  const resetProfile = resetStoredProfile;
   const [savedCourseIds, setSavedCourseIds] = useLocalStorage<string[]>(
     'ukcf.savedCourses.v1',
     [],
@@ -165,6 +202,8 @@ export function AppProvider({ children }: { children: ReactNode }) {
     profile,
     setProfile,
     resetProfile,
+    entryYear,
+    setEntryYear,
     eligibility,
     savedCourseIds,
     savedUniversityIds,

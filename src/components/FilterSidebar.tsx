@@ -140,7 +140,7 @@ export function FilterSidebar({
    */
   eligibility: Record<string, EligibilityReport>;
 }) {
-  const { setProfile } = useApp();
+  const { setEntryYear } = useApp();
   const [uniQuery, setUniQuery] = useState('');
   const set = <K extends keyof FilterState>(key: K, value: FilterState[K]) =>
     onChange({ ...filters, [key]: value });
@@ -238,10 +238,8 @@ export function FilterSidebar({
           value={filters.applicationYear}
           onChange={(y) => {
             set('applicationYear', y);
-            // The entry year is ONE saved choice, whichever switch sets it. Without
-            // this, picking 2028 here was forgotten on reload while the same
-            // choice in "Your A-Levels" was remembered.
-            setProfile((prev) => (prev.applicationYear === y ? prev : { ...prev, applicationYear: y }));
+            // The entry year is ONE saved choice, whichever switch sets it.
+            setEntryYear(y);
           }}
           options={APPLICATION_YEARS.map((y) => ({ id: y, label: `${y} entry` }))}
         />

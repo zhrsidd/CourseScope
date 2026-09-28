@@ -50,7 +50,9 @@ export function SearchPage() {
 
   const [params, setParams] = useSearchParams();
   const [filters, setFilters] = useState<FilterState>(() => {
-    const base = defaultFilters(false);
+    // Start on the visitor's year from the first render, so the list never
+    // flashes the default year before the sync effect below corrects it.
+    const base = { ...defaultFilters(false), applicationYear: profile.applicationYear };
     const uni = params.get('university');
     const category = params.get('category') as SubjectCategory | null;
     const sub = params.get('subcategory') as SubjectSubcategory | null;

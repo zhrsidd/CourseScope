@@ -23,7 +23,7 @@
  *  CONTEXT TRAVELS TWO WAYS, so it arrives whatever the form is set up to do:
  *
  *   · As query parameters Typeform reads as hidden fields
- *     (`?university=…&course=…&record_id=…`). Typeform accepts hidden fields
+ *     (`?cs_university=…&cs_course=…&cs_record_id=…`). Typeform accepts hidden fields
  *     from the query string or the fragment; the query string is its
  *     recommended form for non-personal values, and these are all public
  *     catalogue facts — never anything the reader typed about themselves. A
@@ -115,17 +115,21 @@ export function courseFeedbackContext(
   };
 }
 
-/** The hidden-field names the form is sent, in a stable order. */
-export const FEEDBACK_PARAMS = [
-  'university',
-  'course',
-  'award',
-  'ucas_code',
-  'entry_year',
-  'record_id',
-  'issue_type',
-  'page',
-] as const satisfies readonly (keyof FeedbackContext)[];
+/**
+ * Context field → the URL parameter name the form declares, in a stable order.
+ * The names carry a `cs_` prefix because the plain names (university, course,
+ * issue_type, …) collide with question block refs already in the Typeform.
+ */
+export const FEEDBACK_PARAMS = {
+  university: 'cs_university',
+  course: 'cs_course',
+  award: 'cs_award',
+  ucas_code: 'cs_ucas_code',
+  entry_year: 'cs_entry_year',
+  record_id: 'cs_record_id',
+  issue_type: 'cs_issue_type',
+  page: 'cs_page',
+} as const satisfies Record<keyof FeedbackContext, `cs_${string}`>;
 
 /**
  * The form URL with context as Typeform hidden-field query parameters. Empty
@@ -137,9 +141,9 @@ export function feedbackUrl(context: FeedbackContext = {}): string {
   const [beforeHash, hash = ''] = REPORT_URL.split('#');
   const [base, existing = ''] = beforeHash.split('?');
   const params = new URLSearchParams(existing);
-  for (const k of FEEDBACK_PARAMS) {
-    const v = context[k];
-    if (v) params.set(k, v);
+  for (const [field, param] of Object.entries(FEEDBACK_PARAMS) as [keyof FeedbackContext, string][]) {
+    const v = context[field];
+    if (v) params.set(param, v);
   }
   const query = params.toString();
   return `${base}${query ? `?${query}` : ''}${hash ? `#${hash}` : ''}`;

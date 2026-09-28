@@ -32,8 +32,8 @@ themselves publish.
   was checked and a visible trust status.
 - **Report an issue** from three places: a "Found an error? Report it" action in every course's
   source panel, the footer of every page, and the methodology page. The form is sent the course's
-  details as URL parameters (`university`, `course`, `award`, `ucas_code`, `entry_year`,
-  `record_id`, `issue_type`, `page`).
+  details as URL parameters (`cs_university`, `cs_course`, `cs_award`, `cs_ucas_code`,
+  `cs_entry_year`, `cs_record_id`, `cs_issue_type`, `cs_page`).
 - **UCL A-Level subject guidance** on every UCL course page: UCL's own list of preferred A-Level
   subjects, read from ucl.ac.uk and kept separate from each course's own requirements.
 
@@ -47,13 +47,16 @@ them for 2027.
 - New name and mark: CourseScope — an open ring with a focal point. Favicon, header, footer, tab
   titles, metadata, social preview and methodology page all use it.
 - Production configuration committed in `.env.production`: live site URL and feedback form.
+- The entry year is saved under its own key (`ukcf.entryYear.v1`), and only when a visitor presses
+  a year switch. Earlier builds saved their default year inside the profile on every visit, so a
+  browser that had ever opened the site kept opening on 2028; that stored value is now ignored.
 - University rankings, and university-wide admissions summaries, are not shown: none has been
   checked against its publisher yet. Application deadlines appear only where read from the
   university's own page. (The placeholder values are kept in the source, unpublished.)
 - Presentation fixes: long offer ranges no longer overlap their label on course cards; trust
   badges sit on their own line; the eligibility breakdown stacks on phones; a compact footer.
-- 826 assertions (up from 768) including brand, polish and "changed nothing" regression checks;
-  172 browser checks (up from 109).
+- 835 assertions (up from 768) including brand, polish, entry-year and "changed nothing" regression checks;
+  182 browser checks (up from 109).
 
 ## v0.9.0 — Release candidate (2026-09-28)
 

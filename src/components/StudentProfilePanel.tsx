@@ -14,7 +14,7 @@ let nextId = 100;
 const newId = () => `al-${(nextId += 1)}`;
 
 export function StudentProfilePanel({ variant = 'panel' }: { variant?: 'panel' | 'inline' }) {
-  const { profile, setProfile, resetProfile } = useApp();
+  const { profile, setProfile, resetProfile, setEntryYear } = useApp();
   const [showGcse, setShowGcse] = useState(profile.gcses.length > 0);
 
   const entries = filledGrades(profile);
@@ -224,7 +224,7 @@ export function StudentProfilePanel({ variant = 'panel' }: { variant?: 'panel' |
         <Segmented<ApplicationYear>
           size="sm"
           value={profile.applicationYear}
-          onChange={(year) => setProfile((prev) => ({ ...prev, applicationYear: year }))}
+          onChange={(year) => setEntryYear(year)}
           options={APPLICATION_YEARS.map((y) => ({ id: y, label: `${y} entry` }))}
         />
       </div>

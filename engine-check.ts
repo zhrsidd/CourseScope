@@ -81,7 +81,7 @@ import {
   isPubliclyDiscoverable,
 } from '@/lib/identity-invariant';
 import { APP_VERSION, IS_PRE_RELEASE, RELEASES } from '@/data/version';
-import { buildIssueReport, ISSUE_TYPES } from '@/components/ReportIssue';
+import { buildIssueReport, FEEDBACK_PARAMS, ISSUE_TYPES } from '@/components/ReportIssue';
 import {
   BRAND_COLORS,
   BRAND_DESCRIPTION,
@@ -5945,6 +5945,9 @@ check(
   const reportSrc = read('src/components/ReportIssue.tsx');
   check('Feedback: the form URL comes only from VITE_FEEDBACK_URL', /env\.VITE_FEEDBACK_URL/.test(reportSrc) && !/typeform\.com/.test(reportSrc), true);
   check('  …and the production config sets it', /^VITE_FEEDBACK_URL=https:\/\/form\.typeform\.com\//m.test(read('.env.production')), true);
+  check('  …and sends the eight cs_-prefixed parameter names the form declares',
+    Object.values(FEEDBACK_PARAMS).join(','),
+    'cs_university,cs_course,cs_award,cs_ucas_code,cs_entry_year,cs_record_id,cs_issue_type,cs_page');
   check('  …and nothing in the report flow submits a form or posts data',
     /<form\b|type="submit"|fetch\(|XMLHttpRequest|sendBeacon/.test(reportSrc), false);
   check('  …and the footer links to it on every page', /<FeedbackLink\b/.test(read('src/components/Footer.tsx')), true);
@@ -5979,6 +5982,7 @@ check(
 /* 29. v1.0.0 launch — first-visit entry year                          */
 /* ================================================================== */
 {
+  const fs = await import('node:fs');
   const { emptyStudentProfile, isStudentProfile } = await import('@/lib/grades');
   const { DEFAULT_APPLICATION_YEAR } = await import('@/lib/entry-year');
   check('A first-time visitor starts on 2027 entry', DEFAULT_APPLICATION_YEAR, '2027');
@@ -5988,6 +5992,37 @@ check(
   check('  …while a saved 2028 profile is still accepted as-is, not reset',
     isStudentProfile(JSON.parse(JSON.stringify(saved2028))) && saved2028.applicationYear === '2028', true);
   check('  …and 2028 remains a selectable cycle', APPLICATION_YEARS_FOR_CHECK.includes('2028'), true);
+
+  /*
+   * The stale-default path. Every build before this one saved the default year
+   * inside the profile on mount, so a stored profile year is NOT a choice. The
+   * start year comes only from the explicit key, else the default.
+   */
+  const { initialEntryYear, readSavedEntryYear, saveEntryYear, ENTRY_YEAR_STORAGE_KEY } = await import('@/lib/entry-year');
+  const store = new Map<string, string>();
+  (globalThis as Record<string, unknown>).window = {
+    localStorage: {
+      getItem: (k: string) => store.get(k) ?? null,
+      setItem: (k: string, v: string) => void store.set(k, v),
+      removeItem: (k: string) => void store.delete(k),
+    },
+  };
+  check('Entry year: empty storage starts on 2027', initialEntryYear(), '2027');
+  store.set('ukcf.profile.v1', JSON.stringify({ ...emptyStudentProfile(), applicationYear: '2028' }));
+  check('  …a stale profile holding 2028 (no explicit choice) still starts on 2027', initialEntryYear(), '2027');
+  saveEntryYear('2028');
+  check('  …an explicit 2028 choice is saved under its own key', store.get(ENTRY_YEAR_STORAGE_KEY), '"2028"');
+  check('  …and is what the next visit starts on', initialEntryYear(), '2028');
+  saveEntryYear('2027');
+  check('  …as is an explicit 2027 choice', initialEntryYear(), '2027');
+  store.set(ENTRY_YEAR_STORAGE_KEY, '"2031"');
+  check('  …a corrupt saved year is ignored', `${readSavedEntryYear()}/${initialEntryYear()}`, 'null/2027');
+  store.set(ENTRY_YEAR_STORAGE_KEY, 'not json');
+  check('  …as is unparseable storage', initialEntryYear(), '2027');
+  delete (globalThis as Record<string, unknown>).window;
+  const ctxSrc = fs.readFileSync('src/state/AppContext.tsx', 'utf8');
+  check('  …and nothing saves the year on mount — only setEntryYear writes it',
+    (ctxSrc.match(/saveEntryYear\(/g) ?? []).length, 1);
 }
 
 console.log(failures === 0 ? '\nAll checks passed.' : `\n${failures} check(s) failed.`);

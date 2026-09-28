@@ -619,12 +619,15 @@ log('\n20. v1.0.0 — CourseScope BRAND AND PRODUCTION CONFIG');
   const base = `${u20.origin}${u20.pathname}`;
   const ctx20 = Object.fromEntries(u20.searchParams);
   t('  …at the configured VITE_FEEDBACK_URL', base === prodEnv.VITE_FEEDBACK_URL, base);
-  t('  …carrying all eight hidden-field query params',
-    ['university','course','award','ucas_code','entry_year','record_id','issue_type','page'].every((k) => k in ctx20), Object.keys(ctx20).join(','));
+  t('  …carrying all eight cs_-prefixed hidden-field query params, and none unprefixed',
+    ['cs_university','cs_course','cs_award','cs_ucas_code','cs_entry_year','cs_record_id','cs_issue_type','cs_page'].every((k) => k in ctx20)
+      && !['university','course','award','ucas_code','entry_year','record_id','issue_type','page'].some((k) => k in ctx20),
+    Object.keys(ctx20).join(','));
   t('  …with the right course context',
-    ctx20.university === 'Queen Mary University of London' && ctx20.record_id === 'qmul-physics-bsc--2027'
-      && ctx20.ucas_code === 'F300' && ctx20.entry_year === '2027' && Boolean(ctx20.award) && Boolean(ctx20.course)
-      && Boolean(ctx20.issue_type) && /#\/course\/qmul-physics-bsc--2027$/.test(ctx20.page ?? ''),
+    ctx20.cs_university === 'Queen Mary University of London' && ctx20.cs_record_id === 'qmul-physics-bsc--2027'
+      && ctx20.cs_ucas_code === 'F300' && ctx20.cs_entry_year === '2027' && ctx20.cs_course === 'Physics'
+      && Boolean(ctx20.cs_award) && ctx20.cs_issue_type === 'The admissions requirement looks wrong'
+      && /#\/course\/qmul-physics-bsc--2027$/.test(ctx20.cs_page ?? ''),
     JSON.stringify(ctx20).slice(0, 160));
   t('  …opening in a new tab, not replacing the page', (await formLink.getAttribute('target')) === '_blank');
   const reportText = await page.locator('textarea[readonly]').first().inputValue();
@@ -710,42 +713,96 @@ log('\n20. v1.0.0 — CourseScope BRAND AND PRODUCTION CONFIG');
 }
 
 /* ================================================================== */
-log('\n21. v1.0.0 — FIRST-VISIT ENTRY YEAR');
+log('\n21. v1.0.0 — ENTRY YEAR: FIRST VISIT, PERSISTENCE, STALE STORAGE');
 {
+  /* Every year switch on the page, in DOM order: [{ label, pressed, where }]. */
+  const years = (page) => page.evaluate(() =>
+    [...document.querySelectorAll('button[aria-pressed]')]
+      .filter((b) => /^20\d\d entry$/.test((b.textContent ?? '').trim()))
+      .map((b) => ({
+        label: (b.textContent ?? '').trim(),
+        pressed: b.getAttribute('aria-pressed') === 'true',
+        where: b.closest('aside, [class*="surface"]')?.textContent?.includes('Your A-Levels') ? 'profile' : 'filters',
+      })));
+  const chosen = async (page) => {
+    const ys = await years(page);
+    const on = [...new Set(ys.filter((y) => y.pressed).map((y) => y.label))];
+    return { on: on.join('|'), switches: ys.filter((y) => y.pressed).length, where: [...new Set(ys.map((y) => y.where))].join(',') };
+  };
+  const click = async (page, where, label) => {
+    await page.evaluate(([w, l]) => {
+      const b = [...document.querySelectorAll('button[aria-pressed]')].find((x) =>
+        (x.textContent ?? '').trim() === l &&
+        (x.closest('aside, [class*="surface"]')?.textContent?.includes('Your A-Levels') ? 'profile' : 'filters') === w);
+      b?.click();
+    }, [where, label]);
+    await page.waitForTimeout(500);
+  };
+  const reload = async (page) => { await page.reload({ waitUntil: 'networkidle' }); await page.waitForTimeout(500); };
+
   const { ctx, page } = await makeCtx({ width: 1440, height: 1000 });
   await goto(page, '/');
-  const pressed = async () => page.evaluate(() => {
-    const b = [...document.querySelectorAll('button[aria-pressed="true"], [aria-checked="true"], button.bg-navy-900')]
-      .map((x) => (x.textContent ?? '').trim()).filter((t) => /^20\d\d entry$/.test(t));
-    return b[0] ?? null;
-  });
-  const firstYear = await pressed();
-  t('a first-time visitor lands on 2027 entry', firstYear === '2027 entry', String(firstYear));
-  t('  …and sees 2027 courses first', /2027/.test(await page.locator('main article').first().innerText()));
-  await page.getByRole('button', { name: '2028 entry', exact: true }).first().click();
-  await page.waitForTimeout(500);
-  t('2028 is one click away', (await pressed()) === '2028 entry');
+  let c = await chosen(page);
+  t('fresh browser (no stored state) opens on 2027', c.on === '2027 entry', JSON.stringify(c));
+  t('  …in BOTH year controls (filters and Your A-Levels)', c.switches === 2 && c.where === 'filters,profile', JSON.stringify(c));
+  t('  …showing 2027 courses', /2027/.test(await page.locator('main article').first().innerText()));
+
+  await click(page, 'filters', '2028 entry');
+  c = await chosen(page);
+  t('choosing 2028 in the filters moves both controls', c.on === '2028 entry' && c.switches === 2, JSON.stringify(c));
   t('  …and 2028 still shows requirements as not yet published',
     /not yet published/i.test(await page.locator('main article').first().innerText()));
-  await page.reload({ waitUntil: 'networkidle' });
-  await page.waitForTimeout(500);
-  t('a returning visitor keeps their saved 2028 choice', (await pressed()) === '2028 entry', String(await pressed()));
+  await reload(page);
+  c = await chosen(page);
+  t('explicit 2028 survives a reload', c.on === '2028 entry' && c.switches === 2, JSON.stringify(c));
+
+  await page.getByRole('button', { name: 'Reset', exact: true }).first().click();
+  await page.waitForTimeout(400);
+  c = await chosen(page);
+  t('Reset filters does not change the saved year', c.on === '2028 entry', JSON.stringify(c));
+  await reload(page);
+  t('  …before or after a reload', (await chosen(page)).on === '2028 entry');
+
+  const clearBtn = page.getByRole('button', { name: 'Clear', exact: true }).first();
+  if (await clearBtn.count()) { await clearBtn.click(); await page.waitForTimeout(400); }
+  t('clearing Your A-Levels does not change the saved year', (await chosen(page)).on === '2028 entry');
+
+  await click(page, 'profile', '2027 entry');
+  c = await chosen(page);
+  t('choosing 2027 in Your A-Levels moves both controls', c.on === '2027 entry' && c.switches === 2, JSON.stringify(c));
+  await reload(page);
+  c = await chosen(page);
+  t('explicit 2027 survives a reload', c.on === '2027 entry' && c.switches === 2, JSON.stringify(c));
+  t('  …and is saved under its own key', await page.evaluate(() => localStorage.getItem('ukcf.entryYear.v1')) === '"2027"');
   await ctx.close();
-  /* A profile saved by an earlier build, with 2028 chosen, is honoured as-is. */
-  const { ctx: c2, page: p2 } = await makeCtx({ width: 1440, height: 1000 });
-  await p2.addInitScript(() => {
-    if (!sessionStorage.getItem('seeded')) {
-      localStorage.setItem('ukcf.profile.v1', JSON.stringify({
-        aLevels: [{ id: 'al-1', subject: 'Mathematics', grade: 'A' }], gcses: [],
-        applicationYear: '2028', schoolOffersFurtherMathematics: null, notes: '',
-      }));
-      sessionStorage.setItem('seeded', '1');
-    }
+
+  /* STALE STORAGE: exactly what every earlier build left behind — a profile
+     holding the old default, 2028, written on mount, with no explicit choice. */
+  const stale = async (seed) => {
+    const { ctx: sc, page: sp } = await makeCtx({ width: 1440, height: 1000 });
+    await sp.addInitScript((s) => {
+      if (!sessionStorage.getItem('seeded')) {
+        for (const [k, v] of Object.entries(s)) localStorage.setItem(k, v);
+        sessionStorage.setItem('seeded', '1');
+      }
+    }, seed);
+    await goto(sp, '/');
+    const r = await chosen(sp);
+    const kept = await sp.evaluate(() => JSON.parse(localStorage.getItem('ukcf.profile.v1') ?? 'null')?.aLevels?.[0]?.subject ?? null);
+    await sc.close();
+    return { r, kept };
+  };
+  const oldProfile = JSON.stringify({
+    aLevels: [{ id: 'al-1', subject: 'Mathematics', grade: 'A' }], gcses: [],
+    applicationYear: '2028', schoolOffersFurtherMathematics: null, notes: '',
   });
-  await goto(p2, '/');
-  const y2 = await p2.evaluate(() => [...document.querySelectorAll('button')].filter((b) => /^20\d\d entry$/.test((b.textContent ?? '').trim()) && /bg-navy-900/.test(b.className)).map((b) => b.textContent.trim())[0] ?? null);
-  t('an existing saved profile with 2028 is not overwritten', y2 === '2028 entry', String(y2));
-  await c2.close();
+  let r = await stale({ 'ukcf.profile.v1': oldProfile });
+  t('stale storage from an earlier build (profile year 2028, no choice) opens on 2027', r.r.on === '2027 entry', JSON.stringify(r.r));
+  t('  …without discarding the grades in that profile', r.kept === 'Mathematics', String(r.kept));
+  r = await stale({ 'ukcf.profile.v1': oldProfile, 'ukcf.entryYear.v1': '"2028"' });
+  t('an explicit saved 2028 choice is honoured', r.r.on === '2028 entry', JSON.stringify(r.r));
+  r = await stale({ 'ukcf.entryYear.v1': '"2031"' });
+  t('a corrupt saved year falls back to 2027', r.r.on === '2027 entry', JSON.stringify(r.r));
 }
 
 /* ================================================================== */
