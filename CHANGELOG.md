@@ -3,6 +3,13 @@
 The student-facing release notes are also shown in the app, on the methodology page
 (`src/data/version.ts → RELEASES`). Engineering detail is in `DEVELOPER_NOTES` in the same file.
 
+## Unreleased
+
+- Canonical production hosting moved to **Cloudflare Pages** at <https://coursescope.pages.dev/>.
+  GitHub Pages remains available as a backup.
+- Canonical and social-preview metadata now point to the Cloudflare production URL.
+- No admissions data, eligibility logic or student-facing product behaviour changed.
+
 ## CourseScope v1.0.0 — Initial Public Release
 
 *28 September 2026*

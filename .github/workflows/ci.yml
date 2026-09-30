@@ -1,8 +1,9 @@
-# CourseScope — CI and GitHub Pages deployment.
+# CourseScope — CI and GitHub Pages backup deployment.
 #
-# Every push and pull request runs the full release chain (`verify`). Pushes to
-# `main` then deploy the SAME checked build to GitHub Pages (`deploy`), which
-# only runs after `verify` passes — a failing check never reaches production.
+# Cloudflare Pages is the canonical production host. Every push and pull request
+# runs the full release chain (`verify`). Pushes to `main` then deploy the SAME
+# checked build to the GitHub Pages backup (`deploy`), which only runs after
+# `verify` passes.
 
 name: CI and deploy
 
@@ -83,7 +84,7 @@ jobs:
           path: dist
 
   deploy:
-    name: Deploy to GitHub Pages
+    name: Deploy backup to GitHub Pages
     needs: verify
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest

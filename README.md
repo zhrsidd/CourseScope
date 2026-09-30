@@ -2,7 +2,7 @@
 
 **UK Physics & Engineering Course Finder — v1.0.0, initial public release.**
 
-Live: <https://zhrsidd.github.io/CourseScope/> · Repository: <https://github.com/zhrsidd/CourseScope>
+Live: <https://coursescope.pages.dev/> · Backup: <https://zhrsidd.github.io/CourseScope/> · Repository: <https://github.com/zhrsidd/CourseScope>
 
 A searchable catalogue of UK undergraduate **Physics** and **Engineering** courses, built around
 A-Level entry requirements for students applying after Year 13.
@@ -67,19 +67,22 @@ site* makes are to Google Fonts, and it renders correctly with system fonts when
 
 ## Deployment
 
-Production is **GitHub Pages**: <https://zhrsidd.github.io/CourseScope/>.
+Production is **Cloudflare Pages**: <https://coursescope.pages.dev/>. GitHub Pages remains a
+backup deployment at <https://zhrsidd.github.io/CourseScope/>.
+
+Cloudflare Pages is connected to the `main` branch and builds from the repository root with the
+React (Vite) preset, `npm run build`, and output directory `dist`.
 
 `.github/workflows/ci.yml` runs on every push and pull request: clean install (`npm ci`),
 typecheck, the assertion suite (including catalogue validation and duplicate checks), the production
-build, and the browser QA suite against a production preview. On a push to `main` it then deploys
-**that same checked build** to Pages — the deploy job only runs after verification passes.
-One-time repository setting: *Settings → Pages → Build and deployment → Source: GitHub Actions*.
+build, and the browser QA suite against a production preview. On a push to `main`, after those
+checks pass, it also deploys the same checked build to the **GitHub Pages backup**.
 
 The app is a **static site** — no server, no API, no build-time data fetching.
 
-**Routing is hash-based** (`/CourseScope/#/course/...`), deliberately. GitHub Pages serves real files
-only and has no rewrite rules; with hash routing every route requests the same `index.html`, so a
-course or university link opens directly in a new tab and survives a refresh, with no 404 trick.
+**Routing is hash-based** (`/#/course/...`), deliberately. With hash routing every route requests
+the same `index.html`, so course and university links open directly in a new tab and survive a
+refresh on both Cloudflare Pages and the GitHub Pages backup, with no rewrite rule required.
 
 **Asset paths are relative** (`base: './'`), so the same `dist/` works under `/CourseScope/`, at a
 domain root, or from the filesystem without rebuilding.
@@ -94,12 +97,12 @@ Production values live in **`.env.production`**, which is committed because ever
 public (Vite inlines them into the public bundle). `.env.example` documents every variable for
 deployments elsewhere. Vite reads these at **build** time, so changing one means rebuilding.
 
-| Variable | v1.0.0 production value | Effect when unset |
+| Variable | current production value | Effect when unset |
 |---|---|---|
-| `VITE_SITE_URL` | `https://zhrsidd.github.io/CourseScope/` | No canonical link and no `og:url` |
+| `VITE_SITE_URL` | `https://coursescope.pages.dev/` | No canonical link and no `og:url` |
 | `VITE_FEEDBACK_URL` | the project Typeform | Report-an-issue offers "Copy report" only, and says so |
 | `VITE_FEEDBACK_EMAIL` | not set (form is preferred) | Used only when no form URL is set |
-| `VITE_OG_IMAGE_URL` | `…/CourseScope/social-preview.png` | Text-only share cards |
+| `VITE_OG_IMAGE_URL` | `https://coursescope.pages.dev/social-preview.png` | Text-only share cards |
 | `VITE_BASE_PATH` | not set | Defaults to `./` |
 
 `/admin` has no authentication and is not linked from any public navigation. It contains no private

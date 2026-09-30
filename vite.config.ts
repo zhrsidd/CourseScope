@@ -26,24 +26,22 @@ import path from 'node:path';
  *  Apache directory and it resolves.
  *
  *  The cost is aesthetic — a `#` in every URL — plus the fact that crawlers see
- *  one page. Browser-history routing would fix both, and it would require
- *  host-specific rewrite configuration that this project has no way to test
- *  against a real host from here. v0.9 is a release candidate, so the routing
- *  architecture is NOT migrated for looks. It is documented instead, and the
- *  tradeoff is recorded in the release report rather than silently accepted.
+ *  one page. Browser-history routing would fix both, but would require
+ *  host-specific rewrite configuration. The v1 architecture therefore remains
+ *  deliberately hash-based and portable across static hosts.
  *
  *  BASE PATH defaults to './' — relative asset URLs.
  *
  *  Relative paths mean the built `dist/` works when served from a domain root,
  *  from a subdirectory, or straight off the filesystem, without rebuilding.
- *  Production is GitHub Pages at https://zhrsidd.github.io/CourseScope/ — a
- *  sub-path — which relative assets handle with no extra configuration. A
- *  host that needs an absolute base can set VITE_BASE_PATH.
+ *  Production is Cloudflare Pages at https://coursescope.pages.dev/; GitHub
+ *  Pages at https://zhrsidd.github.io/CourseScope/ remains a backup. Relative
+ *  assets allow the same build shape to work at both locations. A host that
+ *  needs an absolute base can set VITE_BASE_PATH.
  *
- *  Hash routing is what makes deep links work there: GitHub Pages serves only
- *  real files and has no rewrite rules, and with HashRouter every route
- *  (`/CourseScope/#/course/…`) requests the same index.html, so a course or
- *  university link opens directly and survives a refresh.
+ *  Hash routing keeps deep links portable across both hosts: every route after
+ *  the `#` requests the same index.html, so a course or university link opens
+ *  directly and survives a refresh without rewrite rules.
  */
 /**
  * Deployment metadata in the STATIC HTML. src/lib/site-meta.ts adds the same
