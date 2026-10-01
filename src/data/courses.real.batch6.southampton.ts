@@ -20,12 +20,19 @@
  *
  *      J641 Maritime MEng serves 2027   ·   J640 Maritime BEng does not
  *      H610 Electronic BEng serves 2027 ·   H603 Electronic MEng does not
- *      HH72 Acoustical BEng serves 2027 ·   H722 Acoustical MEng does not
  *
- *  So no sibling's 2027 offer is ever inferred from another's. The six pages
+ *  So no sibling's 2027 offer is ever inferred from another's. The pages
  *  that would not yield 2027 data are recorded here as `awaiting-data` course
  *  IDENTITY ONLY. Their 2026/27 figures were seen and are quarantined in the
  *  research file; not one of them is imported here, in any field.
+ *
+ *  UPDATE, v1.1.0 (2026-10-01): HH72 and H722 (Acoustical Engineering BEng and
+ *  MEng) were both withdrawn from the 2027 catalogue after live verification
+ *  found both official pages now state "This course is not open to applicants
+ *  for 2027 entry." HH72 had served a full 2027/28 offer here on 2026-09-16;
+ *  H722 was one of the "not retrieved" shells below. Neither is a 2027
+ *  application Southampton is currently accepting, so neither is served. See
+ *  the comments at each former entry for the full account.
  *
  *  ---------------------------------------------------------------------------
  *  FOUR THINGS ABOUT SOUTHAMPTON THAT SHAPE THESE RECORDS
@@ -970,64 +977,35 @@ export const batch6SouthamptonCourses: Course[] = [
   }),
 
   /* --------------------------- Acoustical --------------------------- */
-  course({
-    slug: 'southampton-acoustical-engineering-beng',
-    universityId: 'southampton',
-    name: 'Acoustical Engineering (BEng)',
-    category: 'engineering',
-    sub: 'general-engineering',
-    degree: 'BEng',
-    years: 3,
-    code: 'HH72',
-    year: '2027',
-    cycleNote: CYCLE,
-    raw: 'AAB including mathematics and another accepted science subject. Offers typically exclude General Studies and Critical Thinking.',
-    offers: [
-      offer({
-        gradeProfile: 'AAB',
-        required: ['Mathematics'],
-        constraints: [
-          oneOf(
-            [
-              'Biology',
-              'Chemistry',
-              'Physics',
-              'Mathematics',
-              'Further Mathematics',
-              'Psychology',
-              'Statistics',
-              'Environmental Science',
-              'Environmental Studies',
-              'Geography',
-              'Geology',
-            ],
-            null,
-            'Another accepted science subject, from Southampton’s published list: “Biology, Chemistry, Physics, Maths, Further Maths, Psychology, Statistics, Environmental Science, Environmental Studies, Geography and Geology.”',
-          ),
-        ],
-        rawText: 'AAB including mathematics and another accepted science subject',
-        notes:
-          'NO PER-SUBJECT MINIMUM GRADE IS STATED in the standard offer string, so none is recorded. The lowest standard A-Level offer of any Southampton course verified in this batch.',
-      }),
-    ],
-    fm: 'no-stated-preference',
-    fmNote:
-      'Further Mathematics is accepted only as one member of Southampton’s eleven-subject accepted-science list for this course. It is not required, carries no grade reduction, and is not a substitute for Mathematics.',
-    test: 'unknown',
-    testNote: NO_TEST_NOTE,
-    interview: 'not-stated',
-    interviewNote: ENG_INTERVIEW_NOTE,
-    contextual: engContextual(
-      '“BBB including mathematics and another accepted science subject.” BBB is the lowest contextual offer found anywhere in the Southampton research.',
-    ),
-    gcse: GCSE,
-    verification: 'verified',
-    officialUrl: S('acoustical-engineering-degree-beng'),
-    sourceUrl: S('acoustical-engineering-degree-beng'),
-    sourceTitle: 'Acoustical Engineering (Hons) | BEng | University of Southampton',
-    lastVerified: VERIFIED_ON,
-    notes: `THE WIDEST ACCEPTED-SUBJECT LIST AT SOUTHAMPTON BY A LONG WAY — it admits Psychology, Statistics, Geography and Geology, which no other Southampton course read accepts. The full list is quoted verbatim in the pathway constraint. THIS BEng SERVED 2027 WHILE ITS MEng SIBLING H722 DID NOT: the MEng’s 2027/28 tab exists but is empty. Nothing on this page has been carried to H722. Filed under general engineering because this catalogue has no acoustics heading; Southampton’s own title is preserved exactly. Siblings are separate applications: MEng H722, and Acoustical Engineering with Industrial Placement Year FF38. ${NO_PRACTICAL_NOTE} ${EXCLUSIONS} EPQ route: “ABB including mathematics and another accepted science subject, plus grade A in the EPQ”. IB: “34 points overall with 17 points at Higher Level”, including a “minimum of 5 at Higher Level in Mathematics” and a “minimum of 5 at Higher Level in another accepted science subject.” BTEC (RQF): “D in the BTEC National Extended Certificate plus grades AA from two A-levels.” ${SHOW_MORE_NOTE} ${NO_DEADLINE_NOTE}`,
-  }),
+  /*
+   * WITHDRAWN FROM THE 2027 CATALOGUE — v1.1.0 LIVE VERIFICATION, 2026-10-01.
+   *
+   * HH72 (Acoustical Engineering BEng) was read here on 2026-09-16 and served a
+   * populated 2027/28 requirements panel: AAB including mathematics and another
+   * accepted science subject, from Southampton's own course page. That panel is
+   * quoted in full in this file's git history (the v1.1.0 tuition-fee pass).
+   *
+   * Independent tuition-fee research on 2026-09-30, re-verified on 2026-10-01,
+   * found that https://www.southampton.ac.uk/courses/acoustical-engineering-degree-beng
+   * now carries this banner: "This course is not open to applicants for 2027
+   * entry. Find similar degrees by browsing our course finder." The entry
+   * requirements panel beneath the banner is unchanged (still headed "For
+   * Academic year 2027/28", still shows AAB) — the page's admissions content is
+   * not cycle-gated, but the application itself now is.
+   *
+   * Showing AAB as HH72's current 2027 offer would tell a student they can apply
+   * to an application Southampton has explicitly closed. There is no status in
+   * this schema for "identity confirmed, application confirmed NOT running this
+   * cycle" that is weaker than removing the record — awaiting-data means
+   * unchecked, not confirmed-closed, and keeping it discoverable at all would
+   * invite a student to check back for something that is not pending, it is
+   * shut. The record is withdrawn from the 2027 catalogue entirely (and so
+   * loses the 2028 "not yet published" shell it would otherwise have earned,
+   * since that shell asserts an ongoing 2027 application this is no longer
+   * evidence for). Southampton's own identity furniture (title, award,
+   * HH72, 3-year duration) is unchanged if the course reopens in a future
+   * cycle; a future data pass should re-read the page before restoring it.
+   */
 
   /* ---------------------------- Maritime ---------------------------- */
   course({
@@ -1147,23 +1125,21 @@ export const batch6SouthamptonCourses: Course[] = [
 const NOT_RETRIEVED_NOTE =
   'This Southampton page was read but would not serve 2027 entry requirements. The identity below — title, award, UCAS code, duration — is confirmed from Southampton’s own page furniture, which is not year-gated. No entry requirement, contextual offer, GCSE rule, admissions-test statement or interview policy has been recorded, and nothing has been copied from the sibling course or from the page’s own 2026/27 figures.';
 
+/*
+ * H722 (Acoustical Engineering MEng) was ALSO withdrawn here — v1.1.0 live
+ * verification, 2026-10-01. It had been kept as an identity-only awaiting-data
+ * shell (2027/28 tab present but empty, as this file originally recorded), on
+ * the reasoning that the application existed even though its requirements had
+ * not been published for 2027. Re-verification found Southampton's own page
+ * now carries the same banner as its BEng sibling HH72:
+ * "This course is not open to applicants for 2027 entry." That is a stronger
+ * and different fact than "not yet published" — identity-only discoverability
+ * would still invite a student to check back on an application Southampton has
+ * confirmed is not running, so H722 is withdrawn from the 2027 catalogue
+ * entirely alongside HH72. See the comment above HH72's former entry, in the
+ * verified courses above, for the full account.
+ */
 export const batch6SouthamptonAwaitingCourses: Course[] = [
-  awaitingCourse({
-    slug: 'southampton-acoustical-engineering-meng',
-    universityId: 'southampton',
-    name: 'Acoustical Engineering (MEng)',
-    category: 'engineering',
-    sub: 'general-engineering',
-    degree: 'MEng',
-    years: 4,
-    code: 'H722',
-    year: '2027',
-    identityVerification: 'official-page',
-    identityNote:
-      'This course’s own Southampton page was retrieved and read. Its title, award, UCAS code and duration come from that page’s own furniture, which is not year-gated. The page would not serve 2027 entry requirements, which is why the admissions fields are empty — a cycle problem, not an identity problem.',
-    officialUrl: S('acoustical-engineering-degree-meng'),
-    notes: `${NOT_RETRIEVED_NOTE} Specifically: the 2027/28 tab is PRESENT BUT EMPTY — an inactive label with no content underneath — while the requirements served sit under 2026/27. Its BEng sibling HH72 did serve a populated 2027/28 panel, and none of that BEng’s figures have been carried here.`,
-  }),
   awaitingCourse({
     slug: 'southampton-physics-with-mathematics-mphys',
     universityId: 'southampton',

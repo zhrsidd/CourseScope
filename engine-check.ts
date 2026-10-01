@@ -5789,7 +5789,7 @@ check(
 
 /* --- 26f. Every remaining awaiting-data row names a university-side gap --- */
 const stillAwaiting = courses.filter((c) => c.provenance.verificationStatus === 'awaiting-data');
-check('Six records remain awaiting data', stillAwaiting.length, 6);
+check('Five records remain awaiting data (H722 withdrawn in the v1.1.0 Southampton correction)', stillAwaiting.length, 5);
 check(
   '  …all of them blocked by the university’s own cycle, not by our retrieval',
   stillAwaiting.every((c) =>
@@ -5869,10 +5869,10 @@ check(
     .some((t) => /guarantee|you'?ll get in|dream|perfect match|predict/i.test(t)), false);
 
   /* Branding changes nothing the student relies on. Pinned from the v0.9 build. */
-  check('Brand does not alter the catalogue: 1,132 served applications', courses.length, 1132);
-  check('  …563 verified', courses.filter((c) => c.provenance.verificationStatus === 'verified').length, 563);
+  check('Brand does not alter the catalogue: 1,129 served applications', courses.length, 1129);
+  check('  …562 verified', courses.filter((c) => c.provenance.verificationStatus === 'verified').length, 562);
   check('  …“Physics” search still returns 206 (2027)', search('Physics').length, 206);
-  check('  …“Engineering” search still returns 357 (2027)', search('Engineering').length, 357);
+  check('  …“Engineering” search still returns 356 (2027; HH72 withdrawn in v1.1.0)', search('Engineering').length, 356);
   check('  …study-option search for “Astrophysics” still returns 40', search('Astrophysics').length, 40);
   const brandProfile = profile([['Mathematics', 'A*'], ['Physics', 'A'], ['Chemistry', 'A']]);
   const brandVerdicts: Record<string, number> = {};
@@ -5882,9 +5882,9 @@ check(
     brandVerdicts[r.verdict] = (brandVerdicts[r.verdict] ?? 0) + 1;
   }
   check(
-    '  …and eligibility verdicts for A*AA (Maths, Physics, Chemistry) are unchanged',
+    '  …and eligibility verdicts for A*AA (Maths, Physics, Chemistry) reflect the Southampton withdrawal',
     JSON.stringify(brandVerdicts, Object.keys(brandVerdicts).sort()),
-    JSON.stringify({ 'does-not-meet': 47, 'insufficient-information': 31, meets: 416, 'review-required': 75 }),
+    JSON.stringify({ 'does-not-meet': 47, 'insufficient-information': 30, meets: 415, 'review-required': 75 }),
   );
 }
 
@@ -5934,9 +5934,9 @@ check(
       }))))
       .digest('hex'),
     '71ed1a2075456dd5e20ed04329ae5fbcb456667e7114e337c8efe9bf935b018b');
-  check('  …and so is every course’s requirement set across the catalogue',
+  check('  …and so is every course’s requirement set across the catalogue, aside from the v1.1.0 Southampton withdrawal',
     createHash('sha256').update(JSON.stringify(courses.map((c) => ({ id: c.id, offers: c.offers })))).digest('hex'),
-    'fdfbf536b142b7382aa264b662e935c4fec56376af3a6c6c26a8464036cd6802');
+    'f7d97298a11085f0462195f6bd55aa648b82cf59756149b5f28074e1957706a6');
   const uclPhysics = courses.find((c) => c.id === 'ucl-physics-bsc--2027')!;
   check('UCL Physics still requires Mathematics and Physics — the general list does not dilute it',
     uclPhysics.offers[0].subjectRequirements.filter((r) => r.required).map((r) => r.subject).sort().join('+'),
@@ -5970,10 +5970,10 @@ check(
   check('  …with the same 22 universities served', universities.length, 22);
 
   /* 28d. Polish changed nothing a student relies on */
-  check('Polish pass: catalogue still 1,132 applications, 563 verified',
-    `${courses.length}/${courses.filter((c) => c.provenance.verificationStatus === 'verified').length}`, '1132/563');
-  check('  …search still returns Physics 206, Engineering 357, Astrophysics 40',
-    `${search('Physics').length}/${search('Engineering').length}/${search('Astrophysics').length}`, '206/357/40');
+  check('Polish pass: catalogue still 1,129 applications, 562 verified',
+    `${courses.length}/${courses.filter((c) => c.provenance.verificationStatus === 'verified').length}`, '1129/562');
+  check('  …search still returns Physics 206, Engineering 356, Astrophysics 40',
+    `${search('Physics').length}/${search('Engineering').length}/${search('Astrophysics').length}`, '206/356/40');
   check('  …University filter still narrows search as before (UCL: 21)',
     search('', '2027', { universityIds: ['ucl'] }).length, 21);
 }
@@ -6190,8 +6190,8 @@ check(
     TUITION_FEES.filter((f) => f.status === 'published' && feeDisplayState(f, courseById[f.courseId], today) !== 'current').length, 0);
 
   /* 30j. Fees change nothing a student relied on before */
-  check('Unchanged: catalogue still 1,132 applications (569 for 2027, 563 for 2028)',
-    `${courses.length}/${courses.filter((c) => c.applicationYear === '2027').length}/${courses.filter((c) => c.applicationYear === '2028').length}`, '1132/569/563');
+  check('Changed by the Southampton correction: catalogue now 1,129 applications (567 for 2027, 562 for 2028)',
+    `${courses.length}/${courses.filter((c) => c.applicationYear === '2027').length}/${courses.filter((c) => c.applicationYear === '2028').length}`, '1129/567/562');
   const P = (al: [string, string][], fm: boolean | null, y: '2027' | '2028') =>
     ({ aLevels: al.map(([subject, grade], i) => ({ id: `a${i}`, subject, grade })), gcses: [], applicationYear: y, schoolOffersFurtherMathematics: fm, notes: '' }) as Parameters<typeof evaluateCatalogue>[1];
   const fp = createHash('sha256');
@@ -6204,8 +6204,8 @@ check(
     const r = evaluateCatalogue(courses, p);
     for (const id of Object.keys(r).sort()) fp.update(`${id}:${r[id].verdict};`);
   }
-  check('  …eligibility verdicts for four reference profiles are byte-identical to v1.0.0',
-    fp.digest('hex').slice(0, 16), '390c43ba6dc114ba');
+  check('  …eligibility verdicts for four reference profiles unchanged except for the v1.1.0 Southampton withdrawal',
+    fp.digest('hex').slice(0, 16), '1fa41a2fe07a2824');
   check('  …and the eligibility engine does not read fees',
     /fee/i.test(fs.readFileSync('src/lib/eligibility.ts', 'utf8')), false);
   check('  …course cards and filters carry no fee UI (v1.1 scope)',
