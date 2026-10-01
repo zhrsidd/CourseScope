@@ -1,0 +1,92 @@
+{
+  "universityId": "cambridge",
+  "checkedOn": "2026-09-30",
+  "method": "Cambridge Undergraduate Study fees pages: /fees-funding/tuition-fees (Home) and /international-students/international-fees-and-costs (international fee groups). Course pages carry no amounts (link to fees pages). International page: served inconsistently across cache-busted fetches (2 of 7 fetches returned an older copy reading \"The fees below are for 2026 entry. Fees for 2027 entry will be published here no later than 1 October 2026\", with lower 2026 amounts, not recorded); 5 of 7 returned \"The fees below are for 2027 entry\" with a 2027 table, treated as the current page. Amounts are tuition only; College fees (2027-28, separate PDF) not recorded.",
+  "universityWideStatements": [
+    {
+      "quote": "The tuition fee for Home fee status students starting their first undergraduate degree in 2027 will be £10,050.",
+      "url": "https://www.undergraduate.study.cam.ac.uk/fees-funding/tuition-fees",
+      "title": "Tuition Fees | Undergraduate Study",
+      "appliesTo": "Home fee status students starting their first undergraduate degree in 2027 (all courses)"
+    }
+  ],
+  "courses": [
+    {
+      "id": "cambridge-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "university-wide",
+          "scopeNote": "The tuition fee for Home fee status students starting their first undergraduate degree in 2027 will be £10,050.",
+          "yearEvidence": "starting their first undergraduate degree in 2027 will be £10,050",
+          "sourceUrl": "https://www.undergraduate.study.cam.ac.uk/fees-funding/tuition-fees",
+          "sourceTitle": "Tuition Fees | Undergraduate Study",
+          "note": "Page adds that fees are subject to inflationary increases in future years. Home student on a full year abroad: \"the fee for a Home student on a full year abroad is set at 15% of the tuition fee for that year in Cambridge.\""
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 46872,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "fee-band",
+          "scopeNote": "Group 4 (Chemical Engineering and Biotechnology; Computer Science; Engineering; Management Studies; Manufacturing Engineering; Natural Sciences; Psychological and Behavioural Sciences). Engineering is listed in Group 4.",
+          "yearEvidence": "The fees below are for 2027 entry.",
+          "sourceUrl": "https://www.undergraduate.study.cam.ac.uk/international-students/international-fees-and-costs",
+          "sourceTitle": "International fees and costs | Undergraduate Study",
+          "note": "Tuition fee only; international students also normally pay an annual College fee (published separately for 2027-28, not recorded). Page says listed fees are per year and fixed for the duration of the course; year abroad international tuition is 50% of the full fee. Note: page was served inconsistently (some cached copies showed 2026 entry); see method."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "cambridge-natural-sciences--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "university-wide",
+          "scopeNote": "The tuition fee for Home fee status students starting their first undergraduate degree in 2027 will be £10,050.",
+          "yearEvidence": "starting their first undergraduate degree in 2027 will be £10,050",
+          "sourceUrl": "https://www.undergraduate.study.cam.ac.uk/fees-funding/tuition-fees",
+          "sourceTitle": "Tuition Fees | Undergraduate Study",
+          "note": "Page adds that fees are subject to inflationary increases in future years. Home student on a full year abroad: \"the fee for a Home student on a full year abroad is set at 15% of the tuition fee for that year in Cambridge.\""
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 46872,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "fee-band",
+          "scopeNote": "Group 4 (Chemical Engineering and Biotechnology; Computer Science; Engineering; Management Studies; Manufacturing Engineering; Natural Sciences; Psychological and Behavioural Sciences). Natural Sciences is listed in Group 4.",
+          "yearEvidence": "The fees below are for 2027 entry.",
+          "sourceUrl": "https://www.undergraduate.study.cam.ac.uk/international-students/international-fees-and-costs",
+          "sourceTitle": "International fees and costs | Undergraduate Study",
+          "note": "Tuition fee only; international students also normally pay an annual College fee (published separately for 2027-28, not recorded). Page says listed fees are per year and fixed for the duration of the course; year abroad international tuition is 50% of the full fee. Note: page was served inconsistently (some cached copies showed 2026 entry); see method."
+        }
+      ],
+      "unresolved": null
+    }
+  ],
+  "notes2028": "No 2028-entry fees published. International page: \"Fees for 2028 entry will be published here no later than 1 October 2027.\" College fees for 2028-29 likewise by 1 October 2027. Home tuition page says nothing on 2028."
+}

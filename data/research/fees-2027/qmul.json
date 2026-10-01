@@ -1,0 +1,807 @@
+{
+  "universityId": "qmul",
+  "checkedOn": "2026-09-30",
+  "method": "WebFetch of the three official 2027 course pages on qmul.ac.uk (courses/2027/physics, biomedical-engineering, materials-science-and-engineering), fetched with a harmless query string because the bare URLs returned \"Too many redirects\"; each variant has its own fee box headed \"Start: September 2027\". Cross-checked that the 2026 page (F300: Home £9,790 / Overseas £32,950) differs, so pages were not stale. The general QMUL undergraduate tuition fees page (tuitionfees/) is out of date (2025-26 wording) and was not used.",
+  "universityWideStatements": [],
+  "courses": [
+    {
+      "id": "qmul-physics-bsc--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Home fees: £10,050\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/physics/",
+          "sourceTitle": "Physics - Queen Mary University of London",
+          "note": "Fee box for UCAS F300 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 34750,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Overseas fees: £34,750\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/physics/",
+          "sourceTitle": "Physics - Queen Mary University of London",
+          "note": "Fee box for UCAS F300 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "qmul-physics-foundation-bsc--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Home fees: £10,050\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/physics/",
+          "sourceTitle": "Physics - Queen Mary University of London",
+          "note": "Fee box for UCAS FFX0 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 26750,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Overseas fees: £26,750\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/physics/",
+          "sourceTitle": "Physics - Queen Mary University of London",
+          "note": "Fee box for UCAS FFX0 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "qmul-physics-professional-experience-bsc--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Home fees: £10,050\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/physics/",
+          "sourceTitle": "Physics - Queen Mary University of London",
+          "note": "Fee box for UCAS F306 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page. Page states no reduced placement-year fee."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 34750,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Overseas fees: £34,750\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/physics/",
+          "sourceTitle": "Physics - Queen Mary University of London",
+          "note": "Fee box for UCAS F306 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page. Page states no reduced placement-year fee."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "qmul-physics-year-abroad-bsc--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Home fees: £10,050\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/physics/",
+          "sourceTitle": "Physics - Queen Mary University of London",
+          "note": "Fee box for UCAS F302 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page. Page gives no year-abroad fee figure, only a link (\"Finances for studying abroad on exchange\")."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 34750,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Overseas fees: £34,750\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/physics/",
+          "sourceTitle": "Physics - Queen Mary University of London",
+          "note": "Fee box for UCAS F302 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page. Page gives no year-abroad fee figure, only a link (\"Finances for studying abroad on exchange\")."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "qmul-physics-msci--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Home fees: £10,050\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/physics/",
+          "sourceTitle": "Physics - Queen Mary University of London",
+          "note": "Fee box for UCAS F303 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 34750,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Overseas fees: £34,750\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/physics/",
+          "sourceTitle": "Physics - Queen Mary University of London",
+          "note": "Fee box for UCAS F303 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "qmul-physics-professional-experience-msci--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Home fees: £10,050\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/physics/",
+          "sourceTitle": "Physics - Queen Mary University of London",
+          "note": "Fee box for UCAS F307 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page. Page states no reduced placement-year fee."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 34750,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Overseas fees: £34,750\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/physics/",
+          "sourceTitle": "Physics - Queen Mary University of London",
+          "note": "Fee box for UCAS F307 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page. Page states no reduced placement-year fee."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "qmul-physics-year-abroad-msci--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Home fees: £10,050\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/physics/",
+          "sourceTitle": "Physics - Queen Mary University of London",
+          "note": "Fee box for UCAS F301 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page. Page gives no year-abroad fee figure, only a link (\"Finances for studying abroad on exchange\")."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 34750,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Overseas fees: £34,750\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/physics/",
+          "sourceTitle": "Physics - Queen Mary University of London",
+          "note": "Fee box for UCAS F301 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page. Page gives no year-abroad fee figure, only a link (\"Finances for studying abroad on exchange\")."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "qmul-biomedical-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Home fees: £10,050\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/biomedical-engineering/",
+          "sourceTitle": "Biomedical Engineering - Queen Mary University of London",
+          "note": "Fee box for UCAS HBF2 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 34750,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Overseas fees: £34,750\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/biomedical-engineering/",
+          "sourceTitle": "Biomedical Engineering - Queen Mary University of London",
+          "note": "Fee box for UCAS HBF2 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "qmul-engineering-foundation-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Home fees: £10,050\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/biomedical-engineering/",
+          "sourceTitle": "Biomedical Engineering - Queen Mary University of London",
+          "note": "Fee box for UCAS HHX3 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 26750,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Overseas fees: £26,750\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/biomedical-engineering/",
+          "sourceTitle": "Biomedical Engineering - Queen Mary University of London",
+          "note": "Fee box for UCAS HHX3 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "qmul-biomedical-engineering-industrial-experience-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Home fees: £10,050\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/biomedical-engineering/",
+          "sourceTitle": "Biomedical Engineering - Queen Mary University of London",
+          "note": "Fee box for UCAS HBF1 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page. Page states no reduced placement-year fee."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 34750,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Overseas fees: £34,750\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/biomedical-engineering/",
+          "sourceTitle": "Biomedical Engineering - Queen Mary University of London",
+          "note": "Fee box for UCAS HBF1 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page. Page states no reduced placement-year fee."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "qmul-biomedical-engineering-year-abroad-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Home fees: £10,050\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/biomedical-engineering/",
+          "sourceTitle": "Biomedical Engineering - Queen Mary University of London",
+          "note": "Fee box for UCAS HBFY on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page. Page gives no year-abroad fee figure, only a link (\"Finances for studying abroad on exchange\")."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 34750,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Overseas fees: £34,750\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/biomedical-engineering/",
+          "sourceTitle": "Biomedical Engineering - Queen Mary University of London",
+          "note": "Fee box for UCAS HBFY on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page. Page gives no year-abroad fee figure, only a link (\"Finances for studying abroad on exchange\")."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "qmul-biomedical-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Home fees: £10,050\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/biomedical-engineering/",
+          "sourceTitle": "Biomedical Engineering - Queen Mary University of London",
+          "note": "Fee box for UCAS HBF5 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 34750,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Overseas fees: £34,750\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/biomedical-engineering/",
+          "sourceTitle": "Biomedical Engineering - Queen Mary University of London",
+          "note": "Fee box for UCAS HBF5 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "qmul-biomedical-engineering-industrial-experience-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Home fees: £10,050\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/biomedical-engineering/",
+          "sourceTitle": "Biomedical Engineering - Queen Mary University of London",
+          "note": "Fee box for UCAS HBF3 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page. Page states no reduced placement-year fee."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 34750,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Overseas fees: £34,750\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/biomedical-engineering/",
+          "sourceTitle": "Biomedical Engineering - Queen Mary University of London",
+          "note": "Fee box for UCAS HBF3 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page. Page states no reduced placement-year fee."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "qmul-biomedical-engineering-year-abroad-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Home fees: £10,050\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/biomedical-engineering/",
+          "sourceTitle": "Biomedical Engineering - Queen Mary University of London",
+          "note": "Fee box for UCAS HBFX on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page. Page gives no year-abroad fee figure, only a link (\"Finances for studying abroad on exchange\")."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 34750,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Overseas fees: £34,750\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/biomedical-engineering/",
+          "sourceTitle": "Biomedical Engineering - Queen Mary University of London",
+          "note": "Fee box for UCAS HBFX on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page. Page gives no year-abroad fee figure, only a link (\"Finances for studying abroad on exchange\")."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "qmul-materials-science-and-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Home fees: £10,050\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/materials-science-and-engineering/",
+          "sourceTitle": "Materials Science and Engineering - Queen Mary University of London",
+          "note": "Fee box for UCAS J511 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 34750,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Overseas fees: £34,750\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/materials-science-and-engineering/",
+          "sourceTitle": "Materials Science and Engineering - Queen Mary University of London",
+          "note": "Fee box for UCAS J511 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "qmul-materials-science-foundation-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Home fees: £10,050\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/materials-science-and-engineering/",
+          "sourceTitle": "Materials Science and Engineering - Queen Mary University of London",
+          "note": "Fee box for UCAS JJX3 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 26750,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Overseas fees: £26,750\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/materials-science-and-engineering/",
+          "sourceTitle": "Materials Science and Engineering - Queen Mary University of London",
+          "note": "Fee box for UCAS JJX3 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "qmul-materials-science-and-engineering-industrial-experience-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Home fees: £10,050\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/materials-science-and-engineering/",
+          "sourceTitle": "Materials Science and Engineering - Queen Mary University of London",
+          "note": "Fee box for UCAS JM11 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page. Page states no reduced placement-year fee."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 34750,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Overseas fees: £34,750\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/materials-science-and-engineering/",
+          "sourceTitle": "Materials Science and Engineering - Queen Mary University of London",
+          "note": "Fee box for UCAS JM11 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page. Page states no reduced placement-year fee."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "qmul-materials-science-and-engineering-year-abroad-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Home fees: £10,050\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/materials-science-and-engineering/",
+          "sourceTitle": "Materials Science and Engineering - Queen Mary University of London",
+          "note": "Fee box for UCAS J51Y on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page. Page gives no year-abroad fee figure, only a link (\"Finances for studying abroad on exchange\")."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 34750,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Overseas fees: £34,750\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/materials-science-and-engineering/",
+          "sourceTitle": "Materials Science and Engineering - Queen Mary University of London",
+          "note": "Fee box for UCAS J51Y on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page. Page gives no year-abroad fee figure, only a link (\"Finances for studying abroad on exchange\")."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "qmul-materials-science-and-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Home fees: £10,050\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/materials-science-and-engineering/",
+          "sourceTitle": "Materials Science and Engineering - Queen Mary University of London",
+          "note": "Fee box for UCAS J512 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 34750,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Overseas fees: £34,750\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/materials-science-and-engineering/",
+          "sourceTitle": "Materials Science and Engineering - Queen Mary University of London",
+          "note": "Fee box for UCAS J512 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "qmul-materials-science-and-engineering-industrial-experience-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Home fees: £10,050\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/materials-science-and-engineering/",
+          "sourceTitle": "Materials Science and Engineering - Queen Mary University of London",
+          "note": "Fee box for UCAS JM10 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page. Page states no reduced placement-year fee."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 34750,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Overseas fees: £34,750\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/materials-science-and-engineering/",
+          "sourceTitle": "Materials Science and Engineering - Queen Mary University of London",
+          "note": "Fee box for UCAS JM10 on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page. Page states no reduced placement-year fee."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "qmul-materials-science-and-engineering-year-abroad-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Home fees: £10,050\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/materials-science-and-engineering/",
+          "sourceTitle": "Materials Science and Engineering - Queen Mary University of London",
+          "note": "Fee box for UCAS J52Y on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page. Page gives no year-abroad fee figure, only a link (\"Finances for studying abroad on exchange\")."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 34750,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "The fee box says \"Overseas fees: £34,750\" without stating a period.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start: September 2027",
+          "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/materials-science-and-engineering/",
+          "sourceTitle": "Materials Science and Engineering - Queen Mary University of London",
+          "note": "Fee box for UCAS J52Y on the 2027 page; no \"subject to\"/\"expected\"/\"to be confirmed\" caveat on the page. Page gives no year-abroad fee figure, only a link (\"Finances for studying abroad on exchange\")."
+        }
+      ],
+      "unresolved": null
+    }
+  ],
+  "notes2028": "No 2028-entry fees published: the 2028 course page URL (courses/2028/physics/) returns \"could not be found on this server\". The general tuition fees page only has 2025-26 wording."
+}

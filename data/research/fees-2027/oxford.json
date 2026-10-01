@@ -1,0 +1,85 @@
+{
+  "universityId": "oxford",
+  "checkedOn": "2026-09-30",
+  "method": "Oxford course listing page fee section (ox.ac.uk/admissions/undergraduate/courses/course-listing/<course>). Physics read once (a second fetch with a query string returned HTTP 403, so no cross-check). Engineering Science read in gap-fill pass (2026-10-01); Physics re-fetched and confirmed. Oxford's central course-fees page and college fees not checked.",
+  "universityWideStatements": [],
+  "courses": [
+    {
+      "id": "oxford-physics-mphys--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "fees and funding information for 2027 entry",
+          "sourceUrl": "https://www.ox.ac.uk/admissions/undergraduate/courses/course-listing/physics",
+          "sourceTitle": "Physics | Oxford University",
+          "note": "Read from the course page fees section. Page adds \"Fees will usually increase annually\". Re-fetched in gap-fill pass: same table (Fee status / Annual Course fees; Home £10,050, Overseas £66,580) under \"Please note the fees and funding information for 2027 entry.\" Existing figures confirmed."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 66580,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "fees and funding information for 2027 entry",
+          "sourceUrl": "https://www.ox.ac.uk/admissions/undergraduate/courses/course-listing/physics",
+          "sourceTitle": "Physics | Oxford University",
+          "note": "Read from the course page fees section. Re-fetched in gap-fill pass: same table (Fee status / Annual Course fees; Home £10,050, Overseas £66,580) under \"Please note the fees and funding information for 2027 entry.\" Existing figures confirmed."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "oxford-engineering-science-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "fees and funding information for 2027 entry",
+          "sourceUrl": "https://www.ox.ac.uk/admissions/undergraduate/courses/course-listing/engineering-science",
+          "sourceTitle": "Engineering Science | Oxford University",
+          "note": "Read from the course page \"Course fees\" table (Fee status / Annual Course fees). Page adds \"Fees will usually increase annually\"."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 66580,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "fees and funding information for 2027 entry",
+          "sourceUrl": "https://www.ox.ac.uk/admissions/undergraduate/courses/course-listing/engineering-science",
+          "sourceTitle": "Engineering Science | Oxford University",
+          "note": "Read from the course page \"Course fees\" table (Fee status / Annual Course fees). Page adds \"Fees will usually increase annually\"."
+        }
+      ],
+      "unresolved": null
+    }
+  ],
+  "notes2028": "Not checked; no 2028 fees seen on the Physics page."
+}

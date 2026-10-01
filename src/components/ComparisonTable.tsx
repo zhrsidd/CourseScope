@@ -24,6 +24,7 @@ import { keyEligibilityReason } from '@/lib/explain';
 import { VERDICT_LABEL } from '@/lib/eligibility';
 import { useApp } from '@/state/AppContext';
 import { EligibilityBadge } from './EligibilityBadge';
+import { TuitionFeesCompact, displayableFees } from './TuitionFees';
 import { VerificationBadge } from './SourceBadge';
 import { IconCross, IconExternal } from './ui/icons';
 import { cx } from './ui/primitives';
@@ -368,6 +369,17 @@ const ROWS: Row[] = [
         NA
       );
     },
+  },
+  {
+    // v1.1. Information only: fees are not requirements and never affect the
+    // eligibility columns above.
+    id: 'fees',
+    label: 'Tuition fees (per year unless stated)',
+    render: (c) => <TuitionFeesCompact course={c} />,
+    compareKey: (c) =>
+      displayableFees(c)
+        .map(({ fee, state }) => `${fee.category}:${state === 'current' ? `${fee.amount}/${fee.basis}` : state}`)
+        .join('|'),
   },
   {
     id: 'raw',

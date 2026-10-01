@@ -1,0 +1,1010 @@
+{
+  "universityId": "nottingham",
+  "checkedOn": "2026-09-30",
+  "method": "WebFetch of every official course page on www.nottingham.ac.uk (start date and UK/International fee lines), cross-checked against the official \"Undergraduate courses 2027/28\" fee table (www.nottingham.ac.uk/fees/tuitionfees/202728/undergraduate.aspx, rows keyed by UCAS code) and the 2027/28 fee-increases page.",
+  "universityWideStatements": [
+    {
+      "quote": "The UK Government has confirmed that the maximum tuition fee for full time UK undergraduate and Initial Teacher Training students studying in England will increase to £10,050 for the 2027/28 academic year.",
+      "url": "https://www.nottingham.ac.uk/fees/tuitionfees/202728/undergraduate.aspx",
+      "title": "Undergraduate courses 2027/28 - The University of Nottingham",
+      "appliesTo": "Introduction to the 2027/28 UG fee table (table lists UK home fee £10,050 for every course in this set; international fee per row). Not used as a university-wide fee; each course is recorded from its own page."
+    },
+    {
+      "quote": "the tuition fee for your programme will be £10,050 for the 2027-28 academic year.",
+      "url": "https://www.nottingham.ac.uk/fees/tuitionfees/202728/fee-increases.aspx",
+      "title": "Fee increases 2027/28 - The University of Nottingham",
+      "appliesTo": "UK home undergraduate students (2027-28)."
+    }
+  ],
+  "courses": [
+    {
+      "id": "nottingham-physics-bsc--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Physics-BSc-Hons.html",
+          "sourceTitle": "Physics | University of Nottingham",
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "note": "Course page: \"£10,050 per year\" for 2027/28 (page notes it \"may increase for the academic year 28/29\"). Matches the 2027/28 fee table row for UCAS F300. Reduced fees apply during study abroad/placement years (amount not recorded)."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Physics-BSc-Hons.html",
+          "sourceTitle": "Physics | University of Nottingham",
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "note": "Course page: \"£33,500 per year\". Matches the 2027/28 fee table row for UCAS F300."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "nottingham-physics-msci--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Physics-MSci-Hons.html",
+          "sourceTitle": "Physics | University of Nottingham",
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "note": "Course page: \"£10,050 per year\" for 2027/28 (page notes it \"may increase for the academic year 28/29\"). Matches the 2027/28 fee table row for UCAS F303. Reduced fees apply during study abroad/placement years (amount not recorded)."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Physics-MSci-Hons.html",
+          "sourceTitle": "Physics | University of Nottingham",
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "note": "Course page: \"£33,500 per year\". Matches the 2027/28 fee table row for UCAS F303."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "nottingham-physics-with-theoretical-physics-bsc--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/physics-with-theoretical-physics-bsc.html",
+          "sourceTitle": "Physics with Theoretical Physics | University of Nottingham",
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "note": "Course page: \"£10,050 per year\" for 2027/28 (page notes it \"may increase for the academic year 28/29\"). Matches the 2027/28 fee table row for UCAS F344. Reduced fees apply during study abroad/placement years (amount not recorded). Input course URL returned 404; current official page for UCAS F344 used instead."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/physics-with-theoretical-physics-bsc.html",
+          "sourceTitle": "Physics with Theoretical Physics | University of Nottingham",
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "note": "Course page: \"£33,500 per year\". Matches the 2027/28 fee table row for UCAS F344. Input course URL returned 404; current official page for UCAS F344 used instead."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "nottingham-physics-with-theoretical-physics-msci--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/physics-with-theoretical-physics-msci-U7UPHYTH.html",
+          "sourceTitle": "Physics with Theoretical Physics | University of Nottingham",
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "note": "Course page: \"£10,050 per year\" for 2027/28 (page notes it \"may increase for the academic year 28/29\"). Matches the 2027/28 fee table row for UCAS F340. Reduced fees apply during study abroad/placement years (amount not recorded). Input course URL returned 404; current official page for UCAS F340 used instead."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/physics-with-theoretical-physics-msci-U7UPHYTH.html",
+          "sourceTitle": "Physics with Theoretical Physics | University of Nottingham",
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "note": "Course page: \"£33,500 per year\". Matches the 2027/28 fee table row for UCAS F340. Input course URL returned 404; current official page for UCAS F340 used instead."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "nottingham-physics-with-astrophysics-bsc--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Physics-with-Astrophysics-BSc-Hons.html",
+          "sourceTitle": "Physics with Astrophysics | University of Nottingham",
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "note": "Course page: \"£10,050 per year\" for 2027/28 (page notes it \"may increase for the academic year 28/29\"). Matches the 2027/28 fee table row for UCAS F3F5. Reduced fees apply during study abroad/placement years (amount not recorded)."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Physics-with-Astrophysics-BSc-Hons.html",
+          "sourceTitle": "Physics with Astrophysics | University of Nottingham",
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "note": "Course page: \"£33,500 per year\". Matches the 2027/28 fee table row for UCAS F3F5."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "nottingham-physics-with-astrophysics-msci--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Physics-with-Astrophysics-MSci-Hons.html",
+          "sourceTitle": "Physics with Astrophysics | University of Nottingham",
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "note": "Course page: \"£10,050 per year\" for 2027/28 (page notes it \"may increase for the academic year 28/29\"). Matches the 2027/28 fee table row for UCAS F3FM. Reduced fees apply during study abroad/placement years (amount not recorded)."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Physics-with-Astrophysics-MSci-Hons.html",
+          "sourceTitle": "Physics with Astrophysics | University of Nottingham",
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "note": "Course page: \"£33,500 per year\". Matches the 2027/28 fee table row for UCAS F3FM."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "nottingham-mathematical-physics-bsc--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Mathematical-Physics-BSc-Hons.html",
+          "sourceTitle": "Mathematical Physics | University of Nottingham",
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "note": "Course page: \"£10,050 per year\" for 2027/28 (page notes it \"may increase for the academic year 28/29\"). Matches the 2027/28 fee table row for UCAS F326. Reduced fees apply during study abroad/placement years (amount not recorded)."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Mathematical-Physics-BSc-Hons.html",
+          "sourceTitle": "Mathematical Physics | University of Nottingham",
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 30800,
+          "indicativeAmount": null,
+          "note": "Course page: \"£30,800 per year\". Matches the 2027/28 fee table row for UCAS F326."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "nottingham-mechanical-engineering-beng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Mechanical-Engineering-BEng-Hons.html",
+          "sourceTitle": "Mechanical Engineering | University of Nottingham",
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "note": "Course page: \"£10,050 per year\" for 2027/28 (page notes it \"may increase for the academic year 28/29\"). Matches the 2027/28 fee table row for UCAS H302. Reduced fees apply during study abroad/placement years (amount not recorded)."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Mechanical-Engineering-BEng-Hons.html",
+          "sourceTitle": "Mechanical Engineering | University of Nottingham",
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "note": "Course page: \"£33,500 per year\". Matches the 2027/28 fee table row for UCAS H302."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "nottingham-mechanical-engineering-meng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Mechanical-Engineering-MEng-Hons.html",
+          "sourceTitle": "Mechanical Engineering | University of Nottingham",
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "note": "Course page: \"£10,050 per year\" for 2027/28 (page notes it \"may increase for the academic year 28/29\"). Matches the 2027/28 fee table row for UCAS H300. Reduced fees apply during study abroad/placement years (amount not recorded)."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Mechanical-Engineering-MEng-Hons.html",
+          "sourceTitle": "Mechanical Engineering | University of Nottingham",
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "note": "Course page: \"£33,500 per year\". Matches the 2027/28 fee table row for UCAS H300."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "nottingham-mechanical-engineering-industrial-year-beng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Mechanical-Engineering-including-an-Industrial-Year-BEng-Hons.html",
+          "sourceTitle": "Mechanical Engineering including an Industrial Year | University of Nottingham",
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "note": "Course page: \"£10,050 per year\" for 2027/28 (page notes it \"may increase for the academic year 28/29\"). Matches the 2027/28 fee table row for UCAS H30A. Reduced fees apply during study abroad/placement years (amount not recorded)."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Mechanical-Engineering-including-an-Industrial-Year-BEng-Hons.html",
+          "sourceTitle": "Mechanical Engineering including an Industrial Year | University of Nottingham",
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "note": "Course page: \"£33,500 per year\". Matches the 2027/28 fee table row for UCAS H30A."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "nottingham-mechanical-engineering-industrial-year-meng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Mechanical-Engineering-including-an-Industrial-Year-MEng-Hons.html",
+          "sourceTitle": "Mechanical Engineering including an Industrial Year | University of Nottingham",
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "note": "Course page: \"£10,050 per year\" for 2027/28 (page notes it \"may increase for the academic year 28/29\"). Matches the 2027/28 fee table row for UCAS H30C. Reduced fees apply during study abroad/placement years (amount not recorded)."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Mechanical-Engineering-including-an-Industrial-Year-MEng-Hons.html",
+          "sourceTitle": "Mechanical Engineering including an Industrial Year | University of Nottingham",
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "note": "Course page: \"£33,500 per year\". Matches the 2027/28 fee table row for UCAS H30C."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "nottingham-mechanical-engineering-with-manufacturing-meng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Manufacturing-Engineering-MEng-Hons.html",
+          "sourceTitle": "Mechanical Engineering with Manufacturing | University of Nottingham",
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "note": "Course page: \"£10,050 per year\" for 2027/28 (page notes it \"may increase for the academic year 28/29\"). Matches the 2027/28 fee table row for UCAS H707. Reduced fees apply during study abroad/placement years (amount not recorded)."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Manufacturing-Engineering-MEng-Hons.html",
+          "sourceTitle": "Mechanical Engineering with Manufacturing | University of Nottingham",
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "note": "Course page: \"£33,500 per year\". Matches the 2027/28 fee table row for UCAS H707."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "nottingham-aerospace-engineering-beng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Aerospace-Engineering-BEng-Hons.html",
+          "sourceTitle": "Aerospace Engineering | University of Nottingham",
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "note": "Course page: \"£10,050 per year\" for 2027/28 (page notes it \"may increase for the academic year 28/29\"). Matches the 2027/28 fee table row for UCAS H402. Reduced fees apply during study abroad/placement years (amount not recorded)."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Aerospace-Engineering-BEng-Hons.html",
+          "sourceTitle": "Aerospace Engineering | University of Nottingham",
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "note": "Course page: \"£33,500 per year\". Matches the 2027/28 fee table row for UCAS H402."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "nottingham-aerospace-engineering-meng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Aerospace-Engineering-MEng-Hons.html",
+          "sourceTitle": "Aerospace Engineering | University of Nottingham",
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "note": "Course page: \"£10,050 per year\" for 2027/28 (page notes it \"may increase for the academic year 28/29\"). Matches the 2027/28 fee table row for UCAS H400. Reduced fees apply during study abroad/placement years (amount not recorded)."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Aerospace-Engineering-MEng-Hons.html",
+          "sourceTitle": "Aerospace Engineering | University of Nottingham",
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "note": "Course page: \"£33,500 per year\". Matches the 2027/28 fee table row for UCAS H400."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "nottingham-civil-engineering-beng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Civil-Engineering-BEng-Hons.html",
+          "sourceTitle": "Civil Engineering | University of Nottingham",
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "note": "Course page: \"£10,050 per year\" for 2027/28 (page notes it \"may increase for the academic year 28/29\"). Matches the 2027/28 fee table row for UCAS H201. Reduced fees apply during study abroad/placement years (amount not recorded)."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Civil-Engineering-BEng-Hons.html",
+          "sourceTitle": "Civil Engineering | University of Nottingham",
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "note": "Course page: \"£33,500 per year\". Matches the 2027/28 fee table row for UCAS H201."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "nottingham-civil-engineering-meng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Civil-Engineering-MEng-Hons.html",
+          "sourceTitle": "Civil Engineering | University of Nottingham",
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "note": "Course page: \"£10,050 per year\" for 2027/28 (page notes it \"may increase for the academic year 28/29\"). Matches the 2027/28 fee table row for UCAS H200. Reduced fees apply during study abroad/placement years (amount not recorded)."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Civil-Engineering-MEng-Hons.html",
+          "sourceTitle": "Civil Engineering | University of Nottingham",
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "note": "Course page: \"£33,500 per year\". Matches the 2027/28 fee table row for UCAS H200."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "nottingham-electrical-and-electronic-engineering-beng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Electrical-and-Electronic-Engineering-BEng-Hons.html",
+          "sourceTitle": "Electrical and Electronic Engineering | University of Nottingham",
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "note": "Course page: \"£10,050 per year\" for 2027/28 (page notes it \"may increase for the academic year 28/29\"). Matches the 2027/28 fee table row for UCAS H603. Reduced fees apply during study abroad/placement years (amount not recorded)."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Electrical-and-Electronic-Engineering-BEng-Hons.html",
+          "sourceTitle": "Electrical and Electronic Engineering | University of Nottingham",
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "note": "Course page: \"£33,500 per year\". Matches the 2027/28 fee table row for UCAS H603."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "nottingham-electrical-and-electronic-engineering-meng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Electrical-and-Electronic-Engineering-MEng-Hons.html",
+          "sourceTitle": "Electrical and Electronic Engineering | University of Nottingham",
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "note": "Course page: \"£10,050 per year\" for 2027/28 (page notes it \"may increase for the academic year 28/29\"). Matches the 2027/28 fee table row for UCAS H600. Reduced fees apply during study abroad/placement years (amount not recorded)."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Electrical-and-Electronic-Engineering-MEng-Hons.html",
+          "sourceTitle": "Electrical and Electronic Engineering | University of Nottingham",
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "note": "Course page: \"£33,500 per year\". Matches the 2027/28 fee table row for UCAS H600."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "nottingham-chemical-engineering-beng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Chemical-Engineering-BEng-Hons.html",
+          "sourceTitle": "Chemical Engineering | University of Nottingham",
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "note": "Course page: \"£10,050 per year\" for 2027/28 (page notes it \"may increase for the academic year 28/29\"). Matches the 2027/28 fee table row for UCAS H810. Reduced fees apply during study abroad/placement years (amount not recorded)."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Chemical-Engineering-BEng-Hons.html",
+          "sourceTitle": "Chemical Engineering | University of Nottingham",
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "note": "Course page: \"£33,500 per year\". Matches the 2027/28 fee table row for UCAS H810."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "nottingham-chemical-engineering-meng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Chemical-Engineering-MEng-Hons.html",
+          "sourceTitle": "Chemical Engineering | University of Nottingham",
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "note": "Course page: \"£10,050 per year\" for 2027/28 (page notes it \"may increase for the academic year 28/29\"). Matches the 2027/28 fee table row for UCAS H800. Reduced fees apply during study abroad/placement years (amount not recorded)."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Chemical-Engineering-MEng-Hons.html",
+          "sourceTitle": "Chemical Engineering | University of Nottingham",
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "note": "Course page: \"£33,500 per year\". Matches the 2027/28 fee table row for UCAS H800."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "nottingham-chemical-engineering-with-environmental-engineering-beng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Chemical-Engineering-with-Environmental-Engineering-BEng-Hons.html",
+          "sourceTitle": "Chemical Engineering with Environmental Engineering | University of Nottingham",
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "note": "Course page: \"£10,050 per year\" for 2027/28 (page notes it \"may increase for the academic year 28/29\"). Matches the 2027/28 fee table row for UCAS H8HF. Reduced fees apply during study abroad/placement years (amount not recorded)."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Chemical-Engineering-with-Environmental-Engineering-BEng-Hons.html",
+          "sourceTitle": "Chemical Engineering with Environmental Engineering | University of Nottingham",
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "note": "Course page: \"£33,500 per year\". Matches the 2027/28 fee table row for UCAS H8HF."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "nottingham-chemical-engineering-with-environmental-engineering-meng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Chemical-Engineering-with-Environmental-Engineering-MEng-Hons.html",
+          "sourceTitle": "Chemical Engineering with Environmental Engineering | University of Nottingham",
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "note": "Course page: \"£10,050 per year\" for 2027/28 (page notes it \"may increase for the academic year 28/29\"). Matches the 2027/28 fee table row for UCAS H8H2. Reduced fees apply during study abroad/placement years (amount not recorded)."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Chemical-Engineering-with-Environmental-Engineering-MEng-Hons.html",
+          "sourceTitle": "Chemical Engineering with Environmental Engineering | University of Nottingham",
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "note": "Course page: \"£33,500 per year\". Matches the 2027/28 fee table row for UCAS H8H2."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "nottingham-product-design-and-manufacture-beng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Product-Design-and-Manufacture-BEng-Hons.html",
+          "sourceTitle": "Product Design and Manufacture | University of Nottingham",
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "note": "Course page: \"£10,050 per year\" for 2027/28 (page notes it \"may increase for the academic year 28/29\"). Matches the 2027/28 fee table row for UCAS H700. Reduced fees apply during study abroad/placement years (amount not recorded)."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Product-Design-and-Manufacture-BEng-Hons.html",
+          "sourceTitle": "Product Design and Manufacture | University of Nottingham",
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "note": "Course page: \"£33,500 per year\". Matches the 2027/28 fee table row for UCAS H700."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "nottingham-product-design-and-manufacture-meng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Product-Design-and-Manufacture-MEng-Hons.html",
+          "sourceTitle": "Product Design and Manufacture | University of Nottingham",
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "note": "Course page: \"£10,050 per year\" for 2027/28 (page notes it \"may increase for the academic year 28/29\"). Matches the 2027/28 fee table row for UCAS H715. Reduced fees apply during study abroad/placement years (amount not recorded)."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Product-Design-and-Manufacture-MEng-Hons.html",
+          "sourceTitle": "Product Design and Manufacture | University of Nottingham",
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "note": "Course page: \"£33,500 per year\". Matches the 2027/28 fee table row for UCAS H715."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "nottingham-architecture-and-environmental-design-meng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Architecture-and-Environmental-Design-MEng-Hons.html",
+          "sourceTitle": "Architecture and Environmental Design | University of Nottingham",
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "note": "Course page: \"£10,050 per year\" for 2027/28 (page notes it \"may increase for the academic year 28/29\"). Matches the 2027/28 fee table row for UCAS K230. Reduced fees apply during study abroad/placement years (amount not recorded)."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Architecture-and-Environmental-Design-MEng-Hons.html",
+          "sourceTitle": "Architecture and Environmental Design | University of Nottingham",
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "note": "Course page: \"£33,500 per year\". Matches the 2027/28 fee table row for UCAS K230."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "nottingham-engineering-and-physical-sciences-foundation-meng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Engineering-and-Physical-Sciences-Foundation-integrated-honours-programme-MEng-Hons.html",
+          "sourceTitle": "Engineering and Physical Sciences Foundation (integrated honours programme) | University of Nottingham",
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "note": "Course page: \"£10,050 per year\" for 2027/28 (page notes it \"may increase for the academic year 28/29\"). Matches the 2027/28 fee table row for UCAS H100. Reduced fees apply during study abroad/placement years (amount not recorded). Input course URL returned 404; current official page for UCAS H100 used instead."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "September 2027",
+          "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Engineering-and-Physical-Sciences-Foundation-integrated-honours-programme-MEng-Hons.html",
+          "sourceTitle": "Engineering and Physical Sciences Foundation (integrated honours programme) | University of Nottingham",
+          "category": "International",
+          "categoryKind": "international",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "note": "CONFLICT between official sources: course page (https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Engineering-and-Physical-Sciences-Foundation-integrated-honours-programme-MEng-Hons.html) says \"This programme is for Home students. International students should apply for the Science and Engineering Foundation Certificate at the University of Nottingham International College.\" (no international fee), whereas the 2027/28 fee table (https://www.nottingham.ac.uk/fees/tuitionfees/202728/undergraduate.aspx) lists H100 International £26,200. No side chosen. Input course URL returned 404; current official page for UCAS H100 used instead."
+        }
+      ],
+      "unresolved": null
+    }
+  ],
+  "notes2028": "No 2028/29 fees published (the 2028/29 UG fee page returns 404; search finds nothing). Course pages only say the UK fee \"may increase for the academic year 28/29 and we will update our information once we have received confirmation of the fee.\""
+}

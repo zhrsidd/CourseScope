@@ -1,7 +1,7 @@
 {
   "name": "coursescope",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "description": "CourseScope \u2014 compare UK university Physics and Engineering courses by published A-Level entry requirements, admissions tests and application routes.",
   "scripts": {

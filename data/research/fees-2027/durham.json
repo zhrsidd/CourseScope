@@ -1,0 +1,750 @@
+{
+  "universityId": "durham",
+  "checkedOn": "2026-09-30",
+  "method": "Durham official pages: each course's rendered 2027 course page (/study/courses/<slug>/september-2027/, \"Fees and funding\" section, read in a browser as the fetch tool omits it) and the undergraduate Tuition Fees page. Course pages say fees for the selected year are not yet confirmed; international amounts come from the course database, so none exist yet for 2027.",
+  "universityWideStatements": [
+    {
+      "quote": "The tuition fee level for home students starting their course in 2026/27 is £9,790. This tuition fee will increase to £10,050 in 2027/28. Please note that these figures remain subject to parliamentary approval.",
+      "url": "https://www.durham.ac.uk/study/undergraduate/fees-and-funding/tuition-fees/",
+      "title": "Tuition Fees - Durham University",
+      "appliesTo": "Home (UK applicants) fee, expected figure for 2027/28 (caveated; the 2026/27 figure is not recorded as a 2027 fee)"
+    },
+    {
+      "quote": "The fee listed on the course database is for the first year of the course only; fees for subsequent years will be confirmed not less than 3 months before the start of the academic year",
+      "url": "https://www.durham.ac.uk/study/undergraduate/fees-and-funding/tuition-fees/",
+      "title": "Tuition Fees - Durham University",
+      "appliesTo": "International applicants: fee shown per course on the course pages"
+    },
+    {
+      "quote": "The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.",
+      "url": "https://www.durham.ac.uk/study/courses/physics-f300/september-2027/",
+      "title": "Physics F300 September 2027 - Durham University",
+      "appliesTo": "Standard \"Fees and funding\" text on every 2027 course page checked"
+    }
+  ],
+  "courses": [
+    {
+      "id": "durham-physics-bsc--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "university-wide",
+          "scopeNote": "Tuition Fees page, UK applicants: \"This tuition fee will increase to £10,050 in 2027/28. Please note that these figures remain subject to parliamentary approval.\"",
+          "yearEvidence": "This tuition fee will increase to £10,050 in 2027/28.",
+          "sourceUrl": "https://www.durham.ac.uk/study/undergraduate/fees-and-funding/tuition-fees/",
+          "sourceTitle": "Tuition Fees - Durham University",
+          "note": "Expected figure only, \"subject to parliamentary approval\"; the page wording is about the 2027/28 year, not explicitly the 2027 starting cohort. Course page (Start date September 2027) says: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" Sourcing: https://www.durham.ac.uk/study/courses/physics-f300/september-2027/. Placement/year-abroad reduced fees on the page are quoted only for 2026/27, so not recorded."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date September 2027 ... The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.",
+          "sourceUrl": "https://www.durham.ac.uk/study/courses/physics-f300/september-2027/",
+          "sourceTitle": "Physics F300 September 2027 - Durham University",
+          "note": "2027 course page states no overseas fee yet: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" No amount published."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "durham-physics-mphys--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "university-wide",
+          "scopeNote": "Tuition Fees page, UK applicants: \"This tuition fee will increase to £10,050 in 2027/28. Please note that these figures remain subject to parliamentary approval.\"",
+          "yearEvidence": "This tuition fee will increase to £10,050 in 2027/28.",
+          "sourceUrl": "https://www.durham.ac.uk/study/undergraduate/fees-and-funding/tuition-fees/",
+          "sourceTitle": "Tuition Fees - Durham University",
+          "note": "Expected figure only, \"subject to parliamentary approval\"; the page wording is about the 2027/28 year, not explicitly the 2027 starting cohort. Course page (Start date September 2027) says: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" Sourcing: https://www.durham.ac.uk/study/courses/physics-f301/september-2027/. Placement/year-abroad reduced fees on the page are quoted only for 2026/27, so not recorded."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date September 2027 ... The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.",
+          "sourceUrl": "https://www.durham.ac.uk/study/courses/physics-f301/september-2027/",
+          "sourceTitle": "Physics F301 September 2027 - Durham University",
+          "note": "2027 course page states no overseas fee yet: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" No amount published."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "durham-theoretical-physics-mphys--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "university-wide",
+          "scopeNote": "Tuition Fees page, UK applicants: \"This tuition fee will increase to £10,050 in 2027/28. Please note that these figures remain subject to parliamentary approval.\"",
+          "yearEvidence": "This tuition fee will increase to £10,050 in 2027/28.",
+          "sourceUrl": "https://www.durham.ac.uk/study/undergraduate/fees-and-funding/tuition-fees/",
+          "sourceTitle": "Tuition Fees - Durham University",
+          "note": "Expected figure only, \"subject to parliamentary approval\"; the page wording is about the 2027/28 year, not explicitly the 2027 starting cohort. Course page (Start date September 2027) says: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" Sourcing: https://www.durham.ac.uk/study/courses/theoretical-physics-f344/september-2027/. Placement/year-abroad reduced fees on the page are quoted only for 2026/27, so not recorded."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date September 2027 ... The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.",
+          "sourceUrl": "https://www.durham.ac.uk/study/courses/theoretical-physics-f344/september-2027/",
+          "sourceTitle": "Theoretical Physics F344 September 2027 - Durham University",
+          "note": "2027 course page states no overseas fee yet: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" No amount published."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "durham-physics-and-astronomy-mphys--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "university-wide",
+          "scopeNote": "Tuition Fees page, UK applicants: \"This tuition fee will increase to £10,050 in 2027/28. Please note that these figures remain subject to parliamentary approval.\"",
+          "yearEvidence": "This tuition fee will increase to £10,050 in 2027/28.",
+          "sourceUrl": "https://www.durham.ac.uk/study/undergraduate/fees-and-funding/tuition-fees/",
+          "sourceTitle": "Tuition Fees - Durham University",
+          "note": "Expected figure only, \"subject to parliamentary approval\"; the page wording is about the 2027/28 year, not explicitly the 2027 starting cohort. Course page (Start date September 2027) says: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" Sourcing: https://www.durham.ac.uk/study/courses/physics-and-astronomy-ff3n/september-2027/. Placement/year-abroad reduced fees on the page are quoted only for 2026/27, so not recorded."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date September 2027 ... The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.",
+          "sourceUrl": "https://www.durham.ac.uk/study/courses/physics-and-astronomy-ff3n/september-2027/",
+          "sourceTitle": "Physics and Astronomy FF3N September 2027 - Durham University",
+          "note": "2027 course page states no overseas fee yet: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" No amount published."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "durham-mathematics-and-physics-bsc--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "university-wide",
+          "scopeNote": "Tuition Fees page, UK applicants: \"This tuition fee will increase to £10,050 in 2027/28. Please note that these figures remain subject to parliamentary approval.\"",
+          "yearEvidence": "This tuition fee will increase to £10,050 in 2027/28.",
+          "sourceUrl": "https://www.durham.ac.uk/study/undergraduate/fees-and-funding/tuition-fees/",
+          "sourceTitle": "Tuition Fees - Durham University",
+          "note": "Expected figure only, \"subject to parliamentary approval\"; the page wording is about the 2027/28 year, not explicitly the 2027 starting cohort. Course page (Start date September 2027) says: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" Sourcing: https://www.durham.ac.uk/study/courses/mathematics-and-physics-g427/september-2027/. Placement/year-abroad reduced fees on the page are quoted only for 2026/27, so not recorded."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date September 2027 ... The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.",
+          "sourceUrl": "https://www.durham.ac.uk/study/courses/mathematics-and-physics-g427/september-2027/",
+          "sourceTitle": "Mathematics and Physics G427 September 2027 - Durham University",
+          "note": "2027 course page states no overseas fee yet: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" No amount published."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "durham-mathematics-and-physics-msci--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "university-wide",
+          "scopeNote": "Tuition Fees page, UK applicants: \"This tuition fee will increase to £10,050 in 2027/28. Please note that these figures remain subject to parliamentary approval.\"",
+          "yearEvidence": "This tuition fee will increase to £10,050 in 2027/28.",
+          "sourceUrl": "https://www.durham.ac.uk/study/undergraduate/fees-and-funding/tuition-fees/",
+          "sourceTitle": "Tuition Fees - Durham University",
+          "note": "Expected figure only, \"subject to parliamentary approval\"; the page wording is about the 2027/28 year, not explicitly the 2027 starting cohort. Course page (Start date September 2027) says: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" Sourcing: https://www.durham.ac.uk/study/courses/mathematics-and-physics-msci-g430/september-2027/. Input URL https://www.durham.ac.uk/study/courses/mathematics-and-physics-g430/ is a 404; used current 2027 page https://www.durham.ac.uk/study/courses/mathematics-and-physics-msci-g430/september-2027/ (same UCAS code G430). Placement/year-abroad reduced fees on the page are quoted only for 2026/27, so not recorded."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date September 2027 ... The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.",
+          "sourceUrl": "https://www.durham.ac.uk/study/courses/mathematics-and-physics-msci-g430/september-2027/",
+          "sourceTitle": "Mathematics and Physics G430 September 2027 - Durham University",
+          "note": "2027 course page states no overseas fee yet: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" No amount published. Input URL https://www.durham.ac.uk/study/courses/mathematics-and-physics-g430/ is a 404; used current 2027 page https://www.durham.ac.uk/study/courses/mathematics-and-physics-msci-g430/september-2027/ (same UCAS code G430)."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "durham-general-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "university-wide",
+          "scopeNote": "Tuition Fees page, UK applicants: \"This tuition fee will increase to £10,050 in 2027/28. Please note that these figures remain subject to parliamentary approval.\"",
+          "yearEvidence": "This tuition fee will increase to £10,050 in 2027/28.",
+          "sourceUrl": "https://www.durham.ac.uk/study/undergraduate/fees-and-funding/tuition-fees/",
+          "sourceTitle": "Tuition Fees - Durham University",
+          "note": "Expected figure only, \"subject to parliamentary approval\"; the page wording is about the 2027/28 year, not explicitly the 2027 starting cohort. Course page (Start date September 2027) says: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" Sourcing: https://www.durham.ac.uk/study/courses/general-engineering-h103/september-2027/. Input URL https://www.durham.ac.uk/study/courses/engineering-h103/ is a 404; used current 2027 page https://www.durham.ac.uk/study/courses/general-engineering-h103/september-2027/ (same UCAS code H103). Placement/year-abroad reduced fees on the page are quoted only for 2026/27, so not recorded."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date September 2027 ... The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.",
+          "sourceUrl": "https://www.durham.ac.uk/study/courses/general-engineering-h103/september-2027/",
+          "sourceTitle": "General Engineering H103 September 2027 - Durham University",
+          "note": "2027 course page states no overseas fee yet: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" No amount published. Input URL https://www.durham.ac.uk/study/courses/engineering-h103/ is a 404; used current 2027 page https://www.durham.ac.uk/study/courses/general-engineering-h103/september-2027/ (same UCAS code H103)."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "durham-general-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "university-wide",
+          "scopeNote": "Tuition Fees page, UK applicants: \"This tuition fee will increase to £10,050 in 2027/28. Please note that these figures remain subject to parliamentary approval.\"",
+          "yearEvidence": "This tuition fee will increase to £10,050 in 2027/28.",
+          "sourceUrl": "https://www.durham.ac.uk/study/undergraduate/fees-and-funding/tuition-fees/",
+          "sourceTitle": "Tuition Fees - Durham University",
+          "note": "Expected figure only, \"subject to parliamentary approval\"; the page wording is about the 2027/28 year, not explicitly the 2027 starting cohort. Course page (Start date September 2027) says: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" Sourcing: https://www.durham.ac.uk/study/courses/general-engineering-h100/september-2027/. Input URL https://www.durham.ac.uk/study/courses/engineering-h100/ is a 404; used current 2027 page https://www.durham.ac.uk/study/courses/general-engineering-h100/september-2027/ (same UCAS code H100). Placement/year-abroad reduced fees on the page are quoted only for 2026/27, so not recorded."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date September 2027 ... The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.",
+          "sourceUrl": "https://www.durham.ac.uk/study/courses/general-engineering-h100/september-2027/",
+          "sourceTitle": "General Engineering H100 September 2027 - Durham University",
+          "note": "2027 course page states no overseas fee yet: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" No amount published. Input URL https://www.durham.ac.uk/study/courses/engineering-h100/ is a 404; used current 2027 page https://www.durham.ac.uk/study/courses/general-engineering-h100/september-2027/ (same UCAS code H100)."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "durham-civil-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "university-wide",
+          "scopeNote": "Tuition Fees page, UK applicants: \"This tuition fee will increase to £10,050 in 2027/28. Please note that these figures remain subject to parliamentary approval.\"",
+          "yearEvidence": "This tuition fee will increase to £10,050 in 2027/28.",
+          "sourceUrl": "https://www.durham.ac.uk/study/undergraduate/fees-and-funding/tuition-fees/",
+          "sourceTitle": "Tuition Fees - Durham University",
+          "note": "Expected figure only, \"subject to parliamentary approval\"; the page wording is about the 2027/28 year, not explicitly the 2027 starting cohort. Course page (Start date September 2027) says: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" Sourcing: https://www.durham.ac.uk/study/courses/engineering-civil-h214/september-2027/. Input URL https://www.durham.ac.uk/study/courses/civil-engineering-h214/ is a 404; used current 2027 page https://www.durham.ac.uk/study/courses/engineering-civil-h214/september-2027/ (same UCAS code H214). Placement/year-abroad reduced fees on the page are quoted only for 2026/27, so not recorded."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date September 2027 ... The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.",
+          "sourceUrl": "https://www.durham.ac.uk/study/courses/engineering-civil-h214/september-2027/",
+          "sourceTitle": "Civil Engineering H214 September 2027 - Durham University",
+          "note": "2027 course page states no overseas fee yet: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" No amount published. Input URL https://www.durham.ac.uk/study/courses/civil-engineering-h214/ is a 404; used current 2027 page https://www.durham.ac.uk/study/courses/engineering-civil-h214/september-2027/ (same UCAS code H214)."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "durham-civil-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "university-wide",
+          "scopeNote": "Tuition Fees page, UK applicants: \"This tuition fee will increase to £10,050 in 2027/28. Please note that these figures remain subject to parliamentary approval.\"",
+          "yearEvidence": "This tuition fee will increase to £10,050 in 2027/28.",
+          "sourceUrl": "https://www.durham.ac.uk/study/undergraduate/fees-and-funding/tuition-fees/",
+          "sourceTitle": "Tuition Fees - Durham University",
+          "note": "Expected figure only, \"subject to parliamentary approval\"; the page wording is about the 2027/28 year, not explicitly the 2027 starting cohort. Course page (Start date September 2027) says: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" Sourcing: https://www.durham.ac.uk/study/courses/engineering-civil-h211/september-2027/. Input URL https://www.durham.ac.uk/study/courses/civil-engineering-h211/ is a 404; used current 2027 page https://www.durham.ac.uk/study/courses/engineering-civil-h211/september-2027/ (same UCAS code H211). Placement/year-abroad reduced fees on the page are quoted only for 2026/27, so not recorded."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date September 2027 ... The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.",
+          "sourceUrl": "https://www.durham.ac.uk/study/courses/engineering-civil-h211/september-2027/",
+          "sourceTitle": "Civil Engineering H211 September 2027 - Durham University",
+          "note": "2027 course page states no overseas fee yet: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" No amount published. Input URL https://www.durham.ac.uk/study/courses/civil-engineering-h211/ is a 404; used current 2027 page https://www.durham.ac.uk/study/courses/engineering-civil-h211/september-2027/ (same UCAS code H211)."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "durham-electrical-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "university-wide",
+          "scopeNote": "Tuition Fees page, UK applicants: \"This tuition fee will increase to £10,050 in 2027/28. Please note that these figures remain subject to parliamentary approval.\"",
+          "yearEvidence": "This tuition fee will increase to £10,050 in 2027/28.",
+          "sourceUrl": "https://www.durham.ac.uk/study/undergraduate/fees-and-funding/tuition-fees/",
+          "sourceTitle": "Tuition Fees - Durham University",
+          "note": "Expected figure only, \"subject to parliamentary approval\"; the page wording is about the 2027/28 year, not explicitly the 2027 starting cohort. Course page (Start date September 2027) says: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" Sourcing: https://www.durham.ac.uk/study/courses/engineering-electrical-h514/september-2027/. Input URL https://www.durham.ac.uk/study/courses/electrical-engineering-h514/ is a 404; used current 2027 page https://www.durham.ac.uk/study/courses/engineering-electrical-h514/september-2027/ (same UCAS code H514). Placement/year-abroad reduced fees on the page are quoted only for 2026/27, so not recorded."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date September 2027 ... The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.",
+          "sourceUrl": "https://www.durham.ac.uk/study/courses/engineering-electrical-h514/september-2027/",
+          "sourceTitle": "Electrical Engineering H514 September 2027 - Durham University",
+          "note": "2027 course page states no overseas fee yet: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" No amount published. Input URL https://www.durham.ac.uk/study/courses/electrical-engineering-h514/ is a 404; used current 2027 page https://www.durham.ac.uk/study/courses/engineering-electrical-h514/september-2027/ (same UCAS code H514)."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "durham-electrical-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "university-wide",
+          "scopeNote": "Tuition Fees page, UK applicants: \"This tuition fee will increase to £10,050 in 2027/28. Please note that these figures remain subject to parliamentary approval.\"",
+          "yearEvidence": "This tuition fee will increase to £10,050 in 2027/28.",
+          "sourceUrl": "https://www.durham.ac.uk/study/undergraduate/fees-and-funding/tuition-fees/",
+          "sourceTitle": "Tuition Fees - Durham University",
+          "note": "Expected figure only, \"subject to parliamentary approval\"; the page wording is about the 2027/28 year, not explicitly the 2027 starting cohort. Course page (Start date September 2027) says: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" Sourcing: https://www.durham.ac.uk/study/courses/engineering-electrical-h511/september-2027/. Input URL https://www.durham.ac.uk/study/courses/electrical-engineering-h511/ is a 404; used current 2027 page https://www.durham.ac.uk/study/courses/engineering-electrical-h511/september-2027/ (same UCAS code H511). Placement/year-abroad reduced fees on the page are quoted only for 2026/27, so not recorded."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date September 2027 ... The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.",
+          "sourceUrl": "https://www.durham.ac.uk/study/courses/engineering-electrical-h511/september-2027/",
+          "sourceTitle": "Electrical Engineering H511 September 2027 - Durham University",
+          "note": "2027 course page states no overseas fee yet: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" No amount published. Input URL https://www.durham.ac.uk/study/courses/electrical-engineering-h511/ is a 404; used current 2027 page https://www.durham.ac.uk/study/courses/engineering-electrical-h511/september-2027/ (same UCAS code H511)."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "durham-electronic-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "university-wide",
+          "scopeNote": "Tuition Fees page, UK applicants: \"This tuition fee will increase to £10,050 in 2027/28. Please note that these figures remain subject to parliamentary approval.\"",
+          "yearEvidence": "This tuition fee will increase to £10,050 in 2027/28.",
+          "sourceUrl": "https://www.durham.ac.uk/study/undergraduate/fees-and-funding/tuition-fees/",
+          "sourceTitle": "Tuition Fees - Durham University",
+          "note": "Expected figure only, \"subject to parliamentary approval\"; the page wording is about the 2027/28 year, not explicitly the 2027 starting cohort. Course page (Start date September 2027) says: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" Sourcing: https://www.durham.ac.uk/study/courses/engineering-electronic-h714/september-2027/. Input URL https://www.durham.ac.uk/study/courses/electronic-engineering-h714/ is a 404; used current 2027 page https://www.durham.ac.uk/study/courses/engineering-electronic-h714/september-2027/ (same UCAS code H714). Placement/year-abroad reduced fees on the page are quoted only for 2026/27, so not recorded."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date September 2027 ... The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.",
+          "sourceUrl": "https://www.durham.ac.uk/study/courses/engineering-electronic-h714/september-2027/",
+          "sourceTitle": "Electronic Engineering H714 September 2027 - Durham University",
+          "note": "2027 course page states no overseas fee yet: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" No amount published. Input URL https://www.durham.ac.uk/study/courses/electronic-engineering-h714/ is a 404; used current 2027 page https://www.durham.ac.uk/study/courses/engineering-electronic-h714/september-2027/ (same UCAS code H714)."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "durham-electronic-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "university-wide",
+          "scopeNote": "Tuition Fees page, UK applicants: \"This tuition fee will increase to £10,050 in 2027/28. Please note that these figures remain subject to parliamentary approval.\"",
+          "yearEvidence": "This tuition fee will increase to £10,050 in 2027/28.",
+          "sourceUrl": "https://www.durham.ac.uk/study/undergraduate/fees-and-funding/tuition-fees/",
+          "sourceTitle": "Tuition Fees - Durham University",
+          "note": "Expected figure only, \"subject to parliamentary approval\"; the page wording is about the 2027/28 year, not explicitly the 2027 starting cohort. Course page (Start date September 2027) says: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" Sourcing: https://www.durham.ac.uk/study/courses/engineering-electronic-h711/september-2027/. Input URL https://www.durham.ac.uk/study/courses/electronic-engineering-h711/ is a 404; used current 2027 page https://www.durham.ac.uk/study/courses/engineering-electronic-h711/september-2027/ (same UCAS code H711). Placement/year-abroad reduced fees on the page are quoted only for 2026/27, so not recorded."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date September 2027 ... The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.",
+          "sourceUrl": "https://www.durham.ac.uk/study/courses/engineering-electronic-h711/september-2027/",
+          "sourceTitle": "Electronic Engineering H711 September 2027 - Durham University",
+          "note": "2027 course page states no overseas fee yet: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" No amount published. Input URL https://www.durham.ac.uk/study/courses/electronic-engineering-h711/ is a 404; used current 2027 page https://www.durham.ac.uk/study/courses/engineering-electronic-h711/september-2027/ (same UCAS code H711)."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "durham-mechanical-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "university-wide",
+          "scopeNote": "Tuition Fees page, UK applicants: \"This tuition fee will increase to £10,050 in 2027/28. Please note that these figures remain subject to parliamentary approval.\"",
+          "yearEvidence": "This tuition fee will increase to £10,050 in 2027/28.",
+          "sourceUrl": "https://www.durham.ac.uk/study/undergraduate/fees-and-funding/tuition-fees/",
+          "sourceTitle": "Tuition Fees - Durham University",
+          "note": "Expected figure only, \"subject to parliamentary approval\"; the page wording is about the 2027/28 year, not explicitly the 2027 starting cohort. Course page (Start date September 2027) says: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" Sourcing: https://www.durham.ac.uk/study/courses/engineering-mechanical-h314/september-2027/. Input URL https://www.durham.ac.uk/study/courses/mechanical-engineering-h314/ is a 404; used current 2027 page https://www.durham.ac.uk/study/courses/engineering-mechanical-h314/september-2027/ (same UCAS code H314). Placement/year-abroad reduced fees on the page are quoted only for 2026/27, so not recorded."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date September 2027 ... The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.",
+          "sourceUrl": "https://www.durham.ac.uk/study/courses/engineering-mechanical-h314/september-2027/",
+          "sourceTitle": "Mechanical Engineering H314 September 2027 - Durham University",
+          "note": "2027 course page states no overseas fee yet: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" No amount published. Input URL https://www.durham.ac.uk/study/courses/mechanical-engineering-h314/ is a 404; used current 2027 page https://www.durham.ac.uk/study/courses/engineering-mechanical-h314/september-2027/ (same UCAS code H314)."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "durham-mechanical-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "university-wide",
+          "scopeNote": "Tuition Fees page, UK applicants: \"This tuition fee will increase to £10,050 in 2027/28. Please note that these figures remain subject to parliamentary approval.\"",
+          "yearEvidence": "This tuition fee will increase to £10,050 in 2027/28.",
+          "sourceUrl": "https://www.durham.ac.uk/study/undergraduate/fees-and-funding/tuition-fees/",
+          "sourceTitle": "Tuition Fees - Durham University",
+          "note": "Expected figure only, \"subject to parliamentary approval\"; the page wording is about the 2027/28 year, not explicitly the 2027 starting cohort. Course page (Start date September 2027) says: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" Sourcing: https://www.durham.ac.uk/study/courses/engineering-mechanical-h311/september-2027/. Input URL https://www.durham.ac.uk/study/courses/mechanical-engineering-h311/ is a 404; used current 2027 page https://www.durham.ac.uk/study/courses/engineering-mechanical-h311/september-2027/ (same UCAS code H311). Placement/year-abroad reduced fees on the page are quoted only for 2026/27, so not recorded."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date September 2027 ... The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.",
+          "sourceUrl": "https://www.durham.ac.uk/study/courses/engineering-mechanical-h311/september-2027/",
+          "sourceTitle": "Mechanical Engineering H311 September 2027 - Durham University",
+          "note": "2027 course page states no overseas fee yet: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" No amount published. Input URL https://www.durham.ac.uk/study/courses/mechanical-engineering-h311/ is a 404; used current 2027 page https://www.durham.ac.uk/study/courses/engineering-mechanical-h311/september-2027/ (same UCAS code H311)."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "durham-aeronautical-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "university-wide",
+          "scopeNote": "Tuition Fees page, UK applicants: \"This tuition fee will increase to £10,050 in 2027/28. Please note that these figures remain subject to parliamentary approval.\"",
+          "yearEvidence": "This tuition fee will increase to £10,050 in 2027/28.",
+          "sourceUrl": "https://www.durham.ac.uk/study/undergraduate/fees-and-funding/tuition-fees/",
+          "sourceTitle": "Tuition Fees - Durham University",
+          "note": "Expected figure only, \"subject to parliamentary approval\"; the page wording is about the 2027/28 year, not explicitly the 2027 starting cohort. Course page (Start date September 2027) says: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" Sourcing: https://www.durham.ac.uk/study/courses/engineering-aeronautical-h411/september-2027/. Input URL https://www.durham.ac.uk/study/courses/aeronautical-engineering-h411/ is a 404; used current 2027 page https://www.durham.ac.uk/study/courses/engineering-aeronautical-h411/september-2027/ (same UCAS code H411). Placement/year-abroad reduced fees on the page are quoted only for 2026/27, so not recorded."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date September 2027 ... The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.",
+          "sourceUrl": "https://www.durham.ac.uk/study/courses/engineering-aeronautical-h411/september-2027/",
+          "sourceTitle": "Aeronautical Engineering H411 September 2027 - Durham University",
+          "note": "2027 course page states no overseas fee yet: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" No amount published. Input URL https://www.durham.ac.uk/study/courses/aeronautical-engineering-h411/ is a 404; used current 2027 page https://www.durham.ac.uk/study/courses/engineering-aeronautical-h411/september-2027/ (same UCAS code H411)."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "durham-bioengineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "university-wide",
+          "scopeNote": "Tuition Fees page, UK applicants: \"This tuition fee will increase to £10,050 in 2027/28. Please note that these figures remain subject to parliamentary approval.\"",
+          "yearEvidence": "This tuition fee will increase to £10,050 in 2027/28.",
+          "sourceUrl": "https://www.durham.ac.uk/study/undergraduate/fees-and-funding/tuition-fees/",
+          "sourceTitle": "Tuition Fees - Durham University",
+          "note": "Expected figure only, \"subject to parliamentary approval\"; the page wording is about the 2027/28 year, not explicitly the 2027 starting cohort. Course page (Start date September 2027) says: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" Sourcing: https://www.durham.ac.uk/study/courses/engineering-bioengineering-h911/september-2027/. Input URL https://www.durham.ac.uk/study/courses/bioengineering-h911/ is a 404; used current 2027 page https://www.durham.ac.uk/study/courses/engineering-bioengineering-h911/september-2027/ (same UCAS code H911). Placement/year-abroad reduced fees on the page are quoted only for 2026/27, so not recorded."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date September 2027 ... The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.",
+          "sourceUrl": "https://www.durham.ac.uk/study/courses/engineering-bioengineering-h911/september-2027/",
+          "sourceTitle": "Bioengineering H911 September 2027 - Durham University",
+          "note": "2027 course page states no overseas fee yet: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" No amount published. Input URL https://www.durham.ac.uk/study/courses/bioengineering-h911/ is a 404; used current 2027 page https://www.durham.ac.uk/study/courses/engineering-bioengineering-h911/september-2027/ (same UCAS code H911)."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "durham-renewable-energy-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "university-wide",
+          "scopeNote": "Tuition Fees page, UK applicants: \"This tuition fee will increase to £10,050 in 2027/28. Please note that these figures remain subject to parliamentary approval.\"",
+          "yearEvidence": "This tuition fee will increase to £10,050 in 2027/28.",
+          "sourceUrl": "https://www.durham.ac.uk/study/undergraduate/fees-and-funding/tuition-fees/",
+          "sourceTitle": "Tuition Fees - Durham University",
+          "note": "Expected figure only, \"subject to parliamentary approval\"; the page wording is about the 2027/28 year, not explicitly the 2027 starting cohort. Course page (Start date September 2027) says: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" Sourcing: https://www.durham.ac.uk/study/courses/engineering-renewable-energy-h811/september-2027/. Input URL https://www.durham.ac.uk/study/courses/renewable-energy-engineering-h811/ is a 404; used current 2027 page https://www.durham.ac.uk/study/courses/engineering-renewable-energy-h811/september-2027/ (same UCAS code H811). Placement/year-abroad reduced fees on the page are quoted only for 2026/27, so not recorded."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date September 2027 ... The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.",
+          "sourceUrl": "https://www.durham.ac.uk/study/courses/engineering-renewable-energy-h811/september-2027/",
+          "sourceTitle": "Renewable Energy Engineering H811 September 2027 - Durham University",
+          "note": "2027 course page states no overseas fee yet: \"The fees for the academic year you have selected have not yet been confirmed - for more information on fees visit our Tuition Fees page.\" No amount published. Input URL https://www.durham.ac.uk/study/courses/renewable-energy-engineering-h811/ is a 404; used current 2027 page https://www.durham.ac.uk/study/courses/engineering-renewable-energy-h811/september-2027/ (same UCAS code H811)."
+        }
+      ],
+      "unresolved": null
+    }
+  ],
+  "notes2028": "No 2028-entry fees found: the Tuition Fees page mentions only 2026/27 and 2027/28, and /study/courses/physics-f300/september-2028/ returns 404 (course pages offer only September 2027 and September 2026 start dates)."
+}

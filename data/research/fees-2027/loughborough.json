@@ -1,0 +1,1073 @@
+{
+  "universityId": "loughborough",
+  "checkedOn": "2026-09-30",
+  "method": "WebFetch of each official course page on www.lboro.ac.uk (input URLs, including their ?v= query strings); fees read from the course page block \"Fees for 2027-28 (per academic year)\". Checked the undergraduate tuition fees page (www.lboro.ac.uk/study/undergraduate/fees-funding/fees/) and international fees page: neither states 2027 entry fees.",
+  "universityWideStatements": [],
+  "courses": [
+    {
+      "id": "loughborough-physics-bsc--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/physics-bsc/?v=3",
+          "sourceTitle": "Physics BSc | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "UK",
+          "categoryKind": "home",
+          "amount": 10050,
+          "note": "Course page fee block: \"UK: £10,050\" under \"Fees for 2027-28 (per academic year)\"; no caveat shown in the block. Placement/study abroad reduced fees not stated on the page; not recorded."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/physics-bsc/?v=3",
+          "sourceTitle": "Physics BSc | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 31500,
+          "note": "Course page fee block: \"International: £31,500\" under \"Fees for 2027-28 (per academic year)\"; read from this course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "loughborough-physics-mphys--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/physics-mphys/?v=3",
+          "sourceTitle": "Physics MPhys | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "UK",
+          "categoryKind": "home",
+          "amount": 10050,
+          "note": "Course page fee block: \"UK: £10,050\" under \"Fees for 2027-28 (per academic year)\"; no caveat shown in the block. Placement/study abroad reduced fees not stated on the page; not recorded."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/physics-mphys/?v=3",
+          "sourceTitle": "Physics MPhys | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 31500,
+          "note": "Course page fee block: \"International: £31,500\" under \"Fees for 2027-28 (per academic year)\"; read from this course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "loughborough-physics-with-computing-bsc--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/physics-with-computing-bsc/?v=2",
+          "sourceTitle": "Physics with Computing BSc | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "UK",
+          "categoryKind": "home",
+          "amount": 10050,
+          "note": "Course page fee block: \"UK: £10,050\" under \"Fees for 2027-28 (per academic year)\"; no caveat shown in the block. Placement/study abroad reduced fees not stated on the page; not recorded."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/physics-with-computing-bsc/?v=2",
+          "sourceTitle": "Physics with Computing BSc | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 31500,
+          "note": "Course page fee block: \"International: £31,500\" under \"Fees for 2027-28 (per academic year)\"; read from this course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "loughborough-physics-with-computing-mphys--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/physics-with-computing-mphys/?v=2",
+          "sourceTitle": "Physics with Computing MPhys | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "UK",
+          "categoryKind": "home",
+          "amount": 10050,
+          "note": "Course page fee block: \"UK: £10,050\" under \"Fees for 2027-28 (per academic year)\"; no caveat shown in the block. Placement/study abroad reduced fees not stated on the page; not recorded."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/physics-with-computing-mphys/?v=2",
+          "sourceTitle": "Physics with Computing MPhys | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 31500,
+          "note": "Course page fee block: \"International: £31,500\" under \"Fees for 2027-28 (per academic year)\"; read from this course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "loughborough-physics-with-theoretical-physics-bsc--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/physics-with-theoretical-physics-bsc/?v=2",
+          "sourceTitle": "Physics with Theoretical Physics BSc | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "UK",
+          "categoryKind": "home",
+          "amount": 10050,
+          "note": "Course page fee block: \"UK: £10,050\" under \"Fees for 2027-28 (per academic year)\"; no caveat shown in the block. Placement/study abroad reduced fees not stated on the page; not recorded."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/physics-with-theoretical-physics-bsc/?v=2",
+          "sourceTitle": "Physics with Theoretical Physics BSc | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 31500,
+          "note": "Course page fee block: \"International: £31,500\" under \"Fees for 2027-28 (per academic year)\"; read from this course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "loughborough-physics-with-theoretical-physics-mphys--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/physics-with-theoretical-physics-mphys/?v=2",
+          "sourceTitle": "Physics with Theoretical Physics MPhys | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "UK",
+          "categoryKind": "home",
+          "amount": 10050,
+          "note": "Course page fee block: \"UK: £10,050\" under \"Fees for 2027-28 (per academic year)\"; no caveat shown in the block. Placement/study abroad reduced fees not stated on the page; not recorded."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/physics-with-theoretical-physics-mphys/?v=2",
+          "sourceTitle": "Physics with Theoretical Physics MPhys | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 31500,
+          "note": "Course page fee block: \"International: £31,500\" under \"Fees for 2027-28 (per academic year)\"; read from this course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "loughborough-engineering-physics-bsc--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/engineering-physics-bsc/?v=2",
+          "sourceTitle": "Engineering Physics BSc | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "UK",
+          "categoryKind": "home",
+          "amount": 10050,
+          "note": "Course page fee block: \"UK: £10,050\" under \"Fees for 2027-28 (per academic year)\"; no caveat shown in the block. Placement/study abroad reduced fees not stated on the page; not recorded."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/engineering-physics-bsc/?v=2",
+          "sourceTitle": "Engineering Physics BSc | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 31500,
+          "note": "Course page fee block: \"International: £31,500\" under \"Fees for 2027-28 (per academic year)\"; read from this course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "loughborough-engineering-physics-mphys--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/engineering-physics-mphys/?v=2",
+          "sourceTitle": "Engineering Physics MPhys | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "UK",
+          "categoryKind": "home",
+          "amount": 10050,
+          "note": "Course page fee block: \"UK: £10,050\" under \"Fees for 2027-28 (per academic year)\"; no caveat shown in the block. Placement/study abroad reduced fees not stated on the page; not recorded."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/engineering-physics-mphys/?v=2",
+          "sourceTitle": "Engineering Physics MPhys | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 31500,
+          "note": "Course page fee block: \"International: £31,500\" under \"Fees for 2027-28 (per academic year)\"; read from this course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "loughborough-mathematics-and-physics-bsc--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/mathematics-and-physics-bsc/?v=2",
+          "sourceTitle": "Mathematics and Physics BSc | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "UK",
+          "categoryKind": "home",
+          "amount": 10050,
+          "note": "Course page fee block: \"UK: £10,050\" under \"Fees for 2027-28 (per academic year)\"; no caveat shown in the block. Placement/study abroad reduced fees not stated on the page; not recorded."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/mathematics-and-physics-bsc/?v=2",
+          "sourceTitle": "Mathematics and Physics BSc | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 31500,
+          "note": "Course page fee block: \"International: £31,500\" under \"Fees for 2027-28 (per academic year)\"; read from this course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "loughborough-mathematics-and-physics-mphys--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/mathematics-and-physics-mphys/?v=2",
+          "sourceTitle": "Mathematics and Physics MPhys | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "UK",
+          "categoryKind": "home",
+          "amount": 10050,
+          "note": "Course page fee block: \"UK: £10,050\" under \"Fees for 2027-28 (per academic year)\"; no caveat shown in the block. Placement/study abroad reduced fees not stated on the page; not recorded."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/mathematics-and-physics-mphys/?v=2",
+          "sourceTitle": "Mathematics and Physics MPhys | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 31500,
+          "note": "Course page fee block: \"International: £31,500\" under \"Fees for 2027-28 (per academic year)\"; read from this course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "loughborough-mechanical-engineering-beng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/mechanical-engineering-beng/?v=2",
+          "sourceTitle": "Mechanical Engineering BEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "UK",
+          "categoryKind": "home",
+          "amount": 10050,
+          "note": "Course page fee block: \"UK: £10,050\" under \"Fees for 2027-28 (per academic year)\"; no caveat shown in the block. Placement/study abroad reduced fees not stated on the page; not recorded."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/mechanical-engineering-beng/?v=2",
+          "sourceTitle": "Mechanical Engineering BEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 31500,
+          "note": "Course page fee block: \"International: £31,500\" under \"Fees for 2027-28 (per academic year)\"; read from this course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "loughborough-mechanical-engineering-meng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/mechanical-engineering-meng/?v=2",
+          "sourceTitle": "Mechanical Engineering MEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "UK",
+          "categoryKind": "home",
+          "amount": 10050,
+          "note": "Course page fee block: \"UK: £10,050\" under \"Fees for 2027-28 (per academic year)\"; no caveat shown in the block. Placement/study abroad reduced fees not stated on the page; not recorded."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/mechanical-engineering-meng/?v=2",
+          "sourceTitle": "Mechanical Engineering MEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 31500,
+          "note": "Course page fee block: \"International: £31,500\" under \"Fees for 2027-28 (per academic year)\"; read from this course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "loughborough-aeronautical-engineering-beng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/aeronautical-engineering-beng/?v=2",
+          "sourceTitle": "Aeronautical Engineering BEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "UK",
+          "categoryKind": "home",
+          "amount": 10050,
+          "note": "Course page fee block: \"UK: £10,050\" under \"Fees for 2027-28 (per academic year)\"; no caveat shown in the block. Placement/study abroad reduced fees not stated on the page; not recorded."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/aeronautical-engineering-beng/?v=2",
+          "sourceTitle": "Aeronautical Engineering BEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 31500,
+          "note": "Course page fee block: \"International: £31,500\" under \"Fees for 2027-28 (per academic year)\"; read from this course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "loughborough-aeronautical-engineering-meng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/aeronautical-engineering-meng/?v=2",
+          "sourceTitle": "Aeronautical Engineering MEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "UK",
+          "categoryKind": "home",
+          "amount": 10050,
+          "note": "Course page fee block: \"UK: £10,050\" under \"Fees for 2027-28 (per academic year)\"; no caveat shown in the block. Placement/study abroad reduced fees not stated on the page; not recorded."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/aeronautical-engineering-meng/?v=2",
+          "sourceTitle": "Aeronautical Engineering MEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 31500,
+          "note": "Course page fee block: \"International: £31,500\" under \"Fees for 2027-28 (per academic year)\"; read from this course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "loughborough-automotive-engineering-beng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/automotive-engineering-beng/?v=2",
+          "sourceTitle": "Automotive Engineering BEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "UK",
+          "categoryKind": "home",
+          "amount": 10050,
+          "note": "Course page fee block: \"UK: £10,050\" under \"Fees for 2027-28 (per academic year)\"; no caveat shown in the block. Placement/study abroad reduced fees not stated on the page; not recorded."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/automotive-engineering-beng/?v=2",
+          "sourceTitle": "Automotive Engineering BEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 31500,
+          "note": "Course page fee block: \"International: £31,500\" under \"Fees for 2027-28 (per academic year)\"; read from this course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "loughborough-automotive-engineering-meng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/automotive-engineering-meng/?v=2",
+          "sourceTitle": "Automotive Engineering MEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "UK",
+          "categoryKind": "home",
+          "amount": 10050,
+          "note": "Course page fee block: \"UK: £10,050\" under \"Fees for 2027-28 (per academic year)\"; no caveat shown in the block. Placement/study abroad reduced fees not stated on the page; not recorded."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/automotive-engineering-meng/?v=2",
+          "sourceTitle": "Automotive Engineering MEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 31500,
+          "note": "Course page fee block: \"International: £31,500\" under \"Fees for 2027-28 (per academic year)\"; read from this course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "loughborough-civil-engineering-beng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/civil-engineering-beng/?v=2",
+          "sourceTitle": "Civil Engineering BEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "UK",
+          "categoryKind": "home",
+          "amount": 10050,
+          "note": "Course page fee block: \"UK: £10,050\" under \"Fees for 2027-28 (per academic year)\"; no caveat shown in the block. Placement/study abroad reduced fees not stated on the page; not recorded."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/civil-engineering-beng/?v=2",
+          "sourceTitle": "Civil Engineering BEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 31500,
+          "note": "Course page fee block: \"International: £31,500\" under \"Fees for 2027-28 (per academic year)\"; read from this course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "loughborough-civil-engineering-meng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/civil-engineering-meng/?v=2",
+          "sourceTitle": "Civil Engineering MEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "UK",
+          "categoryKind": "home",
+          "amount": 10050,
+          "note": "Course page fee block: \"UK: £10,050\" under \"Fees for 2027-28 (per academic year)\"; no caveat shown in the block. Placement/study abroad reduced fees not stated on the page; not recorded."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/civil-engineering-meng/?v=2",
+          "sourceTitle": "Civil Engineering MEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 31500,
+          "note": "Course page fee block: \"International: £31,500\" under \"Fees for 2027-28 (per academic year)\"; read from this course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "loughborough-electrical-and-electronic-engineering-beng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/electrical-and-electronic-engineering-beng/?v=2",
+          "sourceTitle": "Electrical and Electronic Engineering BEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "UK",
+          "categoryKind": "home",
+          "amount": 10050,
+          "note": "Course page fee block: \"UK: £10,050\" under \"Fees for 2027-28 (per academic year)\"; no caveat shown in the block. Placement/study abroad reduced fees not stated on the page; not recorded."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/electrical-and-electronic-engineering-beng/?v=2",
+          "sourceTitle": "Electrical and Electronic Engineering BEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 31500,
+          "note": "Course page fee block: \"International: £31,500\" under \"Fees for 2027-28 (per academic year)\"; read from this course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "loughborough-electrical-and-electronic-engineering-meng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/electrical-and-electronic-engineering-meng/?v=2",
+          "sourceTitle": "Electrical and Electronic Engineering MEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "UK",
+          "categoryKind": "home",
+          "amount": 10050,
+          "note": "Course page fee block: \"UK: £10,050\" under \"Fees for 2027-28 (per academic year)\"; no caveat shown in the block. Placement/study abroad reduced fees not stated on the page; not recorded."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/electrical-and-electronic-engineering-meng/?v=2",
+          "sourceTitle": "Electrical and Electronic Engineering MEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 31500,
+          "note": "Course page fee block: \"International: £31,500\" under \"Fees for 2027-28 (per academic year)\"; read from this course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "loughborough-chemical-engineering-beng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/chemical-engineering-beng/?v=2",
+          "sourceTitle": "Chemical Engineering BEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "UK",
+          "categoryKind": "home",
+          "amount": 10050,
+          "note": "Course page fee block: \"UK: £10,050\" under \"Fees for 2027-28 (per academic year)\"; no caveat shown in the block. Placement/study abroad reduced fees not stated on the page; not recorded."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/chemical-engineering-beng/?v=2",
+          "sourceTitle": "Chemical Engineering BEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 31500,
+          "note": "Course page fee block: \"International: £31,500\" under \"Fees for 2027-28 (per academic year)\"; read from this course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "loughborough-chemical-engineering-meng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/chemical-engineering-meng/?v=2",
+          "sourceTitle": "Chemical Engineering MEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "UK",
+          "categoryKind": "home",
+          "amount": 10050,
+          "note": "Course page fee block: \"UK: £10,050\" under \"Fees for 2027-28 (per academic year)\"; no caveat shown in the block. Placement/study abroad reduced fees not stated on the page; not recorded."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/chemical-engineering-meng/?v=2",
+          "sourceTitle": "Chemical Engineering MEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 31500,
+          "note": "Course page fee block: \"International: £31,500\" under \"Fees for 2027-28 (per academic year)\"; read from this course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "loughborough-materials-science-and-engineering-beng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/materials-science-engineering-beng/?v=2",
+          "sourceTitle": "Materials Science and Engineering BEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "UK",
+          "categoryKind": "home",
+          "amount": 10050,
+          "note": "Course page fee block: \"UK: £10,050\" under \"Fees for 2027-28 (per academic year)\"; no caveat shown in the block. Placement/study abroad reduced fees not stated on the page; not recorded."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/materials-science-engineering-beng/?v=2",
+          "sourceTitle": "Materials Science and Engineering BEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 31500,
+          "note": "Course page fee block: \"International: £31,500\" under \"Fees for 2027-28 (per academic year)\"; read from this course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "loughborough-materials-science-and-engineering-meng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/materials-science-engineering-meng/?v=2",
+          "sourceTitle": "Materials Science and Engineering MEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "UK",
+          "categoryKind": "home",
+          "amount": 10050,
+          "note": "Course page fee block: \"UK: £10,050\" under \"Fees for 2027-28 (per academic year)\"; no caveat shown in the block. Placement/study abroad reduced fees not stated on the page; not recorded."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/materials-science-engineering-meng/?v=2",
+          "sourceTitle": "Materials Science and Engineering MEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 31500,
+          "note": "Course page fee block: \"International: £31,500\" under \"Fees for 2027-28 (per academic year)\"; read from this course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "loughborough-product-design-engineering-beng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/product-design-engineering-beng/?v=11",
+          "sourceTitle": "Product Design Engineering BEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "UK",
+          "categoryKind": "home",
+          "amount": 10050,
+          "note": "Course page fee block: \"UK: £10,050\" under \"Fees for 2027-28 (per academic year)\"; no caveat shown in the block. Placement/study abroad reduced fees not stated on the page; not recorded."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/product-design-engineering-beng/?v=11",
+          "sourceTitle": "Product Design Engineering BEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 31500,
+          "note": "Course page fee block: \"International: £31,500\" under \"Fees for 2027-28 (per academic year)\"; read from this course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "loughborough-product-design-engineering-meng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/product-design-engineering-meng/?v=11",
+          "sourceTitle": "Product Design Engineering MEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "UK",
+          "categoryKind": "home",
+          "amount": 10050,
+          "note": "Course page fee block: \"UK: £10,050\" under \"Fees for 2027-28 (per academic year)\"; no caveat shown in the block. Placement/study abroad reduced fees not stated on the page; not recorded."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/product-design-engineering-meng/?v=11",
+          "sourceTitle": "Product Design Engineering MEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 31500,
+          "note": "Course page fee block: \"International: £31,500\" under \"Fees for 2027-28 (per academic year)\"; read from this course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "loughborough-robotics-mechatronics-and-control-engineering-beng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/robotics-mechatronics-control-engineering-beng/?v=2",
+          "sourceTitle": "Robotics, Mechatronics and Control Engineering BEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "UK",
+          "categoryKind": "home",
+          "amount": 10050,
+          "note": "Course page fee block: \"UK: £10,050\" under \"Fees for 2027-28 (per academic year)\"; no caveat shown in the block. Placement/study abroad reduced fees not stated on the page; not recorded."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/robotics-mechatronics-control-engineering-beng/?v=2",
+          "sourceTitle": "Robotics, Mechatronics and Control Engineering BEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 31500,
+          "note": "Course page fee block: \"International: £31,500\" under \"Fees for 2027-28 (per academic year)\"; read from this course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "loughborough-robotics-mechatronics-and-control-engineering-meng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/robotics-mechatronics-control-engineering-meng/?v=2",
+          "sourceTitle": "Robotics, Mechatronics and Control Engineering MEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "UK",
+          "categoryKind": "home",
+          "amount": 10050,
+          "note": "Course page fee block: \"UK: £10,050\" under \"Fees for 2027-28 (per academic year)\"; no caveat shown in the block. Placement/study abroad reduced fees not stated on the page; not recorded."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Fees for 2027-28 (per academic year)",
+          "sourceUrl": "https://www.lboro.ac.uk/study/undergraduate/courses/robotics-mechatronics-control-engineering-meng/?v=2",
+          "sourceTitle": "Robotics, Mechatronics and Control Engineering MEng | Undergraduate study | Loughborough University",
+          "indicativeAmount": null,
+          "status": "published",
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 31500,
+          "note": "Course page fee block: \"International: £31,500\" under \"Fees for 2027-28 (per academic year)\"; read from this course page."
+        }
+      ],
+      "unresolved": null
+    }
+  ],
+  "notes2028": "No 2028-entry fees found. The undergraduate fees page only covers 2026 entry and says \"Tuition fees are reviewed annually and are likely to increase to take into account inflationary pressures for future years of entry.\""
+}

@@ -1,0 +1,623 @@
+{
+  "universityId": "leeds",
+  "checkedOn": "2026-09-30",
+  "method": "WebFetch of each official course page on courses.leeds.ac.uk (plain URL; ?query strings return 403) plus Leeds undergraduate fee pages on leeds.ac.uk and students.leeds.ac.uk. Retried stale pages twice; only course pages whose own start date/fee wording establishes 2027/28 entry were recorded; pages showing 2021-2026 entry content were left unresolved.",
+  "universityWideStatements": [
+    {
+      "quote": "In November 2025, the UK government announced its intention to increase the tuition fee cap to £9,790 for the 2026/27 academic year and £10,050 for the 2027/28 academic year.",
+      "url": "https://www.leeds.ac.uk/undergraduate-fees/doc/fees-undergraduate-fees",
+      "title": "Undergraduate fees | University of Leeds",
+      "appliesTo": "Government fee-cap announcement (under the heading for 2026/27 starters). It is a cap statement, not a per-course fee, so it was NOT used to fill any course fee."
+    }
+  ],
+  "courses": [
+    {
+      "id": "leeds-physics-bsc--2027",
+      "fees": [],
+      "unresolved": "Fetched page shows \"Start date: September 2026\" and fees wording for 2025/26 (UK \"To be confirmed\", international £32,750 - not recorded). 2027 version not retrievable; cache-busting query strings return 403. Gap-fill 2026-10-01: alternatives tried without success - plain and trailing-slash courses.leeds.ac.uk URLs (physics-bsc re-fetched: still Start date September 2026, 2025/26 fee wording); ?refresh=yes and /2027/ path variants and courses.leeds.ac.uk/search returned HTTP 403; engineering.leeds.ac.uk course URLs could not be fetched (robots.txt); leeds.ac.uk/undergraduate-fees page only gives the government cap statement (\"£10,050 for the 2027/28 academic year\", subject to final government confirmation) and says international fees are on course pages. Left unresolved."
+    },
+    {
+      "id": "leeds-physics-international-mphys-bsc--2027",
+      "fees": [],
+      "unresolved": "Fetched page shows \"Start date: September 2026\" with UK \"To be confirmed\" for 2026/27 and international £32,750 (2026 figure, not recorded). The page only quotes the government cap intention for 2027/28, not a course fee. Gap-fill 2026-10-01: alternatives tried without success - plain and trailing-slash courses.leeds.ac.uk URLs (physics-bsc re-fetched: still Start date September 2026, 2025/26 fee wording); ?refresh=yes and /2027/ path variants and courses.leeds.ac.uk/search returned HTTP 403; engineering.leeds.ac.uk course URLs could not be fetched (robots.txt); leeds.ac.uk/undergraduate-fees page only gives the government cap statement (\"£10,050 for the 2027/28 academic year\", subject to final government confirmation) and says international fees are on course pages. Left unresolved."
+    },
+    {
+      "id": "leeds-physics-with-artificial-intelligence-bsc--2027",
+      "fees": [],
+      "unresolved": "Fetched page shows \"Start date: September 2026\" and 2025/26 fee wording; no 2027 fee content retrievable. Gap-fill 2026-10-01: alternatives tried without success - plain and trailing-slash courses.leeds.ac.uk URLs (physics-bsc re-fetched: still Start date September 2026, 2025/26 fee wording); ?refresh=yes and /2027/ path variants and courses.leeds.ac.uk/search returned HTTP 403; engineering.leeds.ac.uk course URLs could not be fetched (robots.txt); leeds.ac.uk/undergraduate-fees page only gives the government cap statement (\"£10,050 for the 2027/28 academic year\", subject to final government confirmation) and says international fees are on course pages. Left unresolved."
+    },
+    {
+      "id": "leeds-physics-with-astrophysics-bsc--2027",
+      "fees": [
+        {
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date: September 2027",
+          "sourceUrl": "https://courses.leeds.ac.uk/3600/physics-with-astrophysics-bsc",
+          "sourceTitle": "Physics with Astrophysics | University of Leeds",
+          "note": "Course page fee line \"UK: £10,050\". Reduced fee applies in a study abroad/work placement year (amount not recorded)."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date: September 2027",
+          "sourceUrl": "https://courses.leeds.ac.uk/3600/physics-with-astrophysics-bsc",
+          "sourceTitle": "Physics with Astrophysics | University of Leeds",
+          "note": "Course page states \"International: To be confirmed\"; no indicative figure given."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "leeds-physics-with-astrophysics-mphys-bsc--2027",
+      "fees": [],
+      "unresolved": "Fetched page shows \"Start date: September 2024\" and 2023/24-2024/25 fee wording; no 2027 fee content retrievable. Gap-fill 2026-10-01: alternatives tried without success - plain and trailing-slash courses.leeds.ac.uk URLs (physics-bsc re-fetched: still Start date September 2026, 2025/26 fee wording); ?refresh=yes and /2027/ path variants and courses.leeds.ac.uk/search returned HTTP 403; engineering.leeds.ac.uk course URLs could not be fetched (robots.txt); leeds.ac.uk/undergraduate-fees page only gives the government cap statement (\"£10,050 for the 2027/28 academic year\", subject to final government confirmation) and says international fees are on course pages. Left unresolved."
+    },
+    {
+      "id": "leeds-theoretical-physics-bsc--2027",
+      "fees": [
+        {
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date: September 2027",
+          "sourceUrl": "https://courses.leeds.ac.uk/3686/theoretical-physics-bsc",
+          "sourceTitle": "Theoretical Physics | University of Leeds",
+          "note": "Course page fee line \"UK: £10,050\". Reduced fee applies in a study abroad/work placement year (amount not recorded)."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date: September 2027",
+          "sourceUrl": "https://courses.leeds.ac.uk/3686/theoretical-physics-bsc",
+          "sourceTitle": "Theoretical Physics | University of Leeds",
+          "note": "Course page states \"International: To be confirmed\"; no indicative figure given."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "leeds-mathematics-and-physics-bsc--2027",
+      "fees": [
+        {
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Tuition fees for UK undergraduate students starting in 2027/28 are £10,050.",
+          "sourceUrl": "https://courses.leeds.ac.uk/k279/mathematics-and-physics-bsc",
+          "sourceTitle": "Mathematics and Physics | University of Leeds",
+          "note": "Course page fee line \"UK: £10,050\". Reduced fee applies in a study abroad/work placement year (amount not recorded)."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Tuition fees for UK undergraduate students starting in 2027/28 are £10,050.",
+          "sourceUrl": "https://courses.leeds.ac.uk/k279/mathematics-and-physics-bsc",
+          "sourceTitle": "Mathematics and Physics | University of Leeds",
+          "note": "Course page states \"International: To be confirmed\"; no indicative figure given."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "leeds-mechanical-engineering-beng--2027",
+      "fees": [],
+      "unresolved": "Fetched page shows \"Start date: September 2025\" and 2024/25-2025/26 fee wording; no 2027 fee content retrievable. Gap-fill 2026-10-01: alternatives tried without success - plain and trailing-slash courses.leeds.ac.uk URLs (physics-bsc re-fetched: still Start date September 2026, 2025/26 fee wording); ?refresh=yes and /2027/ path variants and courses.leeds.ac.uk/search returned HTTP 403; engineering.leeds.ac.uk course URLs could not be fetched (robots.txt); leeds.ac.uk/undergraduate-fees page only gives the government cap statement (\"£10,050 for the 2027/28 academic year\", subject to final government confirmation) and says international fees are on course pages. Left unresolved."
+    },
+    {
+      "id": "leeds-mechanical-engineering-meng-beng--2027",
+      "fees": [],
+      "unresolved": "Fetched page shows \"Start date: September 2025\" and 2025/26 fee wording; no 2027 fee content retrievable. Gap-fill 2026-10-01: alternatives tried without success - plain and trailing-slash courses.leeds.ac.uk URLs (physics-bsc re-fetched: still Start date September 2026, 2025/26 fee wording); ?refresh=yes and /2027/ path variants and courses.leeds.ac.uk/search returned HTTP 403; engineering.leeds.ac.uk course URLs could not be fetched (robots.txt); leeds.ac.uk/undergraduate-fees page only gives the government cap statement (\"£10,050 for the 2027/28 academic year\", subject to final government confirmation) and says international fees are on course pages. Left unresolved."
+    },
+    {
+      "id": "leeds-aeronautical-and-aerospace-engineering-meng-beng--2027",
+      "fees": [],
+      "unresolved": "Fetched page shows \"(Full time) 2021 start\" and 2021/22 fee wording; no 2027 fee content retrievable. Gap-fill 2026-10-01: alternatives tried without success - plain and trailing-slash courses.leeds.ac.uk URLs (physics-bsc re-fetched: still Start date September 2026, 2025/26 fee wording); ?refresh=yes and /2027/ path variants and courses.leeds.ac.uk/search returned HTTP 403; engineering.leeds.ac.uk course URLs could not be fetched (robots.txt); leeds.ac.uk/undergraduate-fees page only gives the government cap statement (\"£10,050 for the 2027/28 academic year\", subject to final government confirmation) and says international fees are on course pages. Left unresolved."
+    },
+    {
+      "id": "leeds-civil-engineering-beng--2027",
+      "fees": [],
+      "unresolved": "Fetched page shows \"Start date: September 2024\" and 2024/25 fee wording; no 2027 fee content retrievable. Gap-fill 2026-10-01: alternatives tried without success - plain and trailing-slash courses.leeds.ac.uk URLs (physics-bsc re-fetched: still Start date September 2026, 2025/26 fee wording); ?refresh=yes and /2027/ path variants and courses.leeds.ac.uk/search returned HTTP 403; engineering.leeds.ac.uk course URLs could not be fetched (robots.txt); leeds.ac.uk/undergraduate-fees page only gives the government cap statement (\"£10,050 for the 2027/28 academic year\", subject to final government confirmation) and says international fees are on course pages. Left unresolved."
+    },
+    {
+      "id": "leeds-chemical-engineering-beng--2027",
+      "fees": [],
+      "unresolved": "Fetched page shows \"Start date: September 2025\" and 2025/26 fee wording; no 2027 fee content retrievable. Gap-fill 2026-10-01: alternatives tried without success - plain and trailing-slash courses.leeds.ac.uk URLs (physics-bsc re-fetched: still Start date September 2026, 2025/26 fee wording); ?refresh=yes and /2027/ path variants and courses.leeds.ac.uk/search returned HTTP 403; engineering.leeds.ac.uk course URLs could not be fetched (robots.txt); leeds.ac.uk/undergraduate-fees page only gives the government cap statement (\"£10,050 for the 2027/28 academic year\", subject to final government confirmation) and says international fees are on course pages. Left unresolved."
+    },
+    {
+      "id": "leeds-chemical-engineering-meng-beng--2027",
+      "fees": [],
+      "unresolved": "Course page returned HTTP 403 on every attempt (plain and trailing-slash URL); no fee content read. Gap-fill 2026-10-01: alternatives tried without success - plain and trailing-slash courses.leeds.ac.uk URLs (physics-bsc re-fetched: still Start date September 2026, 2025/26 fee wording); ?refresh=yes and /2027/ path variants and courses.leeds.ac.uk/search returned HTTP 403; engineering.leeds.ac.uk course URLs could not be fetched (robots.txt); leeds.ac.uk/undergraduate-fees page only gives the government cap statement (\"£10,050 for the 2027/28 academic year\", subject to final government confirmation) and says international fees are on course pages. Left unresolved."
+    },
+    {
+      "id": "leeds-chemical-engineering-industrial-beng--2027",
+      "fees": [
+        {
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date: September 2027",
+          "sourceUrl": "https://courses.leeds.ac.uk/g832/chemical-engineering-industrial-beng",
+          "sourceTitle": "Chemical Engineering (Industrial) | University of Leeds",
+          "note": "Course page fee line \"UK: £10,050\". Reduced fee applies in a study abroad/work placement year (amount not recorded)."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date: September 2027",
+          "sourceUrl": "https://courses.leeds.ac.uk/g832/chemical-engineering-industrial-beng",
+          "sourceTitle": "Chemical Engineering (Industrial) | University of Leeds",
+          "note": "Course page states \"International: To be confirmed\"; no indicative figure given."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "leeds-electronic-and-electrical-engineering-beng--2027",
+      "fees": [],
+      "unresolved": "Fetched page shows \"Start date: September 2026\" with UK fee for 2026/27; the 2027 version of the page could not be retrieved (year-of-entry switch is not addressable and query strings return 403). Gap-fill 2026-10-01: alternatives tried without success - plain and trailing-slash courses.leeds.ac.uk URLs (physics-bsc re-fetched: still Start date September 2026, 2025/26 fee wording); ?refresh=yes and /2027/ path variants and courses.leeds.ac.uk/search returned HTTP 403; engineering.leeds.ac.uk course URLs could not be fetched (robots.txt); leeds.ac.uk/undergraduate-fees page only gives the government cap statement (\"£10,050 for the 2027/28 academic year\", subject to final government confirmation) and says international fees are on course pages. Left unresolved."
+    },
+    {
+      "id": "leeds-architectural-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Tuition fees for UK undergraduate students starting in 2027/28 are £10,050.",
+          "sourceUrl": "https://courses.leeds.ac.uk/a248/architectural-engineering-beng",
+          "sourceTitle": "Architectural Engineering | University of Leeds",
+          "note": "Course page fee line \"UK: £10,050\". Reduced fee applies in a study abroad/work placement year (amount not recorded)."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Tuition fees for UK undergraduate students starting in 2027/28 are £10,050.",
+          "sourceUrl": "https://courses.leeds.ac.uk/a248/architectural-engineering-beng",
+          "sourceTitle": "Architectural Engineering | University of Leeds",
+          "note": "Course page states \"International: To be confirmed\"; no indicative figure given."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "leeds-architectural-engineering-meng-beng--2027",
+      "fees": [],
+      "unresolved": "Course page returned HTTP 403 on every attempt; no fee content read. Gap-fill 2026-10-01: alternatives tried without success - plain and trailing-slash courses.leeds.ac.uk URLs (physics-bsc re-fetched: still Start date September 2026, 2025/26 fee wording); ?refresh=yes and /2027/ path variants and courses.leeds.ac.uk/search returned HTTP 403; engineering.leeds.ac.uk course URLs could not be fetched (robots.txt); leeds.ac.uk/undergraduate-fees page only gives the government cap statement (\"£10,050 for the 2027/28 academic year\", subject to final government confirmation) and says international fees are on course pages. Left unresolved."
+    },
+    {
+      "id": "leeds-automotive-engineering-beng--2027",
+      "fees": [],
+      "unresolved": "Fetched page shows \"Start date: September 2026\" with UK fee for 2026/27; the 2027 version of the page could not be retrieved. Gap-fill 2026-10-01: alternatives tried without success - plain and trailing-slash courses.leeds.ac.uk URLs (physics-bsc re-fetched: still Start date September 2026, 2025/26 fee wording); ?refresh=yes and /2027/ path variants and courses.leeds.ac.uk/search returned HTTP 403; engineering.leeds.ac.uk course URLs could not be fetched (robots.txt); leeds.ac.uk/undergraduate-fees page only gives the government cap statement (\"£10,050 for the 2027/28 academic year\", subject to final government confirmation) and says international fees are on course pages. Left unresolved."
+    },
+    {
+      "id": "leeds-automotive-engineering-meng-beng--2027",
+      "fees": [
+        {
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date: September 2027",
+          "sourceUrl": "https://courses.leeds.ac.uk/f413/automotive-engineering-meng-beng",
+          "sourceTitle": "Automotive Engineering | University of Leeds",
+          "note": "Course page fee line \"UK: £10,050\". Reduced fee applies in a study abroad/work placement year (amount not recorded)."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date: September 2027",
+          "sourceUrl": "https://courses.leeds.ac.uk/f413/automotive-engineering-meng-beng",
+          "sourceTitle": "Automotive Engineering | University of Leeds",
+          "note": "Course page states \"International: To be confirmed\"; no indicative figure given."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "leeds-medical-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date: September 2027",
+          "sourceUrl": "https://courses.leeds.ac.uk/a239/medical-engineering-beng",
+          "sourceTitle": "Medical Engineering | University of Leeds",
+          "note": "Course page fee line \"UK: £10,050\". Reduced fee applies in a study abroad/work placement year (amount not recorded)."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date: September 2027",
+          "sourceUrl": "https://courses.leeds.ac.uk/a239/medical-engineering-beng",
+          "sourceTitle": "Medical Engineering | University of Leeds",
+          "note": "Course page states \"International: To be confirmed\"; no indicative figure given."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "leeds-medical-engineering-meng-beng--2027",
+      "fees": [
+        {
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date: September 2027",
+          "sourceUrl": "https://courses.leeds.ac.uk/f447/medical-engineering-meng-beng",
+          "sourceTitle": "Medical Engineering | University of Leeds",
+          "note": "Course page fee line \"UK: £10,050\". Reduced fee applies in a study abroad/work placement year (amount not recorded)."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date: September 2027",
+          "sourceUrl": "https://courses.leeds.ac.uk/f447/medical-engineering-meng-beng",
+          "sourceTitle": "Medical Engineering | University of Leeds",
+          "note": "Course page states \"International: To be confirmed\"; no indicative figure given."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "leeds-product-design-bsc--2027",
+      "fees": [
+        {
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date: September 2027",
+          "sourceUrl": "https://courses.leeds.ac.uk/a602/product-design-bsc",
+          "sourceTitle": "Product Design | University of Leeds",
+          "note": "Course page fee line \"UK: £10,050\". Reduced fee applies in a study abroad/work placement year (amount not recorded). Page text also mentions the 2026/27 fee (£9,790) for comparison; only the 2027/28 figure is recorded."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date: September 2027",
+          "sourceUrl": "https://courses.leeds.ac.uk/a602/product-design-bsc",
+          "sourceTitle": "Product Design | University of Leeds",
+          "note": "Course page states \"International: To be confirmed\"; no indicative figure given."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "leeds-mechatronics-and-robotics-engineering-beng--2027",
+      "fees": [],
+      "unresolved": "Fetched page shows \"Start date: September 2025\" and 2024/25-2025/26 fee wording; no 2027 fee content retrievable. Gap-fill 2026-10-01: alternatives tried without success - plain and trailing-slash courses.leeds.ac.uk URLs (physics-bsc re-fetched: still Start date September 2026, 2025/26 fee wording); ?refresh=yes and /2027/ path variants and courses.leeds.ac.uk/search returned HTTP 403; engineering.leeds.ac.uk course URLs could not be fetched (robots.txt); leeds.ac.uk/undergraduate-fees page only gives the government cap statement (\"£10,050 for the 2027/28 academic year\", subject to final government confirmation) and says international fees are on course pages. Left unresolved."
+    },
+    {
+      "id": "leeds-mechatronics-and-robotics-engineering-meng-beng--2027",
+      "fees": [],
+      "unresolved": "Course page returned HTTP 403 on every attempt; no fee content read. Gap-fill 2026-10-01: alternatives tried without success - plain and trailing-slash courses.leeds.ac.uk URLs (physics-bsc re-fetched: still Start date September 2026, 2025/26 fee wording); ?refresh=yes and /2027/ path variants and courses.leeds.ac.uk/search returned HTTP 403; engineering.leeds.ac.uk course URLs could not be fetched (robots.txt); leeds.ac.uk/undergraduate-fees page only gives the government cap statement (\"£10,050 for the 2027/28 academic year\", subject to final government confirmation) and says international fees are on course pages. Left unresolved."
+    },
+    {
+      "id": "leeds-materials-science-and-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Tuition fees for UK undergraduate students starting in 2027/28 are £10,050.",
+          "sourceUrl": "https://courses.leeds.ac.uk/i984/materials-science-and-engineering-beng",
+          "sourceTitle": "Materials Science and Engineering | University of Leeds",
+          "note": "Course page fee line \"UK: £10,050\". Reduced fee applies in a study abroad/work placement year (amount not recorded)."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Tuition fees for UK undergraduate students starting in 2027/28 are £10,050.",
+          "sourceUrl": "https://courses.leeds.ac.uk/i984/materials-science-and-engineering-beng",
+          "sourceTitle": "Materials Science and Engineering | University of Leeds",
+          "note": "Course page states \"International: To be confirmed\"; no indicative figure given."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "leeds-materials-science-and-engineering-meng-beng--2027",
+      "fees": [
+        {
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Tuition fees for UK undergraduate students starting in 2027/28 are £10,050.",
+          "sourceUrl": "https://courses.leeds.ac.uk/i981/materials-science-and-engineering-meng-beng",
+          "sourceTitle": "Materials Science and Engineering | University of Leeds",
+          "note": "Course page fee line \"UK: £10,050\". Reduced fee applies in a study abroad/work placement year (amount not recorded)."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Tuition fees for UK undergraduate students starting in 2027/28 are £10,050.",
+          "sourceUrl": "https://courses.leeds.ac.uk/i981/materials-science-and-engineering-meng-beng",
+          "sourceTitle": "Materials Science and Engineering | University of Leeds",
+          "note": "Course page states \"International: To be confirmed\"; no indicative figure given."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "leeds-electronics-and-computer-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The government has confirmed that the fee for 2027/28 will be £10,050.",
+          "sourceUrl": "https://courses.leeds.ac.uk/j749/electronics-and-computer-engineering-beng",
+          "sourceTitle": "Electronics and Computer Engineering | University of Leeds",
+          "note": "Course page fee line \"UK: £10,050\". Reduced fee applies in a study abroad/work placement year (amount not recorded)."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The government has confirmed that the fee for 2027/28 will be £10,050.",
+          "sourceUrl": "https://courses.leeds.ac.uk/j749/electronics-and-computer-engineering-beng",
+          "sourceTitle": "Electronics and Computer Engineering | University of Leeds",
+          "note": "Course page states \"International: To be confirmed\"; no indicative figure given."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "leeds-civil-and-environmental-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date: September 2027",
+          "sourceUrl": "https://courses.leeds.ac.uk/4836/civil-and-environmental-engineering-beng",
+          "sourceTitle": "Civil and Environmental Engineering | University of Leeds",
+          "note": "Course page fee line \"UK: £10,050\". Reduced fee applies in a study abroad/work placement year (amount not recorded)."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date: September 2027",
+          "sourceUrl": "https://courses.leeds.ac.uk/4836/civil-and-environmental-engineering-beng",
+          "sourceTitle": "Civil and Environmental Engineering | University of Leeds",
+          "note": "Course page states \"International: To be confirmed\"; no indicative figure given."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "leeds-civil-and-environmental-engineering-meng-beng--2027",
+      "fees": [
+        {
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date: September 2027",
+          "sourceUrl": "https://courses.leeds.ac.uk/f443/civil-and-environmental-engineering-meng-beng",
+          "sourceTitle": "Civil and Environmental Engineering | University of Leeds",
+          "note": "Course page fee line \"UK: £10,050\". Reduced fee applies in a study abroad/work placement year (amount not recorded)."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Start date: September 2027",
+          "sourceUrl": "https://courses.leeds.ac.uk/f443/civil-and-environmental-engineering-meng-beng",
+          "sourceTitle": "Civil and Environmental Engineering | University of Leeds",
+          "note": "Course page fee line \"International: £33,700 (per year)\"; international fee stays the same for the duration of the course."
+        }
+      ],
+      "unresolved": null
+    }
+  ],
+  "notes2028": "No 2028-entry fees found. Course pages only say \"From 2028/29 onwards, tuition fees are likely to increase annually, at least in line with inflation, and may rise further if the government increases the fee cap.\""
+}

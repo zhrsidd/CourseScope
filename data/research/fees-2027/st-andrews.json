@@ -1,0 +1,333 @@
+{
+  "universityId": "st-andrews",
+  "checkedOn": "2026-09-30",
+  "method": "WebFetch of each course's own st-andrews.ac.uk subject page (fees and funding section), plus the undergraduate fees hubs on st-andrews.ac.uk. The Chemistry and Physics MSci URL in the input 404s; the current page (same UCAS code FF13, titled 'Chemistry and Physics MSci (Hons) 2027 entry') is https://www.st-andrews.ac.uk/subjects/chemistry/chemistry-mchem/chemistry-and-physics-joint/. One un-parameterised fetch of that page returned an old copy (all three categories 'not yet confirmed'); fetches with ?v=2 and ?v=3 both showed the figures below, so the stale copy was discarded. A further re-fetch (?v=4) was refused by the fetch proxy (HTTP 429), so it could not be checked a fourth time.",
+  "universityWideStatements": [],
+  "courses": [
+    {
+      "id": "st-andrews-physics-bsc--2027",
+      "fees": [
+        {
+          "category": "Scotland",
+          "categoryKind": "scotland",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "currency": "GBP",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Physics BSc (Honours) 2027 entry",
+          "sourceUrl": "https://www.st-andrews.ac.uk/subjects/physics/physics-bsc/",
+          "sourceTitle": "Physics BSc (Honours) 2027 entry",
+          "note": "Page states: \"Tuition fees are yet to be confirmed by the Scottish Government.\""
+        },
+        {
+          "category": "England, Wales, Northern Ireland and Republic of Ireland, Channel Islands, Isle of Man",
+          "categoryKind": "rest-of-uk",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "basis": "other",
+          "basisNote": "Page gives a single figure without stating per-year or total.",
+          "currency": "GBP",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Physics BSc (Honours) 2027 entry",
+          "sourceUrl": "https://www.st-andrews.ac.uk/subjects/physics/physics-bsc/",
+          "sourceTitle": "Physics BSc (Honours) 2027 entry",
+          "note": "Page states: \"£10,050 (yet to be confirmed by the UK Government)\". One combined category on the page (includes Republic of Ireland, Channel Islands, Isle of Man)."
+        },
+        {
+          "category": "EU and overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 34910,
+          "indicativeAmount": null,
+          "basis": "other",
+          "basisNote": "Page gives a single figure without stating per-year or total.",
+          "currency": "GBP",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Physics BSc (Honours) 2027 entry",
+          "sourceUrl": "https://www.st-andrews.ac.uk/subjects/physics/physics-bsc/",
+          "sourceTitle": "Physics BSc (Honours) 2027 entry",
+          "note": "Page states \"£34,910\" with no caveat. One combined category 'EU and overseas' on the page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "st-andrews-physics-mphys--2027",
+      "fees": [
+        {
+          "category": "Scotland",
+          "categoryKind": "scotland",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "currency": "GBP",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Physics MPhys (Honours) 2027 entry",
+          "sourceUrl": "https://www.st-andrews.ac.uk/subjects/physics/physics-mphys/",
+          "sourceTitle": "Physics MPhys (Honours) 2027 entry",
+          "note": "Page states: \"Tuition fees are yet to be confirmed by the Scottish Government.\" Page does not say whether the figures are per year or for the whole five-year course."
+        },
+        {
+          "category": "England, Wales, Northern Ireland and Republic of Ireland, Channel Islands, Isle of Man",
+          "categoryKind": "rest-of-uk",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "basis": "other",
+          "basisNote": "Page gives a single figure without stating per-year or total.",
+          "currency": "GBP",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Physics MPhys (Honours) 2027 entry",
+          "sourceUrl": "https://www.st-andrews.ac.uk/subjects/physics/physics-mphys/",
+          "sourceTitle": "Physics MPhys (Honours) 2027 entry",
+          "note": "Page states: \"£10,050 (yet to be confirmed by the UK Government)\". One combined category on the page (includes Republic of Ireland, Channel Islands, Isle of Man). Page does not say whether the figures are per year or for the whole five-year course."
+        },
+        {
+          "category": "EU and overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 34910,
+          "indicativeAmount": null,
+          "basis": "other",
+          "basisNote": "Page gives a single figure without stating per-year or total.",
+          "currency": "GBP",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Physics MPhys (Honours) 2027 entry",
+          "sourceUrl": "https://www.st-andrews.ac.uk/subjects/physics/physics-mphys/",
+          "sourceTitle": "Physics MPhys (Honours) 2027 entry",
+          "note": "Page states \"£34,910\" with no caveat. One combined category 'EU and overseas' on the page. Page does not say whether the figures are per year or for the whole five-year course."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "st-andrews-astrophysics-bsc--2027",
+      "fees": [
+        {
+          "category": "Scotland",
+          "categoryKind": "scotland",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "currency": "GBP",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Astrophysics BSc (Honours) 2027 entry",
+          "sourceUrl": "https://www.st-andrews.ac.uk/subjects/physics/astrophysics-bsc/",
+          "sourceTitle": "Astrophysics BSc (Honours) 2027 entry",
+          "note": "Page states: \"Tuition fees are yet to be confirmed by the Scottish Government.\""
+        },
+        {
+          "category": "England, Wales, Northern Ireland and Republic of Ireland, Channel Islands, Isle of Man",
+          "categoryKind": "rest-of-uk",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "basis": "other",
+          "basisNote": "Page gives a single figure without stating per-year or total.",
+          "currency": "GBP",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Astrophysics BSc (Honours) 2027 entry",
+          "sourceUrl": "https://www.st-andrews.ac.uk/subjects/physics/astrophysics-bsc/",
+          "sourceTitle": "Astrophysics BSc (Honours) 2027 entry",
+          "note": "Page states: \"£10,050 (yet to be confirmed by the UK Government)\". One combined category on the page (includes Republic of Ireland, Channel Islands, Isle of Man)."
+        },
+        {
+          "category": "EU and overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 34910,
+          "indicativeAmount": null,
+          "basis": "other",
+          "basisNote": "Page gives a single figure without stating per-year or total.",
+          "currency": "GBP",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Astrophysics BSc (Honours) 2027 entry",
+          "sourceUrl": "https://www.st-andrews.ac.uk/subjects/physics/astrophysics-bsc/",
+          "sourceTitle": "Astrophysics BSc (Honours) 2027 entry",
+          "note": "Page states \"£34,910\" with no caveat. One combined category 'EU and overseas' on the page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "st-andrews-astrophysics-mphys--2027",
+      "fees": [
+        {
+          "category": "Scotland",
+          "categoryKind": "scotland",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "currency": "GBP",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Astrophysics MPhys (Honours) 2027 entry",
+          "sourceUrl": "https://www.st-andrews.ac.uk/subjects/physics/astrophysics-mphys/",
+          "sourceTitle": "Astrophysics MPhys (Honours) 2027 entry",
+          "note": "Page states: \"Tuition fees are yet to be confirmed by the Scottish Government.\""
+        },
+        {
+          "category": "England, Wales, Northern Ireland and Republic of Ireland, Channel Islands, Isle of Man",
+          "categoryKind": "rest-of-uk",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "basis": "other",
+          "basisNote": "Page gives a single figure without stating per-year or total.",
+          "currency": "GBP",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Astrophysics MPhys (Honours) 2027 entry",
+          "sourceUrl": "https://www.st-andrews.ac.uk/subjects/physics/astrophysics-mphys/",
+          "sourceTitle": "Astrophysics MPhys (Honours) 2027 entry",
+          "note": "Page states: \"£10,050 (yet to be confirmed by the UK Government)\". One combined category on the page (includes Republic of Ireland, Channel Islands, Isle of Man)."
+        },
+        {
+          "category": "EU and overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 34910,
+          "indicativeAmount": null,
+          "basis": "other",
+          "basisNote": "Page gives a single figure without stating per-year or total.",
+          "currency": "GBP",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Astrophysics MPhys (Honours) 2027 entry",
+          "sourceUrl": "https://www.st-andrews.ac.uk/subjects/physics/astrophysics-mphys/",
+          "sourceTitle": "Astrophysics MPhys (Honours) 2027 entry",
+          "note": "Page states \"£34,910\" with no caveat. One combined category 'EU and overseas' on the page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "st-andrews-theoretical-physics-mphys--2027",
+      "fees": [
+        {
+          "category": "Scotland",
+          "categoryKind": "scotland",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "currency": "GBP",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Theoretical Physics MPhys (Honours) 2027 entry",
+          "sourceUrl": "https://www.st-andrews.ac.uk/subjects/physics/theoretical-physics-mphys/",
+          "sourceTitle": "Theoretical Physics MPhys (Honours) 2027 entry",
+          "note": "Page states: \"Tuition fees are yet to be confirmed by the Scottish Government.\""
+        },
+        {
+          "category": "England, Wales, Northern Ireland and Republic of Ireland, Channel Islands, Isle of Man",
+          "categoryKind": "rest-of-uk",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "basis": "other",
+          "basisNote": "Page gives a single figure without stating per-year or total.",
+          "currency": "GBP",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Theoretical Physics MPhys (Honours) 2027 entry",
+          "sourceUrl": "https://www.st-andrews.ac.uk/subjects/physics/theoretical-physics-mphys/",
+          "sourceTitle": "Theoretical Physics MPhys (Honours) 2027 entry",
+          "note": "Page states: \"£10,050 (yet to be confirmed by the UK Government)\". One combined category on the page (includes Republic of Ireland, Channel Islands, Isle of Man)."
+        },
+        {
+          "category": "EU and overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 34910,
+          "indicativeAmount": null,
+          "basis": "other",
+          "basisNote": "Page gives a single figure without stating per-year or total.",
+          "currency": "GBP",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Theoretical Physics MPhys (Honours) 2027 entry",
+          "sourceUrl": "https://www.st-andrews.ac.uk/subjects/physics/theoretical-physics-mphys/",
+          "sourceTitle": "Theoretical Physics MPhys (Honours) 2027 entry",
+          "note": "Page states \"£34,910\" with no caveat. One combined category 'EU and overseas' on the page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "st-andrews-chemistry-and-physics-msci--2027",
+      "fees": [
+        {
+          "category": "Scotland",
+          "categoryKind": "scotland",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "currency": "GBP",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Chemistry and Physics MSci (Hons) 2027 entry",
+          "sourceUrl": "https://www.st-andrews.ac.uk/subjects/chemistry/chemistry-mchem/chemistry-and-physics-joint/",
+          "sourceTitle": "Chemistry and Physics MSci (Hons) 2027 entry",
+          "note": "Page states: \"Tuition fees are yet to be confirmed by the Scottish Government.\" URL changed: input URL https://www.st-andrews.ac.uk/subjects/chemistry/chemistry-and-physics-msci/ returned 404; current page used."
+        },
+        {
+          "category": "England, Wales, Northern Ireland and Republic of Ireland, Channel Islands, Isle of Man",
+          "categoryKind": "rest-of-uk",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "basis": "other",
+          "basisNote": "Page gives a single figure without stating per-year or total.",
+          "currency": "GBP",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Chemistry and Physics MSci (Hons) 2027 entry",
+          "sourceUrl": "https://www.st-andrews.ac.uk/subjects/chemistry/chemistry-mchem/chemistry-and-physics-joint/",
+          "sourceTitle": "Chemistry and Physics MSci (Hons) 2027 entry",
+          "note": "Page states: \"£10,050 (yet to be confirmed by the UK Government)\". One combined category on the page (includes Republic of Ireland, Channel Islands, Isle of Man). URL changed: input URL https://www.st-andrews.ac.uk/subjects/chemistry/chemistry-and-physics-msci/ returned 404; current page used."
+        },
+        {
+          "category": "EU and overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 34910,
+          "indicativeAmount": null,
+          "basis": "other",
+          "basisNote": "Page gives a single figure without stating per-year or total.",
+          "currency": "GBP",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Chemistry and Physics MSci (Hons) 2027 entry",
+          "sourceUrl": "https://www.st-andrews.ac.uk/subjects/chemistry/chemistry-mchem/chemistry-and-physics-joint/",
+          "sourceTitle": "Chemistry and Physics MSci (Hons) 2027 entry",
+          "note": "Page states \"£34,910\" with no caveat. One combined category 'EU and overseas' on the page. URL changed: input URL https://www.st-andrews.ac.uk/subjects/chemistry/chemistry-and-physics-msci/ returned 404; current page used."
+        }
+      ],
+      "unresolved": null
+    }
+  ],
+  "notes2028": "No 2028-entry fees found: the undergraduate fee hub pages (fees-and-funding/undergraduate, tuition-fees/undergraduate, fees/world) list no 2028 figures."
+}

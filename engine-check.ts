@@ -5810,9 +5810,10 @@ check(
  * Was "is 0.9.0 and still pre-release". v1.0.0 is the stronger truth this
  * section was waiting for, so it asserts that instead of being deleted.
  */
-check('The release marker is 1.0.0', APP_VERSION, 'v1.0.0');
+check('The release marker is 1.1.0', APP_VERSION, 'v1.1.0');
 check('  …and is no longer flagged pre-release', IS_PRE_RELEASE, false);
-check('  …and the newest release note is the v1.0.0 one', RELEASES[0]?.version, 'v1.0.0');
+check('  …and the newest release note is the v1.1.0 one', RELEASES[0]?.version, 'v1.1.0');
+check('  …with the v1.0.0 note kept beneath it', RELEASES[1]?.version, 'v1.0.0');
 check(
   '  …which carries the admissions disclaimer verbatim',
   RELEASES[0]?.changes.includes('Meeting published entry requirements does not guarantee admission.'),
@@ -6023,6 +6024,198 @@ check(
   const ctxSrc = fs.readFileSync('src/state/AppContext.tsx', 'utf8');
   check('  …and nothing saves the year on mount — only setEntryYear writes it',
     (ctxSrc.match(/saveEntryYear\(/g) ?? []).length, 1);
+}
+
+/* ===================================================================== */
+/* 30. v1.1 — Tuition fees                                                */
+/* ===================================================================== */
+{
+  const fs = await import('node:fs');
+  const { createHash } = await import('node:crypto');
+  const { TUITION_FEES, TUITION_FEE_GAPS, feesForCourse } = await import('@/data/tuition-fees');
+  const { allUniversities: allUnis } = await import('@/data/universities');
+  const {
+    validateTuitionFees,
+    feeDisplayState,
+    entryYearNamedIn,
+    isOfficialFeeSource,
+    universityDomain,
+  } = await import('@/lib/fees');
+  const { evaluateCatalogue } = await import('@/lib/eligibility');
+  type Fee = (typeof TUITION_FEES)[number];
+
+  /* 30a. The shipped data passes every fee rule */
+  const realIssues = validateTuitionFees(TUITION_FEES, allCourses, allUnis);
+  check('Fees: every shipped fee row passes validation (0 issues)', realIssues.length, 0);
+  check('  …and the catalogue validator, given the fees, still reports 0 errors',
+    validateCatalogue(courses, universities, TUITION_FEES).counts.error, 0);
+  check('  …1,127 fee rows across 521 courses at 21 universities',
+    `${TUITION_FEES.length}/${new Set(TUITION_FEES.map((f) => f.courseId)).size}/${new Set(TUITION_FEES.map((f) => f.universityId)).size}`,
+    '1127/521/21');
+  check('  …431 courses have at least one published 2027 fee',
+    new Set(TUITION_FEES.filter((f) => f.status === 'published').map((f) => f.courseId)).size, 431);
+  check('  …every fee row belongs to a course a student can actually open',
+    TUITION_FEES.filter((f) => !courseById[f.courseId]).length, 0);
+  check('  …48 researched courses with nothing established are listed as gaps, with reasons',
+    `${TUITION_FEE_GAPS.length}/${TUITION_FEE_GAPS.filter((g) => !g.reason).length}`, '48/0');
+  check('  …and no course is both a gap and a fee holder',
+    TUITION_FEE_GAPS.filter((g) => TUITION_FEES.some((f) => f.courseId === g.courseId)).length, 0);
+
+  /* 30b. Decoded rows equal the research files exactly */
+  const research = fs.readdirSync('data/research/fees-2027').filter((f) => f.endsWith('.json'))
+    .map((f) => JSON.parse(fs.readFileSync(`data/research/fees-2027/${f}`, 'utf8')));
+  const researchRows = research.flatMap((d) => d.courses.flatMap((c: { id: string; fees: Record<string, unknown>[] }) =>
+    c.fees.map((f) => `${c.id}|${f.category}|${f.status}|${f.amount}|${f.indicativeAmount}|${f.basis}|${f.scope}`)));
+  const shippedRows = TUITION_FEES.map((f) => `${f.courseId}|${f.category}|${f.status}|${f.amount}|${f.indicativeAmount}|${f.basis}|${f.scope}`);
+  check('  …the bundled rows match the official-source research files one-for-one',
+    JSON.stringify([...researchRows].sort()) === JSON.stringify([...shippedRows].sort()), true);
+
+  /* 30c. Year leakage */
+  check('Year leakage: every fee is for its own course record’s entry year',
+    TUITION_FEES.filter((f) => courseById[f.courseId]?.applicationYear !== f.feeYear || !f.courseId.endsWith(`--${f.feeYear}`)).length, 0);
+  check('  …no 2028 fee rows exist — none were published, and 2027 is never copied forward',
+    TUITION_FEES.filter((f) => f.feeYear !== '2027').length, 0);
+  const with2027Fees = courses.filter((c) => c.applicationYear === '2027' && feesForCourse(c).length > 0);
+  const shellsOfFeeCourses = with2027Fees.map((c) => courseById[`${c.slug}--2028`]).filter(Boolean);
+  check('  …the 2028 records of courses with 2027 fees return no fees',
+    `${shellsOfFeeCourses.length > 400}/${shellsOfFeeCourses.filter((c) => feesForCourse(c).length > 0).length}`, 'true/0');
+  check('  …entry-year evidence: "2027/28", "September 2027", "2027-2028", "2027 entry" name 2027',
+    ['2027/28', 'Start: September 2027', 'tuition fees 2027-2028', 'Fees for 2027 entry', '2027/8'].every((e) => entryYearNamedIn(e, '2027')), true);
+  check('  …but "2026/27", "2026-2027" and "2026/2027" do NOT — that is the previous cycle',
+    ['Fees for 2026/27', 'academic year 2026-2027', '2026/2027 fee', '2026 – 27'].some((e) => entryYearNamedIn(e, '2027')), false);
+  check('  …and a 2027 quote cannot evidence a 2028 fee',
+    `${entryYearNamedIn('2027/28 tuition fee', '2028')}/${entryYearNamedIn('2027-2028', '2028')}/${entryYearNamedIn('2028/29 entry', '2028')}`, 'false/false/true');
+  check('  …every non-unknown shipped row has evidence naming 2027 as the entry year',
+    TUITION_FEES.filter((f) => f.status !== 'unknown' && !entryYearNamedIn(f.yearEvidence, f.feeYear)).length, 0);
+
+  /* 30d. Synthetic rows: each rule fires on exactly the defect it guards */
+  const edPhys = courseById['edinburgh-physics-bsc--2027'];
+  const base: Fee = {
+    courseId: 'imperial-physics-bsc--2027', universityId: 'imperial', feeYear: '2027', category: 'Home',
+    categoryKind: 'home', status: 'published', amount: 10050, indicativeAmount: null, currency: 'GBP',
+    basis: 'per-year', basisNote: null, scope: 'course', scopeNote: null, yearEvidence: 'Fees for 2027 entry',
+    sourceUrl: 'https://www.imperial.ac.uk/study/courses/undergraduate/physics-bsc/', sourceTitle: 'Physics BSc',
+    lastVerified: '2026-09-30', note: null,
+  };
+  const rules = (rows: Fee[]) => validateTuitionFees(rows, allCourses, allUnis).map((i) => i.ruleId).sort().join(',');
+  check('  synthetic: a clean row passes', rules([base]), '');
+  check('  synthetic: a 2027 fee attached to the 2028 record is year leakage',
+    rules([{ ...base, courseId: 'imperial-physics-bsc--2028' }]), 'fee-year-leakage');
+  check('  synthetic: a 2028 fee whose evidence is "2027/28" is unevidenced (and leaks)',
+    rules([{ ...base, courseId: 'imperial-physics-bsc--2028', feeYear: '2028', yearEvidence: '2027/28' }]), 'fee-year-unevidenced');
+  check('  synthetic: a 2026/27 figure presented as 2027 is caught',
+    rules([{ ...base, yearEvidence: 'Tuition fees 2026/27' }]), 'fee-year-unevidenced');
+
+  /* 30e. Missing provenance */
+  check('Provenance: a published fee with no source URL fails',
+    rules([{ ...base, sourceUrl: null }]), 'fee-missing-source');
+  check('  …with no verified date fails', rules([{ ...base, lastVerified: null }]), 'fee-missing-verified-date');
+  check('  …with no source title fails', rules([{ ...base, sourceTitle: null }]), 'fee-missing-source-title');
+  check('  …from a non-university site fails',
+    rules([{ ...base, sourceUrl: 'https://www.ucas.com/explore/courses' }]), 'fee-unofficial-source');
+  check('  …a look-alike domain is not the university',
+    isOfficialFeeSource('https://imperial.ac.uk.example.com/fees', allUnis.find((u) => u.id === 'imperial')!), false);
+  check('  …Edinburgh’s study.ed.ac.uk counts as official (registrable domain ed.ac.uk)',
+    `${universityDomain('https://www.ed.ac.uk')}/${isOfficialFeeSource('https://study.ed.ac.uk/x', allUnis.find((u) => u.id === 'edinburgh')!)}`, 'ed.ac.uk/true');
+  check('  …awaiting with an amount fails; an expected figure must be indicative',
+    rules([{ ...base, status: 'awaiting-publication' }]), 'fee-amount-on-unpublished');
+  check('  …an indicative figure needs the caveat quoted',
+    rules([{ ...base, status: 'awaiting-publication', amount: null, indicativeAmount: 10050 }]), 'fee-indicative-unexplained');
+  check('  …an unknown fee must say why',
+    rules([{ ...base, status: 'unknown', amount: null }]), 'fee-unknown-unexplained');
+  check('  …a published fee cannot also be indicative',
+    rules([{ ...base, indicativeAmount: 10050 }]), 'fee-indicative-on-published');
+  check('  …every shipped published row has source, title, date and an amount',
+    TUITION_FEES.filter((f) => f.status === 'published' && (!f.sourceUrl || !f.sourceTitle || !f.lastVerified || f.amount === null)).length, 0);
+
+  /* 30f. Duplicate fee categories */
+  check('Duplicates: the same category twice for one course fails',
+    rules([base, { ...base, amount: 9000 }]), 'fee-duplicate-category');
+  check('  …case and spacing do not hide a duplicate', rules([base, { ...base, category: ' home ' }]), 'fee-duplicate-category');
+  check('  …a university-wide row cannot sit beside a course row for the same category',
+    rules([base, { ...base, scope: 'university-wide', scopeNote: 'All courses: £10,050' }]), 'fee-duplicate-category');
+  check('  …the same category on two different courses is fine',
+    rules([base, { ...base, courseId: 'imperial-physics-msci--2027' }]), '');
+  const dupKeys = TUITION_FEES.map((f) => `${f.courseId}|${f.category.trim().toLowerCase()}`);
+  check('  …no shipped course repeats a category', dupKeys.length - new Set(dupKeys).size, 0);
+
+  /* 30g. Scottish multi-category fees */
+  const edFees = feesForCourse(edPhys);
+  check('Scottish: Edinburgh Physics keeps three distinct categories with distinct amounts',
+    edFees.map((f) => `${f.category}=${f.amount}`).join(' | '), 'Scotland=1820 | Rest of UK=10050 | International/EU=40900');
+  const glaFees = feesForCourse(courseById['glasgow-physics-bsc--2027']);
+  check('  …Glasgow keeps Scotland, Rest of UK, Republic of Ireland and International separately',
+    glaFees.map((f) => `${f.categoryKind}:${f.status}`).join(','),
+    'scotland:published,rest-of-uk:awaiting-publication,republic-of-ireland:awaiting-publication,international:awaiting-publication');
+  check('  …a Scottish fee can be published while Rest of UK is still awaiting (not collapsed)',
+    glaFees[0].amount === 1820 && glaFees[1].amount === null, true);
+  const scottish = new Set(allUnis.filter((u) => u.region === 'Scotland').map((u) => u.id));
+  check('  …no Scottish university row uses a generic “home” category',
+    TUITION_FEES.filter((f) => scottish.has(f.universityId) && f.categoryKind === 'home').length, 0);
+  check('  …and a synthetic Scottish “home” row is rejected',
+    rules([{ ...base, courseId: edPhys.id, universityId: 'edinburgh', sourceUrl: 'https://study.ed.ac.uk/x' }]), 'fee-scottish-home-collapse');
+  check('  …St Andrews keeps its own combined category label verbatim',
+    feesForCourse(courseById['st-andrews-physics-bsc--2027']).some((f) => f.category.startsWith('England, Wales, Northern Ireland and Republic of Ireland')), true);
+
+  /* 30h. Course-specific vs university-wide */
+  check('Scope: a university-wide row without the university’s statement fails',
+    rules([{ ...base, scope: 'university-wide' }]), 'fee-university-wide-unstated');
+  check('  …every shipped university-wide row quotes its statement',
+    TUITION_FEES.filter((f) => f.scope === 'university-wide' && !f.scopeNote).length, 0);
+  const manIntl = new Set(TUITION_FEES.filter((f) => f.universityId === 'manchester' && f.categoryKind === 'international' && f.amount).map((f) => f.amount));
+  check('  …Manchester’s international fees stay course-specific (several distinct figures, not one flattened value)',
+    manIntl.size >= 4, true);
+  check('  …Sheffield Home is university-wide, from a statement naming 2027-28 entrants',
+    TUITION_FEES.filter((f) => f.universityId === 'sheffield' && f.category === 'Home' && f.status === 'published')
+      .every((f) => f.scope === 'university-wide' && /2027-28/.test(f.scopeNote ?? '')), true);
+  check('  …and Sheffield Overseas is NOT given one figure: only a range is published, so it stays unknown',
+    TUITION_FEES.filter((f) => f.universityId === 'sheffield' && f.category === 'Overseas').every((f) => f.status === 'unknown' && f.amount === null), true);
+  check('  …conflicting official sources are never resolved by picking one (Warwick Overseas is unknown)',
+    TUITION_FEES.filter((f) => f.universityId === 'warwick' && f.category === 'Overseas').every((f) => f.status === 'unknown'), true);
+
+  /* 30i. Display: missing or stale fees never appear as current */
+  const today = new Date('2026-10-01T12:00:00Z');
+  const impPhys = courseById['imperial-physics-bsc--2027'];
+  check('Display: a published, sourced, recent fee is current', feeDisplayState(base, impPhys, today), 'current');
+  check('  …the same fee 13 months later is stale, not current',
+    feeDisplayState(base, impPhys, new Date('2027-11-05T00:00:00Z')), 'stale');
+  check('  …a fee shown against another year’s record is wrong-year',
+    feeDisplayState(base, courseById['imperial-physics-bsc--2028'], today), 'wrong-year');
+  check('  …a published figure without a source is unsourced (never displayed)',
+    feeDisplayState({ ...base, sourceUrl: null }, impPhys, today), 'unsourced');
+  check('  …awaiting and unknown keep their own states',
+    `${feeDisplayState({ ...base, status: 'awaiting-publication', amount: null }, impPhys, today)}/${feeDisplayState({ ...base, status: 'unknown', amount: null }, impPhys, today)}`,
+    'awaiting/unknown');
+  check('  …on the release date every shipped published row is current',
+    TUITION_FEES.filter((f) => f.status === 'published' && feeDisplayState(f, courseById[f.courseId], today) !== 'current').length, 0);
+
+  /* 30j. Fees change nothing a student relied on before */
+  check('Unchanged: catalogue still 1,132 applications (569 for 2027, 563 for 2028)',
+    `${courses.length}/${courses.filter((c) => c.applicationYear === '2027').length}/${courses.filter((c) => c.applicationYear === '2028').length}`, '1132/569/563');
+  const P = (al: [string, string][], fm: boolean | null, y: '2027' | '2028') =>
+    ({ aLevels: al.map(([subject, grade], i) => ({ id: `a${i}`, subject, grade })), gcses: [], applicationYear: y, schoolOffersFurtherMathematics: fm, notes: '' }) as Parameters<typeof evaluateCatalogue>[1];
+  const fp = createHash('sha256');
+  for (const p of [
+    P([['Mathematics', 'A*'], ['Physics', 'A*'], ['Further Mathematics', 'A']], true, '2027'),
+    P([['Mathematics', 'A'], ['Physics', 'B'], ['Chemistry', 'B']], false, '2027'),
+    P([['Mathematics', 'B'], ['Biology', 'C'], ['English Literature', 'A']], null, '2027'),
+    P([['Mathematics', 'A*'], ['Physics', 'A'], ['Chemistry', 'A']], null, '2028'),
+  ]) {
+    const r = evaluateCatalogue(courses, p);
+    for (const id of Object.keys(r).sort()) fp.update(`${id}:${r[id].verdict};`);
+  }
+  check('  …eligibility verdicts for four reference profiles are byte-identical to v1.0.0',
+    fp.digest('hex').slice(0, 16), '390c43ba6dc114ba');
+  check('  …and the eligibility engine does not read fees',
+    /fee/i.test(fs.readFileSync('src/lib/eligibility.ts', 'utf8')), false);
+  check('  …course cards and filters carry no fee UI (v1.1 scope)',
+    ['src/components/CourseCard.tsx', 'src/components/FilterSidebar.tsx', 'src/lib/filters.ts']
+      .filter((f) => /TuitionFee|tuitionFee|feesForCourse/.test(fs.readFileSync(f, 'utf8'))).length, 0);
+  check('  …the course page places Tuition fees after every admissions card',
+    (() => {
+      const src = fs.readFileSync('src/pages/CourseDetailPage.tsx', 'utf8');
+      return src.indexOf('<TuitionFees') > src.indexOf('Course-specific admissions details');
+    })(), true);
 }
 
 console.log(failures === 0 ? '\nAll checks passed.' : `\n${failures} check(s) failed.`);

@@ -111,6 +111,18 @@ export default defineConfig(({ mode }) => {
       // it: the size is recorded in the release report and code-splitting is a
       // post-v1 item, not something to attempt during a release candidate.
       chunkSizeWarningLimit: 1200,
+      // v1.1: the tuition-fee data is its own chunk. It is still loaded with the
+      // app (a static import), but keeping it separate holds the main chunk
+      // within the limit above and lets fee updates cache independently.
+      // The single-file build inlines everything regardless.
+      rollupOptions:
+        mode === 'singlefile'
+          ? undefined
+          : {
+              output: {
+                manualChunks: (id) => (id.includes('/src/data/tuition-fees.2027') ? 'fees-2027' : undefined),
+              },
+            },
     },
     preview: {
       port: 4321,

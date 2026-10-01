@@ -1,0 +1,921 @@
+{
+  "universityId": "manchester",
+  "checkedOn": "2026-09-30",
+  "method": "WebFetch of each course page on www.manchester.ac.uk (2027 entry pages, re-fetched with query strings where the first fetch returned stale \"fees not yet set\" wording: BSc/MPhys Physics with Theoretical Physics, MPhys Physics with Study in Europe, MMath&Phys). Also checked manchester.ac.uk undergraduate fees-and-funding and international fees pages and studentsupport.manchester.ac.uk standard tuition fees page.",
+  "universityWideStatements": [],
+  "courses": [
+    {
+      "id": "manchester-physics-bsc--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/00638/bsc-physics/",
+          "sourceTitle": "BSc Physics (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum.",
+          "note": "Stated on the course page for September 2027 start."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 40300,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/00638/bsc-physics/",
+          "sourceTitle": "BSc Physics (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum. Tuition fees for international students will be £40,300 per annum.",
+          "note": "International fee stated in the same fees section as the September 2027 home fee on the \"(2027 entry)\" course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "manchester-physics-mphys--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/02021/mphys-physics/",
+          "sourceTitle": "MPhys Physics (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum.",
+          "note": "Stated on the course page for September 2027 start."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 40300,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/02021/mphys-physics/",
+          "sourceTitle": "MPhys Physics (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum. Tuition fees for international students will be £40,300 per annum.",
+          "note": "International fee stated in the same fees section as the September 2027 home fee on the \"(2027 entry)\" course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "manchester-physics-with-astrophysics-bsc--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/00639/bsc-physics-with-astrophysics/",
+          "sourceTitle": "BSc Physics with Astrophysics (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum.",
+          "note": "Stated on the course page for September 2027 start."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 40300,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/00639/bsc-physics-with-astrophysics/",
+          "sourceTitle": "BSc Physics with Astrophysics (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum. Tuition fees for international students will be £40,300 per annum.",
+          "note": "International fee stated in the same fees section as the September 2027 home fee on the \"(2027 entry)\" course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "manchester-physics-with-astrophysics-mphys--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/02024/mphys-physics-with-astrophysics/",
+          "sourceTitle": "MPhys Physics with Astrophysics (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum.",
+          "note": "Stated on the course page for September 2027 start."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 40300,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/02024/mphys-physics-with-astrophysics/",
+          "sourceTitle": "MPhys Physics with Astrophysics (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum. Tuition fees for international students will be £40,300 per annum.",
+          "note": "International fee stated in the same fees section as the September 2027 home fee on the \"(2027 entry)\" course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "manchester-physics-with-theoretical-physics-bsc--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/00642/bsc-physics-with-theoretical-physics/",
+          "sourceTitle": "BSc Physics with Theoretical Physics (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum.",
+          "note": "Stated on the course page for September 2027 start."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 40300,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/00642/bsc-physics-with-theoretical-physics/",
+          "sourceTitle": "BSc Physics with Theoretical Physics (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum. Tuition fees for international students will be £40,300 per annum.",
+          "note": "International fee stated in the same fees section as the September 2027 home fee on the \"(2027 entry)\" course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "manchester-physics-with-theoretical-physics-mphys--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/02029/mphys-physics-with-theoretical-physics/",
+          "sourceTitle": "MPhys Physics with Theoretical Physics (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum.",
+          "note": "Stated on the course page for September 2027 start."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 40300,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/02029/mphys-physics-with-theoretical-physics/",
+          "sourceTitle": "MPhys Physics with Theoretical Physics (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum. Tuition fees for international students will be £40,300 per annum.",
+          "note": "International fee stated in the same fees section as the September 2027 home fee on the \"(2027 entry)\" course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "manchester-physics-with-study-in-europe-mphys--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/02026/mphys-physics-with-study-in-europe/",
+          "sourceTitle": "MPhys Physics with Study in Europe (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum.",
+          "note": "Stated on the course page for September 2027 start."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 40300,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/02026/mphys-physics-with-study-in-europe/",
+          "sourceTitle": "MPhys Physics with Study in Europe (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum. Tuition fees for international students will be £40,300 per annum.",
+          "note": "International fee stated in the same fees section as the September 2027 home fee on the \"(2027 entry)\" course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "manchester-mathematics-and-physics-bsc--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/00592/bsc-mathematics-and-physics/",
+          "sourceTitle": "BSc Mathematics and Physics (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum.",
+          "note": "Stated on the course page for September 2027 start."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 40300,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/00592/bsc-mathematics-and-physics/",
+          "sourceTitle": "BSc Mathematics and Physics (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum. Tuition fees for international students will be £40,300 per annum.",
+          "note": "International fee stated in the same fees section as the September 2027 home fee on the \"(2027 entry)\" course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "manchester-mathematics-and-physics-mmathphys--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/01684/mmathphys-mathematics-and-physics/",
+          "sourceTitle": "MMath&Phys Mathematics and Physics (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum.",
+          "note": "Stated on the course page for September 2027 start."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/01684/mmathphys-mathematics-and-physics/",
+          "sourceTitle": "MMath&Phys Mathematics and Physics (2027 entry) | The University of Manchester",
+          "yearEvidence": null,
+          "note": "The 2027 course page states only the home fee; no international/overseas fee figure appears anywhere on the page (re-fetched with query string, same result)."
+        }
+      ],
+      "unresolved": "International fee not published on the course page"
+    },
+    {
+      "id": "manchester-mechanical-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/03389/beng-mechanical-engineering/",
+          "sourceTitle": "BEng Mechanical Engineering (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum.",
+          "note": "Stated on the course page for September 2027 start."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 37500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/03389/beng-mechanical-engineering/",
+          "sourceTitle": "BEng Mechanical Engineering (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum. Tuition fees for international students will be £37,500 per annum.",
+          "note": "International fee stated in the same fees section as the September 2027 home fee on the \"(2027 entry)\" course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "manchester-mechanical-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/03921/meng-mechanical-engineering/",
+          "sourceTitle": "MEng Mechanical Engineering (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum.",
+          "note": "Stated on the course page for September 2027 start."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 37500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/03921/meng-mechanical-engineering/",
+          "sourceTitle": "MEng Mechanical Engineering (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum. Tuition fees for international students will be £37,500 per annum.",
+          "note": "International fee stated in the same fees section as the September 2027 home fee on the \"(2027 entry)\" course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "manchester-aerospace-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/03333/beng-aerospace-engineering/",
+          "sourceTitle": "BEng Aerospace Engineering (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum.",
+          "note": "Stated on the course page for September 2027 start."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 37500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/03333/beng-aerospace-engineering/",
+          "sourceTitle": "BEng Aerospace Engineering (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum. Tuition fees for international students will be £37,500 per annum.",
+          "note": "International fee stated in the same fees section as the September 2027 home fee on the \"(2027 entry)\" course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "manchester-aerospace-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/03826/meng-aerospace-engineering/",
+          "sourceTitle": "MEng Aerospace Engineering (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum.",
+          "note": "Stated on the course page for September 2027 start."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 37500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/03826/meng-aerospace-engineering/",
+          "sourceTitle": "MEng Aerospace Engineering (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum. Tuition fees for international students will be £37,500 per annum.",
+          "note": "International fee stated in the same fees section as the September 2027 home fee on the \"(2027 entry)\" course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "manchester-electrical-electronic-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/03363/beng-electrical-and-electronic-engineering/",
+          "sourceTitle": "BEng Electrical and Electronic Engineering (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum.",
+          "note": "Stated on the course page for September 2027 start."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 37500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/03363/beng-electrical-and-electronic-engineering/",
+          "sourceTitle": "BEng Electrical and Electronic Engineering (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum. Tuition fees for international students will be £37,500 per annum.",
+          "note": "International fee stated in the same fees section as the September 2027 home fee on the \"(2027 entry)\" course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "manchester-electrical-electronic-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/03894/meng-electrical-and-electronic-engineering/",
+          "sourceTitle": "MEng Electrical and Electronic Engineering (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum.",
+          "note": "Stated on the course page for September 2027 start."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 37500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/03894/meng-electrical-and-electronic-engineering/",
+          "sourceTitle": "MEng Electrical and Electronic Engineering (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum. Tuition fees for international students will be £37,500 per annum.",
+          "note": "International fee stated in the same fees section as the September 2027 home fee on the \"(2027 entry)\" course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "manchester-civil-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/03343/beng-civil-engineering/",
+          "sourceTitle": "BEng Civil Engineering (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum.",
+          "note": "Stated on the course page for September 2027 start."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 37500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/03343/beng-civil-engineering/",
+          "sourceTitle": "BEng Civil Engineering (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum. Tuition fees for international students will be £37,500 per annum.",
+          "note": "International fee stated in the same fees section as the September 2027 home fee on the \"(2027 entry)\" course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "manchester-civil-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/03869/meng-civil-engineering/",
+          "sourceTitle": "MEng Civil Engineering (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum.",
+          "note": "Stated on the course page for September 2027 start."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 37500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/03869/meng-civil-engineering/",
+          "sourceTitle": "MEng Civil Engineering (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum. Tuition fees for international students will be £37,500 per annum.",
+          "note": "International fee stated in the same fees section as the September 2027 home fee on the \"(2027 entry)\" course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "manchester-chemical-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/03340/beng-chemical-engineering/",
+          "sourceTitle": "BEng Chemical Engineering (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum.",
+          "note": "Stated on the course page for September 2027 start."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 39700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/03340/beng-chemical-engineering/",
+          "sourceTitle": "BEng Chemical Engineering (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum. Tuition fees for international students will be £39,700 per annum.",
+          "note": "International fee stated in the same fees section as the September 2027 home fee on the \"(2027 entry)\" course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "manchester-chemical-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/03848/meng-chemical-engineering/",
+          "sourceTitle": "MEng Chemical Engineering (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum.",
+          "note": "Stated on the course page for September 2027 start."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 39700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/03848/meng-chemical-engineering/",
+          "sourceTitle": "MEng Chemical Engineering (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum. Tuition fees for international students will be £39,700 per annum.",
+          "note": "International fee stated in the same fees section as the September 2027 home fee on the \"(2027 entry)\" course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "manchester-materials-science-and-engineering-bsc--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/09894/bsc-materials-science-and-engineering/",
+          "sourceTitle": "BSc Materials Science and Engineering (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum.",
+          "note": "Stated on the course page for September 2027 start."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 41900,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/09894/bsc-materials-science-and-engineering/",
+          "sourceTitle": "BSc Materials Science and Engineering (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum. Tuition fees for international students will be £41,900 per annum.",
+          "note": "International fee stated in the same fees section as the September 2027 home fee on the \"(2027 entry)\" course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "manchester-materials-science-and-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/09895/meng-materials-science-and-engineering/",
+          "sourceTitle": "MEng Materials Science and Engineering (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum.",
+          "note": "Stated on the course page for September 2027 start."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 41900,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/09895/meng-materials-science-and-engineering/",
+          "sourceTitle": "MEng Materials Science and Engineering (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum. Tuition fees for international students will be £41,900 per annum.",
+          "note": "International fee stated in the same fees section as the September 2027 home fee on the \"(2027 entry)\" course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "manchester-mechatronic-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/03394/beng-mechatronic-engineering/",
+          "sourceTitle": "BEng Mechatronic Engineering (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum.",
+          "note": "Stated on the course page for September 2027 start."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 37500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/03394/beng-mechatronic-engineering/",
+          "sourceTitle": "BEng Mechatronic Engineering (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum. Tuition fees for international students will be £37,500 per annum.",
+          "note": "International fee stated in the same fees section as the September 2027 home fee on the \"(2027 entry)\" course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "manchester-mechatronic-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/03927/meng-mechatronic-engineering/",
+          "sourceTitle": "MEng Mechatronic Engineering (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum.",
+          "note": "Stated on the course page for September 2027 start."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 37500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/03927/meng-mechatronic-engineering/",
+          "sourceTitle": "MEng Mechatronic Engineering (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum. Tuition fees for international students will be £37,500 per annum.",
+          "note": "International fee stated in the same fees section as the September 2027 home fee on the \"(2027 entry)\" course page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "manchester-materials-science-integrated-foundation-year--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/12959/bsc-meng-materials-science-with-an-integrated-foundation-year/",
+          "sourceTitle": "BSc/MEng Materials Science with an Integrated Foundation Year (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum.",
+          "note": "Integrated foundation year course; page gives a single per-annum figure for each category."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 29200,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/12959/bsc-meng-materials-science-with-an-integrated-foundation-year/",
+          "sourceTitle": "BSc/MEng Materials Science with an Integrated Foundation Year (2027 entry) | The University of Manchester",
+          "yearEvidence": "Tuition fees for home students commencing their studies in September 2027 will be £10,050 per annum. Tuition fees for international students will be £29,200 per annum.",
+          "note": "International fee stated in the same fees section as the September 2027 home fee on the \"(2027 entry)\" course page. Foundation-year fee."
+        }
+      ],
+      "unresolved": null
+    }
+  ],
+  "notes2028": "No 2028-entry fees found: /study/undergraduate/courses/2028/ returns 404; the international fees page only says the University \"reserves the right to increase the tuition fee by up to 7% each year\" for subsequent years. The studentsupport standard tuition fees page (covers 2025/26 and 2026/27) mentions a government cap of £10,050 for 2027-28 \"subject to Parliamentary approval\"; this is a cap statement, not a course fee, and course pages state £10,050 without a caveat."
+}

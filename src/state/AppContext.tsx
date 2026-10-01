@@ -12,6 +12,7 @@ import { dataSource } from '@/lib/dataSource';
 import { evaluateCatalogue } from '@/lib/eligibility';
 import { emptyStudentProfile, isStudentProfile } from '@/lib/grades';
 import { validateCatalogue, type ValidationReport } from '@/lib/validation';
+import { TUITION_FEES } from '@/data/tuition-fees';
 import { isStringArray, useLocalStorage } from '@/hooks/useLocalStorage';
 import { initialEntryYear, saveEntryYear } from '@/lib/entry-year';
 import type { ApplicationYear } from '@/types';
@@ -162,7 +163,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   );
 
   const validation = useMemo(
-    () => validateCatalogue(courses, universities),
+    () => validateCatalogue(courses, universities, TUITION_FEES),
     [courses, universities],
   );
 

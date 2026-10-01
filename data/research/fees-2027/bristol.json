@@ -1,0 +1,858 @@
+{
+  "universityId": "bristol",
+  "checkedOn": "2026-09-30",
+  "method": "WebFetch of each course page on www.bristol.ac.uk (2027 entry pages; re-fetched with cache-busting query strings — MEng Mechanical Engineering and MEng Civil Engineering first returned a stale copy quoting 2026-entry fees and \"Fees for 2027 will be confirmed\", which the fresh copy no longer shows). Bristol fees-funding page also checked.",
+  "universityWideStatements": [
+    {
+      "quote": "2027/28: £10,050 (confirmed)",
+      "url": "https://www.bristol.ac.uk/study/undergraduate/fees-funding/",
+      "title": "Fees and funding | Study at Bristol | University of Bristol",
+      "appliesTo": "UK (Home) undergraduate tuition fee for 2027/28; also consistent with each course page. Not used as scopeless fee: each course page states the figure itself."
+    },
+    {
+      "quote": "International fees are reviewed annually and will generally increase by inflation each year of study, capped at a maximum of 8%.",
+      "url": "https://www.bristol.ac.uk/study/undergraduate/fees-funding/",
+      "title": "Fees and funding | Study at Bristol | University of Bristol",
+      "appliesTo": "General policy only; no 2027/28 international amounts on this page, so international fees are taken course by course."
+    }
+  ],
+  "courses": [
+    {
+      "id": "bristol-physics-bsc--2027",
+      "unresolved": null,
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "amount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/physics/bsc-physics/",
+          "sourceTitle": "BSc Physics | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | Home students, £10,050 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 32500,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/physics/bsc-physics/",
+          "sourceTitle": "BSc Physics | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | International students, £32,500 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        }
+      ]
+    },
+    {
+      "id": "bristol-physics-msci--2027",
+      "unresolved": null,
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "amount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/physics/msci-physics/",
+          "sourceTitle": "MSci Physics | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | Home students, £10,050 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 32500,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/physics/msci-physics/",
+          "sourceTitle": "MSci Physics | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | International students, £32,500 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        }
+      ]
+    },
+    {
+      "id": "bristol-physics-with-astrophysics-bsc--2027",
+      "unresolved": null,
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "amount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/physics/bsc-physics-with-astrophysics/",
+          "sourceTitle": "BSc Physics with Astrophysics | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | Home students, £10,050 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 32500,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/physics/bsc-physics-with-astrophysics/",
+          "sourceTitle": "BSc Physics with Astrophysics | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | International students, £32,500 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        }
+      ]
+    },
+    {
+      "id": "bristol-physics-with-astrophysics-msci--2027",
+      "unresolved": null,
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "amount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/physics/msci-physics-with-astrophysics/",
+          "sourceTitle": "MSci Physics with Astrophysics | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | Home students, £10,050 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 32500,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/physics/msci-physics-with-astrophysics/",
+          "sourceTitle": "MSci Physics with Astrophysics | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | International students, £32,500 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        }
+      ]
+    },
+    {
+      "id": "bristol-theoretical-physics-msci--2027",
+      "unresolved": null,
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "amount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/physics/msci-theoretical-physics/",
+          "sourceTitle": "MSci Theoretical Physics | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | Home students, £10,050 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 32500,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/physics/msci-theoretical-physics/",
+          "sourceTitle": "MSci Theoretical Physics | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | International students, £32,500 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        }
+      ]
+    },
+    {
+      "id": "bristol-physics-with-computing-bsc--2027",
+      "unresolved": null,
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "amount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/physics-computing/bsc-physics-with-computing/",
+          "sourceTitle": "BSc Physics with Computing | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | Home students, £10,050 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 32500,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/physics-computing/bsc-physics-with-computing/",
+          "sourceTitle": "BSc Physics with Computing | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | International students, £32,500 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        }
+      ]
+    },
+    {
+      "id": "bristol-physics-with-computing-msci--2027",
+      "unresolved": null,
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "amount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/physics-computing/msci-physics-with-computing/",
+          "sourceTitle": "MSci Physics with Computing | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | Home students, £10,050 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 32500,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/physics-computing/msci-physics-with-computing/",
+          "sourceTitle": "MSci Physics with Computing | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | International students, £32,500 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        }
+      ]
+    },
+    {
+      "id": "bristol-physics-with-computing-industrial-msci--2027",
+      "unresolved": null,
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "amount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/physics-computing/msci-physics-with-computing-with-industrial-experience/",
+          "sourceTitle": "MSci Physics with Computing with Industrial Experience | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | Home students, £10,050 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\". Industrial-experience course; the page has no separate fee line for the industrial year (no reduced-year fee recorded)."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 32500,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/physics-computing/msci-physics-with-computing-with-industrial-experience/",
+          "sourceTitle": "MSci Physics with Computing with Industrial Experience | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | International students, £32,500 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\". Industrial-experience course; the page has no separate fee line for the industrial year (no reduced-year fee recorded)."
+        }
+      ]
+    },
+    {
+      "id": "bristol-physics-with-study-abroad-msci--2027",
+      "unresolved": null,
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "amount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/physics/msci-physics-with-study-abroad-in-a-modern-language/",
+          "sourceTitle": "MSci Physics with Study Abroad in a Modern Language | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | Home students, £10,050 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\". Year-abroad course; the page has no separate fee line for the year abroad."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 32500,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/physics/msci-physics-with-study-abroad-in-a-modern-language/",
+          "sourceTitle": "MSci Physics with Study Abroad in a Modern Language | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | International students, £32,500 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\". Year-abroad course; the page has no separate fee line for the year abroad."
+        }
+      ]
+    },
+    {
+      "id": "bristol-physics-with-international-experience-msci--2027",
+      "unresolved": null,
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "amount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/physics/msci-physics-with-international-experience/",
+          "sourceTitle": "MSci Physics with International Experience | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | Home students, £10,050 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\". Year-abroad course; the page has no separate fee line for the year abroad."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 32500,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/physics/msci-physics-with-international-experience/",
+          "sourceTitle": "MSci Physics with International Experience | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | International students, £32,500 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\". Year-abroad course; the page has no separate fee line for the year abroad."
+        }
+      ]
+    },
+    {
+      "id": "bristol-mathematics-and-physics-bsc--2027",
+      "unresolved": null,
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "amount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/maths/bsc-mathematics-and-physics/",
+          "sourceTitle": "BSc Mathematics and Physics | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | Home students, £10,050 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 32500,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/maths/bsc-mathematics-and-physics/",
+          "sourceTitle": "BSc Mathematics and Physics | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | International students, £32,500 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        }
+      ]
+    },
+    {
+      "id": "bristol-mathematics-and-physics-msci--2027",
+      "unresolved": null,
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "amount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/maths/msci-mathematics-and-physics/",
+          "sourceTitle": "MSci Mathematics and Physics | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | Home students, £10,050 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 32500,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/maths/msci-mathematics-and-physics/",
+          "sourceTitle": "MSci Mathematics and Physics | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | International students, £32,500 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        }
+      ]
+    },
+    {
+      "id": "bristol-aerospace-engineering-beng--2027",
+      "unresolved": null,
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "amount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/aerospace/beng-aerospace-engineering/",
+          "sourceTitle": "BEng Aerospace Engineering | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | Home students, £10,050 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 34700,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/aerospace/beng-aerospace-engineering/",
+          "sourceTitle": "BEng Aerospace Engineering | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | International students, £34,700 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        }
+      ]
+    },
+    {
+      "id": "bristol-mechanical-engineering-beng--2027",
+      "unresolved": null,
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "amount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/mechanical-engineering/beng-mechanical-engineering/",
+          "sourceTitle": "BEng Mechanical Engineering | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | Home students, £10,050 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 33600,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/mechanical-engineering/beng-mechanical-engineering/",
+          "sourceTitle": "BEng Mechanical Engineering | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | International students, £33,600 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        }
+      ]
+    },
+    {
+      "id": "bristol-mechanical-engineering-meng--2027",
+      "unresolved": null,
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "amount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/mechanical-engineering/meng-mechanical-engineering/",
+          "sourceTitle": "MEng Mechanical Engineering | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | Home students, £10,050 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 33600,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/mechanical-engineering/meng-mechanical-engineering/",
+          "sourceTitle": "MEng Mechanical Engineering | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | International students, £33,600 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        }
+      ]
+    },
+    {
+      "id": "bristol-civil-engineering-beng--2027",
+      "unresolved": null,
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "amount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/civil-engineering/beng-civil-engineering/",
+          "sourceTitle": "BEng Civil Engineering | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | Home students, £10,050 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 32500,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/civil-engineering/beng-civil-engineering/",
+          "sourceTitle": "BEng Civil Engineering | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | International students, £32,500 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        }
+      ]
+    },
+    {
+      "id": "bristol-electrical-electronic-engineering-meng--2027",
+      "unresolved": null,
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "amount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/electrical-electronic-engineering/meng-electrical-and-electronic-engineering/",
+          "sourceTitle": "MEng Electrical and Electronic Engineering | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | Home students, £10,050 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 33600,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/electrical-electronic-engineering/meng-electrical-and-electronic-engineering/",
+          "sourceTitle": "MEng Electrical and Electronic Engineering | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | International students, £33,600 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        }
+      ]
+    },
+    {
+      "id": "bristol-aerospace-engineering-meng--2027",
+      "unresolved": null,
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "amount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/aerospace/meng-aerospace-engineering/",
+          "sourceTitle": "MEng Aerospace Engineering | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | Home students, £10,050 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\".  Input URL https://www.bristol.ac.uk/study/undergraduate/2027/aerospace-engineering/meng-aerospace-engineering/ returned 404; live 2027 page used: https://www.bristol.ac.uk/study/undergraduate/2027/aerospace/meng-aerospace-engineering/."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 34700,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/aerospace/meng-aerospace-engineering/",
+          "sourceTitle": "MEng Aerospace Engineering | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | International students, £34,700 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\".  Input URL https://www.bristol.ac.uk/study/undergraduate/2027/aerospace-engineering/meng-aerospace-engineering/ returned 404; live 2027 page used: https://www.bristol.ac.uk/study/undergraduate/2027/aerospace/meng-aerospace-engineering/."
+        }
+      ]
+    },
+    {
+      "id": "bristol-civil-engineering-meng--2027",
+      "unresolved": null,
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "amount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/civil-engineering/meng-civil-engineering/",
+          "sourceTitle": "MEng Civil Engineering | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | Home students, £10,050 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 32500,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/civil-engineering/meng-civil-engineering/",
+          "sourceTitle": "MEng Civil Engineering | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | International students, £32,500 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        }
+      ]
+    },
+    {
+      "id": "bristol-mechanical-and-electrical-engineering-meng--2027",
+      "unresolved": null,
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "amount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/electrical-electronic-engineering/meng-mechanical-and-electrical-engineering/",
+          "sourceTitle": "MEng Mechanical and Electrical Engineering | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | Home students, £10,050 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\".  Input URL https://www.bristol.ac.uk/study/undergraduate/2027/electrical-and-electronic-engineering/meng-mechanical-and-electrical-engineering/ returned 404; live 2027 page used: https://www.bristol.ac.uk/study/undergraduate/2027/electrical-electronic-engineering/meng-mechanical-and-electrical-engineering/."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 33600,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/electrical-electronic-engineering/meng-mechanical-and-electrical-engineering/",
+          "sourceTitle": "MEng Mechanical and Electrical Engineering | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | International students, £33,600 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\".  Input URL https://www.bristol.ac.uk/study/undergraduate/2027/electrical-and-electronic-engineering/meng-mechanical-and-electrical-engineering/ returned 404; live 2027 page used: https://www.bristol.ac.uk/study/undergraduate/2027/electrical-electronic-engineering/meng-mechanical-and-electrical-engineering/."
+        }
+      ]
+    },
+    {
+      "id": "bristol-engineering-mathematics-meng--2027",
+      "unresolved": null,
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "amount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/engineering-maths/meng-engineering-mathematics/",
+          "sourceTitle": "MEng Engineering Mathematics | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | Home students, £10,050 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\".  Input URL https://www.bristol.ac.uk/study/undergraduate/2027/engineering-mathematics/meng-engineering-mathematics/ returned 404; live 2027 page used: https://www.bristol.ac.uk/study/undergraduate/2027/engineering-maths/meng-engineering-mathematics/."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 34700,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/engineering-maths/meng-engineering-mathematics/",
+          "sourceTitle": "MEng Engineering Mathematics | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | International students, £34,700 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\".  Input URL https://www.bristol.ac.uk/study/undergraduate/2027/engineering-mathematics/meng-engineering-mathematics/ returned 404; live 2027 page used: https://www.bristol.ac.uk/study/undergraduate/2027/engineering-maths/meng-engineering-mathematics/."
+        }
+      ]
+    },
+    {
+      "id": "bristol-design-engineering-meng--2027",
+      "unresolved": null,
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "amount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/design-engineering/meng-design-engineering/",
+          "sourceTitle": "MEng Design Engineering | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | Home students, £10,050 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "amount": 32500,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "Bristol words the fee as \"for the first year\"; it also says fees are subject to annual review and liable to rise each year.",
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/design-engineering/meng-design-engineering/",
+          "sourceTitle": "MEng Design Engineering | Study at Bristol | University of Bristol",
+          "indicativeAmount": null,
+          "status": "published",
+          "yearEvidence": "2027 entry | International students, £32,500 for the first year.",
+          "note": "Stated on the course page labelled \"2027 entry\"."
+        }
+      ]
+    }
+  ],
+  "notes2028": "No 2028-entry fees in courses. The Bristol fees-funding page lists an ESTIMATE for UK students only (\"2028/29: £10,316 (estimate)\", \"Details will be updated as per latest government guidance\"); no 2028/29 international fees found. No course page for 2028 entry checked beyond this."
+}

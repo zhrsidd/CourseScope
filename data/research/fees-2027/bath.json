@@ -1,0 +1,560 @@
+{
+  "universityId": "bath",
+  "checkedOn": "2026-09-30",
+  "method": "University of Bath official page \"Tuition fees for undergraduate students starting in 2027\" (bath.ac.uk/corporate-information/...), plus /topics/tuition-fees/ index and the 2027 course pages (course-page \"Fees and funding\" sections could not be read via the fetch tool; they link to the fee page above). Page meta-date 2026-09-02.",
+  "universityWideStatements": [
+    {
+      "quote": "The tuition fees you must pay if you are starting an undergraduate course in the 2027/28 academic year.",
+      "url": "https://www.bath.ac.uk/corporate-information/tuition-fees-for-undergraduate-students-starting-in-2027/",
+      "title": "Tuition fees for undergraduate students starting in 2027",
+      "appliesTo": "All Bath undergraduate courses starting 2027/28 (intro sentence of fee page)"
+    },
+    {
+      "quote": "The undergraduate regulated fees for Home students in the 2027/28 academic year are subject to parliamentary approval.",
+      "url": "https://www.bath.ac.uk/corporate-information/tuition-fees-for-undergraduate-students-starting-in-2027/",
+      "title": "Tuition fees for undergraduate students starting in 2027",
+      "appliesTo": "Home fee for 2027/28 (caveat)"
+    },
+    {
+      "quote": "Band 3: All Science, Engineering, Health, and Psychology courses | £32,950",
+      "url": "https://www.bath.ac.uk/corporate-information/tuition-fees-for-undergraduate-students-starting-in-2027/",
+      "title": "Tuition fees for undergraduate students starting in 2027",
+      "appliesTo": "Overseas fee band covering all courses in this research set"
+    }
+  ],
+  "courses": [
+    {
+      "id": "bath-physics-bsc--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "fee-band",
+          "scopeNote": "Fee table row: \"Full-time campus-based courses including Foundation Sport (Sports Performance) | £10,050\"",
+          "yearEvidence": "The tuition fees you must pay if you are starting an undergraduate course in the 2027/28 academic year.",
+          "sourceUrl": "https://www.bath.ac.uk/corporate-information/tuition-fees-for-undergraduate-students-starting-in-2027/",
+          "sourceTitle": "Tuition fees for undergraduate students starting in 2027",
+          "note": "Figure shown on the page but caveated: \"The undergraduate regulated fees for Home students in the 2027/28 academic year are subject to parliamentary approval.\" Page also says \"You should budget for an increase of up to 8% for every year of your course.\" Page lists reduced placement-year fees separately; Home placement fees are \"To be confirmed by UK government\" and Overseas Band 3 thick sandwich is £9,155."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 32950,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "fee-band",
+          "scopeNote": "Overseas Band 3: \"All Science, Engineering, Health, and Psychology courses\"",
+          "yearEvidence": "The tuition fees you must pay if you are starting an undergraduate course in the 2027/28 academic year.",
+          "sourceUrl": "https://www.bath.ac.uk/corporate-information/tuition-fees-for-undergraduate-students-starting-in-2027/",
+          "sourceTitle": "Tuition fees for undergraduate students starting in 2027",
+          "note": "Overseas figure carries no \"to be confirmed\" caveat on the page; page says \"Tuition fees are liable to increase annually for all University of Bath students.\" Page lists reduced placement-year fees separately; Home placement fees are \"To be confirmed by UK government\" and Overseas Band 3 thick sandwich is £9,155. Band assignment is by the page's Band 3 definition (Science/Engineering); course page fee section not readable."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "bath-physics-mphys--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "fee-band",
+          "scopeNote": "Fee table row: \"Full-time campus-based courses including Foundation Sport (Sports Performance) | £10,050\"",
+          "yearEvidence": "The tuition fees you must pay if you are starting an undergraduate course in the 2027/28 academic year.",
+          "sourceUrl": "https://www.bath.ac.uk/corporate-information/tuition-fees-for-undergraduate-students-starting-in-2027/",
+          "sourceTitle": "Tuition fees for undergraduate students starting in 2027",
+          "note": "Figure shown on the page but caveated: \"The undergraduate regulated fees for Home students in the 2027/28 academic year are subject to parliamentary approval.\" Page also says \"You should budget for an increase of up to 8% for every year of your course.\" Page lists reduced placement-year fees separately; Home placement fees are \"To be confirmed by UK government\" and Overseas Band 3 thick sandwich is £9,155."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 32950,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "fee-band",
+          "scopeNote": "Overseas Band 3: \"All Science, Engineering, Health, and Psychology courses\"",
+          "yearEvidence": "The tuition fees you must pay if you are starting an undergraduate course in the 2027/28 academic year.",
+          "sourceUrl": "https://www.bath.ac.uk/corporate-information/tuition-fees-for-undergraduate-students-starting-in-2027/",
+          "sourceTitle": "Tuition fees for undergraduate students starting in 2027",
+          "note": "Overseas figure carries no \"to be confirmed\" caveat on the page; page says \"Tuition fees are liable to increase annually for all University of Bath students.\" Page lists reduced placement-year fees separately; Home placement fees are \"To be confirmed by UK government\" and Overseas Band 3 thick sandwich is £9,155. Band assignment is by the page's Band 3 definition (Science/Engineering); course page fee section not readable."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "bath-mechanical-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "fee-band",
+          "scopeNote": "Fee table row: \"Full-time campus-based courses including Foundation Sport (Sports Performance) | £10,050\"",
+          "yearEvidence": "The tuition fees you must pay if you are starting an undergraduate course in the 2027/28 academic year.",
+          "sourceUrl": "https://www.bath.ac.uk/corporate-information/tuition-fees-for-undergraduate-students-starting-in-2027/",
+          "sourceTitle": "Tuition fees for undergraduate students starting in 2027",
+          "note": "Figure shown on the page but caveated: \"The undergraduate regulated fees for Home students in the 2027/28 academic year are subject to parliamentary approval.\" Page also says \"You should budget for an increase of up to 8% for every year of your course.\" Page lists reduced placement-year fees separately; Home placement fees are \"To be confirmed by UK government\" and Overseas Band 3 thick sandwich is £9,155."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 32950,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "fee-band",
+          "scopeNote": "Overseas Band 3: \"All Science, Engineering, Health, and Psychology courses\"",
+          "yearEvidence": "The tuition fees you must pay if you are starting an undergraduate course in the 2027/28 academic year.",
+          "sourceUrl": "https://www.bath.ac.uk/corporate-information/tuition-fees-for-undergraduate-students-starting-in-2027/",
+          "sourceTitle": "Tuition fees for undergraduate students starting in 2027",
+          "note": "Overseas figure carries no \"to be confirmed\" caveat on the page; page says \"Tuition fees are liable to increase annually for all University of Bath students.\" Page lists reduced placement-year fees separately; Home placement fees are \"To be confirmed by UK government\" and Overseas Band 3 thick sandwich is £9,155. Band assignment is by the page's Band 3 definition (Science/Engineering); course page fee section not readable."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "bath-aerospace-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "fee-band",
+          "scopeNote": "Fee table row: \"Full-time campus-based courses including Foundation Sport (Sports Performance) | £10,050\"",
+          "yearEvidence": "The tuition fees you must pay if you are starting an undergraduate course in the 2027/28 academic year.",
+          "sourceUrl": "https://www.bath.ac.uk/corporate-information/tuition-fees-for-undergraduate-students-starting-in-2027/",
+          "sourceTitle": "Tuition fees for undergraduate students starting in 2027",
+          "note": "Figure shown on the page but caveated: \"The undergraduate regulated fees for Home students in the 2027/28 academic year are subject to parliamentary approval.\" Page also says \"You should budget for an increase of up to 8% for every year of your course.\" Page lists reduced placement-year fees separately; Home placement fees are \"To be confirmed by UK government\" and Overseas Band 3 thick sandwich is £9,155."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 32950,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "fee-band",
+          "scopeNote": "Overseas Band 3: \"All Science, Engineering, Health, and Psychology courses\"",
+          "yearEvidence": "The tuition fees you must pay if you are starting an undergraduate course in the 2027/28 academic year.",
+          "sourceUrl": "https://www.bath.ac.uk/corporate-information/tuition-fees-for-undergraduate-students-starting-in-2027/",
+          "sourceTitle": "Tuition fees for undergraduate students starting in 2027",
+          "note": "Overseas figure carries no \"to be confirmed\" caveat on the page; page says \"Tuition fees are liable to increase annually for all University of Bath students.\" Page lists reduced placement-year fees separately; Home placement fees are \"To be confirmed by UK government\" and Overseas Band 3 thick sandwich is £9,155. Band assignment is by the page's Band 3 definition (Science/Engineering); course page fee section not readable."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "bath-mechanical-with-automotive-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "fee-band",
+          "scopeNote": "Fee table row: \"Full-time campus-based courses including Foundation Sport (Sports Performance) | £10,050\"",
+          "yearEvidence": "The tuition fees you must pay if you are starting an undergraduate course in the 2027/28 academic year.",
+          "sourceUrl": "https://www.bath.ac.uk/corporate-information/tuition-fees-for-undergraduate-students-starting-in-2027/",
+          "sourceTitle": "Tuition fees for undergraduate students starting in 2027",
+          "note": "Figure shown on the page but caveated: \"The undergraduate regulated fees for Home students in the 2027/28 academic year are subject to parliamentary approval.\" Page also says \"You should budget for an increase of up to 8% for every year of your course.\" Page lists reduced placement-year fees separately; Home placement fees are \"To be confirmed by UK government\" and Overseas Band 3 thick sandwich is £9,155."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 32950,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "fee-band",
+          "scopeNote": "Overseas Band 3: \"All Science, Engineering, Health, and Psychology courses\"",
+          "yearEvidence": "The tuition fees you must pay if you are starting an undergraduate course in the 2027/28 academic year.",
+          "sourceUrl": "https://www.bath.ac.uk/corporate-information/tuition-fees-for-undergraduate-students-starting-in-2027/",
+          "sourceTitle": "Tuition fees for undergraduate students starting in 2027",
+          "note": "Overseas figure carries no \"to be confirmed\" caveat on the page; page says \"Tuition fees are liable to increase annually for all University of Bath students.\" Page lists reduced placement-year fees separately; Home placement fees are \"To be confirmed by UK government\" and Overseas Band 3 thick sandwich is £9,155. Band assignment is by the page's Band 3 definition (Science/Engineering); course page fee section not readable."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "bath-civil-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "fee-band",
+          "scopeNote": "Fee table row: \"Full-time campus-based courses including Foundation Sport (Sports Performance) | £10,050\"",
+          "yearEvidence": "The tuition fees you must pay if you are starting an undergraduate course in the 2027/28 academic year.",
+          "sourceUrl": "https://www.bath.ac.uk/corporate-information/tuition-fees-for-undergraduate-students-starting-in-2027/",
+          "sourceTitle": "Tuition fees for undergraduate students starting in 2027",
+          "note": "Figure shown on the page but caveated: \"The undergraduate regulated fees for Home students in the 2027/28 academic year are subject to parliamentary approval.\" Page also says \"You should budget for an increase of up to 8% for every year of your course.\" Page lists reduced placement-year fees separately; Home placement fees are \"To be confirmed by UK government\" and Overseas Band 3 thick sandwich is £9,155."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 32950,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "fee-band",
+          "scopeNote": "Overseas Band 3: \"All Science, Engineering, Health, and Psychology courses\"",
+          "yearEvidence": "The tuition fees you must pay if you are starting an undergraduate course in the 2027/28 academic year.",
+          "sourceUrl": "https://www.bath.ac.uk/corporate-information/tuition-fees-for-undergraduate-students-starting-in-2027/",
+          "sourceTitle": "Tuition fees for undergraduate students starting in 2027",
+          "note": "Overseas figure carries no \"to be confirmed\" caveat on the page; page says \"Tuition fees are liable to increase annually for all University of Bath students.\" Page lists reduced placement-year fees separately; Home placement fees are \"To be confirmed by UK government\" and Overseas Band 3 thick sandwich is £9,155. Band assignment is by the page's Band 3 definition (Science/Engineering); course page fee section not readable."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "bath-electrical-and-electronic-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "fee-band",
+          "scopeNote": "Fee table row: \"Full-time campus-based courses including Foundation Sport (Sports Performance) | £10,050\"",
+          "yearEvidence": "The tuition fees you must pay if you are starting an undergraduate course in the 2027/28 academic year.",
+          "sourceUrl": "https://www.bath.ac.uk/corporate-information/tuition-fees-for-undergraduate-students-starting-in-2027/",
+          "sourceTitle": "Tuition fees for undergraduate students starting in 2027",
+          "note": "Figure shown on the page but caveated: \"The undergraduate regulated fees for Home students in the 2027/28 academic year are subject to parliamentary approval.\" Page also says \"You should budget for an increase of up to 8% for every year of your course.\" Page lists reduced placement-year fees separately; Home placement fees are \"To be confirmed by UK government\" and Overseas Band 3 thick sandwich is £9,155."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 32950,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "fee-band",
+          "scopeNote": "Overseas Band 3: \"All Science, Engineering, Health, and Psychology courses\"",
+          "yearEvidence": "The tuition fees you must pay if you are starting an undergraduate course in the 2027/28 academic year.",
+          "sourceUrl": "https://www.bath.ac.uk/corporate-information/tuition-fees-for-undergraduate-students-starting-in-2027/",
+          "sourceTitle": "Tuition fees for undergraduate students starting in 2027",
+          "note": "Overseas figure carries no \"to be confirmed\" caveat on the page; page says \"Tuition fees are liable to increase annually for all University of Bath students.\" Page lists reduced placement-year fees separately; Home placement fees are \"To be confirmed by UK government\" and Overseas Band 3 thick sandwich is £9,155. Band assignment is by the page's Band 3 definition (Science/Engineering); course page fee section not readable."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "bath-chemical-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "fee-band",
+          "scopeNote": "Fee table row: \"Full-time campus-based courses including Foundation Sport (Sports Performance) | £10,050\"",
+          "yearEvidence": "The tuition fees you must pay if you are starting an undergraduate course in the 2027/28 academic year.",
+          "sourceUrl": "https://www.bath.ac.uk/corporate-information/tuition-fees-for-undergraduate-students-starting-in-2027/",
+          "sourceTitle": "Tuition fees for undergraduate students starting in 2027",
+          "note": "Figure shown on the page but caveated: \"The undergraduate regulated fees for Home students in the 2027/28 academic year are subject to parliamentary approval.\" Page also says \"You should budget for an increase of up to 8% for every year of your course.\" Page lists reduced placement-year fees separately; Home placement fees are \"To be confirmed by UK government\" and Overseas Band 3 thick sandwich is £9,155."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 32950,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "fee-band",
+          "scopeNote": "Overseas Band 3: \"All Science, Engineering, Health, and Psychology courses\"",
+          "yearEvidence": "The tuition fees you must pay if you are starting an undergraduate course in the 2027/28 academic year.",
+          "sourceUrl": "https://www.bath.ac.uk/corporate-information/tuition-fees-for-undergraduate-students-starting-in-2027/",
+          "sourceTitle": "Tuition fees for undergraduate students starting in 2027",
+          "note": "Overseas figure carries no \"to be confirmed\" caveat on the page; page says \"Tuition fees are liable to increase annually for all University of Bath students.\" Page lists reduced placement-year fees separately; Home placement fees are \"To be confirmed by UK government\" and Overseas Band 3 thick sandwich is £9,155. Band assignment is by the page's Band 3 definition (Science/Engineering); course page fee section not readable."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "bath-integrated-mechanical-and-electrical-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "fee-band",
+          "scopeNote": "Fee table row: \"Full-time campus-based courses including Foundation Sport (Sports Performance) | £10,050\"",
+          "yearEvidence": "The tuition fees you must pay if you are starting an undergraduate course in the 2027/28 academic year.",
+          "sourceUrl": "https://www.bath.ac.uk/corporate-information/tuition-fees-for-undergraduate-students-starting-in-2027/",
+          "sourceTitle": "Tuition fees for undergraduate students starting in 2027",
+          "note": "Figure shown on the page but caveated: \"The undergraduate regulated fees for Home students in the 2027/28 academic year are subject to parliamentary approval.\" Page also says \"You should budget for an increase of up to 8% for every year of your course.\" Page lists reduced placement-year fees separately; Home placement fees are \"To be confirmed by UK government\" and Overseas Band 3 thick sandwich is £9,155."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 32950,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "fee-band",
+          "scopeNote": "Overseas Band 3: \"All Science, Engineering, Health, and Psychology courses\"",
+          "yearEvidence": "The tuition fees you must pay if you are starting an undergraduate course in the 2027/28 academic year.",
+          "sourceUrl": "https://www.bath.ac.uk/corporate-information/tuition-fees-for-undergraduate-students-starting-in-2027/",
+          "sourceTitle": "Tuition fees for undergraduate students starting in 2027",
+          "note": "Overseas figure carries no \"to be confirmed\" caveat on the page; page says \"Tuition fees are liable to increase annually for all University of Bath students.\" Page lists reduced placement-year fees separately; Home placement fees are \"To be confirmed by UK government\" and Overseas Band 3 thick sandwich is £9,155. Band assignment is by the page's Band 3 definition (Science/Engineering); course page fee section not readable."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "bath-mechanical-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "fee-band",
+          "scopeNote": "Fee table row: \"Full-time campus-based courses including Foundation Sport (Sports Performance) | £10,050\"",
+          "yearEvidence": "The tuition fees you must pay if you are starting an undergraduate course in the 2027/28 academic year.",
+          "sourceUrl": "https://www.bath.ac.uk/corporate-information/tuition-fees-for-undergraduate-students-starting-in-2027/",
+          "sourceTitle": "Tuition fees for undergraduate students starting in 2027",
+          "note": "Figure shown on the page but caveated: \"The undergraduate regulated fees for Home students in the 2027/28 academic year are subject to parliamentary approval.\" Page also says \"You should budget for an increase of up to 8% for every year of your course.\" Page lists reduced placement-year fees separately; Home placement fees are \"To be confirmed by UK government\" and Overseas Band 3 thick sandwich is £9,155."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 32950,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "fee-band",
+          "scopeNote": "Overseas Band 3: \"All Science, Engineering, Health, and Psychology courses\"",
+          "yearEvidence": "The tuition fees you must pay if you are starting an undergraduate course in the 2027/28 academic year.",
+          "sourceUrl": "https://www.bath.ac.uk/corporate-information/tuition-fees-for-undergraduate-students-starting-in-2027/",
+          "sourceTitle": "Tuition fees for undergraduate students starting in 2027",
+          "note": "Overseas figure carries no \"to be confirmed\" caveat on the page; page says \"Tuition fees are liable to increase annually for all University of Bath students.\" Page lists reduced placement-year fees separately; Home placement fees are \"To be confirmed by UK government\" and Overseas Band 3 thick sandwich is £9,155. Band assignment is by the page's Band 3 definition (Science/Engineering); course page fee section not readable."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "bath-aerospace-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "fee-band",
+          "scopeNote": "Fee table row: \"Full-time campus-based courses including Foundation Sport (Sports Performance) | £10,050\"",
+          "yearEvidence": "The tuition fees you must pay if you are starting an undergraduate course in the 2027/28 academic year.",
+          "sourceUrl": "https://www.bath.ac.uk/corporate-information/tuition-fees-for-undergraduate-students-starting-in-2027/",
+          "sourceTitle": "Tuition fees for undergraduate students starting in 2027",
+          "note": "Figure shown on the page but caveated: \"The undergraduate regulated fees for Home students in the 2027/28 academic year are subject to parliamentary approval.\" Page also says \"You should budget for an increase of up to 8% for every year of your course.\" Page lists reduced placement-year fees separately; Home placement fees are \"To be confirmed by UK government\" and Overseas Band 3 thick sandwich is £9,155."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 32950,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "fee-band",
+          "scopeNote": "Overseas Band 3: \"All Science, Engineering, Health, and Psychology courses\"",
+          "yearEvidence": "The tuition fees you must pay if you are starting an undergraduate course in the 2027/28 academic year.",
+          "sourceUrl": "https://www.bath.ac.uk/corporate-information/tuition-fees-for-undergraduate-students-starting-in-2027/",
+          "sourceTitle": "Tuition fees for undergraduate students starting in 2027",
+          "note": "Overseas figure carries no \"to be confirmed\" caveat on the page; page says \"Tuition fees are liable to increase annually for all University of Bath students.\" Page lists reduced placement-year fees separately; Home placement fees are \"To be confirmed by UK government\" and Overseas Band 3 thick sandwich is £9,155. Band assignment is by the page's Band 3 definition (Science/Engineering); course page fee section not readable."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "bath-integrated-design-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "fee-band",
+          "scopeNote": "Fee table row: \"Full-time campus-based courses including Foundation Sport (Sports Performance) | £10,050\"",
+          "yearEvidence": "The tuition fees you must pay if you are starting an undergraduate course in the 2027/28 academic year.",
+          "sourceUrl": "https://www.bath.ac.uk/corporate-information/tuition-fees-for-undergraduate-students-starting-in-2027/",
+          "sourceTitle": "Tuition fees for undergraduate students starting in 2027",
+          "note": "Figure shown on the page but caveated: \"The undergraduate regulated fees for Home students in the 2027/28 academic year are subject to parliamentary approval.\" Page also says \"You should budget for an increase of up to 8% for every year of your course.\" Page lists reduced placement-year fees separately; Home placement fees are \"To be confirmed by UK government\" and Overseas Band 3 thick sandwich is £9,155."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 32950,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "fee-band",
+          "scopeNote": "Overseas Band 3: \"All Science, Engineering, Health, and Psychology courses\"",
+          "yearEvidence": "The tuition fees you must pay if you are starting an undergraduate course in the 2027/28 academic year.",
+          "sourceUrl": "https://www.bath.ac.uk/corporate-information/tuition-fees-for-undergraduate-students-starting-in-2027/",
+          "sourceTitle": "Tuition fees for undergraduate students starting in 2027",
+          "note": "Overseas figure carries no \"to be confirmed\" caveat on the page; page says \"Tuition fees are liable to increase annually for all University of Bath students.\" Page lists reduced placement-year fees separately; Home placement fees are \"To be confirmed by UK government\" and Overseas Band 3 thick sandwich is £9,155. Band assignment is by the page's Band 3 definition (Science/Engineering); course page fee section not readable."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "bath-chemical-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "fee-band",
+          "scopeNote": "Fee table row: \"Full-time campus-based courses including Foundation Sport (Sports Performance) | £10,050\"",
+          "yearEvidence": "The tuition fees you must pay if you are starting an undergraduate course in the 2027/28 academic year.",
+          "sourceUrl": "https://www.bath.ac.uk/corporate-information/tuition-fees-for-undergraduate-students-starting-in-2027/",
+          "sourceTitle": "Tuition fees for undergraduate students starting in 2027",
+          "note": "Figure shown on the page but caveated: \"The undergraduate regulated fees for Home students in the 2027/28 academic year are subject to parliamentary approval.\" Page also says \"You should budget for an increase of up to 8% for every year of your course.\" Page lists reduced placement-year fees separately; Home placement fees are \"To be confirmed by UK government\" and Overseas Band 3 thick sandwich is £9,155."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 32950,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "fee-band",
+          "scopeNote": "Overseas Band 3: \"All Science, Engineering, Health, and Psychology courses\"",
+          "yearEvidence": "The tuition fees you must pay if you are starting an undergraduate course in the 2027/28 academic year.",
+          "sourceUrl": "https://www.bath.ac.uk/corporate-information/tuition-fees-for-undergraduate-students-starting-in-2027/",
+          "sourceTitle": "Tuition fees for undergraduate students starting in 2027",
+          "note": "Overseas figure carries no \"to be confirmed\" caveat on the page; page says \"Tuition fees are liable to increase annually for all University of Bath students.\" Page lists reduced placement-year fees separately; Home placement fees are \"To be confirmed by UK government\" and Overseas Band 3 thick sandwich is £9,155. Band assignment is by the page's Band 3 definition (Science/Engineering); course page fee section not readable."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "bath-electrical-and-electronic-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "fee-band",
+          "scopeNote": "Fee table row: \"Full-time campus-based courses including Foundation Sport (Sports Performance) | £10,050\"",
+          "yearEvidence": "The tuition fees you must pay if you are starting an undergraduate course in the 2027/28 academic year.",
+          "sourceUrl": "https://www.bath.ac.uk/corporate-information/tuition-fees-for-undergraduate-students-starting-in-2027/",
+          "sourceTitle": "Tuition fees for undergraduate students starting in 2027",
+          "note": "Figure shown on the page but caveated: \"The undergraduate regulated fees for Home students in the 2027/28 academic year are subject to parliamentary approval.\" Page also says \"You should budget for an increase of up to 8% for every year of your course.\" Page lists reduced placement-year fees separately; Home placement fees are \"To be confirmed by UK government\" and Overseas Band 3 thick sandwich is £9,155."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 32950,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "fee-band",
+          "scopeNote": "Overseas Band 3: \"All Science, Engineering, Health, and Psychology courses\"",
+          "yearEvidence": "The tuition fees you must pay if you are starting an undergraduate course in the 2027/28 academic year.",
+          "sourceUrl": "https://www.bath.ac.uk/corporate-information/tuition-fees-for-undergraduate-students-starting-in-2027/",
+          "sourceTitle": "Tuition fees for undergraduate students starting in 2027",
+          "note": "Overseas figure carries no \"to be confirmed\" caveat on the page; page says \"Tuition fees are liable to increase annually for all University of Bath students.\" Page lists reduced placement-year fees separately; Home placement fees are \"To be confirmed by UK government\" and Overseas Band 3 thick sandwich is £9,155. Band assignment is by the page's Band 3 definition (Science/Engineering); course page fee section not readable."
+        }
+      ],
+      "unresolved": null
+    }
+  ],
+  "notes2028": "No 2028-entry fees found: the Bath fee page and tuition-fees index list only 2027/28 undergraduate fees (and a 2026 archive); a site search for 2028 undergraduate fees returned no 2028 page."
+}

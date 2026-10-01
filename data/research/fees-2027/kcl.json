@@ -1,0 +1,168 @@
+{
+  "universityId": "kcl",
+  "checkedOn": "2026-09-30",
+  "method": "Each course /fees page (kcl.ac.uk/study/undergraduate/courses/<slug>/fees) was fetched; their bodies came back empty of fee content (only metadata: \"Start date: September 2027\"), so no course-level fee could be read. kcl.ac.uk/study/undergraduate/fees-and-funding/tuition-fees only states a 2026-entry Home figure (not recorded). The KCL Student Services Online article KA-02161 (official kcl.ac.uk subdomain) states the 2027/28 Home undergraduate full-time fee; used for Home. No 2027/28 International figure found on any official page fetched. Gap-fill pass 2026-10-01 for International fee: no 2027/28 figure found (see per-course notes).",
+  "universityWideStatements": [
+    {
+      "quote": "There will also be an increase in tuition fees for the year 2027/28, which will be an increase of 2.68% to £10,050 for home undergraduate students on full-time courses, in line with the fee cap set by the Government.",
+      "url": "https://self-service.kcl.ac.uk/article/KA-02161/en-us",
+      "title": "When do tuition fees increase and by how much? · Student Services Online",
+      "appliesTo": "Home undergraduate students on full-time courses, 2027/28. Article is about fee increases and does not literally say \"new entrants\"; no \"to be confirmed/subject to approval\" caveat appears in it."
+    }
+  ],
+  "courses": [
+    {
+      "id": "kcl-physics-msci--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "university-wide",
+          "scopeNote": "There will also be an increase in tuition fees for the year 2027/28, which will be an increase of 2.68% to £10,050 for home undergraduate students on full-time courses, in line with the fee cap set by the Government.",
+          "yearEvidence": "tuition fees for the year 2027/28, which will be an increase of 2.68% to £10,050",
+          "sourceUrl": "https://self-service.kcl.ac.uk/article/KA-02161/en-us",
+          "sourceTitle": "When do tuition fees increase and by how much? · Student Services Online",
+          "note": "Not read from the course page (course /fees page body empty when fetched: https://www.kcl.ac.uk/study/undergraduate/courses/physics-msci/fees). Statement is KCL-wide for full-time Home undergraduates, 2027/28; it is an article about fee increases, not a course-specific fee line. No placement/year-abroad fee text found."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": null,
+          "sourceUrl": "https://www.kcl.ac.uk/study/undergraduate/courses/physics-msci/fees",
+          "sourceTitle": "Fees page (body empty when fetched)",
+          "note": "Course fees page returned no fee content to the fetch tool; no official 2027/28 International figure found elsewhere. The KCL article KA-02161 gives no International 2027/28 figure (only a cap of 7% on rises). Gap-fill 2026-10-01: course page and /fees page (with ?v=2) re-fetched, still no fee content (only start date September 2027); kcl.ac.uk/study/undergraduate/fees-and-funding/tuition-fees gives only a 2026 Home figure and no International table; self-service KA-01179 says international fees are on the online prospectus; kcl.ac.uk/study/international/courses/physics is an International Foundation Programme page with no tuition figure. No official 2027/28 International figure found."
+        }
+      ],
+      "unresolved": "International fee not established (course fees page body not retrievable)."
+    },
+    {
+      "id": "kcl-general-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "university-wide",
+          "scopeNote": "There will also be an increase in tuition fees for the year 2027/28, which will be an increase of 2.68% to £10,050 for home undergraduate students on full-time courses, in line with the fee cap set by the Government.",
+          "yearEvidence": "tuition fees for the year 2027/28, which will be an increase of 2.68% to £10,050",
+          "sourceUrl": "https://self-service.kcl.ac.uk/article/KA-02161/en-us",
+          "sourceTitle": "When do tuition fees increase and by how much? · Student Services Online",
+          "note": "Not read from the course page (course /fees page body empty when fetched: https://www.kcl.ac.uk/study/undergraduate/courses/general-engineering-meng/fees). Statement is KCL-wide for full-time Home undergraduates, 2027/28; it is an article about fee increases, not a course-specific fee line. No placement/year-abroad fee text found."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": null,
+          "sourceUrl": "https://www.kcl.ac.uk/study/undergraduate/courses/general-engineering-meng/fees",
+          "sourceTitle": "Fees page (body empty when fetched)",
+          "note": "Course fees page returned no fee content to the fetch tool; no official 2027/28 International figure found elsewhere. The KCL article KA-02161 gives no International 2027/28 figure (only a cap of 7% on rises). Gap-fill 2026-10-01: course page and /fees page (with ?v=2) re-fetched, still no fee content (only start date September 2027); kcl.ac.uk/study/undergraduate/fees-and-funding/tuition-fees gives only a 2026 Home figure and no International table; self-service KA-01179 says international fees are on the online prospectus; kcl.ac.uk/study/international/courses/physics is an International Foundation Programme page with no tuition figure. No official 2027/28 International figure found."
+        }
+      ],
+      "unresolved": "International fee not established (course fees page body not retrievable)."
+    },
+    {
+      "id": "kcl-physics-with-astrophysics-and-cosmology-bsc--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "university-wide",
+          "scopeNote": "There will also be an increase in tuition fees for the year 2027/28, which will be an increase of 2.68% to £10,050 for home undergraduate students on full-time courses, in line with the fee cap set by the Government.",
+          "yearEvidence": "tuition fees for the year 2027/28, which will be an increase of 2.68% to £10,050",
+          "sourceUrl": "https://self-service.kcl.ac.uk/article/KA-02161/en-us",
+          "sourceTitle": "When do tuition fees increase and by how much? · Student Services Online",
+          "note": "Not read from the course page (course /fees page body empty when fetched: https://www.kcl.ac.uk/study/undergraduate/courses/physics-with-astrophysics-and-cosmology-bsc/fees). Statement is KCL-wide for full-time Home undergraduates, 2027/28; it is an article about fee increases, not a course-specific fee line. No placement/year-abroad fee text found."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": null,
+          "sourceUrl": "https://www.kcl.ac.uk/study/undergraduate/courses/physics-with-astrophysics-and-cosmology-bsc/fees",
+          "sourceTitle": "Fees page (body empty when fetched)",
+          "note": "Course fees page returned no fee content to the fetch tool; no official 2027/28 International figure found elsewhere. The KCL article KA-02161 gives no International 2027/28 figure (only a cap of 7% on rises). Gap-fill 2026-10-01: course page and /fees page (with ?v=2) re-fetched, still no fee content (only start date September 2027); kcl.ac.uk/study/undergraduate/fees-and-funding/tuition-fees gives only a 2026 Home figure and no International table; self-service KA-01179 says international fees are on the online prospectus; kcl.ac.uk/study/international/courses/physics is an International Foundation Programme page with no tuition figure. No official 2027/28 International figure found."
+        }
+      ],
+      "unresolved": "International fee not established (course fees page body not retrievable). Input record status is awaiting-data; course page fees not readable."
+    },
+    {
+      "id": "kcl-general-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "university-wide",
+          "scopeNote": "There will also be an increase in tuition fees for the year 2027/28, which will be an increase of 2.68% to £10,050 for home undergraduate students on full-time courses, in line with the fee cap set by the Government.",
+          "yearEvidence": "tuition fees for the year 2027/28, which will be an increase of 2.68% to £10,050",
+          "sourceUrl": "https://self-service.kcl.ac.uk/article/KA-02161/en-us",
+          "sourceTitle": "When do tuition fees increase and by how much? · Student Services Online",
+          "note": "Not read from the course page (course /fees page body empty when fetched: https://www.kcl.ac.uk/study/undergraduate/courses/general-engineering-beng/fees). Statement is KCL-wide for full-time Home undergraduates, 2027/28; it is an article about fee increases, not a course-specific fee line. No placement/year-abroad fee text found."
+        },
+        {
+          "category": "International",
+          "categoryKind": "international",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": null,
+          "sourceUrl": "https://www.kcl.ac.uk/study/undergraduate/courses/general-engineering-beng/fees",
+          "sourceTitle": "Fees page (body empty when fetched)",
+          "note": "Course fees page returned no fee content to the fetch tool; no official 2027/28 International figure found elsewhere. The KCL article KA-02161 gives no International 2027/28 figure (only a cap of 7% on rises). Gap-fill 2026-10-01: course page and /fees page (with ?v=2) re-fetched, still no fee content (only start date September 2027); kcl.ac.uk/study/undergraduate/fees-and-funding/tuition-fees gives only a 2026 Home figure and no International table; self-service KA-01179 says international fees are on the online prospectus; kcl.ac.uk/study/international/courses/physics is an International Foundation Programme page with no tuition figure. No official 2027/28 International figure found."
+        }
+      ],
+      "unresolved": "International fee not established (course fees page body not retrievable)."
+    }
+  ],
+  "notes2028": "No 2028-entry fees found on the pages fetched (tuition-fees page gives only a 2026-entry Home figure; Student Services article gives 2027/28 only)."
+}

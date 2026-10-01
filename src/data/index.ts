@@ -181,6 +181,13 @@ export const v08Courses: Course[] = [...v08ClosureCourses];
  */
 export const v09Courses: Course[] = [...v09QmulCourses, v09KclBEng];
 export * from './taxonomy';
+export {
+  TUITION_FEES,
+  TUITION_FEE_GAPS,
+  FEE_RESEARCHED_YEARS,
+  feesForCourse,
+  type TuitionFeeGap,
+} from './tuition-fees';
 
 /* ------------------------------------------------------------------ */
 /* Production data versus test fixtures                                */

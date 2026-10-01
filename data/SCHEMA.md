@@ -1,6 +1,6 @@
 # Data format
 
-Four files, one shape each. This is the format the app imports, the format the
+One file per kind of record, one shape each. This is the format the app imports, the format the
 admin data manager exports, and the shape a Postgres/Supabase table should have.
 
 ```
@@ -9,6 +9,7 @@ data/
   courses.json        { "courses": [ CourseRecord, … ] }  ← the important one
   rankings.json       one row per published ranking position, each with its own provenance
   deadlines.json      one row per application deadline, scoped by entry year and audience
+  fees.json           v1.1: one row per published tuition-fee category, per course and entry year
   tests.json          reference list of admissions tests
 ```
 
@@ -365,6 +366,47 @@ This is how an Oxbridge earlier deadline, a test-registration deadline for two c
 standard UCAS date coexist at one university without any of them being applied to everything.
 
 A deadline marked `verified` without a date, a source URL and a check date is a validation error.
+
+---
+
+## TuitionFee (v1.1)
+
+`fees.json` — one row per published fee category, for one course record (slug + entry year).
+Fees are a separate relation, like rankings and deadlines: course records are untouched, and a
+course with no rows is simply a course with no fees recorded. Fees never reach the eligibility engine.
+
+```jsonc
+{
+  "courseId": "edinburgh-physics-bsc--2027",   // must exist; its year must equal feeYear
+  "universityId": "edinburgh",
+  "feeYear": "2027",                           // never copied between entry years
+  "category": "Rest of UK",                    // the university's own label, verbatim
+  "categoryKind": "rest-of-uk",                // home | scotland | rest-of-uk | republic-of-ireland
+                                               // | islands | eu | international | other
+  "status": "published",                       // published | awaiting-publication | unknown
+  "amount": 10050,                             // whole pounds; null unless published
+  "indicativeAmount": null,                    // an "expected" figure; only when awaiting
+  "currency": "GBP",
+  "basis": "per-year",                         // per-year | total | other (explain in basisNote)
+  "basisNote": null,
+  "scope": "course",                           // course | fee-band | university-wide
+  "scopeNote": null,                           // REQUIRED for university-wide: the verbatim statement
+  "yearEvidence": "The tuition fees published in this table only apply if you are entering study in 2027-2028.",
+  "sourceUrl": "https://study.ed.ac.uk/programmes/undergraduate-fees?programme_code=UTPHYSB&year=2027",
+  "sourceTitle": "Physics BSc (Hons) — fees",
+  "lastVerified": "2026-09-30",
+  "note": null                                 // required for unknown, and for any indicative figure
+}
+```
+
+Rules (validation errors unless noted): the course exists and its year equals `feeYear`;
+`yearEvidence` names `feeYear` as the **entry** year ("2026/27" does not evidence 2027); published
+rows have an amount, source URL, source title and ISO check date; the source is on the university's
+own domain; awaiting/unknown rows carry no amount; one row per category per course; Scottish
+universities never use a generic `home` category; a `university-wide` row quotes the statement.
+
+The bundled data is generated: edit `data/research/fees-2027/<university>.json` (the audit trail,
+with full researcher notes), then run `node scripts/import-fee-research.mjs`.
 
 ---
 

@@ -647,6 +647,84 @@ export interface Course {
 }
 
 /* ------------------------------------------------------------------ */
+/* Tuition fees (v1.1)                                                 */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Tuition fees are a SEPARATE relation, like rankings and deadlines: one row
+ * per published fee category for one course in one entry year, each with its
+ * own provenance. Course records are untouched, so a course with no fee rows
+ * is still a valid record — it simply has no fees recorded.
+ *
+ * Fees are never part of entry requirements and never reach the eligibility
+ * engine.
+ *
+ * `published`            — the university states a figure for this entry year
+ *                          without a "to be confirmed" / "expected" caveat.
+ * `awaiting-publication` — the university says the fee is not set yet, or
+ *                          gives only an expected figure (`indicativeAmount`).
+ * `unknown`              — not established: unreadable, undated, or official
+ *                          sources conflict. Never shown as a current fee.
+ */
+export type FeeStatus = 'published' | 'awaiting-publication' | 'unknown';
+
+/** Per year of study, a published whole-course total, or another stated basis. */
+export type FeeBasis = 'per-year' | 'total' | 'other';
+
+/**
+ * Normalised helper for ordering and comparison only. The DISPLAYED label is
+ * always the university's own (`TuitionFee.category`), so Scottish
+ * classifications such as "Scotland" and "Rest of UK" are never collapsed.
+ */
+export type FeeCategoryKind =
+  | 'home'
+  | 'scotland'
+  | 'rest-of-uk'
+  | 'republic-of-ireland'
+  | 'islands'
+  | 'eu'
+  | 'international'
+  | 'other';
+
+/**
+ * Where the figure came from:
+ * `course`          — the course's own page.
+ * `fee-band`        — an official fee table that groups courses into bands.
+ * `university-wide` — an explicit university statement covering every course
+ *                     (quoted verbatim in `scopeNote`). Never assumed.
+ */
+export type FeeScope = 'course' | 'university-wide' | 'fee-band';
+
+export interface TuitionFee {
+  /** `${slug}--${applicationYear}` of the course this fee belongs to. */
+  courseId: string;
+  universityId: string;
+  /** The entry year the fee applies to. Must equal the course's own year. */
+  feeYear: ApplicationYear;
+  /** The university's own label, e.g. "Home", "Overseas", "Rest of UK". */
+  category: string;
+  categoryKind: FeeCategoryKind;
+  status: FeeStatus;
+  /** Whole pounds. Null unless `published`. */
+  amount: number | null;
+  /** A figure the university gives as expected/provisional. Only when awaiting. */
+  indicativeAmount: number | null;
+  currency: 'GBP';
+  basis: FeeBasis;
+  basisNote: string | null;
+  scope: FeeScope;
+  /** The verbatim university-wide statement, or the fee band's name. */
+  scopeNote: string | null;
+  /** Short verbatim quote showing the figure applies to `feeYear` entry. */
+  yearEvidence: string | null;
+  sourceUrl: string | null;
+  sourceTitle: string | null;
+  /** ISO date (YYYY-MM-DD) the source was read. */
+  lastVerified: string | null;
+  note: string | null;
+}
+
+/* ------------------------------------------------------------------ */
 /* Student profile                                                     */
 /* ------------------------------------------------------------------ */
 

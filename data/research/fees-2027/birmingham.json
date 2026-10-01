@@ -1,0 +1,1237 @@
+{
+  "universityId": "birmingham",
+  "checkedOn": "2026-09-30",
+  "method": "WebFetch of each course's own birmingham.ac.uk undergraduate page (key-facts 'Fees (UK/Ireland)' line and 'Fee details'), plus the university's tuition-fee pages and subject-listing/course-search pages to find current course URLs. PARTIAL: the research session hit its usage limit partway through, so courses with empty fees and an 'unresolved' reason were NOT researched (or could not be loaded). Course pages have a 'Year of entry' selector (2027 / 2026); query-string cache-busting timed out on this site, so each course was read once from its plain URL (Physics BSc and Physics and Astrophysics MSci were read twice with the same result). GAP-FILL 2026-10-01: all remaining engineering courses read from their current course pages (plain URL; repeat fetches of two pages gave identical results). Pages split: some show \"£10,050 per year for domestic (UK) students for 2027/28\", others \"Fees (UK/Ireland): To be confirmed\". International: birmingham.ac.uk/study/international/fees gives no amounts (offer letter only); course-page country selector not readable.",
+  "universityWideStatements": [
+    {
+      "quote": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+      "url": "https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition",
+      "title": "Tuition fees for undergraduates - University of Birmingham",
+      "appliesTo": "UK/Home undergraduate applicants for 2027 entry: the 2027 fee is not yet stated. Not a fee amount; used as yearEvidence for awaiting-publication entries."
+    },
+    {
+      "quote": "The cost of your tuition fee depends on the programme you choose to study, and the level at which you study.",
+      "url": "https://www.birmingham.ac.uk/study/international/fees",
+      "title": "International fees - University of Birmingham",
+      "appliesTo": "International undergraduate fees vary by programme; this page gives no 2027 amounts."
+    }
+  ],
+  "courses": [
+    {
+      "id": "birmingham-physics-bsc--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/physics-and-astronomy-courses/physics-bsc",
+          "sourceTitle": "Physics BSc - University of Birmingham",
+          "note": "Course page (September 2027 entry) shows \"Fees (UK/Ireland): To be confirmed\" (fee details: \"TBC\"). Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; other countries sit behind a 'Fees information for: select a country...' selector not readable in the page text, and the university's international fees page gives no 2027 amounts."
+    },
+    {
+      "id": "birmingham-physics-msci--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/physics-and-astronomy-courses/physics-msci",
+          "sourceTitle": "Physics MSci - University of Birmingham",
+          "note": "Course page (September 2027 entry) shows \"Fees (UK/Ireland): To be confirmed\" (fee details: \"TBC\"). Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; other countries sit behind a 'Fees information for: select a country...' selector not readable in the page text, and the university's international fees page gives no 2027 amounts."
+    },
+    {
+      "id": "birmingham-physics-international-study-bsc--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/physics-and-astronomy-courses/physics-international-bsc",
+          "sourceTitle": "Physics (International Study) BSc - University of Birmingham",
+          "note": "Course page shows \"Fees (UK/Ireland): To be confirmed\" (fee details: \"TBC\"). Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; other countries sit behind a 'Fees information for: select a country...' selector not readable in the page text, and the university's international fees page gives no 2027 amounts."
+    },
+    {
+      "id": "birmingham-physics-international-study-msci--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/physics-and-astronomy-courses/physics-international-msci",
+          "sourceTitle": "Physics (International Study) MSci - University of Birmingham",
+          "note": "Course page shows \"Fees (UK/Ireland): To be confirmed\" and \"Application deadline for September 2027 entry to be confirmed\". Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; other countries sit behind a 'Fees information for: select a country...' selector not readable in the page text, and the university's international fees page gives no 2027 amounts."
+    },
+    {
+      "id": "birmingham-physics-and-astrophysics-bsc--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/physics-and-astronomy-courses/physics-astrophysics-bsc",
+          "sourceTitle": "Physics and Astrophysics BSc - University of Birmingham",
+          "note": "Course page shows \"Fees (UK/Ireland): To be confirmed\" and \"Application deadline for September 2027 entry to be confirmed\". Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition. URL changed: input URL .../physics-and-astrophysics-bsc returned 404; current page used."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; other countries sit behind a 'Fees information for: select a country...' selector not readable in the page text, and the university's international fees page gives no 2027 amounts."
+    },
+    {
+      "id": "birmingham-physics-and-astrophysics-msci--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "£10,050 per year for domestic (UK) students for 2027/28",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/physics-and-astronomy-courses/physics-astrophysics-msci",
+          "sourceTitle": "Physics and Astrophysics MSci - University of Birmingham",
+          "note": "Key-facts 'Fees (UK/Ireland)' line shows this figure for 2027/28 with no caveat (read on two fetches). Page wording is 'domestic (UK) students' while the line is labelled 'UK/Ireland'. Other Birmingham course pages for the same entry year still say 'To be confirmed', so the university's own pages are inconsistent; this page is unqualified. URL changed: input URL .../physics-and-astrophysics-msci returned 404; current page used."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; other countries sit behind a 'Fees information for: select a country...' selector not readable in the page text, and the university's international fees page gives no 2027 amounts."
+    },
+    {
+      "id": "birmingham-physics-and-astrophysics-international-study-bsc--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No 2027 figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 entry, you will be advised of the annual tuition fee once it is confirmed by the Government.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/physics-and-astronomy-courses/physics-astrophysics-international-bsc",
+          "sourceTitle": "Physics and Astrophysics (International Study) BSc - University of Birmingham",
+          "note": "Course page states the 2027 fee will be advised once confirmed by the Government. The page also shows a fee for the earlier (2026) entry year, which is deliberately not recorded. Page also says a placement year is charged at 15% of the agreed tuition fee. URL changed: input URL .../physics-and-astrophysics-international-bsc returned 404; current page used."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; other countries sit behind a 'Fees information for: select a country...' selector not readable in the page text, and the university's international fees page gives no 2027 amounts."
+    },
+    {
+      "id": "birmingham-physics-with-particle-physics-and-cosmology-bsc--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No 2027 figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 entry, you will be advised of the annual tuition fee once it is confirmed by the Government.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/physics-and-astronomy-courses/physics-particle-physics-cosmology-bsc",
+          "sourceTitle": "Physics with Particle Physics and Cosmology BSc - University of Birmingham",
+          "note": "Course page states the 2027 fee will be advised once confirmed by the Government. The page also shows a fee for the earlier (2026) entry year, which is deliberately not recorded. Placement year: 15% of the agreed tuition fee. URL changed: input URL .../physics-with-particle-physics-and-cosmology-bsc returned 404; current page used."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; other countries sit behind a 'Fees information for: select a country...' selector not readable in the page text, and the university's international fees page gives no 2027 amounts."
+    },
+    {
+      "id": "birmingham-physics-with-particle-physics-and-cosmology-msci--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/physics-and-astronomy-courses/physics-particle-physics-cosmology-msci",
+          "sourceTitle": "Physics with Particle Physics and Cosmology MSci - University of Birmingham",
+          "note": "Course page shows \"Fees (UK/Ireland): To be confirmed\" (fee details: \"TBC\") and \"Application deadline for September 2027 entry to be confirmed\". Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition. URL changed: input URL .../physics-with-particle-physics-and-cosmology-msci returned 404; current page used."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; other countries sit behind a 'Fees information for: select a country...' selector not readable in the page text, and the university's international fees page gives no 2027 amounts."
+    },
+    {
+      "id": "birmingham-physics-with-data-science-bsc--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No 2027 figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 entry, you will be advised of the annual tuition fee once it is confirmed by the Government.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/physics-and-astronomy-courses/physics-data-science-bsc",
+          "sourceTitle": "Physics with Data Science BSc - University of Birmingham",
+          "note": "Course page states the 2027 fee will be advised once confirmed by the Government. The page also shows a fee for the earlier (2026) entry year, which is deliberately not recorded. Placement year: 15% of the agreed tuition fee. URL changed: input URL .../physics-with-data-science-bsc returned 404; current page used."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; other countries sit behind a 'Fees information for: select a country...' selector not readable in the page text, and the university's international fees page gives no 2027 amounts."
+    },
+    {
+      "id": "birmingham-physics-with-data-science-msci--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/physics-and-astronomy-courses/physics-data-science-msci",
+          "sourceTitle": "Physics with Data Science MSci - University of Birmingham",
+          "note": "Course page shows \"Fees (UK/Ireland): To be confirmed\" and \"Application deadline for September 2027 entry to be confirmed\". Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition. URL changed: input URL .../physics-with-data-science-msci returned 404; current page used."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; other countries sit behind a 'Fees information for: select a country...' selector not readable in the page text, and the university's international fees page gives no 2027 amounts."
+    },
+    {
+      "id": "birmingham-physics-with-medical-physics-bsc--2027",
+      "fees": [],
+      "unresolved": "Page would not load: 503 server error and read timeouts on 3 attempts in the first pass, then in the gap-fill pass the input URL .../physics-with-medical-physics-bsc returned 404 and the URL listed by official-site search .../physics-medical-physics-bsc returned 503 and a read timeout (with ?v=2). No fee read. Birmingham's sibling course pages are inconsistent (some show £10,050 for 2027/28, some TBC), so no figure is inferred."
+    },
+    {
+      "id": "birmingham-physics-with-medical-physics-msci--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No 2027 figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 entry, you will be advised of the annual tuition fee once it is confirmed by the Government.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/physics-and-astronomy-courses/physics-medical-physics-msci",
+          "sourceTitle": "Physics with Medical Physics MSci - University of Birmingham",
+          "note": "Course page states the 2027 fee will be advised once confirmed by the Government. The page also shows a fee for the earlier (2026) entry year, which is deliberately not recorded. Placement year: 15% of the agreed tuition fee. URL changed: input URL .../physics-with-medical-physics-msci returned 404; current page used."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; other countries sit behind a 'Fees information for: select a country...' selector not readable in the page text, and the university's international fees page gives no 2027 amounts."
+    },
+    {
+      "id": "birmingham-theoretical-physics-bsc--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/physics-and-astronomy-courses/theoretical-physics-bsc",
+          "sourceTitle": "Theoretical Physics BSc - University of Birmingham",
+          "note": "Course page shows \"Fees (UK/Ireland): To be confirmed\" (fee details: \"To be confirmed\") and \"Application deadline for September 2027 entry to be confirmed\". Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; other countries sit behind a 'Fees information for: select a country...' selector not readable in the page text, and the university's international fees page gives no 2027 amounts."
+    },
+    {
+      "id": "birmingham-theoretical-physics-msci--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/physics-and-astronomy-courses/theoretical-physics-msci",
+          "sourceTitle": "Theoretical Physics MSci - University of Birmingham",
+          "note": "Course page fees section shows \"TBC - To be confirmed\". Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; other countries sit behind a 'Fees information for: select a country...' selector not readable in the page text, and the university's international fees page gives no 2027 amounts."
+    },
+    {
+      "id": "birmingham-theoretical-physics-and-applied-mathematics-bsc--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/physics-and-astronomy-courses/theoretical-physics-applied-mathematics-bsc",
+          "sourceTitle": "Theoretical Physics and Applied Mathematics BSc - University of Birmingham",
+          "note": "Course page shows \"Fees (UK/Ireland): To be confirmed\". Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition. URL changed: input URL .../theoretical-physics-and-applied-mathematics-bsc returned 404; current page used."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; other countries sit behind a 'Fees information for: select a country...' selector not readable in the page text, and the university's international fees page gives no 2027 amounts."
+    },
+    {
+      "id": "birmingham-theoretical-physics-and-applied-mathematics-msci--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/physics-and-astronomy-courses/theoretical-physics-applied-mathematics-msci",
+          "sourceTitle": "Theoretical Physics and Applied Mathematics MSci - University of Birmingham",
+          "note": "Course page shows \"Fees (UK/Ireland): To be confirmed\". Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition. URL changed: input URL .../theoretical-physics-and-applied-mathematics-msci returned 404; current page used."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; other countries sit behind a 'Fees information for: select a country...' selector not readable in the page text, and the university's international fees page gives no 2027 amounts."
+    },
+    {
+      "id": "birmingham-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/engineering-courses/engineering-beng",
+          "sourceTitle": "Engineering BEng - University of Birmingham",
+          "note": "Course page shows \"Fees (UK/Ireland) To be confirmed\" and \"Application deadline for September 2027 entry to be confirmed\". Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; other countries sit behind a 'Fees information for: select a country...' selector not readable in the page text, and the university's international fees page gives no 2027 amounts."
+    },
+    {
+      "id": "birmingham-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No 2027 figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 entry, you will be advised of the annual tuition fee once it is confirmed by the Government.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/engineering-courses/engineering-meng",
+          "sourceTitle": "Engineering MEng - University of Birmingham",
+          "note": "Course page states the 2027 fee will be advised once confirmed by the Government. The page also shows fees for the earlier (2026) entry year, which are deliberately not recorded."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; other countries sit behind a 'Fees information for: select a country...' selector not readable in the page text, and the university's international fees page gives no 2027 amounts."
+    },
+    {
+      "id": "birmingham-mechanical-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/mechanical-engineering-courses/mechanical-engineering-beng",
+          "sourceTitle": "Mechanical Engineering BEng - University of Birmingham",
+          "note": "Course page shows \"Fees (UK/Ireland): To be confirmed\" (fee details: \"TBC - To be confirmed\"). Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; other countries sit behind a 'Fees information for: select a country...' selector not readable in the page text, and the university's international fees page gives no 2027 amounts."
+    },
+    {
+      "id": "birmingham-mechanical-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/mechanical-engineering-courses/mechanical-engineering-meng",
+          "sourceTitle": "Mechanical Engineering MEng - University of Birmingham",
+          "note": "Course page shows \"Fees (UK/Ireland): To be confirmed\" (fee details: \"TBC - To be confirmed\"). Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; other countries sit behind a 'Fees information for: select a country...' selector not readable in the page text, and the university's international fees page gives no 2027 amounts."
+    },
+    {
+      "id": "birmingham-mechanical-engineering-automotive-beng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/mechanical-engineering-courses/mechanical-engineering-automotive-beng",
+          "sourceTitle": "Mechanical Engineering (Automotive) BEng - University of Birmingham",
+          "note": "Course page shows \"Fees (UK/Ireland): To be confirmed\" (fee details: \"TBC: To be confirmed\"). Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; other countries sit behind a 'Fees information for: select a country...' selector not readable in the page text, and the university's international fees page gives no 2027 amounts."
+    },
+    {
+      "id": "birmingham-mechanical-engineering-automotive-meng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/mechanical-engineering-courses/mechanical-engineering-automotive-meng",
+          "sourceTitle": "Mechanical Engineering (Automotive) MEng - University of Birmingham",
+          "note": "Course page shows \"Fees (UK/Ireland): To be confirmed\". Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; other countries sit behind a 'Fees information for: select a country...' selector not readable in the page text, and the university's international fees page gives no 2027 amounts."
+    },
+    {
+      "id": "birmingham-mechanical-engineering-industrial-year-beng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "£10,050 per year for domestic (UK) students for 2027/28",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/mechanical-engineering-courses/mechanical-engineering-industrial-beng",
+          "sourceTitle": "Mechanical Engineering with Industrial Year BEng - University of Birmingham",
+          "note": "Key-facts fee line and fee details show this figure for 2027/28 with no caveat. Page wording is 'domestic (UK) students' while the line is labelled 'UK/Ireland'. Other Birmingham course pages for the same entry year still say 'To be confirmed', so the university's own pages are inconsistent; this page is unqualified. Industrial year is at 'a reduced student fee level' (no amount on the page). URL changed: input URL .../mechanical-engineering-with-industrial-year-beng returned 404; current page used."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; other countries sit behind a 'Fees information for: select a country...' selector not readable in the page text, and the university's international fees page gives no 2027 amounts."
+    },
+    {
+      "id": "birmingham-mechanical-engineering-industrial-year-meng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/mechanical-engineering-courses/mechanical-engineering-industrial-meng",
+          "sourceTitle": "Mechanical Engineering with Industrial Year MEng - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page (Year of entry selector offers 2027 and 2026) shows 'Fees (UK/Ireland): To be confirmed' / 'TBC' with no amount; a repeat fetch of a sample page gave the same result. Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition. Other Birmingham course pages show £10,050 for 2027/28, so the university's own pages are inconsistent. Page notes students \"continue to benefit from being a member of the University at a reduced student fee level\" during the industrial year (no amount). URL changed: input URL https://www.birmingham.ac.uk/study/undergraduate/subjects/mechanical-engineering-courses/mechanical-engineering-with-industrial-year-meng was not used (earlier pass recorded it as likely 404); page read in gap-fill: https://www.birmingham.ac.uk/study/undergraduate/subjects/mechanical-engineering-courses/mechanical-engineering-industrial-meng."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    },
+    {
+      "id": "birmingham-mechanical-engineering-year-abroad-meng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "£10,050 per year for domestic (UK) students for 2027/28",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/mechanical-engineering-courses/mechanical-engineering-year-abroad-meng",
+          "sourceTitle": "Mechanical Engineering with a Year Abroad MEng - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page fees line shows this figure for 2027/28 with no caveat (page wording 'domestic (UK) students', line labelled 'UK/Ireland'). Other Birmingham course pages for the same entry year still say 'To be confirmed', so the university's own pages are inconsistent; this page is unqualified. Page also says \"Your tuition fee is reduced whilst studying abroad\" (no amount). URL changed: input URL https://www.birmingham.ac.uk/study/undergraduate/subjects/mechanical-engineering-courses/mechanical-engineering-with-a-year-abroad-meng was not used (earlier pass recorded it as likely 404); page read in gap-fill: https://www.birmingham.ac.uk/study/undergraduate/subjects/mechanical-engineering-courses/mechanical-engineering-year-abroad-meng."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    },
+    {
+      "id": "birmingham-civil-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "£10,050 per year for domestic (UK) students for 2027/28",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/civil-engineering-courses/civil-engineering-beng",
+          "sourceTitle": "Civil Engineering BEng - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page fees line shows this figure for 2027/28 with no caveat (page wording 'domestic (UK) students', line labelled 'UK/Ireland'). Other Birmingham course pages for the same entry year still say 'To be confirmed', so the university's own pages are inconsistent; this page is unqualified."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    },
+    {
+      "id": "birmingham-civil-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "£10,050 per year for domestic (UK) students for 2027/28",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/civil-engineering-courses/civil-engineering-meng",
+          "sourceTitle": "Civil Engineering MEng - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page fees line shows this figure for 2027/28 with no caveat (page wording 'domestic (UK) students', line labelled 'UK/Ireland'). Other Birmingham course pages for the same entry year still say 'To be confirmed', so the university's own pages are inconsistent; this page is unqualified."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    },
+    {
+      "id": "birmingham-civil-engineering-industrial-experience-meng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "£10,050 per year for domestic (UK) students for 2027/28",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/civil-engineering-courses/civil-engineering-industrial-experience-meng",
+          "sourceTitle": "Civil Engineering with Industrial Experience MEng - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page fees line shows this figure for 2027/28 with no caveat (page wording 'domestic (UK) students', line labelled 'UK/Ireland'). Other Birmingham course pages for the same entry year still say 'To be confirmed', so the university's own pages are inconsistent; this page is unqualified. URL changed: input URL https://www.birmingham.ac.uk/study/undergraduate/subjects/civil-engineering-courses/civil-engineering-with-industrial-experience-meng was not used (earlier pass recorded it as likely 404); page read in gap-fill: https://www.birmingham.ac.uk/study/undergraduate/subjects/civil-engineering-courses/civil-engineering-industrial-experience-meng."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    },
+    {
+      "id": "birmingham-civil-engineering-industrial-year-meng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/civil-engineering-courses/civil-engineering-industrial-year-meng",
+          "sourceTitle": "Civil Engineering with Industrial Year MEng - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page (Year of entry selector offers 2027 and 2026) shows 'Fees (UK/Ireland): To be confirmed' / 'TBC' with no amount; a repeat fetch of a sample page gave the same result. Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition. Other Birmingham course pages show £10,050 for 2027/28, so the university's own pages are inconsistent. URL changed: input URL https://www.birmingham.ac.uk/study/undergraduate/subjects/civil-engineering-courses/civil-engineering-with-industrial-year-meng was not used (earlier pass recorded it as likely 404); page read in gap-fill: https://www.birmingham.ac.uk/study/undergraduate/subjects/civil-engineering-courses/civil-engineering-industrial-year-meng."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    },
+    {
+      "id": "birmingham-civil-engineering-international-study-meng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/civil-engineering-courses/civil-engineering-international-meng",
+          "sourceTitle": "Civil Engineering with International Study MEng - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page (Year of entry selector offers 2027 and 2026) shows 'Fees (UK/Ireland): To be confirmed' / 'TBC' with no amount; a repeat fetch of a sample page gave the same result. Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition. Other Birmingham course pages show £10,050 for 2027/28, so the university's own pages are inconsistent. URL changed: input URL https://www.birmingham.ac.uk/study/undergraduate/subjects/civil-engineering-courses/civil-engineering-with-international-study-meng was not used (earlier pass recorded it as likely 404); page read in gap-fill: https://www.birmingham.ac.uk/study/undergraduate/subjects/civil-engineering-courses/civil-engineering-international-meng."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    },
+    {
+      "id": "birmingham-computer-engineering-bsc--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "£10,050 per year for domestic (UK) students for 2027/28",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/electronic-electrical-and-systems-engineering-courses/computer-engineering-bsc",
+          "sourceTitle": "Computer Engineering BSc - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page fees line shows this figure for 2027/28 with no caveat (page wording 'domestic (UK) students', line labelled 'UK/Ireland'). Other Birmingham course pages for the same entry year still say 'To be confirmed', so the university's own pages are inconsistent; this page is unqualified."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    },
+    {
+      "id": "birmingham-electronic-and-electrical-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "£10,050 per year for domestic (UK) students for 2027/28",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/electronic-electrical-and-systems-engineering-courses/electronic-electrical-engineering-beng",
+          "sourceTitle": "Electronic and Electrical Engineering BEng - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page fees line shows this figure for 2027/28 with no caveat (page wording 'domestic (UK) students', line labelled 'UK/Ireland'). Other Birmingham course pages for the same entry year still say 'To be confirmed', so the university's own pages are inconsistent; this page is unqualified. URL changed: input URL https://www.birmingham.ac.uk/study/undergraduate/subjects/electronic-electrical-and-systems-engineering-courses/electronic-and-electrical-engineering-beng was not used (earlier pass recorded it as likely 404); page read in gap-fill: https://www.birmingham.ac.uk/study/undergraduate/subjects/electronic-electrical-and-systems-engineering-courses/electronic-electrical-engineering-beng."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    },
+    {
+      "id": "birmingham-electronic-and-electrical-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/electronic-electrical-and-systems-engineering-courses/electronic-electrical-engineering-meng",
+          "sourceTitle": "Electronic and Electrical Engineering MEng - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page (Year of entry selector offers 2027 and 2026) shows 'Fees (UK/Ireland): To be confirmed' / 'TBC' with no amount; a repeat fetch of a sample page gave the same result. Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition. Other Birmingham course pages show £10,050 for 2027/28, so the university's own pages are inconsistent. URL changed: input URL https://www.birmingham.ac.uk/study/undergraduate/subjects/electronic-electrical-and-systems-engineering-courses/electronic-and-electrical-engineering-meng was not used (earlier pass recorded it as likely 404); page read in gap-fill: https://www.birmingham.ac.uk/study/undergraduate/subjects/electronic-electrical-and-systems-engineering-courses/electronic-electrical-engineering-meng."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    },
+    {
+      "id": "birmingham-electronic-and-electrical-engineering-industrial-year-beng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/electronic-electrical-and-systems-engineering-courses/electronic-electrical-engineering-industrial-beng",
+          "sourceTitle": "Electronic and Electrical Engineering with Industrial Year BEng - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page (Year of entry selector offers 2027 and 2026) shows 'Fees (UK/Ireland): To be confirmed' / 'TBC' with no amount; a repeat fetch of a sample page gave the same result. Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition. Other Birmingham course pages show £10,050 for 2027/28, so the university's own pages are inconsistent. URL changed: input URL https://www.birmingham.ac.uk/study/undergraduate/subjects/electronic-electrical-and-systems-engineering-courses/electronic-and-electrical-engineering-with-industrial-year-beng was not used (earlier pass recorded it as likely 404); page read in gap-fill: https://www.birmingham.ac.uk/study/undergraduate/subjects/electronic-electrical-and-systems-engineering-courses/electronic-electrical-engineering-industrial-beng."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    },
+    {
+      "id": "birmingham-electronic-and-electrical-engineering-industrial-year-meng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/electronic-electrical-and-systems-engineering-courses/electronic-electrical-engineering-industrial-meng",
+          "sourceTitle": "Electronic and Electrical Engineering with Industrial Year MEng - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page (Year of entry selector offers 2027 and 2026) shows 'Fees (UK/Ireland): To be confirmed' / 'TBC' with no amount; a repeat fetch of a sample page gave the same result. Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition. Other Birmingham course pages show £10,050 for 2027/28, so the university's own pages are inconsistent. URL changed: input URL https://www.birmingham.ac.uk/study/undergraduate/subjects/electronic-electrical-and-systems-engineering-courses/electronic-and-electrical-engineering-with-industrial-year-meng was not used (earlier pass recorded it as likely 404); page read in gap-fill: https://www.birmingham.ac.uk/study/undergraduate/subjects/electronic-electrical-and-systems-engineering-courses/electronic-electrical-engineering-industrial-meng."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    },
+    {
+      "id": "birmingham-mechatronic-and-robotic-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "£10,050 per year for domestic (UK) students for 2027/28",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/electronic-electrical-and-systems-engineering-courses/mechatronic-robotic-engineering-beng",
+          "sourceTitle": "Mechatronic and Robotic Engineering BEng - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page fees line shows this figure for 2027/28 with no caveat (page wording 'domestic (UK) students', line labelled 'UK/Ireland'). Other Birmingham course pages for the same entry year still say 'To be confirmed', so the university's own pages are inconsistent; this page is unqualified. URL changed: input URL https://www.birmingham.ac.uk/study/undergraduate/subjects/electronic-electrical-and-systems-engineering-courses/mechatronic-and-robotic-engineering-beng was not used (earlier pass recorded it as likely 404); page read in gap-fill: https://www.birmingham.ac.uk/study/undergraduate/subjects/electronic-electrical-and-systems-engineering-courses/mechatronic-robotic-engineering-beng."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    },
+    {
+      "id": "birmingham-mechatronic-and-robotic-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/electronic-electrical-and-systems-engineering-courses/mechatronic-robotic-engineering-meng",
+          "sourceTitle": "Mechatronic and Robotic Engineering MEng - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page (Year of entry selector offers 2027 and 2026) shows 'Fees (UK/Ireland): To be confirmed' / 'TBC' with no amount; a repeat fetch of a sample page gave the same result. Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition. Other Birmingham course pages show £10,050 for 2027/28, so the university's own pages are inconsistent. URL changed: input URL https://www.birmingham.ac.uk/study/undergraduate/subjects/electronic-electrical-and-systems-engineering-courses/mechatronic-and-robotic-engineering-meng was not used (earlier pass recorded it as likely 404); page read in gap-fill: https://www.birmingham.ac.uk/study/undergraduate/subjects/electronic-electrical-and-systems-engineering-courses/mechatronic-robotic-engineering-meng."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    },
+    {
+      "id": "birmingham-mechatronic-and-robotic-engineering-industrial-year-beng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/electronic-electrical-and-systems-engineering-courses/mechatronic-robotic-engineering-industrial-beng",
+          "sourceTitle": "Mechatronic and Robotic Engineering with Industrial Year BEng - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page (Year of entry selector offers 2027 and 2026) shows 'Fees (UK/Ireland): To be confirmed' / 'TBC' with no amount; a repeat fetch of a sample page gave the same result. Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition. Other Birmingham course pages show £10,050 for 2027/28, so the university's own pages are inconsistent. URL changed: input URL https://www.birmingham.ac.uk/study/undergraduate/subjects/electronic-electrical-and-systems-engineering-courses/mechatronic-and-robotic-engineering-with-industrial-year-beng was not used (earlier pass recorded it as likely 404); page read in gap-fill: https://www.birmingham.ac.uk/study/undergraduate/subjects/electronic-electrical-and-systems-engineering-courses/mechatronic-robotic-engineering-industrial-beng."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    },
+    {
+      "id": "birmingham-mechatronic-and-robotic-engineering-industrial-year-meng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/electronic-electrical-and-systems-engineering-courses/mechatronic-robotic-engineering-industrial-meng",
+          "sourceTitle": "Mechatronic and Robotic Engineering with Industrial Year MEng - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page (Year of entry selector offers 2027 and 2026) shows 'Fees (UK/Ireland): To be confirmed' / 'TBC' with no amount; a repeat fetch of a sample page gave the same result. Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition. Other Birmingham course pages show £10,050 for 2027/28, so the university's own pages are inconsistent. URL changed: input URL https://www.birmingham.ac.uk/study/undergraduate/subjects/electronic-electrical-and-systems-engineering-courses/mechatronic-and-robotic-engineering-with-industrial-year-meng was not used (earlier pass recorded it as likely 404); page read in gap-fill: https://www.birmingham.ac.uk/study/undergraduate/subjects/electronic-electrical-and-systems-engineering-courses/mechatronic-robotic-engineering-industrial-meng."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    },
+    {
+      "id": "birmingham-aerospace-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/aerospace-engineering-courses/aerospace-engineering-beng",
+          "sourceTitle": "Aerospace Engineering BEng - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page (Year of entry selector offers 2027 and 2026) shows 'Fees (UK/Ireland): To be confirmed' / 'TBC' with no amount; a repeat fetch of a sample page gave the same result. Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition. Other Birmingham course pages show £10,050 for 2027/28, so the university's own pages are inconsistent."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    },
+    {
+      "id": "birmingham-aerospace-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "£10,050 per year for domestic (UK) students for 2027/28",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/aerospace-engineering-courses/aerospace-engineering-meng",
+          "sourceTitle": "Aerospace Engineering MEng - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page fees line shows this figure for 2027/28 with no caveat (page wording 'domestic (UK) students', line labelled 'UK/Ireland'). Other Birmingham course pages for the same entry year still say 'To be confirmed', so the university's own pages are inconsistent; this page is unqualified."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    },
+    {
+      "id": "birmingham-materials-science-and-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "£10,050 per year for domestic (UK) students for 2027/28",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/materials-science-and-engineering-courses/materials-science-and-engineering-beng",
+          "sourceTitle": "Materials Science and Engineering BEng - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page fees line shows this figure for 2027/28 with no caveat (page wording 'domestic (UK) students', line labelled 'UK/Ireland'). Other Birmingham course pages for the same entry year still say 'To be confirmed', so the university's own pages are inconsistent; this page is unqualified."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    },
+    {
+      "id": "birmingham-materials-science-and-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/materials-science-and-engineering-courses/materials-science-and-engineering-meng",
+          "sourceTitle": "Materials Science and Engineering MEng - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page (Year of entry selector offers 2027 and 2026) shows 'Fees (UK/Ireland): To be confirmed' / 'TBC' with no amount; a repeat fetch of a sample page gave the same result. Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition. Other Birmingham course pages show £10,050 for 2027/28, so the university's own pages are inconsistent."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    },
+    {
+      "id": "birmingham-materials-science-and-engineering-industrial-experience-meng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/materials-science-and-engineering-courses/materials-science-engineering-industrial-experience-meng",
+          "sourceTitle": "Materials Science and Engineering with Industrial Experience MEng - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page (Year of entry selector offers 2027 and 2026) shows 'Fees (UK/Ireland): To be confirmed' / 'TBC' with no amount; a repeat fetch of a sample page gave the same result. Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition. Other Birmingham course pages show £10,050 for 2027/28, so the university's own pages are inconsistent. URL changed: input URL https://www.birmingham.ac.uk/study/undergraduate/subjects/materials-science-and-engineering-courses/materials-science-and-engineering-with-industrial-experience-meng was not used (earlier pass recorded it as likely 404); page read in gap-fill: https://www.birmingham.ac.uk/study/undergraduate/subjects/materials-science-and-engineering-courses/materials-science-engineering-industrial-experience-meng."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    },
+    {
+      "id": "birmingham-chemical-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/chemical-engineering-courses/chemical-engineering-beng",
+          "sourceTitle": "Chemical Engineering BEng - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page (Year of entry selector offers 2027 and 2026) shows 'Fees (UK/Ireland): To be confirmed' / 'TBC' with no amount; a repeat fetch of a sample page gave the same result. Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition. Other Birmingham course pages show £10,050 for 2027/28, so the university's own pages are inconsistent."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    },
+    {
+      "id": "birmingham-chemical-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/chemical-engineering-courses/chemical-engineering-meng",
+          "sourceTitle": "Chemical Engineering MEng - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page (Year of entry selector offers 2027 and 2026) shows 'Fees (UK/Ireland): To be confirmed' / 'TBC' with no amount; a repeat fetch of a sample page gave the same result. Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition. Other Birmingham course pages show £10,050 for 2027/28, so the university's own pages are inconsistent."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    },
+    {
+      "id": "birmingham-chemical-engineering-industrial-study-beng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/chemical-engineering-courses/chemical-engineering-industrial-beng",
+          "sourceTitle": "Chemical Engineering with Industrial Study BEng - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page (Year of entry selector offers 2027 and 2026) shows 'Fees (UK/Ireland): To be confirmed' / 'TBC' with no amount; a repeat fetch of a sample page gave the same result. Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition. Other Birmingham course pages show £10,050 for 2027/28, so the university's own pages are inconsistent. URL changed: input URL https://www.birmingham.ac.uk/study/undergraduate/subjects/chemical-engineering-courses/chemical-engineering-with-industrial-study-beng was not used (earlier pass recorded it as likely 404); page read in gap-fill: https://www.birmingham.ac.uk/study/undergraduate/subjects/chemical-engineering-courses/chemical-engineering-industrial-beng."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    },
+    {
+      "id": "birmingham-chemical-engineering-industrial-study-meng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "£10,050 per year for domestic (UK) students for 2027/28",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/chemical-engineering-courses/chemical-engineering-industrial-meng",
+          "sourceTitle": "Chemical Engineering with Industrial Study MEng - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page fees line shows this figure for 2027/28 with no caveat (page wording 'domestic (UK) students', line labelled 'UK/Ireland'). Other Birmingham course pages for the same entry year still say 'To be confirmed', so the university's own pages are inconsistent; this page is unqualified. URL changed: input URL https://www.birmingham.ac.uk/study/undergraduate/subjects/chemical-engineering-courses/chemical-engineering-with-industrial-study-meng was not used (earlier pass recorded it as likely 404); page read in gap-fill: https://www.birmingham.ac.uk/study/undergraduate/subjects/chemical-engineering-courses/chemical-engineering-industrial-meng."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    },
+    {
+      "id": "birmingham-chemical-engineering-international-study-meng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/chemical-engineering-courses/chemical-engineering-international-meng",
+          "sourceTitle": "Chemical Engineering (International Study) MEng - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page (Year of entry selector offers 2027 and 2026) shows 'Fees (UK/Ireland): To be confirmed' / 'TBC' with no amount; a repeat fetch of a sample page gave the same result. Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition. Other Birmingham course pages show £10,050 for 2027/28, so the university's own pages are inconsistent. URL changed: input URL https://www.birmingham.ac.uk/study/undergraduate/subjects/chemical-engineering-courses/chemical-engineering-international-study-meng was not used (earlier pass recorded it as likely 404); page read in gap-fill: https://www.birmingham.ac.uk/study/undergraduate/subjects/chemical-engineering-courses/chemical-engineering-international-meng."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    },
+    {
+      "id": "birmingham-chemical-engineering-international-and-industrial-study-meng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/chemical-engineering-courses/chemical-engineering-international-industrial-meng",
+          "sourceTitle": "Chemical Engineering with International and Industrial Study MEng - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page (Year of entry selector offers 2027 and 2026) shows 'Fees (UK/Ireland): To be confirmed' / 'TBC' with no amount; a repeat fetch of a sample page gave the same result. Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition. Other Birmingham course pages show £10,050 for 2027/28, so the university's own pages are inconsistent. URL changed: input URL https://www.birmingham.ac.uk/study/undergraduate/subjects/chemical-engineering-courses/chemical-engineering-with-international-and-industrial-study-meng was not used (earlier pass recorded it as likely 404); page read in gap-fill: https://www.birmingham.ac.uk/study/undergraduate/subjects/chemical-engineering-courses/chemical-engineering-international-industrial-meng."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    },
+    {
+      "id": "birmingham-energy-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/chemical-engineering-courses/energy-engineering-beng",
+          "sourceTitle": "Energy Engineering BEng - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page (Year of entry selector offers 2027 and 2026) shows 'Fees (UK/Ireland): To be confirmed' / 'TBC' with no amount; a repeat fetch of a sample page gave the same result. Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition. Other Birmingham course pages show £10,050 for 2027/28, so the university's own pages are inconsistent."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    },
+    {
+      "id": "birmingham-energy-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/chemical-engineering-courses/energy-engineering-meng",
+          "sourceTitle": "Energy Engineering MEng - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page (Year of entry selector offers 2027 and 2026) shows 'Fees (UK/Ireland): To be confirmed' / 'TBC' with no amount; a repeat fetch of a sample page gave the same result. Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition. Other Birmingham course pages show £10,050 for 2027/28, so the university's own pages are inconsistent."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    },
+    {
+      "id": "birmingham-energy-engineering-industrial-study-beng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/chemical-engineering-courses/energy-engineering-industrial-study-beng",
+          "sourceTitle": "Energy Engineering with Industrial Study BEng - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page (Year of entry selector offers 2027 and 2026) shows 'Fees (UK/Ireland): To be confirmed' / 'TBC' with no amount; a repeat fetch of a sample page gave the same result. Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition. Other Birmingham course pages show £10,050 for 2027/28, so the university's own pages are inconsistent. URL changed: input URL https://www.birmingham.ac.uk/study/undergraduate/subjects/chemical-engineering-courses/energy-engineering-with-industrial-study-beng was not used (earlier pass recorded it as likely 404); page read in gap-fill: https://www.birmingham.ac.uk/study/undergraduate/subjects/chemical-engineering-courses/energy-engineering-industrial-study-beng."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    },
+    {
+      "id": "birmingham-energy-engineering-industrial-study-meng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/chemical-engineering-courses/energy-engineering-industrial-study-meng",
+          "sourceTitle": "Energy Engineering with Industrial Study MEng - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page (Year of entry selector offers 2027 and 2026) shows 'Fees (UK/Ireland): To be confirmed' / 'TBC' with no amount; a repeat fetch of a sample page gave the same result. Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition. Other Birmingham course pages show £10,050 for 2027/28, so the university's own pages are inconsistent. URL changed: input URL https://www.birmingham.ac.uk/study/undergraduate/subjects/chemical-engineering-courses/energy-engineering-with-industrial-study-meng was not used (earlier pass recorded it as likely 404); page read in gap-fill: https://www.birmingham.ac.uk/study/undergraduate/subjects/chemical-engineering-courses/energy-engineering-industrial-study-meng."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    },
+    {
+      "id": "birmingham-engineering-and-physical-sciences-foundation-year-beng--2027",
+      "fees": [
+        {
+          "category": "UK/Ireland",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "other",
+          "basisNote": "No figure given.",
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "If you are applying for 2027 year of entry, you will be advised of the annual tuition fee closer to the time.",
+          "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/engineering-courses/engineering-physical-sciences-foundation-year",
+          "sourceTitle": "Engineering and Physical Sciences Foundation Year BEng - University of Birmingham",
+          "note": "Gap-fill pass 2026-10-01: course page (Year of entry selector offers 2027 and 2026) shows 'Fees (UK/Ireland): To be confirmed' / 'TBC' with no amount; a repeat fetch of a sample page gave the same result. Year evidence is quoted from the university's tuition fees page https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition. Other Birmingham course pages show £10,050 for 2027/28, so the university's own pages are inconsistent."
+        }
+      ],
+      "unresolved": "International fees not established: the page shows only 'UK/Ireland'; the university's international fees page (birmingham.ac.uk/study/international/fees) quotes no 2027 amounts and says 'If you are made an offer to study by the University, the yearly tuition fee will be quoted on your offer letter'. International left out."
+    }
+  ],
+  "notes2028": "No 2028-entry fees found on the pages read (the tuition fees page gives only 2026 and 2027 entry statements)."
+}

@@ -1,0 +1,2344 @@
+{
+  "universityId": "lancaster",
+  "checkedOn": "2026-09-30",
+  "method": "Lancaster course pages (lancaster.ac.uk/study/undergraduate/courses/<course>/2027/), fee table per course, fetched with cache-busting query string. Checked lancaster.ac.uk/study/undergraduate/courses/fees/ and /study/fees-and-funding/fees-in-subsequent-years/ for university-wide statements: none for 2027. Six course pages were rejected by the fetch proxy (HTTP 429 rate limit, with instruction not to re-fetch) and are recorded as unresolved.",
+  "universityWideStatements": [],
+  "courses": [
+    {
+      "id": "lancaster-physics-bsc-hons-f300--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/physics-bsc-hons-f300/2027/",
+          "sourceTitle": "Physics BSc Hons (F300) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/physics-bsc-hons-f300/2027/",
+          "sourceTitle": "Physics BSc Hons (F300) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-physics-mphys-hons-f303--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/physics-mphys-hons-f303/2027/",
+          "sourceTitle": "Physics MPhys Hons (F303) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/physics-mphys-hons-f303/2027/",
+          "sourceTitle": "Physics MPhys Hons (F303) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-physics-placement-year-bsc-hons-f306--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/physics-placement-year-bsc-hons-f306/2027/",
+          "sourceTitle": "Physics (Placement Year) BSc Hons (F306) - Lancaster University",
+          "note": "Fee table read on course page; placement-year fee wording (accordion) not retrieved.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/physics-placement-year-bsc-hons-f306/2027/",
+          "sourceTitle": "Physics (Placement Year) BSc Hons (F306) - Lancaster University",
+          "note": "Fee table read on course page; placement-year fee wording (accordion) not retrieved.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-physics-placement-year-mphys-hons-f307--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/physics-placement-year-mphys-hons-f307/2027/",
+          "sourceTitle": "Physics (Placement Year) MPhys Hons (F307) - Lancaster University",
+          "note": "Fee table read on course page; placement-year fee wording (accordion) not retrieved.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/physics-placement-year-mphys-hons-f307/2027/",
+          "sourceTitle": "Physics (Placement Year) MPhys Hons (F307) - Lancaster University",
+          "note": "Fee table read on course page; placement-year fee wording (accordion) not retrieved.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-physics-study-abroad-bsc-hons-f304--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "For 2027/28:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/physics-study-abroad-bsc-hons-f304/2027/",
+          "sourceTitle": "Physics (Study Abroad)",
+          "note": "Cache-busted fetch (?v=2) of course page: fee table for 2027/28 with no provisional/subject-to-approval caveat. A plain-URL fetch of the same page returned an older copy saying 'the 2027/28 entry fees have not yet been set' with 2026/27 figures (not recorded); the cache-busted copy superseded it.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "For 2027/28:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/physics-study-abroad-bsc-hons-f304/2027/",
+          "sourceTitle": "Physics (Study Abroad)",
+          "note": "Cache-busted fetch (?v=2) of course page: fee table for 2027/28 with no provisional/subject-to-approval caveat. A plain-URL fetch of the same page returned an older copy saying 'the 2027/28 entry fees have not yet been set' with 2026/27 figures (not recorded); the cache-busted copy superseded it.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-physics-study-abroad-mphys-hons-f305--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Annual Tuition Fees for 2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/physics-study-abroad-mphys-hons-f305/2027/",
+          "sourceTitle": "Physics (Study Abroad) MPhys Hons (F305)",
+          "note": "Cache-busted fetch (?v=2) of course page: fee table for 2027/28 with no provisional/subject-to-approval caveat. A plain-URL fetch of the same page returned an older copy saying 'the 2027/28 entry fees have not yet been set' with 2026/27 figures (not recorded); the cache-busted copy superseded it.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Annual Tuition Fees for 2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/physics-study-abroad-mphys-hons-f305/2027/",
+          "sourceTitle": "Physics (Study Abroad) MPhys Hons (F305)",
+          "note": "Cache-busted fetch (?v=2) of course page: fee table for 2027/28 with no provisional/subject-to-approval caveat. A plain-URL fetch of the same page returned an older copy saying 'the 2027/28 entry fees have not yet been set' with 2026/27 figures (not recorded); the cache-busted copy superseded it.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-physics-foundation-year-bsc-hons-f30f--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/physics-foundation-year-bsc-hons-f30f/2027/",
+          "sourceTitle": "Physics (with a Foundation Year) BSc Hons (F30F) - Lancaster University",
+          "note": "Page lists International as \"n/a\" (no international fee stated). Foundation year is at Cardinal Newman College, Preston.",
+          "category": "Home",
+          "categoryKind": "home"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-physics-with-astrophysics-bsc-hons-f3fm--2027",
+      "fees": [],
+      "unresolved": "Fee not established: a plain-URL fetch returned an older copy stating \"We set our fees on an annual basis and the 2027/28 entry fees have not yet been set\" (with 2026/27 figures, not recorded). The cache-busted re-fetch was refused by the fetch proxy (HTTP 429, asked not to fetch again), so the staleness could not be checked. Re-check manually."
+    },
+    {
+      "id": "lancaster-physics-with-astrophysics-mphys-hons-f3f5--2027",
+      "fees": [],
+      "unresolved": "Fee not established: the fetch proxy refused the page (HTTP 429, asked not to fetch it again) in both the first pass and the gap-fill pass. Re-check manually."
+    },
+    {
+      "id": "lancaster-physics-with-astrophysics-placement-year-bsc-hons-f3f8--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/physics-with-astrophysics-placement-year-bsc-hons-f3f8/2027/",
+          "sourceTitle": "Physics with Astrophysics (Placement Year) BSc Hons",
+          "note": "Cache-busted fetch (?v=2) of course page: fee table for 2027/28 with no provisional/subject-to-approval caveat.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/physics-with-astrophysics-placement-year-bsc-hons-f3f8/2027/",
+          "sourceTitle": "Physics with Astrophysics (Placement Year) BSc Hons",
+          "note": "Cache-busted fetch (?v=2) of course page: fee table for 2027/28 with no provisional/subject-to-approval caveat.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-physics-with-astrophysics-placement-year-mphys-hons-f3f9--2027",
+      "fees": [],
+      "unresolved": "Fee not established: the fetch proxy refused the page (HTTP 429, asked not to fetch it again) in both the first pass and the gap-fill pass. Re-check manually."
+    },
+    {
+      "id": "lancaster-physics-with-astrophysics-study-abroad-bsc-hons-f3f1--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/physics-with-astrophysics-study-abroad-bsc-hons-f3f1/2027/",
+          "sourceTitle": "Physics with Astrophysics (Study Abroad) BSc Hons (F3F1) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/physics-with-astrophysics-study-abroad-bsc-hons-f3f1/2027/",
+          "sourceTitle": "Physics with Astrophysics (Study Abroad) BSc Hons (F3F1) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-physics-with-astrophysics-study-abroad-mphys-hons-f3f7--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/physics-with-astrophysics-study-abroad-mphys-hons-f3f7/2027/",
+          "sourceTitle": "Physics with Astrophysics (Study Abroad) MPhys Hons (F3F7) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/physics-with-astrophysics-study-abroad-mphys-hons-f3f7/2027/",
+          "sourceTitle": "Physics with Astrophysics (Study Abroad) MPhys Hons (F3F7) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-theoretical-physics-bsc-hons-f340--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/theoretical-physics-bsc-hons-f340/2027/",
+          "sourceTitle": "Theoretical Physics BSc Hons (F340) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/theoretical-physics-bsc-hons-f340/2027/",
+          "sourceTitle": "Theoretical Physics BSc Hons (F340) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-theoretical-physics-mphys-hons-f321--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/theoretical-physics-mphys-hons-f321/2027/",
+          "sourceTitle": "Theoretical Physics MPhys Hons (F321) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/theoretical-physics-mphys-hons-f321/2027/",
+          "sourceTitle": "Theoretical Physics MPhys Hons (F321) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-theoretical-physics-placement-year-bsc-hons-f342--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/theoretical-physics-placement-year-bsc-hons-f342/2027/",
+          "sourceTitle": "Theoretical Physics (Placement Year) BSc Hons (F342) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/theoretical-physics-placement-year-bsc-hons-f342/2027/",
+          "sourceTitle": "Theoretical Physics (Placement Year) BSc Hons (F342) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-theoretical-physics-placement-year-mphys-hons-f323--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/theoretical-physics-placement-year-mphys-hons-f323/2027/",
+          "sourceTitle": "Theoretical Physics (Placement Year) MPhys Hons (F323) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/theoretical-physics-placement-year-mphys-hons-f323/2027/",
+          "sourceTitle": "Theoretical Physics (Placement Year) MPhys Hons (F323) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-theoretical-physics-study-abroad-bsc-hons-f341--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/theoretical-physics-study-abroad-bsc-hons-f341/2027/",
+          "sourceTitle": "Theoretical Physics (Study Abroad) BSc Hons (F341) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/theoretical-physics-study-abroad-bsc-hons-f341/2027/",
+          "sourceTitle": "Theoretical Physics (Study Abroad) BSc Hons (F341) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-theoretical-physics-study-abroad-mphys-hons-f322--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/theoretical-physics-study-abroad-mphys-hons-f322/2027/",
+          "sourceTitle": "Theoretical Physics (Study Abroad) MPhys Hons (F322) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/theoretical-physics-study-abroad-mphys-hons-f322/2027/",
+          "sourceTitle": "Theoretical Physics (Study Abroad) MPhys Hons (F322) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-theoretical-physics-with-mathematics-bsc-hons-f3gc--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/theoretical-physics-with-mathematics-bsc-hons-f3gc/2027/",
+          "sourceTitle": "Theoretical Physics with Mathematics BSc Hons (F3GC) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/theoretical-physics-with-mathematics-bsc-hons-f3gc/2027/",
+          "sourceTitle": "Theoretical Physics with Mathematics BSc Hons (F3GC) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-theoretical-physics-with-mathematics-msci-hons-f3g1--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/theoretical-physics-with-mathematics-msci-hons-f3g1/2027/",
+          "sourceTitle": "Theoretical Physics with Mathematics MSci Hons (F3G1) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/theoretical-physics-with-mathematics-msci-hons-f3g1/2027/",
+          "sourceTitle": "Theoretical Physics with Mathematics MSci Hons (F3G1) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-theoretical-physics-with-mathematics-placement-year-bsc-hons-f3g6--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/theoretical-physics-with-mathematics-placement-year-bsc-hons-f3g6/2027/",
+          "sourceTitle": "Theoretical Physics with Mathematics (Placement Year) BSc Hons (F3G6) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/theoretical-physics-with-mathematics-placement-year-bsc-hons-f3g6/2027/",
+          "sourceTitle": "Theoretical Physics with Mathematics (Placement Year) BSc Hons (F3G6) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-theoretical-physics-with-mathematics-placement-year-msci-hons-f3g7--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/theoretical-physics-with-mathematics-placement-year-msci-hons-f3g7/2027/",
+          "sourceTitle": "Theoretical Physics with Mathematics (Placement Year) MSci Hons (F3G7) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/theoretical-physics-with-mathematics-placement-year-msci-hons-f3g7/2027/",
+          "sourceTitle": "Theoretical Physics with Mathematics (Placement Year) MSci Hons (F3G7) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-theoretical-physics-with-mathematics-study-abroad-bsc-hons-f3g4--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/theoretical-physics-with-mathematics-study-abroad-bsc-hons-f3g4/2027/",
+          "sourceTitle": "Theoretical Physics with Mathematics (Study Abroad) BSc Hons (F3G4) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/theoretical-physics-with-mathematics-study-abroad-bsc-hons-f3g4/2027/",
+          "sourceTitle": "Theoretical Physics with Mathematics (Study Abroad) BSc Hons (F3G4) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-theoretical-physics-with-mathematics-study-abroad-msci-hons-f3g5--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/theoretical-physics-with-mathematics-study-abroad-msci-hons-f3g5/2027/",
+          "sourceTitle": "Theoretical Physics with Mathematics (Study Abroad) MSci Hons (F3G5) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/theoretical-physics-with-mathematics-study-abroad-msci-hons-f3g5/2027/",
+          "sourceTitle": "Theoretical Physics with Mathematics (Study Abroad) MSci Hons (F3G5) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-engineering-beng-hons-h100--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/engineering-beng-hons-h100/2027/",
+          "sourceTitle": "Engineering BEng Hons (H100) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/engineering-beng-hons-h100/2027/",
+          "sourceTitle": "Engineering BEng Hons (H100) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-engineering-meng-hons-h102--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/engineering-meng-hons-h102/2027/",
+          "sourceTitle": "Engineering MEng Hons (H102) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/engineering-meng-hons-h102/2027/",
+          "sourceTitle": "Engineering MEng Hons (H102) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-engineering-study-abroad-beng-hons-h103--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/engineering-study-abroad-beng-hons-h103/2027/",
+          "sourceTitle": "Engineering (Study Abroad) BEng Hons (H103) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/engineering-study-abroad-beng-hons-h103/2027/",
+          "sourceTitle": "Engineering (Study Abroad) BEng Hons (H103) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-engineering-study-abroad-meng-hons-h104--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/engineering-study-abroad-meng-hons-h104/2027/",
+          "sourceTitle": "Engineering (Study Abroad) MEng Hons (H104) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/engineering-study-abroad-meng-hons-h104/2027/",
+          "sourceTitle": "Engineering (Study Abroad) MEng Hons (H104) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-engineering-placement-year-beng-hons-h106--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/engineering-placement-year-beng-hons-h106/2027/",
+          "sourceTitle": "Engineering with Placement Year BEng Hons (H106) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/engineering-placement-year-beng-hons-h106/2027/",
+          "sourceTitle": "Engineering with Placement Year BEng Hons (H106) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-engineering-placement-year-meng-hons-h105--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/engineering-placement-year-meng-hons-h105/2027/",
+          "sourceTitle": "Engineering with Placement Year MEng Hons (H105) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/engineering-placement-year-meng-hons-h105/2027/",
+          "sourceTitle": "Engineering with Placement Year MEng Hons (H105) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-engineering-with-a-foundation-year-beng-hons-h10f--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/engineering-with-a-foundation-year-beng-hons-h10f/2027/",
+          "sourceTitle": "Engineering (with a Foundation Year) BEng Hons (H10F) - Lancaster University",
+          "note": "Page lists International as \"n/a\" (no international fee stated).",
+          "category": "Home",
+          "categoryKind": "home"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-chemical-engineering-beng-hons-h800--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/chemical-engineering-beng-hons-h800/2027/",
+          "sourceTitle": "Chemical Engineering BEng Hons (H800) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/chemical-engineering-beng-hons-h800/2027/",
+          "sourceTitle": "Chemical Engineering BEng Hons (H800) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-chemical-engineering-meng-hons-h811--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/chemical-engineering-meng-hons-h811/2027/",
+          "sourceTitle": "Chemical Engineering MEng Hons (H811) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/chemical-engineering-meng-hons-h811/2027/",
+          "sourceTitle": "Chemical Engineering MEng Hons (H811) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-chemical-engineering-study-abroad-beng-hons-h812--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/chemical-engineering-study-abroad-beng-hons-h812/2027/",
+          "sourceTitle": "Chemical Engineering (Study Abroad) BEng Hons (H812) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/chemical-engineering-study-abroad-beng-hons-h812/2027/",
+          "sourceTitle": "Chemical Engineering (Study Abroad) BEng Hons (H812) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-chemical-engineering-study-abroad-meng-hons-h813--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/chemical-engineering-study-abroad-meng-hons-h813/2027/",
+          "sourceTitle": "Chemical Engineering (Study Abroad) MEng Hons (H813) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/chemical-engineering-study-abroad-meng-hons-h813/2027/",
+          "sourceTitle": "Chemical Engineering (Study Abroad) MEng Hons (H813) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-chemical-engineering-placement-year-beng-hons-h814--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/chemical-engineering-placement-year-beng-hons-h814/2027/",
+          "sourceTitle": "Chemical Engineering with Placement Year BEng Hons (H814) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/chemical-engineering-placement-year-beng-hons-h814/2027/",
+          "sourceTitle": "Chemical Engineering with Placement Year BEng Hons (H814) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-chemical-engineering-placement-year-meng-hons-h815--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/chemical-engineering-placement-year-meng-hons-h815/2027/",
+          "sourceTitle": "Chemical Engineering with Placement Year MEng Hons (H815) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/chemical-engineering-placement-year-meng-hons-h815/2027/",
+          "sourceTitle": "Chemical Engineering with Placement Year MEng Hons (H815) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-chemical-engineering-with-a-foundation-year-beng-hons-h80f--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/chemical-engineering-with-a-foundation-year-beng-hons-h80f/2027/",
+          "sourceTitle": "Chemical Engineering (with a Foundation Year) BEng Hons (H80F) - Lancaster University",
+          "note": "Page lists International as \"n/a\" (no international fee stated).",
+          "category": "Home",
+          "categoryKind": "home"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-electronic-and-electrical-engineering-beng-hons-h607--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/electronic-and-electrical-engineering-beng-hons-h607/2027/",
+          "sourceTitle": "Electronic and Electrical Engineering BEng Hons (H607) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/electronic-and-electrical-engineering-beng-hons-h607/2027/",
+          "sourceTitle": "Electronic and Electrical Engineering BEng Hons (H607) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-electronic-and-electrical-engineering-meng-hons-h606--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/electronic-and-electrical-engineering-meng-hons-h606/2027/",
+          "sourceTitle": "Electronic and Electrical Engineering MEng Hons (H606) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/electronic-and-electrical-engineering-meng-hons-h606/2027/",
+          "sourceTitle": "Electronic and Electrical Engineering MEng Hons (H606) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-electronic-and-electrical-engineering-study-abroad-beng-hons-h608--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/electronic-and-electrical-engineering-study-abroad-beng-hons-h608/2027/",
+          "sourceTitle": "Electronic and Electrical Engineering (Study Abroad) BEng Hons (H608) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/electronic-and-electrical-engineering-study-abroad-beng-hons-h608/2027/",
+          "sourceTitle": "Electronic and Electrical Engineering (Study Abroad) BEng Hons (H608) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-electronic-and-electrical-engineering-study-abroad-meng-hons-h609--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/electronic-and-electrical-engineering-study-abroad-meng-hons-h609/2027/",
+          "sourceTitle": "Electronic and Electrical Engineering (Study Abroad) MEng Hons (H609) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/electronic-and-electrical-engineering-study-abroad-meng-hons-h609/2027/",
+          "sourceTitle": "Electronic and Electrical Engineering (Study Abroad) MEng Hons (H609) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-electronic-and-electrical-engineering-placement-year-beng-hons-h610--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/electronic-and-electrical-engineering-placement-year-beng-hons-h610/2027/",
+          "sourceTitle": "Electronic and Electrical Engineering with Placement Year BEng Hons (H610) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/electronic-and-electrical-engineering-placement-year-beng-hons-h610/2027/",
+          "sourceTitle": "Electronic and Electrical Engineering with Placement Year BEng Hons (H610) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-electronic-and-electrical-engineering-placement-year-meng-hons-h611--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/electronic-and-electrical-engineering-placement-year-meng-hons-h611/2027/",
+          "sourceTitle": "Electronic and Electrical Engineering with Placement Year MEng Hons (H611) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/electronic-and-electrical-engineering-placement-year-meng-hons-h611/2027/",
+          "sourceTitle": "Electronic and Electrical Engineering with Placement Year MEng Hons (H611) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-electronic-and-electrical-engineering-with-a-foundation-year-beng-hons-h60f--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/electronic-and-electrical-engineering-with-a-foundation-year-beng-hons-h60f/2027/",
+          "sourceTitle": "Electronic and Electrical Engineering (with a Foundation Year) BEng Hons (H60F) - Lancaster University",
+          "note": "Page lists International as \"n/a\" (no international fee stated).",
+          "category": "Home",
+          "categoryKind": "home"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-mechanical-engineering-beng-hons-h300--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/mechanical-engineering-beng-hons-h300/2027/",
+          "sourceTitle": "Mechanical Engineering BEng Hons (H300) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/mechanical-engineering-beng-hons-h300/2027/",
+          "sourceTitle": "Mechanical Engineering BEng Hons (H300) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-mechanical-engineering-meng-hons-h303--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/mechanical-engineering-meng-hons-h303/2027/",
+          "sourceTitle": "Mechanical Engineering MEng Hons (H303) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/mechanical-engineering-meng-hons-h303/2027/",
+          "sourceTitle": "Mechanical Engineering MEng Hons (H303) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-mechanical-engineering-study-abroad-beng-hons-h305--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/mechanical-engineering-study-abroad-beng-hons-h305/2027/",
+          "sourceTitle": "Mechanical Engineering (Study Abroad) BEng Hons (H305) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/mechanical-engineering-study-abroad-beng-hons-h305/2027/",
+          "sourceTitle": "Mechanical Engineering (Study Abroad) BEng Hons (H305) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-mechanical-engineering-study-abroad-meng-hons-h306--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/mechanical-engineering-study-abroad-meng-hons-h306/2027/",
+          "sourceTitle": "Mechanical Engineering (Study Abroad) MEng Hons (H306) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/mechanical-engineering-study-abroad-meng-hons-h306/2027/",
+          "sourceTitle": "Mechanical Engineering (Study Abroad) MEng Hons (H306) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-mechanical-engineering-placement-year-beng-hons-h307--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/mechanical-engineering-placement-year-beng-hons-h307/2027/",
+          "sourceTitle": "Mechanical Engineering with Placement Year BEng Hons (H307) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/mechanical-engineering-placement-year-beng-hons-h307/2027/",
+          "sourceTitle": "Mechanical Engineering with Placement Year BEng Hons (H307) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-mechanical-engineering-placement-year-meng-hons-h308--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/mechanical-engineering-placement-year-meng-hons-h308/2027/",
+          "sourceTitle": "Mechanical Engineering with Placement Year MEng Hons (H308) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/mechanical-engineering-placement-year-meng-hons-h308/2027/",
+          "sourceTitle": "Mechanical Engineering with Placement Year MEng Hons (H308) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-mechanical-engineering-with-a-foundation-year-beng-hons-h30f--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/mechanical-engineering-with-a-foundation-year-beng-hons-h30f/2027/",
+          "sourceTitle": "Mechanical Engineering (with a Foundation Year) BEng Hons (H30F) - Lancaster University",
+          "note": "Page lists International as \"n/a\" (no international fee stated).",
+          "category": "Home",
+          "categoryKind": "home"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-mechatronic-engineering-beng-hons-hh63--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/mechatronic-engineering-beng-hons-hh63/2027/",
+          "sourceTitle": "Mechatronic Engineering BEng Hons (HH63) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/mechatronic-engineering-beng-hons-hh63/2027/",
+          "sourceTitle": "Mechatronic Engineering BEng Hons (HH63) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-mechatronic-engineering-meng-hons-hhh6--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/mechatronic-engineering-meng-hons-hhh6/2027/",
+          "sourceTitle": "Mechatronic Engineering MEng Hons (HHH6) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/mechatronic-engineering-meng-hons-hhh6/2027/",
+          "sourceTitle": "Mechatronic Engineering MEng Hons (HHH6) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-mechatronic-engineering-study-abroad-beng-hons-hh64--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/mechatronic-engineering-study-abroad-beng-hons-hh64/2027/",
+          "sourceTitle": "Mechatronic Engineering (Study Abroad) BEng Hons (HH64) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/mechatronic-engineering-study-abroad-beng-hons-hh64/2027/",
+          "sourceTitle": "Mechatronic Engineering (Study Abroad) BEng Hons (HH64) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-mechatronic-engineering-study-abroad-meng-hons-hhh7--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/mechatronic-engineering-study-abroad-meng-hons-hhh7/2027/",
+          "sourceTitle": "Mechatronic Engineering (Study Abroad) MEng Hons (HHH7) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/mechatronic-engineering-study-abroad-meng-hons-hhh7/2027/",
+          "sourceTitle": "Mechatronic Engineering (Study Abroad) MEng Hons (HHH7) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-mechatronic-engineering-placement-year-beng-hons-hh65--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/mechatronic-engineering-placement-year-beng-hons-hh65/2027/",
+          "sourceTitle": "Mechatronic Engineering with Placement Year BEng Hons (HH65) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/mechatronic-engineering-placement-year-beng-hons-hh65/2027/",
+          "sourceTitle": "Mechatronic Engineering with Placement Year BEng Hons (HH65) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-mechatronic-engineering-placement-year-meng-hons-hhh8--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/mechatronic-engineering-placement-year-meng-hons-hhh8/2027/",
+          "sourceTitle": "Mechatronic Engineering with Placement Year MEng Hons (HHH8) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/mechatronic-engineering-placement-year-meng-hons-hhh8/2027/",
+          "sourceTitle": "Mechatronic Engineering with Placement Year MEng Hons (HHH8) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-mechatronic-engineering-with-a-foundation-year-beng-hons-hh6f--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/mechatronic-engineering-with-a-foundation-year-beng-hons-hh6f/2027/",
+          "sourceTitle": "Mechatronic Engineering (with a Foundation Year) BEng Hons (HH6F) - Lancaster University",
+          "note": "Page lists International as \"n/a\" (no international fee stated).",
+          "category": "Home",
+          "categoryKind": "home"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-nuclear-engineering-beng-hons-h820--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/nuclear-engineering-beng-hons-h820/2027/",
+          "sourceTitle": "Nuclear Engineering BEng Hons (H820) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/nuclear-engineering-beng-hons-h820/2027/",
+          "sourceTitle": "Nuclear Engineering BEng Hons (H820) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-nuclear-engineering-meng-hons-h821--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/nuclear-engineering-meng-hons-h821/2027/",
+          "sourceTitle": "Nuclear Engineering MEng Hons (H821) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/nuclear-engineering-meng-hons-h821/2027/",
+          "sourceTitle": "Nuclear Engineering MEng Hons (H821) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-nuclear-engineering-study-abroad-beng-hons-h822--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/nuclear-engineering-study-abroad-beng-hons-h822/2027/",
+          "sourceTitle": "Nuclear Engineering (Study Abroad) BEng Hons (H822) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/nuclear-engineering-study-abroad-beng-hons-h822/2027/",
+          "sourceTitle": "Nuclear Engineering (Study Abroad) BEng Hons (H822) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-nuclear-engineering-study-abroad-meng-hons-h823--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/nuclear-engineering-study-abroad-meng-hons-h823/2027/",
+          "sourceTitle": "Nuclear Engineering (Study Abroad) MEng Hons (H823) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/nuclear-engineering-study-abroad-meng-hons-h823/2027/",
+          "sourceTitle": "Nuclear Engineering (Study Abroad) MEng Hons (H823) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-nuclear-engineering-with-a-foundation-year-beng-hons-h82f--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "2027/28",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/nuclear-engineering-with-a-foundation-year-beng-hons-h82f/2027/",
+          "sourceTitle": "Nuclear Engineering (with a Foundation Year) BEng Hons (H82F) - Lancaster University",
+          "note": "Page lists International as \"n/a\" (no international fee stated).",
+          "category": "Home",
+          "categoryKind": "home"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-nuclear-engineering-placement-year-beng-hons-h824--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/nuclear-engineering-with-placement-year-beng-hons-h824/2027/",
+          "sourceTitle": "Nuclear Engineering with Placement Year BEng Hons (H824) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/nuclear-engineering-with-placement-year-beng-hons-h824/2027/",
+          "sourceTitle": "Nuclear Engineering with Placement Year BEng Hons (H824) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "lancaster-nuclear-engineering-placement-year-meng-hons-h825--2027",
+      "fees": [
+        {
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/nuclear-engineering-with-placement-year-meng-hons-h825/2027/",
+          "sourceTitle": "Nuclear Engineering with Placement Year MEng Hons (H825) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "Home",
+          "categoryKind": "home"
+        },
+        {
+          "status": "published",
+          "amount": 31700,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Our Undergraduate Tuition Fees for 2027/28 are:",
+          "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/nuclear-engineering-with-placement-year-meng-hons-h825/2027/",
+          "sourceTitle": "Nuclear Engineering with Placement Year MEng Hons (H825) - Lancaster University",
+          "note": "Fee table on course page headed for 2027/28; no provisional/subject-to-approval caveat shown.",
+          "category": "International",
+          "categoryKind": "international"
+        }
+      ],
+      "unresolved": null
+    }
+  ],
+  "notes2028": "No 2028-entry fees found: the /2028/ course URL pattern (e.g. physics-bsc-hons-f300/2028/) failed with \"too many redirects\", the undergraduate fees page gives no figures, and the fees-in-subsequent-years page showed nothing for 2027/28 or 2028."
+}

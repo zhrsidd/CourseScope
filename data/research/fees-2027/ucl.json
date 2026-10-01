@@ -1,0 +1,826 @@
+{
+  "universityId": "ucl",
+  "checkedOn": "2026-09-30",
+  "method": "WebFetch of each official UCL course page (ucl.ac.uk/study/prospective-students/undergraduate/courses/<slug>) plus the UCL Undergraduate fees for 2027 to 2028 schedule page and fee-schedules index; suspicious pages re-fetched with cache-busting query strings. The schedule page embeds its overseas fee table in a script tool, so per-course overseas fees come from course pages only.",
+  "universityWideStatements": [
+    {
+      "quote": "UK undergraduate fees for 2027-28 entry are £10,050 and are for the first year only.",
+      "url": "https://www.ucl.ac.uk/study/student-finances/tuition-fees/fee-schedules/fee-schedules-2027-2028/undergraduate-fees-2027-2028",
+      "title": "Undergraduate fees for 2027 to 2028 | Study at UCL",
+      "appliesTo": "UK undergraduates, 2027-28 entry (no parliamentary-approval caveat on this page; course pages carry the caveat, so UK is recorded as awaiting-publication/indicative)"
+    },
+    {
+      "quote": "Overseas fees shown below will be charged to 2027-28 entrants and are for the first year only.",
+      "url": "https://www.ucl.ac.uk/study/student-finances/tuition-fees/fee-schedules/fee-schedules-2027-2028/undergraduate-fees-2027-2028",
+      "title": "Undergraduate fees for 2027 to 2028 | Study at UCL",
+      "appliesTo": "Overseas fees in the embedded fee tool (not rendered in fetched text); per-course figures taken from course pages"
+    },
+    {
+      "quote": "UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.",
+      "url": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/physics-bsc",
+      "title": "Physics BSc | Study at UCL (same wording on all course pages)",
+      "appliesTo": "UK fee caveat on course pages"
+    }
+  ],
+  "courses": [
+    {
+      "id": "ucl-physics-bsc--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; later years may increase per UCL Student Terms and Conditions",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "yearEvidence": "UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/physics-bsc",
+          "sourceTitle": "Physics BSc | Study at UCL",
+          "note": "Course page shows \"UK students: £10,050 per year\" (fees table, full time) with the caveat \"UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.\" UCL's 2027-28 undergraduate fee schedule (https://www.ucl.ac.uk/study/student-finances/tuition-fees/fee-schedules/fee-schedules-2027-2028/undergraduate-fees-2027-2028) states without this caveat: \"UK undergraduate fees for 2027-28 entry are £10,050 and are for the first year only.\" Course page figure is treated as provisional because of its own caveat."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; international students get a cohort guarantee (fee not increased during the programme) with UCL reserving the right to pass on government levies/taxes",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 44400,
+          "indicativeAmount": null,
+          "yearEvidence": "International fees shown are the fees that will be charged to 2027/28 entrants.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/physics-bsc",
+          "sourceTitle": "Physics BSc | Study at UCL",
+          "note": "Course page fees table: International £44,400 per year, full time; start date September 2027."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "ucl-physics-msci--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; later years may increase per UCL Student Terms and Conditions",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "yearEvidence": "UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/physics-msci",
+          "sourceTitle": "Physics MSci | Study at UCL",
+          "note": "Course page shows \"UK students: £10,050 per year\" (fees table, full time) with the caveat \"UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.\" UCL's 2027-28 undergraduate fee schedule (https://www.ucl.ac.uk/study/student-finances/tuition-fees/fee-schedules/fee-schedules-2027-2028/undergraduate-fees-2027-2028) states without this caveat: \"UK undergraduate fees for 2027-28 entry are £10,050 and are for the first year only.\" Course page figure is treated as provisional because of its own caveat."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; international students get a cohort guarantee (fee not increased during the programme) with UCL reserving the right to pass on government levies/taxes",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 44400,
+          "indicativeAmount": null,
+          "yearEvidence": "International fees shown are the fees that will be charged to 2027/28 entrants.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/physics-msci",
+          "sourceTitle": "Physics MSci | Study at UCL",
+          "note": "Course page fees table: International £44,400 per year, full time; start date September 2027."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "ucl-theoretical-physics-bsc--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; later years may increase per UCL Student Terms and Conditions",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "yearEvidence": "UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/theoretical-physics-bsc",
+          "sourceTitle": "Theoretical Physics BSc | Study at UCL",
+          "note": "Course page shows \"UK students: £10,050 per year\" (fees table, full time) with the caveat \"UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.\" UCL's 2027-28 undergraduate fee schedule (https://www.ucl.ac.uk/study/student-finances/tuition-fees/fee-schedules/fee-schedules-2027-2028/undergraduate-fees-2027-2028) states without this caveat: \"UK undergraduate fees for 2027-28 entry are £10,050 and are for the first year only.\" Course page figure is treated as provisional because of its own caveat."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; international students get a cohort guarantee (fee not increased during the programme) with UCL reserving the right to pass on government levies/taxes",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 44400,
+          "indicativeAmount": null,
+          "yearEvidence": "International fees shown are the fees that will be charged to 2027/28 entrants.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/theoretical-physics-bsc",
+          "sourceTitle": "Theoretical Physics BSc | Study at UCL",
+          "note": "Course page fees table: International £44,400 per year, full time; start date September 2027."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "ucl-theoretical-physics-msci--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; later years may increase per UCL Student Terms and Conditions",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "yearEvidence": "UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/theoretical-physics-msci",
+          "sourceTitle": "Theoretical Physics MSci | Study at UCL",
+          "note": "Course page shows \"UK students: £10,050 per year\" (fees table, full time) with the caveat \"UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.\" UCL's 2027-28 undergraduate fee schedule (https://www.ucl.ac.uk/study/student-finances/tuition-fees/fee-schedules/fee-schedules-2027-2028/undergraduate-fees-2027-2028) states without this caveat: \"UK undergraduate fees for 2027-28 entry are £10,050 and are for the first year only.\" Course page figure is treated as provisional because of its own caveat."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; international students get a cohort guarantee (fee not increased during the programme) with UCL reserving the right to pass on government levies/taxes",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 44400,
+          "indicativeAmount": null,
+          "yearEvidence": "International fees shown are the fees that will be charged to 2027/28 entrants.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/theoretical-physics-msci",
+          "sourceTitle": "Theoretical Physics MSci | Study at UCL",
+          "note": "Course page fees table: International £44,400 per year, full time; start date September 2027."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "ucl-astrophysics-bsc--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; later years may increase per UCL Student Terms and Conditions",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "yearEvidence": "UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/astrophysics-bsc",
+          "sourceTitle": "Astrophysics BSc | Study at UCL",
+          "note": "Course page shows \"UK students: £10,050 per year\" (fees table, full time) with the caveat \"UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.\" UCL's 2027-28 undergraduate fee schedule (https://www.ucl.ac.uk/study/student-finances/tuition-fees/fee-schedules/fee-schedules-2027-2028/undergraduate-fees-2027-2028) states without this caveat: \"UK undergraduate fees for 2027-28 entry are £10,050 and are for the first year only.\" Course page figure is treated as provisional because of its own caveat."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; international students get a cohort guarantee (fee not increased during the programme) with UCL reserving the right to pass on government levies/taxes",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 44400,
+          "indicativeAmount": null,
+          "yearEvidence": "International fees shown are the fees that will be charged to 2027/28 entrants.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/astrophysics-bsc",
+          "sourceTitle": "Astrophysics BSc | Study at UCL",
+          "note": "Course page fees table: International £44,400 per year, full time; start date September 2027."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "ucl-astrophysics-msci--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; later years may increase per UCL Student Terms and Conditions",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "yearEvidence": "UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/astrophysics-msci",
+          "sourceTitle": "Astrophysics MSci | Study at UCL",
+          "note": "Course page shows \"UK students: £10,050 per year\" (fees table, full time) with the caveat \"UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.\" UCL's 2027-28 undergraduate fee schedule (https://www.ucl.ac.uk/study/student-finances/tuition-fees/fee-schedules/fee-schedules-2027-2028/undergraduate-fees-2027-2028) states without this caveat: \"UK undergraduate fees for 2027-28 entry are £10,050 and are for the first year only.\" Course page figure is treated as provisional because of its own caveat."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; international students get a cohort guarantee (fee not increased during the programme) with UCL reserving the right to pass on government levies/taxes",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 44400,
+          "indicativeAmount": null,
+          "yearEvidence": "International fees shown are the fees that will be charged to 2027/28 entrants.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/astrophysics-msci",
+          "sourceTitle": "Astrophysics MSci | Study at UCL",
+          "note": "Course page fees table: International £44,400 per year, full time; start date September 2027."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "ucl-mathematics-and-physics-bsc--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; later years may increase per UCL Student Terms and Conditions",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "yearEvidence": "UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/mathematics-and-physics-bsc",
+          "sourceTitle": "Mathematics and Physics BSc | Study at UCL",
+          "note": "Course page shows \"UK students: £10,050 per year\" (fees table, full time) with the caveat \"UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.\" UCL's 2027-28 undergraduate fee schedule (https://www.ucl.ac.uk/study/student-finances/tuition-fees/fee-schedules/fee-schedules-2027-2028/undergraduate-fees-2027-2028) states without this caveat: \"UK undergraduate fees for 2027-28 entry are £10,050 and are for the first year only.\" Course page figure is treated as provisional because of its own caveat."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; international students get a cohort guarantee (fee not increased during the programme) with UCL reserving the right to pass on government levies/taxes",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 44400,
+          "indicativeAmount": null,
+          "yearEvidence": "International fees shown are the fees that will be charged to 2027/28 entrants.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/mathematics-and-physics-bsc",
+          "sourceTitle": "Mathematics and Physics BSc | Study at UCL",
+          "note": "Course page fees table: International £44,400 per year, full time; start date September 2027."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "ucl-physics-with-medical-physics-bsc--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; later years may increase per UCL Student Terms and Conditions",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "yearEvidence": "UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/physics-medical-physics-bsc",
+          "sourceTitle": "Physics with Medical Physics BSc | Study at UCL",
+          "note": "Course page shows \"UK students: £10,050 per year\" (fees table, full time) with the caveat \"UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.\" UCL's 2027-28 undergraduate fee schedule (https://www.ucl.ac.uk/study/student-finances/tuition-fees/fee-schedules/fee-schedules-2027-2028/undergraduate-fees-2027-2028) states without this caveat: \"UK undergraduate fees for 2027-28 entry are £10,050 and are for the first year only.\" Course page figure is treated as provisional because of its own caveat."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; international students get a cohort guarantee (fee not increased during the programme) with UCL reserving the right to pass on government levies/taxes",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 44400,
+          "indicativeAmount": null,
+          "yearEvidence": "International fees shown are the fees that will be charged to 2027/28 entrants.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/physics-medical-physics-bsc",
+          "sourceTitle": "Physics with Medical Physics BSc | Study at UCL",
+          "note": "Course page fees table: International £44,400 per year, full time; start date September 2027."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "ucl-medical-physics-msci--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; later years may increase per UCL Student Terms and Conditions",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "yearEvidence": "UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/medical-physics-msci",
+          "sourceTitle": "Medical Physics MSci | Study at UCL",
+          "note": "Official copies of the same course page conflict: the plain URL https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/medical-physics-msci returned UK £9,790 in the key-information line and the fees table, while cache-busted copies (?v=2, ?v=3, ?v=4, ?ref=fees) returned UK £10,050. Both carry the caveat \"UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.\" The 2027-28 fee schedule (https://www.ucl.ac.uk/study/student-finances/tuition-fees/fee-schedules/fee-schedules-2027-2028/undergraduate-fees-2027-2028) states \"UK undergraduate fees for 2027-28 entry are £10,050 and are for the first year only.\" No side chosen."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; international students get a cohort guarantee (fee not increased during the programme) with UCL reserving the right to pass on government levies/taxes",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 44400,
+          "indicativeAmount": null,
+          "yearEvidence": "International fees shown are the fees that will be charged to 2027/28 entrants.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/medical-physics-msci",
+          "sourceTitle": "Medical Physics MSci | Study at UCL",
+          "note": "Course page fees table: International £44,400 per year, full time; start date September 2027. (Fees table labelled \"Overseas\" in one copy; figure £44,400 identical in all copies.)"
+        }
+      ],
+      "unresolved": "UK fee: conflicting copies of the official page (£9,790 vs £10,050)."
+    },
+    {
+      "id": "ucl-mechanical-engineering-beng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; later years may increase per UCL Student Terms and Conditions",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "yearEvidence": "UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/mechanical-engineering-beng",
+          "sourceTitle": "Mechanical Engineering BEng | Study at UCL",
+          "note": "Course page shows \"UK students: £10,050 per year\" (fees table, full time) with the caveat \"UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.\" UCL's 2027-28 undergraduate fee schedule (https://www.ucl.ac.uk/study/student-finances/tuition-fees/fee-schedules/fee-schedules-2027-2028/undergraduate-fees-2027-2028) states without this caveat: \"UK undergraduate fees for 2027-28 entry are £10,050 and are for the first year only.\" Course page figure is treated as provisional because of its own caveat."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; international students get a cohort guarantee (fee not increased during the programme) with UCL reserving the right to pass on government levies/taxes",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 44400,
+          "indicativeAmount": null,
+          "yearEvidence": "International fees shown are the fees that will be charged to 2027/28 entrants.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/mechanical-engineering-beng",
+          "sourceTitle": "Mechanical Engineering BEng | Study at UCL",
+          "note": "Course page fees table: International £44,400 per year, full time; start date September 2027."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "ucl-mechanical-engineering-meng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; later years may increase per UCL Student Terms and Conditions",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "yearEvidence": "UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/mechanical-engineering-meng",
+          "sourceTitle": "Mechanical Engineering MEng | Study at UCL",
+          "note": "Course page shows \"UK students: £10,050 per year\" (fees table, full time) with the caveat \"UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.\" UCL's 2027-28 undergraduate fee schedule (https://www.ucl.ac.uk/study/student-finances/tuition-fees/fee-schedules/fee-schedules-2027-2028/undergraduate-fees-2027-2028) states without this caveat: \"UK undergraduate fees for 2027-28 entry are £10,050 and are for the first year only.\" Course page figure is treated as provisional because of its own caveat."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; international students get a cohort guarantee (fee not increased during the programme) with UCL reserving the right to pass on government levies/taxes",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 44400,
+          "indicativeAmount": null,
+          "yearEvidence": "International fees shown are the fees that will be charged to 2027/28 entrants.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/mechanical-engineering-meng",
+          "sourceTitle": "Mechanical Engineering MEng | Study at UCL",
+          "note": "Course page fees table: International £44,400 per year, full time; start date September 2027."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "ucl-electronic-and-electrical-engineering-beng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; later years may increase per UCL Student Terms and Conditions",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "yearEvidence": "UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/electronic-and-electrical-engineering-beng",
+          "sourceTitle": "Electronic and Electrical Engineering BEng | Study at UCL",
+          "note": "Course page shows \"UK students: £10,050 per year\" (fees table, full time) with the caveat \"UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.\" UCL's 2027-28 undergraduate fee schedule (https://www.ucl.ac.uk/study/student-finances/tuition-fees/fee-schedules/fee-schedules-2027-2028/undergraduate-fees-2027-2028) states without this caveat: \"UK undergraduate fees for 2027-28 entry are £10,050 and are for the first year only.\" Course page figure is treated as provisional because of its own caveat."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; international students get a cohort guarantee (fee not increased during the programme) with UCL reserving the right to pass on government levies/taxes",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 44400,
+          "indicativeAmount": null,
+          "yearEvidence": "International fees shown are the fees that will be charged to 2027/28 entrants.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/electronic-and-electrical-engineering-beng",
+          "sourceTitle": "Electronic and Electrical Engineering BEng | Study at UCL",
+          "note": "Course page fees table: International £44,400 per year, full time; start date September 2027."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "ucl-electronic-and-electrical-engineering-meng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; later years may increase per UCL Student Terms and Conditions",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "yearEvidence": "UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/electronic-and-electrical-engineering-meng",
+          "sourceTitle": "Electronic and Electrical Engineering MEng | Study at UCL",
+          "note": "Course page shows \"UK students: £10,050 per year\" (fees table, full time) with the caveat \"UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.\" UCL's 2027-28 undergraduate fee schedule (https://www.ucl.ac.uk/study/student-finances/tuition-fees/fee-schedules/fee-schedules-2027-2028/undergraduate-fees-2027-2028) states without this caveat: \"UK undergraduate fees for 2027-28 entry are £10,050 and are for the first year only.\" Course page figure is treated as provisional because of its own caveat."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; international students get a cohort guarantee (fee not increased during the programme) with UCL reserving the right to pass on government levies/taxes",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 44400,
+          "indicativeAmount": null,
+          "yearEvidence": "International fees shown are the fees that will be charged to 2027/28 entrants.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/electronic-and-electrical-engineering-meng",
+          "sourceTitle": "Electronic and Electrical Engineering MEng | Study at UCL",
+          "note": "Course page fees table: International £44,400 per year, full time; start date September 2027."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "ucl-civil-engineering-beng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; later years may increase per UCL Student Terms and Conditions",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "yearEvidence": "UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/civil-engineering-beng",
+          "sourceTitle": "Civil Engineering BEng | Study at UCL",
+          "note": "Course page shows \"UK students: £10,050 per year\" (fees table, full time) with the caveat \"UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.\" UCL's 2027-28 undergraduate fee schedule (https://www.ucl.ac.uk/study/student-finances/tuition-fees/fee-schedules/fee-schedules-2027-2028/undergraduate-fees-2027-2028) states without this caveat: \"UK undergraduate fees for 2027-28 entry are £10,050 and are for the first year only.\" Course page figure is treated as provisional because of its own caveat."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; international students get a cohort guarantee (fee not increased during the programme) with UCL reserving the right to pass on government levies/taxes",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 44400,
+          "indicativeAmount": null,
+          "yearEvidence": "International fees shown are the fees that will be charged to 2027/28 entrants.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/civil-engineering-beng",
+          "sourceTitle": "Civil Engineering BEng | Study at UCL",
+          "note": "Course page fees table: International £44,400 per year, full time; start date September 2027."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "ucl-civil-engineering-meng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; later years may increase per UCL Student Terms and Conditions",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "yearEvidence": "UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/civil-engineering-meng",
+          "sourceTitle": "Civil Engineering MEng | Study at UCL",
+          "note": "Course page shows \"UK students: £10,050 per year\" (fees table, full time) with the caveat \"UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.\" UCL's 2027-28 undergraduate fee schedule (https://www.ucl.ac.uk/study/student-finances/tuition-fees/fee-schedules/fee-schedules-2027-2028/undergraduate-fees-2027-2028) states without this caveat: \"UK undergraduate fees for 2027-28 entry are £10,050 and are for the first year only.\" Course page figure is treated as provisional because of its own caveat."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; international students get a cohort guarantee (fee not increased during the programme) with UCL reserving the right to pass on government levies/taxes",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 44400,
+          "indicativeAmount": null,
+          "yearEvidence": "International fees shown are the fees that will be charged to 2027/28 entrants.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/civil-engineering-meng",
+          "sourceTitle": "Civil Engineering MEng | Study at UCL",
+          "note": "Course page fees table: International £44,400 per year, full time; start date September 2027."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "ucl-chemical-engineering-beng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; later years may increase per UCL Student Terms and Conditions",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "yearEvidence": "UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/chemical-engineering-beng",
+          "sourceTitle": "Chemical Engineering BEng | Study at UCL",
+          "note": "Course page shows \"UK students: £10,050 per year\" (fees table, full time) with the caveat \"UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.\" UCL's 2027-28 undergraduate fee schedule (https://www.ucl.ac.uk/study/student-finances/tuition-fees/fee-schedules/fee-schedules-2027-2028/undergraduate-fees-2027-2028) states without this caveat: \"UK undergraduate fees for 2027-28 entry are £10,050 and are for the first year only.\" Course page figure is treated as provisional because of its own caveat."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; international students get a cohort guarantee (fee not increased during the programme) with UCL reserving the right to pass on government levies/taxes",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 44400,
+          "indicativeAmount": null,
+          "yearEvidence": "International fees shown are the fees that will be charged to 2027/28 entrants.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/chemical-engineering-beng",
+          "sourceTitle": "Chemical Engineering BEng | Study at UCL",
+          "note": "Course page fees table: International £44,400 per year, full time; start date September 2027."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "ucl-chemical-engineering-meng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; later years may increase per UCL Student Terms and Conditions",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "yearEvidence": "UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/chemical-engineering-meng",
+          "sourceTitle": "Chemical Engineering MEng | Study at UCL",
+          "note": "Course page shows \"UK students: £10,050 per year\" (fees table, full time) with the caveat \"UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.\" UCL's 2027-28 undergraduate fee schedule (https://www.ucl.ac.uk/study/student-finances/tuition-fees/fee-schedules/fee-schedules-2027-2028/undergraduate-fees-2027-2028) states without this caveat: \"UK undergraduate fees for 2027-28 entry are £10,050 and are for the first year only.\" Course page figure is treated as provisional because of its own caveat."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; international students get a cohort guarantee (fee not increased during the programme) with UCL reserving the right to pass on government levies/taxes",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 44400,
+          "indicativeAmount": null,
+          "yearEvidence": "International fees shown are the fees that will be charged to 2027/28 entrants.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/chemical-engineering-meng",
+          "sourceTitle": "Chemical Engineering MEng | Study at UCL",
+          "note": "Course page fees table: International £44,400 per year, full time; start date September 2027."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "ucl-biochemical-engineering-beng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; later years may increase per UCL Student Terms and Conditions",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "yearEvidence": "UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/biochemical-engineering-beng",
+          "sourceTitle": "Biochemical Engineering BEng | Study at UCL",
+          "note": "Course page shows \"UK students: £10,050 per year\" (fees table, full time) with the caveat \"UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.\" UCL's 2027-28 undergraduate fee schedule (https://www.ucl.ac.uk/study/student-finances/tuition-fees/fee-schedules/fee-schedules-2027-2028/undergraduate-fees-2027-2028) states without this caveat: \"UK undergraduate fees for 2027-28 entry are £10,050 and are for the first year only.\" Course page figure is treated as provisional because of its own caveat."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; international students get a cohort guarantee (fee not increased during the programme) with UCL reserving the right to pass on government levies/taxes",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 44400,
+          "indicativeAmount": null,
+          "yearEvidence": "International fees shown are the fees that will be charged to 2027/28 entrants.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/biochemical-engineering-beng",
+          "sourceTitle": "Biochemical Engineering BEng | Study at UCL",
+          "note": "Course page fees table: International £44,400 per year, full time; start date September 2027."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "ucl-biochemical-engineering-meng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; later years may increase per UCL Student Terms and Conditions",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "yearEvidence": "UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/biochemical-engineering-meng",
+          "sourceTitle": "Biochemical Engineering MEng | Study at UCL",
+          "note": "Course page shows \"UK students: £10,050 per year\" (fees table, full time) with the caveat \"UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.\" UCL's 2027-28 undergraduate fee schedule (https://www.ucl.ac.uk/study/student-finances/tuition-fees/fee-schedules/fee-schedules-2027-2028/undergraduate-fees-2027-2028) states without this caveat: \"UK undergraduate fees for 2027-28 entry are £10,050 and are for the first year only.\" Course page figure is treated as provisional because of its own caveat."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; international students get a cohort guarantee (fee not increased during the programme) with UCL reserving the right to pass on government levies/taxes",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 44400,
+          "indicativeAmount": null,
+          "yearEvidence": "International fees shown are the fees that will be charged to 2027/28 entrants.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/biochemical-engineering-meng",
+          "sourceTitle": "Biochemical Engineering MEng | Study at UCL",
+          "note": "Course page fees table: International £44,400 per year, full time; start date September 2027."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "ucl-biomedical-engineering-beng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; later years may increase per UCL Student Terms and Conditions",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "yearEvidence": "Course Start Date: September 2027",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/biomedical-engineering-beng",
+          "sourceTitle": "Biomedical Engineering BEng | Study at UCL",
+          "note": "Course page fees table shows N/A for both UK and International full-time (consistent across repeated fetches); the page still carries the caveat \"UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.\". The 2027-28 schedule states \"UK undergraduate fees for 2027-28 entry are £10,050 and are for the first year only.\" but is university-wide and this course page shows no figure, so no fee recorded."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; later years may increase per UCL Student Terms and Conditions",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "International",
+          "categoryKind": "international",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "yearEvidence": "Course Start Date: September 2027",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/biomedical-engineering-beng",
+          "sourceTitle": "Biomedical Engineering BEng | Study at UCL",
+          "note": "Course page fees table shows N/A for International full-time (consistent across repeated fetches); no figure published on the page."
+        }
+      ],
+      "unresolved": "Course page shows N/A for both UK and International fees."
+    },
+    {
+      "id": "ucl-biomedical-engineering-meng--2027",
+      "fees": [
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; later years may increase per UCL Student Terms and Conditions",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "UK",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "yearEvidence": "UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/biomedical-engineering-meng",
+          "sourceTitle": "Biomedical Engineering MEng | Study at UCL",
+          "note": "Course page shows \"UK students: £10,050 per year\" (fees table, full time) with the caveat \"UK undergraduate fees for 2027/28 are subject to parliamentary approval and are for the first year only.\" UCL's 2027-28 undergraduate fee schedule (https://www.ucl.ac.uk/study/student-finances/tuition-fees/fee-schedules/fee-schedules-2027-2028/undergraduate-fees-2027-2028) states without this caveat: \"UK undergraduate fees for 2027-28 entry are £10,050 and are for the first year only.\" Course page figure is treated as provisional because of its own caveat."
+        },
+        {
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": "First year only; international students get a cohort guarantee (fee not increased during the programme) with UCL reserving the right to pass on government levies/taxes",
+          "scope": "course",
+          "scopeNote": null,
+          "category": "International",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 44400,
+          "indicativeAmount": null,
+          "yearEvidence": "International fees shown are the fees that will be charged to 2027/28 entrants.",
+          "sourceUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/biomedical-engineering-meng",
+          "sourceTitle": "Biomedical Engineering MEng | Study at UCL",
+          "note": "Course page fees table: International £44,400 per year, full time; start date September 2027."
+        }
+      ],
+      "unresolved": null
+    }
+  ],
+  "notes2028": "No 2028-29 / 2028-entry fees found; fee-schedules-2028-2029 returns 404 and the 2027-28 schedule page has no 2028 statements."
+}

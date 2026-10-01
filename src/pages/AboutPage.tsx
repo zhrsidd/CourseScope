@@ -213,6 +213,29 @@ export function AboutPage() {
         </Card>
 
         <Card className="p-4">
+          <SectionTitle id="tuition-fees-method">How tuition fees are recorded</SectionTitle>
+          <div className="space-y-3 text-sm leading-relaxed text-ink-muted">
+            <p>
+              Fees are read from each university’s own pages and recorded <strong>per course and per
+              entry year</strong>, in the university’s own categories. Scottish universities, for
+              example, publish separate Scotland and Rest of UK fees, and those stay separate.
+            </p>
+            <p>
+              A fee is shown as published only when the university states it for that entry year without
+              a “to be confirmed” caveat. An expected figure is labelled as expected. Where official pages
+              disagree, the fee is shown as not established rather than picking one. A figure from one
+              entry year is never shown for another, and one course’s fee is never copied to another
+              unless the university says the same fee applies to all courses.
+            </p>
+            <p>
+              Fees are information only. They are kept apart from entry requirements and play no part in
+              the eligibility check. Which fee category applies to you depends on your fee status, which
+              the university decides.
+            </p>
+          </div>
+        </Card>
+
+        <Card className="p-4">
           <SectionTitle>Specialisms are not separate applications</SectionTitle>
           <div className="space-y-3 text-sm leading-relaxed text-ink-muted">
             <p>

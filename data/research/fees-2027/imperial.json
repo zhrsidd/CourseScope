@@ -1,0 +1,710 @@
+{
+  "universityId": "imperial",
+  "checkedOn": "2026-09-30",
+  "method": "WebFetch of each course's own imperial.ac.uk course page ('Fees and funding' section, 2027 entry), fetched with cache-busting query strings (2 or more fetches per course where readable), plus imperial.ac.uk/study/fees-and-funding/undergraduate/tuition-fees/. Direct curl is blocked. Bare /2027/ course URLs return 'too many redirects', so those were read with a query string. Some bare (unbusted) URLs returned an older copy saying 'Fees to be confirmed' / 'Not set' - see per-course notes. Overseas 2026-27 'as a guide' figures were deliberately not recorded anywhere.",
+  "universityWideStatements": [
+    {
+      "quote": "2027–28 academic year: Maximum fee for standard full-time courses will increase to £10,050 per year.",
+      "url": "https://www.imperial.ac.uk/study/fees-and-funding/undergraduate/tuition-fees/",
+      "title": "Tuition fees | Study | Imperial College London",
+      "appliesTo": "Statement of the UK maximum (fee cap) for standard full-time courses in 2027-28. It does not explicitly state Imperial's own Home fee for every course, and says nothing about Overseas fees (page says Overseas fees are set by Imperial and given on course pages), so it is NOT used as a university-wide course fee."
+    }
+  ],
+  "courses": [
+    {
+      "id": "imperial-physics-bsc--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "yearEvidence": "Home fee 2027 entry £10,050 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/physics-bsc/",
+          "sourceTitle": "Physics BSc | Study | Imperial College London",
+          "note": "Course page shows Home fee for 2027 entry with no caveat. Unqualified-URL fetches (no query string) returned an older-looking copy of the page saying Home \"£10,050* per year / Fees to be confirmed\" and Overseas \"Not set\"; repeated cache-busted fetches (?v=2,5,6,7,8,9 and ?utm=x) all showed the figures recorded here. The figures supersede 'not set/TBC' wording, so the former is treated as a stale cached copy. Re-check live page before relying on it."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 47800,
+          "indicativeAmount": null,
+          "yearEvidence": "Overseas fee 2027 entry £47,800 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/physics-bsc/",
+          "sourceTitle": "Physics BSc | Study | Imperial College London",
+          "note": "Course page shows Overseas fee for 2027 entry with no caveat. Read on this course's own page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "imperial-eee-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "yearEvidence": "Home fee 2027 entry £10,050 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/electrical-electronic-engineering-meng/",
+          "sourceTitle": "Electrical and Electronic Engineering MEng | Study | Imperial College London",
+          "note": "Course page shows Home fee for 2027 entry with no caveat. Year abroad: Home \"£1,505 for that year\"; Overseas \"100% of the fee for that year\". Un-busted fetch (and one ?v=2 fetch) returned an older-looking copy with Home \"Fees to be confirmed\" and Overseas \"Not set\"; three cache-busted fetches (?v=3,4,5) showed the figures recorded here. Treated as stale copy; re-check live page before relying on it."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 47800,
+          "indicativeAmount": null,
+          "yearEvidence": "Overseas fee 2027 entry £47,800 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/electrical-electronic-engineering-meng/",
+          "sourceTitle": "Electrical and Electronic Engineering MEng | Study | Imperial College London",
+          "note": "Course page shows Overseas fee for 2027 entry with no caveat. Read on this course's own page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "imperial-physics-msci--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "yearEvidence": "Home fee 2027 entry £10,050 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/physics-msci/",
+          "sourceTitle": "Physics MSci | Study | Imperial College London",
+          "note": "Course page shows Home fee for 2027 entry with no caveat. Page also lists a reduced year-abroad fee (Home \"£1,505 for that year\"; Overseas \"100% of the fee for that year\") for the F309 variant."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 47800,
+          "indicativeAmount": null,
+          "yearEvidence": "Overseas fee 2027 entry £47,800 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/physics-msci/",
+          "sourceTitle": "Physics MSci | Study | Imperial College London",
+          "note": "Course page shows Overseas fee for 2027 entry with no caveat. Read on this course's own page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "imperial-physics-year-abroad-msci--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "yearEvidence": "Home fee 2027 entry £10,050 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/physics-msci/",
+          "sourceTitle": "Physics MSci | Study | Imperial College London",
+          "note": "Course page shows Home fee for 2027 entry with no caveat. Year-abroad route (F309): page states Home \"£1,505 for that year\" and Overseas \"100% of the fee for that year\" for the year abroad; the per-year figures above are the standard-year fees. Same page as Physics MSci (F303), which lists both UCAS codes."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 47800,
+          "indicativeAmount": null,
+          "yearEvidence": "Overseas fee 2027 entry £47,800 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/physics-msci/",
+          "sourceTitle": "Physics MSci | Study | Imperial College London",
+          "note": "Course page shows Overseas fee for 2027 entry with no caveat. Read on this course's own page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "imperial-physics-theoretical-bsc--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "yearEvidence": "Home fee 2027 entry £10,050 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/physics-theoretical-bsc/",
+          "sourceTitle": "Physics with Theoretical Physics BSc | Study | Imperial College London",
+          "note": "Course page shows Home fee for 2027 entry with no caveat. The non-/2027/ URL fetched without a query string returned an older-looking copy (Home \"£10,050* per year / Fees to be confirmed\"; Overseas \"Not set\"); cache-busted fetches of both URL forms showed the figures recorded here. The figures supersede 'not set/TBC' wording, so the former is treated as a stale cached copy. Re-check live page before relying on it."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 47800,
+          "indicativeAmount": null,
+          "yearEvidence": "Overseas fee 2027 entry £47,800 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/physics-theoretical-bsc/",
+          "sourceTitle": "Physics with Theoretical Physics BSc | Study | Imperial College London",
+          "note": "Course page shows Overseas fee for 2027 entry with no caveat. Read on this course's own page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "imperial-physics-theoretical-msci--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "yearEvidence": "Home fee 2027 entry £10,050 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/physics-theoretical-msci/",
+          "sourceTitle": "Physics with Theoretical Physics MSci | Study | Imperial College London",
+          "note": "Course page shows Home fee for 2027 entry with no caveat."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 47800,
+          "indicativeAmount": null,
+          "yearEvidence": "Overseas fee 2027 entry £47,800 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/physics-theoretical-msci/",
+          "sourceTitle": "Physics with Theoretical Physics MSci | Study | Imperial College London",
+          "note": "Course page shows Overseas fee for 2027 entry with no caveat. Read on this course's own page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "imperial-mechanical-engineering-meng--2027",
+      "fees": [],
+      "unresolved": "Course page loads but the extracted text is truncated ('content truncated due to length') before the Fees and funding section; 5 attempts across ?v= variants and both URL forms (/2027/ and non-/2027/) never reached the Home/Overseas fee lines. Not found, so unknown. URL: https://www.imperial.ac.uk/study/courses/undergraduate/2027/mechanical-engineering/ Gap-fill pass 2026-10-01: 3 further attempts (fee-section-only prompt on /2027/ and non-/2027/ URLs with ?v=; /2027/ plain URL gave Too many redirects) again ended before Fees and funding (content cut in Entry requirements/ESAT section). Official fee pages checked: imperial.ac.uk/study/fees-and-funding/undergraduate/tuition-fees/ (only the UK cap statement; says Overseas fees are on course pages), /students/fees-and-funding/tuition-fees/undergraduate-tuition-fees/ (covers 2025-26 and 2026-27 only), /study/apply/undergraduate/offer-holders/fees-and-funding/ (2026 entry only); a 2027-28 faculty-of-engineering fee page returned 404. No 2027 fee found, so unknown."
+    },
+    {
+      "id": "imperial-aeronautical-engineering-meng--2027",
+      "fees": [],
+      "unresolved": "Course page loads but the extracted text is truncated ('content truncated due to length') before the Fees and funding section; 5 attempts across ?v= variants and both URL forms (/2027/ and non-/2027/) never reached the Home/Overseas fee lines. Not found, so unknown. URL: https://www.imperial.ac.uk/study/courses/undergraduate/2027/aeronautical-engineering/ Gap-fill pass 2026-10-01: 3 further attempts (fee-section-only prompt on /2027/ and non-/2027/ URLs with ?v=; /2027/ plain URL gave Too many redirects) again ended before Fees and funding (content cut in Entry requirements/ESAT section). Official fee pages checked: imperial.ac.uk/study/fees-and-funding/undergraduate/tuition-fees/ (only the UK cap statement; says Overseas fees are on course pages), /students/fees-and-funding/tuition-fees/undergraduate-tuition-fees/ (covers 2025-26 and 2026-27 only), /study/apply/undergraduate/offer-holders/fees-and-funding/ (2026 entry only); a 2027-28 faculty-of-engineering fee page returned 404. No 2027 fee found, so unknown."
+    },
+    {
+      "id": "imperial-civil-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "yearEvidence": "Home fee 2027 entry £10,050 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/civil-engineering/",
+          "sourceTitle": "Civil Engineering MEng | Study | Imperial College London",
+          "note": "Course page shows Home fee for 2027 entry with no caveat. Year abroad (H202, same page): Home \"£1,505 for that year\"; Overseas \"100% of the fee for that year\"."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 47800,
+          "indicativeAmount": null,
+          "yearEvidence": "Overseas fee 2027 entry £47,800 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/civil-engineering/",
+          "sourceTitle": "Civil Engineering MEng | Study | Imperial College London",
+          "note": "Course page shows Overseas fee for 2027 entry with no caveat. Read on this course's own page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "imperial-chemical-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "yearEvidence": "Home fee 2027 entry £10,050 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/chemical-engineering/",
+          "sourceTitle": "Chemical Engineering MEng | Study | Imperial College London",
+          "note": "Course page shows Home fee for 2027 entry with no caveat. Year abroad: Home \"£1,505 for that year\"; Overseas \"100% of the fee for that year\"."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 47800,
+          "indicativeAmount": null,
+          "yearEvidence": "Overseas fee 2027 entry £47,800 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/chemical-engineering/",
+          "sourceTitle": "Chemical Engineering MEng | Study | Imperial College London",
+          "note": "Course page shows Overseas fee for 2027 entry with no caveat. Read on this course's own page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "imperial-electronic-information-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "yearEvidence": "Home fee 2027 entry £10,050 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/electronic-information-meng/",
+          "sourceTitle": "Electronic and Information Engineering MEng | Study | Imperial College London",
+          "note": "Course page shows Home fee for 2027 entry with no caveat. Year abroad: Home \"£1,505 for that year\"; Overseas \"100% of the fee for that year\"."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 47800,
+          "indicativeAmount": null,
+          "yearEvidence": "Overseas fee 2027 entry £47,800 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/electronic-information-meng/",
+          "sourceTitle": "Electronic and Information Engineering MEng | Study | Imperial College London",
+          "note": "Course page shows Overseas fee for 2027 entry with no caveat. Read on this course's own page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "imperial-electrical-electronic-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "yearEvidence": "Home fee 2027 entry £10,050 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/electrical-electronic-engineering-beng/",
+          "sourceTitle": "Electrical and Electronic Engineering BEng | Study | Imperial College London",
+          "note": "Course page shows Home fee for 2027 entry with no caveat."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 47800,
+          "indicativeAmount": null,
+          "yearEvidence": "Overseas fee 2027 entry £47,800 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/electrical-electronic-engineering-beng/",
+          "sourceTitle": "Electrical and Electronic Engineering BEng | Study | Imperial College London",
+          "note": "Course page shows Overseas fee for 2027 entry with no caveat. Read on this course's own page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "imperial-electronic-information-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "yearEvidence": "Home fee 2027 entry £10,050 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/electronic-information-beng/",
+          "sourceTitle": "Electronic and Information Engineering BEng | Study | Imperial College London",
+          "note": "Course page shows Home fee for 2027 entry with no caveat."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 47800,
+          "indicativeAmount": null,
+          "yearEvidence": "Overseas fee 2027 entry £47,800 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/electronic-information-beng/",
+          "sourceTitle": "Electronic and Information Engineering BEng | Study | Imperial College London",
+          "note": "Course page shows Overseas fee for 2027 entry with no caveat. Read on this course's own page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "imperial-materials-science-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "yearEvidence": "Home fee 2027 entry £10,050 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/materials-science-engineering-beng/",
+          "sourceTitle": "Materials Science and Engineering BEng | Study | Imperial College London",
+          "note": "Course page shows Home fee for 2027 entry with no caveat."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 47800,
+          "indicativeAmount": null,
+          "yearEvidence": "Overseas fee 2027 entry £47,800 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/materials-science-engineering-beng/",
+          "sourceTitle": "Materials Science and Engineering BEng | Study | Imperial College London",
+          "note": "Course page shows Overseas fee for 2027 entry with no caveat. Read on this course's own page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "imperial-materials-science-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "yearEvidence": "Home fee 2027 entry £10,050 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/materials-science-engineering-meng/",
+          "sourceTitle": "Materials Science and Engineering MEng | Study | Imperial College London",
+          "note": "Course page shows Home fee for 2027 entry with no caveat."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 47800,
+          "indicativeAmount": null,
+          "yearEvidence": "Overseas fee 2027 entry £47,800 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/materials-science-engineering-meng/",
+          "sourceTitle": "Materials Science and Engineering MEng | Study | Imperial College London",
+          "note": "Course page shows Overseas fee for 2027 entry with no caveat. Read on this course's own page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "imperial-materials-nuclear-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "yearEvidence": "Home fee 2027 entry £10,050 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/materials-nuclear-engineering/",
+          "sourceTitle": "Materials with Nuclear Engineering MEng | Study | Imperial College London",
+          "note": "Course page shows Home fee for 2027 entry with no caveat."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 47800,
+          "indicativeAmount": null,
+          "yearEvidence": "Overseas fee 2027 entry £47,800 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/materials-nuclear-engineering/",
+          "sourceTitle": "Materials with Nuclear Engineering MEng | Study | Imperial College London",
+          "note": "Course page shows Overseas fee for 2027 entry with no caveat. Read on this course's own page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "imperial-biomaterials-tissue-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "yearEvidence": "Home fee 2027 entry £10,050 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/biomaterials-tissue-engineering-meng/",
+          "sourceTitle": "Biomaterials and Tissue Engineering MEng | Study | Imperial College London",
+          "note": "Course page shows Home fee for 2027 entry with no caveat."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 47800,
+          "indicativeAmount": null,
+          "yearEvidence": "Overseas fee 2027 entry £47,800 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/biomaterials-tissue-engineering-meng/",
+          "sourceTitle": "Biomaterials and Tissue Engineering MEng | Study | Imperial College London",
+          "note": "Course page shows Overseas fee for 2027 entry with no caveat. Read on this course's own page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "imperial-biomedical-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "yearEvidence": "Home fee 2027 entry £10,050 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/biomedical-engineering/",
+          "sourceTitle": "Biomedical Engineering MEng | Study | Imperial College London",
+          "note": "Course page shows Home fee for 2027 entry with no caveat. Year abroad: Home \"£1,505 for that year\"; Overseas \"100% of the fee for that year\". Year in industry: Home \"£1,005 for that year\"; Overseas \"10% of the fee for that year\"."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 47800,
+          "indicativeAmount": null,
+          "yearEvidence": "Overseas fee 2027 entry £47,800 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/biomedical-engineering/",
+          "sourceTitle": "Biomedical Engineering MEng | Study | Imperial College London",
+          "note": "Course page shows Overseas fee for 2027 entry with no caveat. Read on this course's own page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "imperial-molecular-bioengineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "yearEvidence": "Home fee 2027 entry £10,050 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/molecular-bioengineering/",
+          "sourceTitle": "Molecular Bioengineering MEng | Study | Imperial College London",
+          "note": "Course page shows Home fee for 2027 entry with no caveat. Year abroad: Home \"£1,505 for that year\"; Overseas \"100% of the fee for that year\". Year in industry: Home \"£1,005 for that year\"; Overseas \"10% of the fee for that year\"."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 47800,
+          "indicativeAmount": null,
+          "yearEvidence": "Overseas fee 2027 entry £47,800 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/molecular-bioengineering/",
+          "sourceTitle": "Molecular Bioengineering MEng | Study | Imperial College London",
+          "note": "Course page shows Overseas fee for 2027 entry with no caveat. Read on this course's own page."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "imperial-design-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "yearEvidence": "Home fee 2027 entry £10,050 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/design-engineering/",
+          "sourceTitle": "Design Engineering MEng | Study | Imperial College London",
+          "note": "Course page shows Home fee for 2027 entry with no caveat."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 47800,
+          "indicativeAmount": null,
+          "yearEvidence": "Overseas fee 2027 entry £47,800 per year",
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "sourceUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/design-engineering/",
+          "sourceTitle": "Design Engineering MEng | Study | Imperial College London",
+          "note": "Course page shows Overseas fee for 2027 entry with no caveat. Read on this course's own page."
+        }
+      ],
+      "unresolved": null
+    }
+  ],
+  "notes2028": "No 2028-entry fees found: the Imperial tuition fees page and all course pages read give fees only for 2027 entry; the fee page says the cap beyond 2027-28 has not been announced."
+}

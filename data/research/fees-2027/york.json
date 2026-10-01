@@ -1,0 +1,1814 @@
+{
+  "universityId": "york",
+  "checkedOn": "2026-09-30",
+  "method": "Each course's own York course page (default \"Year of entry: 2027/28\"; \"Fees and funding\" section and header fee line, read in a browser), plus York UK (home) tuition fees page and International tuition fees page. Course-page year selector offers only 2027/28 and 2026/27.",
+  "universityWideStatements": [
+    {
+      "quote": "Our 2027/28 tuition fees are £10,050 per year for UK (home) students. This includes those from the Isle of Man, Channel Islands and EU (with settled status).",
+      "url": "https://www.york.ac.uk/study/undergraduate/fees-funding/uk/",
+      "title": "UK (home) tuition fees - University of York",
+      "appliesTo": "UK (home) fee; the page adds \"Fees apply to all undergraduate courses\". Stated without a caveat here, whereas course pages hedge it (see course notes)."
+    },
+    {
+      "quote": "The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.",
+      "url": "https://www.york.ac.uk/study/undergraduate/courses/bsc-physics/",
+      "title": "Physics (BSc) - Undergraduate, University of York",
+      "appliesTo": "Hedge shown on every 2027/28 course page checked (42 show £10,050 in the fee table, 5 show TBC)"
+    },
+    {
+      "quote": "Tuition fees vary by course. You can check the fees of each course on our course pages.",
+      "url": "https://www.york.ac.uk/study/undergraduate/fees-funding/international/",
+      "title": "International tuition fees - University of York",
+      "appliesTo": "International fees are per course, read from each course page"
+    }
+  ],
+  "courses": [
+    {
+      "id": "york-physics-bsc--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/bsc-physics/",
+          "sourceTitle": "Physics (BSc) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/bsc-physics/",
+          "sourceTitle": "Physics (BSc) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). "
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-physics-mphys--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/mphys-physics/",
+          "sourceTitle": "Physics (MPhys) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/mphys-physics/",
+          "sourceTitle": "Physics (MPhys) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). "
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-physics-year-abroad-bsc--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/bsc-physics-year-abroad/",
+          "sourceTitle": "Physics (with a year abroad) (BSc) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/bsc-physics-year-abroad/",
+          "sourceTitle": "Physics (with a year abroad) (BSc) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). Course is a year-abroad/industry/foundation variant; the page shows the same annual table and reduced rates for the year away."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-physics-year-in-industry-bsc--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/bsc-physics-industry/",
+          "sourceTitle": "Physics (with a year in industry) (BSc) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/bsc-physics-industry/",
+          "sourceTitle": "Physics (with a year in industry) (BSc) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). Course is a year-abroad/industry/foundation variant; the page shows the same annual table and reduced rates for the year away."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-physics-year-abroad-mphys--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/mphys-physics-year-abroad/",
+          "sourceTitle": "Physics (with a year abroad) (MPhys) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/mphys-physics-year-abroad/",
+          "sourceTitle": "Physics (with a year abroad) (MPhys) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). Course is a year-abroad/industry/foundation variant; the page shows the same annual table and reduced rates for the year away."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-physics-year-in-industry-mphys--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/mphys-physics-industry/",
+          "sourceTitle": "Physics (with a year in industry) (MPhys) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/mphys-physics-industry/",
+          "sourceTitle": "Physics (with a year in industry) (MPhys) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). Course is a year-abroad/industry/foundation variant; the page shows the same annual table and reduced rates for the year away."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-physics-with-astrophysics-bsc--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/bsc-physics-astrophysics/",
+          "sourceTitle": "Physics with Astrophysics (BSc) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/bsc-physics-astrophysics/",
+          "sourceTitle": "Physics with Astrophysics (BSc) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). "
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-physics-with-astrophysics-mphys--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/mphys-physics-astrophysics/",
+          "sourceTitle": "Physics with Astrophysics (MPhys) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/mphys-physics-astrophysics/",
+          "sourceTitle": "Physics with Astrophysics (MPhys) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). "
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-physics-with-astrophysics-year-abroad-bsc--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/bsc-physics-astrophysics-year-abroad/",
+          "sourceTitle": "Physics with Astrophysics (with a year abroad) (BSc) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/bsc-physics-astrophysics-year-abroad/",
+          "sourceTitle": "Physics with Astrophysics (with a year abroad) (BSc) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). Course is a year-abroad/industry/foundation variant; the page shows the same annual table and reduced rates for the year away."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-physics-with-astrophysics-year-abroad-mphys--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/mphys-physics-astrophysics-year-abroad/",
+          "sourceTitle": "Physics with Astrophysics (with a year abroad) (MPhys) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/mphys-physics-astrophysics-year-abroad/",
+          "sourceTitle": "Physics with Astrophysics (with a year abroad) (MPhys) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). Course is a year-abroad/industry/foundation variant; the page shows the same annual table and reduced rates for the year away."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-physics-with-astrophysics-year-in-industry-bsc--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/bsc-physics-astrophysics-industry/",
+          "sourceTitle": "Physics with Astrophysics (with a year in industry) (BSc) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/bsc-physics-astrophysics-industry/",
+          "sourceTitle": "Physics with Astrophysics (with a year in industry) (BSc) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). Course is a year-abroad/industry/foundation variant; the page shows the same annual table and reduced rates for the year away."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-physics-with-astrophysics-year-in-industry-mphys--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/mphys-physics-astrophysics-industry/",
+          "sourceTitle": "Physics with Astrophysics (with a year in industry) (MPhys) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/mphys-physics-astrophysics-industry/",
+          "sourceTitle": "Physics with Astrophysics (with a year in industry) (MPhys) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). Course is a year-abroad/industry/foundation variant; the page shows the same annual table and reduced rates for the year away."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-theoretical-physics-bsc--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/bsc-theoretical-physics/",
+          "sourceTitle": "Theoretical Physics (BSc) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/bsc-theoretical-physics/",
+          "sourceTitle": "Theoretical Physics (BSc) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). "
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-theoretical-physics-mphys--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/mphys-theoretical-physics/",
+          "sourceTitle": "Theoretical Physics (MPhys) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/mphys-theoretical-physics/",
+          "sourceTitle": "Theoretical Physics (MPhys) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). "
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-theoretical-physics-year-abroad-bsc--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/bsc-theoretical-physics-year-abroad/",
+          "sourceTitle": "Theoretical Physics (with a year abroad) (BSc) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/bsc-theoretical-physics-year-abroad/",
+          "sourceTitle": "Theoretical Physics (with a year abroad) (BSc) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). Course is a year-abroad/industry/foundation variant; the page shows the same annual table and reduced rates for the year away."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-theoretical-physics-year-abroad-mphys--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/mphys-theoretical-physics-year-abroad/",
+          "sourceTitle": "Theoretical Physics (with a year abroad) (MPhys) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/mphys-theoretical-physics-year-abroad/",
+          "sourceTitle": "Theoretical Physics (with a year abroad) (MPhys) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). Course is a year-abroad/industry/foundation variant; the page shows the same annual table and reduced rates for the year away."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-theoretical-physics-year-in-industry-bsc--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/bsc-theoretical-physics-industry/",
+          "sourceTitle": "Theoretical Physics (with a year in industry) (BSc) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/bsc-theoretical-physics-industry/",
+          "sourceTitle": "Theoretical Physics (with a year in industry) (BSc) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). Course is a year-abroad/industry/foundation variant; the page shows the same annual table and reduced rates for the year away."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-theoretical-physics-year-in-industry-mphys--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/mphys-theoretical-physics-industry/",
+          "sourceTitle": "Theoretical Physics (with a year in industry) (MPhys) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/mphys-theoretical-physics-industry/",
+          "sourceTitle": "Theoretical Physics (with a year in industry) (MPhys) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). Course is a year-abroad/industry/foundation variant; the page shows the same annual table and reduced rates for the year away."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-physics-with-philosophy-bsc--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/bsc-physics-philosophy/",
+          "sourceTitle": "Physics with Philosophy (BSc) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/bsc-physics-philosophy/",
+          "sourceTitle": "Physics with Philosophy (BSc) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). "
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-physics-with-philosophy-mphys--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/mphys-physics-philosophy/",
+          "sourceTitle": "Physics with Philosophy (MPhys) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/mphys-physics-philosophy/",
+          "sourceTitle": "Physics with Philosophy (MPhys) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). "
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-physics-with-philosophy-year-abroad-bsc--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/bsc-physics-philosophy-year-abroad/",
+          "sourceTitle": "Physics with Philosophy (with a year abroad) (BSc) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/bsc-physics-philosophy-year-abroad/",
+          "sourceTitle": "Physics with Philosophy (with a year abroad) (BSc) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). Course is a year-abroad/industry/foundation variant; the page shows the same annual table and reduced rates for the year away."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-mathematics-and-physics-bsc--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/bsc-mathematics-physics/",
+          "sourceTitle": "Mathematics and Physics (BSc) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/bsc-mathematics-physics/",
+          "sourceTitle": "Mathematics and Physics (BSc) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). "
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-mathematics-and-physics-mmath-mphys--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/mmath-mphys-mathematics-physics/",
+          "sourceTitle": "Mathematics and Physics (MMath / MPhys) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/mmath-mphys-mathematics-physics/",
+          "sourceTitle": "Mathematics and Physics (MMath / MPhys) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). "
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-mathematics-and-physics-year-abroad-bsc--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/bsc-mathematics-physics-year-abroad/",
+          "sourceTitle": "Mathematics and Physics (with a year abroad) (BSc) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/bsc-mathematics-physics-year-abroad/",
+          "sourceTitle": "Mathematics and Physics (with a year abroad) (BSc) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). Course is a year-abroad/industry/foundation variant; the page shows the same annual table and reduced rates for the year away."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-physics-foundation-year-bsc--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/bsc-physics-foundation-year/",
+          "sourceTitle": "Physics (with a foundation year) (BSc) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/bsc-physics-foundation-year/",
+          "sourceTitle": "Physics (with a foundation year) (BSc) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). Course is a year-abroad/industry/foundation variant; the page shows the same annual table and reduced rates for the year away."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/beng-engineering/",
+          "sourceTitle": "Engineering (BEng) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/beng-engineering/",
+          "sourceTitle": "Engineering (BEng) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). "
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/meng-engineering/",
+          "sourceTitle": "Engineering (MEng) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/meng-engineering/",
+          "sourceTitle": "Engineering (MEng) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). "
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-engineering-foundation-year-beng--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/beng-engineering-foundation-year/",
+          "sourceTitle": "Engineering (with a Foundation Year) (BEng) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/beng-engineering-foundation-year/",
+          "sourceTitle": "Engineering (with a Foundation Year) (BEng) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). Course is a year-abroad/industry/foundation variant; the page shows the same annual table and reduced rates for the year away."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-electronic-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/beng-electronic-engineering/",
+          "sourceTitle": "Electronic Engineering (BEng) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/beng-electronic-engineering/",
+          "sourceTitle": "Electronic Engineering (BEng) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). "
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-electronic-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/meng-electronic-engineering/",
+          "sourceTitle": "Electronic Engineering (MEng) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/meng-electronic-engineering/",
+          "sourceTitle": "Electronic Engineering (MEng) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). "
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-electronic-engineering-foundation-year-beng--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/beng-electronic-engineering-foundation-year/",
+          "sourceTitle": "Electronic Engineering (with a Foundation Year) (BEng) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/beng-electronic-engineering-foundation-year/",
+          "sourceTitle": "Electronic Engineering (with a Foundation Year) (BEng) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). Course is a year-abroad/industry/foundation variant; the page shows the same annual table and reduced rates for the year away."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-electronic-and-electrical-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/beng-electronic-electrical-engineering/",
+          "sourceTitle": "Electronic and Electrical Engineering (BEng) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/beng-electronic-electrical-engineering/",
+          "sourceTitle": "Electronic and Electrical Engineering (BEng) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). "
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-electronic-and-electrical-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/meng-electronic-electrical-engineering/",
+          "sourceTitle": "Electronic and Electrical Engineering (MEng) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/meng-electronic-electrical-engineering/",
+          "sourceTitle": "Electronic and Electrical Engineering (MEng) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). "
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-electronic-and-computer-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/beng-electronic-computer-engineering/",
+          "sourceTitle": "Electronic and Computer Engineering (BEng) - Undergraduate, University of York",
+          "note": "Official sources differ. Course page 2027/28 fee table says: \"Annual tuition fees UK (home) International and EU TBC TBC\" while also saying \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/) says: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" and \"Fees apply to all undergraduate courses\". Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/beng-electronic-computer-engineering/",
+          "sourceTitle": "Electronic and Computer Engineering (BEng) - Undergraduate, University of York",
+          "note": "Course page fee table shows TBC for International and EU (\"Annual tuition fees UK (home) International and EU TBC TBC\"); no amount given. The International fees page says \"Tuition fees vary by course.\""
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-electronic-and-computer-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/meng-electronic-computer-engineering/",
+          "sourceTitle": "Electronic and Computer Engineering (MEng) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/meng-electronic-computer-engineering/",
+          "sourceTitle": "Electronic and Computer Engineering (MEng) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). "
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-music-technology-systems-beng--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/beng-music-technology-systems/",
+          "sourceTitle": "Music Technology Systems (BEng) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/beng-music-technology-systems/",
+          "sourceTitle": "Music Technology Systems (BEng) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). "
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-music-technology-systems-meng--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/meng-music-technology-systems/",
+          "sourceTitle": "Music Technology Systems (MEng) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/meng-music-technology-systems/",
+          "sourceTitle": "Music Technology Systems (MEng) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). "
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-music-technology-systems-foundation-year-beng--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/beng-music-technology-systems-foundation-year/",
+          "sourceTitle": "Music Technology Systems (with a Foundation Year) (BEng) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/beng-music-technology-systems-foundation-year/",
+          "sourceTitle": "Music Technology Systems (with a Foundation Year) (BEng) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). Course is a year-abroad/industry/foundation variant; the page shows the same annual table and reduced rates for the year away."
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-electronic-engineering-with-music-technology-systems-beng--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/beng-ee-music-technology-systems/",
+          "sourceTitle": "Electronic Engineering with Music Technology Systems (BEng) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/beng-ee-music-technology-systems/",
+          "sourceTitle": "Electronic Engineering with Music Technology Systems (BEng) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). "
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-electronic-engineering-with-music-technology-systems-meng--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/meng-ee-music-technology-systems/",
+          "sourceTitle": "Electronic Engineering with Music Technology Systems (MEng) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/meng-ee-music-technology-systems/",
+          "sourceTitle": "Electronic Engineering with Music Technology Systems (MEng) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). "
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-engineering-with-audio-technology-beng--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/beng-engineering-audio-technology/",
+          "sourceTitle": "Engineering with Audio Technology (BEng) - Undergraduate, University of York",
+          "note": "Official sources differ. Course page 2027/28 fee table says: \"Annual tuition fees UK (home) International and EU TBC TBC\" while also saying \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/) says: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" and \"Fees apply to all undergraduate courses\". Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/beng-engineering-audio-technology/",
+          "sourceTitle": "Engineering with Audio Technology (BEng) - Undergraduate, University of York",
+          "note": "Course page fee table shows TBC for International and EU (\"Annual tuition fees UK (home) International and EU TBC TBC\"); no amount given. The International fees page says \"Tuition fees vary by course.\""
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-engineering-with-audio-technology-meng--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/meng-engineering-audio-technology/",
+          "sourceTitle": "Engineering with Audio Technology (MEng) - Undergraduate, University of York",
+          "note": "Official sources differ. Course page 2027/28 fee table says: \"Annual tuition fees UK (home) International and EU TBC TBC\" while also saying \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/) says: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" and \"Fees apply to all undergraduate courses\". Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/meng-engineering-audio-technology/",
+          "sourceTitle": "Engineering with Audio Technology (MEng) - Undergraduate, University of York",
+          "note": "Course page fee table shows TBC for International and EU (\"Annual tuition fees UK (home) International and EU TBC TBC\"); no amount given. The International fees page says \"Tuition fees vary by course.\""
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-biomedical-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/beng-biomedical-engineering/",
+          "sourceTitle": "Biomedical Engineering (BEng) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/beng-biomedical-engineering/",
+          "sourceTitle": "Biomedical Engineering (BEng) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). "
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-medical-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/meng-medical-engineering/",
+          "sourceTitle": "Medical Engineering (MEng) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/meng-medical-engineering/",
+          "sourceTitle": "Medical Engineering (MEng) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). "
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-intelligent-digital-health-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/intelligent-digital-health-engineering-beng/",
+          "sourceTitle": "Intelligent Digital Health Engineering (BEng) - Undergraduate, University of York",
+          "note": "Official sources differ. Course page 2027/28 fee table says: \"Annual tuition fees UK (home) International and EU TBC TBC\" while also saying \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/) says: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" and \"Fees apply to all undergraduate courses\". Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/intelligent-digital-health-engineering-beng/",
+          "sourceTitle": "Intelligent Digital Health Engineering (BEng) - Undergraduate, University of York",
+          "note": "Course page fee table shows TBC for International and EU (\"Annual tuition fees UK (home) International and EU TBC TBC\"); no amount given. The International fees page says \"Tuition fees vary by course.\""
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-robotic-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": 10050,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/meng-robotic-engineering/",
+          "sourceTitle": "Robotic Engineering (MEng) - Undergraduate, University of York",
+          "note": "Course page fee table shows £10,050 but caveats it: \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page states without caveat: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/). Figures agree; caveat differs, so treated as expected. Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "published",
+          "amount": 33500,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/meng-robotic-engineering/",
+          "sourceTitle": "Robotic Engineering (MEng) - Undergraduate, University of York",
+          "note": "Read from this course page: \"Annual tuition fees UK (home) International and EU £10,050 £33,500\". No caveat on the international figure. International fees subject to later-year increases in line with CPI (up to 10%). "
+        }
+      ],
+      "unresolved": null
+    },
+    {
+      "id": "york-engineering-with-renewable-energy-meng--2027",
+      "fees": [
+        {
+          "category": "UK (home)",
+          "categoryKind": "home",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/meng-engineering-renewable-energy/",
+          "sourceTitle": "Engineering with Renewable Energy (MEng) - Undergraduate, University of York",
+          "note": "Official sources differ. Course page 2027/28 fee table says: \"Annual tuition fees UK (home) International and EU TBC TBC\" while also saying \"The UK government has announced its intention to increase tuition fees from £9,790 to £10,050 for the 2027/8 academic year. We expect this to apply to new UK (home) undergraduate students starting their studies in September 2027.\" The UK (home) tuition fees page (https://www.york.ac.uk/study/undergraduate/fees-funding/uk/) says: \"Our 2027/28 tuition fees are £10,050 per year for UK (home) students.\" and \"Fees apply to all undergraduate courses\". Reduced fees for a year abroad or year in industry are mentioned on the page (UK page: study abroad year 15%, placement year 20% (Turing 15%) of the full-time fee); not recorded as categories."
+        },
+        {
+          "category": "International and EU",
+          "categoryKind": "international",
+          "status": "awaiting-publication",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "The fees and funding information here is for students starting in the 2027/28 academic year.",
+          "sourceUrl": "https://www.york.ac.uk/study/undergraduate/courses/meng-engineering-renewable-energy/",
+          "sourceTitle": "Engineering with Renewable Energy (MEng) - Undergraduate, University of York",
+          "note": "Course page fee table shows TBC for International and EU (\"Annual tuition fees UK (home) International and EU TBC TBC\"); no amount given. The International fees page says \"Tuition fees vary by course.\""
+        }
+      ],
+      "unresolved": null
+    }
+  ],
+  "notes2028": "No 2028-entry fees found: course pages offer only year of entry 2027/28 and 2026/27; the UK and International fee pages mention only 2027/28."
+}

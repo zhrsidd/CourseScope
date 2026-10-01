@@ -7,6 +7,7 @@ import { InfoTooltip } from '@/components/InfoTooltip';
 import { SourceBadge, VerificationBadge } from '@/components/SourceBadge';
 import { ReportIssue } from '@/components/ReportIssue';
 import { SubjectGuidance } from '@/components/SubjectGuidance';
+import { TuitionFees } from '@/components/TuitionFees';
 import { subjectGuidanceFor } from '@/data';
 import { SubjectRequirementRow } from '@/components/SubjectRequirement';
 import { StudentProfilePanel } from '@/components/StudentProfilePanel';
@@ -644,6 +645,10 @@ export function CourseDetailPage() {
               <DataRow label="Notes">{course.notes ?? <NoData>None</NoData>}</DataRow>
             </dl>
           </Card>
+
+          {/* v1.1: fees sit after every admissions card, in their own card, so
+              they can never be read as part of the entry requirements. */}
+          <TuitionFees course={course} />
         </div>
 
         <aside className="space-y-4">

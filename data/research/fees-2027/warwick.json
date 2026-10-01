@@ -1,0 +1,928 @@
+{
+  "universityId": "warwick",
+  "checkedOn": "2026-09-30",
+  "method": "WebFetch (re-fetched with query strings to avoid stale caches) of each course page on warwick.ac.uk (start date 27 September 2027), plus Warwick Student Finance pages: UG Overseas Fees (warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/, last updated 21 Aug 2026) and UG Home Fees (.../ugtuitionfees2017onwards/, last updated 21 Sept 2026). Overseas table rows were read through WebFetch summaries (course-by-course 2027-28 column, all Band 2 = £37,310).",
+  "universityWideStatements": [
+    {
+      "quote": "the tuition fee cap for UK undergraduate students for the 2027-28 academic year would increase to £10,050",
+      "url": "https://warwick.ac.uk/services/finance/studentfinance/fees/ugtuitionfees2017onwards/",
+      "title": "UG Home Fees - Student Finance - University of Warwick",
+      "appliesTo": "Home fees 2027-28 (most undergraduate courses listed at £10,050; some foundation-year courses TBA). Not used as a university-wide fee: each course page states £10,050 itself (scope course)."
+    }
+  ],
+  "courses": [
+    {
+      "id": "warwick-physics-bsc--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "For the 2027-28 academic year, the UK government announced in March 2026 that the tuition fee cap for UK undergraduate students for the 2027-28 academic year would be £10,050.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/bsc-physics/",
+          "sourceTitle": "Physics BSc",
+          "note": "Course page (start date 27 September 2027) shows \"Tuition fee: £10,050\" under Home. The page attributes it to the UK government fee cap announced March 2026 but carries no \"to be confirmed\"/\"subject to approval\" caveat on the figure."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Overseas Tuition fees for 2027-28 academic year have not been set.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/bsc-physics/",
+          "sourceTitle": "Physics BSc",
+          "note": "OFFICIAL SOURCES CONFLICT for 2027-28. (1) Course page https://warwick.ac.uk/study/undergraduate/courses/bsc-physics/ says: \"Overseas Tuition fees for 2027-28 academic year have not been set.\" (it lists only 2026-27 band figures, not recorded here). (2) Student Finance page \"UG Overseas Fees\" (https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/, last updated 21 Aug 2026) has a per-course fee table with a 2027-28 column listing Physics BSc under Band 2 at £37,310. No side chosen."
+        }
+      ],
+      "unresolved": "Overseas fee: course page says not set for 2027-28 but Student Finance fee table gives a 2027-28 figure (conflict)."
+    },
+    {
+      "id": "warwick-physics-mphys--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "For the 2027-28 academic year, the UK government announced in March 2026 that the tuition fee cap for UK undergraduate students for the 2027-28 academic year would be £10,050.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/mphys-physics/",
+          "sourceTitle": "Physics MPhys",
+          "note": "Course page (start date 27 September 2027) shows \"Tuition fee: £10,050\" under Home. The page attributes it to the UK government fee cap announced March 2026 but carries no \"to be confirmed\"/\"subject to approval\" caveat on the figure."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Overseas Tuition fees for 2027-28 academic year have not been set.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/mphys-physics/",
+          "sourceTitle": "Physics MPhys",
+          "note": "OFFICIAL SOURCES CONFLICT for 2027-28. (1) Course page https://warwick.ac.uk/study/undergraduate/courses/mphys-physics/ says: \"Overseas Tuition fees for 2027-28 academic year have not been set.\" (it lists only 2026-27 band figures, not recorded here). (2) Student Finance page \"UG Overseas Fees\" (https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/, last updated 21 Aug 2026) has a per-course fee table with a 2027-28 column listing Physics MPhys under Band 2 at £37,310. No side chosen."
+        }
+      ],
+      "unresolved": "Overseas fee: course page says not set for 2027-28 but Student Finance fee table gives a 2027-28 figure (conflict)."
+    },
+    {
+      "id": "warwick-physics-with-astrophysics-bsc--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "For the 2027-28 academic year, the UK government announced in March 2026 that the tuition fee cap for UK undergraduate students for the 2027-28 academic year would be £10,050.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/bsc-physics-astrophysics/",
+          "sourceTitle": "Physics with Astrophysics BSc",
+          "note": "Course page (start date 27 September 2027) shows \"Tuition fee: £10,050\" under Home. The page attributes it to the UK government fee cap announced March 2026 but carries no \"to be confirmed\"/\"subject to approval\" caveat on the figure."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Overseas Tuition fees for 2027-28 academic year have not been set.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/bsc-physics-astrophysics/",
+          "sourceTitle": "Physics with Astrophysics BSc",
+          "note": "OFFICIAL SOURCES CONFLICT for 2027-28. (1) Course page https://warwick.ac.uk/study/undergraduate/courses/bsc-physics-astrophysics/ says: \"Overseas Tuition fees for 2027-28 academic year have not been set.\" (it lists only 2026-27 band figures, not recorded here). (2) Student Finance page \"UG Overseas Fees\" (https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/, last updated 21 Aug 2026) has a per-course fee table with a 2027-28 column listing Physics with Astrophysics BSc under Band 2 at £37,310. No side chosen."
+        }
+      ],
+      "unresolved": "Overseas fee: course page says not set for 2027-28 but Student Finance fee table gives a 2027-28 figure (conflict)."
+    },
+    {
+      "id": "warwick-physics-with-astrophysics-mphys--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "For the 2027-28 academic year, the UK government announced in March 2026 that the tuition fee cap for UK undergraduate students for the 2027-28 academic year would be £10,050.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/mphys-physics-astrophysics/",
+          "sourceTitle": "Physics with Astrophysics MPhys",
+          "note": "Course page (start date 27 September 2027) shows \"Tuition fee: £10,050\" under Home. The page attributes it to the UK government fee cap announced March 2026 but carries no \"to be confirmed\"/\"subject to approval\" caveat on the figure."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Overseas Tuition fees for 2027-28 academic year have not been set.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/mphys-physics-astrophysics/",
+          "sourceTitle": "Physics with Astrophysics MPhys",
+          "note": "OFFICIAL SOURCES CONFLICT for 2027-28. (1) Course page https://warwick.ac.uk/study/undergraduate/courses/mphys-physics-astrophysics/ says: \"Overseas Tuition fees for 2027-28 academic year have not been set.\" (it lists only 2026-27 band figures, not recorded here). (2) Student Finance page \"UG Overseas Fees\" (https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/, last updated 21 Aug 2026) has a per-course fee table with a 2027-28 column listing Physics with Astrophysics MPhys under Band 2 at £37,310. No side chosen."
+        }
+      ],
+      "unresolved": "Overseas fee: course page says not set for 2027-28 but Student Finance fee table gives a 2027-28 figure (conflict)."
+    },
+    {
+      "id": "warwick-mathematics-and-physics-bsc--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "For the 2027-28 academic year, the UK government announced in March 2026 that the tuition fee cap for UK undergraduate students for the 2027-28 academic year would be £10,050.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/bsc-mathematics-physics/",
+          "sourceTitle": "Mathematics and Physics BSc",
+          "note": "Course page (start date 27 September 2027) shows \"Tuition fee: £10,050\" under Home. The page attributes it to the UK government fee cap announced March 2026 but carries no \"to be confirmed\"/\"subject to approval\" caveat on the figure."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Overseas Tuition fees for 2027-28 academic year have not been set.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/bsc-mathematics-physics/",
+          "sourceTitle": "Mathematics and Physics BSc",
+          "note": "OFFICIAL SOURCES CONFLICT for 2027-28. (1) Course page https://warwick.ac.uk/study/undergraduate/courses/bsc-mathematics-physics/ says: \"Overseas Tuition fees for 2027-28 academic year have not been set.\" (it lists only 2026-27 band figures, not recorded here). (2) Student Finance page \"UG Overseas Fees\" (https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/, last updated 21 Aug 2026) has a per-course fee table with a 2027-28 column listing Mathematics and Physics BSc under Band 2 at £37,310. No side chosen."
+        }
+      ],
+      "unresolved": "Overseas fee: course page says not set for 2027-28 but Student Finance fee table gives a 2027-28 figure (conflict)."
+    },
+    {
+      "id": "warwick-mathematics-and-physics-mmathphys--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "For the 2027-28 academic year, the UK government announced in March 2026 that the tuition fee cap for UK undergraduate students for the 2027-28 academic year would be £10,050.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/mmathphys-mathematics-physics/",
+          "sourceTitle": "Mathematics and Physics MMathPhys",
+          "note": "Course page (start date 27 September 2027) shows \"Tuition fee: £10,050\" under Home. The page attributes it to the UK government fee cap announced March 2026 but carries no \"to be confirmed\"/\"subject to approval\" caveat on the figure."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Overseas Tuition fees for 2027-28 academic year have not been set.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/mmathphys-mathematics-physics/",
+          "sourceTitle": "Mathematics and Physics MMathPhys",
+          "note": "OFFICIAL SOURCES CONFLICT for 2027-28. (1) Course page https://warwick.ac.uk/study/undergraduate/courses/mmathphys-mathematics-physics/ says: \"Overseas Tuition fees for 2027-28 academic year have not been set.\" (it lists only 2026-27 band figures, not recorded here). (2) Student Finance page \"UG Overseas Fees\" (https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/, last updated 21 Aug 2026) has a per-course fee table with a 2027-28 column listing Mathematics and Physics MMathPhys under Band 2 at £37,310. No side chosen."
+        }
+      ],
+      "unresolved": "Overseas fee: course page says not set for 2027-28 but Student Finance fee table gives a 2027-28 figure (conflict)."
+    },
+    {
+      "id": "warwick-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "For the 2027-28 academic year, the UK government announced in March 2026 that the tuition fee cap for UK undergraduate students for the 2027-28 academic year would be £10,050.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/beng-engineering/",
+          "sourceTitle": "Engineering BEng",
+          "note": "Course page (start date 27 September 2027) shows \"Tuition fee: £10,050\" under Home. The page attributes it to the UK government fee cap announced March 2026 but carries no \"to be confirmed\"/\"subject to approval\" caveat on the figure."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Overseas Tuition fees for 2027-28 academic year have not been set.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/beng-engineering/",
+          "sourceTitle": "Engineering BEng",
+          "note": "OFFICIAL SOURCES CONFLICT for 2027-28. (1) Course page https://warwick.ac.uk/study/undergraduate/courses/beng-engineering/ says: \"Overseas Tuition fees for 2027-28 academic year have not been set.\" (it lists only 2026-27 band figures, not recorded here). (2) Student Finance page \"UG Overseas Fees\" (https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/, last updated 21 Aug 2026) has a per-course fee table with a 2027-28 column listing Engineering BEng under Band 2 at £37,310. No side chosen."
+        }
+      ],
+      "unresolved": "Overseas fee: course page says not set for 2027-28 but Student Finance fee table gives a 2027-28 figure (conflict)."
+    },
+    {
+      "id": "warwick-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "For the 2027-28 academic year, the UK government announced in March 2026 that the tuition fee cap for UK undergraduate students for the 2027-28 academic year would be £10,050.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/meng-engineering/",
+          "sourceTitle": "Engineering MEng",
+          "note": "Course page (start date 27 September 2027) shows \"Tuition fee: £10,050\" under Home. The page attributes it to the UK government fee cap announced March 2026 but carries no \"to be confirmed\"/\"subject to approval\" caveat on the figure."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Overseas Tuition fees for 2027-28 academic year have not been set.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/meng-engineering/",
+          "sourceTitle": "Engineering MEng",
+          "note": "OFFICIAL SOURCES CONFLICT for 2027-28. (1) Course page https://warwick.ac.uk/study/undergraduate/courses/meng-engineering/ says: \"Overseas Tuition fees for 2027-28 academic year have not been set.\" (it lists only 2026-27 band figures, not recorded here). (2) Student Finance page \"UG Overseas Fees\" (https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/, last updated 21 Aug 2026) has a per-course fee table with a 2027-28 column listing Engineering MEng under Band 2 at £37,310. No side chosen."
+        }
+      ],
+      "unresolved": "Overseas fee: course page says not set for 2027-28 but Student Finance fee table gives a 2027-28 figure (conflict)."
+    },
+    {
+      "id": "warwick-automotive-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "For the 2027-28 academic year, the UK government announced in March 2026 that the tuition fee cap for UK undergraduate students for the 2027-28 academic year would be £10,050.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/beng-automotive-engineering/",
+          "sourceTitle": "Automotive Engineering (BEng)",
+          "note": "Course page (start date 27 September 2027) shows \"Tuition fee: £10,050\" under Home. The page attributes it to the UK government fee cap announced March 2026 but carries no \"to be confirmed\"/\"subject to approval\" caveat on the figure."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Overseas Tuition fees for 2027-28 academic year have not been set.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/beng-automotive-engineering/",
+          "sourceTitle": "Automotive Engineering (BEng)",
+          "note": "OFFICIAL SOURCES CONFLICT for 2027-28. (1) Course page https://warwick.ac.uk/study/undergraduate/courses/beng-automotive-engineering/ says: \"Overseas Tuition fees for 2027-28 academic year have not been set.\" (it lists only 2026-27 band figures, not recorded here). (2) Student Finance page \"UG Overseas Fees\" (https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/, last updated 21 Aug 2026) has a per-course fee table with a 2027-28 column listing Automotive Engineering BEng under Band 2 at £37,310. No side chosen."
+        }
+      ],
+      "unresolved": "Overseas fee: course page says not set for 2027-28 but Student Finance fee table gives a 2027-28 figure (conflict)."
+    },
+    {
+      "id": "warwick-automotive-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "For the 2027-28 academic year, the UK government announced in March 2026 that the tuition fee cap for UK undergraduate students for the 2027-28 academic year would be £10,050.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/meng-automotive-engineering/",
+          "sourceTitle": "Automotive Engineering MEng",
+          "note": "Course page (start date 27 September 2027) shows \"Tuition fee: £10,050\" under Home. The page attributes it to the UK government fee cap announced March 2026 but carries no \"to be confirmed\"/\"subject to approval\" caveat on the figure."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Overseas Tuition fees for 2027-28 academic year have not been set.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/meng-automotive-engineering/",
+          "sourceTitle": "Automotive Engineering MEng",
+          "note": "OFFICIAL SOURCES CONFLICT for 2027-28. (1) Course page https://warwick.ac.uk/study/undergraduate/courses/meng-automotive-engineering/ says: \"Overseas Tuition fees for 2027-28 academic year have not been set.\" (it lists only 2026-27 band figures, not recorded here). (2) Student Finance page \"UG Overseas Fees\" (https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/, last updated 21 Aug 2026) has a per-course fee table with a 2027-28 column listing Automotive Engineering MEng under Band 2 at £37,310. No side chosen."
+        }
+      ],
+      "unresolved": "Overseas fee: course page says not set for 2027-28 but Student Finance fee table gives a 2027-28 figure (conflict)."
+    },
+    {
+      "id": "warwick-biomedical-systems-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "For the 2027-28 academic year, the UK government announced in March 2026 that the tuition fee cap for UK undergraduate students for the 2027-28 academic year would be £10,050.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/beng-biomedical-systems-engineering/",
+          "sourceTitle": "Biomedical Systems Engineering BEng",
+          "note": "Course page (start date 27 September 2027) shows \"Tuition fee: £10,050\" under Home. The page attributes it to the UK government fee cap announced March 2026 but carries no \"to be confirmed\"/\"subject to approval\" caveat on the figure."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Overseas Tuition fees for 2027-28 academic year have not been set.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/beng-biomedical-systems-engineering/",
+          "sourceTitle": "Biomedical Systems Engineering BEng",
+          "note": "OFFICIAL SOURCES CONFLICT for 2027-28. (1) Course page https://warwick.ac.uk/study/undergraduate/courses/beng-biomedical-systems-engineering/ says: \"Overseas Tuition fees for 2027-28 academic year have not been set.\" (it lists only 2026-27 band figures, not recorded here). (2) Student Finance page \"UG Overseas Fees\" (https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/, last updated 21 Aug 2026) has a per-course fee table with a 2027-28 column listing Biomedical Systems Engineering BEng under Band 2 at £37,310. No side chosen."
+        }
+      ],
+      "unresolved": "Overseas fee: course page says not set for 2027-28 but Student Finance fee table gives a 2027-28 figure (conflict)."
+    },
+    {
+      "id": "warwick-biomedical-systems-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "For the 2027-28 academic year, the UK government announced in March 2026 that the tuition fee cap for UK undergraduate students for the 2027-28 academic year would be £10,050.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/meng-biomedical-systems-engineering/",
+          "sourceTitle": "Biomedical Systems Engineering MEng",
+          "note": "Course page (start date 27 September 2027) shows \"Tuition fee: £10,050\" under Home. The page attributes it to the UK government fee cap announced March 2026 but carries no \"to be confirmed\"/\"subject to approval\" caveat on the figure."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Overseas Tuition fees for 2027-28 academic year have not been set.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/meng-biomedical-systems-engineering/",
+          "sourceTitle": "Biomedical Systems Engineering MEng",
+          "note": "OFFICIAL SOURCES CONFLICT for 2027-28. (1) Course page https://warwick.ac.uk/study/undergraduate/courses/meng-biomedical-systems-engineering/ says: \"Overseas Tuition fees for 2027-28 academic year have not been set.\" (it lists only 2026-27 band figures, not recorded here). (2) Student Finance page \"UG Overseas Fees\" (https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/, last updated 21 Aug 2026) has a per-course fee table with a 2027-28 column listing Biomedical Systems Engineering MEng under Band 2 at £37,310. No side chosen."
+        }
+      ],
+      "unresolved": "Overseas fee: course page says not set for 2027-28 but Student Finance fee table gives a 2027-28 figure (conflict)."
+    },
+    {
+      "id": "warwick-civil-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "For the 2027-28 academic year, the UK government announced in March 2026 that the tuition fee cap for UK undergraduate students for the 2027-28 academic year would be £10,050.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/beng-civil-engineering/",
+          "sourceTitle": "Civil Engineering BEng",
+          "note": "Course page (start date 27 September 2027) shows \"Tuition fee: £10,050\" under Home. The page attributes it to the UK government fee cap announced March 2026 but carries no \"to be confirmed\"/\"subject to approval\" caveat on the figure."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Overseas Tuition fees for 2027-28 academic year have not been set.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/beng-civil-engineering/",
+          "sourceTitle": "Civil Engineering BEng",
+          "note": "OFFICIAL SOURCES CONFLICT for 2027-28. (1) Course page https://warwick.ac.uk/study/undergraduate/courses/beng-civil-engineering/ says: \"Overseas Tuition fees for 2027-28 academic year have not been set.\" (it lists only 2026-27 band figures, not recorded here). (2) Student Finance page \"UG Overseas Fees\" (https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/, last updated 21 Aug 2026) has a per-course fee table with a 2027-28 column listing Civil Engineering BEng under Band 2 at £37,310. No side chosen."
+        }
+      ],
+      "unresolved": "Overseas fee: course page says not set for 2027-28 but Student Finance fee table gives a 2027-28 figure (conflict)."
+    },
+    {
+      "id": "warwick-civil-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "For the 2027-28 academic year, the UK government announced in March 2026 that the tuition fee cap for UK undergraduate students for the 2027-28 academic year would be £10,050.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/meng-civil-engineering/",
+          "sourceTitle": "Civil Engineering MEng",
+          "note": "Course page (start date 27 September 2027) shows \"Tuition fee: £10,050\" under Home. The page attributes it to the UK government fee cap announced March 2026 but carries no \"to be confirmed\"/\"subject to approval\" caveat on the figure."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Overseas Tuition fees for 2027-28 academic year have not been set.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/meng-civil-engineering/",
+          "sourceTitle": "Civil Engineering MEng",
+          "note": "OFFICIAL SOURCES CONFLICT for 2027-28. (1) Course page https://warwick.ac.uk/study/undergraduate/courses/meng-civil-engineering/ says: \"Overseas Tuition fees for 2027-28 academic year have not been set.\" (it lists only 2026-27 band figures, not recorded here). (2) Student Finance page \"UG Overseas Fees\" (https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/, last updated 21 Aug 2026) has a per-course fee table with a 2027-28 column listing Civil Engineering MEng under Band 2 at £37,310. No side chosen."
+        }
+      ],
+      "unresolved": "Overseas fee: course page says not set for 2027-28 but Student Finance fee table gives a 2027-28 figure (conflict)."
+    },
+    {
+      "id": "warwick-electrical-electronic-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "For the 2027-28 academic year, the UK government announced in March 2026 that the tuition fee cap for UK undergraduate students for the 2027-28 academic year would be £10,050.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/beng-electrical-electronic-engineering/",
+          "sourceTitle": "Electrical and Electronic Engineering BEng",
+          "note": "Course page (start date 27 September 2027) shows \"Tuition fee: £10,050\" under Home. The page attributes it to the UK government fee cap announced March 2026 but carries no \"to be confirmed\"/\"subject to approval\" caveat on the figure."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Overseas Tuition fees for 2027-28 academic year have not been set.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/beng-electrical-electronic-engineering/",
+          "sourceTitle": "Electrical and Electronic Engineering BEng",
+          "note": "OFFICIAL SOURCES CONFLICT for 2027-28. (1) Course page https://warwick.ac.uk/study/undergraduate/courses/beng-electrical-electronic-engineering/ says: \"Overseas Tuition fees for 2027-28 academic year have not been set.\" (it lists only 2026-27 band figures, not recorded here). (2) Student Finance page \"UG Overseas Fees\" (https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/, last updated 21 Aug 2026) has a per-course fee table with a 2027-28 column listing Electrical and Electronic Engineering BEng under Band 2 at £37,310. No side chosen."
+        }
+      ],
+      "unresolved": "Overseas fee: course page says not set for 2027-28 but Student Finance fee table gives a 2027-28 figure (conflict)."
+    },
+    {
+      "id": "warwick-electrical-electronic-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "For the 2027-28 academic year, the UK government announced in March 2026 that the tuition fee cap for UK undergraduate students for the 2027-28 academic year would be £10,050.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/meng-electrical-electronic-engineering/",
+          "sourceTitle": "Electrical and Electronic Engineering MEng",
+          "note": "Course page (start date 27 September 2027) shows \"Tuition fee: £10,050\" under Home. The page attributes it to the UK government fee cap announced March 2026 but carries no \"to be confirmed\"/\"subject to approval\" caveat on the figure."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Overseas Tuition fees for 2027-28 academic year have not been set.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/meng-electrical-electronic-engineering/",
+          "sourceTitle": "Electrical and Electronic Engineering MEng",
+          "note": "OFFICIAL SOURCES CONFLICT for 2027-28. (1) Course page https://warwick.ac.uk/study/undergraduate/courses/meng-electrical-electronic-engineering/ says: \"Overseas Tuition fees for 2027-28 academic year have not been set.\" (it lists only 2026-27 band figures, not recorded here). (2) Student Finance page \"UG Overseas Fees\" (https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/, last updated 21 Aug 2026) has a per-course fee table with a 2027-28 column listing Electrical and Electronic Engineering MEng under Band 2 at £37,310. No side chosen."
+        }
+      ],
+      "unresolved": "Overseas fee: course page says not set for 2027-28 but Student Finance fee table gives a 2027-28 figure (conflict)."
+    },
+    {
+      "id": "warwick-mechanical-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "For the 2027-28 academic year, the UK government announced in March 2026 that the tuition fee cap for UK undergraduate students for the 2027-28 academic year would be £10,050.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/beng-mechanical-engineering/",
+          "sourceTitle": "Mechanical Engineering BEng",
+          "note": "Course page (start date 27 September 2027) shows \"Tuition fee: £10,050\" under Home. The page attributes it to the UK government fee cap announced March 2026 but carries no \"to be confirmed\"/\"subject to approval\" caveat on the figure."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Overseas Tuition fees for 2027-28 academic year have not been set.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/beng-mechanical-engineering/",
+          "sourceTitle": "Mechanical Engineering BEng",
+          "note": "OFFICIAL SOURCES CONFLICT for 2027-28. (1) Course page https://warwick.ac.uk/study/undergraduate/courses/beng-mechanical-engineering/ says: \"Overseas Tuition fees for 2027-28 academic year have not been set.\" (it lists only 2026-27 band figures, not recorded here). (2) Student Finance page \"UG Overseas Fees\" (https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/, last updated 21 Aug 2026) has a per-course fee table with a 2027-28 column listing Mechanical Engineering BEng under Band 2 at £37,310. No side chosen."
+        }
+      ],
+      "unresolved": "Overseas fee: course page says not set for 2027-28 but Student Finance fee table gives a 2027-28 figure (conflict)."
+    },
+    {
+      "id": "warwick-mechanical-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "For the 2027-28 academic year, the UK government announced in March 2026 that the tuition fee cap for UK undergraduate students for the 2027-28 academic year would be £10,050.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/meng-mechanical-engineering/",
+          "sourceTitle": "Mechanical Engineering MEng",
+          "note": "Course page (start date 27 September 2027) shows \"Tuition fee: £10,050\" under Home. The page attributes it to the UK government fee cap announced March 2026 but carries no \"to be confirmed\"/\"subject to approval\" caveat on the figure."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Overseas Tuition fees for 2027-28 academic year have not been set.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/meng-mechanical-engineering/",
+          "sourceTitle": "Mechanical Engineering MEng",
+          "note": "OFFICIAL SOURCES CONFLICT for 2027-28. (1) Course page https://warwick.ac.uk/study/undergraduate/courses/meng-mechanical-engineering/ says: \"Overseas Tuition fees for 2027-28 academic year have not been set.\" (it lists only 2026-27 band figures, not recorded here). (2) Student Finance page \"UG Overseas Fees\" (https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/, last updated 21 Aug 2026) has a per-course fee table with a 2027-28 column listing Mechanical Engineering MEng under Band 2 at £37,310. No side chosen."
+        }
+      ],
+      "unresolved": "Overseas fee: course page says not set for 2027-28 but Student Finance fee table gives a 2027-28 figure (conflict)."
+    },
+    {
+      "id": "warwick-manufacturing-mechanical-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "For the 2027-28 academic year, the UK government announced in March 2026 that the tuition fee cap for UK undergraduate students for the 2027-28 academic year would be £10,050.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/beng-manufacturing-mechanical-engineering/",
+          "sourceTitle": "Manufacturing and Mechanical Engineering BEng",
+          "note": "Course page (start date 27 September 2027) shows \"Tuition fee: £10,050\" under Home. The page attributes it to the UK government fee cap announced March 2026 but carries no \"to be confirmed\"/\"subject to approval\" caveat on the figure."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Overseas Tuition fees for 2027-28 academic year have not been set.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/beng-manufacturing-mechanical-engineering/",
+          "sourceTitle": "Manufacturing and Mechanical Engineering BEng",
+          "note": "OFFICIAL SOURCES CONFLICT for 2027-28. (1) Course page https://warwick.ac.uk/study/undergraduate/courses/beng-manufacturing-mechanical-engineering/ says: \"Overseas Tuition fees for 2027-28 academic year have not been set.\" (it lists only 2026-27 band figures, not recorded here). (2) Student Finance page \"UG Overseas Fees\" (https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/, last updated 21 Aug 2026) has a per-course fee table with a 2027-28 column listing Manufacturing and Mechanical Engineering BEng under Band 2 at £37,310. No side chosen."
+        }
+      ],
+      "unresolved": "Overseas fee: course page says not set for 2027-28 but Student Finance fee table gives a 2027-28 figure (conflict)."
+    },
+    {
+      "id": "warwick-manufacturing-mechanical-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "For the 2027-28 academic year, the UK government announced in March 2026 that the tuition fee cap for UK undergraduate students for the 2027-28 academic year would be £10,050.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/meng-manufacturing-mechanical-engineering/",
+          "sourceTitle": "Manufacturing and Mechanical Engineering MEng",
+          "note": "Course page (start date 27 September 2027) shows \"Tuition fee: £10,050\" under Home. The page attributes it to the UK government fee cap announced March 2026 but carries no \"to be confirmed\"/\"subject to approval\" caveat on the figure."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Overseas Tuition fees for 2027-28 academic year have not been set.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/meng-manufacturing-mechanical-engineering/",
+          "sourceTitle": "Manufacturing and Mechanical Engineering MEng",
+          "note": "OFFICIAL SOURCES CONFLICT for 2027-28. (1) Course page https://warwick.ac.uk/study/undergraduate/courses/meng-manufacturing-mechanical-engineering/ says: \"Overseas Tuition fees for 2027-28 academic year have not been set.\" (it lists only 2026-27 band figures, not recorded here). (2) Student Finance page \"UG Overseas Fees\" (https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/, last updated 21 Aug 2026) has a per-course fee table with a 2027-28 column listing Manufacturing and Mechanical Engineering MEng under Band 2 at £37,310. No side chosen."
+        }
+      ],
+      "unresolved": "Overseas fee: course page says not set for 2027-28 but Student Finance fee table gives a 2027-28 figure (conflict)."
+    },
+    {
+      "id": "warwick-systems-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "For the 2027-28 academic year, the UK government announced in March 2026 that the tuition fee cap for UK undergraduate students for the 2027-28 academic year would be £10,050.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/beng-systems-engineering/",
+          "sourceTitle": "Systems Engineering BEng",
+          "note": "Course page (start date 27 September 2027) shows \"Tuition fee: £10,050\" under Home. The page attributes it to the UK government fee cap announced March 2026 but carries no \"to be confirmed\"/\"subject to approval\" caveat on the figure."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Overseas Tuition fees for 2027-28 academic year have not been set.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/beng-systems-engineering/",
+          "sourceTitle": "Systems Engineering BEng",
+          "note": "OFFICIAL SOURCES CONFLICT for 2027-28. (1) Course page https://warwick.ac.uk/study/undergraduate/courses/beng-systems-engineering/ says: \"Overseas Tuition fees for 2027-28 academic year have not been set.\" (it lists only 2026-27 band figures, not recorded here). (2) Student Finance page \"UG Overseas Fees\" (https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/, last updated 21 Aug 2026) has a per-course fee table with a 2027-28 column listing Systems Engineering BEng under Band 2 at £37,310. No side chosen."
+        }
+      ],
+      "unresolved": "Overseas fee: course page says not set for 2027-28 but Student Finance fee table gives a 2027-28 figure (conflict)."
+    },
+    {
+      "id": "warwick-systems-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "For the 2027-28 academic year, the UK government announced in March 2026 that the tuition fee cap for UK undergraduate students for the 2027-28 academic year would be £10,050.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/meng-systems-engineering/",
+          "sourceTitle": "Systems Engineering MEng",
+          "note": "Course page (start date 27 September 2027) shows \"Tuition fee: £10,050\" under Home. The page attributes it to the UK government fee cap announced March 2026 but carries no \"to be confirmed\"/\"subject to approval\" caveat on the figure."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Overseas Tuition fees for 2027-28 academic year have not been set.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/meng-systems-engineering/",
+          "sourceTitle": "Systems Engineering MEng",
+          "note": "OFFICIAL SOURCES CONFLICT for 2027-28. (1) Course page https://warwick.ac.uk/study/undergraduate/courses/meng-systems-engineering/ says: \"Overseas Tuition fees for 2027-28 academic year have not been set.\" (it lists only 2026-27 band figures, not recorded here). (2) Student Finance page \"UG Overseas Fees\" (https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/, last updated 21 Aug 2026) has a per-course fee table with a 2027-28 column listing Systems Engineering MEng under Band 2 at £37,310. No side chosen."
+        }
+      ],
+      "unresolved": "Overseas fee: course page says not set for 2027-28 but Student Finance fee table gives a 2027-28 figure (conflict)."
+    },
+    {
+      "id": "warwick-computer-systems-engineering-beng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "For the 2027-28 academic year, the UK government announced in March 2026 that the tuition fee cap for UK undergraduate students for the 2027-28 academic year would be £10,050.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/beng-computer-systems-engineering/",
+          "sourceTitle": "Computer Systems Engineering BEng",
+          "note": "Course page (start date 27 September 2027) shows \"Tuition fee: £10,050\" under Home. The page attributes it to the UK government fee cap announced March 2026 but carries no \"to be confirmed\"/\"subject to approval\" caveat on the figure."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Overseas Tuition fees for 2027-28 academic year have not been set.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/beng-computer-systems-engineering/",
+          "sourceTitle": "Computer Systems Engineering BEng",
+          "note": "OFFICIAL SOURCES CONFLICT for 2027-28. (1) Course page https://warwick.ac.uk/study/undergraduate/courses/beng-computer-systems-engineering/ says: \"Overseas Tuition fees for 2027-28 academic year have not been set.\" (it lists only 2026-27 band figures, not recorded here). (2) Student Finance page \"UG Overseas Fees\" (https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/, last updated 21 Aug 2026) has a per-course fee table with a 2027-28 column listing Computer Systems Engineering BEng under Band 2 at £37,310. No side chosen."
+        }
+      ],
+      "unresolved": "Overseas fee: course page says not set for 2027-28 but Student Finance fee table gives a 2027-28 figure (conflict)."
+    },
+    {
+      "id": "warwick-computer-systems-engineering-meng--2027",
+      "fees": [
+        {
+          "category": "Home",
+          "categoryKind": "home",
+          "status": "published",
+          "amount": 10050,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "For the 2027-28 academic year, the UK government announced in March 2026 that the tuition fee cap for UK undergraduate students for the 2027-28 academic year would be £10,050.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/meng-computer-systems-engineering/",
+          "sourceTitle": "Computer Systems Engineering MEng",
+          "note": "Course page (start date 27 September 2027) shows \"Tuition fee: £10,050\" under Home. The page attributes it to the UK government fee cap announced March 2026 but carries no \"to be confirmed\"/\"subject to approval\" caveat on the figure."
+        },
+        {
+          "category": "Overseas",
+          "categoryKind": "international",
+          "status": "unknown",
+          "amount": null,
+          "indicativeAmount": null,
+          "currency": "GBP",
+          "basis": "per-year",
+          "basisNote": null,
+          "scope": "course",
+          "scopeNote": null,
+          "yearEvidence": "Overseas Tuition fees for 2027-28 academic year have not been set.",
+          "sourceUrl": "https://warwick.ac.uk/study/undergraduate/courses/meng-computer-systems-engineering/",
+          "sourceTitle": "Computer Systems Engineering MEng",
+          "note": "OFFICIAL SOURCES CONFLICT for 2027-28. (1) Course page https://warwick.ac.uk/study/undergraduate/courses/meng-computer-systems-engineering/ says: \"Overseas Tuition fees for 2027-28 academic year have not been set.\" (it lists only 2026-27 band figures, not recorded here). (2) Student Finance page \"UG Overseas Fees\" (https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/, last updated 21 Aug 2026) has a per-course fee table with a 2027-28 column listing Computer Systems Engineering MEng under Band 2 at £37,310. No side chosen."
+        }
+      ],
+      "unresolved": "Overseas fee: course page says not set for 2027-28 but Student Finance fee table gives a 2027-28 figure (conflict)."
+    }
+  ],
+  "notes2028": "No 2028-29 fees published: the Home Fees page states no 2028-29 fees are provided and the Overseas Fees page has columns only up to 2027-28."
+}

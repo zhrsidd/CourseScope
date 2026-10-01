@@ -10,6 +10,7 @@
 import type {
   Course,
   DuplicateFinding,
+  TuitionFee,
   University,
   ValidationIssue,
   ValidationSeverity,
@@ -17,6 +18,7 @@ import type {
 import { findDuplicates } from './identity';
 import { codeCollisions, identityRisks, unsupportedCodeProvenance, unevidencedIdentities } from './identity-invariant';
 import { meetsGrade } from './grades';
+import { validateTuitionFees } from './fees';
 
 const issue = (
   ruleId: string,
@@ -406,7 +408,12 @@ export interface ValidationReport {
   duplicates: DuplicateFinding[];
 }
 
-export function validateCatalogue(courses: Course[], universities: University[]): ValidationReport {
+export function validateCatalogue(
+  courses: Course[],
+  universities: University[],
+  /** v1.1: tuition fee rows, validated against these same course records. */
+  fees: TuitionFee[] = [],
+): ValidationReport {
   const duplicates = findDuplicates(courses);
 
   const duplicateIssues: ValidationIssue[] = duplicates.map((d) =>
@@ -482,6 +489,7 @@ export function validateCatalogue(courses: Course[], universities: University[])
     ...validateDeadlineTargets(universities, courses),
     ...duplicateIssues,
     ...identityIssues,
+    ...validateTuitionFees(fees, courses, universities),
   ];
 
   const byCourse: Record<string, ValidationIssue[]> = {};

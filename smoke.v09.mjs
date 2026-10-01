@@ -1,6 +1,7 @@
 /**
  * RELEASE QA — v0.9 release-candidate checks (Parts 12 to 19), plus the
- * v1.0.0 brand and production-configuration checks (section 20).
+ * v1.0.0 brand and production-configuration checks (sections 20–22) and the
+ * v1.1 tuition-fee checks (section 23).
  *
  * This suite asks release questions rather than data questions: can a brand-new
  * visitor with no stored state complete the whole workflow, does an existing
@@ -708,7 +709,7 @@ log('\n20. v1.0.0 — CourseScope BRAND AND PRODUCTION CONFIG');
     !/Sample data|\(demo\)|demo value/i.test(uni) && !/Rankings/.test(uni), '');
   await goto(page, '/universities');
   t('universities list shows no placeholder ranking badges', !/sample|Not available/i.test(await main(page)));
-  t('footer version is v1.0.0', /v1\.0\.0/.test(await page.locator('footer').innerText()));
+  t('footer version is v1.1.0', /v1\.1\.0/.test(await page.locator('footer').innerText()));
   await ctx.close();
 }
 
@@ -835,6 +836,112 @@ log('\n22. v1.0.0 — DEEP LINKS AND STATIC METADATA (GitHub Pages)');
   const img = await page.request.get(`${BASE}/social-preview.png`);
   t('  …and the share image is served', img.ok() && /png/.test(img.headers()['content-type'] ?? ''));
   await ctx.close();
+}
+
+/* ================================================================== */
+log('\n23. v1.1 — TUITION FEES');
+{
+  const feeSection = (page) => page.locator('[data-testid="tuition-fees"]');
+  const feeText = async (page) => ((await feeSection(page).count()) ? feeSection(page).innerText() : '');
+  const states = (page) => page.locator('[data-fee-category]').evaluateAll((els) =>
+    els.map((e) => `${e.getAttribute('data-fee-category')}=${e.getAttribute('data-fee-state')}`));
+
+  const { ctx, page } = await makeCtx({ width: 1440, height: 1100 });
+
+  // Scottish multi-category, all published.
+  await goto(page, '/course/edinburgh-physics-bsc--2027');
+  let txt = await feeText(page);
+  t('course page has a Tuition fees section', txt.startsWith('Tuition fees') || /Tuition fees/.test(txt));
+  t('  …Edinburgh keeps its own categories: Scotland, Rest of UK, International/EU',
+    (await states(page)).join(',') === 'Scotland=current,Rest of UK=current,International/EU=current', (await states(page)).join(','));
+  t('  …with the published amounts £1,820 / £10,050 / £40,900 per year',
+    /£1,820/.test(txt) && /£10,050/.test(txt) && /£40,900/.test(txt) && /per year/.test(txt));
+  t('  …each with its entry year, verified date and official source',
+    /Applies to 2027 entry/.test(txt) && /Verified 30 September 2026/.test(txt));
+  const srcLinks = await feeSection(page).locator('a[href^="https://"]').evaluateAll((as) =>
+    as.map((a) => [a.getAttribute('href'), a.getAttribute('target')]));
+  t('  …source links point at the university and open in a new tab',
+    srcLinks.length > 0 && srcLinks.every(([h, tg]) => /^https:\/\/[^/]*ed\.ac\.uk\//.test(h) && tg === '_blank'), JSON.stringify(srcLinks.slice(0, 2)));
+  t('  …and the section says fees are not requirements and not part of eligibility',
+    /not entry requirements and play no part in the eligibility check/.test(txt));
+  const order = await page.evaluate(() => {
+    const fees = document.querySelector('[data-testid="tuition-fees"]');
+    const reqs = [...document.querySelectorAll('h2,h3')].find((h) => /Entry requirements \(structured\)/.test(h.textContent ?? ''));
+    const details = [...document.querySelectorAll('h2,h3')].find((h) => /Course-specific admissions details/.test(h.textContent ?? ''));
+    if (!fees || !reqs || !details) return 'missing';
+    return fees.getBoundingClientRect().top > details.getBoundingClientRect().top &&
+      fees.getBoundingClientRect().top > reqs.getBoundingClientRect().top ? 'after' : 'before';
+  });
+  t('  …placed after the entry requirements and admissions details, in its own card', order === 'after', order);
+
+  // A published England course with course-specific international fee.
+  await goto(page, '/course/imperial-physics-bsc--2027');
+  txt = await feeText(page);
+  t('Imperial Physics BSc shows Home £10,050 and Overseas £47,800 for 2027 entry',
+    /Home[\s\S]*£10,050/.test(txt) && /Overseas[\s\S]*£47,800/.test(txt), (await states(page)).join(','));
+
+  // Awaiting publication with an expected figure: never shown as current.
+  await goto(page, '/course/durham-physics-bsc--2027');
+  txt = await feeText(page);
+  const durham = await states(page);
+  t('awaiting-publication fees are labelled as such, never as current',
+    durham.length > 0 && durham.every((s) => s.endsWith('=awaiting')), durham.join(','));
+  t('  …an expected figure is described as expected, not as the fee',
+    /Not yet confirmed/.test(txt) && /expected figure, not a confirmed fee/.test(txt) && !/£10,050\s*per year/.test(txt));
+
+  // Conflicting official sources → unknown.
+  await goto(page, '/course/warwick-physics-bsc--2027');
+  const warwick = await states(page);
+  t('conflicting official sources show "Not established", with the reason one click away',
+    warwick.includes('Overseas=unknown') && warwick.includes('Home=current') &&
+    (await feeSection(page).locator('summary', { hasText: 'Why this is not established' }).count()) > 0, warwick.join(','));
+
+  // 2028: nothing carried forward.
+  await goto(page, '/course/imperial-physics-bsc--2028');
+  txt = await feeText(page);
+  t('a 2028 course shows fees as not yet published — no 2027 figure carried forward',
+    /Not yet published for 2028 entry/.test(txt) && !/£\d/.test(txt) && (await states(page)).length === 0);
+
+  // Researched but nothing established.
+  await goto(page, '/course/southampton-physics-mphys--2027');
+  txt = await feeText(page);
+  t('a 2027 course with nothing established says so plainly', /not recorded for this course yet/.test(txt) && !/£\d/.test(txt));
+
+  // Compare.
+  await page.evaluate(() => localStorage.setItem('ukcf.compare.v1',
+    JSON.stringify(['edinburgh-physics-bsc--2027', 'imperial-physics-bsc--2027', 'durham-physics-bsc--2027'])));
+  await goto(page, '/compare');
+  await page.reload({ waitUntil: 'networkidle' });
+  await page.waitForTimeout(500);
+  const feeRow = page.locator('tr', { has: page.locator('th', { hasText: 'Tuition fees' }) });
+  const rowTxt = (await feeRow.count()) ? await feeRow.innerText() : '';
+  t('Compare has a Tuition fees row', rowTxt.length > 0);
+  t('  …showing each course’s own categories and amounts',
+    /Scotland[\s\S]*£1,820/.test(rowTxt) && /Overseas[\s\S]*£47,800/.test(rowTxt) && /Not yet confirmed/.test(rowTxt), rowTxt.replace(/\s+/g, ' ').slice(0, 200));
+  await ctx.close();
+
+  // No fee clutter on cards or filters.
+  const { ctx: c2, page: p2 } = await makeCtx({ width: 1440, height: 1100 });
+  await goto(p2, '/');
+  const cardsText = await p2.locator('main article').allInnerTexts();
+  t('course cards carry no fees (v1.1 scope)', cardsText.length > 0 && cardsText.every((x) => !/£\d|tuition/i.test(x)), `${cardsText.length} cards`);
+  t('  …and there is no fee filter', !/tuition|fee/i.test(await p2.locator('aside').first().innerText().catch(() => '')));
+  await c2.close();
+
+  // Mobile: 390px, no horizontal overflow on fee-bearing pages.
+  const { ctx: m, page: mp } = await makeCtx({ width: 390, height: 844 });
+  for (const route of ['/course/edinburgh-physics-bsc--2027', '/course/st-andrews-physics-bsc--2027', '/course/glasgow-physics-bsc--2027', '/course/warwick-physics-bsc--2027']) {
+    await goto(mp, route);
+    const ov = await overflow(mp);
+    t(`390px ${route}: fees render with no horizontal overflow`, (await feeSection(mp).count()) === 1 && ov <= 0, `overflow ${ov}px`);
+  }
+  await mp.evaluate(() => localStorage.setItem('ukcf.compare.v1', JSON.stringify(['edinburgh-physics-bsc--2027', 'imperial-physics-bsc--2027'])));
+  await goto(mp, '/compare');
+  await mp.reload({ waitUntil: 'networkidle' });
+  await mp.waitForTimeout(500);
+  t('390px compare: the Tuition fees row is present', (await mp.locator('th', { hasText: 'Tuition fees' }).count()) === 1);
+  t('390px compare: the page itself does not scroll sideways (the table scrolls in its own box)', (await overflow(mp)) <= 0, `overflow ${await overflow(mp)}px`);
+  await m.close();
 }
 
 /* ================================================================== */

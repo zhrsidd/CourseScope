@@ -1,0 +1,134 @@
+{
+  "universityId": "southampton",
+  "checkedOn": "2026-09-30",
+  "method": "WebFetch of each official course page on southampton.ac.uk (fee block and year wording; stale-cache re-fetch with ?v=2 for selected pages), the undergraduate fee table (courses/fees/undergraduate/tuition-fees.page), courses/fees/undergraduate.page, courses/fees/international.page and the student fees regulations page. No figure could be tied to 2027 entry, so all courses are recorded unknown.",
+  "universityWideStatements": [],
+  "courses": [
+    {
+      "id": "southampton-physics-mphys--2027",
+      "fees": [],
+      "unresolved": "Year not established: the course page fee block (\"Fees for a year's study: UK students pay ...; EU and international students pay ...\") and the undergraduate fee table carry no year wording, and the university's fees regulations page refers to 2026/2027. Nothing official ties the figures to 2027 entry."
+    },
+    {
+      "id": "southampton-physics-bsc--2027",
+      "fees": [],
+      "unresolved": "Year not established: the course page fee block (\"Fees for a year's study: UK students pay ...; EU and international students pay ...\") and the undergraduate fee table carry no year wording, and the university's fees regulations page refers to 2026/2027. Nothing official ties the figures to 2027 entry."
+    },
+    {
+      "id": "southampton-physics-with-astronomy-mphys--2027",
+      "fees": [],
+      "unresolved": "Year not established: the course page fee block (\"Fees for a year's study: UK students pay ...; EU and international students pay ...\") and the undergraduate fee table carry no year wording, and the university's fees regulations page refers to 2026/2027. Nothing official ties the figures to 2027 entry."
+    },
+    {
+      "id": "southampton-physics-with-space-science-mphys--2027",
+      "fees": [],
+      "unresolved": "Year not established: the course page fee block (\"Fees for a year's study: UK students pay ...; EU and international students pay ...\") and the undergraduate fee table carry no year wording, and the university's fees regulations page refers to 2026/2027. Nothing official ties the figures to 2027 entry."
+    },
+    {
+      "id": "southampton-physics-with-artificial-intelligence-mphys--2027",
+      "fees": [],
+      "unresolved": "Year not established: the course page fee block (\"Fees for a year's study: UK students pay ...; EU and international students pay ...\") and the undergraduate fee table carry no year wording, and the university's fees regulations page refers to 2026/2027. Nothing official ties the figures to 2027 entry."
+    },
+    {
+      "id": "southampton-physics-with-quantum-science-and-technologies-mphys--2027",
+      "fees": [],
+      "unresolved": "Year not established: the course page fee block (\"Fees for a year's study: UK students pay ...; EU and international students pay ...\") and the undergraduate fee table carry no year wording, and the university's fees regulations page refers to 2026/2027. Nothing official ties the figures to 2027 entry."
+    },
+    {
+      "id": "southampton-aeronautics-and-astronautics-meng--2027",
+      "fees": [],
+      "unresolved": "Year not established: the course page fee block (\"Fees for a year's study: UK students pay ...; EU and international students pay ...\") and the undergraduate fee table carry no year wording, and the university's fees regulations page refers to 2026/2027. Nothing official ties the figures to 2027 entry."
+    },
+    {
+      "id": "southampton-aeronautics-and-astronautics-beng--2027",
+      "fees": [],
+      "unresolved": "Year not established: the course page fee block (\"Fees for a year's study: UK students pay ...; EU and international students pay ...\") and the undergraduate fee table carry no year wording, and the university's fees regulations page refers to 2026/2027. Nothing official ties the figures to 2027 entry."
+    },
+    {
+      "id": "southampton-aeronautics-and-astronautics-aerodynamics-meng--2027",
+      "fees": [],
+      "unresolved": "Course page states \"EU and international students pay £31,000.\" (UK £10,050). No row for H490 in the fee table https://www.southampton.ac.uk/courses/fees/undergraduate/tuition-fees.page (table has only the placement-year variant HH41 at £33,500). Year not established: the course page fee block (\"Fees for a year's study: UK students pay ...; EU and international students pay ...\") and the undergraduate fee table carry no year wording, and the university's fees regulations page refers to 2026/2027. Nothing official ties the figures to 2027 entry."
+    },
+    {
+      "id": "southampton-aeronautics-and-astronautics-spacecraft-engineering-meng--2027",
+      "fees": [],
+      "unresolved": "Course page states \"EU and international students pay £31,000.\" (UK £10,050). No row for H493 in the fee table https://www.southampton.ac.uk/courses/fees/undergraduate/tuition-fees.page. Year not established: the course page fee block (\"Fees for a year's study: UK students pay ...; EU and international students pay ...\") and the undergraduate fee table carry no year wording, and the university's fees regulations page refers to 2026/2027. Nothing official ties the figures to 2027 entry."
+    },
+    {
+      "id": "southampton-mechanical-engineering-meng--2027",
+      "fees": [],
+      "unresolved": "Year not established: the course page fee block (\"Fees for a year's study: UK students pay ...; EU and international students pay ...\") and the undergraduate fee table carry no year wording, and the university's fees regulations page refers to 2026/2027. Nothing official ties the figures to 2027 entry."
+    },
+    {
+      "id": "southampton-mechanical-engineering-beng--2027",
+      "fees": [],
+      "unresolved": "Year not established: the course page fee block (\"Fees for a year's study: UK students pay ...; EU and international students pay ...\") and the undergraduate fee table carry no year wording, and the university's fees regulations page refers to 2026/2027. Nothing official ties the figures to 2027 entry."
+    },
+    {
+      "id": "southampton-mechanical-engineering-aerospace-engineering-meng--2027",
+      "fees": [],
+      "unresolved": "Year not established: the course page fee block (\"Fees for a year's study: UK students pay ...; EU and international students pay ...\") and the undergraduate fee table carry no year wording, and the university's fees regulations page refers to 2026/2027. Nothing official ties the figures to 2027 entry."
+    },
+    {
+      "id": "southampton-electrical-and-electronic-engineering-meng--2027",
+      "fees": [],
+      "unresolved": "Year not established: the course page fee block (\"Fees for a year's study: UK students pay ...; EU and international students pay ...\") and the undergraduate fee table carry no year wording, and the university's fees regulations page refers to 2026/2027. Nothing official ties the figures to 2027 entry."
+    },
+    {
+      "id": "southampton-electrical-and-electronic-engineering-beng--2027",
+      "fees": [],
+      "unresolved": "Year not established: the course page fee block (\"Fees for a year's study: UK students pay ...; EU and international students pay ...\") and the undergraduate fee table carry no year wording, and the university's fees regulations page refers to 2026/2027. Nothing official ties the figures to 2027 entry."
+    },
+    {
+      "id": "southampton-electronic-engineering-beng--2027",
+      "fees": [],
+      "unresolved": "Year not established: the course page fee block (\"Fees for a year's study: UK students pay ...; EU and international students pay ...\") and the undergraduate fee table carry no year wording, and the university's fees regulations page refers to 2026/2027. Nothing official ties the figures to 2027 entry."
+    },
+    {
+      "id": "southampton-civil-engineering-meng--2027",
+      "fees": [],
+      "unresolved": "Year not established: the course page fee block (\"Fees for a year's study: UK students pay ...; EU and international students pay ...\") and the undergraduate fee table carry no year wording, and the university's fees regulations page refers to 2026/2027. Nothing official ties the figures to 2027 entry."
+    },
+    {
+      "id": "southampton-acoustical-engineering-beng--2027",
+      "fees": [],
+      "unresolved": "Course page banner: \"This course is not open to applicants for 2027 entry. Find similar degrees by browsing our course finder.\" No row for HH72 in the fee table. Year not established: the course page fee block (\"Fees for a year's study: UK students pay ...; EU and international students pay ...\") and the undergraduate fee table carry no year wording, and the university's fees regulations page refers to 2026/2027. Nothing official ties the figures to 2027 entry."
+    },
+    {
+      "id": "southampton-maritime-engineering-meng--2027",
+      "fees": [],
+      "unresolved": "Year not established: the course page fee block (\"Fees for a year's study: UK students pay ...; EU and international students pay ...\") and the undergraduate fee table carry no year wording, and the university's fees regulations page refers to 2026/2027. Nothing official ties the figures to 2027 entry."
+    },
+    {
+      "id": "southampton-biomedical-engineering-meng--2027",
+      "fees": [],
+      "unresolved": "CONFLICT: course page states \"UK students pay £10,050. EU and international students pay £31,000.\" but the fee table row reads \"Biomedical Engineering | MEng | BB97 | Full-time | £10,050 | £33,500\". Year not established: the course page fee block (\"Fees for a year's study: UK students pay ...; EU and international students pay ...\") and the undergraduate fee table carry no year wording, and the university's fees regulations page refers to 2026/2027. Nothing official ties the figures to 2027 entry."
+    },
+    {
+      "id": "southampton-acoustical-engineering-meng--2027",
+      "fees": [],
+      "unresolved": "Course page banner: \"This course is not open to applicants for 2027 entry. Find similar degrees by browsing our course finder.\" No row for H722 in the fee table. Year not established: the course page fee block (\"Fees for a year's study: UK students pay ...; EU and international students pay ...\") and the undergraduate fee table carry no year wording, and the university's fees regulations page refers to 2026/2027. Nothing official ties the figures to 2027 entry."
+    },
+    {
+      "id": "southampton-physics-with-mathematics-mphys--2027",
+      "fees": [],
+      "unresolved": "Year not established: the course page fee block (\"Fees for a year's study: UK students pay ...; EU and international students pay ...\") and the undergraduate fee table carry no year wording, and the university's fees regulations page refers to 2026/2027. Nothing official ties the figures to 2027 entry. Course page is partly still set to 2026/27 (\"For entry in academic year 2026 to 2027\")."
+    },
+    {
+      "id": "southampton-maritime-engineering-beng--2027",
+      "fees": [],
+      "unresolved": "Year not established: the course page fee block (\"Fees for a year's study: UK students pay ...; EU and international students pay ...\") and the undergraduate fee table carry no year wording, and the university's fees regulations page refers to 2026/2027. Nothing official ties the figures to 2027 entry."
+    },
+    {
+      "id": "southampton-electronic-engineering-meng--2027",
+      "fees": [],
+      "unresolved": "Year not established: the course page fee block (\"Fees for a year's study: UK students pay ...; EU and international students pay ...\") and the undergraduate fee table carry no year wording, and the university's fees regulations page refers to 2026/2027. Nothing official ties the figures to 2027 entry."
+    },
+    {
+      "id": "southampton-electrical-engineering-meng--2027",
+      "fees": [],
+      "unresolved": "Year not established: the course page fee block (\"Fees for a year's study: UK students pay ...; EU and international students pay ...\") and the undergraduate fee table carry no year wording, and the university's fees regulations page refers to 2026/2027. Nothing official ties the figures to 2027 entry."
+    }
+  ],
+  "notes2028": "No 2028-entry fees found. Southampton pages carry no fee year; module lists mention 2028-29 but no fees. Fee overview pages say home fees increase every year from 1 August 2025 and overseas fees increase every year for students starting from 1 August 2026, with no 2027 or 2028 amounts."
+}

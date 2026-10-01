@@ -3,7 +3,33 @@
 The student-facing release notes are also shown in the app, on the methodology page
 (`src/data/version.ts → RELEASES`). Engineering detail is in `DEVELOPER_NOTES` in the same file.
 
-## Unreleased
+## CourseScope v1.1.0 — Tuition fees
+
+*Prepared 1 October 2026 · not tagged until live production verification passes*
+
+- **Tuition fees on course pages.** A compact *Tuition fees* section for each course, after the
+  admissions cards, stating that fees are information only and play no part in eligibility.
+- **Official sources only.** 1,127 fee rows for 2027 entry across 521 courses at 21 universities,
+  each read from the university's own pages, with the entry year, a verbatim year quote, source
+  link and verification date. 431 courses have at least one published fee.
+- **University categories preserved.** Home / Overseas / International / UK / UK-Ireland, and at
+  Scottish universities Scotland, Rest of UK, Republic of Ireland, International/EU — never
+  collapsed into two universal categories.
+- **Honest states.** *Published*, *Awaiting publication* (an expected figure is labelled as
+  expected, never shown as the fee), and *Unknown* (unreadable, undated, or official sources
+  disagree — never resolved by picking one). A published fee not re-checked within 12 months is
+  shown as out of date.
+- **No year leakage.** No university had published 2028-entry fees; 2028 courses say so. 2027
+  figures are never carried forward.
+- **Compare** gains a Tuition fees row. No fee filters, nothing added to course cards.
+- **Schema.** New `TuitionFee` relation (`data/fees.json`), separate from course records — every
+  existing record is unchanged and valid. Raw research kept in `data/research/fees-2027/`.
+- **Validation and tests.** Fee rules for year leakage, year evidence, missing provenance,
+  non-university sources, duplicate categories, Scottish category collapse, and
+  university-wide-without-statement. 894 assertions (59 new), 212 browser checks (23 new).
+  Catalogue counts (1,132 / 569 / 563) and eligibility verdicts are unchanged.
+
+## Unreleased (hosting, before v1.1.0)
 
 - Canonical production hosting moved to **Cloudflare Pages** at <https://coursescope.pages.dev/>.
   GitHub Pages remains available as a backup.

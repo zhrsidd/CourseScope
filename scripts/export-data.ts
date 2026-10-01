@@ -1,5 +1,5 @@
 /**
- * Writes the catalogue out as the four JSON files documented in data/SCHEMA.md.
+ * Writes the catalogue out as the JSON files documented in data/SCHEMA.md.
  *
  *   npm run export:data
  *
@@ -9,7 +9,7 @@
 
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
-import { ADMISSIONS_TESTS, allCourses, universities } from '@/data';
+import { ADMISSIONS_TESTS, TUITION_FEES, allCourses, universities } from '@/data';
 import { serialiseCourse } from '@/lib/importers';
 
 const OUT = join(process.cwd(), 'data');
@@ -52,6 +52,9 @@ write('rankings.json', universities.flatMap((u) => u.rankings));
 
 /* deadlines.json — one row per deadline, scoped by entry year and by what it applies to */
 write('deadlines.json', universities.flatMap((u) => u.applicationDeadlines));
+
+/* fees.json — v1.1: one row per published fee category per course and entry year */
+write('fees.json', TUITION_FEES);
 
 /* tests.json — the reference list of admissions tests */
 write('tests.json', ADMISSIONS_TESTS);

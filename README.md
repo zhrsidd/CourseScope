@@ -22,14 +22,15 @@ admitted", and no admission probability anywhere in the codebase.
 
 | | |
 |---|---|
-| Version | **1.0.0** (initial public release) |
+| Version | **1.1.0** (tuition fees) — v1.0.0 is the latest tagged release |
 | Served records | 1,132 |
 | Verified | 563 |
 | Awaiting data | 6 — all waiting on a university to publish its 2027 cycle |
 | Universities | 22, **all** with verified data |
-| Assertions | 835 passing |
+| Tuition fees (2027 entry) | 431 courses with at least one published fee, 20 universities; 2028 not yet published anywhere |
+| Assertions | 894 passing |
 | Production validation | 0 errors, 0 duplicates |
-| Browser QA | 189 checks passing, 0 page errors |
+| Browser QA | 212 checks passing, 0 page errors |
 
 ## Running it
 
@@ -47,14 +48,14 @@ Run these four, in order, from a clean checkout. All must pass before tagging.
 ```bash
 npm ci                 # never `npm install` for a release — use the lockfile
 npm run typecheck      # tsc --noEmit, strict, noUnusedLocals
-npm run check          # 835 engine, parser, importer, identity, validation, brand and polish assertions
+npm run check          # 894 engine, parser, importer, identity, validation, brand, polish and fee assertions
 npm run build          # typechecks again, then builds to dist/
 ```
 
 Then, with `npm run preview` running in another shell:
 
 ```bash
-npm run qa             # 189 browser checks: fresh state, legacy storage, mobile, brand, feedback,
+npm run qa             # 212 browser checks: fresh state, legacy storage, mobile, brand, feedback, fees,
                        # accessibility, empty states, cycles, source links, performance
 ```
 
@@ -145,8 +146,8 @@ src/
                     Shortlist, About, Data manager
 data/               universities.json, courses.json, rankings.json, tests.json + SCHEMA.md
 scripts/            export-data.ts
-engine-check.ts     835 assertions over the engine, parser, importer, validation and brand
-smoke.v09.mjs       The supported QA suite — 189 release checks in a real browser
+engine-check.ts     894 assertions over the engine, parser, importer, validation, brand and fees
+smoke.v09.mjs       The supported QA suite — 212 release checks in a real browser
 smoke.mjs,          Historical per-batch regression walkthroughs, kept as a record of
 smoke.batch*.mjs,     what each batch was checked against. Still runnable, but
 smoke.v08.mjs         superseded by smoke.v09.mjs.
