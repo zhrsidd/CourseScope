@@ -26,8 +26,14 @@ The student-facing release notes are also shown in the app, on the methodology p
   existing record is unchanged and valid. Raw research kept in `data/research/fees-2027/`.
 - **Validation and tests.** Fee rules for year leakage, year evidence, missing provenance,
   non-university sources, duplicate categories, Scottish category collapse, and
-  university-wide-without-statement. 894 assertions (59 new), 212 browser checks (23 new).
-  Catalogue counts (1,132 / 569 / 563) and eligibility verdicts are unchanged.
+  university-wide-without-statement. 953 assertions, 212 browser checks.
+- **Southampton correction (live release verification).** HH72 (Acoustical Engineering BEng) and
+  H722 (MEng) are withdrawn from the 2027 catalogue: Southampton's own course pages now read
+  "This course is not open to applicants for 2027 entry," contradicting HH72's existing verified
+  2027 offer and H722's identity-only shell. Catalogue counts: 1,132 → **1,129** served applications
+  (563 → **562** verified; 569 → **567** for 2027; 563 → **562** for 2028 — HH72's 2028 "not yet
+  published" shell is removed with it). All other eligibility verdicts and fee data are unchanged;
+  see `src/data/courses.real.batch6.southampton.ts` for the full evidence and reasoning.
 
 ## Unreleased (hosting, before v1.1.0)
 
