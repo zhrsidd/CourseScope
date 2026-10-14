@@ -6209,7 +6209,7 @@ check(
   check('  …and the eligibility engine does not read fees',
     /fee/i.test(fs.readFileSync('src/lib/eligibility.ts', 'utf8')), false);
   check('  …course rows and filters carry no fee UI (v1.1 scope)',
-    ['src/components/CourseRow.tsx', 'src/components/FilterSidebar.tsx', 'src/lib/filters.ts']
+    ['src/components/CourseRow.tsx', 'src/components/ActiveFilters.tsx', 'src/components/StudentProfilePanel.tsx', 'src/components/EntryYearSwitch.tsx', 'src/pages/SearchPage.tsx', 'src/components/FilterSidebar.tsx', 'src/lib/filters.ts']
       .filter((f) => /TuitionFee|tuitionFee|feesForCourse/.test(fs.readFileSync(f, 'utf8'))).length, 0);
   check('  …the course page places Tuition fees after every admissions card',
     (() => {

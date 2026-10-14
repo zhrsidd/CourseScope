@@ -63,3 +63,14 @@ export function saveEntryYear(year: ApplicationYear): void {
 export function initialEntryYear(): ApplicationYear {
   return readSavedEntryYear() ?? DEFAULT_APPLICATION_YEAR;
 }
+
+/**
+ * A year carried by a shared link, e.g. `#/search?year=2028`. Read-only: it is
+ * shown for the visit and never saved. Only the search route carries one.
+ */
+export function urlEntryYear(hash: string): ApplicationYear | null {
+  const m = /^#\/search\?(.*)$/.exec(hash);
+  if (!m) return null;
+  const y = new URLSearchParams(m[1]).get('year');
+  return isSelectableYear(y) ? y : null;
+}

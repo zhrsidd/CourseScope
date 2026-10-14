@@ -3,6 +3,23 @@
 The student-facing release notes are also shown in the app, on the methodology page
 (`src/data/version.ts → RELEASES`). Engineering detail is in `DEVELOPER_NOTES` in the same file.
 
+## CourseScope v2 (in development, not released)
+
+- **Phase 3: landing page and routing.** `#/` is now the editorial landing page ("Find the course. Check
+  the source."); the course explorer lives at `#/search`. Every number, date and quotation on the landing
+  page is computed from the catalogue, and the subject counts use the same filter code as the explorer.
+- **Legacy URLs.** `#/?q=…&category=…&subcategory=…&university=…` redirects to `#/search` with the same
+  parameters (history entry replaced).
+- **Shareable searches.** The explorer writes its selections to the address (`q`, `university`, `category`,
+  `subcategory`, `degree`, `duration`, `region`, `test`, `interview`, `maths`, `fm`, `physics`, `chemistry`,
+  `maxoffer`, `rank`, `sort`, `awaiting`, `year`). Back and Forward step through filter changes. The A-Level
+  profile, the shortlist, the comparison set, the "my verdict" filters and the sample-data switch are never
+  put in an address.
+- **Entry year.** A `year` in a link is shown for that visit only and never saved; the saved year changes only
+  when a person presses a year. An address with no year means the saved choice.
+- Unchanged: the dataset, eligibility engine, verification logic, filter logic, comparison and shortlist
+  persistence.
+
 ## CourseScope v1.1.0 — Tuition fees
 
 *Prepared 1 October 2026 · not tagged until live production verification passes*

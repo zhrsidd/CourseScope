@@ -7,7 +7,7 @@ import { BrandMark } from './BrandMark';
 import { BRAND_NAME, BRAND_SHORT_SUBTITLE } from '@/lib/brand';
 
 const LINKS = [
-  { to: '/', label: 'Search', end: true },
+  { to: '/search', label: 'Search' },
   { to: '/browse', label: 'Browse subjects' },
   { to: '/universities', label: 'Universities' },
   { to: '/compare', label: 'Compare' },
@@ -26,7 +26,7 @@ export function Navbar() {
         <Link to="/" className="flex shrink-0 items-center gap-2" aria-label={`${BRAND_NAME} — home`}>
           <BrandMark size={28} />
           <span className="flex flex-col leading-none">
-            <span className="text-[15px] font-semibold tracking-tight text-navy-950">{BRAND_NAME}</span>
+            <span className="font-display text-[23px] leading-none tracking-tight text-navy-950">{BRAND_NAME}</span>
             {/* Desktop only: the header stays one compact line on phones. */}
             <span className="mt-0.5 hidden text-xs font-medium text-ink-faint xl:block">
               {BRAND_SHORT_SUBTITLE}
@@ -39,8 +39,7 @@ export function Navbar() {
             <NavLink
               key={l.to}
               to={l.to}
-              end={l.end}
-              className={({ isActive }) =>
+                            className={({ isActive }) =>
                 cx(
                   'inline-flex min-h-[40px] items-center rounded-ctl px-3 text-[15px] font-medium transition-colors duration-quick ease-standard',
                   isActive ? 'bg-sunken text-navy-900' : 'text-ink-muted hover:bg-sunken hover:text-ink',
@@ -92,8 +91,7 @@ export function Navbar() {
             <NavLink
               key={l.to}
               to={l.to}
-              end={l.end}
-              onClick={() => setOpen(false)}
+                            onClick={() => setOpen(false)}
               className={({ isActive }) =>
                 cx(
                   'flex min-h-[44px] items-center rounded-ctl px-3 text-[15px] font-medium',

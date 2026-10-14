@@ -33,7 +33,7 @@ export function ComparePage() {
           title="No courses selected yet"
           description="Add courses from the search results or from any course page. You can compare up to five at a time."
           action={
-            <Link to="/" className="btn-primary">
+            <Link to="/search" className="btn-primary">
               Find courses
             </Link>
           }

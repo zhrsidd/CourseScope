@@ -74,7 +74,7 @@ export function CourseDetailPage() {
           title="Course not found"
           description="This course record is not in the catalogue."
           action={
-            <Link to="/" className="btn-secondary">
+            <Link to="/search" className="btn-secondary">
               Back to search
             </Link>
           }

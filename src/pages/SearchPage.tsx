@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { usePageTitle } from '@/lib/page-title';
-import { Link, useSearchParams } from 'react-router-dom';
-import type { SubjectCategory, SubjectSubcategory } from '@/types';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ActiveFilters } from '@/components/ActiveFilters';
 import { CourseRow } from '@/components/CourseRow';
 import { EntryYearSwitch } from '@/components/EntryYearSwitch';
@@ -21,6 +20,7 @@ import {
   type SortKey,
 } from '@/lib/filters';
 import { parseQuery } from '@/lib/search';
+import { filtersToSearch, searchToFilters, yearFromSearch } from '@/lib/search-url';
 import { filledGrades, profileIsEmpty, sortGradesDesc } from '@/lib/grades';
 import { useApp } from '@/state/AppContext';
 
@@ -29,7 +29,7 @@ const PAGE_SIZE = RESULT_PAGE_SIZE;
 export function SearchPage() {
   // The home page carries the full descriptive title: "CourseScope — UK Physics
   // & Engineering Course Finder". Inner pages put their own subject first.
-  usePageTitle(null);
+  usePageTitle('Search courses');
   const {
     loading,
     error,
@@ -39,6 +39,8 @@ export function SearchPage() {
     eligibility,
     profile,
     setEntryYear,
+    setYearOverride,
+    savedEntryYear,
     savedCourseIds,
     compareIds,
     hasVerifiedData,
@@ -47,20 +49,15 @@ export function SearchPage() {
   // Ranking sorts are offered only when verified rankings exist to sort by.
   const hasRankings = universities.some((u) => u.rankings.length > 0);
 
-  const [params, setParams] = useSearchParams();
+  const location = useLocation();
+  const navigate = useNavigate();
   const [filters, setFilters] = useState<FilterState>(() => {
     // Start on the visitor's year from the first render, so the list never
-    // flashes the default year before the sync effect below corrects it.
+    // flashes the default year before the sync effect below corrects it. The
+    // address supplies every other selection (legacy q / category / subcategory /
+    // university links included); see src/lib/search-url.ts.
     const base = { ...defaultFilters(false), applicationYear: profile.applicationYear };
-    const uni = params.get('university');
-    const category = params.get('category') as SubjectCategory | null;
-    const sub = params.get('subcategory') as SubjectSubcategory | null;
-    const q = params.get('q');
-    if (uni) base.universityIds = [uni];
-    if (category) base.categories = [category];
-    if (sub) base.subcategories = [sub];
-    if (q) base.query = q;
-    return base;
+    return searchToFilters(location.search, base);
   });
   const [showFilters, setShowFilters] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
@@ -83,12 +80,49 @@ export function SearchPage() {
     );
   }, [profile.applicationYear]);
 
+  /*
+   * THE ADDRESS AND THE FILTERS STAY IN STEP, IN BOTH DIRECTIONS.
+   *
+   * Filters -> address: each change rewrites `#/search?...` so the page can be
+   * shared, bookmarked and refreshed. Typing and year changes REPLACE the current
+   * history entry; any other change PUSHES one, so Back steps through filter
+   * changes without a keystroke-by-keystroke trail.
+   *
+   * Address -> filters: Back, Forward, or a pasted link change the address; the
+   * filters follow. Both effects compare canonical strings, so neither can
+   * trigger the other in a loop. A year in the address is shown for this visit
+   * only (setYearOverride) and is never saved.
+   */
+  const filtersRef = useRef(filters);
+  filtersRef.current = filters;
+  const lastWritten = useRef<FilterState | null>(null);
   useEffect(() => {
-    const next = new URLSearchParams();
-    if (filters.query) next.set('q', filters.query);
-    setParams(next, { replace: true });
+    const fromUrl = searchToFilters(location.search, filtersRef.current);
+    const wantYear = yearFromSearch(location.search);
+    if (wantYear) {
+      fromUrl.applicationYear = wantYear;
+      setYearOverride(wantYear);
+    } else {
+      // An address with no year means "my saved choice", not "whatever a previous link said".
+      setYearOverride(null);
+      fromUrl.applicationYear = savedEntryYear;
+    }
+    if (filtersToSearch(fromUrl) !== filtersToSearch(filtersRef.current)) setFilters(fromUrl);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filters.query]);
+  }, [location.search]);
+
+  useEffect(() => {
+    const next = filtersToSearch(filters);
+    const prev = lastWritten.current;
+    lastWritten.current = filters;
+    if (next === location.search) return;
+    const sameButTyping =
+      prev === null ||
+      filtersToSearch({ ...prev, query: '', applicationYear: '2027' }) ===
+        filtersToSearch({ ...filters, query: '', applicationYear: '2027' });
+    navigate({ pathname: '/search', search: next }, { replace: sameButTyping });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filters]);
 
   const parsed = useMemo(() => parseQuery(filters.query), [filters.query]);
 

@@ -14,7 +14,7 @@ import { emptyStudentProfile, isStudentProfile } from '@/lib/grades';
 import { validateCatalogue, type ValidationReport } from '@/lib/validation';
 import { TUITION_FEES } from '@/data/tuition-fees';
 import { isStringArray, useLocalStorage } from '@/hooks/useLocalStorage';
-import { initialEntryYear, saveEntryYear } from '@/lib/entry-year';
+import { initialEntryYear, saveEntryYear, urlEntryYear } from '@/lib/entry-year';
 import type { ApplicationYear } from '@/types';
 
 export const MAX_COMPARE = 5;
@@ -38,8 +38,15 @@ interface AppState {
   resetProfile: () => void;
   /** The one entry year every switch shows. See src/lib/entry-year.ts. */
   entryYear: ApplicationYear;
-  /** Record an explicit entry-year choice. The only thing that saves it. */
+  /** The year the visitor explicitly chose and saved (or the default). Ignores any link override. */
+  savedEntryYear: ApplicationYear;
+  /** Record an explicit entry-year choice. The only thing that saves it. Also ends any link override. */
   setEntryYear: (year: ApplicationYear) => void;
+  /**
+   * Show a year taken from a shared link WITHOUT saving it. `null` returns to the
+   * saved choice. Never writes storage.
+   */
+  setYearOverride: (year: ApplicationYear | null) => void;
   eligibility: Record<string, EligibilityReport>;
 
   savedCourseIds: string[];
@@ -79,11 +86,26 @@ export function AppProvider({ children }: { children: ReactNode }) {
    * profile's own stored `applicationYear` is never consulted: it may be a
    * default an older build wrote on mount. See src/lib/entry-year.ts.
    */
-  const [entryYear, setEntryYearState] = useState<ApplicationYear>(initialEntryYear);
+  const [savedEntryYear, setEntryYearState] = useState<ApplicationYear>(initialEntryYear);
+  /*
+   * A year carried by a shared link (#/search?year=2028) applies to this visit
+   * only. It is read synchronously so the first render already shows it, and it
+   * is never written to storage: only a person pressing a year does that.
+   */
+  const [yearOverride, setYearOverrideState] = useState<ApplicationYear | null>(() => {
+    const fromLink = urlEntryYear(window.location.hash);
+    return fromLink && fromLink !== initialEntryYear() ? fromLink : null;
+  });
+  const entryYear = yearOverride ?? savedEntryYear;
   const setEntryYear = useCallback((year: ApplicationYear) => {
     setEntryYearState(year);
+    setYearOverrideState(null);
     saveEntryYear(year);
   }, []);
+  const setYearOverride = useCallback(
+    (year: ApplicationYear | null) => setYearOverrideState(year && year !== savedEntryYear ? year : null),
+    [savedEntryYear],
+  );
 
   /** Everything downstream sees one profile whose year is the chosen year. */
   const profile = useMemo<StudentProfile>(
@@ -204,7 +226,9 @@ export function AppProvider({ children }: { children: ReactNode }) {
     setProfile,
     resetProfile,
     entryYear,
+    savedEntryYear,
     setEntryYear,
+    setYearOverride,
     eligibility,
     savedCourseIds,
     savedUniversityIds,

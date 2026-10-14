@@ -39,7 +39,7 @@ export function BrowsePage() {
             <section key={category.id}>
               <SectionTitle
                 right={
-                  <Link to={`/?category=${category.id}`} className="text-xs text-navy-700 hover:underline">
+                  <Link to={`/search?category=${category.id}`} className="text-xs text-navy-700 hover:underline">
                     View all {total} courses
                   </Link>
                 }
@@ -54,7 +54,7 @@ export function BrowsePage() {
                   return (
                     <li key={s.id}>
                       <Link
-                        to={`/?subcategory=${s.id}`}
+                        to={`/search?subcategory=${s.id}`}
                         className={cx(
                           'flex items-center gap-3 rounded-lg border border-slate-200 bg-white p-3 transition-colors hover:border-navy-300 hover:bg-navy-50/40',
                           count === 0 && 'opacity-60',

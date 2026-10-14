@@ -109,7 +109,7 @@ const overflow = (page) =>
 /* ================================================================== */
 log('12. FRESH BROWSER — BRAND-NEW VISITOR, ZERO STORED STATE');
 const { ctx: freshCtx, page: fresh } = await makeCtx({ width: 1440, height: 1200 });
-await goto(fresh, '/');
+await goto(fresh, '/search');
 const storageAtBoot = await fresh.evaluate(() => {
   try { return Object.keys(localStorage).length; } catch { return -1; }
 });
@@ -126,7 +126,7 @@ t('5. a course page opens', /Physics/.test(await body(fresh)));
 t('   and shows its verified requirements', /ABB/.test(await body(fresh)));
 
 /* 8-9: shortlist and comparison, done before the profile changes result order */
-await goto(fresh, '/');
+await goto(fresh, '/search');
 const saveBtn = fresh.locator('main article').first().getByRole('button', { name: /^Save$/ }).first();
 if (await saveBtn.count()) { await saveBtn.click(); await fresh.waitForTimeout(500); }
 t('8. a course can be shortlisted', await fresh.evaluate(() => {
@@ -140,7 +140,7 @@ t('9. two courses can be compared', /Compar/i.test(await main(fresh)) && (await 
   `${cmpN0} added`);
 
 /* create a profile (v2: through the A-Levels drawer, with real grades) */
-await goto(fresh, '/');
+await goto(fresh, '/search');
 await openProfile(fresh);
 let profileMade = false;
 {
@@ -162,12 +162,12 @@ const storedProfile = await fresh.evaluate(() => {
 });
 t('   and it is persisted', Boolean(storedProfile && storedProfile.length > 10));
 t('7. eligibility appears once a profile exists',
-  /Meets|Not met|Review required|Insufficient/i.test(await main(fresh)));
+  /Meets|Does not|Not met|Review required|Insufficient/i.test(await main(fresh)));
 
 await fresh.reload({ waitUntil: 'networkidle' });
 await fresh.waitForTimeout(800);
 t('10. reload does not break the app', (await body(fresh)).length > 500);
-await goto(fresh, '/');
+await goto(fresh, '/search');
 const profileAfter = await fresh.evaluate(() => {
   try { return localStorage.getItem('ukcf.profile.v1'); } catch { return null; }
 });
@@ -204,7 +204,7 @@ const legacyCases = [
 ];
 for (const [label, payload] of legacyCases) {
   const { ctx, page } = await makeCtx({ width: 1440, height: 1200 });
-  await page.goto(`${BASE}/#/`, { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/#/search`, { waitUntil: 'networkidle' });
   await page.evaluate((p) => {
     try { for (const [k, v] of Object.entries(p)) localStorage.setItem(k, v); } catch { /* ignore */ }
   }, payload);
@@ -223,9 +223,9 @@ for (const [label, payload] of legacyCases) {
 log('\n16. EMPTY AND ERROR STATES');
 const { ctx: errCtx, page: e } = await makeCtx({ width: 1440, height: 1200 });
 const stateChecks = [
-  ['zero search results', async () => { await goto(e, '/'); await e.getByLabel('Search courses').first().fill('zzzqqq not a course'); await e.waitForTimeout(700); return (await main(e)).trim().length > 60 && (await e.locator('main article').count()) === 0; }],
-  ['malformed search input', async () => { await goto(e, '/'); await e.getByLabel('Search courses').first().fill('<script>*(){}[]\\\\'); await e.waitForTimeout(700); return (await main(e)).trim().length > 40; }],
-  ['a study-option search routes to a parent', async () => { await goto(e, '/'); await e.getByLabel('Search courses').first().fill('Astrophysics'); await e.waitForTimeout(800); return /Queen Mary|Route within this application|Astrophysics/i.test(await main(e)); }],
+  ['zero search results', async () => { await goto(e, '/search'); await e.getByLabel('Search courses').first().fill('zzzqqq not a course'); await e.waitForTimeout(700); return (await main(e)).trim().length > 60 && (await e.locator('main article').count()) === 0; }],
+  ['malformed search input', async () => { await goto(e, '/search'); await e.getByLabel('Search courses').first().fill('<script>*(){}[]\\\\'); await e.waitForTimeout(700); return (await main(e)).trim().length > 40; }],
+  ['a study-option search routes to a parent', async () => { await goto(e, '/search'); await e.getByLabel('Search courses').first().fill('Astrophysics'); await e.waitForTimeout(800); return /Queen Mary|Route within this application|Astrophysics/i.test(await main(e)); }],
   ['nonexistent course route', async () => { await goto(e, '/course/nope--2027'); return /not found/i.test(await body(e)); }],
   ['nonexistent university route', async () => { await goto(e, '/university/nope'); return /not found/i.test(await body(e)); }],
   ['invalid path', async () => { await goto(e, '/this/is/not/a/route'); return /not found/i.test(await body(e)); }],
@@ -238,11 +238,11 @@ for (const [label, fn] of stateChecks) {
   t(label, ok);
 }
 /* comparison with 1, 2 and the maximum */
-await goto(e, '/');
+await goto(e, '/search');
 const compareButtons = e.locator('main article').getByRole('button', { name: /^Compare$/ });
 const available = await compareButtons.count();
 for (const n of [1, 2, 5]) {
-  await goto(e, '/');
+  await goto(e, '/search');
   await e.evaluate(() => { try { localStorage.setItem('ukcf.compare.v1', '[]'); } catch { /* ignore */ } });
   await e.reload({ waitUntil: 'networkidle' });
   await e.waitForTimeout(500);
@@ -285,7 +285,7 @@ log('\n18. SOURCE-LINK QA — ONE VERIFIED 2027 COURSE PER UNIVERSITY');
  * because a university page lists the visitor's chosen year, and a 2028 shell
  * correctly has no requirements and therefore no source link.
  */
-await goto(e, '/');
+await goto(e, '/search');
 const yearBtn2027 = e.getByRole('button', { name: '2027 entry', exact: true }).first();
 if (await yearBtn2027.count()) { await yearBtn2027.click(); await e.waitForTimeout(600); }
 /* Page through every result, keeping the first 2027 course seen per university. */
@@ -339,7 +339,7 @@ if (noLink.length) log(`  (no official-requirements link on the sampled course a
 
 /* ================================================================== */
 log('\n15. ACCESSIBILITY RELEASE PASS');
-await goto(e, '/');
+await goto(e, '/search');
 const a11y = await e.evaluate(() => {
   const dupIds = (() => {
     const seen = new Set(); const dupes = new Set();
@@ -382,7 +382,7 @@ t('no skipped heading levels', a11y.headingSkips === 0, `${a11y.headingSkips} sk
    which made an earlier draft of this probe read whatever had last been
    clicked instead of the document's first tab stop. */
 await e.goto(`${BASE}/#/other`, { waitUntil: 'networkidle' });
-await e.goto(`${BASE}/#/`, { waitUntil: 'networkidle' });
+await e.goto(`${BASE}/#/search`, { waitUntil: 'networkidle' });
 await e.reload({ waitUntil: 'networkidle' });
 await e.waitForTimeout(600);
 await e.evaluate(() => { const a = document.activeElement; if (a && 'blur' in a) a.blur(); });
@@ -409,7 +409,7 @@ await e.waitForTimeout(600);
 t('Load more is keyboard focusable and operable', loadMoreKb === 'ok',
   `${loadMoreKb}, now ${await e.locator('main article').count()} cards`);
 const disclosureKb = await e.evaluate(() => {
-  const d = document.querySelector('main button[aria-expanded][aria-controls]');
+  const d = document.querySelector('main article button[aria-expanded][aria-controls]');
   if (!d) return 'absent';
   d.focus();
   return document.activeElement === d ? 'ok' : 'not-focusable';
@@ -425,7 +425,7 @@ const reportKb = await e.evaluate(() => {
 t('the report-issue action is labelled and focusable', reportKb === 'ok', reportKb);
 const statusText = await e.evaluate(() => {
   const el = [...document.querySelectorAll('*')].find(
-    (x) => x.children.length <= 1 && /^(Verified|Partially verified|Awaiting research|Awaiting publication)$/.test((x.textContent ?? '').trim()),
+    (x) => [...x.children].every((c) => c.tagName.toLowerCase() === 'svg') && /^(Verified|Partially verified|Awaiting research|Awaiting publication)$/.test((x.textContent ?? '').trim()),
   );
   return el ? (el.textContent ?? '').trim() : null;
 });
@@ -436,6 +436,7 @@ await errCtx.close();
 log('\n14. MOBILE AND TABLET RELEASE QA');
 const routes = [
   ['/', 'home'],
+  ['/search', 'explorer'],
   ['/browse', 'browse'],
   ['/universities', 'universities'],
   ['/university/qmul', 'university page'],
@@ -453,7 +454,7 @@ for (const [w, h, label] of [[390, 844, 'phone 390px'], [820, 1180, 'tablet 820p
     t(`${name}: no horizontal overflow`, o <= 1, `${o}px`);
   }
   /* controls reachable and usable at this width */
-  await goto(page, '/');
+  await goto(page, '/search');
   const filters = page.getByRole('button', { name: /Filters/i }).first();
   if (await filters.count()) {
     await filters.click();
@@ -503,7 +504,7 @@ for (const [w, h, label] of [[390, 844, 'phone 390px'], [820, 1180, 'tablet 820p
 /* ================================================================== */
 log('\n17. PERFORMANCE');
 const { ctx: perfCtx, page: perf } = await makeCtx({ width: 1440, height: 1200 });
-await goto(perf, '/');
+await goto(perf, '/search');
 const nav = await perf.evaluate(() => {
   const n = performance.getEntriesByType('navigation')[0];
   const p = performance.getEntriesByName('first-contentful-paint')[0];
@@ -515,7 +516,7 @@ log(`  DOMContentLoaded ${nav.dcl}ms · first contentful paint ${nav.fcp}ms`);
 log(`  first paint: ${firstCards} cards rendered of ${totals ? totals[2] : '?'} matching results`);
 t('progressive rendering still caps the first paint at 40', firstCards === 40, `${firstCards}`);
 for (const [q, label] of [['physics', 'broad Physics search'], ['engineering', 'broad Engineering search']]) {
-  await goto(perf, '/');
+  await goto(perf, '/search');
   const start = Date.now();
   await perf.getByLabel('Search courses').first().fill(q);
   await perf.waitForFunction(() => document.querySelectorAll('main article').length > 0);
@@ -526,7 +527,7 @@ for (const [q, label] of [['physics', 'broad Physics search'], ['engineering', '
   log(`  ${label}: ~${ms}ms · ${m ? `${m[1]} of ${m[2]}` : 'n/a'}`);
   t(`  ${label} stays responsive`, ms < 4000, `${ms}ms`);
 }
-await goto(perf, '/');
+await goto(perf, '/search');
 const lm = perf.getByRole('button', { name: /Load more/ }).first();
 if (await lm.count()) {
   const s0 = Date.now();
@@ -541,7 +542,7 @@ if (await lm.count()) {
  * first select in <main>, which is a filter, and narrowing the catalogue to zero
  * results made the probe wait forever for cards that were correctly absent.
  */
-await goto(perf, '/');
+await goto(perf, '/search');
 /* v2: the profile form is in a drawer, so it has to be opened before its grade
    selectors exist in the DOM. */
 await openProfile(perf);
@@ -595,7 +596,10 @@ log('\n20. v1.0.0 — CourseScope BRAND AND PRODUCTION CONFIG');
     (await page.locator('header svg[aria-hidden="true"]').count()) > 0);
   t('old generic name is not rendered anywhere on the home page',
     !/UK University Course Finder/.test(await body(page)));
-  t('home intro is the requested line',
+  t('the landing page states what CourseScope does',
+    /CourseScope compares published entry requirements for UK Physics and Engineering degrees\./.test(await main(page)));
+  await goto(page, '/search');
+  t('explorer intro is the requested line',
     /Compare published entry requirements, admissions tests and application routes across UK universities\./.test(await main(page)));
   const icon = await page.evaluate(() => document.querySelector('link[rel="icon"]')?.getAttribute('href') ?? '');
   t('favicon link points at favicon.svg', /favicon\.svg$/.test(icon), icon);
@@ -671,7 +675,7 @@ log('\n20. v1.0.0 — CourseScope BRAND AND PRODUCTION CONFIG');
     t(`footer “Report an issue” on ${r}`, (await fl.innerText().catch(() => '')) === 'Report an issue'
       && fhref.startsWith(prodEnv.VITE_FEEDBACK_URL) && (await fl.getAttribute('target')) === '_blank', fhref.slice(0, 70));
   }
-  await goto(page, '/');
+  await goto(page, '/search');
   const foot = await page.locator('footer').innerText();
   t('footer carries CourseScope, Methodology and the data-source line',
     /CourseScope/.test(foot) && /Methodology/.test(foot) && /Data sourced from official university pages/.test(foot));
@@ -761,7 +765,7 @@ log('\n21. v1.0.0 — ENTRY YEAR: FIRST VISIT, PERSISTENCE, STALE STORAGE');
   const reload = async (page) => { await page.reload({ waitUntil: 'networkidle' }); await page.waitForTimeout(500); };
 
   const { ctx, page } = await makeCtx({ width: 1440, height: 1000 });
-  await goto(page, '/');
+  await goto(page, '/search');
   let c = await chosen(page);
   t('fresh browser (no stored state) opens on 2027', c.on === '2027 entry', JSON.stringify(c));
   t('  …on the page control', c.switches === 1 && c.where === 'page', JSON.stringify(c));
@@ -812,7 +816,7 @@ log('\n21. v1.0.0 — ENTRY YEAR: FIRST VISIT, PERSISTENCE, STALE STORAGE');
         sessionStorage.setItem('seeded', '1');
       }
     }, seed);
-    await goto(sp, '/');
+    await goto(sp, '/search');
     const r = await chosen(sp);
     const kept = await sp.evaluate(() => JSON.parse(localStorage.getItem('ukcf.profile.v1') ?? 'null')?.aLevels?.[0]?.subject ?? null);
     await sc.close();
@@ -947,10 +951,11 @@ log('\n23. v1.1 — TUITION FEES');
 
   // No fee clutter on cards or filters.
   const { ctx: c2, page: p2 } = await makeCtx({ width: 1440, height: 1100 });
-  await goto(p2, '/');
+  await goto(p2, '/search');
   const cardsText = await p2.locator('main article').allInnerTexts();
   t('course cards carry no fees (v1.1 scope)', cardsText.length > 0 && cardsText.every((x) => !/£\d|tuition/i.test(x)), `${cardsText.length} cards`);
-  t('  …and there is no fee filter', !/tuition|fee/i.test(await p2.locator('aside').first().innerText().catch(() => '')));
+  const railText = await p2.locator('aside').first().innerText().catch(() => '');
+  t('  …and there is no fee filter', railText.length > 100 && !/tuition|fee/i.test(railText), `${railText.length} chars of filter text inspected`);
   await c2.close();
 
   // Mobile: 390px, no horizontal overflow on fee-bearing pages.
@@ -967,6 +972,50 @@ log('\n23. v1.1 — TUITION FEES');
   t('390px compare: the Tuition fees row is present', (await mp.locator('th', { hasText: 'Tuition fees' }).count()) === 1);
   t('390px compare: the page itself does not scroll sideways (the table scrolls in its own box)', (await overflow(mp)) <= 0, `overflow ${await overflow(mp)}px`);
   await m.close();
+}
+
+/* ================================================================== */
+log('\n24. v2 — LANDING PAGE, #/search ROUTE, LEGACY URLS, SHAREABLE FILTERS');
+{
+  const { ctx, page } = await makeCtx({ width: 1440, height: 1000 });
+  await goto(page, '/');
+  t('#/ is the landing page with the approved headline',
+    (await page.locator('h1').innerText()).replace(/\s+/g, ' ') === 'Find the course. Check the source.');
+  t('  …and it does not render the course list', (await page.locator('main article').count()) === 0 || (await page.locator('main article.row').count()) === 0);
+  const rowLink = page.locator('.lp-subj').first();
+  const rowCount = parseInt((await rowLink.locator('.lp-subj-n').innerText()).replace(/\D.*$/s, '').replace(/,/g, ''), 10);
+  await rowLink.click();
+  await page.waitForTimeout(700);
+  const resText = await page.locator('.res-count').first().innerText();
+  const resN = parseInt((resText.match(/of (\d[\d,]*)/) ?? resText.match(/(\d[\d,]*)/))[1].replace(/,/g, ''), 10);
+  t('a subject row opens #/search with exactly the number of courses it advertises', resN === rowCount, `${rowCount} vs ${resN}`);
+  t('  …and the address carries the subject and the year', /^#\/search\?subcategory=[a-z-]+&year=2027$/.test(await page.evaluate(() => location.hash)));
+
+  for (const [legacy, needle] of [['/?q=physics', 'q=physics'], ['/?category=engineering', 'category=engineering'], ['/?subcategory=astrophysics', 'subcategory=astrophysics'], ['/?university=imperial', 'university=imperial']]) {
+    await goto(page, legacy);
+    const h = await page.evaluate(() => location.hash);
+    t(`legacy ${legacy} redirects to #/search and keeps its filter`, h.startsWith('#/search?') && h.includes(needle), h);
+  }
+  await goto(page, '/search?university=imperial');
+  t('a shared filter address reproduces the filtered list', (await page.locator('main article.row').count()) > 0 &&
+    (await page.$$eval('main article.row .r-uni a', (as) => [...new Set(as.map((a) => a.textContent))])).length === 1);
+  await goto(page, '/search?year=2028');
+  t('a year in a link is shown for the visit without being saved',
+    (await page.getByRole('radio', { name: '2028 entry' }).getAttribute('aria-checked')) === 'true' &&
+    (await page.evaluate(() => localStorage.getItem('ukcf.entryYear.v1'))) === null);
+  await goto(page, '/search');
+  await page.getByLabel('Search courses').first().fill('private-check');
+  await page.waitForTimeout(500);
+  t('the address never carries grades or the shortlist',
+    !/Mathematics|Physics|ukcf|shortlist|saved/i.test((await page.evaluate(() => location.hash)).replace('private-check', '')));
+  await ctx.close();
+  for (const [w, h] of [[1440, 900], [768, 1024], [390, 844], [320, 640]]) {
+    const c = await makeCtx({ width: w, height: h });
+    await goto(c.page, '/');
+    await c.page.waitForTimeout(500);
+    t(`landing page at ${w}px has no horizontal overflow`, (await overflow(c.page)) <= 0, `${await overflow(c.page)}px`);
+    await c.ctx.close();
+  }
 }
 
 /* ================================================================== */

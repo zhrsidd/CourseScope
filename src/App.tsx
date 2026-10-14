@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { HashRouter, Route, Routes, useLocation, Link } from 'react-router-dom';
+import { HashRouter, Navigate, Route, Routes, useLocation, Link } from 'react-router-dom';
 import { Announcer } from '@/components/Announcer';
 import { CompareTray } from '@/components/CompareTray';
 import { DemoBanner } from '@/components/DemoBanner';
@@ -12,7 +12,9 @@ import { AdminPage } from '@/pages/AdminPage';
 import { BrowsePage } from '@/pages/BrowsePage';
 import { ComparePage } from '@/pages/ComparePage';
 import { CourseDetailPage } from '@/pages/CourseDetailPage';
+import { LandingPage } from '@/pages/LandingPage';
 import { SearchPage } from '@/pages/SearchPage';
+import { hasSearchParams } from '@/lib/search-url';
 import { ShortlistPage } from '@/pages/ShortlistPage';
 import { UniversitiesPage } from '@/pages/UniversitiesPage';
 import { UniversityDetailPage } from '@/pages/UniversityDetailPage';
@@ -26,6 +28,18 @@ function ScrollToTop() {
   return null;
 }
 
+/**
+ * `#/` is the landing page. Before v2 it was the search page, so existing links,
+ * bookmarks and shared URLs look like `#/?q=…&category=…&subcategory=…&university=…`.
+ * Any address that carries a search selection is sent on to `#/search` with the
+ * same parameters, replacing the history entry so Back does not bounce.
+ */
+function HomeRoute() {
+  const { search } = useLocation();
+  if (hasSearchParams(search)) return <Navigate to={{ pathname: '/search', search }} replace />;
+  return <LandingPage />;
+}
+
 function NotFoundPage() {
   usePageTitle('Page not found');
   return (
@@ -34,7 +48,7 @@ function NotFoundPage() {
         title="Page not found"
         description="That page does not exist in this app."
         action={
-          <Link to="/" className="btn-primary">
+          <Link to="/search" className="btn-primary">
             Back to search
           </Link>
         }
@@ -67,7 +81,8 @@ export default function App() {
           <Navbar />
           <main id="content" className="flex-1">
             <Routes>
-              <Route path="/" element={<SearchPage />} />
+              <Route path="/" element={<HomeRoute />} />
+              <Route path="/search" element={<SearchPage />} />
               <Route path="/browse" element={<BrowsePage />} />
               <Route path="/universities" element={<UniversitiesPage />} />
               <Route path="/university/:slug" element={<UniversityDetailPage />} />

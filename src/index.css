@@ -1,6 +1,7 @@
 @import './styles/fonts.css';
 @import './styles/tokens.css';
 @import './styles/explorer.css';
+@import './styles/landing.css';
 
 @tailwind base;
 @tailwind components;

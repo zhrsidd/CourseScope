@@ -40,7 +40,7 @@ export function ShortlistPage() {
           title="Nothing saved yet"
           description="Use the heart button on any course or university card to build a shortlist."
           action={
-            <Link to="/" className="btn-primary">
+            <Link to="/search" className="btn-primary">
               Start searching
             </Link>
           }
