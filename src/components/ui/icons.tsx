@@ -107,3 +107,16 @@ export const IconFlag = (p: P) => (
     <path d="M5 4h11l-2 4 2 4H5" />
   </svg>
 );
+
+export const IconCalendar = (p: P) => (
+  <svg {...base(p)}>
+    <rect x="4" y="5.5" width="16" height="14.5" rx="2" />
+    <path d="M4 10h16M8.5 3.5v4M15.5 3.5v4" />
+  </svg>
+);
+
+export const IconGrades = (p: P) => (
+  <svg {...base(p)}>
+    <path d="M4 19V9M10 19V5M16 19v-7M21 19H3" />
+  </svg>
+);

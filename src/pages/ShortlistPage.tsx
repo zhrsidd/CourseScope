@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { usePageTitle } from '@/lib/page-title';
-import { CourseCard } from '@/components/CourseCard';
+import { CourseRow } from '@/components/CourseRow';
 import { UniversityCard } from '@/components/UniversityCard';
 import { IconHeart } from '@/components/ui/icons';
 import { EmptyState, PageHeader, SectionTitle } from '@/components/ui/primitives';
@@ -50,9 +50,9 @@ export function ShortlistPage() {
           {savedCourses.length > 0 ? (
             <section>
               <SectionTitle>Saved courses ({savedCourses.length})</SectionTitle>
-              <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
+              <div className="rows">
                 {savedCourses.map((c) => (
-                  <CourseCard
+                  <CourseRow
                     key={c.id}
                     course={c}
                     university={universityById[c.universityId]}

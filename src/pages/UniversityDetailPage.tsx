@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { usePageTitle } from '@/lib/page-title';
-import { CourseCard } from '@/components/CourseCard';
+import { CourseRow } from '@/components/CourseRow';
 import { InfoTooltip } from '@/components/InfoTooltip';
 import { RankingRow } from '@/components/RankingBadge';
 import { VerificationBadge } from '@/components/SourceBadge';
@@ -123,9 +123,9 @@ export function UniversityDetailPage() {
                 {physics.length > 0 ? (
                   <div>
                     <h3 className="label mb-2">Physics ({physics.length})</h3>
-                    <div className="grid grid-cols-1 gap-4 2xl:grid-cols-2">
+                    <div className="rows">
                       {physics.map((c) => (
-                        <CourseCard
+                        <CourseRow
                           key={c.id}
                           course={c}
                           university={universityById[c.universityId]}
@@ -139,9 +139,9 @@ export function UniversityDetailPage() {
                 {engineering.length > 0 ? (
                   <div>
                     <h3 className="label mb-2">Engineering ({engineering.length})</h3>
-                    <div className="grid grid-cols-1 gap-4 2xl:grid-cols-2">
+                    <div className="rows">
                       {engineering.map((c) => (
-                        <CourseCard
+                        <CourseRow
                           key={c.id}
                           course={c}
                           university={universityById[c.universityId]}

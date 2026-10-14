@@ -1,56 +1,45 @@
+import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { MAX_COMPARE, useApp } from '@/state/AppContext';
-import { IconCross } from './ui/icons';
 
-/** Persistent bar showing the current comparison selection. */
+/** Floating tray showing the current comparison selection (up to five courses). */
 export function CompareTray() {
-  const { compareIds, courseById, universityById, toggleCompare, clearCompare } = useApp();
+  const { compareIds, courseById, universityById, clearCompare } = useApp();
   const location = useLocation();
+  const visible = compareIds.length > 0 && location.pathname !== '/compare';
 
-  if (compareIds.length === 0 || location.pathname === '/compare') return null;
+  // Keep the footer clear of the tray while it is showing.
+  useEffect(() => {
+    document.body.classList.toggle('has-tray', visible);
+    return () => document.body.classList.remove('has-tray');
+  }, [visible]);
+
+  if (!visible) return null;
+
+  const names = compareIds
+    .map((id) => courseById[id])
+    .filter(Boolean)
+    .map((c) => `${universityById[c.universityId]?.shortName ?? ''} ${c.name}`.trim());
 
   return (
-    <div className="sticky bottom-0 z-30 border-t border-slate-200 bg-white/95 backdrop-blur">
-      <div className="mx-auto flex max-w-8xl flex-wrap items-center gap-3 px-4 py-2.5 md:px-6">
-        <span className="text-xs font-semibold text-navy-950">
-          Comparing {compareIds.length} of {MAX_COMPARE}
-        </span>
-        <ul className="hidden min-w-0 flex-1 flex-wrap gap-1.5 md:flex">
-          {compareIds.map((id) => {
-            const course = courseById[id];
-            if (!course) return null;
-            return (
-              <li
-                key={id}
-                className="flex items-center gap-1 rounded border border-slate-200 bg-slate-50 px-2 py-1 text-xs"
-              >
-                <span className="max-w-[220px] truncate">
-                  <span className="text-ink-faint">
-                    {universityById[course.universityId]?.shortName ?? ''} ·{' '}
-                  </span>
-                  {course.name}
-                </span>
-                <button
-                  type="button"
-                  onClick={() => toggleCompare(id)}
-                  className="text-ink-faint hover:text-rose-600"
-                  aria-label={`Remove ${course.name}`}
-                >
-                  <IconCross width={12} height={12} />
-                </button>
-              </li>
-            );
-          })}
-        </ul>
-        <div className="ml-auto flex shrink-0 gap-2">
-          <button type="button" className="btn-ghost btn-sm" onClick={clearCompare}>
-            Clear
-          </button>
-          <Link to="/compare" className="btn-primary btn-sm">
-            Compare courses
-          </Link>
-        </div>
+    <div className="tray on-dark" role="region" aria-label="Comparison">
+      <div className="slots" aria-hidden="true">
+        {Array.from({ length: MAX_COMPARE }).map((_, i) => (
+          <i key={i} className={i < compareIds.length ? 'on' : ''} />
+        ))}
       </div>
+      <div className="txt">
+        <strong className="font-semibold">
+          Comparing {compareIds.length} of {MAX_COMPARE}
+        </strong>
+        <span className="sub">{names.join(' · ')}</span>
+      </div>
+      <button type="button" className="btn-ghost btn-sm" onClick={clearCompare}>
+        Clear
+      </button>
+      <Link to="/compare" className="btn-secondary btn-sm">
+        Compare courses
+      </Link>
     </div>
   );
 }

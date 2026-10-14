@@ -1,5 +1,6 @@
 @import './styles/fonts.css';
 @import './styles/tokens.css';
+@import './styles/explorer.css';
 
 @tailwind base;
 @tailwind components;
@@ -190,4 +191,8 @@
   .animate-pulse {
     animation: none !important;
   }
+}
+
+body.has-tray {
+  padding-bottom: 88px;
 }

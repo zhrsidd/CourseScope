@@ -1,7 +1,15 @@
 import type { ApplicationYear, Provenance, VerificationStatus } from '@/types';
 import { VERIFICATION_DESCRIPTION, VERIFICATION_LABEL } from '@/data/taxonomy';
 import { formatDate } from '@/lib/format';
-import { IconExternal } from './ui/icons';
+import {
+  IconCalendar,
+  IconCheck,
+  IconExternal,
+  IconInfo,
+  IconQuestion,
+  IconSearch,
+  IconWarning,
+} from './ui/icons';
 import { Badge } from './ui/primitives';
 
 const TONE: Record<VerificationStatus, 'green' | 'amber' | 'demo' | 'neutral' | 'slate' | 'navy'> = {
@@ -18,6 +26,25 @@ const TONE: Record<VerificationStatus, 'green' | 'amber' | 'demo' | 'neutral' | 
   demo: 'demo',
   unknown: 'slate',
 };
+
+/** Status is never colour alone: every state has its own icon as well as words. */
+function StatusIcon({ status }: { status: VerificationStatus }) {
+  const p = { width: 12, height: 12 };
+  switch (status) {
+    case 'verified':
+      return <IconCheck {...p} />;
+    case 'partially-verified':
+      return <IconInfo {...p} />;
+    case 'awaiting-publication':
+      return <IconCalendar {...p} />;
+    case 'awaiting-data':
+      return <IconSearch {...p} />;
+    case 'demo':
+      return <IconWarning {...p} />;
+    default:
+      return <IconQuestion {...p} />;
+  }
+}
 
 /**
  * A record may only *look* verified if it can show its working. When the status
@@ -41,6 +68,7 @@ export function VerificationBadge({
         tone="amber"
         title="Marked verified, but no source URL or check date is recorded. Add both before treating this as checked."
       >
+        <IconWarning width={12} height={12} />
         Verified — source pending
       </Badge>
     );
@@ -48,6 +76,7 @@ export function VerificationBadge({
 
   return (
     <Badge tone={TONE[status]} title={VERIFICATION_DESCRIPTION[status]}>
+      <StatusIcon status={status} />
       {VERIFICATION_LABEL[status]}
     </Badge>
   );
@@ -107,7 +136,7 @@ export function SourceBadge({
       </dl>
 
       {primaryLink ? (
-        <a href={primaryLink} target="_blank" rel="noreferrer" className="btn-primary mt-3 h-8 w-full text-xs">
+        <a href={primaryLink} target="_blank" rel="noreferrer" className="btn-primary btn-sm mt-3 w-full">
           View official requirements <IconExternal width={12} height={12} />
         </a>
       ) : (

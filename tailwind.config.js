@@ -68,7 +68,8 @@ export default {
         overlay: 'var(--overlay-shadow)',
       },
       maxWidth: {
-        '8xl': '90rem',
+        // 1280px of content plus 24px gutters either side, matching --page-max and --pad.
+        '8xl': '1328px',
       },
     },
   },

@@ -2,18 +2,15 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { usePageTitle } from '@/lib/page-title';
 import { Link, useSearchParams } from 'react-router-dom';
 import type { SubjectCategory, SubjectSubcategory } from '@/types';
-import { CourseCard } from '@/components/CourseCard';
+import { ActiveFilters } from '@/components/ActiveFilters';
+import { CourseRow } from '@/components/CourseRow';
+import { EntryYearSwitch } from '@/components/EntryYearSwitch';
 import { FilterSidebar } from '@/components/FilterSidebar';
 import { SearchBar } from '@/components/SearchBar';
-import { StudentProfilePanel } from '@/components/StudentProfilePanel';
-import { IconFilter, IconSearch } from '@/components/ui/icons';
-import {
-  Badge,
-  CardSkeleton,
-  EmptyState,
-  Select,
-  cx,
-} from '@/components/ui/primitives';
+import { StudentProfileForm } from '@/components/StudentProfilePanel';
+import { Drawer } from '@/components/ui/Drawer';
+import { IconFilter, IconGrades, IconSearch } from '@/components/ui/icons';
+import { Badge, EmptyState, RowSkeleton, Select, cx } from '@/components/ui/primitives';
 import {
   SORT_OPTIONS,
   applyFilters,
@@ -24,7 +21,7 @@ import {
   type SortKey,
 } from '@/lib/filters';
 import { parseQuery } from '@/lib/search';
-import { profileIsEmpty } from '@/lib/grades';
+import { filledGrades, profileIsEmpty, sortGradesDesc } from '@/lib/grades';
 import { useApp } from '@/state/AppContext';
 
 const PAGE_SIZE = RESULT_PAGE_SIZE;
@@ -41,7 +38,9 @@ export function SearchPage() {
     universityById,
     eligibility,
     profile,
+    setEntryYear,
     savedCourseIds,
+    compareIds,
     hasVerifiedData,
   } = useApp();
 
@@ -64,6 +63,9 @@ export function SearchPage() {
     return base;
   });
   const [showFilters, setShowFilters] = useState(false);
+  const [showProfile, setShowProfile] = useState(false);
+  const profileBtnRef = useRef<HTMLButtonElement>(null);
+  const filtersBtnRef = useRef<HTMLButtonElement>(null);
 
   /* Once real records exist, placeholders stop being shown by default. */
   const appliedVerifiedDefault = useRef(false);
@@ -135,64 +137,93 @@ export function SearchPage() {
     return counts;
   }, [results, eligibility]);
 
+  const gradeString = sortGradesDesc(filledGrades(profile).map((e) => e.grade)).join('');
+  const resetFilters = () =>
+    setFilters({
+      ...defaultFilters(hasVerifiedData),
+      query: filters.query,
+      sort: filters.sort,
+      applicationYear: filters.applicationYear,
+    });
+  const chooseYear = (y: FilterState['applicationYear']) => {
+    setFilters((f) => ({ ...f, applicationYear: y }));
+    // The entry year is ONE saved choice, whichever switch sets it, and it is
+    // saved only here, in response to someone pressing a year.
+    setEntryYear(y);
+  };
+
   return (
-    <div className="mx-auto max-w-8xl px-4 py-6 md:px-6">
-      <section className="mb-6">
-        <h1 className="max-w-3xl text-[clamp(32px,3.6vw,44px)] text-navy-950">
-          Find the right UK Physics or Engineering course
-        </h1>
-        <p className="mt-2 max-w-2xl text-sm text-ink-muted">
-          Compare published entry requirements, admissions tests and application routes across UK
-          universities.
-        </p>
-        {/*
-          One line, above the fold, doing two jobs the footer cannot: it says
-          where the data comes from, and it says what a match does and does not
-          mean. A reader who never opens the methodology page should still not
-          be able to mistake a green badge for an offer.
-        */}
-        <p className="mt-2 max-w-2xl text-xs leading-relaxed text-ink-faint">
-          Every requirement here is read from the university’s own page for a specific entry year.
-          Matching them means you meet the published academic requirements — it does not predict an
-          offer.{' '}
-          <Link to="/about" className="link">
-            How this works
-          </Link>
-        </p>
-        <div className="mt-5 max-w-3xl">
+    <>
+      <div className="ex-top">
+        <div className="wrap ex-top-in">
+          <div>
+            <h1>Find the right UK Physics or Engineering course</h1>
+            <p className="ex-lede">
+              Compare published entry requirements, admissions tests and application routes across UK
+              universities.
+            </p>
+            {/*
+              One line, above the fold, doing two jobs the footer cannot: it says
+              where the data comes from, and it says what a match does and does not
+              mean. A reader who never opens the methodology page should still not
+              be able to mistake a green badge for an offer.
+            */}
+            <p className="ex-trust">
+              Every requirement here is read from the university’s own page for a specific entry year.
+              Matching them means you meet the published academic requirements. It does not predict an
+              offer.{' '}
+              <Link to="/about" className="link">
+                How this works
+              </Link>
+            </p>
+          </div>
+          <div className="ex-tools">
+            <EntryYearSwitch value={filters.applicationYear} onChange={chooseYear} />
+            <button
+              ref={profileBtnRef}
+              type="button"
+              className="btn-secondary"
+              aria-haspopup="dialog"
+              aria-expanded={showProfile}
+              onClick={() => setShowProfile(true)}
+            >
+              <IconGrades width={18} height={18} />
+              <span>Your A-Levels</span>
+              {hasProfile ? (
+                <span className="rounded-chip bg-navy-900 px-1.5 text-xs font-semibold tabular-nums text-white">
+                  {gradeString}
+                </span>
+              ) : null}
+            </button>
+          </div>
+        </div>
+        <div className="wrap ex-search">
           <SearchBar
             value={filters.query}
             onChange={(query) => setFilters((f) => ({ ...f, query }))}
             parsed={parsed}
           />
         </div>
-      </section>
+      </div>
 
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[260px_minmax(0,1fr)] xl:grid-cols-[260px_minmax(0,1fr)_320px]">
-        <div className={cx('lg:block', showFilters ? 'block' : 'hidden')}>
-          <FilterSidebar
-            filters={filters}
-            onChange={setFilters}
-            universities={universities}
-            courses={courses}
-            hasProfile={hasProfile}
-            hasVerifiedData={hasVerifiedData}
-            eligibility={eligibility}
-          />
-        </div>
+      <div className="wrap ex" style={compareIds.length > 0 ? { paddingBottom: 120 } : undefined}>
+        <FilterSidebar
+          filters={filters}
+          onChange={setFilters}
+          universities={universities}
+          courses={courses}
+          hasProfile={hasProfile}
+          hasVerifiedData={hasVerifiedData}
+          eligibility={eligibility}
+        />
 
-        <div className="min-w-0">
-          <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-            <div className="flex flex-wrap items-center gap-2">
-              <button
-                type="button"
-                className="btn-secondary btn-sm lg:hidden"
-                onClick={() => setShowFilters((s) => !s)}
-              >
-                <IconFilter width={14} height={14} />
-                {showFilters ? 'Hide filters' : 'Filters'}
-              </button>
-              <span className="text-sm text-ink-muted">
+        <section className="min-w-0" aria-labelledby="results-heading">
+          <h2 id="results-heading" className="sr-only">
+            Results
+          </h2>
+          <div className="res-bar">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+              <span className="res-count" aria-live="polite">
                 {loading
                   ? 'Loading courses…'
                   : remaining > 0
@@ -204,27 +235,77 @@ export function SearchPage() {
                   {matchCounts.meets > 0 ? (
                     <Badge tone="green">{matchCounts.meets} meet published requirements</Badge>
                   ) : null}
-                  {matchCounts.review > 0 ? (
-                    <Badge tone="amber">{matchCounts.review} need review</Badge>
-                  ) : null}
+                  {matchCounts.review > 0 ? <Badge tone="neutral">{matchCounts.review} need review</Badge> : null}
                 </>
               ) : null}
             </div>
-            <Select<SortKey>
-              id="sort"
-              label="Sort by"
-              value={filters.sort}
-              onChange={(sort) => setFilters((f) => ({ ...f, sort }))}
-              options={hasRankings ? SORT_OPTIONS : SORT_OPTIONS.filter((o) => !o.id.startsWith('rank-'))}
-            />
+            <div className="res-tools">
+              <button
+                ref={filtersBtnRef}
+                type="button"
+                className="btn-secondary btn-sm ex-mobile-only"
+                aria-haspopup="dialog"
+                aria-expanded={showFilters}
+                onClick={() => setShowFilters(true)}
+              >
+                <IconFilter width={16} height={16} />
+                Filters
+              </button>
+              <Select<SortKey>
+                id="sort"
+                label="Sort by"
+                value={filters.sort}
+                onChange={(sort) => setFilters((f) => ({ ...f, sort }))}
+                options={hasRankings ? SORT_OPTIONS : SORT_OPTIONS.filter((o) => !o.id.startsWith('rank-'))}
+              />
+            </div>
           </div>
+
+          <ActiveFilters
+            filters={filters}
+            universityById={universityById}
+            onChange={setFilters}
+            onClear={resetFilters}
+          />
+
+          {/*
+            One invitation, once, instead of an "Insufficient information" label on
+            every row. Without grades the rows say nothing about eligibility; with
+            them each row carries one concise verdict.
+          */}
+          {!loading && !error && filters.applicationYear === '2028' ? (
+            <div className="invite invite-wait">
+              <IconSearch className="lead-icon" aria-hidden />
+              <p>
+                <b>2028 requirements are not published yet.</b>
+                <span className="sub">
+                  These courses are listed so you can plan. Requirements appear once each university
+                  publishes them, and 2027 records are never carried forward.
+                </span>
+              </p>
+            </div>
+          ) : !loading && !error && !hasProfile ? (
+            <div className="invite">
+              <IconGrades className="lead-icon" aria-hidden />
+              <p>
+                <b>See which of these courses your grades meet.</b>
+                <span className="sub">
+                  Add your A-Levels once. Every result then shows how your grades compare with the
+                  published requirements.
+                </span>
+              </p>
+              <button type="button" className="btn-primary btn-sm" onClick={() => setShowProfile(true)}>
+                Add your A-Levels
+              </button>
+            </div>
+          ) : null}
 
           {error ? (
             <EmptyState title="The catalogue could not be loaded" description={error} />
           ) : loading ? (
-            <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
-              {Array.from({ length: 4 }).map((_, i) => (
-                <CardSkeleton key={i} />
+            <div aria-hidden="true">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <RowSkeleton key={i} />
               ))}
             </div>
           ) : results.length === 0 ? (
@@ -233,19 +314,15 @@ export function SearchPage() {
               title="No courses match these filters"
               description="Try removing a filter, lowering the grade profile, or clearing the search box. The demo catalogue only contains a sample of courses at each university."
               action={
-                <button
-                  type="button"
-                  className="btn-secondary"
-                  onClick={() => setFilters(defaultFilters(hasVerifiedData))}
-                >
+                <button type="button" className="btn-secondary" onClick={resetFilters}>
                   Reset all filters
                 </button>
               }
             />
           ) : (
-            <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
+            <div className="rows">
               {visible.map((course) => (
-                <CourseCard
+                <CourseRow
                   key={course.id}
                   course={course}
                   university={universityById[course.universityId]}
@@ -261,7 +338,7 @@ export function SearchPage() {
           )}
 
           {!error && !loading && results.length > 0 ? (
-            <div className="mt-5 flex flex-col items-center gap-2">
+            <div className="more-results">
               {/*
                 aria-disabled rather than disabled: a truly disabled button
                 loses focus when it becomes disabled, which would drop the
@@ -280,19 +357,54 @@ export function SearchPage() {
                   ? `Load more (${Math.min(PAGE_SIZE, remaining)} of ${remaining} remaining)`
                   : `All ${results.length} courses shown`}
               </button>
-              <p role="status" aria-live="polite" className="text-xs text-ink-muted">
+              <p role="status" aria-live="polite" className="text-[13px] text-ink-muted">
                 {remaining > 0
                   ? `Showing ${visible.length} of ${results.length} courses.`
                   : `Showing all ${results.length} courses.`}
               </p>
             </div>
           ) : null}
-        </div>
-
-        <div className="xl:sticky xl:top-[76px] xl:self-start">
-          <StudentProfilePanel />
-        </div>
+        </section>
       </div>
-    </div>
+
+      <Drawer
+        open={showProfile}
+        onClose={() => setShowProfile(false)}
+        title="Your A-Levels"
+        returnFocusRef={profileBtnRef}
+        footer={
+          <button type="button" className="btn-primary" onClick={() => setShowProfile(false)}>
+            Done
+          </button>
+        }
+      >
+        <StudentProfileForm />
+      </Drawer>
+
+      <Drawer
+        open={showFilters}
+        onClose={() => setShowFilters(false)}
+        title="Filters"
+        side="left"
+        hideTitle
+        returnFocusRef={filtersBtnRef}
+        footer={
+          <button type="button" className="btn-primary" onClick={() => setShowFilters(false)}>
+            Show {results.length} {results.length === 1 ? 'course' : 'courses'}
+          </button>
+        }
+      >
+        <FilterSidebar
+          variant="sheet"
+          filters={filters}
+          onChange={setFilters}
+          universities={universities}
+          courses={courses}
+          hasProfile={hasProfile}
+          hasVerifiedData={hasVerifiedData}
+          eligibility={eligibility}
+        />
+      </Drawer>
+    </>
   );
 }

@@ -84,6 +84,7 @@
 
   /* Layout */
   --page-max: 1280px;
+  --pad: 24px;
   --gutter: 24px;
   --rail: 264px;
   --target: 44px;
@@ -92,6 +93,7 @@
 
 @media (max-width: 760px) {
   :root {
+    --pad: 16px;
     --gutter: 16px;
   }
 }

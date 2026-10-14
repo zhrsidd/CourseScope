@@ -158,6 +158,18 @@ export function CardSkeleton() {
   );
 }
 
+/** A result-row placeholder with the same three-track shape as a real row. */
+export function RowSkeleton() {
+  return (
+    <div className="border-b border-slate-200 py-5">
+      <Skeleton className="h-3.5 w-40" />
+      <Skeleton className="mt-3 h-6 w-1/2" />
+      <Skeleton className="mt-3 h-3.5 w-2/3" />
+      <Skeleton className="mt-3 h-6 w-48" />
+    </div>
+  );
+}
+
 export function EmptyState({
   title,
   description,
@@ -195,15 +207,10 @@ export function CheckboxRow({
   count?: number;
 }) {
   return (
-    <label className="flex cursor-pointer items-center gap-2 py-1 text-sm text-ink hover:text-navy-900">
-      <input
-        type="checkbox"
-        checked={checked}
-        onChange={(e) => onChange(e.target.checked)}
-        className="h-4 w-4 shrink-0 rounded border-slate-300 text-navy-800 focus:ring-navy-500"
-      />
-      <span className="min-w-0 flex-1 leading-snug">{label}</span>
-      {count !== undefined ? <span className="text-xs tabular-nums text-ink-faint">{count}</span> : null}
+    <label className="check-row">
+      <input type="checkbox" checked={checked} onChange={(e) => onChange(e.target.checked)} />
+      <span className="min-w-0 flex-1">{label}</span>
+      {count !== undefined ? <span className="n">{count}</span> : null}
     </label>
   );
 }
@@ -220,7 +227,7 @@ export function Segmented<T extends string>({
   size?: 'sm' | 'md';
 }) {
   return (
-    <div className="inline-flex rounded-md border border-slate-300 bg-white p-0.5">
+    <div className="inline-flex rounded-ctl border border-control bg-white p-0.5">
       {options.map((o) => (
         <button
           key={o.id}
@@ -228,9 +235,9 @@ export function Segmented<T extends string>({
           onClick={() => onChange(o.id)}
           aria-pressed={value === o.id}
           className={cx(
-            'rounded px-2.5 font-medium transition-colors',
-            size === 'sm' ? 'py-1 text-xs' : 'py-1.5 text-sm',
-            value === o.id ? 'bg-navy-900 text-white' : 'text-ink-muted hover:bg-slate-50',
+            'rounded-chip px-3 font-medium transition-colors duration-quick ease-standard',
+            size === 'sm' ? 'min-h-[36px] text-sm' : 'min-h-[40px] text-[15px]',
+            value === o.id ? 'bg-navy-900 text-white' : 'text-ink-muted hover:bg-sunken',
           )}
         >
           {o.label}
@@ -256,7 +263,7 @@ export function Select<T extends string>({
   return (
     <span className="inline-flex items-center gap-2">
       {label ? (
-        <label htmlFor={id} className="text-xs font-medium text-ink-faint">
+        <label htmlFor={id} className="text-sm text-ink-muted">
           {label}
         </label>
       ) : null}
@@ -264,7 +271,7 @@ export function Select<T extends string>({
         id={id}
         value={value}
         onChange={(e) => onChange(e.target.value as T)}
-        className="rounded-md border border-slate-300 bg-white px-2.5 py-1.5 text-sm text-ink focus:border-navy-500 focus:outline-none focus:ring-1 focus:ring-navy-500"
+        className="min-h-[40px] rounded-ctl border border-control bg-white px-2.5 text-sm text-ink focus:border-navy-900 focus:outline-none focus:ring-[3px] focus:ring-accent/25"
       >
         {options.map((o) => (
           <option key={o.id} value={o.id}>

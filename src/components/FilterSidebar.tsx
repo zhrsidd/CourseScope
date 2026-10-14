@@ -1,7 +1,6 @@
-import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
+import { useEffect, useId, useMemo, useRef, useState, type ReactNode } from 'react';
 import type {
   AdmissionsTestCode,
-  ApplicationYear,
   Course,
   DegreeType,
   EligibilityReport,
@@ -21,7 +20,6 @@ import {
   SUBJECT_CATEGORIES,
 } from '@/data/taxonomy';
 import {
-  APPLICATION_YEARS,
   countActiveFilters,
   defaultFilters,
   type FilterState,
@@ -30,22 +28,26 @@ import {
 import { VERDICT_LABEL } from '@/lib/eligibility';
 import { INTERVIEW_LABEL } from '@/lib/format';
 import { InfoTooltip } from './InfoTooltip';
-import { useApp } from '@/state/AppContext';
 import { IconChevron, IconSearch } from './ui/icons';
-import { Badge, CheckboxRow, Segmented, cx } from './ui/primitives';
+import { Collapse } from './ui/Collapse';
+import { CheckboxRow, Segmented, cx } from './ui/primitives';
 
 function FilterSection({
   title,
   children,
   defaultOpen = false,
   hint,
+  selected = 0,
 }: {
   title: string;
   children: ReactNode;
   defaultOpen?: boolean;
   hint?: ReactNode;
+  /** How many options are chosen in this group. Shown, so a closed group still tells you. */
+  selected?: number;
 }) {
   const [open, setOpen] = useState(defaultOpen);
+  const bodyId = useId();
   /*
    * The catalogue loads asynchronously, so a section whose `defaultOpen`
    * depends on the data (Data status opens only once verified records exist)
@@ -59,7 +61,7 @@ function FilterSection({
     if (!touched.current) setOpen(defaultOpen);
   }, [defaultOpen]);
   return (
-    <div className="border-b border-slate-200 py-2.5 last:border-0">
+    <div className="fgroup">
       <button
         type="button"
         onClick={() => {
@@ -67,19 +69,23 @@ function FilterSection({
           setOpen((o) => !o);
         }}
         aria-expanded={open}
-        className="flex w-full items-center justify-between gap-2 text-left"
+        aria-controls={bodyId}
+        className="fgroup-btn"
       >
-        <span className="flex items-center gap-1 text-[13px] font-semibold text-navy-950">
+        <span className="flex items-center gap-1">
           {title}
           {hint}
         </span>
-        <IconChevron
-          width={14}
-          height={14}
-          className={cx('shrink-0 text-ink-faint transition-transform', open && 'rotate-90')}
-        />
+        {selected > 0 ? (
+          <span className="sel" aria-hidden="true">
+            {selected}
+          </span>
+        ) : null}
+        <IconChevron className="chev" aria-hidden />
       </button>
-      {open ? <div className="mt-2">{children}</div> : null}
+      <Collapse open={open} id={bodyId}>
+        <div className="fgroup-body">{children}</div>
+      </Collapse>
     </div>
   );
 }
@@ -96,7 +102,7 @@ function TriStateControl({
   term?: string;
 }) {
   return (
-    <div className="py-1.5">
+    <div className="py-1">
       <span className="mb-1 flex items-center gap-1 text-sm text-ink">
         {label}
         {term ? <InfoTooltip term={term} /> : null}
@@ -127,7 +133,9 @@ export function FilterSidebar({
   hasProfile,
   hasVerifiedData,
   eligibility,
+  variant = 'rail',
 }: {
+  variant?: 'rail' | 'sheet';
   filters: FilterState;
   onChange: (next: FilterState) => void;
   universities: University[];
@@ -140,7 +148,6 @@ export function FilterSidebar({
    */
   eligibility: Record<string, EligibilityReport>;
 }) {
-  const { setEntryYear } = useApp();
   const [uniQuery, setUniQuery] = useState('');
   const set = <K extends keyof FilterState>(key: K, value: FilterState[K]) =>
     onChange({ ...filters, [key]: value });
@@ -204,52 +211,46 @@ export function FilterSidebar({
     .filter((u) => u.name.toLowerCase().includes(uniQuery.toLowerCase()))
     .sort((a, b) => a.name.localeCompare(b.name));
 
-  return (
-    <aside className="surface sticky top-[76px] max-h-[calc(100vh-96px)] overflow-y-auto p-4">
-      <div className="mb-2 flex items-center justify-between">
-        <h2 className="text-sm font-semibold text-navy-950">Filters</h2>
-        <div className="flex items-center gap-2">
-          {active > 0 ? <Badge tone="navy">{active} active</Badge> : null}
-          <button
-            type="button"
-            className="text-xs text-navy-700 hover:underline"
-            onClick={() =>
-              onChange({
-                ...defaultFilters(hasVerifiedData),
-                query: filters.query,
-                sort: filters.sort,
-                // Reset clears filters, not the student's chosen entry year.
-                applicationYear: filters.applicationYear,
-              })
-            }
-          >
-            Reset
-          </button>
-        </div>
-      </div>
+  const ranked = universities.some((u) => u.rankings.length > 0);
+  const subjectReqCount =
+    (filters.mathematics !== 'any' ? 1 : 0) +
+    (filters.physics !== 'any' ? 1 : 0) +
+    (filters.chemistry !== 'any' ? 1 : 0) +
+    (filters.furtherMathematics !== 'any' ? 1 : 0);
 
-      <div className="border-b border-slate-200 pb-3">
-        <div className="label mb-1.5 flex items-center gap-1">
-          Entry year
-          <InfoTooltip term="application-year" />
-        </div>
-        <Segmented<ApplicationYear>
-          size="sm"
-          value={filters.applicationYear}
-          onChange={(y) => {
-            set('applicationYear', y);
-            // The entry year is ONE saved choice, whichever switch sets it.
-            setEntryYear(y);
-          }}
-          options={APPLICATION_YEARS.map((y) => ({ id: y, label: `${y} entry` }))}
-        />
+  return (
+    <aside
+      className={cx(variant === 'rail' ? 'rail' : 'sheet-filters')}
+      aria-label="Filters"
+    >
+      <div className="rail-head">
+        {variant === 'rail' ? (
+          <h2>Filters{active > 0 ? <span className="ml-2 text-sm font-medium text-accent">{active} active</span> : null}</h2>
+        ) : (
+          <p className="text-base font-semibold">
+            {active > 0 ? `${active} filters active` : 'Filter courses'}
+          </p>
+        )}
+        <button
+          type="button"
+          className="rail-reset"
+          onClick={() =>
+            onChange({
+              ...defaultFilters(hasVerifiedData),
+              query: filters.query,
+              sort: filters.sort,
+              // Reset clears filters, not the student's chosen entry year.
+              applicationYear: filters.applicationYear,
+            })
+          }
+        >
+          Reset
+        </button>
       </div>
 
       {hasProfile ? (
-        <FilterSection title="Match against your grades" defaultOpen>
-          <p className="mb-1.5 text-xs leading-relaxed text-ink-muted">
-            These are the same results shown on each course — this only filters by them.
-          </p>
+        <FilterSection title="Match against your grades" defaultOpen selected={filters.eligibility.length}>
+          <p className="rail-note">These are the same results shown on each course. This only filters by them.</p>
           {/* Ticking nothing is "all courses"; the row makes that visible and
               gives a one-click way back to it. */}
           <CheckboxRow
@@ -276,35 +277,7 @@ export function FilterSidebar({
         </FilterSection>
       ) : null}
 
-      <FilterSection title="Data status" defaultOpen={hasVerifiedData}>
-        <p className="mb-1.5 text-xs leading-relaxed text-ink-muted">
-          Records are kept separate by how far they have been checked.
-        </p>
-        {/* Hidden once no sample records remain: an always-zero toggle reads
-            as though real courses were being withheld. */}
-        {statusCounts.demo > 0 ? (
-          <CheckboxRow
-            checked={filters.showSampleData}
-            onChange={(v) => set('showSampleData', v)}
-            label="Include sample data"
-            count={statusCounts.demo}
-          />
-        ) : null}
-        <CheckboxRow
-          checked={filters.showAwaitingData}
-          onChange={(v) => set('showAwaitingData', v)}
-          label="Include courses awaiting research"
-          count={statusCounts.awaiting}
-        />
-        <p className="mt-1 text-xs leading-relaxed text-ink-muted">
-          Courses awaiting research are real courses whose admissions
-          information we have not verified yet. They are different from courses
-          whose university has not yet published its requirements — those always
-          appear, labelled “awaiting publication”.
-        </p>
-      </FilterSection>
-
-      <FilterSection title="Physics or Engineering" defaultOpen>
+      <FilterSection title="Physics or Engineering" defaultOpen selected={filters.categories.length}>
         {SUBJECT_CATEGORIES.map((c) => (
           <CheckboxRow
             key={c.id}
@@ -316,11 +289,11 @@ export function FilterSidebar({
         ))}
       </FilterSection>
 
-      <FilterSection title="Course subject">
-        <div className="max-h-64 overflow-y-auto pr-1">
+      <FilterSection title="Course subject" selected={filters.subcategories.length}>
+        <div className="max-h-72 overflow-y-auto pr-1">
           {SUBJECT_CATEGORIES.map((cat) => (
-            <div key={cat.id} className="mb-2">
-              <div className="label mb-1">{cat.label}</div>
+            <div key={cat.id}>
+              <div className="rail-label">{cat.label}</div>
               {SUBCATEGORIES.filter((s) => s.category === cat.id).map((s) => (
                 <CheckboxRow
                   key={s.id}
@@ -337,7 +310,39 @@ export function FilterSidebar({
         </div>
       </FilterSection>
 
-      <FilterSection title="Subject requirements" defaultOpen>
+      <FilterSection title="University" selected={filters.universityIds.length}>
+        <div className="relative mb-2">
+          <IconSearch
+            width={16}
+            height={16}
+            className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-ink-faint"
+          />
+          <input
+            className="field pl-9"
+            placeholder="Find a university"
+            aria-label="Find a university"
+            value={uniQuery}
+            onChange={(e) => setUniQuery(e.target.value)}
+          />
+        </div>
+        <div className="max-h-64 overflow-y-auto pr-1">
+          {filteredUniversities.map((u) => (
+            <CheckboxRow
+              key={u.id}
+              checked={filters.universityIds.includes(u.id)}
+              onChange={() => set('universityIds', toggle(filters.universityIds, u.id))}
+              label={u.name}
+              count={uniCounts.get(u.id) ?? 0}
+            />
+          ))}
+        </div>
+      </FilterSection>
+
+      <p className="rail-label" style={{ marginTop: 20 }}>
+        Entry requirements
+      </p>
+
+      <FilterSection title="Subject requirements" selected={subjectReqCount}>
         <TriStateControl
           label="Mathematics"
           value={filters.mathematics}
@@ -351,7 +356,7 @@ export function FilterSidebar({
           onChange={(v) => set('chemistry', v)}
         />
         <div className="mt-2 border-t border-slate-100 pt-2">
-          <div className="label mb-1.5 flex items-center gap-1">
+          <div className="mb-1.5 flex items-center gap-1 text-sm text-ink">
             Further Mathematics
             <InfoTooltip term="further-maths" />
           </div>
@@ -362,7 +367,7 @@ export function FilterSidebar({
             fix and does not disturb the layout.
           */}
           <select
-            className="field h-9 py-1.5"
+            className="field"
             aria-label="Filter by Further Mathematics requirement"
             value={filters.furtherMathematics}
             onChange={(e) => set('furtherMathematics', e.target.value as 'any' | FurtherMathsStatus)}
@@ -377,20 +382,16 @@ export function FilterSidebar({
         </div>
       </FilterSection>
 
-      <FilterSection title="Grades">
-        <label className="label mb-1.5 block">Show offers at or below</label>
+      <FilterSection title="Grades" selected={filters.maxOffer ? 1 : 0}>
+        <p className="rail-note">Show offers at or below</p>
         <div className="flex flex-wrap gap-1.5">
           {['A*A*A', 'A*AA', 'AAA', 'AAB', 'ABB', 'BBB'].map((p) => (
             <button
               key={p}
               type="button"
+              aria-pressed={filters.maxOffer === p}
               onClick={() => set('maxOffer', filters.maxOffer === p ? null : p)}
-              className={cx(
-                'rounded border px-2 py-1 text-xs font-semibold tabular-nums',
-                filters.maxOffer === p
-                  ? 'border-navy-800 bg-navy-900 text-white'
-                  : 'border-slate-300 bg-white text-ink-muted hover:bg-slate-50',
-              )}
+              className="rail-chip"
             >
               {p}
             </button>
@@ -398,7 +399,7 @@ export function FilterSidebar({
         </div>
       </FilterSection>
 
-      <FilterSection title="Admissions test">
+      <FilterSection title="Admissions test" selected={filters.admissionsTests.length}>
         {ADMISSIONS_TESTS.filter((t) => (testCounts.get(t.code) ?? 0) > 0 || filters.admissionsTests.includes(t.code)).map(
           (t) => (
             <CheckboxRow
@@ -407,18 +408,14 @@ export function FilterSidebar({
               onChange={() =>
                 set('admissionsTests', toggle(filters.admissionsTests, t.code as AdmissionsTestCode))
               }
-              label={
-                <span title={t.fullName}>
-                  {t.shortName}
-                </span>
-              }
+              label={<span title={t.fullName}>{t.shortName}</span>}
               count={testCounts.get(t.code) ?? 0}
             />
           ),
         )}
       </FilterSection>
 
-      <FilterSection title="Interview">
+      <FilterSection title="Interview" selected={filters.interview.length}>
         {(['yes', 'sometimes', 'no', 'not-stated'] as InterviewPolicy[]).map((i) => (
           <CheckboxRow
             key={i}
@@ -430,7 +427,11 @@ export function FilterSidebar({
         ))}
       </FilterSection>
 
-      <FilterSection title="Qualification">
+      <p className="rail-label" style={{ marginTop: 20 }}>
+        About the course
+      </p>
+
+      <FilterSection title="Qualification" selected={filters.degreeTypes.length}>
         {DEGREE_TYPES.filter((d) => (degreeCounts.get(d.id) ?? 0) > 0).map((d) => (
           <CheckboxRow
             key={d.id}
@@ -442,7 +443,7 @@ export function FilterSidebar({
         ))}
       </FilterSection>
 
-      <FilterSection title="Course duration">
+      <FilterSection title="Course duration" selected={filters.durations.length}>
         {[...durationCounts.keys()]
           .filter((y) => y > 0)
           .sort((a, b) => a - b)
@@ -457,34 +458,7 @@ export function FilterSidebar({
           ))}
       </FilterSection>
 
-      <FilterSection title="University">
-        <div className="relative mb-2">
-          <IconSearch
-            width={14}
-            height={14}
-            className="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 text-ink-faint"
-          />
-          <input
-            className="field h-8 py-1 pl-8 text-xs"
-            placeholder="Find a university"
-            value={uniQuery}
-            onChange={(e) => setUniQuery(e.target.value)}
-          />
-        </div>
-        <div className="max-h-56 overflow-y-auto pr-1">
-          {filteredUniversities.map((u) => (
-            <CheckboxRow
-              key={u.id}
-              checked={filters.universityIds.includes(u.id)}
-              onChange={() => set('universityIds', toggle(filters.universityIds, u.id))}
-              label={u.name}
-              count={uniCounts.get(u.id) ?? 0}
-            />
-          ))}
-        </div>
-      </FilterSection>
-
-      <FilterSection title="Location">
+      <FilterSection title="Location" selected={filters.regions.length}>
         {[...regionCounts.keys()].sort().map((region) => (
           <CheckboxRow
             key={region}
@@ -496,31 +470,56 @@ export function FilterSidebar({
         ))}
       </FilterSection>
 
-      {universities.some((u) => u.rankings.length > 0) ? (
-      <FilterSection title="University ranking">
-        <p className="mb-2 text-xs text-ink-muted">
-          Uses the overall ranking recorded for each university. Universities with no ranking data are
-          excluded when this filter is on.
-        </p>
-        <div className="flex flex-wrap gap-1.5">
-          {[10, 25, 50, 100, 200].map((n) => (
-            <button
-              key={n}
-              type="button"
-              onClick={() => set('maxOverallRank', filters.maxOverallRank === n ? null : n)}
-              className={cx(
-                'rounded border px-2 py-1 text-xs font-medium tabular-nums',
-                filters.maxOverallRank === n
-                  ? 'border-navy-800 bg-navy-900 text-white'
-                  : 'border-slate-300 bg-white text-ink-muted hover:bg-slate-50',
-              )}
-            >
-              Top {n}
-            </button>
-          ))}
-        </div>
-      </FilterSection>
+      {ranked ? (
+        <FilterSection title="University ranking" selected={filters.maxOverallRank ? 1 : 0}>
+          <p className="rail-note">
+            Uses the overall ranking recorded for each university. Universities with no ranking data are
+            excluded when this filter is on.
+          </p>
+          <div className="flex flex-wrap gap-1.5">
+            {[10, 25, 50, 100, 200].map((n) => (
+              <button
+                key={n}
+                type="button"
+                aria-pressed={filters.maxOverallRank === n}
+                onClick={() => set('maxOverallRank', filters.maxOverallRank === n ? null : n)}
+                className="rail-chip"
+              >
+                Top {n}
+              </button>
+            ))}
+          </div>
+        </FilterSection>
       ) : null}
+
+      <FilterSection
+        title="Data status"
+        defaultOpen={hasVerifiedData}
+        selected={(filters.showSampleData && statusCounts.demo > 0 ? 1 : 0) + (filters.showAwaitingData ? 1 : 0)}
+      >
+        <p className="rail-note">Records are kept separate by how far they have been checked.</p>
+        {/* Hidden once no sample records remain: an always-zero toggle reads
+            as though real courses were being withheld. */}
+        {statusCounts.demo > 0 ? (
+          <CheckboxRow
+            checked={filters.showSampleData}
+            onChange={(v) => set('showSampleData', v)}
+            label="Include sample data"
+            count={statusCounts.demo}
+          />
+        ) : null}
+        <CheckboxRow
+          checked={filters.showAwaitingData}
+          onChange={(v) => set('showAwaitingData', v)}
+          label="Include courses awaiting research"
+          count={statusCounts.awaiting}
+        />
+        <p className="rail-note" style={{ marginTop: 8 }}>
+          Courses awaiting research are real courses whose admissions information we have not verified
+          yet. They are different from courses whose university has not yet published its requirements.
+          Those always appear, labelled “awaiting publication”.
+        </p>
+      </FilterSection>
 
       <div className="pt-3">
         <CheckboxRow

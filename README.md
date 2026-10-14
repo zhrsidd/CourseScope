@@ -139,7 +139,7 @@ src/
     grades.ts       Grade comparison, subject normalisation
     format.ts       Labels and course-level derived values
   state/AppContext  Catalogue loading, profile, shortlist, comparison, validation
-  components/       UniversityCard, CourseCard, GradeSelector, SubjectRequirement,
+  components/       UniversityCard, CourseRow, GradeSelector, SubjectRequirement,
                     FilterSidebar, ComparisonTable, RankingBadge, SourceBadge,
                     EligibilityBadge + EligibilityBreakdown, Navbar, InfoTooltip, …
   pages/            Search, Browse, Universities, University, Course, Compare,

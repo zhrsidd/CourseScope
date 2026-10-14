@@ -93,6 +93,16 @@ const goto = async (page, h) => {
 };
 const body = (page) => page.locator('body').innerText();
 const main = (page) => page.locator('main').innerText();
+/* v2: the A-Levels form lives in a drawer. These two helpers open and close it. */
+const openProfile = async (page) => {
+  await page.getByRole('button', { name: /Your A-Levels/ }).first().click();
+  await page.getByRole('dialog', { name: 'Your A-Levels' }).waitFor();
+  await page.waitForTimeout(450);
+};
+const closeProfile = async (page) => {
+  await page.keyboard.press('Escape');
+  await page.waitForTimeout(450);
+};
 const overflow = (page) =>
   page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
 
@@ -129,26 +139,30 @@ await goto(fresh, '/compare');
 t('9. two courses can be compared', /Compar/i.test(await main(fresh)) && (await main(fresh)).trim().length > 200,
   `${cmpN0} added`);
 
-/* create a profile */
+/* create a profile (v2: through the A-Levels drawer, with real grades) */
 await goto(fresh, '/');
-const selects = fresh.locator('main select');
-const selectCount = await selects.count();
+await openProfile(fresh);
 let profileMade = false;
-if (selectCount >= 2) {
-  for (let i = 0; i < Math.min(3, selectCount); i += 1) {
-    await selects.nth(i).selectOption({ index: 1 }).catch(() => {});
-    await fresh.waitForTimeout(150);
+{
+  const entries = [['Mathematics', 'A'], ['Physics', 'A']];
+  for (let i = 0; i < entries.length; i += 1) {
+    if (i > 0) await fresh.getByRole('button', { name: 'Add subject' }).click();
+    await fresh.locator(`input[aria-label="A-Level subject ${i + 1}"]`).fill(entries[i][0]);
+    await fresh.locator('[role="group"][aria-label^="Predicted grade"]').nth(i)
+      .getByRole('button', { name: entries[i][1], exact: true }).click();
   }
   profileMade = true;
 }
-await fresh.waitForTimeout(600);
-t('6. a profile can be created from the search page', profileMade, `${selectCount} inputs found`);
+await closeProfile(fresh);
+await fresh.waitForTimeout(400);
+const selectCount = 2;
+t('6. a profile can be created from the search page', profileMade, `${selectCount} subjects entered`);
 const storedProfile = await fresh.evaluate(() => {
   try { return localStorage.getItem('ukcf.profile.v1'); } catch { return null; }
 });
 t('   and it is persisted', Boolean(storedProfile && storedProfile.length > 10));
 t('7. eligibility appears once a profile exists',
-  /Meets|Does not|Review required|Insufficient/i.test(await main(fresh)));
+  /Meets|Not met|Review required|Insufficient/i.test(await main(fresh)));
 
 await fresh.reload({ waitUntil: 'networkidle' });
 await fresh.waitForTimeout(800);
@@ -395,12 +409,12 @@ await e.waitForTimeout(600);
 t('Load more is keyboard focusable and operable', loadMoreKb === 'ok',
   `${loadMoreKb}, now ${await e.locator('main article').count()} cards`);
 const disclosureKb = await e.evaluate(() => {
-  const d = document.querySelector('main details > summary');
+  const d = document.querySelector('main button[aria-expanded][aria-controls]');
   if (!d) return 'absent';
   d.focus();
   return document.activeElement === d ? 'ok' : 'not-focusable';
 });
-t('the Why? disclosure is keyboard focusable', disclosureKb === 'ok', disclosureKb);
+t('the Details disclosure is keyboard focusable', disclosureKb === 'ok', disclosureKb);
 await goto(e, '/course/qmul-physics-bsc--2027');
 const reportKb = await e.evaluate(() => {
   const b = [...document.querySelectorAll('button')].find((x) => /Report it|Report an issue/i.test(x.textContent ?? ''));
@@ -411,7 +425,7 @@ const reportKb = await e.evaluate(() => {
 t('the report-issue action is labelled and focusable', reportKb === 'ok', reportKb);
 const statusText = await e.evaluate(() => {
   const el = [...document.querySelectorAll('*')].find(
-    (x) => x.children.length === 0 && /^(Verified|Partially verified|Awaiting research|Awaiting publication)$/.test((x.textContent ?? '').trim()),
+    (x) => x.children.length <= 1 && /^(Verified|Partially verified|Awaiting research|Awaiting publication)$/.test((x.textContent ?? '').trim()),
   );
   return el ? (el.textContent ?? '').trim() : null;
 });
@@ -528,13 +542,9 @@ if (await lm.count()) {
  * results made the probe wait forever for cards that were correctly absent.
  */
 await goto(perf, '/');
-/* The profile panel is a disclosure on the search page, so it has to be opened
-   before its grade selectors exist in the DOM. */
-const profileToggle = perf.getByRole('button', { name: /^Grades$/ }).first();
-if ((await profileToggle.count()) && (await profileToggle.getAttribute('aria-expanded')) !== 'true') {
-  await profileToggle.click();
-  await perf.waitForTimeout(400);
-}
+/* v2: the profile form is in a drawer, so it has to be opened before its grade
+   selectors exist in the DOM. */
+await openProfile(perf);
 /* The grade picker is a role=group of A*–E buttons, not a <select>. Clicking one
    changes the profile, which re-evaluates every rendered card. */
 const gradeGroup = perf.locator('[role="group"][aria-label^="Predicted grade"]').first();
@@ -553,6 +563,7 @@ if (await gradeGroup.count()) {
   ).catch(() => {});
   await perf.waitForTimeout(60);
   const ms = Date.now() - s1;
+  await closeProfile(perf);
   log(`  eligibility recalculation over ${before} rendered cards: ~${ms}ms`);
   t('  eligibility recalculation stays responsive', ms < 4000, `${ms}ms`);
 } else {
@@ -716,25 +727,33 @@ log('\n20. v1.0.0 — CourseScope BRAND AND PRODUCTION CONFIG');
 /* ================================================================== */
 log('\n21. v1.0.0 — ENTRY YEAR: FIRST VISIT, PERSISTENCE, STALE STORAGE');
 {
-  /* Every year switch on the page, in DOM order: [{ label, pressed, where }]. */
+  /* Every entry-year radio on the page, in DOM order: [{ label, pressed, where }].
+     v2: the page has ONE year control; a second one lives in the A-Levels drawer and
+     exists only while that drawer is open. */
   const years = (page) => page.evaluate(() =>
-    [...document.querySelectorAll('button[aria-pressed]')]
-      .filter((b) => /^20\d\d entry$/.test((b.textContent ?? '').trim()))
+    [...document.querySelectorAll('[role="radiogroup"][aria-label="Entry year"] [role="radio"]')]
+      .filter((b) => /^20\d\d entry$/.test(b.getAttribute('aria-label') ?? ''))
       .map((b) => ({
-        label: (b.textContent ?? '').trim(),
-        pressed: b.getAttribute('aria-pressed') === 'true',
-        where: b.closest('aside, [class*="surface"]')?.textContent?.includes('Your A-Levels') ? 'profile' : 'filters',
+        label: b.getAttribute('aria-label'),
+        pressed: b.getAttribute('aria-checked') === 'true',
+        where: b.closest('[role="dialog"]') ? 'profile' : 'page',
       })));
   const chosen = async (page) => {
     const ys = await years(page);
     const on = [...new Set(ys.filter((y) => y.pressed).map((y) => y.label))];
     return { on: on.join('|'), switches: ys.filter((y) => y.pressed).length, where: [...new Set(ys.map((y) => y.where))].join(',') };
   };
+  /* Both controls, drawer opened for the look and closed again. */
+  const chosenBoth = async (page) => {
+    await openProfile(page);
+    const c = await chosen(page);
+    await closeProfile(page);
+    return c;
+  };
   const click = async (page, where, label) => {
     await page.evaluate(([w, l]) => {
-      const b = [...document.querySelectorAll('button[aria-pressed]')].find((x) =>
-        (x.textContent ?? '').trim() === l &&
-        (x.closest('aside, [class*="surface"]')?.textContent?.includes('Your A-Levels') ? 'profile' : 'filters') === w);
+      const b = [...document.querySelectorAll('[role="radiogroup"][aria-label="Entry year"] [role="radio"]')].find((x) =>
+        x.getAttribute('aria-label') === l && (x.closest('[role="dialog"]') ? 'profile' : 'page') === w);
       b?.click();
     }, [where, label]);
     await page.waitForTimeout(500);
@@ -745,17 +764,19 @@ log('\n21. v1.0.0 — ENTRY YEAR: FIRST VISIT, PERSISTENCE, STALE STORAGE');
   await goto(page, '/');
   let c = await chosen(page);
   t('fresh browser (no stored state) opens on 2027', c.on === '2027 entry', JSON.stringify(c));
-  t('  …in BOTH year controls (filters and Your A-Levels)', c.switches === 2 && c.where === 'filters,profile', JSON.stringify(c));
+  t('  …on the page control', c.switches === 1 && c.where === 'page', JSON.stringify(c));
+  c = await chosenBoth(page);
+  t('  …and in the Your A-Levels drawer, once opened', c.on === '2027 entry' && c.switches === 2 && c.where === 'page,profile', JSON.stringify(c));
   t('  …showing 2027 courses', /2027/.test(await page.locator('main article').first().innerText()));
 
-  await click(page, 'filters', '2028 entry');
-  c = await chosen(page);
-  t('choosing 2028 in the filters moves both controls', c.on === '2028 entry' && c.switches === 2, JSON.stringify(c));
+  await click(page, 'page', '2028 entry');
+  c = await chosenBoth(page);
+  t('choosing 2028 on the page moves both controls', c.on === '2028 entry' && c.switches === 2, JSON.stringify(c));
   t('  …and 2028 still shows requirements as not yet published',
     /not yet published/i.test(await page.locator('main article').first().innerText()));
   await reload(page);
   c = await chosen(page);
-  t('explicit 2028 survives a reload', c.on === '2028 entry' && c.switches === 2, JSON.stringify(c));
+  t('explicit 2028 survives a reload', c.on === '2028 entry' && c.switches === 1, JSON.stringify(c));
 
   await page.getByRole('button', { name: 'Reset', exact: true }).first().click();
   await page.waitForTimeout(400);
@@ -764,16 +785,20 @@ log('\n21. v1.0.0 — ENTRY YEAR: FIRST VISIT, PERSISTENCE, STALE STORAGE');
   await reload(page);
   t('  …before or after a reload', (await chosen(page)).on === '2028 entry');
 
-  const clearBtn = page.getByRole('button', { name: 'Clear', exact: true }).first();
+  await openProfile(page);
+  const clearBtn = page.getByRole('dialog', { name: 'Your A-Levels' }).getByRole('button', { name: 'Clear', exact: true }).first();
   if (await clearBtn.count()) { await clearBtn.click(); await page.waitForTimeout(400); }
+  await closeProfile(page);
   t('clearing Your A-Levels does not change the saved year', (await chosen(page)).on === '2028 entry');
 
+  await openProfile(page);
   await click(page, 'profile', '2027 entry');
   c = await chosen(page);
+  await closeProfile(page);
   t('choosing 2027 in Your A-Levels moves both controls', c.on === '2027 entry' && c.switches === 2, JSON.stringify(c));
   await reload(page);
   c = await chosen(page);
-  t('explicit 2027 survives a reload', c.on === '2027 entry' && c.switches === 2, JSON.stringify(c));
+  t('explicit 2027 survives a reload', c.on === '2027 entry' && c.switches === 1, JSON.stringify(c));
   t('  …and is saved under its own key', await page.evaluate(() => localStorage.getItem('ukcf.entryYear.v1')) === '"2027"');
   await ctx.close();
 

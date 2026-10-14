@@ -15,7 +15,7 @@ export function GradeSelector({
 }) {
   return (
     <div
-      className="inline-flex rounded-md border border-slate-300 bg-white p-0.5"
+      className="inline-flex rounded-ctl border border-control bg-white p-0.5"
       role="group"
       aria-label={label ?? 'Predicted grade'}
     >
@@ -29,8 +29,8 @@ export function GradeSelector({
             aria-pressed={active}
             onClick={() => onChange(active ? null : grade)}
             className={cx(
-              'min-w-[30px] rounded px-1.5 py-1 text-xs font-semibold tabular-nums transition-colors',
-              active ? 'bg-navy-900 text-white' : 'text-ink-muted hover:bg-slate-100',
+              'min-h-[36px] min-w-[36px] rounded-chip px-1.5 text-sm font-semibold tabular-nums transition-colors duration-quick ease-standard',
+              active ? 'bg-navy-900 text-white' : 'text-ink-muted hover:bg-sunken',
               disabled && 'opacity-50',
             )}
           >

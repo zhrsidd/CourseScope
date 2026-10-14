@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { HashRouter, Route, Routes, useLocation, Link } from 'react-router-dom';
+import { Announcer } from '@/components/Announcer';
 import { CompareTray } from '@/components/CompareTray';
 import { DemoBanner } from '@/components/DemoBanner';
 import { Footer } from '@/components/Footer';
@@ -58,7 +59,7 @@ export default function App() {
           */}
           <a
             href="#content"
-            className="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-50 focus:rounded focus:bg-navy-900 focus:px-3 focus:py-2 focus:text-sm focus:text-white"
+            className="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-50 focus:rounded-ctl focus:bg-navy-900 focus:px-4 focus:py-2.5 focus:text-sm focus:text-white"
           >
             Skip to main content
           </a>
@@ -79,6 +80,7 @@ export default function App() {
             </Routes>
           </main>
           <CompareTray />
+          <Announcer />
           <Footer />
         </div>
       </HashRouter>
