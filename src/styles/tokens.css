@@ -1,0 +1,97 @@
+/*
+ * CourseScope v2 design tokens. One place for every colour, type, spacing,
+ * radius, motion and layout value. Tailwind reads these through
+ * tailwind.config.js, and component CSS in index.css reads them directly.
+ *
+ * Colour rules that matter:
+ *  - --accent (teal) is for text, links and focus. It is 5.15:1 on the canvas.
+ *  - --signal (logo teal) is for navy backgrounds only, never text on white.
+ *  - Status colours are always paired with an icon and a word, never colour alone.
+ *  - --line is decorative. Anything that marks the edge of a control uses --control (3:1).
+ */
+:root {
+  /* Surfaces */
+  --canvas: #f7f8fa;
+  --panel: #ffffff;
+  --sunken: #eef1f6;
+
+  /* Ink */
+  --ink: #101828;
+  --muted: #475467;
+  --subtle: #5b6678;
+
+  /* Brand */
+  --navy-950: #0d162c;
+  --navy-900: #152344;
+  --navy-800: #26355a;
+  --navy-700: #2e426f;
+  --navy-100: #e3e9f4;
+  --accent: #0f766e;
+  --signal: #3fbfae;
+  --wash: #e6f5f3;
+  --line: #e2e8f0;
+  --control: #7b8799;
+
+  /* Status */
+  --ok-ink: #065f46;
+  --ok-bg: #ecfdf5;
+  --wait-ink: #7a4a00;
+  --wait-bg: #fff4db;
+  --no-ink: #9f1239;
+  --no-bg: #fff1f2;
+  --rev-ink: #334155;
+  --rev-bg: #f1f5f9;
+
+  /* Type families */
+  --f-display: 'Instrument Serif', 'Instrument Serif Fallback', Georgia, 'Times New Roman', serif;
+  --f-ui: 'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --f-code: 'Geist Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* Type scale */
+  --t-hero: clamp(46px, 6.3vw, 92px);
+  --t-h2: clamp(30px, 3.2vw, 44px);
+  --t-page: clamp(32px, 3.6vw, 44px);
+  --t-title: 26px;
+
+  /* Spacing (4px base) */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-8: 32px;
+  --s-10: 40px;
+  --s-12: 48px;
+  --s-16: 64px;
+
+  /* Radii */
+  --r-chip: 4px;
+  --r-ctl: 8px;
+  --r-sheet: 14px;
+
+  /* Elevation: flat at rest, one overlay shadow */
+  --overlay-shadow: 0 24px 48px -12px rgba(13, 22, 44, 0.28), 0 2px 6px rgba(13, 22, 44, 0.08);
+
+  /* Motion */
+  --d-instant: 90ms;
+  --d-quick: 150ms;
+  --d-base: 240ms;
+  --d-hero: 640ms;
+  --e-standard: cubic-bezier(0.2, 0, 0, 1);
+  --e-emph: cubic-bezier(0.16, 1, 0.3, 1);
+  --e-exit: cubic-bezier(0.4, 0, 1, 1);
+
+  /* Layout */
+  --page-max: 1280px;
+  --gutter: 24px;
+  --rail: 264px;
+  --target: 44px;
+  --target-sm: 36px;
+}
+
+@media (max-width: 760px) {
+  :root {
+    --gutter: 16px;
+  }
+}

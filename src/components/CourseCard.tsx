@@ -117,7 +117,7 @@ export function CourseCard({
               <InfoTooltip term="typical-offer" />
             </div>
             {course.offers.length > 1 ? (
-              <div className="mt-0.5 text-[11px] text-ink-faint">
+              <div className="mt-0.5 text-xs text-ink-faint">
                 {course.offers.length} published offer pathways
               </div>
             ) : null}
@@ -154,7 +154,7 @@ export function CourseCard({
                   />
                 ))
             ) : (
-              <span className="text-xs italic text-slate-400">
+              <span className="text-xs italic text-ink-faint">
                 {notPublished
                   ? 'Not yet published'
                   : awaiting
@@ -189,7 +189,7 @@ export function CourseCard({
           </dt>
           <dd className="mt-0.5 text-ink">
             {course.admissionsTest.code === 'unknown' ? (
-              <span className="italic text-slate-400">Not recorded</span>
+              <span className="italic text-ink-faint">Not recorded</span>
             ) : course.admissionsTest.code === 'not-announced' ? (
               <span className="italic text-amber-700">Not yet announced</span>
             ) : (
@@ -227,7 +227,7 @@ export function CourseCard({
         {course.interview === 'yes' ? <Badge tone="navy">Interview</Badge> : null}
       </div>
       <div className="mt-2.5 flex flex-wrap items-center gap-2">
-        <Link to={`/course/${course.id}`} className="btn-primary h-8 px-3 text-xs">
+        <Link to={`/course/${course.id}`} className="btn-primary btn-sm">
           View course
         </Link>
         <button
@@ -235,7 +235,7 @@ export function CourseCard({
           onClick={() => toggleCompare(course.id)}
           disabled={compareFull}
           title={compareFull ? `You can compare up to ${MAX_COMPARE} courses` : undefined}
-          className={cx('btn-secondary h-8 px-3 text-xs', comparing && 'border-navy-400 bg-navy-50')}
+          className={cx('btn-secondary btn-sm', comparing && 'border-navy-400 bg-navy-50')}
         >
           <IconCompare width={13} height={13} />
           {comparing ? 'In comparison' : 'Compare'}
@@ -243,7 +243,7 @@ export function CourseCard({
         <button
           type="button"
           onClick={() => toggleSavedCourse(course.id)}
-          className={cx('btn-secondary h-8 px-3 text-xs', saved && 'border-rose-200 text-rose-700')}
+          className={cx('btn-secondary btn-sm', saved && 'border-rose-200 text-rose-700')}
           aria-pressed={saved}
         >
           <IconHeart width={13} height={13} filled={saved} />

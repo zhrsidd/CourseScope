@@ -60,7 +60,7 @@ function Field({ label, children, hint }: { label: string; children: ReactNode; 
     <label className="block">
       <span className="label mb-1 block">{label}</span>
       {children}
-      {hint ? <span className="mt-1 block text-[11px] text-ink-faint">{hint}</span> : null}
+      {hint ? <span className="mt-1 block text-xs text-ink-faint">{hint}</span> : null}
     </label>
   );
 }
@@ -73,7 +73,7 @@ function CopyBlock({ text, filename }: { text: string; filename: string }) {
         <span className="label">{filename}</span>
         <button
           type="button"
-          className={cx('btn-secondary h-8 px-2.5 text-xs', copied && 'border-emerald-300 text-emerald-700')}
+          className={cx('btn-secondary btn-sm', copied && 'border-emerald-300 text-emerald-700')}
           onClick={() => {
             navigator.clipboard?.writeText(text).then(
               () => {
@@ -215,7 +215,7 @@ function RecordsTab() {
               ].map((h) => (
                 <th
                   key={h}
-                  className="border-b border-slate-200 px-3 py-2 text-left text-[11px] font-semibold uppercase tracking-wide text-ink-faint"
+                  className="border-b border-slate-200 px-3 py-2 text-left text-xs font-semibold uppercase tracking-wide text-ink-faint"
                 >
                   {h}
                 </th>
@@ -244,7 +244,7 @@ function RecordsTab() {
                   </td>
                   <td className="border-b border-slate-100 px-3 py-2">
                     {c.admissionsTest.code === 'unknown' ? (
-                      <span className="italic text-slate-400">—</span>
+                      <span className="italic text-ink-faint">—</span>
                     ) : (
                       admissionsTestFullLabel(c.admissionsTest)
                     )}
@@ -255,7 +255,7 @@ function RecordsTab() {
                         Link <IconExternal width={11} height={11} />
                       </a>
                     ) : (
-                      <span className="italic text-slate-400">None</span>
+                      <span className="italic text-ink-faint">None</span>
                     )}
                   </td>
                   <td className="border-b border-slate-100 px-3 py-2 text-ink-muted">
@@ -267,7 +267,7 @@ function RecordsTab() {
                   <td className="border-b border-slate-100 px-3 py-2">
                     {errors > 0 ? <Badge tone="red">{errors} error{errors === 1 ? '' : 's'}</Badge> : null}
                     {warnings > 0 ? <Badge tone="amber">{warnings} warn</Badge> : null}
-                    {errors === 0 && warnings === 0 ? <span className="text-slate-400">—</span> : null}
+                    {errors === 0 && warnings === 0 ? <span className="text-ink-faint">—</span> : null}
                   </td>
                 </tr>
               );
@@ -317,7 +317,7 @@ function ValidationTab() {
                 {['Severity', 'Record', 'Field', 'Rule', 'Message'].map((h) => (
                   <th
                     key={h}
-                    className="border-b border-slate-200 px-3 py-2 text-left text-[11px] font-semibold uppercase tracking-wide text-ink-faint"
+                    className="border-b border-slate-200 px-3 py-2 text-left text-xs font-semibold uppercase tracking-wide text-ink-faint"
                   >
                     {h}
                   </th>
@@ -339,7 +339,7 @@ function ValidationTab() {
                     </td>
                     <td className="border-b border-slate-100 px-3 py-2 font-medium text-navy-950">{record}</td>
                     <td className="border-b border-slate-100 px-3 py-2 text-ink-muted">{i.field ?? '—'}</td>
-                    <td className="border-b border-slate-100 px-3 py-2 font-mono text-[11px] text-ink-faint">
+                    <td className="border-b border-slate-100 px-3 py-2 font-mono text-xs text-ink-faint">
                       {i.ruleId}
                     </td>
                     <td className="border-b border-slate-100 px-3 py-2 text-ink-muted">{i.message}</td>
@@ -399,7 +399,7 @@ function DuplicatesTab() {
                 {['Type', 'Matched on', 'Record A', 'Record B', 'Differing fields', 'Reason'].map((h) => (
                   <th
                     key={h}
-                    className="border-b border-slate-200 px-3 py-2 text-left text-[11px] font-semibold uppercase tracking-wide text-ink-faint"
+                    className="border-b border-slate-200 px-3 py-2 text-left text-xs font-semibold uppercase tracking-wide text-ink-faint"
                   >
                     {h}
                   </th>
@@ -421,13 +421,13 @@ function DuplicatesTab() {
                     </td>
                     <td className="border-b border-slate-100 px-3 py-2">
                       <div className="font-medium text-navy-950">{a?.name ?? f.aId}</div>
-                      <div className="text-[11px] text-ink-faint">
+                      <div className="text-xs text-ink-faint">
                         {uni} · {a?.applicationYear} · {a?.provenance.verificationStatus}
                       </div>
                     </td>
                     <td className="border-b border-slate-100 px-3 py-2">
                       <div className="font-medium text-navy-950">{b?.name ?? f.bId}</div>
-                      <div className="text-[11px] text-ink-faint">
+                      <div className="text-xs text-ink-faint">
                         {uni} · {b?.applicationYear} · {b?.provenance.verificationStatus}
                       </div>
                     </td>
@@ -549,19 +549,19 @@ function ImportTab() {
             onChange={(e) => setText(e.target.value)}
           />
           <div className="mt-2 flex flex-wrap gap-2">
-            <button type="button" className="btn-primary h-8 px-3 text-xs" onClick={run} disabled={!text.trim()}>
+            <button type="button" className="btn-primary btn-sm" onClick={run} disabled={!text.trim()}>
               Validate batch
             </button>
             <button
               type="button"
-              className="btn-secondary h-8 px-3 text-xs"
+              className="btn-secondary btn-sm"
               onClick={() => setText(format === 'csv' ? CSV_TEMPLATE : sampleJson)}
             >
               Load {format === 'csv' ? 'CSV template' : 'sample JSON'}
             </button>
             <button
               type="button"
-              className="btn-ghost h-8 px-3 text-xs"
+              className="btn-ghost btn-sm"
               onClick={() => {
                 setText('');
                 setResult(null);
@@ -985,7 +985,7 @@ function EditorTab() {
               right={
                 <button
                   type="button"
-                  className="btn-secondary h-8 px-2.5 text-xs"
+                  className="btn-secondary btn-sm"
                   onClick={() => setDraft((d) => ({ ...d, offers: [...d.offers, blankOffer()] }))}
                 >
                   Add offer pathway
@@ -1022,7 +1022,7 @@ function EditorTab() {
                       {draft.offers.length > 1 ? (
                         <button
                           type="button"
-                          className="ml-auto rounded p-1.5 text-slate-400 hover:text-rose-600"
+                          className="ml-auto rounded p-1.5 text-ink-faint hover:text-rose-600"
                           onClick={() => setDraft((d) => ({ ...d, offers: d.offers.filter((_, i) => i !== oi) }))}
                           aria-label="Remove pathway"
                         >
@@ -1082,7 +1082,7 @@ function EditorTab() {
                           </select>
                           <button
                             type="button"
-                            className="rounded p-1.5 text-slate-400 hover:text-rose-600"
+                            className="rounded p-1.5 text-ink-faint hover:text-rose-600"
                             onClick={() =>
                               updateOffer(oi, { requirements: offer.requirements.filter((_, j) => j !== ri) })
                             }
@@ -1104,7 +1104,7 @@ function EditorTab() {
                     >
                       Add subject
                     </button>
-                    <p className="mt-2 text-[11px] text-ink-faint">
+                    <p className="mt-2 text-xs text-ink-faint">
                       Cross-subject rules (“an A* in either Mathematics or Physics”) are entered as
                       constraints in the JSON — see the schema in <code>data/SCHEMA.md</code>.
                     </p>

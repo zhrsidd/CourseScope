@@ -262,7 +262,7 @@ export function ReportIssue({
     <div>
       <button
         type="button"
-        className="btn-secondary h-8 w-full justify-center px-2.5 text-xs"
+        className="btn-secondary btn-sm w-full justify-center"
         aria-expanded={open}
         aria-controls={`report-${course.id}`}
         onClick={() => setOpen((v) => !v)}
@@ -308,7 +308,7 @@ export function ReportIssue({
 
           <p className="label mb-1">Your report</p>
           <textarea
-            className="field mb-3 min-h-[200px] font-mono text-[11px]"
+            className="field mb-3 min-h-[200px] font-mono text-xs"
             readOnly
             aria-label="Prepared issue report"
             value={report}
@@ -317,7 +317,7 @@ export function ReportIssue({
           <div className="flex flex-wrap items-center gap-2">
             {route === 'form' ? (
               <a
-                className="btn-primary h-8 px-2.5 text-xs"
+                className="btn-primary btn-sm"
                 href={formHref}
                 target="_blank"
                 rel="noreferrer noopener"
@@ -329,7 +329,7 @@ export function ReportIssue({
 
             {route === 'email' ? (
               <a
-                className="btn-primary h-8 px-2.5 text-xs"
+                className="btn-primary btn-sm"
                 href={`mailto:${REPORT_EMAIL}?subject=${encodeURIComponent(
                   `Course data issue: ${course.name} (${course.id})`,
                 )}&body=${encodeURIComponent(report)}`}
@@ -338,7 +338,7 @@ export function ReportIssue({
               </a>
             ) : null}
 
-            <button type="button" className="btn-secondary h-8 px-2.5 text-xs" onClick={() => void copy()}>
+            <button type="button" className="btn-secondary btn-sm" onClick={() => void copy()}>
               {copied ? 'Copied' : 'Copy report'}
             </button>
           </div>
@@ -364,7 +364,7 @@ export function ReportIssue({
           </p>
 
           {route === 'form' ? (
-            <p className="mt-2 text-[11px] leading-relaxed text-ink-faint">
+            <p className="mt-2 text-xs leading-relaxed text-ink-faint">
               Form not opening? Its address is{' '}
               <span className="select-all break-all font-mono text-ink-muted" data-testid="report-form-address">
                 {REPORT_URL}

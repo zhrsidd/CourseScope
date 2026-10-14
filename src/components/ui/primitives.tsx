@@ -8,16 +8,22 @@ export function cx(...parts: (string | false | null | undefined)[]): string {
 /* Badge                                                               */
 /* ------------------------------------------------------------------ */
 
+/*
+ * Tone names are kept from v1 so no caller changes; they now resolve to the v2
+ * status tokens. 'green' = verified / meets, 'amber' = awaiting / needs a look,
+ * 'red' = does not meet, 'neutral' = review / not enough information.
+ * A badge always carries an icon or words as well as colour.
+ */
 type Tone = 'neutral' | 'navy' | 'green' | 'amber' | 'red' | 'slate' | 'demo';
 
 const TONES: Record<Tone, string> = {
-  neutral: 'bg-slate-100 text-slate-700 border-slate-200',
+  neutral: 'bg-rev-bg text-rev-ink border-slate-200',
   navy: 'bg-navy-50 text-navy-800 border-navy-200',
-  green: 'bg-emerald-50 text-emerald-800 border-emerald-200',
-  amber: 'bg-amber-50 text-amber-800 border-amber-200',
-  red: 'bg-rose-50 text-rose-800 border-rose-200',
-  slate: 'bg-white text-slate-600 border-slate-200',
-  demo: 'bg-amber-50 text-amber-700 border-amber-200',
+  green: 'bg-ok-bg text-ok-ink border-emerald-200',
+  amber: 'bg-wait-bg text-wait-ink border-amber-200',
+  red: 'bg-no-bg text-no-ink border-rose-200',
+  slate: 'bg-white text-rev-ink border-slate-200',
+  demo: 'bg-wait-bg text-wait-ink border-amber-200',
 };
 
 export function Badge({
@@ -35,7 +41,7 @@ export function Badge({
     <span
       title={title}
       className={cx(
-        'inline-flex items-center gap-1 rounded border px-1.5 py-0.5 text-[11px] font-medium leading-4',
+        'inline-flex items-center gap-1 rounded-chip border px-1.5 py-0.5 text-xs font-medium leading-4',
         TONES[tone],
         className,
       )}
@@ -76,7 +82,7 @@ export function PageHeader({
     <div className="mb-6 flex flex-col gap-3 border-b border-slate-200 pb-5 md:flex-row md:items-end md:justify-between">
       <div className="min-w-0">
         {eyebrow ? <div className="label mb-1.5">{eyebrow}</div> : null}
-        <h1 className="text-2xl font-semibold text-navy-950 md:text-[28px]">{title}</h1>
+        <h1 className="text-[clamp(32px,3.6vw,44px)] text-navy-950">{title}</h1>
         {description ? <p className="mt-2 max-w-3xl text-sm text-ink-muted">{description}</p> : null}
       </div>
       {actions ? <div className="flex shrink-0 flex-wrap gap-2">{actions}</div> : null}
@@ -126,7 +132,7 @@ export function Muted({ children }: { children: ReactNode }) {
 
 /** Consistent rendering for a field we have no data for. */
 export function NoData({ children = 'Not available' }: { children?: ReactNode }) {
-  return <span className="text-sm italic text-slate-400">{children}</span>;
+  return <span className="text-sm italic text-ink-faint">{children}</span>;
 }
 
 /* ------------------------------------------------------------------ */
@@ -197,7 +203,7 @@ export function CheckboxRow({
         className="h-4 w-4 shrink-0 rounded border-slate-300 text-navy-800 focus:ring-navy-500"
       />
       <span className="min-w-0 flex-1 leading-snug">{label}</span>
-      {count !== undefined ? <span className="text-xs tabular-nums text-slate-400">{count}</span> : null}
+      {count !== undefined ? <span className="text-xs tabular-nums text-ink-faint">{count}</span> : null}
     </label>
   );
 }

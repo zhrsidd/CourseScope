@@ -91,14 +91,14 @@ export function UniversityDetailPage() {
               href={university.website}
               target="_blank"
               rel="noreferrer"
-              className="btn-secondary h-9 text-sm"
+              className="btn-secondary"
             >
               Official website <IconExternal width={13} height={13} />
             </a>
             <button
               type="button"
               onClick={() => toggleSavedUniversity(university.id)}
-              className={cx('btn-secondary h-9 text-sm', saved && 'border-rose-200 text-rose-700')}
+              className={cx('btn-secondary', saved && 'border-rose-200 text-rose-700')}
             >
               <IconHeart width={14} height={14} filled={saved} />
               {saved ? 'Saved' : 'Save university'}
@@ -210,7 +210,7 @@ export function UniversityDetailPage() {
                       <span className="text-sm font-medium text-ink">{d.label}</span>
                       <span className="text-sm tabular-nums text-navy-900">{deadlineDateLabel(d)}</span>
                     </div>
-                    <div className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] text-ink-faint">
+                    <div className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-ink-faint">
                       <span>{d.applicationYear} entry</span>
                       <span>·</span>
                       <span>{deadlineScopeLabel(d.appliesTo)}</span>

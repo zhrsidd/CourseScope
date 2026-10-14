@@ -129,7 +129,9 @@ export function CourseDetailPage() {
               <>
                 <span>·</span>
                 <span className="flex items-center gap-1">
-                  UCAS {course.courseCode}
+                  <span>
+                    UCAS <span className="t-code">{course.courseCode}</span>
+                  </span>
                   <InfoTooltip term="ucas-code" />
                 </span>
               </>
@@ -149,7 +151,7 @@ export function CourseDetailPage() {
               type="button"
               onClick={() => toggleCompare(course.id)}
               disabled={compareIds.length >= MAX_COMPARE && !comparing}
-              className={cx('btn-secondary h-9 text-sm', comparing && 'border-navy-400 bg-navy-50')}
+              className={cx('btn-secondary', comparing && 'border-navy-400 bg-navy-50')}
             >
               <IconCompare width={14} height={14} />
               {comparing ? 'In comparison' : 'Add to comparison'}
@@ -157,13 +159,13 @@ export function CourseDetailPage() {
             <button
               type="button"
               onClick={() => toggleSavedCourse(course.id)}
-              className={cx('btn-secondary h-9 text-sm', saved && 'border-rose-200 text-rose-700')}
+              className={cx('btn-secondary', saved && 'border-rose-200 text-rose-700')}
             >
               <IconHeart width={14} height={14} filled={saved} />
               {saved ? 'Saved' : 'Save course'}
             </button>
             {officialLink ? (
-              <a href={officialLink} target="_blank" rel="noreferrer" className="btn-primary h-9 text-sm">
+              <a href={officialLink} target="_blank" rel="noreferrer" className="btn-primary">
                 View official requirements <IconExternal width={13} height={13} />
               </a>
             ) : null}
@@ -327,7 +329,7 @@ export function CourseDetailPage() {
                       <span className="font-medium text-ink">{o.name}</span>
                       {o.ucasCode ? (
                         <span className="ml-1.5 text-xs text-ink-muted">
-                          (applies to UCAS {o.ucasCode})
+                          (applies to UCAS <span className="t-code">{o.ucasCode}</span>)
                         </span>
                       ) : null}
                       {o.chosenWhen ? (
@@ -602,7 +604,7 @@ export function CourseDetailPage() {
                           <span className="font-medium text-ink">{d.label}</span>
                           <span className="text-sm tabular-nums text-navy-900">{deadlineDateLabel(d)}</span>
                         </div>
-                        <div className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] text-ink-faint">
+                        <div className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-ink-faint">
                           <span>{d.applicationYear} entry</span>
                           <span>·</span>
                           <span>Applies to: {deadlineScopeLabel(d.appliesTo)}</span>

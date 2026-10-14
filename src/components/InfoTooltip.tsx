@@ -123,7 +123,7 @@ export function InfoTooltip({
           setFocused(false);
           setPinned(false);
         }}
-        className="inline-flex items-center gap-1 rounded text-slate-400 hover:text-navy-700 focus:text-navy-700"
+        className="inline-flex items-center gap-1 rounded text-ink-faint hover:text-navy-700 focus:text-navy-700"
       >
         {label ? <span>{label}</span> : null}
         <IconInfo width={13} height={13} />
@@ -139,7 +139,7 @@ export function InfoTooltip({
           role="tooltip"
           style={offset ? { transform: `translateX(${offset}px)` } : undefined}
           className={cx(
-            'pointer-events-none absolute top-full z-30 mt-1.5 w-64 max-w-[calc(100vw-1rem)] rounded-md border border-slate-200 bg-white p-2.5 text-left text-xs leading-relaxed text-ink shadow-raised',
+            'pointer-events-none absolute top-full z-30 mt-1.5 w-64 max-w-[calc(100vw-1rem)] rounded-md border border-slate-200 bg-white p-2.5 text-left text-xs leading-relaxed text-ink shadow-overlay',
             align === 'right' ? 'right-0' : 'left-0',
           )}
         >

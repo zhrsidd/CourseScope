@@ -79,7 +79,7 @@ export function StudentProfilePanel({ variant = 'panel' }: { variant?: 'panel' |
             <button
               type="button"
               onClick={() => removeALevel(entry.id)}
-              className="rounded p-1.5 text-slate-400 hover:bg-slate-100 hover:text-rose-600"
+              className="rounded p-1.5 text-ink-faint hover:bg-slate-100 hover:text-rose-600"
               aria-label={`Remove ${entry.subject || 'subject'}`}
             >
               <IconCross width={14} height={14} />
@@ -95,17 +95,17 @@ export function StudentProfilePanel({ variant = 'panel' }: { variant?: 'panel' |
       </datalist>
 
       <div className="mt-3 flex flex-wrap items-center gap-2">
-        <button type="button" className="btn-secondary h-8 px-2.5 text-xs" onClick={addALevel}>
+        <button type="button" className="btn-secondary btn-sm" onClick={addALevel}>
           Add subject
         </button>
         <button
           type="button"
-          className="btn-ghost h-8 px-2.5 text-xs"
+          className="btn-ghost btn-sm"
           onClick={() => setShowGcse((s) => !s)}
         >
           {showGcse ? 'Hide GCSEs' : 'Add GCSEs (optional)'}
         </button>
-        <button type="button" className="btn-ghost h-8 px-2.5 text-xs" onClick={resetProfile}>
+        <button type="button" className="btn-ghost btn-sm" onClick={resetProfile}>
           Clear
         </button>
       </div>
@@ -158,7 +158,7 @@ export function StudentProfilePanel({ variant = 'panel' }: { variant?: 'panel' |
                       gcses: prev.gcses.filter((x) => x.id !== g.id),
                     }))
                   }
-                  className="rounded p-1.5 text-slate-400 hover:bg-slate-100 hover:text-rose-600"
+                  className="rounded p-1.5 text-ink-faint hover:bg-slate-100 hover:text-rose-600"
                   aria-label="Remove GCSE"
                 >
                   <IconCross width={14} height={14} />
@@ -210,7 +210,7 @@ export function StudentProfilePanel({ variant = 'panel' }: { variant?: 'panel' |
             { id: 'no', label: 'No' },
           ]}
         />
-        <p className="mt-1 text-[11px] leading-relaxed text-ink-faint">
+        <p className="mt-1 text-xs leading-relaxed text-ink-faint">
           Some universities require Further Mathematics only if your school offers it. Leaving this
           unanswered makes those courses report “review required” rather than a pass or a fail.
         </p>

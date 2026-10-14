@@ -40,7 +40,7 @@ export function UniversitiesPage() {
               <IconSearch
                 width={15}
                 height={15}
-                className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+                className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-ink-faint"
               />
               <input
                 className="field h-9 w-56 py-1.5 pl-9 text-sm"

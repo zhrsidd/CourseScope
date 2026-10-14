@@ -22,7 +22,7 @@ export function SearchBar({
         <IconSearch
           width={size === 'lg' ? 18 : 15}
           height={size === 'lg' ? 18 : 15}
-          className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"
+          className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-ink-faint"
         />
         <input
           type="search"

@@ -138,7 +138,7 @@ export function SearchPage() {
   return (
     <div className="mx-auto max-w-8xl px-4 py-6 md:px-6">
       <section className="mb-6">
-        <h1 className="max-w-3xl text-[26px] font-semibold leading-tight text-navy-950 md:text-[34px]">
+        <h1 className="max-w-3xl text-[clamp(32px,3.6vw,44px)] text-navy-950">
           Find the right UK Physics or Engineering course
         </h1>
         <p className="mt-2 max-w-2xl text-sm text-ink-muted">
@@ -186,7 +186,7 @@ export function SearchPage() {
             <div className="flex flex-wrap items-center gap-2">
               <button
                 type="button"
-                className="btn-secondary h-8 px-2.5 text-xs lg:hidden"
+                className="btn-secondary btn-sm lg:hidden"
                 onClick={() => setShowFilters((s) => !s)}
               >
                 <IconFilter width={14} height={14} />

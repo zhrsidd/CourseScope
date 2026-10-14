@@ -20,7 +20,7 @@ export function ComparePage() {
         description={`Up to ${MAX_COMPARE} courses side by side. Rows where the selected courses differ are marked with a dot.`}
         actions={
           courses.length > 0 ? (
-            <button type="button" className="btn-secondary h-9 text-sm" onClick={clearCompare}>
+            <button type="button" className="btn-secondary" onClick={clearCompare}>
               Clear comparison
             </button>
           ) : undefined

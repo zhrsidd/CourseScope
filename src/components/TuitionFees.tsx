@@ -129,7 +129,7 @@ export function TuitionFees({ course }: { course: Course }) {
                   {fee.basisNote && state === 'current' ? (
                     <p className="mt-0.5 text-xs text-ink-muted">{fee.basisNote}</p>
                   ) : null}
-                  <div className="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[11px] text-ink-faint">
+                  <div className="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-xs text-ink-faint">
                     <span>Applies to {fee.feeYear} entry</span>
                     <span aria-hidden>·</span>
                     <span>{SCOPE_LABEL[fee.scope]}</span>
@@ -155,7 +155,7 @@ export function TuitionFees({ course }: { course: Course }) {
                   </div>
                   {fee.note && state !== 'current' ? (
                     <details className="mt-1.5">
-                      <summary className="cursor-pointer text-[11px] font-medium text-navy-700">
+                      <summary className="cursor-pointer text-xs font-medium text-navy-700">
                         {state === 'unknown' ? 'Why this is not established' : 'What the university says'}
                       </summary>
                       <p className="mt-1 break-words text-xs leading-relaxed text-ink-muted">{fee.note}</p>
@@ -166,7 +166,7 @@ export function TuitionFees({ course }: { course: Course }) {
             })}
           </ul>
         )}
-        <p className="mt-2.5 text-[11px] leading-relaxed text-ink-faint">
+        <p className="mt-2.5 text-xs leading-relaxed text-ink-faint">
           Labels are the university’s own fee categories. Which one applies to you depends on your fee status,
           which the university assesses. Fees can rise in later years of study. A published fee not re-checked
           within {Math.round(FEE_STALE_AFTER_DAYS / 30)} months is shown as out of date rather than current.
@@ -181,7 +181,7 @@ export function TuitionFeesCompact({ course }: { course: Course }) {
   const rows = displayableFees(course);
   if (rows.length === 0) {
     return (
-      <span className="italic text-slate-400">
+      <span className="italic text-ink-faint">
         {FEE_RESEARCHED_YEARS.has(course.applicationYear)
           ? 'Not recorded'
           : `Not yet published for ${course.applicationYear} entry`}

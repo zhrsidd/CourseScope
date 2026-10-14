@@ -52,7 +52,7 @@ export function UniversityCard({
           aria-pressed={saved}
           aria-label={saved ? 'Remove from shortlist' : 'Save to shortlist'}
           className={cx(
-            'rounded-md border border-slate-200 p-1.5 text-slate-400 hover:bg-slate-50',
+            'rounded-md border border-slate-200 p-1.5 text-ink-faint hover:bg-slate-50',
             saved && 'border-rose-200 text-rose-600',
           )}
         >
@@ -86,12 +86,12 @@ export function UniversityCard({
       </div>
 
       <div className="mt-auto flex flex-wrap items-center gap-2 pt-4">
-        <Link to={`/university/${university.slug}`} className="btn-primary h-8 px-3 text-xs">
+        <Link to={`/university/${university.slug}`} className="btn-primary btn-sm">
           View university
         </Link>
         <Link
           to={`/search?university=${university.slug}`}
-          className="btn-secondary h-8 px-3 text-xs"
+          className="btn-secondary btn-sm"
         >
           View courses
         </Link>

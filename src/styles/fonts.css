@@ -1,0 +1,51 @@
+/*
+ * Self-hosted fonts (src/assets/fonts). Three families, nothing else.
+ * font-display: swap keeps text visible while a font loads; the metric-adjusted
+ * fallbacks below keep the layout from shifting when the swap happens.
+ */
+@font-face {
+  font-family: 'Instrument Serif';
+  src: url('../assets/fonts/instrument-serif-latin-400-normal.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  src: url('../assets/fonts/instrument-serif-latin-400-italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geist';
+  src: url('../assets/fonts/geist-latin-wght-normal.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('../assets/fonts/geist-mono-latin-wght-normal.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Local fallbacks sized to Geist / Instrument Serif so the swap barely moves text. */
+@font-face {
+  font-family: 'Geist Fallback';
+  src: local('Arial');
+  size-adjust: 104%;
+  ascent-override: 92%;
+  descent-override: 24%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Instrument Serif Fallback';
+  src: local('Georgia');
+  size-adjust: 92%;
+  ascent-override: 105%;
+  descent-override: 28%;
+  line-gap-override: 0%;
+}

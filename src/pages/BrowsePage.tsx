@@ -66,7 +66,7 @@ export function BrowsePage() {
                         </div>
                         <div className="shrink-0 text-right">
                           <div className="text-sm font-semibold tabular-nums text-navy-900">{count}</div>
-                          <div className="text-[11px] text-ink-faint">
+                          <div className="text-xs text-ink-faint">
                             {unis} {unis === 1 ? 'university' : 'universities'}
                           </div>
                         </div>

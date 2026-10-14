@@ -31,7 +31,7 @@ export function RankingBadge({
     return (
       <span className="inline-flex flex-col">
         <span className="label">{CATEGORY_LABEL[category]}</span>
-        <span className="text-sm italic text-slate-400">Not available</span>
+        <span className="text-sm italic text-ink-faint">Not available</span>
       </span>
     );
   }
@@ -42,7 +42,7 @@ export function RankingBadge({
       <span className="flex flex-wrap items-baseline gap-1.5">
         <span className="text-sm font-semibold tabular-nums text-navy-900">#{ranking.rank}</span>
         {showProvider ? (
-          <span className="text-[11px] text-ink-faint">
+          <span className="text-xs text-ink-faint">
             {ranking.providerShort} {ranking.edition}
           </span>
         ) : null}
@@ -55,7 +55,7 @@ export function RankingBadge({
           </Badge>
         )}
         {others > 0 ? (
-          <span className="text-[11px] text-ink-faint" title="Other providers or editions recorded">
+          <span className="text-xs text-ink-faint" title="Other providers or editions recorded">
             +{others}
           </span>
         ) : null}
@@ -83,7 +83,7 @@ export function RankingRow({ ranking }: { ranking: Ranking }) {
           <span className="text-lg font-semibold tabular-nums text-navy-900">#{ranking.rank}</span>
         </div>
       </div>
-      <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-ink-faint">
+      <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-ink-faint">
         <span>Last verified: {formatDate(ranking.lastVerified)}</span>
         {ranking.sourceUrl ? (
           <a href={ranking.sourceUrl} target="_blank" rel="noreferrer" className="link inline-flex items-center gap-1">

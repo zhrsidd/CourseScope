@@ -74,7 +74,7 @@ interface Row {
   alwaysShow?: boolean;
 }
 
-const NA = <span className="italic text-slate-400">Not available</span>;
+const NA = <span className="italic text-ink-faint">Not available</span>;
 
 const ROWS: Row[] = [
   {
@@ -102,7 +102,7 @@ const ROWS: Row[] = [
   {
     id: 'ucas',
     label: 'UCAS code',
-    render: (c) => (c.courseCode ? <span className="font-mono text-[13px]">{c.courseCode}</span> : NA),
+    render: (c) => (c.courseCode ? <span className="t-code">{c.courseCode}</span> : NA),
     compareKey: (c) => c.courseCode ?? '',
   },
   {
@@ -123,7 +123,7 @@ const ROWS: Row[] = [
     label: 'Offer pathways',
     render: (c) =>
       c.offers.length === 0 ? (
-        <span className="italic text-slate-400">None recorded</span>
+        <span className="italic text-ink-faint">None recorded</span>
       ) : (
         <ul className="space-y-1">
           {c.offers.map((o) => (
@@ -143,7 +143,7 @@ const ROWS: Row[] = [
       report ? (
         <EligibilityBadge verdict={report.verdict} short />
       ) : (
-        <span className="italic text-slate-400">Add your grades</span>
+        <span className="italic text-ink-faint">Add your grades</span>
       ),
     compareKey: (_c, _u, report) => report?.verdict ?? 'none',
     alwaysShow: true,
@@ -152,7 +152,7 @@ const ROWS: Row[] = [
     id: 'eligibility-reason',
     label: 'Key reason',
     render: (c, _u, report) => {
-      if (!report) return <span className="italic text-slate-400">Add your grades</span>;
+      if (!report) return <span className="italic text-ink-faint">Add your grades</span>;
       const reason = keyEligibilityReason(report, c);
       return reason ? (
         <span className="text-xs leading-relaxed">
@@ -169,7 +169,7 @@ const ROWS: Row[] = [
     id: 'minimum-standard',
     label: 'Separately published minimum',
     render: (c) =>
-      c.minimumEntryStandard ?? <span className="italic text-slate-400">None published</span>,
+      c.minimumEntryStandard ?? <span className="italic text-ink-faint">None published</span>,
     compareKey: (c) => c.minimumEntryStandard ?? '',
   },
   {
@@ -243,7 +243,7 @@ const ROWS: Row[] = [
     label: 'Admissions test',
     render: (c) =>
       c.admissionsTest.code === 'unknown' ? (
-        <span className="italic text-slate-400">Not recorded</span>
+        <span className="italic text-ink-faint">Not recorded</span>
       ) : (
         <span>
           {admissionsTestFullLabel(c.admissionsTest)}
@@ -266,7 +266,7 @@ const ROWS: Row[] = [
           non-contextual pathways, so nothing here can make a student eligible —
           and the label says so rather than leaving it to be inferred.
         */}
-        <div className="text-[11px] font-medium uppercase tracking-wide text-ink-faint">
+        <div className="text-xs font-medium uppercase tracking-wide text-ink-faint">
           Not used in headline eligibility
         </div>
         {/* contextualLabel already prints the details when the offer exists;
@@ -284,7 +284,7 @@ const ROWS: Row[] = [
     label: 'Routes within this application',
     render: (c) =>
       c.studyOptions.length === 0 ? (
-        <span className="italic text-slate-400">None published</span>
+        <span className="italic text-ink-faint">None published</span>
       ) : (
         <ul className="space-y-1 text-xs">
           {c.studyOptions.map((o) => (
@@ -300,13 +300,13 @@ const ROWS: Row[] = [
   {
     id: 'placement',
     label: 'Placement / year abroad',
-    render: (c) => c.placementOrStudyAbroad ?? <span className="italic text-slate-400">None published</span>,
+    render: (c) => c.placementOrStudyAbroad ?? <span className="italic text-ink-faint">None published</span>,
     compareKey: (c) => c.placementOrStudyAbroad ?? '',
   },
   {
     id: 'gcse',
     label: 'GCSE requirements',
-    render: (c) => c.gcseRequirements ?? <span className="italic text-slate-400">None published</span>,
+    render: (c) => c.gcseRequirements ?? <span className="italic text-ink-faint">None published</span>,
   },
   {
     id: 'deadline',
@@ -388,7 +388,7 @@ const ROWS: Row[] = [
       c.rawRequirementText ? (
         <span className="text-xs italic leading-relaxed text-ink-muted">“{c.rawRequirementText}”</span>
       ) : (
-        <span className="italic text-slate-400">Not recorded</span>
+        <span className="italic text-ink-faint">Not recorded</span>
       ),
   },
   {
@@ -401,7 +401,7 @@ const ROWS: Row[] = [
           {c.provenance.sourceTitle ?? 'Official page'} <IconExternal width={12} height={12} />
         </a>
       ) : (
-        <span className="italic text-slate-400">No link recorded</span>
+        <span className="italic text-ink-faint">No link recorded</span>
       );
     },
   },
@@ -484,7 +484,7 @@ export function ComparisonTable({ courses }: { courses: Course[] }) {
                     <button
                       type="button"
                       onClick={() => toggleCompare(c.id)}
-                      className="rounded p-1 text-slate-400 hover:bg-slate-100 hover:text-rose-600"
+                      className="inline-flex h-9 w-9 items-center justify-center rounded-ctl text-ink-faint hover:bg-sunken hover:text-rose-700"
                       aria-label={`Remove ${c.name} from comparison`}
                     >
                       <IconCross width={13} height={13} />

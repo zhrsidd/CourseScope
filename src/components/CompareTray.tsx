@@ -33,7 +33,7 @@ export function CompareTray() {
                 <button
                   type="button"
                   onClick={() => toggleCompare(id)}
-                  className="text-slate-400 hover:text-rose-600"
+                  className="text-ink-faint hover:text-rose-600"
                   aria-label={`Remove ${course.name}`}
                 >
                   <IconCross width={12} height={12} />
@@ -43,10 +43,10 @@ export function CompareTray() {
           })}
         </ul>
         <div className="ml-auto flex shrink-0 gap-2">
-          <button type="button" className="btn-ghost h-8 px-2.5 text-xs" onClick={clearCompare}>
+          <button type="button" className="btn-ghost btn-sm" onClick={clearCompare}>
             Clear
           </button>
-          <Link to="/compare" className="btn-primary h-8 px-3 text-xs">
+          <Link to="/compare" className="btn-primary btn-sm">
             Compare courses
           </Link>
         </div>

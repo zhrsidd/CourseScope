@@ -5,7 +5,9 @@ import { Badge, cx } from './ui/primitives';
 
 const VERDICT_TONE: Record<EligibilityVerdict, 'green' | 'amber' | 'red' | 'neutral'> = {
   meets: 'green',
-  'review-required': 'amber',
+  // Review is "a person must read this", not "waiting for data", so it uses the
+  // neutral review colour and keeps amber for awaiting-publication states.
+  'review-required': 'neutral',
   'does-not-meet': 'red',
   'insufficient-information': 'neutral',
 };

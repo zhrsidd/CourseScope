@@ -30,7 +30,7 @@ export function Footer() {
             </Link>
             <FeedbackLink className="text-ink-muted hover:text-navy-800" />
             <span
-              className="rounded bg-slate-100 px-1.5 py-0.5 text-[11px] font-medium tabular-nums text-ink-muted"
+              className="rounded bg-slate-100 px-1.5 py-0.5 text-xs font-medium tabular-nums text-ink-muted"
               title={
                 IS_PRE_RELEASE
                   ? 'This catalogue is still being completed. It is not a finished release.'

@@ -43,20 +43,20 @@ export function EligibilityReasons({
         ))}
       </ul>
       {kind === 'unscorable-grade-profile' ? (
-        <p className="mt-2 text-[11px] leading-relaxed text-ink-muted">
+        <p className="mt-2 text-xs leading-relaxed text-ink-muted">
           The university publishes a grade range rather than a single profile. This catalogue stores
           ranges exactly as published rather than converting them into one threshold, so the overall
           grade check is left for you to read — the subject conditions above are still checked.
         </p>
       ) : null}
       {kind === 'manual-review-pathway' ? (
-        <p className="mt-2 text-[11px] leading-relaxed text-ink-muted">
+        <p className="mt-2 text-xs leading-relaxed text-ink-muted">
           This course publishes a requirement that has to be judged case by case, so the overall
           result is left for a human to confirm.
         </p>
       ) : null}
       {kind === 'conditional-requirement' ? (
-        <p className="mt-2 text-[11px] leading-relaxed text-ink-muted">
+        <p className="mt-2 text-xs leading-relaxed text-ink-muted">
           One requirement depends on a circumstance this profile does not record, so it cannot be
           decided either way here.
         </p>

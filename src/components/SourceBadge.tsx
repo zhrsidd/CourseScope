@@ -72,7 +72,7 @@ export function SourceBadge({
 
   if (compact) {
     return (
-      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-ink-faint">
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-ink-faint">
         <VerificationBadge status={verificationStatus} provenance={provenance} />
         <span>{applicationYear} entry</span>
         <span>Last verified: {formatDate(lastVerified)}</span>
@@ -87,7 +87,7 @@ export function SourceBadge({
         <div className="flex flex-wrap gap-x-2">
           <dt className="text-ink-faint">Source</dt>
           <dd className="min-w-0 text-ink">
-            {sourceTitle ?? <span className="italic text-slate-400">No source recorded yet</span>}
+            {sourceTitle ?? <span className="italic text-ink-faint">No source recorded yet</span>}
           </dd>
         </div>
         <div className="flex flex-wrap gap-x-2">

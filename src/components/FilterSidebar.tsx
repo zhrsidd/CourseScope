@@ -76,7 +76,7 @@ function FilterSection({
         <IconChevron
           width={14}
           height={14}
-          className={cx('shrink-0 text-slate-400 transition-transform', open && 'rotate-90')}
+          className={cx('shrink-0 text-ink-faint transition-transform', open && 'rotate-90')}
         />
       </button>
       {open ? <div className="mt-2">{children}</div> : null}
@@ -296,7 +296,7 @@ export function FilterSidebar({
           label="Include courses awaiting research"
           count={statusCounts.awaiting}
         />
-        <p className="mt-1 text-[11px] leading-relaxed text-ink-muted">
+        <p className="mt-1 text-xs leading-relaxed text-ink-muted">
           Courses awaiting research are real courses whose admissions
           information we have not verified yet. They are different from courses
           whose university has not yet published its requirements — those always
@@ -462,7 +462,7 @@ export function FilterSidebar({
           <IconSearch
             width={14}
             height={14}
-            className="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-400"
+            className="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 text-ink-faint"
           />
           <input
             className="field h-8 py-1 pl-8 text-xs"
