@@ -15,6 +15,11 @@ The student-facing release notes are also shown in the app, on the methodology p
   `maxoffer`, `rank`, `sort`, `awaiting`, `year`). Back and Forward step through filter changes. The A-Level
   profile, the shortlist, the comparison set, the "my verdict" filters and the sample-data switch are never
   put in an address.
+- **Invalid link values.** An unrecognised university, subject area, subject, degree, region or other
+  recognised filter is never silently dropped into an unfiltered search. A notice names what was not
+  recognised (with a suggestion when it is a near-miss), results are withheld when the value would have
+  narrowed the search, and "Remove it" restores a normal search. The value is kept in the address until
+  removed, so an edited link is not rewritten behind the reader's back.
 - **Entry year.** A `year` in a link is shown for that visit only and never saved; the saved year changes only
   when a person presses a year. An address with no year means the saved choice.
 - Unchanged: the dataset, eligibility engine, verification logic, filter logic, comparison and shortlist

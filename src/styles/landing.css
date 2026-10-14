@@ -240,6 +240,18 @@
 .lp-col-head a:hover {
   text-decoration: underline;
 }
+.lp-subj-cols {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 64px 48px 20px;
+  column-gap: 8px;
+  padding: 8px 0 4px;
+  border-bottom: 1px solid var(--line);
+  color: var(--subtle);
+  font-size: 13px;
+}
+.lp-subj-cols span:nth-child(n + 2) {
+  text-align: right;
+}
 .lp-subj {
   position: relative;
   display: grid;
@@ -563,8 +575,12 @@
   margin-right: 6px;
   vertical-align: -1px;
 }
-.lp-table-btn {
+.lp-table-btn,
+.lp-more-btn {
   margin-left: -12px;
+}
+.lp-more-btn {
+  margin-top: 8px;
 }
 .lp-table-wrap {
   overflow-x: auto;
@@ -601,10 +617,8 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 20px 24px;
-  border: 1px solid var(--line);
-  border-radius: var(--r-sheet);
-  background: var(--panel);
+  padding: 20px 0 0;
+  border-top: 2px solid var(--navy-950);
 }
 .lp-pair-card p {
   margin: 4px 0 0;
@@ -687,6 +701,9 @@
 
 /* ---------- Tablet ---------- */
 @media (max-width: 1023px) {
+  .lp-subj-cols {
+    grid-template-columns: minmax(0, 1fr) 64px 48px 20px;
+  }
   .lp-hero-in {
     grid-template-columns: minmax(0, 1fr);
     padding-top: 56px;
@@ -779,6 +796,9 @@
     grid-template-columns: minmax(0, 1fr) 44px 36px;
     min-height: 52px;
   }
+  .lp-subj-cols {
+    grid-template-columns: minmax(0, 1fr) 44px 36px;
+  }
   .lp-subj-go {
     display: none;
   }
@@ -806,7 +826,6 @@
   .lp-pair-card {
     flex-direction: column;
     align-items: stretch;
-    padding: 18px;
   }
   .site-foot-in {
     grid-template-columns: minmax(0, 1fr);

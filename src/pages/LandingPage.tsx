@@ -126,6 +126,9 @@ export function LandingPage() {
   const feat = featured.length ? featured[featuredIndex % featured.length] : null;
 
   const [tableOpen, setTableOpen] = useState(false);
+  // Each column opens with its eight largest subjects; the rest are one press away.
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
+  const FIRST = 8;
   const yearNum = Number(entryYear);
   const savedCount = savedCourseIds.length + savedUniversityIds.length;
   const maxMarks = Math.max(1, ...stats.rows.map((r) => r.verified + r.awaiting));
@@ -223,8 +226,13 @@ export function LandingPage() {
                     All {n(cat.total)} courses
                   </Link>
                 </div>
+                <div className="lp-subj-cols" aria-hidden="true">
+                  <span>Subject</span>
+                  <span>Courses</span>
+                  <span>Unis</span>
+                </div>
                 <ul>
-                  {cat.subs.map((s) => (
+                  {cat.subs.slice(0, FIRST).map((s) => (
                     <li key={s.id}>
                       <Link to={searchHref({ subcategory: s.id, year: entryYear })} className="lp-subj">
                         <span className="lp-subj-name">{s.label}</span>
@@ -241,6 +249,42 @@ export function LandingPage() {
                     </li>
                   ))}
                 </ul>
+                {cat.subs.length > FIRST ? (
+                  <>
+                    <Collapse open={Boolean(expanded[cat.id])} id={`lp-more-${cat.id}`}>
+                      <ul>
+                        {cat.subs.slice(FIRST).map((s) => (
+                          <li key={s.id}>
+                            <Link to={searchHref({ subcategory: s.id, year: entryYear })} className="lp-subj">
+                              <span className="lp-subj-name">{s.label}</span>
+                              <span className="lp-subj-n">
+                                {n(s.count)}
+                                <span className="sr-only"> courses at </span>
+                              </span>
+                              <span className="lp-subj-u">
+                                {s.unis}
+                                <span className="sr-only"> universities</span>
+                              </span>
+                              <IconChevron width={16} height={16} className="lp-subj-go" aria-hidden />
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </Collapse>
+                    <button
+                      type="button"
+                      className="disclose lp-more-btn"
+                      aria-expanded={Boolean(expanded[cat.id])}
+                      aria-controls={`lp-more-${cat.id}`}
+                      onClick={() => setExpanded((e) => ({ ...e, [cat.id]: !e[cat.id] }))}
+                    >
+                      <IconChevron width={14} height={14} />
+                      {expanded[cat.id]
+                        ? `Show fewer ${cat.label.toLowerCase()} subjects`
+                        : `Show all ${cat.subs.length} ${cat.label.toLowerCase()} subjects`}
+                    </button>
+                  </>
+                ) : null}
               </div>
             ))}
           </div>
@@ -384,7 +428,7 @@ export function LandingPage() {
 
           <h3 className="lp-h3">Coverage, university by university</h3>
           <p className="lp-note">
-            One mark per 2027-entry course, listed alphabetically and not ranked.
+            Bar length is the number of 2027-entry courses. Listed alphabetically, not ranked.
           </p>
           <ul className="lp-cov">
             {stats.rows.map((r) => (

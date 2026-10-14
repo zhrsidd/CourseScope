@@ -6,6 +6,7 @@ import { CourseRow } from '@/components/CourseRow';
 import { EntryYearSwitch } from '@/components/EntryYearSwitch';
 import { FilterSidebar } from '@/components/FilterSidebar';
 import { SearchBar } from '@/components/SearchBar';
+import { UrlNotice } from '@/components/UrlNotice';
 import { StudentProfileForm } from '@/components/StudentProfilePanel';
 import { Drawer } from '@/components/ui/Drawer';
 import { IconFilter, IconGrades, IconSearch } from '@/components/ui/icons';
@@ -20,7 +21,7 @@ import {
   type SortKey,
 } from '@/lib/filters';
 import { parseQuery } from '@/lib/search';
-import { filtersToSearch, searchToFilters, yearFromSearch } from '@/lib/search-url';
+import { filtersToSearch, parseSearch, yearFromSearch, type UrlProblem } from '@/lib/search-url';
 import { filledGrades, profileIsEmpty, sortGradesDesc } from '@/lib/grades';
 import { useApp } from '@/state/AppContext';
 
@@ -51,14 +52,21 @@ export function SearchPage() {
 
   const location = useLocation();
   const navigate = useNavigate();
-  const [filters, setFilters] = useState<FilterState>(() => {
-    // Start on the visitor's year from the first render, so the list never
-    // flashes the default year before the sync effect below corrects it. The
-    // address supplies every other selection (legacy q / category / subcategory /
-    // university links included); see src/lib/search-url.ts.
-    const base = { ...defaultFilters(false), applicationYear: profile.applicationYear };
-    return searchToFilters(location.search, base);
-  });
+  // Start on the visitor's year from the first render, so the list never
+  // flashes the default year before the sync effect below corrects it. The
+  // address supplies every other selection (legacy q / category / subcategory /
+  // university links included); see src/lib/search-url.ts.
+  const [initial] = useState(() =>
+    parseSearch(location.search, { ...defaultFilters(false), applicationYear: profile.applicationYear }),
+  );
+  const [filters, setFilters] = useState<FilterState>(initial.filters);
+  // Values in the address that could not be applied. They stay in the address and are
+  // reported on the page until the reader removes them; they are never dropped quietly.
+  const [problems, setProblems] = useState<UrlProblem[]>(initial.problems);
+  const [unknownRaw, setUnknownRaw] = useState<[string, string][]>(initial.raw);
+  const unknownRef = useRef(unknownRaw);
+  unknownRef.current = unknownRaw;
+  const lastAddress = useRef<string | null>(null);
   const [showFilters, setShowFilters] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
   const profileBtnRef = useRef<HTMLButtonElement>(null);
@@ -95,9 +103,15 @@ export function SearchPage() {
    */
   const filtersRef = useRef(filters);
   filtersRef.current = filters;
-  const lastWritten = useRef<FilterState | null>(null);
+  const lastWritten = useRef<{ filters: FilterState; raw: string } | null>(null);
   useEffect(() => {
-    const fromUrl = searchToFilters(location.search, filtersRef.current);
+    // Our own rewrites of the address are not news: only Back, Forward or a pasted link are.
+    if (location.search === lastAddress.current) {
+      lastAddress.current = null;
+      return;
+    }
+    const parsedUrl = parseSearch(location.search, filtersRef.current);
+    const fromUrl = parsedUrl.filters;
     const wantYear = yearFromSearch(location.search);
     if (wantYear) {
       fromUrl.applicationYear = wantYear;
@@ -107,22 +121,35 @@ export function SearchPage() {
       setYearOverride(null);
       fromUrl.applicationYear = savedEntryYear;
     }
-    if (filtersToSearch(fromUrl) !== filtersToSearch(filtersRef.current)) setFilters(fromUrl);
+    setProblems(parsedUrl.problems);
+    if (JSON.stringify(parsedUrl.raw) !== JSON.stringify(unknownRef.current)) setUnknownRaw(parsedUrl.raw);
+    if (
+      filtersToSearch(fromUrl, parsedUrl.raw) !== filtersToSearch(filtersRef.current, unknownRef.current)
+    )
+      setFilters(fromUrl);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.search]);
 
   useEffect(() => {
-    const next = filtersToSearch(filters);
-    const prev = lastWritten.current;
-    lastWritten.current = filters;
+    const next = filtersToSearch(filters, unknownRaw);
     if (next === location.search) return;
+    const prev = lastWritten.current;
+    lastWritten.current = { filters, raw: JSON.stringify(unknownRaw) };
     const sameButTyping =
       prev === null ||
-      filtersToSearch({ ...prev, query: '', applicationYear: '2027' }) ===
-        filtersToSearch({ ...filters, query: '', applicationYear: '2027' });
-    navigate({ pathname: '/search', search: next }, { replace: sameButTyping });
+      (prev.raw === JSON.stringify(unknownRaw) &&
+        filtersToSearch({ ...prev.filters, query: '', applicationYear: '2027' }) ===
+          filtersToSearch({ ...filters, query: '', applicationYear: '2027' }));
+    // Rewriting an address into its canonical spelling (adding the year, ordering the
+    // parameters, merging unrecognised values back in) is the same search, so it
+    // replaces the entry instead of adding one that Back would have to step through.
+    const current = parseSearch(location.search, filters);
+    current.filters.applicationYear = yearFromSearch(location.search) ?? filters.applicationYear;
+    const onlyCanonicalising = filtersToSearch(current.filters, current.raw) === next;
+    lastAddress.current = next;
+    navigate({ pathname: '/search', search: next }, { replace: sameButTyping || onlyCanonicalising });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filters]);
+  }, [filters, unknownRaw]);
 
   const parsed = useMemo(() => parseQuery(filters.query), [filters.query]);
 
@@ -144,18 +171,50 @@ export function SearchPage() {
     setVisibleCount(PAGE_SIZE);
   }, [resetKey]);
 
+  /*
+   * A filter in the address whose values are ALL unrecognised can match nothing, so the
+   * list is empty rather than quietly unfiltered. Unknown universities and locations
+   * stay in the filters and match nothing on their own; they are only reported here.
+   */
+  const catalogueProblems = useMemo<UrlProblem[]>(() => {
+    if (loading) return [];
+    const out: UrlProblem[] = [];
+    const badUnis = filters.universityIds.filter((id) => !universityById[id]);
+    if (badUnis.length)
+      out.push({ key: 'university', value: badUnis.join(','), kind: badUnis.length === filters.universityIds.length ? 'blocks' : 'partial' });
+    const knownRegions = new Set(universities.map((u) => u.region));
+    const badRegions = filters.regions.filter((r) => !knownRegions.has(r));
+    if (badRegions.length)
+      out.push({ key: 'region', value: badRegions.join(','), kind: badRegions.length === filters.regions.length ? 'blocks' : 'partial' });
+    return out;
+  }, [loading, filters.universityIds, filters.regions, universityById, universities]);
+  const allProblems = useMemo(() => [...problems, ...catalogueProblems], [problems, catalogueProblems]);
+  const blocked = allProblems.some((p) => p.kind === 'blocks');
+
   const results = useMemo(
     () =>
-      applyFilters({
-        courses,
-        universities: universityById,
-        filters,
-        parsed,
-        eligibility,
-        shortlistedCourseIds: savedCourseIds,
-      }),
-    [courses, universityById, filters, parsed, eligibility, savedCourseIds],
+      problems.some((p) => p.kind === 'blocks')
+        ? []
+        : applyFilters({
+            courses,
+            universities: universityById,
+            filters,
+            parsed,
+            eligibility,
+            shortlistedCourseIds: savedCourseIds,
+          }),
+    [problems, courses, universityById, filters, parsed, eligibility, savedCourseIds],
   );
+  const clearProblems = () => {
+    setProblems([]);
+    setUnknownRaw([]);
+    const knownRegions = new Set(universities.map((u) => u.region));
+    setFilters((f) => ({
+      ...f,
+      universityIds: f.universityIds.filter((id) => universityById[id]),
+      regions: f.regions.filter((r) => knownRegions.has(r)),
+    }));
+  };
 
   const visible = useMemo(() => results.slice(0, visibleCount), [results, visibleCount]);
   const remaining = results.length - visible.length;
@@ -172,13 +231,16 @@ export function SearchPage() {
   }, [results, eligibility]);
 
   const gradeString = sortGradesDesc(filledGrades(profile).map((e) => e.grade)).join('');
-  const resetFilters = () =>
+  const resetFilters = () => {
+    setProblems([]);
+    setUnknownRaw([]);
     setFilters({
       ...defaultFilters(hasVerifiedData),
       query: filters.query,
       sort: filters.sort,
       applicationYear: filters.applicationYear,
     });
+  };
   const chooseYear = (y: FilterState['applicationYear']) => {
     setFilters((f) => ({ ...f, applicationYear: y }));
     // The entry year is ONE saved choice, whichever switch sets it, and it is
@@ -302,6 +364,8 @@ export function SearchPage() {
             onClear={resetFilters}
           />
 
+          <UrlNotice problems={allProblems} blocked={blocked} onClear={clearProblems} />
+
           {/*
             One invitation, once, instead of an "Insufficient information" label on
             every row. Without grades the rows say nothing about eligibility; with
@@ -345,8 +409,8 @@ export function SearchPage() {
           ) : results.length === 0 ? (
             <EmptyState
               icon={<IconSearch width={28} height={28} />}
-              title="No courses match these filters"
-              description="Try removing a filter, lowering the grade profile, or clearing the search box. The demo catalogue only contains a sample of courses at each university."
+              title={blocked ? 'This link’s filters cannot match any course' : 'No courses match these filters'}
+              description={blocked ? 'A filter in the address is not one CourseScope recognises, so nothing can match it. Remove the unrecognised filters above to see courses.' : 'Try removing a filter, lowering the grade profile, or clearing the search box. The demo catalogue only contains a sample of courses at each university.'}
               action={
                 <button type="button" className="btn-secondary" onClick={resetFilters}>
                   Reset all filters

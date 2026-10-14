@@ -1,4 +1,4 @@
-// v2 Phase 3 routing QA. Needs a preview server on 4321 and global Playwright.
+// v2 routing QA. Needs a preview server on 4321 (QA_BASE not supported here) and global Playwright.
 // Phase 3: routing, redirects, shareable URLs, history, year rules, privacy, landing behaviour.
 import pkg from '/home/claude/.npm-global/lib/node_modules/playwright/index.js'; const { chromium } = pkg;
 const BASE = 'http://127.0.0.1:4321'; const b = await chromium.launch();
@@ -154,14 +154,100 @@ for (const [label, h, expect] of legacy) {
   t('  …and opening the profile drawer leaves the address alone', decodeURIComponent(await hash(p)) === hh);
   await ctx.close();
 }
-/* 7. invalid input */
+/* 7. invalid, unknown and hand-edited values */
 {
-  const { ctx, p } = await mk(); await go(p, '/search?category=bogus&sort=bogus&year=2099&degree=<script>&duration=abc&rank=-3&maxoffer=ZZZ&university=%3Cb%3E');
-  const def = await mk(); await go(def.p, '/search');
-  const a = await allIds(p);
-  t('hand-edited nonsense is ignored, not crashed on or half-applied', p.errs.length === 0 && a.length > 0 && a.length >= (await allIds(def.p)).length - 0 || true, `${a.length} rows, ${p.errs.length} errors, ${await hash(p)}`);
-  t('  …and the page is not an error screen', !/Page not found|could not be loaded/.test(await p.locator('main').innerText()));
-  await def.ctx.close(); await ctx.close();
+  const notice = (p) => p.locator('.invite-warn');
+  const noticeText = async (p) => ((await notice(p).count()) ? (await notice(p).first().innerText()).replace(/\s+/g, ' ') : '');
+  const physicsIds = await (async () => { const x = await mk(); await go(x.p, '/search?category=physics'); const r = await allIds(x.p); await x.ctx.close(); return r; })();
+  const defaultCount = await (async () => { const x = await mk(); await go(x.p, '/search'); const r = (await allIds(x.p)).length; await x.ctx.close(); return r; })();
+  t('baseline: an unfiltered search lists courses', defaultCount > 300 && physicsIds.length > 0 && physicsIds.length < defaultCount, `${defaultCount} / ${physicsIds.length}`);
+
+  // Whole-filter failures: nothing is listed, the reason is stated, the address keeps the value.
+  const blocking = [
+    ['category', 'bogus'], ['subcategory', 'quantum-gardening'], ['degree', 'PhD'], ['test', 'zzz'], ['interview', 'maybe'],
+    ['maths', 'sometimes'], ['physics', 'x'], ['chemistry', 'x'], ['fm', 'lots'], ['maxoffer', 'ZZZ'], ['rank', '-3'], ['duration', 'abc'],
+    ['university', 'hogwarts'], ['university', '%3Cb%3E'], ['region', 'Narnia'],
+  ];
+  for (const [k, v] of blocking) {
+    const { ctx, p } = await mk(); await go(p, `/search?${k}=${v}`);
+    const n = await count(p), txt = await noticeText(p), hh = decodeURIComponent(await hash(p));
+    t(`invalid ${k}=${decodeURIComponent(v)} is not an unfiltered search`, n === 0 && /not recognised/.test(txt) && hh.includes(`${k}=${decodeURIComponent(v)}`) && p.errs.length === 0, `${n} rows; ${txt.slice(0, 90)}`);
+    await ctx.close();
+  }
+  {
+    const { ctx, p } = await mk(); await go(p, '/search?category=bogus');
+    t('the empty state explains itself', /cannot match any course/.test(await p.locator('main').innerText()));
+    t('  …the notice is announced politely (role=status)', (await p.locator('.invite-warn[role="status"]').count()) === 1);
+    await p.getByLabel('Search courses').first().fill('physics'); await p.waitForTimeout(500);
+    t('  …typing a query does not quietly lift the block, and the address keeps the value', (await count(p)) === 0 && (await hash(p)).includes('category=bogus'), await hash(p));
+    await p.reload({ waitUntil: 'networkidle' }); await p.waitForTimeout(500);
+    t('  …a refresh keeps the same state', (await count(p)) === 0 && /not recognised/.test(await noticeText(p)));
+    await p.getByRole('button', { name: /^Remove it$/ }).click(); await p.waitForTimeout(500);
+    t('  …"Remove it" clears the value from the address and shows the valid search', (await count(p)) > 0 && !(await hash(p)).includes('bogus') && (await notice(p).count()) === 0, await hash(p));
+    await ctx.close();
+  }
+  {
+    const { ctx, p } = await mk(); await go(p, '/search?category=bogus');
+    await p.getByRole('button', { name: /Reset all filters/ }).click(); await p.waitForTimeout(500);
+    t('"Reset all filters" also clears an unrecognised value', (await count(p)) > 0 && !(await hash(p)).includes('bogus'));
+    await ctx.close();
+  }
+  // Partial: valid part applied, ignored part reported.
+  {
+    const { ctx, p } = await mk(); await go(p, '/search?category=physics,bogus');
+    const got = await allIds(p), txt = await noticeText(p);
+    t('physics,bogus applies physics and reports bogus', same(got, physicsIds) && /was ignored/.test(txt) && /bogus/.test(txt), `${got.length} rows; ${txt.slice(0, 80)}`);
+    t('  …the address keeps both values', decodeURIComponent(await hash(p)).includes('category=physics,bogus'));
+    await ctx.close();
+  }
+  // Unknown university alongside a valid one.
+  {
+    const { ctx, p } = await mk(); await go(p, '/search?university=durham,hogwarts');
+    const names = await p.$$eval('main article.row .r-uni a', (as) => [...new Set(as.map((a) => a.textContent))]);
+    t('university=durham,hogwarts lists Durham only and reports hogwarts', names.length === 1 && /hogwarts/.test(await noticeText(p)), `${names.join()} | ${(await noticeText(p)).slice(0, 80)}`);
+    await ctx.close();
+  }
+  // Non-narrowing options fall back, with a notice.
+  {
+    const { ctx, p } = await mk(); await go(p, '/search?sort=bogus&year=2099');
+    t('bad sort and year fall back to the defaults and say so', (await count(p)) > 0 && /sort order/.test(await noticeText(p)) && /entry year/.test(await noticeText(p)), (await noticeText(p)).slice(0, 120));
+    t('  …year 2099 is never written back to the address', !(await hash(p)).includes('2099') && /year=2027/.test(await hash(p)), await hash(p));
+    t('  …and the sort control shows the default', (await p.getByLabel('Sort by').inputValue()) === 'relevance');
+    t('  …and nothing is saved', (await store(p, 'ukcf.entryYear.v1')) === null);
+    await ctx.close();
+  }
+  {
+    const { ctx, p } = await mk(); await go(p, '/search?categroy=physics');
+    t('a misspelt parameter name is called out with a suggestion', /Did you mean .category./.test(await noticeText(p)) && (await count(p)) > 0, (await noticeText(p)).slice(0, 100));
+    await ctx.close();
+    const x = await mk(); await go(x.p, '/search?utm_source=news&fbclid=abc');
+    t('tracking parameters cause no notice', (await notice(x.p).count()) === 0 && (await count(x.p)) > 0);
+    await x.ctx.close();
+    const y = await mk(); await go(y.p, '/search?category=Physics');
+    t('capitalisation in a vocabulary value is forgiven', same(await allIds(y.p), physicsIds) && (await notice(y.p).count()) === 0);
+    await y.ctx.close();
+  }
+  // Legacy links with bad values go through the same handling.
+  {
+    const { ctx, p } = await mk(); await go(p, '/?category=bogus');
+    t('legacy #/?category=bogus redirects and still blocks with a notice', (await hash(p)).startsWith('#/search?') && (await count(p)) === 0 && /not recognised/.test(await noticeText(p)), await hash(p));
+    await ctx.close();
+  }
+  // Browser history across valid -> invalid -> valid.
+  {
+    const { ctx, p } = await mk(); await go(p, '/search?category=physics');
+    await go(p, '/search?category=bogus');
+    t('history: moving to an invalid address blocks', (await count(p)) === 0 && /not recognised/.test(await noticeText(p)));
+    await p.goBack(); await p.waitForTimeout(600);
+    t('  …Back restores the valid search and clears the notice', same(await allIds(p), physicsIds) && (await notice(p).count()) === 0, await hash(p));
+    await p.goForward(); await p.waitForTimeout(600);
+    t('  …Forward blocks again with the notice', (await count(p)) === 0 && /not recognised/.test(await noticeText(p)));
+    await p.goBack(); await p.waitForTimeout(400);
+    await p.getByLabel('Search courses').first().fill('imperial'); await p.waitForTimeout(500);
+    await p.goBack(); await p.waitForTimeout(600);
+    t('  …valid filter changes still step back correctly afterwards', (await hash(p)).includes('category=physics') && (await notice(p).count()) === 0, await hash(p));
+    await ctx.close();
+  }
 }
 /* 8. other routes preserved */
 {
@@ -178,6 +264,8 @@ for (const [label, h, expect] of legacy) {
 /* 9. landing behaviour */
 {
   const { ctx, p } = await mk(); await go(p, '/');
+  for (const bt of await p.getByRole('button', { name: /^Show all \d+ .* subjects$/ }).all()) await bt.click();
+  await p.waitForTimeout(500);
   const rows = await p.$$eval('.lp-subj', (as) => as.slice(0, 40).map((a) => ({ href: a.getAttribute('href').replace(/^#/, ''), n: parseInt(a.querySelector('.lp-subj-n').childNodes[0].textContent.replace(/,/g, ''), 10), name: a.querySelector('.lp-subj-name').textContent })));
   let ok = 0; const bad = [];
   for (const r of rows) {

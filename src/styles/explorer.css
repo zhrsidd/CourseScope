@@ -418,6 +418,12 @@
 .invite-wait svg.lead-icon {
   color: var(--wait-ink);
 }
+.invite-warn {
+  background: var(--wait-bg);
+}
+.invite-warn svg.lead-icon {
+  color: var(--wait-ink);
+}
 
 /* ---------- Course row ---------- */
 .rows {

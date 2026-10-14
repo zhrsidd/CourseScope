@@ -42,10 +42,20 @@ import { SORT_OPTIONS, defaultFilters, type FilterState, type SortKey, type TriS
  *  YEAR. `year` is a property of the LINK. Applying it shows that year for the
  *  visit and never writes the saved choice (see AppContext.setYearOverride).
  *
- *  Values are validated against the real vocabularies, so a hand-edited or
- *  stale address cannot put an impossible filter into state; an unknown value is
- *  dropped rather than producing an empty, unexplained result. `university`
- *  accepts any id, as the original discovery route did.
+ *  UNRECOGNISED VALUES NEVER BECOME A QUIETLY DIFFERENT SEARCH. Values are checked
+ *  against the real vocabularies, and anything that does not match is kept apart
+ *  (`raw`), written back to the address unchanged, and reported in `problems`:
+ *
+ *    - a filter whose values are ALL unrecognised blocks: the page shows no courses
+ *      and says why (an impossible filter matches nothing, as it always did);
+ *    - a filter with SOME recognised values is applied to those, and the page says
+ *      which values were ignored;
+ *    - `sort`, `year` and `awaiting` are not narrowing filters, so an unrecognised
+ *      value falls back to the default, and the page says so;
+ *    - a parameter name that is a near-miss of a real one (`categroy`) is reported.
+ *  "Remove unrecognised filters" on the page clears them from state and address.
+ *  Other unknown parameter names (tracking tags and the like) are ignored.
+ *  `university` and `region` are checked against the catalogue once it is loaded.
  */
 
 /** Parameter names that mean "this address describes a search". Used by the legacy redirect. */
@@ -81,9 +91,6 @@ const SAFE_TOKEN = /^[A-Za-z0-9 _.\-&()/']{1,80}$/;
 
 const list = (raw: string | null): string[] =>
   raw ? raw.split(',').map((x) => x.trim()).filter(Boolean).slice(0, 40) : [];
-const pick = <T extends string>(raw: string | null, allowed: readonly string[]): T[] =>
-  [...new Set(list(raw).filter((x) => allowed.includes(x)))] as T[];
-const tri = (raw: string | null): TriState => (raw === 'required' || raw === 'not-required' ? raw : 'any');
 
 /** True when a query string names any search selection (including a bare `q=`). */
 export function hasSearchParams(search: string): boolean {
@@ -97,52 +104,139 @@ export function yearFromSearch(search: string): ApplicationYear | null {
   return isSelectableYear(y) ? y : null;
 }
 
+/** One thing in an address that could not be applied as written. */
+export interface UrlProblem {
+  /** Parameter name as written. */
+  key: string;
+  /** The unrecognised value(s), joined with commas. Empty for a bare unknown name. */
+  value: string;
+  /**
+   * `blocks`: no recognised value is left, so nothing can match and no courses are shown.
+   * `partial`: some values were applied, these were ignored.
+   * `fallback`: a non-narrowing option (sort, year, awaiting) reverted to its default.
+   * `typo`: a parameter name that looks like a misspelling of a real one.
+   */
+  kind: 'blocks' | 'partial' | 'fallback' | 'typo';
+}
+
+export interface ParsedSearch {
+  filters: FilterState;
+  problems: UrlProblem[];
+  /** Entries that could not be applied, preserved so the address is not silently rewritten. */
+  raw: [string, string][];
+}
+
+
+const isNear = (a: string, b: string): boolean => {
+  if (Math.abs(a.length - b.length) > 2) return false;
+  const d: number[][] = Array.from({ length: a.length + 1 }, (_, i) => [i, ...Array(b.length).fill(0)]);
+  for (let j = 1; j <= b.length; j += 1) d[0][j] = j;
+  for (let i = 1; i <= a.length; i += 1)
+    for (let j = 1; j <= b.length; j += 1)
+      d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+  return d[a.length][b.length] <= 2;
+};
+
+/** The real parameter a misspelt name most likely meant, if any. */
+export function closestKey(name: string): string | null {
+  return (SEARCH_PARAM_KEYS as readonly string[]).find((k) => isNear(name.toLowerCase(), k)) ?? null;
+}
+
 /**
  * Apply an address to a filter state. Every URL-carried field is replaced by what
  * the address says (or its default); every other field is kept from `base`.
  * `applicationYear` is not set here: the year is applied through the app context.
  */
-export function searchToFilters(search: string, base: FilterState): FilterState {
+export function parseSearch(search: string, base: FilterState): ParsedSearch {
   const p = new URLSearchParams(search);
   const d = defaultFilters(false);
-  const q = (p.get('q') ?? '').slice(0, 200);
-  const universityIds = list(p.get('university')).filter((u) => SAFE_TOKEN.test(u));
-  const durations = list(p.get('duration'))
-    .map(Number)
-    .filter((n) => Number.isFinite(n) && n > 0 && n <= 10);
-  const regions = list(p.get('region')).filter((r) => SAFE_TOKEN.test(r));
-  const fm = p.get('fm');
-  const sort = p.get('sort');
-  const maxoffer = p.get('maxoffer');
-  const rank = Number(p.get('rank'));
-  return {
+  const problems: UrlProblem[] = [];
+  const raw: [string, string][] = [];
+  const bad = (key: string, tokens: string[], kind: UrlProblem['kind']) => {
+    if (!tokens.length) return;
+    raw.push([key, tokens.join(',')]);
+    problems.push({ key, value: tokens.join(','), kind });
+  };
+
+  /** Split a list parameter into recognised and unrecognised tokens. */
+  const sortTokens = (key: string, resolve: (t: string) => string | null) => {
+    const all = list(p.get(key));
+    const good = [...new Set(all.map(resolve).filter((t): t is string => t !== null))];
+    const rejected = [...new Set(all.filter((t) => resolve(t) === null))];
+    bad(key, rejected, good.length ? 'partial' : 'blocks');
+    return good;
+  };
+  /** Matches a vocabulary ignoring case, returning the canonical spelling. */
+  const vocab = (ids: readonly string[]) => (t: string) => ids.find((id) => id.toLowerCase() === t.toLowerCase()) ?? null;
+  const safe = (t: string) => (SAFE_TOKEN.test(t) ? t : null);
+  /** A single-valued parameter: recognised value, or null (and a problem if one was given). */
+  const single = (key: string, ok: (v: string) => boolean, kind: UrlProblem['kind']): string | null => {
+    const v = p.get(key);
+    if (v === null || v === '') return null;
+    if (ok(v)) return v;
+    bad(key, [v], kind);
+    return null;
+  };
+  const triOf = (key: string): TriState => {
+    const v = single(key, (x) => x === 'any' || x === 'required' || x === 'not-required', 'blocks');
+    return v === 'required' || v === 'not-required' ? v : 'any';
+  };
+
+  const qRaw = p.get('q') ?? '';
+  const q = qRaw.slice(0, 200);
+  if (qRaw.length > 200) problems.push({ key: 'q', value: `${qRaw.length} characters`, kind: 'fallback' });
+
+  const fm = single('fm', (v) => v === 'any' || (FURTHER_MATHS_STATUSES as readonly string[]).includes(v), 'blocks');
+  const sort = single('sort', (v) => SORT_IDS.includes(v), 'fallback');
+  const maxoffer = single('maxoffer', (v) => GRADE_STRING.test(v), 'blocks');
+  const rankRaw = single('rank', (v) => /^\d{1,4}$/.test(v) && Number(v) > 0 && Number(v) <= 1000, 'blocks');
+  const awaiting = single('awaiting', (v) => v === '1' || v === '0', 'fallback');
+  // An unrecognised year is reported but not preserved: the address always carries a real one.
+  const yearRaw = p.get('year');
+  if (yearRaw && !isSelectableYear(yearRaw)) problems.push({ key: 'year', value: yearRaw, kind: 'fallback' });
+
+  const universityIds = sortTokens('university', safe);
+  const regions = sortTokens('region', safe);
+  const durations = sortTokens('duration', (t) => (Number.isFinite(Number(t)) && Number(t) > 0 && Number(t) <= 10 ? String(Number(t)) : null)).map(Number);
+
+  // Parameter names that are probably misspellings of real ones.
+  const known = new Set<string>(SEARCH_PARAM_KEYS);
+  for (const [k, v] of p.entries()) {
+    if (known.has(k)) continue;
+    if ((SEARCH_PARAM_KEYS as readonly string[]).some((real) => isNear(k.toLowerCase(), real))) {
+      raw.push([k, v]);
+      problems.push({ key: k, value: v, kind: 'typo' });
+    }
+  }
+
+  const filters: FilterState = {
     ...base,
     query: q,
     universityIds,
-    categories: pick<SubjectCategory>(p.get('category'), CATEGORY_IDS),
-    subcategories: pick<SubjectSubcategory>(p.get('subcategory'), SUBCATEGORY_IDS),
-    degreeTypes: pick<DegreeType>(p.get('degree'), DEGREE_IDS),
+    categories: sortTokens('category', vocab(CATEGORY_IDS)) as SubjectCategory[],
+    subcategories: sortTokens('subcategory', vocab(SUBCATEGORY_IDS)) as SubjectSubcategory[],
+    degreeTypes: sortTokens('degree', vocab(DEGREE_IDS)) as DegreeType[],
     durations,
     regions,
-    admissionsTests: pick<AdmissionsTestCode>(p.get('test'), TEST_CODES),
-    interview: pick<InterviewPolicy>(p.get('interview'), INTERVIEW_VALUES),
-    mathematics: tri(p.get('maths')),
-    furtherMathematics:
-      fm && (FURTHER_MATHS_STATUSES as readonly string[]).includes(fm) ? (fm as FurtherMathsStatus) : d.furtherMathematics,
-    physics: tri(p.get('physics')),
-    chemistry: tri(p.get('chemistry')),
-    maxOffer: maxoffer && GRADE_STRING.test(maxoffer) ? maxoffer : null,
-    maxOverallRank: Number.isInteger(rank) && rank > 0 && rank <= 1000 ? rank : null,
-    sort: sort && SORT_IDS.includes(sort) ? (sort as SortKey) : d.sort,
-    showAwaitingData: p.get('awaiting') === '1',
+    admissionsTests: sortTokens('test', vocab(TEST_CODES)) as AdmissionsTestCode[],
+    interview: sortTokens('interview', vocab(INTERVIEW_VALUES)) as InterviewPolicy[],
+    mathematics: triOf('maths'),
+    furtherMathematics: fm && fm !== 'any' ? (fm as FurtherMathsStatus) : d.furtherMathematics,
+    physics: triOf('physics'),
+    chemistry: triOf('chemistry'),
+    maxOffer: maxoffer,
+    maxOverallRank: rankRaw ? Number(rankRaw) : null,
+    sort: sort ? (sort as SortKey) : d.sort,
+    showAwaitingData: awaiting === '1',
   };
+  return { filters, problems, raw };
 }
 
 /**
  * The canonical address for a filter state, as a `?…` string. Defaults are
  * omitted; keys are in a fixed order, so equal searches give equal strings.
  */
-export function filtersToSearch(f: FilterState): string {
+export function filtersToSearch(f: FilterState, raw: readonly [string, string][] = []): string {
   const parts: [string, string][] = [];
   const add = (k: string, v: string | number | null | undefined) => {
     if (v !== null && v !== undefined && v !== '') parts.push([k, String(v)]);
@@ -165,6 +259,13 @@ export function filtersToSearch(f: FilterState): string {
   add('rank', f.maxOverallRank);
   if (f.sort !== 'relevance') add('sort', f.sort);
   if (f.showAwaitingData) add('awaiting', '1');
+  // Unrecognised entries go back exactly as they came, merged into the same parameter
+  // when a recognised value is also present, so reading an address never rewrites it.
+  for (const [k, v] of raw) {
+    const i = parts.findIndex(([pk]) => pk === k);
+    if (i >= 0) parts[i][1] += `,${v}`;
+    else parts.push([k, v]);
+  }
   add('year', f.applicationYear);
   // Commas stay literal: they are legal in a query string and keep links readable.
   return parts.length

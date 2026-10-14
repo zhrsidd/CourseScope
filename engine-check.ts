@@ -93,6 +93,8 @@ import {
   MARK_RING_PATH,
 } from '@/lib/brand';
 import { pageTitle } from '@/lib/page-title';
+import { filtersToSearch, hasSearchParams, parseSearch } from '@/lib/search-url';
+import { defaultFilters as urlDefaultFilters } from '@/lib/filters';
 import {
   SUBJECT_GUIDANCE_BY_UNIVERSITY,
   UCL_A_LEVEL_SUBJECT_GUIDANCE,
@@ -6216,6 +6218,57 @@ check(
       const src = fs.readFileSync('src/pages/CourseDetailPage.tsx', 'utf8');
       return src.indexOf('<TuitionFees') > src.indexOf('Course-specific admissions details');
     })(), true);
+}
+
+/* ================================================================== */
+/* v2 Phase 3: search addresses — valid, invalid and hand-edited       */
+/* ================================================================== */
+{
+  console.log('\nv2 — search addresses');
+  const base = urlDefaultFilters(false);
+  const P = (q: string) => parseSearch(q, base);
+  const kinds = (q: string) => P(q).problems.map((p) => `${p.key}:${p.kind}`).join(',');
+
+  // Legacy links keep working exactly as before.
+  check('legacy ?university=imperial', P('?university=imperial').filters.universityIds.join(), 'imperial');
+  check('legacy ?category=engineering', P('?category=engineering').filters.categories.join(), 'engineering');
+  check('legacy ?subcategory=astrophysics', P('?subcategory=astrophysics').filters.subcategories.join(), 'astrophysics');
+  check('legacy ?q=physics AAA', P('?q=physics%20AAA').filters.query, 'physics AAA');
+  check('valid combinations raise no problems', kinds('?category=physics&university=durham&degree=MPhys&test=esat&maths=required&sort=offer-asc&maxoffer=AAA&rank=10&duration=3,4&interview=yes&fm=recommended&awaiting=1'), '');
+
+  // Valid combinations survive a round trip unchanged.
+  for (const a of ['?q=physics&university=durham,bath&category=physics&degree=MPhys,BSc&duration=3,4&test=esat&maths=required&fm=recommended&physics=not-required&maxoffer=AAB&rank=20&sort=offer-asc&awaiting=1&year=2028', '?year=2027', '?subcategory=astrophysics&year=2027']) {
+    const r = P(a);
+    check(`round trip ${a.slice(0, 40)}…`, filtersToSearch({ ...r.filters, applicationYear: a.includes('2028') ? '2028' : '2027' }, r.raw), a.includes('year') ? a : a);
+  }
+
+  check('parameter order in a pasted link does not matter',
+    filtersToSearch(P('?year=2027&category=physics&q=x&university=durham').filters),
+    filtersToSearch(P('?q=x&university=durham&category=physics').filters));
+
+  // An unrecognised value is never dropped quietly.
+  check('unknown category blocks', kinds('?category=bogus'), 'category:blocks');
+  check('  …and is kept for the address', P('?category=bogus').raw.map((r) => r.join('=')).join(), 'category=bogus');
+  check('  …and no category filter is applied (the page empties the list instead)', P('?category=bogus').filters.categories.length, 0);
+  check('mixed valid and unknown is partial', kinds('?category=physics,bogus'), 'category:partial');
+  check('  …the valid part is applied', P('?category=physics,bogus').filters.categories.join(), 'physics');
+  check('  …and the address keeps both', filtersToSearch(P('?category=physics,bogus').filters, P('?category=physics,bogus').raw), '?category=physics,bogus&year=2027');
+  check('unknown subcategory blocks', kinds('?subcategory=quantum-gardening'), 'subcategory:blocks');
+  check('unknown degree / test / interview block', kinds('?degree=PhD&test=zzz&interview=maybe'), 'degree:blocks,test:blocks,interview:blocks');
+  check('bad tri-state / further maths / grades / rank block', kinds('?maths=sometimes&fm=lots&maxoffer=ZZZ&rank=-3'), 'fm:blocks,maxoffer:blocks,rank:blocks,maths:blocks');
+  check('non-numeric duration blocks', kinds('?duration=abc'), 'duration:blocks');
+  check('markup in a university id blocks and is kept as text', kinds('?university=%3Cb%3E'), 'university:blocks');
+  check('unknown sort falls back, is reported', kinds('?sort=bogus') + '|' + P('?sort=bogus').filters.sort, 'sort:fallback|relevance');
+  check('unknown year is reported', kinds('?year=2099'), 'year:fallback');
+  check('  …and is not written back', filtersToSearch(P('?year=2099').filters, P('?year=2099').raw), '?year=2027');
+  check('bad awaiting switch is reported, off', kinds('?awaiting=maybe') + '|' + P('?awaiting=maybe').filters.showAwaitingData, 'awaiting:fallback|false');
+  check('a misspelt parameter name is reported', kinds('?categroy=physics'), 'categroy:typo');
+  check('tracking parameters are ignored without noise', kinds('?utm_source=x&fbclid=y&q=physics'), '');
+  check('case is forgiven for vocabularies (Category=Physics)', P('?category=Physics').filters.categories.join() + '|' + kinds('?category=Physics'), 'physics|');
+  check('an over-long q is cut and reported', kinds('?q=' + 'a'.repeat(300)) + '|' + P('?q=' + 'a'.repeat(300)).filters.query.length, 'q:fallback|200');
+  check('private fields are never read from an address', JSON.stringify([P('?eligibility=meets&onlyShortlisted=1').filters.eligibility, P('?eligibility=meets&onlyShortlisted=1').filters.onlyShortlisted]), '[[],false]');
+  check('hasSearchParams recognises every legacy key', ['?q=', '?category=x', '?subcategory=x', '?university=x'].every(hasSearchParams), true);
+  check('hasSearchParams ignores unrelated parameters', hasSearchParams('?utm_source=x'), false);
 }
 
 console.log(failures === 0 ? '\nAll checks passed.' : `\n${failures} check(s) failed.`);
