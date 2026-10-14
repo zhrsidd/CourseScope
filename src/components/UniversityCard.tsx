@@ -90,7 +90,7 @@ export function UniversityCard({
           View university
         </Link>
         <Link
-          to={`/search?university=${university.slug}`}
+          to={`/?university=${university.slug}`}
           className="btn-secondary h-8 px-3 text-xs"
         >
           View courses
