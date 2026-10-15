@@ -22,6 +22,24 @@ The student-facing release notes are also shown in the app, on the methodology p
   removed, so an edited link is not rewritten behind the reader's back.
 - **Entry year.** A `year` in a link is shown for that visit only and never saved; the saved year changes only
   when a person presses a year. An address with no year means the saved choice.
+- **Phase 4: design refinement and four visualisations.** All HTML and CSS, no charting library, every mark
+  also available as text or a table.
+  - *Requirement Ledger* (course page): published requirements, your grades and the engine's own result for
+    each check, side by side. Without grades it is just the published requirements, with one prompt.
+  - *Difference Strip* (compare): where the compared courses differ, marked by weight and a dot and never by
+    colour alone. It never scores or picks a best course.
+  - *Coverage Matrix* (About the data): one tile per course record by university, subject area and entry
+    year, in its verification state. Alphabetical, not ranked; footer totals equal the catalogue.
+  - *Offer Ladder* (explorer, opened on request): published standard offers of the listed courses grouped by
+    grade combination. Rungs are categories, not scores. Ranges and wording are listed as printed; contextual
+    offers are never placed. Each rung opens into its courses, with a table alternative.
+  - Course page rebuilt as editorial sections (source strip first); About page now a ruled reading layout
+    with a contents list and collapsible release notes; Universities is a plain index (departments and
+    repeated badges removed); Browse headings follow the design system and the stale "demo seed" footnote is
+    replaced; the explorer's duplicate grades banner is gone (the "Your A-Levels" button carries it).
+  - Fixed: the header overflowed by 9px at 320px when courses were being compared.
+  - Tests: `engine-check.ts` gains 35 checks on the visualisation logic; new `npm run qa:viz` (43 browser
+    checks). No existing test was changed.
 - **Stage 3.5: visual refinement.** Homepage hero recomposed on a 7/4 editorial grid (headline left, lede in
   the margin, search and entry year on one row, catalogue figures as a full-width ruled strip); section
   headings share the same grid. Explorer gets an eyebrow, a larger serif title and a serif results heading;

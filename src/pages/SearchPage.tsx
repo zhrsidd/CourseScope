@@ -280,9 +280,10 @@ export function SearchPage() {
             <button
               ref={profileBtnRef}
               type="button"
-              className="btn-secondary"
+              className={hasProfile ? 'btn-secondary' : 'btn-primary'}
               aria-haspopup="dialog"
               aria-expanded={showProfile}
+              title={hasProfile ? undefined : 'Add your A-Levels to see which courses your grades meet'}
               onClick={() => setShowProfile(true)}
             >
               <IconGrades width={18} height={18} />
@@ -383,20 +384,6 @@ export function SearchPage() {
                   publishes them, and 2027 records are never carried forward.
                 </span>
               </p>
-            </div>
-          ) : !loading && !error && !hasProfile ? (
-            <div className="invite">
-              <IconGrades className="lead-icon" aria-hidden />
-              <p>
-                <b>See which of these courses your grades meet.</b>
-                <span className="sub">
-                  Add your A-Levels once. Every result then shows how your grades compare with the
-                  published requirements.
-                </span>
-              </p>
-              <button type="button" className="btn-primary btn-sm" onClick={() => setShowProfile(true)}>
-                Add your A-Levels
-              </button>
             </div>
           ) : null}
 

@@ -548,3 +548,57 @@
 }
 .ol-more { margin: 0 0 10px 90px; font-size: 13px; }
 @media (max-width: 640px) { .ol-more { margin-left: 4px; } }
+
+/* ---------------- Index pages: shared header and tools ---------------- */
+.pg-head { padding: 8px 0 22px; }
+.pg-head h1 { font-size: clamp(34px, 4vw, 48px); line-height: 1.05; color: var(--navy-950); margin: 6px 0 0; }
+.pg-sub { max-width: 58ch; margin: 12px 0 0; color: var(--muted); font-size: 15px; line-height: 24px; }
+.pg-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; padding: 12px 0; border-top: 1px solid var(--navy-900); }
+.pg-count { margin: 0 0 0 auto; color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+@media (max-width: 640px) { .pg-count { margin-left: 0; width: 100%; } }
+
+/* ---------------- Universities index ---------------- */
+.ur-list { list-style: none; margin: 0; padding: 0; }
+.ur { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: 6px 28px; padding: 14px 8px; margin: 0 -8px; border-top: 1px solid var(--line); border-radius: 2px; transition: background var(--d-quick); }
+.ur:hover { background: color-mix(in srgb, var(--accent) 5%, transparent); }
+.ur:last-child { border-bottom: 1px solid var(--line); }
+.ur-name { margin: 0; font: 600 16px/22px var(--f-ui); }
+.ur-name a { color: var(--navy-950); text-decoration: none; }
+.ur-name a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.ur-place { margin: 2px 0 0; color: var(--muted); font-size: 13px; line-height: 18px; }
+.ur-counts { display: flex; gap: 20px; margin: 0; font-size: 13px; color: var(--muted); white-space: nowrap; }
+.ur-counts b { font: 500 14px var(--f-code); color: var(--navy-900); margin-right: 4px; }
+.ur-actions { display: flex; align-items: center; gap: 12px; }
+.ur-go { font-size: 14px; font-weight: 500; color: var(--accent); text-decoration: none; white-space: nowrap; }
+.ur-go:hover { text-decoration: underline; text-underline-offset: 3px; }
+.ur-save { display: inline-flex; width: 36px; height: 36px; align-items: center; justify-content: center; border: 1px solid var(--line); border-radius: 6px; background: transparent; color: var(--subtle); cursor: pointer; transition: color var(--d-quick), border-color var(--d-quick), background var(--d-quick); }
+.ur-save:hover { color: var(--navy-900); border-color: var(--navy-900); }
+.ur-save.is-saved { color: #be123c; border-color: #fecdd3; }
+.ur-save:focus-visible, .ur-go:focus-visible, .ur-name a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.ur-rank { display: none; }
+@media (min-width: 900px) { .ur-rank { display: block; } .ur { grid-template-columns: minmax(0, 1fr) auto auto auto; } }
+@media (max-width: 640px) {
+  .ur { grid-template-columns: minmax(0, 1fr) auto; }
+  .ur-counts { grid-column: 1; grid-row: 2; }
+  .ur-actions { grid-column: 2; grid-row: 1 / span 2; flex-direction: column; align-items: flex-end; gap: 8px; }
+}
+.ur-skel { min-height: 62px; }
+.sk { display: block; height: 12px; border-radius: 3px; background: var(--line); }
+.sk-l { width: 55%; } .sk-s { width: 30%; justify-self: end; }
+@media (prefers-reduced-motion: no-preference) { .sk { animation: sk-pulse 1.4s ease-in-out infinite; } @keyframes sk-pulse { 50% { opacity: .45; } } }
+
+/* ---------------- Browse ---------------- */
+.bw-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; padding-bottom: 6px; }
+.bw-title { margin: 0; font: 400 clamp(26px, 2.6vw, 32px)/1.1 var(--f-display); color: var(--navy-950); }
+.bw-all { font-size: 14px; font-weight: 500; color: var(--accent); text-decoration: none; }
+.bw-all:hover { text-decoration: underline; text-underline-offset: 3px; }
+.bw-all:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.bw-blurb { max-width: 54ch; margin: 0 0 16px; color: var(--muted); font-size: 14px; line-height: 22px; }
+.bw-foot { max-width: 68ch; margin: 40px 0 0; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; line-height: 21px; }
+.bw-foot a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------------- Route change: the page eases in (opacity only, so sticky layers are untouched) ---------------- */
+@media (prefers-reduced-motion: no-preference) {
+  #content > * { animation: view-in var(--d-base) ease-out; }
+  @keyframes view-in { from { opacity: 0; } }
+}

@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { usePageTitle } from '@/lib/page-title';
 import { Link } from 'react-router-dom';
 import { SUBCATEGORIES, SUBJECT_CATEGORIES } from '@/data/taxonomy';
-import { Card, PageHeader, SectionTitle, cx } from '@/components/ui/primitives';
+import { cx } from '@/components/ui/primitives';
 import { IconChevron } from '@/components/ui/icons';
 import { applyFilters, defaultFilters } from '@/lib/filters';
 import { parseQuery } from '@/lib/search';
@@ -39,11 +39,14 @@ export function BrowsePage() {
 
   return (
     <div className="mx-auto max-w-8xl px-4 py-6 md:px-6">
-      <PageHeader
-        eyebrow="Browse"
-        title="Physics and Engineering"
-        description={`Two subject trees covering ${universities.length} universities. Choose a specialism to see the courses recorded for ${profile.applicationYear} entry.`}
-      />
+      <header className="pg-head">
+        <p className="label">Browse</p>
+        <h1>Physics and Engineering</h1>
+        <p className="pg-sub">
+          Two subject areas across {universities.length} universities. Choose a specialism to see the
+          courses recorded for {profile.applicationYear} entry.
+        </p>
+      </header>
 
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
         {SUBJECT_CATEGORIES.map((category) => {
@@ -51,16 +54,13 @@ export function BrowsePage() {
           const total = subs.reduce((n, s) => n + (counts.bySub.get(s.id) ?? 0), 0);
           return (
             <section key={category.id}>
-              <SectionTitle
-                right={
-                  <Link to={`/search?category=${category.id}`} className="text-xs text-navy-700 hover:underline">
-                    View all {total} courses
-                  </Link>
-                }
-              >
-                {category.label}
-              </SectionTitle>
-              <p className="mb-3 text-sm text-ink-muted">{category.blurb}</p>
+              <div className="bw-head">
+                <h2 className="bw-title">{category.label}</h2>
+                <Link to={`/search?category=${category.id}`} className="bw-all">
+                  View all {total} courses<span aria-hidden> →</span>
+                </Link>
+              </div>
+              <p className="bw-blurb">{category.blurb}</p>
               <ul className="border-t border-navy-950">
                 {subs.map((s) => {
                   const count = counts.bySub.get(s.id) ?? 0;
@@ -71,7 +71,6 @@ export function BrowsePage() {
                         to={`/search?subcategory=${s.id}`}
                         className={cx(
                           '-mx-2 flex items-center gap-4 rounded px-2 py-3 transition-colors hover:bg-navy-50/60',
-                          count === 0 && 'opacity-60',
                         )}
                       >
                         <div className="min-w-0 flex-1">
@@ -81,7 +80,7 @@ export function BrowsePage() {
                         <div className="shrink-0 text-right">
                           <div className="text-sm font-semibold tabular-nums text-navy-900">{count}</div>
                           <div className="text-xs text-ink-faint">
-                            {unis} {unis === 1 ? 'university' : 'universities'}
+                            {count === 0 ? 'none recorded' : `${unis} ${unis === 1 ? 'university' : 'universities'}`}
                           </div>
                         </div>
                         <IconChevron width={14} height={14} className="shrink-0 text-slate-300" />
@@ -95,13 +94,12 @@ export function BrowsePage() {
         })}
       </div>
 
-      <Card className="mt-8 p-4">
-        <p className="text-xs leading-relaxed text-ink-muted">
-          Course counts reflect what is currently in this catalogue, not everything each university
-          offers. The demo seed contains a sample of courses per university so that the filters,
-          comparison and grade matching can be exercised end to end.
-        </p>
-      </Card>
+      <p className="bw-foot">
+        Counts are courses whose entry requirements have been read against the university’s own page,
+        for {profile.applicationYear} entry — the same list the explorer opens. They describe this
+        catalogue, not everything each university offers.{' '}
+        <Link to="/about">See what is covered and what is still waiting</Link>.
+      </p>
     </div>
   );
 }
