@@ -5,6 +5,23 @@ The student-facing release notes are also shown in the app, on the methodology p
 
 ## CourseScope v2 (in development, not released)
 
+- **Phase 5: product experience, motion and polish.**
+  - *Pages:* university detail redesigned (editorial header with a record-status line, subject filter,
+    sticky ruled sidebar); shortlist rebuilt as a workspace (sort, select, compare selected, undo);
+    Difference Strip hides identical rows behind "Same across all N"; comparison stacks on phones.
+  - *Visualisations:* Coverage Matrix stacks into one block per university on phones (no sideways
+    scrolling) and states what "verified" does and does not establish; Offer Ladder states that only the
+    standard offer is placed and counts courses with other published offers; its table alternative stacks
+    on phones and the as-printed list is capped at 10 with "Show all".
+  - *Motion:* one CSS vocabulary (arrive / press / respond / open / reveal), all inside
+    `prefers-reduced-motion: no-preference`.
+  - *Performance:* the catalogue, tuition fees and validation are off the critical path (dynamic import),
+    routes are lazy with idle prefetch, fonts are preloaded, layout shift is 0 on every route.
+  - *Fixes found by the new tests:* header counts overflowed at 320px; the comparison tray was off-screen
+    for reduced-motion users; shortlist links were below the WCAG 2.2 24px target size.
+  - *Tests:* `qa:p5` (journeys, keyboard, reduced motion, overflow at 320/390/768), `qa:visual` (21
+    screenshot baselines in `visual-baselines/`), `qa:a11y` (axe, WCAG 2.2 AA, new pages at four widths).
+
 - **Phase 3: landing page and routing.** `#/` is now the editorial landing page ("Find the course. Check
   the source."); the course explorer lives at `#/search`. Every number, date and quotation on the landing
   page is computed from the catalogue, and the subject counts use the same filter code as the explorer.

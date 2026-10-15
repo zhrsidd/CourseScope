@@ -54,22 +54,22 @@ export function Navbar() {
         <div className="ml-auto flex items-center gap-1.5 sm:gap-2">
           <Link
             to="/compare"
-            className="btn-secondary btn-sm !px-2 sm:!px-3"
+            className="btn-secondary btn-sm relative !px-2 sm:!px-3"
             aria-label={`Comparison: ${compareIds.length} courses`}
           >
             <IconCompare width={14} height={14} />
             <span className="hidden sm:inline">Compare</span>
             {compareIds.length > 0 ? (
-              <span className="rounded-chip bg-navy-900 px-1.5 text-xs font-semibold tabular-nums text-white">
+              <span className="absolute -right-1.5 -top-1.5 rounded-chip bg-navy-900 px-1.5 text-[11px] leading-[18px] sm:static sm:text-xs sm:leading-normal font-semibold tabular-nums text-white">
                 {compareIds.length}
               </span>
             ) : null}
           </Link>
-          <Link to="/shortlist" className="btn-secondary btn-sm !px-2 sm:!px-3" aria-label="My shortlist">
+          <Link to="/shortlist" className="btn-secondary btn-sm relative !px-2 sm:!px-3" aria-label="My shortlist">
             <IconHeart width={14} height={14} filled={savedCount > 0} />
             <span className="hidden sm:inline">Shortlist</span>
             {savedCount > 0 ? (
-              <span className="rounded-chip bg-rose-700 px-1.5 text-xs font-semibold tabular-nums text-white">
+              <span className="absolute -right-1.5 -top-1.5 rounded-chip bg-rose-700 px-1.5 text-[11px] leading-[18px] sm:static sm:text-xs sm:leading-normal font-semibold tabular-nums text-white">
                 {savedCount}
               </span>
             ) : null}

@@ -776,6 +776,9 @@
 .tray {
   position: fixed;
   left: 50%;
+  /* the centring lives on the element, not only in the entry keyframes, so it holds when
+     animation is off (reduced motion, or a frozen screenshot) */
+  transform: translateX(-50%);
   bottom: 20px;
   z-index: 50;
   width: min(680px, calc(100vw - 32px));

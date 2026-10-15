@@ -182,7 +182,7 @@ export function EmptyState({
   icon?: ReactNode;
 }) {
   return (
-    <div className="surface flex flex-col items-center gap-3 px-6 py-14 text-center">
+    <div className="surface empty-state flex flex-col items-center gap-3 px-6 py-14 text-center">
       {icon ? <div className="text-slate-300">{icon}</div> : null}
       <h3 className="text-base font-semibold text-navy-950">{title}</h3>
       {description ? <p className="max-w-md text-sm text-ink-muted">{description}</p> : null}

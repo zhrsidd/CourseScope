@@ -15,7 +15,10 @@
     "qa": "node smoke.v09.mjs",
     "release:verify": "npm run typecheck && npm run check && npm run build",
     "qa:routing": "node qa.routing.mjs",
-    "qa:viz": "node qa.viz.mjs"
+    "qa:viz": "node qa.viz.mjs",
+    "qa:p5": "node qa.p5.mjs",
+    "qa:a11y": "node qa.a11y.mjs",
+    "qa:visual": "node qa.visual.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

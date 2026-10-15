@@ -774,3 +774,31 @@
 }
 .cm-limits { margin: 10px 0 0; max-width: 70ch; font-size: 12.5px; line-height: 19px; color: var(--muted); }
 .ol-which { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; } @media (min-width: 640px) { .ol-which { columns: 2; display: block; } .ol-which li { break-inside: avoid; padding: 1px 0; } }
+
+/* ───────── Motion language (Phase 5) ─────────
+   One vocabulary, all of it CSS, all of it off under prefers-reduced-motion:
+   · arrive   — opacity + 4–8px rise, --d-base, ease-out  (rows, groups, empty states, toasts)
+   · press    — 98% scale on :active, --d-instant          (buttons, segmented controls, hearts)
+   · respond  — colour / background change, --d-quick      (hover, selection, toggles)
+   · open     — height via Collapse, --d-base              (disclosures, rungs, drawers)
+   · reveal   — scaleX / scaleY from 0, --d-base           (ladder bars, matrix tiles)
+   Nothing loops except the skeleton pulse; nothing moves layout after it has settled. */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes arrive { from { opacity: 0; transform: translateY(6px); } }
+  .rows > .row:nth-child(-n + 8), .sl-row:nth-child(-n + 8) { animation: arrive var(--d-base) var(--e-emph) both; }
+  .rows > .row:nth-child(2) { animation-delay: 30ms; }
+  .rows > .row:nth-child(3) { animation-delay: 60ms; }
+  .rows > .row:nth-child(4) { animation-delay: 90ms; }
+  .rows > .row:nth-child(n + 5):nth-child(-n + 8) { animation-delay: 120ms; }
+  .ud-group, .empty-state, .sl-empty, .ds-same-line { animation: arrive var(--d-base) var(--e-emph) both; }
+  .btn-primary, .btn-secondary, .ud-seg button, .sl-pick, .disclose { transition: background-color var(--d-quick), color var(--d-quick), border-color var(--d-quick), transform var(--d-instant); }
+  .btn-primary:active, .btn-secondary:active, .ud-seg button:active { transform: scale(0.98); }
+  .r-btn svg { transition: transform var(--d-quick) var(--e-emph); }
+  .r-btn:active svg { transform: scale(0.8); }
+  .r-btn[aria-pressed='true'] svg { transform: scale(1.08); }
+  .cm-table tbody tr, .ol-rung-btn { transition: background-color var(--d-quick); }
+  .cm-table tbody tr:hover, .ol-rung-btn:hover { background: color-mix(in srgb, var(--accent) 5%, transparent); }
+}
+
+/* WCAG 2.2 target size: standalone links in shortlist rows are at least 24px tall (Phase 5) */
+.sl-uni a, .sl-main h3 a { display: inline-block; min-height: 24px; padding-block: 1px; line-height: 22px; }
