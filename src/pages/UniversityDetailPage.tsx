@@ -6,7 +6,6 @@ import { RankingRow } from '@/components/RankingBadge';
 import { VerificationBadge } from '@/components/SourceBadge';
 import { IconExternal, IconHeart, IconPin } from '@/components/ui/icons';
 import {
-  Badge,
   Card,
   CardSkeleton,
   DataRow,
@@ -110,7 +109,7 @@ export function UniversityDetailPage() {
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_340px]">
         <div className="min-w-0 space-y-6">
           <section>
-            <SectionTitle right={<Badge tone="navy">{courses.length} in catalogue</Badge>}>
+            <SectionTitle>
               Courses
             </SectionTitle>
             {courses.length === 0 ? (
