@@ -1,3 +1,5 @@
+import { validateCatalogue } from '@/lib/validation';
+import { TUITION_FEES } from '@/data/tuition-fees';
 import { useMemo, useState, type ReactNode } from 'react';
 import { usePageTitle } from '@/lib/page-title';
 import type {
@@ -49,6 +51,19 @@ import { IconCross, IconExternal, IconWarning } from '@/components/ui/icons';
 import { Badge, Card, PageHeader, SectionTitle, Segmented, cx } from '@/components/ui/primitives';
 import { useApp } from '@/state/AppContext';
 
+/** Catalogue validation is an admin concern, so it is computed here and not on every page load. */
+const validationCache = new WeakMap<object, ReturnType<typeof validateCatalogue>>();
+function useValidation() {
+  const { courses, universities } = useApp();
+  return useMemo(() => {
+    const hit = validationCache.get(courses);
+    if (hit) return hit;
+    const r = validateCatalogue(courses, universities, TUITION_FEES);
+    validationCache.set(courses, r);
+    return r;
+  }, [courses, universities]);
+}
+
 type Tab = 'records' | 'editor' | 'import' | 'duplicates' | 'validation';
 
 /* ------------------------------------------------------------------ */
@@ -99,7 +114,8 @@ function CopyBlock({ text, filename }: { text: string; filename: string }) {
 /* ------------------------------------------------------------------ */
 
 function RecordsTab() {
-  const { courses, universities, validation } = useApp();
+  const { courses, universities } = useApp();
+  const validation = useValidation();
   const [university, setUniversity] = useState('all');
   const [year, setYear] = useState('all');
   const [status, setStatus] = useState('all');
@@ -284,7 +300,8 @@ function RecordsTab() {
 /* ------------------------------------------------------------------ */
 
 function ValidationTab() {
-  const { validation, courseById, universityById } = useApp();
+  const { courseById, universityById } = useApp();
+  const validation = useValidation();
   const [severity, setSeverity] = useState<'all' | 'error' | 'warning' | 'info'>('error');
 
   const issues = validation.issues.filter((i) => (severity === 'all' ? true : i.severity === severity));
@@ -371,7 +388,8 @@ const DUPLICATE_LABEL = {
 } as const;
 
 function DuplicatesTab() {
-  const { validation, courseById, universityById } = useApp();
+  const { courseById, universityById } = useApp();
+  const validation = useValidation();
   const findings = validation.duplicates;
 
   return (
@@ -1279,7 +1297,8 @@ function EditorTab() {
 
 export function AdminPage() {
   usePageTitle('Data manager');
-  const { courses, universities, validation } = useApp();
+  const { courses, universities } = useApp();
+  const validation = useValidation();
   const [tab, setTab] = useState<Tab>('records');
 
   const counts = useMemo(() => {

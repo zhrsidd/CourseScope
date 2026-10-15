@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { Suspense, lazy, useEffect } from 'react';
 import { HashRouter, Navigate, Route, Routes, useLocation, Link } from 'react-router-dom';
 import { Announcer } from '@/components/Announcer';
 import { CompareTray } from '@/components/CompareTray';
@@ -7,18 +7,48 @@ import { Footer } from '@/components/Footer';
 import { Navbar } from '@/components/Navbar';
 import { EmptyState } from '@/components/ui/primitives';
 import { usePageTitle } from '@/lib/page-title';
-import { AboutPage } from '@/pages/AboutPage';
-import { AdminPage } from '@/pages/AdminPage';
-import { BrowsePage } from '@/pages/BrowsePage';
-import { ComparePage } from '@/pages/ComparePage';
-import { CourseDetailPage } from '@/pages/CourseDetailPage';
 import { LandingPage } from '@/pages/LandingPage';
-import { SearchPage } from '@/pages/SearchPage';
+import { PageLoading } from '@/components/PageLoading';
 import { hasSearchParams } from '@/lib/search-url';
-import { ShortlistPage } from '@/pages/ShortlistPage';
-import { UniversitiesPage } from '@/pages/UniversitiesPage';
-import { UniversityDetailPage } from '@/pages/UniversityDetailPage';
 import { AppProvider } from '@/state/AppContext';
+
+
+/*
+ * Every route except the landing page is its own chunk, fetched when first needed and
+ * again, quietly, once the browser is idle, so the second page a person opens is
+ * already on its way before they ask for it.
+ */
+const routes = {
+  SearchPage: () => import('@/pages/SearchPage'),
+  BrowsePage: () => import('@/pages/BrowsePage'),
+  UniversitiesPage: () => import('@/pages/UniversitiesPage'),
+  UniversityDetailPage: () => import('@/pages/UniversityDetailPage'),
+  CourseDetailPage: () => import('@/pages/CourseDetailPage'),
+  ComparePage: () => import('@/pages/ComparePage'),
+  ShortlistPage: () => import('@/pages/ShortlistPage'),
+  AboutPage: () => import('@/pages/AboutPage'),
+  AdminPage: () => import('@/pages/AdminPage'),
+};
+const SearchPage = lazy(() => routes.SearchPage().then((m) => ({ default: m.SearchPage })));
+const BrowsePage = lazy(() => routes.BrowsePage().then((m) => ({ default: m.BrowsePage })));
+const UniversitiesPage = lazy(() => routes.UniversitiesPage().then((m) => ({ default: m.UniversitiesPage })));
+const UniversityDetailPage = lazy(() => routes.UniversityDetailPage().then((m) => ({ default: m.UniversityDetailPage })));
+const CourseDetailPage = lazy(() => routes.CourseDetailPage().then((m) => ({ default: m.CourseDetailPage })));
+const ComparePage = lazy(() => routes.ComparePage().then((m) => ({ default: m.ComparePage })));
+const ShortlistPage = lazy(() => routes.ShortlistPage().then((m) => ({ default: m.ShortlistPage })));
+const AboutPage = lazy(() => routes.AboutPage().then((m) => ({ default: m.AboutPage })));
+const AdminPage = lazy(() => routes.AdminPage().then((m) => ({ default: m.AdminPage })));
+
+function usePrefetchRoutes() {
+  useEffect(() => {
+    const idle = (window as unknown as { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => void }).requestIdleCallback;
+    const run = () => Object.entries(routes).forEach(([name, load]) => {
+        if (name !== 'AdminPage') void load().catch(() => undefined); // admin is never prefetched
+      });
+    if (idle) idle(run, { timeout: 4000 });
+    else setTimeout(run, 2500);
+  }, []);
+}
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -58,6 +88,7 @@ function NotFoundPage() {
 }
 
 export default function App() {
+  usePrefetchRoutes();
   return (
     <AppProvider>
       <HashRouter>
@@ -80,6 +111,7 @@ export default function App() {
           <DemoBanner />
           <Navbar />
           <main id="content" className="flex-1">
+            <Suspense fallback={<PageLoading />}>
             <Routes>
               <Route path="/" element={<HomeRoute />} />
               <Route path="/search" element={<SearchPage />} />
@@ -93,6 +125,7 @@ export default function App() {
               <Route path="/admin" element={<AdminPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
+            </Suspense>
           </main>
           <CompareTray />
           <Announcer />

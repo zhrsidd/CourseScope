@@ -9,15 +9,16 @@ import { IconWarning } from './ui/icons';
  */
 export function DemoBanner() {
   const { courses, hasVerifiedData, loading } = useApp();
-  if (loading) return null;
+  // While the catalogue loads, hold the banner's place so the page does not jump when it appears.
+  if (loading) return <div className="demo-banner demo-banner-ph" aria-hidden="true" />;
 
   const sample = courses.filter((c) => c.provenance.verificationStatus === 'demo').length;
   const awaiting = courses.filter((c) => c.provenance.verificationStatus === 'awaiting-data').length;
   if (sample === 0 && awaiting === 0) return null;
 
   return (
-    <div className="border-b border-amber-200 bg-amber-50">
-      <div className="mx-auto flex max-w-8xl items-start gap-2 px-4 py-2 text-xs text-amber-900 md:px-6">
+    <div className="demo-banner border-b border-amber-200 bg-amber-50">
+      <div className="mx-auto flex max-w-8xl items-center gap-2 px-4 py-2 text-xs text-amber-900 md:px-6">
         <IconWarning width={14} height={14} className="mt-0.5 shrink-0" />
         <p className="leading-relaxed">
           {/* Once no placeholder requirements remain, "partly sample data" is
@@ -30,7 +31,7 @@ export function DemoBanner() {
               ? hasVerifiedData
                 ? 'Partly sample data.'
                 : 'Sample catalogue.'
-              : 'A few courses are waiting on their university.'}
+              : `${awaiting === 1 ? 'One course is' : awaiting + ' courses are'} waiting on their university.`}
           </strong>{' '}
           {sample > 0 ? <>University names, cities and course titles are real. </> : null}
           {sample > 0 ? (
@@ -41,9 +42,10 @@ export function DemoBanner() {
           ) : null}
           {awaiting > 0 ? (
             <>
-              <strong>{awaiting}</strong>{' '}
-              {awaiting === 1 ? 'course is' : 'courses are'} listed without entry requirements because
-              the university has not yet published them for this entry year.{' '}
+              <span className="hidden sm:inline">
+                <strong>{awaiting}</strong> {awaiting === 1 ? 'course is' : 'courses are'} listed without
+                entry requirements because the university has not published them for this entry year.{' '}
+              </span>
             </>
           ) : null}
           <Link to="/about" className="underline underline-offset-2">

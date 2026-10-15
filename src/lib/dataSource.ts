@@ -7,7 +7,6 @@
  */
 
 import type { Course, University } from '@/types';
-import { courses as seedCourses, universities as seedUniversities } from '@/data';
 import { importCoursesJson, type CourseRecordJson } from './importers';
 
 export interface Catalogue {
@@ -30,7 +29,9 @@ export class StaticDataSource implements DataSource {
 
   async load(): Promise<Catalogue> {
     if (this.latencyMs > 0) await new Promise((r) => setTimeout(r, this.latencyMs));
-    return { universities: seedUniversities, courses: seedCourses };
+    // A separate chunk: the app shell paints first and the catalogue follows.
+    const { courses, universities } = await import('@/data');
+    return { universities, courses };
   }
 }
 

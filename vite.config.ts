@@ -78,6 +78,34 @@ function siteMetaPlugin(env: Record<string, string>): Plugin {
   };
 }
 
+
+/**
+ * Preload the two fonts every page needs (Geist for text, Instrument Serif for
+ * headings) so they are requested with the stylesheet, not after it has been
+ * parsed and the first heading laid out. The file names are hashed, so they are
+ * read from the finished bundle. Mono and italic stay lazy: they are not on the
+ * first screen of any route.
+ */
+function fontPreloadPlugin(base0: string): Plugin {
+  return {
+    name: 'coursescope-font-preload',
+    enforce: 'post',
+    transformIndexHtml: {
+      order: 'post',
+      handler(_html, ctx) {
+        const names = Object.keys(ctx.bundle ?? {}).filter((f) =>
+          /(geist-latin-wght-normal|instrument-serif-latin-400-normal)-.*\.woff2$/.test(f),
+        );
+        return names.map((n) => ({
+          tag: 'link',
+          attrs: { rel: 'preload', as: 'font', type: 'font/woff2', href: `${base0}${n}`, crossorigin: '' },
+          injectTo: 'head' as const,
+        }));
+      },
+    },
+  };
+}
+
 export default defineConfig(({ mode }) => {
   /*
    * THE SINGLE-FILE BUILD IS A PRODUCTION BUILD. It runs under its own mode name
@@ -98,7 +126,7 @@ export default defineConfig(({ mode }) => {
   const base = env.VITE_BASE_PATH || './';
 
   return {
-    plugins: [react(), siteMetaPlugin(env), ...(mode === 'singlefile' ? [viteSingleFile()] : [])],
+    plugins: [react(), siteMetaPlugin(env), fontPreloadPlugin(base.endsWith('/') ? base : `${base}/`), ...(mode === 'singlefile' ? [viteSingleFile()] : [])],
     base,
     resolve: {
       alias: { '@': path.resolve(__dirname, './src') },

@@ -602,3 +602,9 @@
   #content > * { animation: view-in var(--d-base) ease-out; }
   @keyframes view-in { from { opacity: 0; } }
 }
+
+/* The data banner holds the same height before and after the catalogue arrives (no layout shift). */
+.demo-banner { min-height: 56px; display: flex; align-items: center; }
+.demo-banner > div { width: 100%; }
+.demo-banner-ph { background: transparent; border: 0; }
+@media (min-width: 640px) { .demo-banner { min-height: 36px; } }

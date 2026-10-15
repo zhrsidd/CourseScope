@@ -5,8 +5,9 @@ import { UniversityCard } from '@/components/UniversityCard';
 import { IconHeart } from '@/components/ui/icons';
 import { EmptyState, PageHeader, SectionTitle } from '@/components/ui/primitives';
 import { useApp } from '@/state/AppContext';
+import { PageLoading } from '@/components/PageLoading';
 
-export function ShortlistPage() {
+function ShortlistPageInner() {
   usePageTitle('My shortlist');
   const {
     savedCourseIds,
@@ -83,4 +84,9 @@ export function ShortlistPage() {
       )}
     </div>
   );
+}
+
+export function ShortlistPage() {
+  const { loading } = useApp();
+  return loading ? <PageLoading /> : <ShortlistPageInner />;
 }

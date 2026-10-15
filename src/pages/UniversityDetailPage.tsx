@@ -7,7 +7,6 @@ import { VerificationBadge } from '@/components/SourceBadge';
 import { IconExternal, IconHeart, IconPin } from '@/components/ui/icons';
 import {
   Card,
-  CardSkeleton,
   DataRow,
   EmptyState,
   NoData,
@@ -25,6 +24,7 @@ import {
   formatDate,
 } from '@/lib/format';
 import { useApp } from '@/state/AppContext';
+import { PageLoading } from '@/components/PageLoading';
 
 export function UniversityDetailPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -40,11 +40,7 @@ export function UniversityDetailPage() {
   } = useApp();
 
   if (loading) {
-    return (
-      <div className="mx-auto max-w-8xl px-4 py-6 md:px-6">
-        <CardSkeleton />
-      </div>
-    );
+    return <PageLoading rows={5} />;
   }
 
   const university = universities.find((u) => u.slug === slug);

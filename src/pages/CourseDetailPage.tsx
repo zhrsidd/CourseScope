@@ -1,3 +1,4 @@
+import { PageLoading } from '@/components/PageLoading';
 import { Link, useParams } from 'react-router-dom';
 import { usePageTitle } from '@/lib/page-title';
 import { ADVISORY_FURTHER_MATHS } from '@/types';
@@ -7,14 +8,13 @@ import { SourceBadge, VerificationBadge } from '@/components/SourceBadge';
 import { ReportIssue } from '@/components/ReportIssue';
 import { SubjectGuidance } from '@/components/SubjectGuidance';
 import { TuitionFees } from '@/components/TuitionFees';
-import { subjectGuidanceFor } from '@/data';
+import { subjectGuidanceFor } from '@/data/university-subject-guidance';
 import { SubjectRequirementRow } from '@/components/SubjectRequirement';
 import { StudentProfilePanel } from '@/components/StudentProfilePanel';
 import { IconCompare, IconExternal, IconHeart, IconWarning } from '@/components/ui/icons';
 import {
   Badge,
   Card,
-  CardSkeleton,
   DataRow,
   EmptyState,
   NoData,
@@ -60,11 +60,7 @@ export function CourseDetailPage() {
   } = useApp();
 
   if (loading) {
-    return (
-      <div className="mx-auto max-w-8xl px-4 py-6 md:px-6">
-        <CardSkeleton />
-      </div>
-    );
+    return <PageLoading rows={5} />;
   }
 
   const course = id ? courseById[id] : undefined;

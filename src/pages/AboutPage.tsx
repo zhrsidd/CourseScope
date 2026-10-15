@@ -1,11 +1,12 @@
 import { usePageTitle } from '@/lib/page-title';
 import { GLOSSARY } from '@/data/taxonomy';
-import { CATALOGUE_DISCLAIMER } from '@/data';
+import { CATALOGUE_DISCLAIMER } from '@/data/disclaimer';
 import { CoverageMatrix } from '@/components/CoverageMatrix';
 import { Collapse } from '@/components/ui/Collapse';
 import { IconChevron } from '@/components/ui/icons';
 import { useState, type ReactNode } from 'react';
 import { useApp } from '@/state/AppContext';
+import { PageLoading } from '@/components/PageLoading';
 import { APP_VERSION, IS_PRE_RELEASE, RELEASES } from '@/data/version';
 import { BRAND_NAME, BRAND_POSITIONING } from '@/lib/brand';
 import { FeedbackLink } from '@/components/ReportIssue';
@@ -34,7 +35,7 @@ const TOC: [string, string][] = [
   ['ab-error', 'Found an error?'],
 ];
 
-export function AboutPage() {
+function AboutPageInner() {
   usePageTitle('About the data');
   const { universities, courses } = useApp();
   const [logOpen, setLogOpen] = useState(false);
@@ -376,4 +377,9 @@ export function AboutPage() {
       </div>
     </div>
   );
+}
+
+export function AboutPage() {
+  const { loading } = useApp();
+  return loading ? <PageLoading narrow /> : <AboutPageInner />;
 }

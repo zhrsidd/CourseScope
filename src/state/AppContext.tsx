@@ -11,8 +11,6 @@ import type { Course, EligibilityReport, StudentProfile, University } from '@/ty
 import { dataSource } from '@/lib/dataSource';
 import { evaluateCatalogue } from '@/lib/eligibility';
 import { emptyStudentProfile, isStudentProfile } from '@/lib/grades';
-import { validateCatalogue, type ValidationReport } from '@/lib/validation';
-import { TUITION_FEES } from '@/data/tuition-fees';
 import { isStringArray, useLocalStorage } from '@/hooks/useLocalStorage';
 import { initialEntryYear, saveEntryYear, urlEntryYear } from '@/lib/entry-year';
 import type { ApplicationYear } from '@/types';
@@ -30,7 +28,6 @@ interface AppState {
   /** True once any record has been checked against a real source. */
   hasVerifiedData: boolean;
   /** Development/admin only — never surfaced on the public pages. */
-  validation: ValidationReport;
 
   profile: StudentProfile;
   setProfile: (updater: StudentProfile | ((prev: StudentProfile) => StudentProfile)) => void;
@@ -184,11 +181,6 @@ export function AppProvider({ children }: { children: ReactNode }) {
     [courses],
   );
 
-  const validation = useMemo(
-    () => validateCatalogue(courses, universities, TUITION_FEES),
-    [courses, universities],
-  );
-
   const toggleSavedCourse = useCallback(
     (id: string) =>
       setSavedCourseIds((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id])),
@@ -221,7 +213,6 @@ export function AppProvider({ children }: { children: ReactNode }) {
     courseById,
     coursesByUniversity,
     hasVerifiedData,
-    validation,
     profile,
     setProfile,
     resetProfile,

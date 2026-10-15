@@ -1,3 +1,4 @@
+import { PageLoading } from '@/components/PageLoading';
 import { Link } from 'react-router-dom';
 import { usePageTitle } from '@/lib/page-title';
 import { ComparisonLegend, ComparisonTable } from '@/components/ComparisonTable';
@@ -8,7 +9,7 @@ import { EmptyState, PageHeader } from '@/components/ui/primitives';
 import { MAX_COMPARE, useApp } from '@/state/AppContext';
 import { profileIsEmpty } from '@/lib/grades';
 
-export function ComparePage() {
+function ComparePageInner() {
   usePageTitle('Compare courses');
   const { compareIds, courseById, clearCompare, profile } = useApp();
   const courses = compareIds.map((id) => courseById[id]).filter(Boolean);
@@ -56,4 +57,9 @@ export function ComparePage() {
       )}
     </div>
   );
+}
+
+export function ComparePage() {
+  const { loading } = useApp();
+  return loading ? <PageLoading /> : <ComparePageInner />;
 }

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { CATALOGUE_DISCLAIMER } from '@/data';
+import { CATALOGUE_DISCLAIMER } from '@/data/disclaimer';
 import { APP_VERSION, IS_PRE_RELEASE } from '@/data/version';
 import { BRAND_NAME } from '@/lib/brand';
 import { BrandMark } from './BrandMark';

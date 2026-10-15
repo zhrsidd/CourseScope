@@ -7,10 +7,11 @@ import { IconChevron } from '@/components/ui/icons';
 import { applyFilters, defaultFilters } from '@/lib/filters';
 import { parseQuery } from '@/lib/search';
 import { useApp } from '@/state/AppContext';
+import { PageLoading } from '@/components/PageLoading';
 
 const EMPTY_QUERY = parseQuery('');
 
-export function BrowsePage() {
+function BrowsePageInner() {
   usePageTitle('Browse subjects');
   const { courses, profile, universities, universityById, eligibility, hasVerifiedData } = useApp();
 
@@ -102,4 +103,9 @@ export function BrowsePage() {
       </p>
     </div>
   );
+}
+
+export function BrowsePage() {
+  const { loading } = useApp();
+  return loading ? <PageLoading /> : <BrowsePageInner />;
 }
