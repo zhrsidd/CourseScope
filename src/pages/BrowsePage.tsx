@@ -4,24 +4,38 @@ import { Link } from 'react-router-dom';
 import { SUBCATEGORIES, SUBJECT_CATEGORIES } from '@/data/taxonomy';
 import { Card, PageHeader, SectionTitle, cx } from '@/components/ui/primitives';
 import { IconChevron } from '@/components/ui/icons';
+import { applyFilters, defaultFilters } from '@/lib/filters';
+import { parseQuery } from '@/lib/search';
 import { useApp } from '@/state/AppContext';
+
+const EMPTY_QUERY = parseQuery('');
 
 export function BrowsePage() {
   usePageTitle('Browse subjects');
-  const { courses, profile, universities } = useApp();
+  const { courses, profile, universities, universityById, eligibility, hasVerifiedData } = useApp();
 
   const counts = useMemo(() => {
+    // The same filter function and defaults as the search page, so the number beside a
+    // subject is the number of rows its link opens (courses still awaiting research are
+    // hidden there by default, and so are not counted here).
+    const listed = applyFilters({
+      courses,
+      universities: universityById,
+      filters: { ...defaultFilters(hasVerifiedData), applicationYear: profile.applicationYear },
+      parsed: EMPTY_QUERY,
+      eligibility,
+      shortlistedCourseIds: [],
+    });
     const bySub = new Map<string, number>();
     const uniBySub = new Map<string, Set<string>>();
-    for (const c of courses) {
-      if (c.applicationYear !== profile.applicationYear) continue;
+    for (const c of listed) {
       bySub.set(c.subjectSubcategory, (bySub.get(c.subjectSubcategory) ?? 0) + 1);
       const set = uniBySub.get(c.subjectSubcategory) ?? new Set<string>();
       set.add(c.universityId);
       uniBySub.set(c.subjectSubcategory, set);
     }
     return { bySub, uniBySub };
-  }, [courses, profile.applicationYear]);
+  }, [courses, universityById, eligibility, hasVerifiedData, profile.applicationYear]);
 
   return (
     <div className="mx-auto max-w-8xl px-4 py-6 md:px-6">
@@ -47,22 +61,22 @@ export function BrowsePage() {
                 {category.label}
               </SectionTitle>
               <p className="mb-3 text-sm text-ink-muted">{category.blurb}</p>
-              <ul className="space-y-2">
+              <ul className="border-t border-navy-950">
                 {subs.map((s) => {
                   const count = counts.bySub.get(s.id) ?? 0;
                   const unis = counts.uniBySub.get(s.id)?.size ?? 0;
                   return (
-                    <li key={s.id}>
+                    <li key={s.id} className="border-b border-slate-200">
                       <Link
                         to={`/search?subcategory=${s.id}`}
                         className={cx(
-                          'flex items-center gap-3 rounded-lg border border-slate-200 bg-white p-3 transition-colors hover:border-navy-300 hover:bg-navy-50/40',
+                          '-mx-2 flex items-center gap-4 rounded px-2 py-3 transition-colors hover:bg-navy-50/60',
                           count === 0 && 'opacity-60',
                         )}
                       >
                         <div className="min-w-0 flex-1">
                           <div className="text-sm font-medium text-navy-950">{s.label}</div>
-                          <div className="truncate text-xs text-ink-muted">{s.blurb}</div>
+                          <div className="text-xs leading-snug text-ink-muted">{s.blurb}</div>
                         </div>
                         <div className="shrink-0 text-right">
                           <div className="text-sm font-semibold tabular-nums text-navy-900">{count}</div>

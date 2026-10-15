@@ -77,23 +77,31 @@
   column-gap: 32px;
   row-gap: 16px;
   align-items: end;
-  padding-top: 28px;
-  padding-bottom: 12px;
+  padding-top: 36px;
+  padding-bottom: 16px;
+}
+.ex-eyebrow {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
 }
 .ex-top h1 {
   margin: 0;
-  font-size: clamp(30px, 3.2vw, 40px);
-  line-height: 1.04;
+  font-size: clamp(34px, 4vw, 54px);
+  line-height: 1;
+  letter-spacing: -0.016em;
 }
 .ex-lede {
-  margin: 8px 0 0;
-  max-width: 62ch;
+  margin: 14px 0 0;
+  max-width: 84ch;
   color: var(--muted);
   font-size: 16px;
   line-height: 24px;
 }
 .ex-trust {
-  margin: 6px 0 0;
+  margin: 4px 0 0;
   max-width: 72ch;
   color: var(--subtle);
   font-size: 13px;
@@ -139,19 +147,22 @@
 .search-example {
   min-height: 32px;
   padding: 0 10px;
-  border-radius: var(--r-chip);
-  border: 1px solid var(--control);
+  border-radius: 999px;
+  border: 1px solid var(--line);
   background: var(--panel);
   font-size: 13px;
-  color: var(--muted);
+  color: var(--navy-800);
   cursor: pointer;
   transition:
+    border-color var(--d-quick) var(--e-standard),
     background-color var(--d-quick) var(--e-standard),
     color var(--d-quick) var(--e-standard);
 }
+/* Same hover as the landing page's example links, so one kind of chip behaves one way. */
 .search-example:hover {
-  background: var(--sunken);
-  color: var(--ink);
+  border-color: var(--navy-700);
+  background: var(--navy-100);
+  color: var(--navy-800);
 }
 
 /* ---------- Explorer layout ---------- */
@@ -307,8 +318,12 @@
   margin: 16px 0 12px;
 }
 .res-count {
-  font-size: 15px;
-  color: var(--muted);
+  /* The results heading: the one serif line in the dense part of the page. */
+  font-family: var(--f-display);
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -0.005em;
+  color: var(--ink);
 }
 .res-count b {
   color: var(--ink);
@@ -986,6 +1001,7 @@
   }
   .res-tools {
     justify-content: space-between;
+    flex-wrap: nowrap;
   }
   .tray {
     bottom: 12px;
@@ -997,14 +1013,47 @@
   }
   .ex-tools {
     flex-wrap: wrap;
+    gap: 10px;
+  }
+  /* The invitation to add grades is also the "Your A-Levels" button two inches above it;
+     on a phone it keeps its heading and its button and drops the explanation. */
+  .invite:not(.invite-wait):not(.invite-warn) .sub {
+    display: none;
+  }
+  .invite:not(.invite-wait):not(.invite-warn) {
+    grid-template-columns: minmax(0, 1fr) auto;
+    padding: 12px 14px;
+  }
+  /* The trust line already says what the page is for; on a phone the lede is a second
+     paragraph before the search field, so it goes. */
+  .ex-lede {
+    display: none;
+  }
+  .ex-top-in {
+    padding-top: 24px;
+  }
+  .search-examples span {
+    display: none;
+  }
+  /* only the first two chips on a phone; the rest arrive as suggestions in the field */
+  .search-examples .search-example:nth-of-type(n + 3) {
+    display: none;
+  }
+  .res-count {
+    font-size: 22px;
   }
 }
 @media (max-width: 400px) {
   .r-facts {
     grid-template-columns: minmax(0, 1fr);
   }
+}
+@media (max-width: 359px) {
   .seg {
     width: 100%;
+  }
+  .res-tools {
+    flex-wrap: wrap;
   }
 }
 

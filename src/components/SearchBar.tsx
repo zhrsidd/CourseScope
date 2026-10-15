@@ -3,6 +3,9 @@ import { SEARCH_EXAMPLES } from '@/lib/search';
 import { IconSearch } from './ui/icons';
 import { Badge } from './ui/primitives';
 
+/** Chips shown under the field; every example is still offered as a browser suggestion. */
+const CHIPS_SHOWN = 4;
+
 export function SearchBar({
   value,
   onChange,
@@ -24,8 +27,14 @@ export function SearchBar({
           onChange={(e) => onChange(e.target.value)}
           aria-label="Search courses"
           className="field"
+          list="search-suggestions"
           placeholder="Try “physics AAA”, “engineering without chemistry”, “universities requiring ESAT”"
         />
+        <datalist id="search-suggestions">
+          {SEARCH_EXAMPLES.map((example) => (
+            <option key={example} value={example} />
+          ))}
+        </datalist>
       </div>
 
       {parsed.chips.length > 0 ? (
@@ -41,9 +50,9 @@ export function SearchBar({
       ) : null}
 
       {showExamples && !value ? (
-        <div className="search-notes">
-          <span>Examples:</span>
-          {SEARCH_EXAMPLES.map((example) => (
+        <div className="search-notes search-examples">
+          <span>Try:</span>
+          {SEARCH_EXAMPLES.slice(0, CHIPS_SHOWN).map((example) => (
             <button key={example} type="button" onClick={() => onChange(example)} className="search-example">
               {example}
             </button>

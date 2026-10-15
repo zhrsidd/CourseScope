@@ -22,6 +22,14 @@ The student-facing release notes are also shown in the app, on the methodology p
   removed, so an edited link is not rewritten behind the reader's back.
 - **Entry year.** A `year` in a link is shown for that visit only and never saved; the saved year changes only
   when a person presses a year. An address with no year means the saved choice.
+- **Stage 3.5: visual refinement.** Homepage hero recomposed on a 7/4 editorial grid (headline left, lede in
+  the margin, search and entry year on one row, catalogue figures as a full-width ruled strip); section
+  headings share the same grid. Explorer gets an eyebrow, a larger serif title and a serif results heading;
+  on phones it shows two example searches (all seven are offered as browser suggestions in the field), puts
+  Filters and Sort on one row and compacts the grades invitation. Browse subjects uses ruled rows and now
+  counts exactly what its links open (206 / 356, previously 208 / 359). Course page: one summary instead of
+  six identical "Unknown" rows when no grades are entered, flatter nested boxes, no wrapped separators.
+  No change to data, eligibility, filters or the search engine.
 - Unchanged: the dataset, eligibility engine, verification logic, filter logic, comparison and shortlist
   persistence.
 

@@ -263,7 +263,7 @@ export function Select<T extends string>({
   return (
     <span className="inline-flex items-center gap-2">
       {label ? (
-        <label htmlFor={id} className="text-sm text-ink-muted">
+        <label htmlFor={id} className="whitespace-nowrap text-sm text-ink-muted">
           {label}
         </label>
       ) : null}

@@ -10,16 +10,31 @@
   background: var(--canvas);
 }
 .lp-hero-in {
+  /* Editorial grid: the headline owns the left seven columns, the lede sits in the margin
+     beside its last line, the search and the entry year share one row, and the catalogue
+     figures run full width as a ruled strip underneath. */
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 320px;
-  column-gap: 64px;
-  row-gap: 40px;
-  align-items: end;
-  padding-top: 72px;
-  padding-bottom: 64px;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  grid-template-areas:
+    'eyebrow eyebrow'
+    'title   lede'
+    'search  year'
+    'ex      year'
+    'facts   facts';
+  column-gap: 72px;
+  align-items: start;
+  padding-top: 64px;
+  padding-bottom: 56px;
 }
+.lp-eyebrow { grid-area: eyebrow; }
+.lp-h1 { grid-area: title; }
+.lp-lede { grid-area: lede; align-self: end; }
+.lp-search { grid-area: search; }
+.lp-year { grid-area: year; }
+.lp-examples { grid-area: ex; }
+.lp-facts { grid-area: facts; }
 .lp-eyebrow {
-  margin: 0 0 20px;
+  margin: 0 0 24px;
   color: var(--accent);
   font-size: 14px;
   font-weight: 500;
@@ -55,17 +70,18 @@
   }
 }
 .lp-lede {
-  margin: 28px 0 0;
-  max-width: 56ch;
+  margin: 0 0 0.9em;
+  max-width: 40ch;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
   color: var(--muted);
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 17px;
+  line-height: 27px;
 }
 .lp-search {
   display: flex;
   gap: 12px;
-  margin-top: 32px;
-  max-width: 680px;
+  margin-top: 40px;
 }
 .lp-search .search-box {
   flex: 1;
@@ -84,8 +100,9 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 12px 16px;
-  margin-top: 16px;
+  align-content: start;
+  gap: 10px 16px;
+  margin-top: 40px;
 }
 .lp-year p {
   margin: 0;
@@ -99,7 +116,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 4px 6px;
-  margin: 20px 0 0;
+  margin: 16px 0 0;
   color: var(--subtle);
   font-size: 14px;
 }
@@ -123,30 +140,29 @@
 }
 
 .lp-facts {
-  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 72px;
+  margin: 56px 0 0;
   border-top: 2px solid var(--navy-950);
 }
 .lp-facts > div {
-  display: grid;
-  grid-template-columns: 76px minmax(0, 1fr);
-  gap: 16px;
-  align-items: baseline;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 0 0;
 }
 .lp-facts dd {
-  grid-column: 1;
-  grid-row: 1;
+  order: -1;
   margin: 0;
   font-family: var(--f-display);
-  font-size: 44px;
+  font-size: 56px;
   line-height: 1;
   color: var(--navy-950);
   font-variant-numeric: tabular-nums;
 }
 .lp-facts dt {
-  grid-column: 2;
-  grid-row: 1;
+  max-width: 30ch;
   color: var(--muted);
   font-size: 14px;
   line-height: 20px;
@@ -165,16 +181,16 @@
   border-bottom: 1px solid var(--line);
 }
 .lp-sec-head {
-  display: flex;
-  flex-wrap: wrap;
+  /* the same 7 / 4 split as the hero, so every margin note starts on one vertical */
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
   align-items: end;
-  justify-content: space-between;
-  gap: 12px 48px;
+  gap: 12px 72px;
   margin-bottom: 32px;
 }
 .lp-sec-head p {
   margin: 0;
-  max-width: 46ch;
+  max-width: 52ch;
   color: var(--muted);
   font-size: 15px;
   line-height: 22px;
@@ -701,27 +717,34 @@
 
 /* ---------- Tablet ---------- */
 @media (max-width: 1023px) {
+  .lp-sec-head {
+    grid-template-columns: minmax(0, 1fr);
+  }
   .lp-subj-cols {
     grid-template-columns: minmax(0, 1fr) 64px 48px 20px;
   }
   .lp-hero-in {
     grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 'eyebrow' 'title' 'lede' 'search' 'year' 'ex' 'facts';
     padding-top: 56px;
     padding-bottom: 48px;
   }
-  .lp-facts {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    column-gap: 24px;
+  .lp-lede {
+    align-self: start;
+    margin: 28px 0 0;
+    padding-top: 0;
+    border-top: 0;
+    max-width: 56ch;
   }
-  .lp-facts > div {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    border-bottom: 0;
+  .lp-year {
+    margin-top: 16px;
+  }
+  .lp-facts {
+    column-gap: 24px;
+    margin-top: 44px;
   }
   .lp-facts dd {
-    order: -1;
+    font-size: 48px;
   }
   .lp-subjects {
     grid-template-columns: minmax(0, 1fr);
@@ -741,10 +764,15 @@
 
 /* ---------- Phone ---------- */
 @media (max-width: 640px) {
+  .lp-examples a:nth-of-type(n + 3) {
+    display: none;
+  }
   .lp-hero-in {
     padding-top: 36px;
     padding-bottom: 36px;
-    row-gap: 28px;
+  }
+  .lp-facts {
+    margin-top: 32px;
   }
   .lp-eyebrow {
     margin-bottom: 14px;

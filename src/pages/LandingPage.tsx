@@ -138,7 +138,6 @@ export function LandingPage() {
       {/* ------------------------------ Hero ------------------------------ */}
       <section className="lp-hero" aria-labelledby="lp-h1">
         <div className="wrap lp-hero-in">
-          <div className="lp-hero-main">
             <p className="lp-eyebrow">UK Physics &amp; Engineering · {entryYear} entry</p>
             <h1 id="lp-h1" className="lp-h1">
               <span className="mask">
@@ -161,10 +160,16 @@ export function LandingPage() {
                   type="search"
                   className="field"
                   aria-label="Search courses"
+                  list="lp-suggestions"
                   placeholder="Try “physics AAA”"
                   value={q}
                   onChange={(e) => setQ(e.target.value)}
                 />
+                <datalist id="lp-suggestions">
+                  {SEARCH_EXAMPLES.map((ex) => (
+                    <option key={ex} value={ex} />
+                  ))}
+                </datalist>
               </div>
               <button type="submit" className="btn-primary lp-go">
                 Search courses
@@ -188,7 +193,6 @@ export function LandingPage() {
                 </Link>
               ))}
             </p>
-          </div>
 
           <dl className="lp-facts" aria-label="What is in the catalogue">
             <div>

@@ -253,6 +253,7 @@ export function SearchPage() {
       <div className="ex-top">
         <div className="wrap ex-top-in">
           <div>
+            <p className="ex-eyebrow">Course explorer · {filters.applicationYear} entry</p>
             <h1>Find the right UK Physics or Engineering course</h1>
             <p className="ex-lede">
               Compare published entry requirements, admissions tests and application routes across UK

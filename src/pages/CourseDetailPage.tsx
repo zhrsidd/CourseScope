@@ -117,18 +117,14 @@ export function CourseDetailPage() {
         }
         title={course.name}
         description={
-          <span className="flex flex-wrap items-center gap-x-3 gap-y-1">
+          <span className="flex flex-wrap items-center gap-x-4 gap-y-1.5">
             <span title={degreeMeta?.description}>{awardLabel(course)}</span>
-            <span>·</span>
             <span>{durationLabel(course.durationYears, course.durationYearsMax)}</span>
-            <span>·</span>
             <span>{subcategoryLabel(course.subjectSubcategory)}</span>
-            <span>·</span>
             <span>{course.applicationYear} entry</span>
             {course.courseCode ? (
               <>
-                <span>·</span>
-                <span className="flex items-center gap-1">
+                    <span className="flex items-center gap-1">
                   <span>
                     UCAS <span className="t-code">{course.courseCode}</span>
                   </span>
@@ -251,10 +247,23 @@ export function CourseDetailPage() {
             <SectionTitle right={report ? <EligibilityBadge verdict={report.verdict} /> : undefined}>
               Academic match against your A-Levels
             </SectionTitle>
-            {report ? (
+            {report && entries.length === 0 ? (
+              /*
+                No grades yet: every row of the breakdown would read "Unknown, add your
+                grades", six times. The summary already says it once; the admissions test
+                does not depend on grades, so it still gets its own line.
+              */
+              <>
+                <p className="text-sm text-ink-muted">{report.summary}</p>
+                <div className="mt-3 grid grid-cols-[minmax(0,150px)_1fr] gap-x-3 gap-y-1 border-t border-slate-200 pt-3">
+                  <div className="text-sm font-medium text-ink">Admissions test</div>
+                  <div className="text-sm leading-relaxed text-ink-muted">{report.admissionsTest.detail}</div>
+                </div>
+              </>
+            ) : report ? (
               <>
                 <p className="mb-3 text-sm text-ink-muted">{report.summary}</p>
-                <div className="mb-3 rounded-md border border-slate-200 bg-slate-50/60 p-3">
+                <div className="mb-4">
                   <div className="label mb-1.5">Why this result</div>
                   <EligibilityReasons report={report} course={course} />
                 </div>
@@ -267,7 +276,7 @@ export function CourseDetailPage() {
                 ) : null}
               </>
             ) : null}
-            <p className="mt-4 rounded border border-slate-200 bg-slate-50 p-2.5 text-xs leading-relaxed text-ink-muted">
+            <p className="mt-4 border-t border-slate-200 pt-3 text-xs leading-relaxed text-ink-muted">
               This check covers published academic requirements only. Universities also weigh personal
               statements, references, admissions tests, interviews and the strength of the applicant pool.
               Meeting the requirements is not a guarantee of an offer, and this tool does not estimate the
