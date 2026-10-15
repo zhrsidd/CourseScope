@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { usePageTitle } from '@/lib/page-title';
 import { ComparisonLegend, ComparisonTable } from '@/components/ComparisonTable';
+import { DifferenceStrip } from '@/components/DifferenceStrip';
 import { StudentProfilePanel } from '@/components/StudentProfilePanel';
 import { IconCompare } from '@/components/ui/icons';
 import { EmptyState, PageHeader } from '@/components/ui/primitives';
@@ -39,12 +40,13 @@ export function ComparePage() {
           }
         />
       ) : (
-        <div className="space-y-4">
+        <div className="space-y-10">
           {profileIsEmpty(profile) ? (
-            <div className="surface p-3 text-sm text-ink-muted">
+            <p className="max-w-[70ch] text-sm text-ink-muted">
               Add your predicted grades below to colour the requirement rows against your own profile.
-            </div>
+            </p>
           ) : null}
+          <DifferenceStrip courses={courses} />
           <ComparisonTable courses={courses} />
           <ComparisonLegend />
           <div className="max-w-md">

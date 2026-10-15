@@ -100,7 +100,7 @@ export function SectionTitle({
   id?: string;
 }) {
   return (
-    <div className="mb-3 flex items-center justify-between gap-3">
+    <div className="sect-title mb-3 flex items-center justify-between gap-3">
       <h2 id={id} className="text-base font-semibold text-navy-950">
         {children}
       </h2>

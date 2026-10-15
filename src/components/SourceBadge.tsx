@@ -111,7 +111,6 @@ export function SourceBadge({
 
   return (
     <div className="rounded-md border border-slate-200 bg-slate-50/70 p-3">
-      <div className="label mb-2">Source</div>
       <dl className="space-y-1.5 text-sm">
         <div className="flex flex-wrap gap-x-2">
           <dt className="text-ink-faint">Source</dt>

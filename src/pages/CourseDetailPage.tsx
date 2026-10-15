@@ -1,8 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import { usePageTitle } from '@/lib/page-title';
 import { ADVISORY_FURTHER_MATHS } from '@/types';
-import { EligibilityBadge, EligibilityBreakdown } from '@/components/EligibilityBadge';
-import { EligibilityReasons } from '@/components/EligibilityReasons';
+import { EligibilityBadge } from '@/components/EligibilityBadge';
 import { InfoTooltip } from '@/components/InfoTooltip';
 import { SourceBadge, VerificationBadge } from '@/components/SourceBadge';
 import { ReportIssue } from '@/components/ReportIssue';
@@ -39,8 +38,10 @@ import {
   deadlineScopeLabel,
   deadlinesForCourse,
   durationLabel,
+  formatDate,
 } from '@/lib/format';
 import { filledGrades } from '@/lib/grades';
+import { RequirementLedger } from '@/components/RequirementLedger';
 import { MAX_COMPARE, useApp } from '@/state/AppContext';
 
 export function CourseDetailPage() {
@@ -103,8 +104,16 @@ export function CourseDetailPage() {
     course ? `${course.name} (${course.awardLabel ?? course.degreeType}), ${university?.name ?? ''} ${course.applicationYear}` : 'Course',
   );
 
+  const focusProfile = () => {
+    const el = document.getElementById('cd-profile');
+    if (!el) return;
+    const calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    el.scrollIntoView({ behavior: calm ? 'auto' : 'smooth', block: 'center' });
+    (el.querySelector('select, input') as HTMLElement | null)?.focus({ preventScroll: true });
+  };
+
   return (
-    <div className="mx-auto max-w-8xl px-4 py-6 md:px-6">
+    <div className="cd mx-auto max-w-8xl px-4 py-6 md:px-6">
       <PageHeader
         eyebrow={
           university ? (
@@ -138,7 +147,6 @@ export function CourseDetailPage() {
                 <InfoTooltip term="integrated-masters" />
               </Badge>
             ) : null}
-            <VerificationBadge status={course.provenance.verificationStatus} provenance={course.provenance} />
           </span>
         }
         actions={
@@ -169,28 +177,40 @@ export function CourseDetailPage() {
         }
       />
 
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_340px]">
-        <div className="min-w-0 space-y-5">
+      {/* The evidence for this page, directly under its title and before any claim. */}
+      <div className="cd-source" role="group" aria-label="Source and verification" data-testid="course-source-strip">
+        <VerificationBadge status={course.provenance.verificationStatus} provenance={course.provenance} />
+        <span>{course.applicationYear} entry</span>
+        {course.provenance.lastVerified ? <span>Checked {formatDate(course.provenance.lastVerified)}</span> : null}
+        {officialLink ? (
+          <a href={officialLink} target="_blank" rel="noreferrer">
+            {course.provenance.sourceTitle ?? 'University source'}
+          </a>
+        ) : null}
+      </div>
+
+      <div className="grid grid-cols-1 gap-x-12 gap-y-12 lg:grid-cols-[minmax(0,1fr)_340px]">
+        <div className="cd-main min-w-0">
           {course.cycleNote ? (
-            <Card className="border-navy-200 bg-navy-50/50 p-3">
-              <div className="label mb-1 text-navy-800">Which cycle this record covers</div>
-              <p className="text-sm leading-relaxed text-navy-900">{course.cycleNote}</p>
-            </Card>
+            <div className="cd-note">
+              <h2>Which cycle this record covers</h2>
+              <p>{course.cycleNote}</p>
+            </div>
           ) : null}
 
           {notPublished ? (
-            <Card className="border-amber-300 bg-amber-50/70 p-4">
-              <h2 className="flex items-center gap-2 text-sm font-semibold text-amber-900">
+            <div className="cd-note cd-note-wait">
+              <h2 className="flex items-center gap-2">
                 <IconWarning width={15} height={15} />
                 {course.applicationYear} entry requirements not yet published
               </h2>
-              <p className="mt-1.5 text-sm leading-relaxed text-amber-900/90">
+              <p>
                 This university has not published entry requirements for {course.applicationYear} entry.
                 Requirements from an earlier cycle are deliberately not shown here as if they were
                 current — they change between years.
               </p>
               {fallback ? (
-                <div className="mt-3 rounded-md border border-dashed border-amber-400 bg-white/70 p-3">
+                <div className="mt-4 border-l-2 border-dashed border-amber-500 pl-3">
                   <div className="label mb-1 text-amber-800">
                     Latest available requirements: {fallback.applicationYear} entry
                   </div>
@@ -207,13 +227,13 @@ export function CourseDetailPage() {
                   No earlier published cycle is recorded for this course.
                 </p>
               )}
-            </Card>
+            </div>
           ) : null}
 
           {course.provenance.verificationStatus === 'partially-verified' ? (
-            <Card className="border-navy-200 bg-navy-50/50 p-4">
-              <h2 className="text-sm font-semibold text-navy-950">Partially verified</h2>
-              <p className="mt-1.5 text-sm leading-relaxed text-ink-muted">
+            <div className="cd-note">
+              <h2>Partially verified</h2>
+              <p>
                 Some of this course’s admissions information is supported by the university’s own
                 page, but at least one relevant field could not be confirmed. This is about how
                 complete our evidence is — it says nothing about the course or the university.
@@ -225,58 +245,48 @@ export function CourseDetailPage() {
                 block says only that something is.
               */}
               {course.notes ? (
-                <p className="mt-2 rounded border border-navy-200 bg-white px-2.5 py-2 text-xs leading-relaxed text-ink-muted">
-                  {course.notes}
-                </p>
+                <p className="mt-3 max-w-[70ch] text-sm leading-relaxed text-ink-muted">{course.notes}</p>
               ) : null}
-            </Card>
+            </div>
           ) : null}
 
           {awaiting ? (
-            <Card className="border-slate-300 bg-slate-50 p-4">
-              <h2 className="text-sm font-semibold text-navy-950">Awaiting verified data</h2>
-              <p className="mt-1.5 text-sm leading-relaxed text-ink-muted">
+            <div className="cd-note">
+              <h2>Awaiting verified data</h2>
+              <p>
                 This course is in the catalogue, but its admissions requirements have not been collected
                 from the university’s official pages yet. Nothing is shown rather than something
                 plausible.
               </p>
-            </Card>
+            </div>
           ) : null}
 
           <Card className="p-4">
             <SectionTitle right={report ? <EligibilityBadge verdict={report.verdict} /> : undefined}>
-              Academic match against your A-Levels
+              Requirements against your A-Levels
             </SectionTitle>
-            {report && entries.length === 0 ? (
-              /*
-                No grades yet: every row of the breakdown would read "Unknown, add your
-                grades", six times. The summary already says it once; the admissions test
-                does not depend on grades, so it still gets its own line.
-              */
+            {report ? (
               <>
-                <p className="text-sm text-ink-muted">{report.summary}</p>
-                <div className="mt-3 grid grid-cols-[minmax(0,150px)_1fr] gap-x-3 gap-y-1 border-t border-slate-200 pt-3">
-                  <div className="text-sm font-medium text-ink">Admissions test</div>
-                  <div className="text-sm leading-relaxed text-ink-muted">{report.admissionsTest.detail}</div>
-                </div>
-              </>
-            ) : report ? (
-              <>
-                <p className="mb-3 text-sm text-ink-muted">{report.summary}</p>
-                <div className="mb-4">
-                  <div className="label mb-1.5">Why this result</div>
-                  <EligibilityReasons report={report} course={course} />
-                </div>
-                <EligibilityBreakdown report={report} />
+                {course.offers.length === 0 ? (
+                  <p className="mb-5 max-w-[70ch] text-[15px] leading-relaxed text-ink-muted">{report.summary}</p>
+                ) : null}
+                {course.offers.length > 0 ? (
+                  <RequirementLedger
+                    course={course}
+                    report={report}
+                    profile={profile}
+                    onAddGrades={focusProfile}
+                  />
+                ) : null}
                 {report.pathways.length > 1 ? (
                   <p className="mt-3 text-xs text-ink-muted">
-                    Checked against {report.pathways.length} published offer pathways; the breakdown shows
+                    Checked against {report.pathways.length} published offer pathways; the ledger shows
                     the best-matching one.
                   </p>
                 ) : null}
               </>
             ) : null}
-            <p className="mt-4 border-t border-slate-200 pt-3 text-xs leading-relaxed text-ink-muted">
+            <p className="mt-5 max-w-[70ch] text-xs leading-relaxed text-ink-muted">
               This check covers published academic requirements only. Universities also weigh personal
               statements, references, admissions tests, interviews and the strength of the applicant pool.
               Meeting the requirements is not a guarantee of an offer, and this tool does not estimate the
@@ -292,7 +302,7 @@ export function CourseDetailPage() {
                   <InfoTooltip term="raw-requirement-text" />
                 </span>
               </SectionTitle>
-              <blockquote className="border-l-2 border-navy-300 bg-slate-50/70 py-2 pl-3 text-sm italic leading-relaxed text-ink">
+              <blockquote className="cd-quote">
                 {course.rawRequirementText}
               </blockquote>
               <p className="mt-2 text-xs text-ink-muted">
@@ -316,14 +326,14 @@ export function CourseDetailPage() {
               Entry requirements (structured)
             </SectionTitle>
             {course.minimumEntryStandard ? (
-              <p className="mb-3 rounded border border-slate-200 bg-slate-50 p-2.5 text-sm text-ink-muted">
+              <p className="cd-note mb-4 !text-[15px] leading-relaxed text-ink-muted">
                 <strong className="text-ink">Minimum entry standard: {course.minimumEntryStandard}.</strong>{' '}
                 Published separately from the offer below — it is a floor, not the offer you would
                 receive.
               </p>
             ) : null}
             {course.studyOptions.length > 0 ? (
-              <div className="mb-3 rounded border border-navy-200 bg-navy-50/50 p-2.5">
+              <div className="cd-note mb-4">
                 <div className="label mb-1 text-navy-800">
                   Routes within this application
                 </div>
@@ -363,7 +373,7 @@ export function CourseDetailPage() {
               </div>
             ) : null}
             {course.typicalOffer ? (
-              <p className="mb-3 rounded border border-amber-200 bg-amber-50 p-2.5 text-sm text-amber-900">
+              <p className="cd-note cd-note-wait mb-4 !text-[15px] leading-relaxed text-ink-muted">
                 <strong>Typical offer: {course.typicalOffer}.</strong> The university publishes this
                 separately as a description of the offers it actually made. It can be higher than the
                 minimum entry standard, and it is not checked against your grades below.
@@ -378,9 +388,9 @@ export function CourseDetailPage() {
                     : 'No entry requirements recorded yet'}
               </NoData>
             ) : (
-              <div className="space-y-4">
+              <div className="space-y-6">
                 {course.offers.map((offer) => (
-                  <div key={offer.id} className="rounded-md border border-slate-200 p-3">
+                  <div key={offer.id} className="cd-offer">
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <div className="flex flex-wrap items-center gap-2">
                         <span className="text-sm font-medium text-ink">{offer.label}</span>
@@ -401,9 +411,7 @@ export function CourseDetailPage() {
                           </Badge>
                         ) : null}
                       </div>
-                      <span className="text-xl font-semibold tabular-nums text-navy-950">
-                        {offer.gradeProfile}
-                      </span>
+                      <span className="cd-offer-grade tabular-nums">{offer.gradeProfile}</span>
                     </div>
 
                     {offer.rawText ? (
@@ -427,10 +435,7 @@ export function CourseDetailPage() {
                     {offer.constraints.length > 0 ? (
                       <ul className="mt-2 space-y-1">
                         {offer.constraints.map((c, i) => (
-                          <li
-                            key={i}
-                            className="rounded border border-navy-200 bg-navy-50/60 px-2.5 py-1.5 text-[13px] text-navy-900"
-                          >
+                          <li key={i} className="cd-rule-note">
                             {c.description}
                           </li>
                         ))}
@@ -696,7 +701,9 @@ export function CourseDetailPage() {
               <ReportIssue key={course.id} course={course} university={university} />
             </div>
           </Card>
-          <StudentProfilePanel />
+          <div id="cd-profile">
+            <StudentProfilePanel />
+          </div>
         </aside>
       </div>
     </div>

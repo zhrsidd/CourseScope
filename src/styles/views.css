@@ -1,0 +1,425 @@
+/*
+ * Phase 4: editorial page sections and the four data views (requirement ledger,
+ * difference strip, coverage matrix, offer ladder). Tokens only. The views are
+ * plain HTML and CSS: no charting library, every mark has its value written out
+ * as text, and every view has a table equivalent. Status is never colour alone.
+ */
+
+/* ---------- Editorial sections (course page) ---------- */
+.cd h1 {
+  font-size: clamp(36px, 4.6vw, 62px);
+  line-height: 1;
+  letter-spacing: -0.016em;
+}
+.cd-main > * + * {
+  margin-top: 56px;
+}
+/* A section that used to be a card is now a ruled section: one rule above, no box. */
+.cd .surface {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  border-top: 2px solid var(--navy-950);
+  padding: 20px 0 0;
+}
+.cd aside .surface {
+  border-top-width: 1px;
+}
+.cd .sect-title {
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.cd .sect-title h2 {
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.05;
+  letter-spacing: -0.008em;
+}
+.cd aside .sect-title h2 {
+  font-size: 24px;
+}
+/* Notices: one rule down the left edge instead of a tinted box. */
+.cd-note {
+  padding: 2px 0 2px 16px;
+  border-left: 3px solid var(--navy-700);
+}
+.cd-note h2 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy-950);
+}
+.cd-note p {
+  margin: 6px 0 0;
+  max-width: 70ch;
+  font-size: 15px;
+  line-height: 23px;
+  color: var(--muted);
+}
+.cd-note-wait {
+  border-left-color: var(--wait-ink);
+}
+.cd-note-wait h2 {
+  color: var(--wait-ink);
+}
+.cd-offer {
+  padding: 16px 0 0;
+  border-top: 1px solid var(--line);
+}
+.cd-offer:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+.cd-offer-grade {
+  font-family: var(--f-display);
+  font-size: 40px;
+  line-height: 1;
+  color: var(--navy-950);
+}
+.cd-rule-note {
+  padding: 0 0 0 12px;
+  border-left: 2px solid var(--line);
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--navy-900);
+}
+/* Source strip: the evidence for the page, directly under its title. */
+.cd-source {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 20px;
+  margin: -8px 0 28px;
+  font-size: 14px;
+  color: var(--muted);
+}
+.cd-source a {
+  color: var(--accent);
+  text-underline-offset: 3px;
+}
+.cd-source a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* ---------- Requirement ledger ---------- */
+.rl {
+  font-size: 15px;
+}
+.rl-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.rl-table thead th {
+  padding: 0 16px 8px 0;
+  border-bottom: 1px solid var(--ink);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--subtle);
+  text-align: left;
+}
+.rl-table tbody th,
+.rl-table tbody td {
+  padding: 14px 16px 14px 0;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  text-align: left;
+  font-weight: 400;
+}
+.rl-req {
+  width: 22%;
+  padding-left: 12px !important;
+  font-weight: 500 !important;
+  color: var(--ink);
+}
+.rl-table thead th:first-child {
+  padding-left: 12px;
+}
+.rl-summary {
+  margin: 0 0 20px;
+  max-width: 70ch;
+  font-size: 15px;
+  line-height: 23px;
+  color: var(--muted);
+}
+.rl-pub,
+.rl-you {
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+.rl-pub {
+  width: 30%;
+}
+.rl-you {
+  width: 16%;
+  font-weight: 600 !important;
+}
+.rl-res {
+  padding-right: 0 !important;
+}
+.rl-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 24px;
+  padding: 0 8px;
+  border-radius: var(--r-chip);
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.rl-ok {
+  background: var(--ok-bg);
+  color: var(--ok-ink);
+}
+.rl-no {
+  background: var(--no-bg);
+  color: var(--no-ink);
+}
+.rl-wait {
+  background: var(--wait-bg);
+  color: var(--wait-ink);
+}
+.rl-rev {
+  background: var(--rev-bg);
+  color: var(--rev-ink);
+}
+.rl-mute {
+  background: transparent;
+  color: var(--subtle);
+  padding-left: 0;
+}
+.rl-note {
+  display: block;
+  margin-top: 6px;
+  max-width: 54ch;
+  font-size: 13px;
+  line-height: 19px;
+  color: var(--muted);
+}
+/* The row that decided a negative verdict carries a rule down its edge. */
+.rl-table tr[data-outcome='fail'] > :first-child {
+  box-shadow: inset 3px 0 0 var(--no-ink);
+}
+.rl-table tr[data-outcome='review'] > :first-child {
+  box-shadow: inset 3px 0 0 var(--rev-ink);
+}
+.rl-table-bare .rl-req {
+  width: 30%;
+}
+.rl-table-bare .rl-pub {
+  width: auto;
+}
+.rl-prompt,
+.rl-foot {
+  margin: 14px 0 0;
+  max-width: 70ch;
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--muted);
+}
+.rl-prompt button {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+@media (max-width: 760px) {
+  .rl-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+  .rl-table,
+  .rl-table tbody {
+    display: block;
+  }
+  .rl-table tr {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 12px;
+    row-gap: 4px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .rl-table tbody th,
+  .rl-table tbody td {
+    display: block;
+    width: auto;
+    padding: 0;
+    border: 0;
+  }
+  .rl-req {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .rl-table tbody td.rl-res {
+    display: contents;
+  }
+  .rl-req,
+  .rl-table thead th:first-child {
+    padding-left: 0 !important;
+  }
+  .rl-res .rl-chip {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: start;
+  }
+  .rl-pub,
+  .rl-you {
+    grid-column: 1 / -1;
+    font-size: 14px;
+  }
+  .rl-pub::before,
+  .rl-you::before {
+    content: attr(data-label) ': ';
+    font-weight: 400;
+    color: var(--subtle);
+    font-size: 13px;
+  }
+  .rl-res .rl-note {
+    grid-column: 1 / -1;
+    max-width: none;
+  }
+  .rl-table tr[data-outcome='fail'],
+  .rl-table tr[data-outcome='review'] {
+    padding-left: 12px;
+  }
+  .rl-table tr[data-outcome='fail'] > :first-child,
+  .rl-table tr[data-outcome='review'] > :first-child {
+    box-shadow: none;
+  }
+  .rl-table tr[data-outcome='fail'] {
+    box-shadow: inset 3px 0 0 var(--no-ink);
+  }
+  .rl-table tr[data-outcome='review'] {
+    box-shadow: inset 3px 0 0 var(--rev-ink);
+  }
+}
+
+/* The university's own wording: the primary source, set large enough to be read first. */
+.cd-quote {
+  margin: 0;
+  padding: 2px 0 2px 20px;
+  border-left: 3px solid var(--accent);
+  font-family: var(--f-display);
+  font-size: 24px;
+  line-height: 32px;
+  color: var(--ink);
+  max-width: 62ch;
+}
+/* Subject rows inside the structured requirements: ruled lines, not coloured boxes. */
+.cd [data-sr] {
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+  padding-left: 0;
+  padding-right: 0;
+}
+.cd [data-sr]:last-child {
+  border-bottom: 0;
+}
+
+/* ---------- Difference strip ---------- */
+.ds {
+  border-top: 2px solid var(--navy-950);
+  padding-top: 18px;
+}
+.ds-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+.ds-head h2 {
+  margin: 0;
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.05;
+}
+.ds-sum {
+  margin: 6px 0 16px;
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--muted);
+}
+.ds-scroll {
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+.ds-table {
+  width: 100%;
+  min-width: calc(150px + var(--n, 3) * 150px);
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.ds-table thead th {
+  padding: 0 14px 10px 0;
+  border-bottom: 1px solid var(--ink);
+  text-align: left;
+  vertical-align: bottom;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+}
+.ds-uni {
+  display: block;
+  color: var(--subtle);
+  font-weight: 400;
+}
+.ds-course {
+  display: block;
+  color: var(--ink);
+}
+.ds-table tbody th,
+.ds-table tbody td {
+  padding: 10px 14px 10px 0;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+  font-weight: 400;
+}
+.ds-table tbody th {
+  width: 150px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+}
+.ds-tag {
+  margin-left: 6px;
+  color: var(--subtle);
+  font-weight: 400;
+}
+.ds-same {
+  color: var(--subtle);
+}
+.ds-diff {
+  position: relative;
+  padding-left: 14px !important;
+  color: var(--ink);
+  font-weight: 600 !important;
+}
+.ds-dot {
+  position: absolute;
+  left: 0;
+  top: 17px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--navy-900);
+}
+.ds-grade {
+  font-variant-numeric: tabular-nums;
+}
+.ds-foot {
+  margin: 12px 0 0;
+  max-width: 70ch;
+  font-size: 13px;
+  line-height: 19px;
+  color: var(--subtle);
+}

@@ -53,6 +53,7 @@ export function SubjectRequirementRow({
 
   return (
     <div
+      data-sr={match}
       className={cx(
         'flex items-center justify-between gap-3 rounded border px-2.5 py-1.5',
         STYLES[match],
