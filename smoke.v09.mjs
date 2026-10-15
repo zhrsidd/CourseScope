@@ -175,8 +175,11 @@ t('11. the profile persists across reload', profileAfter === storedProfile && Bo
 await goto(fresh, '/shortlist');
 /* The shortlist page lists saved items without wrapping them in <article>, so
    its own "Saved courses (n)" heading is the reliable signal. */
-t('12. the shortlist persists across reload', /Saved courses \((?!0\))\d+\)/.test(await main(fresh)),
-  (await main(fresh)).match(/Saved courses \(\d+\)/)?.[0] ?? 'no count shown');
+/* Phase 5: the shortlist is a workspace; saved courses are `.sl-row` items under a "Courses n" heading. */
+const slRows = await fresh.locator('.sl-row').count();
+const slHeading = (await main(fresh)).match(/Courses\s*(\d+)/)?.[1];
+t('12. the shortlist persists across reload', slRows > 0 && Number(slHeading) === slRows,
+  `${slRows} saved row(s), heading count ${slHeading ?? 'none'}`);
 await freshCtx.close();
 
 /* ================================================================== */

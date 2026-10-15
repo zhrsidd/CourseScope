@@ -52,6 +52,8 @@ interface AppState {
   toggleSavedUniversity: (id: string) => void;
 
   compareIds: string[];
+  /** Replace the whole comparison set at once (at most MAX_COMPARE, no duplicates). */
+  replaceCompare: (ids: string[]) => void;
   toggleCompare: (id: string) => void;
   clearCompare: () => void;
 }
@@ -203,6 +205,10 @@ export function AppProvider({ children }: { children: ReactNode }) {
     [setCompareIds],
   );
   const clearCompare = useCallback(() => setCompareIds([]), [setCompareIds]);
+  const replaceCompare = useCallback(
+    (ids: string[]) => setCompareIds([...new Set(ids)].slice(0, MAX_COMPARE)),
+    [setCompareIds],
+  );
 
   const value: AppState = {
     loading,
@@ -226,6 +232,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
     toggleSavedCourse,
     toggleSavedUniversity,
     compareIds,
+    replaceCompare,
     toggleCompare,
     clearCompare,
   };

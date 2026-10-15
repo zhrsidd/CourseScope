@@ -79,6 +79,7 @@ export function buildStripRows(
 export function DifferenceStrip({ courses }: { courses: Course[] }) {
   const { universityById, profile, eligibility } = useApp();
   const [open, setOpen] = useState(true);
+  const [showSame, setShowSame] = useState(false);
   if (courses.length < 2) return null;
 
   const hasGrades = filledGrades(profile).length > 0;
@@ -93,6 +94,9 @@ export function DifferenceStrip({ courses }: { courses: Course[] }) {
       : undefined,
   );
   const differing = rows.filter((r) => !r.allSame).length;
+  const sameRows = rows.filter((r) => r.allSame);
+  // Attributes that agree are one line, not a block of muted rows; one press brings them back.
+  const shown = showSame || differing === 0 ? rows : rows.filter((r) => !r.allSame);
 
   return (
     <section className="ds" aria-labelledby="ds-h">
@@ -116,28 +120,33 @@ export function DifferenceStrip({ courses }: { courses: Course[] }) {
       </p>
       <Collapse open={open} id="ds-body">
         <div className="ds-scroll" tabIndex={0} role="region" aria-label="Differences between the selected courses, scrollable">
-          <table className="ds-table" style={{ ['--n' as string]: courses.length }}>
+          <table className="ds-table" role="table" style={{ ['--n' as string]: courses.length }}>
             <caption className="sr-only">Selected courses, with the values that differ marked</caption>
-            <thead>
-              <tr>
-                <th scope="col">Attribute</th>
+            <thead role="rowgroup">
+              <tr role="row">
+                <th scope="col" role="columnheader" className="ds-attr">Attribute</th>
                 {courses.map((c) => (
-                  <th scope="col" key={c.id}>
+                  <th scope="col" role="columnheader" key={c.id}>
                     <span className="ds-uni">{universityById[c.universityId]?.shortName ?? ''}</span>
                     <span className="ds-course">{c.name}</span>
                   </th>
                 ))}
               </tr>
             </thead>
-            <tbody>
-              {rows.map((r) => (
-                <tr key={r.id} data-same={r.allSame || undefined}>
-                  <th scope="row">
+            <tbody role="rowgroup">
+              {shown.map((r) => (
+                <tr key={r.id} role="row" data-same={r.allSame || undefined}>
+                  <th scope="row" role="rowheader">
                     {r.label}
                     {r.allSame ? <span className="ds-tag">same</span> : null}
                   </th>
                   {r.cells.map((cell, i) => (
-                    <td key={courses[i].id} className={`ds-${cell.kind}${r.grade ? ' ds-grade' : ''}`}>
+                    <td
+                      key={courses[i].id}
+                      role="cell"
+                      data-label={`${universityById[courses[i].universityId]?.shortName ?? ''} ${courses[i].name}`.trim()}
+                      className={`ds-${cell.kind}${r.grade ? ' ds-grade' : ''}`}
+                    >
                       {cell.kind === 'diff' ? (
                         <>
                           <span className="ds-dot" aria-hidden />
@@ -152,9 +161,17 @@ export function DifferenceStrip({ courses }: { courses: Course[] }) {
             </tbody>
           </table>
         </div>
+        {sameRows.length > 0 && differing > 0 ? (
+          <p className="ds-same-line">
+            {showSame ? 'Showing the attributes that are the same.' : <>Same across all {courses.length}: {sameRows.map((r) => r.label).join(', ')}.</>}{' '}
+            <button type="button" className="link" aria-pressed={showSame} onClick={() => setShowSame((v) => !v)}>
+              {showSame ? 'Hide them' : 'Show them'}
+            </button>
+          </p>
+        ) : null}
         <p className="ds-foot">
-          A summary of what each university publishes. It does not rank or score the courses; the full table below
-          stays the complete record.
+          A summary of what each university publishes. It does not rank or score the courses; the full comparison
+          shows every row.
         </p>
       </Collapse>
     </section>

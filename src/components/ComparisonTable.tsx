@@ -465,17 +465,17 @@ export function ComparisonTable({ courses }: { courses: Course[] }) {
         This is a side-by-side view of what each university publishes. It does not rank the courses,
         score them, or name a best one — those judgements depend on things no catalogue holds.
       </p>
-    <div className="surface scroll-x">
-      <table className="w-full min-w-[720px] border-collapse text-sm">
-        <thead>
-          <tr>
-            <th className="sticky left-0 z-10 w-48 border-b border-r border-slate-200 bg-slate-50 p-3 text-left text-xs font-semibold uppercase tracking-wide text-ink-faint">
+    <div className="surface scroll-x cmp">
+      <table className="cmp-table w-full min-w-[720px] border-collapse text-sm" role="table">
+        <thead role="rowgroup">
+          <tr role="row">
+            <th role="columnheader" className="cmp-field sticky left-0 z-10 w-48 border-b border-r border-slate-200 bg-slate-50 p-3 text-left text-xs font-semibold uppercase tracking-wide text-ink-faint">
               Field
             </th>
             {courses.map((c) => {
               const u = universityById[c.universityId];
               return (
-                <th key={c.id} className="min-w-[200px] border-b border-slate-200 bg-white p-3 text-left align-top">
+                <th key={c.id} role="columnheader" className="cmp-course min-w-[200px] border-b border-slate-200 bg-white p-3 text-left align-top">
                   <div className="flex items-start justify-between gap-2">
                     <div className="min-w-0">
                       <div className="truncate text-xs font-medium text-ink-faint">{u?.shortName}</div>
@@ -498,15 +498,16 @@ export function ComparisonTable({ courses }: { courses: Course[] }) {
             })}
           </tr>
         </thead>
-        <tbody>
+        <tbody role="rowgroup">
           {visibleRows.map((row) => {
             const differs = Boolean(row.compareKey) && rowDiffers(row);
             return (
-              <tr key={row.id} className="align-top">
+              <tr key={row.id} role="row" className="align-top">
                 <th
                   scope="row"
+                  role="rowheader"
                   className={cx(
-                    'sticky left-0 z-10 border-b border-r border-slate-200 bg-slate-50 p-3 text-left text-xs font-medium text-ink-muted',
+                    'cmp-rowh sticky left-0 z-10 border-b border-r border-slate-200 bg-slate-50 p-3 text-left text-xs font-medium text-ink-muted',
                     differs && 'text-navy-900',
                   )}
                 >
@@ -523,7 +524,12 @@ export function ComparisonTable({ courses }: { courses: Course[] }) {
                 {courses.map((c) => {
                   const tone = row.tone ? row.tone(c, entries) : 'none';
                   return (
-                    <td key={c.id} className={cx('border-b border-slate-200 p-3 text-ink', TONE_CLASS[tone])}>
+                    <td
+                      key={c.id}
+                      role="cell"
+                      data-label={`${universityById[c.universityId]?.shortName ?? ''} ${c.name}`.trim()}
+                      className={cx('cmp-cell border-b border-slate-200 p-3 text-ink', TONE_CLASS[tone])}
+                    >
                       {row.render(c, universityById[c.universityId], eligibility[c.id])}
                     </td>
                   );

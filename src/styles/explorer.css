@@ -1043,7 +1043,7 @@
     font-size: 22px;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 339px) {
   .r-facts {
     grid-template-columns: minmax(0, 1fr);
   }
