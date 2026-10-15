@@ -1,4 +1,5 @@
 import { PageLoading } from '@/components/PageLoading';
+import { Suspense, lazy } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { usePageTitle } from '@/lib/page-title';
 import { ADVISORY_FURTHER_MATHS } from '@/types';
@@ -7,7 +8,6 @@ import { InfoTooltip } from '@/components/InfoTooltip';
 import { SourceBadge, VerificationBadge } from '@/components/SourceBadge';
 import { ReportIssue } from '@/components/ReportIssue';
 import { SubjectGuidance } from '@/components/SubjectGuidance';
-import { TuitionFees } from '@/components/TuitionFees';
 import { subjectGuidanceFor } from '@/data/university-subject-guidance';
 import { SubjectRequirementRow } from '@/components/SubjectRequirement';
 import { StudentProfilePanel } from '@/components/StudentProfilePanel';
@@ -44,6 +44,9 @@ import { filledGrades } from '@/lib/grades';
 import { RequirementLedger } from '@/components/RequirementLedger';
 import { MAX_COMPARE, useApp } from '@/state/AppContext';
 
+// Fee data is ~280 KB and sits at the bottom of the page: fetched after the course itself has rendered.
+const TuitionFees = lazy(() => import('@/components/TuitionFees').then((m) => ({ default: m.TuitionFees })));
+
 export function CourseDetailPage() {
   const { id } = useParams<{ id: string }>();
   const {
@@ -60,7 +63,7 @@ export function CourseDetailPage() {
   } = useApp();
 
   if (loading) {
-    return <PageLoading rows={5} />;
+    return <PageLoading rows={5} layout="detail" />;
   }
 
   const course = id ? courseById[id] : undefined;
@@ -660,7 +663,9 @@ export function CourseDetailPage() {
 
           {/* v1.1: fees sit after every admissions card, in their own card, so
               they can never be read as part of the entry requirements. */}
-          <TuitionFees course={course} />
+          <Suspense fallback={<div className="fees-ph" aria-hidden="true" />}>
+            <TuitionFees course={course} />
+          </Suspense>
         </div>
 
         <aside className="space-y-4">

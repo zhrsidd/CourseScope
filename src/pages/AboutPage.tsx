@@ -6,7 +6,6 @@ import { Collapse } from '@/components/ui/Collapse';
 import { IconChevron } from '@/components/ui/icons';
 import { useState, type ReactNode } from 'react';
 import { useApp } from '@/state/AppContext';
-import { PageLoading } from '@/components/PageLoading';
 import { APP_VERSION, IS_PRE_RELEASE, RELEASES } from '@/data/version';
 import { BRAND_NAME, BRAND_POSITIONING } from '@/lib/brand';
 import { FeedbackLink } from '@/components/ReportIssue';
@@ -37,7 +36,7 @@ const TOC: [string, string][] = [
 
 function AboutPageInner() {
   usePageTitle('About the data');
-  const { universities, courses } = useApp();
+  const { loading, universities, courses } = useApp();
   const [logOpen, setLogOpen] = useState(false);
   const verifiedCount = courses.filter((c) => c.provenance.verificationStatus === 'verified' || c.provenance.verificationStatus === 'partially-verified').length;
 
@@ -71,12 +70,30 @@ function AboutPageInner() {
         <div className="ab-main">
           <Sect id="ab-coverage" title="Where the catalogue stands">
             <p>
-              {courses.length} course records across {universities.length} universities, of which{' '}
-              {verifiedCount} have had their entry requirements read against an official source. Each
-              tile below is one course record.
+              Each tile in the table below is one course record, shaded by what is known about its entry
+              requirements: read against an official source, awaiting our research, or not yet published by
+              the university.
             </p>
+            {loading ? (
+              /* Same words as the sentence below, hidden, so it wraps to the same number of lines. */
+              <p className="ab-ph-text" aria-hidden="true">
+                000 course records across 00 universities, of which 000 have had their entry requirements read
+                against an official source.
+              </p>
+            ) : (
+              <p>
+                {courses.length} course records across {universities.length} universities, of which{' '}
+                {verifiedCount} have had their entry requirements read against an official source.
+              </p>
+            )}
             <div className="ab-wide">
-              <CoverageMatrix courses={courses} universities={universities} />
+              {loading ? (
+                <div className="ab-ph-matrix" role="status">
+                  <span className="sr-only">Loading the coverage table…</span>
+                </div>
+              ) : (
+                <CoverageMatrix courses={courses} universities={universities} />
+              )}
             </div>
             <p className="ab-callout">
               There are no placeholder records left. Every course listed here has an official source
@@ -379,7 +396,7 @@ function AboutPageInner() {
   );
 }
 
+/** Everything on this page except the coverage matrix is prose, so it renders without waiting for the catalogue. */
 export function AboutPage() {
-  const { loading } = useApp();
-  return loading ? <PageLoading narrow /> : <AboutPageInner />;
+  return <AboutPageInner />;
 }

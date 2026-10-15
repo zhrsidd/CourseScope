@@ -27,7 +27,7 @@ export function UniversityDetailPage() {
   const university = universities.find((u) => u.slug === slug);
   usePageTitle(loading ? undefined : university?.name);
 
-  if (loading) return <PageLoading rows={5} />;
+  if (loading) return <PageLoading rows={5} layout="detail" />;
   if (!university) {
     return (
       <div className="mx-auto max-w-3xl px-4 py-16">

@@ -5,6 +5,17 @@ The student-facing release notes are also shown in the app, on the methodology p
 
 ## CourseScope v2 (in development, not released)
 
+- **Phase 5 (final pass): LCP on Course, About and Universities.** The regression after code splitting was not
+  caused by data size. The route fade started at opacity 0 (Chrome does not count transparent elements as
+  painted), and the catalogue module evaluation plus the fee-chunk preload competed with first paint on the
+  main thread. Fixes: the catalogue loads after first paint; entry animations start from an `is-ready`
+  class once data has arrived, so content is visible immediately; the fee table is lazy behind a
+  reserved-height placeholder; eligibility is evaluated lazily per course (identical results, checked in
+  `engine-check.ts`); About and the detail pages render their static text before data; skeletons now have
+  the same geometry as the content they stand in for (Offer Ladder, university list, About sentence).
+  Splitting the catalogue by entry year was evaluated and not done: 2028 records are 22% of the data and
+  are derived from the 2027 ones, so it would not have helped the affected routes.
+
 - **Phase 5: product experience, motion and polish.**
   - *Pages:* university detail redesigned (editorial header with a record-status line, subject filter,
     sticky ruled sidebar); shortlist rebuilt as a workspace (sort, select, compare selected, undo);

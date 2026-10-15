@@ -7,6 +7,7 @@ import { Footer } from '@/components/Footer';
 import { Navbar } from '@/components/Navbar';
 import { EmptyState } from '@/components/ui/primitives';
 import { usePageTitle } from '@/lib/page-title';
+import { useApp } from '@/state/AppContext';
 import { LandingPage } from '@/pages/LandingPage';
 import { SearchPage } from '@/pages/SearchPage'; // the product's main screen: in the entry chunk, not behind a second round trip
 import { PageLoading } from '@/components/PageLoading';
@@ -28,6 +29,7 @@ const routes = {
   ShortlistPage: () => import('@/pages/ShortlistPage'),
   AboutPage: () => import('@/pages/AboutPage'),
   AdminPage: () => import('@/pages/AdminPage'),
+  TuitionFees: () => import('@/components/TuitionFees'), // not a route: prefetched with them so the first course page opens warm
 };
 const BrowsePage = lazy(() => routes.BrowsePage().then((m) => ({ default: m.BrowsePage })));
 const UniversitiesPage = lazy(() => routes.UniversitiesPage().then((m) => ({ default: m.UniversitiesPage })));
@@ -51,6 +53,28 @@ function usePrefetchRoutes() {
     if (document.readyState === 'complete') start();
     else window.addEventListener('load', start, { once: true });
   }, []);
+}
+
+/**
+ * Marks the document `is-ready` once the first screen is on its way: the catalogue has arrived and a
+ * couple of frames have been painted. Entry animations are scoped to `.is-ready`, so the cold load is
+ * never held back by a fade (an element at opacity 0 is not counted as painted, which delayed the
+ * largest-contentful-paint by several hundred ms), while later navigation and filtering still animate.
+ */
+function ReadyFlag() {
+  const { loading } = useApp();
+  useEffect(() => {
+    if (loading) return;
+    let id2 = 0;
+    const id1 = requestAnimationFrame(() => {
+      id2 = requestAnimationFrame(() => document.documentElement.classList.add('is-ready'));
+    });
+    return () => {
+      cancelAnimationFrame(id1);
+      cancelAnimationFrame(id2);
+    };
+  }, [loading]);
+  return null;
 }
 
 function ScrollToTop() {
@@ -95,6 +119,7 @@ export default function App() {
   return (
     <AppProvider>
       <HashRouter>
+        <ReadyFlag />
         <ScrollToTop />
         <div className="flex min-h-screen flex-col">
           {/*

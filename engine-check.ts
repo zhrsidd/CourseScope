@@ -72,7 +72,7 @@ import {
   type FilterState,
 } from '@/lib/filters';
 import { explainEligibility, keyEligibilityReason, reviewKind } from '@/lib/explain';
-import { evaluateCatalogue } from '@/lib/eligibility';
+import { evaluateCatalogue, evaluateCatalogueLazily } from '@/lib/eligibility';
 import { importCoursesCsv, importCoursesJson } from '@/lib/importers';
 import { validateCourse, validateUniversity, validateCatalogue } from '@/lib/validation';
 import {
@@ -6353,6 +6353,32 @@ check(
   check('Ladder: A*A*A sits above A*AA, which sits above AAA', [at('A*A*A'), at('A*AA'), at('AAA')].every((i) => i >= 0) && at('A*A*A') < at('A*AA') && at('A*AA') < at('AAA'), true);
   check('Ladder: contextual offers are never placed', lad.rungs.every((r) => r.courses.every((c) => !primaryOffer(c)?.isContextual)), true);
   check('Ladder: 2028 shells have no offer to place', buildLadder(courses.filter((c) => c.applicationYear === '2028')).placed, 0);
+}
+
+/* ================================================================== */
+/* v2 Phase 5b: lazy eligibility is the same eligibility               */
+/* ================================================================== */
+{
+  console.log('\nv2 — lazy eligibility');
+  const mk = (al: [string, string][], fm: boolean | null, y: '2027' | '2028') =>
+    ({ aLevels: al.map(([subject, grade], i) => ({ id: `a${i}`, subject, grade })), gcses: [], applicationYear: y, schoolOffersFurtherMathematics: fm, notes: '' }) as Parameters<typeof evaluateCatalogue>[1];
+  const profiles = [
+    mk([], null, '2027'),
+    mk([['Mathematics', 'A*'], ['Physics', 'A*'], ['Further Mathematics', 'A']], true, '2027'),
+    mk([['Mathematics', 'B'], ['Biology', 'C'], ['English Literature', 'A']], null, '2027'),
+    mk([['Mathematics', 'A*'], ['Physics', 'A'], ['Chemistry', 'A']], null, '2028'),
+  ];
+  let differing = 0, keysDiffer = 0;
+  for (const p of profiles) {
+    const eager = evaluateCatalogue(courses, p);
+    const lazy = evaluateCatalogueLazily(courses, p);
+    if (Object.keys(lazy).length !== Object.keys(eager).length) keysDiffer++;
+    for (const c of courses) if (JSON.stringify(lazy[c.id]) !== JSON.stringify(eager[c.id])) differing++;
+    if (lazy['no-such-course'] !== undefined || 'no-such-course' in lazy) differing++;
+    if (lazy[courses[0].id] !== lazy[courses[0].id]) differing++; // cached: same object twice
+  }
+  check('lazy eligibility equals eager for every course under four profiles (incl. no grades)', differing, 0);
+  check('  …and exposes the same set of course ids', keysDiffer, 0);
 }
 
 console.log(failures === 0 ? '\nAll checks passed.' : `\n${failures} check(s) failed.`);

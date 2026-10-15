@@ -9,7 +9,7 @@ import {
 } from 'react';
 import type { Course, EligibilityReport, StudentProfile, University } from '@/types';
 import { dataSource } from '@/lib/dataSource';
-import { evaluateCatalogue } from '@/lib/eligibility';
+import { evaluateCatalogueLazily } from '@/lib/eligibility';
 import { emptyStudentProfile, isStudentProfile } from '@/lib/grades';
 import { isStringArray, useLocalStorage } from '@/hooks/useLocalStorage';
 import { initialEntryYear, saveEntryYear, urlEntryYear } from '@/lib/entry-year';
@@ -171,7 +171,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
     return out;
   }, [courses]);
 
-  const eligibility = useMemo(() => evaluateCatalogue(courses, profile), [courses, profile]);
+  const eligibility = useMemo(() => evaluateCatalogueLazily(courses, profile), [courses, profile]);
 
   const hasVerifiedData = useMemo(
     () =>

@@ -21,13 +21,24 @@ export interface DataSource {
 }
 
 /**
- * The catalogue chunk is requested as soon as this module is evaluated (in the main bundle), not when
- * React has mounted and an effect asks for it, so downloading and evaluating it overlaps with rendering
- * the shell and the route's own chunk.
+ * Resolves once the browser has had a chance to paint what is already on screen (the shell and the
+ * route's heading), or after 400 ms if frames are not being produced (a background tab). The catalogue
+ * module takes a few hundred milliseconds of main-thread time to evaluate on a slow phone; running it
+ * before the first paint delays every heading and paragraph on the page by that much.
  */
-const catalogueChunk: Promise<typeof import('@/data')> | null =
-  typeof window === 'undefined' ? null : import('@/data');
-catalogueChunk?.catch(() => undefined); // a failure is reported by load(), which awaits the same promise
+function afterFirstPaint(): Promise<void> {
+  return new Promise((resolve) => {
+    const done = () => resolve();
+    const timer = setTimeout(done, 400);
+    if (typeof requestAnimationFrame === 'undefined') return;
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => {
+        clearTimeout(timer);
+        setTimeout(done, 0);
+      }),
+    );
+  });
+}
 
 /** The catalogue compiled into the bundle. */
 export class StaticDataSource implements DataSource {
@@ -39,7 +50,8 @@ export class StaticDataSource implements DataSource {
   async load(): Promise<Catalogue> {
     if (this.latencyMs > 0) await new Promise((r) => setTimeout(r, this.latencyMs));
     // A separate chunk: the app shell paints first and the catalogue follows.
-    const { courses, universities } = await (catalogueChunk ?? import('@/data'));
+    await afterFirstPaint();
+    const { courses, universities } = await import('@/data');
     return { universities, courses };
   }
 }

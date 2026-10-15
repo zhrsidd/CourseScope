@@ -583,7 +583,8 @@
   .ur-counts { grid-column: 1; grid-row: 2; }
   .ur-actions { grid-column: 2; grid-row: 1 / span 2; flex-direction: column; align-items: flex-end; gap: 8px; }
 }
-.ur-skel { min-height: 62px; }
+.ur-skel { min-height: 71px; align-content: center; }
+@media (max-width: 640px) { .ur-skel { min-height: 101px; } }
 .sk { display: block; height: 12px; border-radius: 3px; background: var(--line); }
 .sk-l { width: 55%; } .sk-s { width: 30%; justify-self: end; }
 @media (prefers-reduced-motion: no-preference) { .sk { animation: sk-pulse 1.4s ease-in-out infinite; } @keyframes sk-pulse { 50% { opacity: .45; } } }
@@ -600,7 +601,8 @@
 
 /* ---------------- Route change: the page eases in (opacity only, so sticky layers are untouched) ---------------- */
 @media (prefers-reduced-motion: no-preference) {
-  #content > * { animation: view-in var(--d-base) ease-out; }
+  /* only after the first screen is up: a fade on the cold load delays the largest paint (LCP) */
+  .is-ready #content > * { animation: view-in var(--d-base) ease-out; }
   @keyframes view-in { from { opacity: 0; } }
 }
 
@@ -686,8 +688,8 @@
   .sl-x { grid-column: 3; grid-row: 1; }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .sl-row { animation: sl-in var(--d-base) var(--ease-out, ease-out) both; }
-  .sl-undo { animation: sl-in var(--d-base) var(--ease-out, ease-out) both; }
+  .is-ready .sl-row { animation: sl-in var(--d-base) var(--ease-out, ease-out) both; }
+  .is-ready .sl-undo { animation: sl-in var(--d-base) var(--ease-out, ease-out) both; }
   @keyframes sl-in { from { opacity: 0; transform: translateY(4px); } }
 }
 
@@ -785,12 +787,12 @@
    Nothing loops except the skeleton pulse; nothing moves layout after it has settled. */
 @media (prefers-reduced-motion: no-preference) {
   @keyframes arrive { from { opacity: 0; transform: translateY(6px); } }
-  .rows > .row:nth-child(-n + 8), .sl-row:nth-child(-n + 8) { animation: arrive var(--d-base) var(--e-emph) both; }
-  .rows > .row:nth-child(2) { animation-delay: 30ms; }
-  .rows > .row:nth-child(3) { animation-delay: 60ms; }
-  .rows > .row:nth-child(4) { animation-delay: 90ms; }
-  .rows > .row:nth-child(n + 5):nth-child(-n + 8) { animation-delay: 120ms; }
-  .ud-group, .empty-state, .sl-empty, .ds-same-line { animation: arrive var(--d-base) var(--e-emph) both; }
+  .is-ready .rows > .row:nth-child(-n + 8), .is-ready .sl-row:nth-child(-n + 8) { animation: arrive var(--d-base) var(--e-emph) both; }
+  .is-ready .rows > .row:nth-child(2) { animation-delay: 30ms; }
+  .is-ready .rows > .row:nth-child(3) { animation-delay: 60ms; }
+  .is-ready .rows > .row:nth-child(4) { animation-delay: 90ms; }
+  .is-ready .rows > .row:nth-child(n + 5):nth-child(-n + 8) { animation-delay: 120ms; }
+  .is-ready .ud-group, .is-ready .empty-state, .is-ready .sl-empty, .is-ready .ds-same-line { animation: arrive var(--d-base) var(--e-emph) both; }
   .btn-primary, .btn-secondary, .ud-seg button, .sl-pick, .disclose { transition: background-color var(--d-quick), color var(--d-quick), border-color var(--d-quick), transform var(--d-instant); }
   .btn-primary:active, .btn-secondary:active, .ud-seg button:active { transform: scale(0.98); }
   .r-btn svg { transition: transform var(--d-quick) var(--e-emph); }
@@ -802,3 +804,14 @@
 
 /* WCAG 2.2 target size: standalone links in shortlist rows are at least 24px tall (Phase 5) */
 .sl-uni a, .sl-main h3 a { display: inline-block; min-height: 24px; padding-block: 1px; line-height: 22px; }
+
+/* About: the coverage matrix is the only part that needs the catalogue; reserve its place (Phase 5b) */
+.ab-ph-text { visibility: hidden; }
+.ab-ph-matrix { min-height: 560px; border-top: 1px solid var(--navy-900); background: linear-gradient(var(--line), var(--line)) 0 56px / 100% 1px no-repeat, linear-gradient(var(--line), var(--line)) 0 112px / 100% 1px no-repeat; }
+.fees-ph { min-height: 260px; border: 1px solid var(--line); border-radius: 6px; }
+
+/* Offer Ladder placeholder: same box as the collapsed ladder (chevron, heading, summary). */
+.ol-ph .ol-ph-chev { width: 14px; height: 14px; align-self: center; }
+.ol-ph .ol-ph-sum { display: inline-block; width: 230px; max-width: 100%; height: 13px; vertical-align: middle; }
+
+@media (min-width: 768px) { .ab-ph-matrix { min-height: 1280px; } }

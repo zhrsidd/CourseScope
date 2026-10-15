@@ -74,7 +74,11 @@ export function UniversitiesPage() {
           <p className="pg-count" aria-live="polite">
             {list.length} {list.length === 1 ? 'university' : 'universities'} · {totalCourses} course records, {profile.applicationYear} entry
           </p>
-        ) : null}
+        ) : (
+          <p className="pg-count" aria-hidden="true" style={{ visibility: 'hidden' }}>
+            0 universities · 000 course records, 0000 entry
+          </p>
+        )}
       </div>
 
       {loading ? (

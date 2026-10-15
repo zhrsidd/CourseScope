@@ -391,6 +391,19 @@ export function SearchPage() {
             <OfferLadder courses={results} />
           ) : null}
 
+          {loading && !error && filters.applicationYear !== '2028' ? (
+            /* Same box as the collapsed Offer Ladder, so the rows below do not move when it arrives. */
+            <div className="ol ol-ph" aria-hidden="true">
+              <div className="ol-toggle">
+                <span className="ol-ph-chev" />
+                <span>Offers across these courses</span>
+                <span className="ol-sum">
+                  <span className="sk ol-ph-sum" />
+                </span>
+              </div>
+            </div>
+          ) : null}
+
           {error ? (
             <EmptyState title="The catalogue could not be loaded" description={error} />
           ) : loading ? (
