@@ -255,6 +255,7 @@
   .rl-req {
     grid-column: 1;
     grid-row: 1;
+    width: auto !important;
   }
   .rl-table tbody td.rl-res {
     display: contents;
@@ -739,3 +740,37 @@
   .row .r-btn { min-height: 40px; min-width: 0; }
 }
 @media (max-width: 639px) { .ud-seg button { white-space: nowrap; font-size: 12px; padding-inline: 4px; } }
+
+/* Coverage Matrix on phones: one block per university, no sideways scrolling (Phase 5).
+   Same real table, same data; each cell carries its column label. */
+@media (max-width: 639px) {
+  .cm-scroll { overflow-x: visible; }
+  .cm-table { min-width: 0; display: block; }
+  .cm-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .cm-table tbody, .cm-table tfoot { display: block; }
+  .cm-table tr { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 14px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .cm-table tbody th, .cm-table tfoot th { grid-column: 1 / -1; display: block; padding: 0; font-size: 15px; }
+  .cm-table td { display: block; padding: 0; min-width: 0; }
+  .cm-table td::before { content: attr(data-label); display: block; margin-bottom: 4px; font: 500 11px/14px var(--f-code); letter-spacing: .04em; color: var(--subtle); text-transform: uppercase; }
+  .cm-table td[data-total='0'] { display: none; }
+  .cm-tiles { max-width: none; }
+  .cm-name-long { display: none; }
+  .cm-name-short { display: inline; }
+  .cm-table tfoot tr { border-top: 1px solid var(--navy-900); border-bottom: 0; }
+  .cm-table tfoot b { font-size: 24px; }
+  .cm-count { white-space: normal; }
+}
+
+/* Offer ladder: limits line, and the table alternative stacks on phones (Phase 5) */
+.ol-limits { margin: 0 0 12px; padding-left: 12px; border-left: 2px solid var(--line-strong, var(--subtle)); font-size: 12.5px; line-height: 19px; color: var(--muted); max-width: 70ch; }
+@media (max-width: 639px) {
+  .ol-table { min-width: 0; display: block; }
+  .ol-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .ol-table tbody, .ol-table tr { display: block; }
+  .ol-table tr { padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .ol-table th, .ol-table td { display: block; border: 0; padding: 2px 0; }
+  .ol-table th { font: 600 17px/22px var(--f-sans); color: var(--navy-950); }
+  .ol-table td::before { content: attr(data-label) ': '; color: var(--subtle); font: 500 11px var(--f-code); text-transform: uppercase; }
+}
+.cm-limits { margin: 10px 0 0; max-width: 70ch; font-size: 12.5px; line-height: 19px; color: var(--muted); }
+.ol-which { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; } @media (min-width: 640px) { .ol-which { columns: 2; display: block; } .ol-which li { break-inside: avoid; padding: 1px 0; } }

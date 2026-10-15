@@ -112,12 +112,17 @@ const PROF = (g) => ({ 'ukcf.profile.v1': JSON.stringify(g) });
   const { ctx, p } = await mk(); await go(p, '/search?category=physics&year=2027');
   const ol = p.getByTestId('offer-ladder'); await ol.locator('.ol-toggle').click(); await p.waitForTimeout(400);
   const physicsPlaced = await ol.locator('.ol-rung').evaluateAll((r) => r.reduce((n, x) => n + Number(x.dataset.count), 0));
+  // the as-printed list shows 10 and offers the rest behind "Show all"; expand before counting
+  const moreBtn = ol.locator('.ol-off .ol-more');
+  const hasMore = (await moreBtn.count()) > 0;
+  const capped = hasMore ? await ol.locator('.ol-off ul li').count() : null;
+  if (hasMore) { await moreBtn.click(); await p.waitForTimeout(150); }
   const printed = (await ol.locator('.ol-off ul li').count());
   const unplacedTxt = await ol.locator('.ol-fine').allInnerTexts();
   const unplaced = unplacedTxt.length ? Number(unplacedTxt[0].match(/^(\d+)/)?.[1] ?? 0) : 0;
   const headline = await p.locator('.res-count').innerText();
   const n = Number(headline.match(/(\d+) courses/)?.[1] ?? headline.match(/of (\d+) courses/)?.[1]);
-  t('ladder follows the filters: placed + printed + unplaced equals the results count', physicsPlaced + printed + unplaced === n, `${physicsPlaced}+${printed}+${unplaced} vs ${n}`);
+  t('ladder follows the filters: placed + printed + unplaced equals the results count', physicsPlaced + printed + unplaced === n && (capped === null || capped === 10), `${physicsPlaced}+${printed}+${unplaced} vs ${n}${capped === null ? '' : `, first view ${capped}`}`);
   await go(p, '/search?year=2028');
   t('ladder is absent for 2028, where nothing is published', (await p.getByTestId('offer-ladder').count()) === 0);
   await ctx.close();

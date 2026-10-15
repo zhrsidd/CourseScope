@@ -77,10 +77,15 @@ export function OfferLadder({ courses }: { courses: Course[] }) {
   const [table, setTable] = useState(false);
   const [openRung, setOpenRung] = useState<string | null>(null);
   const [whole, setWhole] = useState<string | null>(null);
+  const [allPrinted, setAllPrinted] = useState(false);
   const uni = (c: Course) => universityById[c.universityId]?.shortName ?? universityById[c.universityId]?.name ?? '';
   const max = Math.max(1, ...model.rungs.map((r) => r.courses.length));
 
   if (model.rungs.length === 0 && model.asPrinted.length === 0) return null;
+
+  // Courses placed here by their standard offer that also publish a different offer
+  // (another grade combination, a Further Maths route…). Only the standard one is drawn.
+  const withOthers = model.rungs.reduce((n, r) => n + r.courses.filter((c) => c.offers.length > 1).length, 0);
 
   const list = (cs: Course[]) =>
     [...cs].sort((a, b) => uni(a).localeCompare(uni(b)) || a.name.localeCompare(b.name));
@@ -106,6 +111,12 @@ export function OfferLadder({ courses }: { courses: Course[] }) {
             Published standard offers for the courses listed below, grouped by grade combination. Rungs
             run from the most demanding combination to the least; the gaps between them are not equal
             differences, and a rung says nothing about your chances.
+          </p>
+          <p className="ol-limits">
+            Each course sits on one rung, by its <b>standard offer</b>. {withOthers > 0
+              ? `${plural(withOthers, 'course')} here ${withOthers === 1 ? 'also publishes' : 'also publish'} another offer — an alternative grade combination or route — which is not drawn; open the course for ${withOthers === 1 ? 'it' : 'them'}. `
+              : 'Alternative offers a course publishes would not be drawn here; the course page lists them. '}
+            Contextual offers are never used, and a published offer is what the university states, not what it will make you.
           </p>
 
           {!table ? (
@@ -152,24 +163,28 @@ export function OfferLadder({ courses }: { courses: Course[] }) {
             </ol>
           ) : (
             <div className="ol-table-wrap" role="region" aria-label="Offers as a table, scrollable" tabIndex={0}>
-              <table className="ol-table">
+              <table className="ol-table" role="table">
                 <caption className="sr-only">Published standard offers by grade combination</caption>
-                <thead>
-                  <tr>
-                    <th scope="col">Offer</th>
-                    <th scope="col">Courses</th>
-                    <th scope="col">Which</th>
+                <thead role="rowgroup">
+                  <tr role="row">
+                    <th scope="col" role="columnheader">Offer</th>
+                    <th scope="col" role="columnheader">Courses</th>
+                    <th scope="col" role="columnheader">Which</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody role="rowgroup">
                   {model.rungs.map((r) => (
-                    <tr key={r.key}>
-                      <th scope="row">{r.grades.join('')}</th>
-                      <td>{r.courses.length}</td>
-                      <td>
-                        {list(r.courses)
-                          .map((c) => `${uni(c)}: ${c.name}`)
-                          .join('; ')}
+                    <tr key={r.key} role="row">
+                      <th scope="row" role="rowheader" data-label="Offer">{r.grades.join('')}</th>
+                      <td role="cell" data-label="Courses">{r.courses.length}</td>
+                      <td role="cell" data-label="Which">
+                        <ul className="ol-which">
+                          {list(r.courses).map((c) => (
+                            <li key={c.id}>
+                              {uni(c)}: {c.name}
+                            </li>
+                          ))}
+                        </ul>
                       </td>
                     </tr>
                   ))}
@@ -184,13 +199,20 @@ export function OfferLadder({ courses }: { courses: Course[] }) {
                 <>
                   <h3>Published as a range or in words — shown as printed, not placed</h3>
                   <ul>
-                    {list(model.asPrinted.map((a) => a.course)).map((c) => (
-                      <li key={c.id}>
-                        <span>{uni(c)}</span> <Link to={`/course/${c.id}`}>{c.name}</Link>:{' '}
-                        <q>{model.asPrinted.find((a) => a.course.id === c.id)?.text}</q>
-                      </li>
-                    ))}
+                    {list(model.asPrinted.map((a) => a.course))
+                      .slice(0, allPrinted ? undefined : FIRST)
+                      .map((c) => (
+                        <li key={c.id}>
+                          <span>{uni(c)}</span> <Link to={`/course/${c.id}`}>{c.name}</Link>:{' '}
+                          <q>{model.asPrinted.find((a) => a.course.id === c.id)?.text}</q>
+                        </li>
+                      ))}
                   </ul>
+                  {model.asPrinted.length > FIRST && !allPrinted ? (
+                    <button type="button" className="link ol-more" onClick={() => setAllPrinted(true)}>
+                      Show all {model.asPrinted.length} courses published this way
+                    </button>
+                  ) : null}
                 </>
               ) : null}
               {model.unplaced.length > 0 ? (

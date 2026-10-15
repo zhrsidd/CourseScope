@@ -107,31 +107,31 @@ export function CoverageMatrix({ courses, universities }: { courses: Course[]; u
   return (
     <figure className="cm" data-testid="coverage-matrix">
       <div className="cm-scroll" role="region" aria-label="Coverage by university, scrollable" tabIndex={0}>
-        <table className="cm-table">
+        <table className="cm-table" role="table">
           <caption className="sr-only">
             Course records by university, subject area and entry year, with the verification state of each. Listed alphabetically.
           </caption>
-          <thead>
-            <tr>
-              <th scope="col">University</th>
+          <thead role="rowgroup">
+            <tr role="row">
+              <th scope="col" role="columnheader">University</th>
               {columns.map((c) => (
-                <th scope="col" key={c.key}>
+                <th scope="col" role="columnheader" key={c.key}>
                   {c.label}
                 </th>
               ))}
             </tr>
           </thead>
-          <tbody>
+          <tbody role="rowgroup">
             {rows.map((r) => (
-              <tr key={r.id} data-uni={r.id}>
-                <th scope="row">
+              <tr key={r.id} data-uni={r.id} role="row">
+                <th scope="row" role="rowheader">
                   <span className="cm-name-long">{r.name}</span>
                   <span className="cm-name-short" aria-hidden="true">{r.short}</span>
                 </th>
                 {columns.map((c) => {
                   const cell = r.cells[c.key];
                   return (
-                    <td key={c.key} data-total={cell.total}>
+                    <td key={c.key} data-total={cell.total} data-label={c.label} role="cell">
                       {cell.total === 0 ? (
                         <span className="cm-none" aria-label="No courses">–</span>
                       ) : countOnly(c.key) ? (
@@ -148,11 +148,11 @@ export function CoverageMatrix({ courses, universities }: { courses: Course[]; u
               </tr>
             ))}
           </tbody>
-          <tfoot>
-            <tr>
-              <th scope="row">All universities</th>
+          <tfoot role="rowgroup">
+            <tr role="row">
+              <th scope="row" role="rowheader">All universities</th>
               {columns.map((c) => (
-                <td key={c.key} data-total={totals[c.key].total}>
+                <td key={c.key} data-total={totals[c.key].total} data-label={c.label} role="cell">
                   <b>{totals[c.key].total}</b>
                   <span className="cm-foot-sub">
                     {totals[c.key].verified + totals[c.key].partial > 0
@@ -173,6 +173,11 @@ export function CoverageMatrix({ courses, universities }: { courses: Course[]; u
         ))}
         <span className="cm-legend-note">One tile is one course record. Alphabetical, not ranked.</span>
       </figcaption>
+      <p className="cm-limits">
+        “Verified” means a person read that course’s entry requirements against the university’s own published page, on
+        the date shown on the course. It does not mean the course is better, that an offer is likely, or that the
+        requirements cannot change. A 2028 tile count is courses the university has not yet published requirements for.
+      </p>
     </figure>
   );
 }

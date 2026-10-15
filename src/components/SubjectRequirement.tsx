@@ -62,7 +62,7 @@ export function SubjectRequirementRow({
     >
       <span className="flex min-w-0 items-center gap-1.5">
         {icon}
-        <span className="truncate font-medium text-ink">{requirement.subject}</span>
+        <span className="font-medium text-ink [overflow-wrap:anywhere]">{requirement.subject}</span>
         {!compact && requirement.acceptedAlternatives.length > 0 ? (
           <span className="truncate text-xs text-ink-faint">
             (or {requirement.acceptedAlternatives.join(', ')})
