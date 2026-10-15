@@ -3,6 +3,18 @@
 The student-facing release notes are also shown in the app, on the methodology page
 (`src/data/version.ts → RELEASES`). Engineering detail is in `DEVELOPER_NOTES` in the same file.
 
+## CourseScope v1.1.1 — Hotfix (unreleased)
+
+- **Fixed: "View courses" on the Universities page.** The button linked to `#/search?university=…`,
+  which is not a route, so it opened "Page not found". It now links to the existing discovery
+  route (`#/?university=…`). Checked for all 22 universities: each opens with that university's
+  courses only, and the result count matches the catalogue. No data, eligibility or verification
+  logic changed.
+- **Known limitation (not changed here).** The discovery page reads the `university`, `category`
+  and `subcategory` parameters once, then rewrites the address to `q` only, so the filter is not
+  kept in the address bar and is lost on a refresh or after returning from a course page. This is
+  existing behaviour; shareable filter URLs are part of the v2 routing work.
+
 ## CourseScope v1.1.0 — Tuition fees
 
 *Prepared 1 October 2026 · not tagged until live production verification passes*
