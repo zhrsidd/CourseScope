@@ -9,7 +9,8 @@
 
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
-import { ADMISSIONS_TESTS, TUITION_FEES, allCourses, universities } from '@/data';
+import { ADMISSIONS_TESTS, allCourses, universities } from '@/data';
+import { TUITION_FEES } from '@/data/tuition-fees';
 import { serialiseCourse } from '@/lib/importers';
 
 const OUT = join(process.cwd(), 'data');

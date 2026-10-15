@@ -20,6 +20,15 @@ export interface DataSource {
   load(): Promise<Catalogue>;
 }
 
+/**
+ * The catalogue chunk is requested as soon as this module is evaluated (in the main bundle), not when
+ * React has mounted and an effect asks for it, so downloading and evaluating it overlaps with rendering
+ * the shell and the route's own chunk.
+ */
+const catalogueChunk: Promise<typeof import('@/data')> | null =
+  typeof window === 'undefined' ? null : import('@/data');
+catalogueChunk?.catch(() => undefined); // a failure is reported by load(), which awaits the same promise
+
 /** The catalogue compiled into the bundle. */
 export class StaticDataSource implements DataSource {
   readonly id = 'static-seed';
@@ -30,7 +39,7 @@ export class StaticDataSource implements DataSource {
   async load(): Promise<Catalogue> {
     if (this.latencyMs > 0) await new Promise((r) => setTimeout(r, this.latencyMs));
     // A separate chunk: the app shell paints first and the catalogue follows.
-    const { courses, universities } = await import('@/data');
+    const { courses, universities } = await (catalogueChunk ?? import('@/data'));
     return { universities, courses };
   }
 }

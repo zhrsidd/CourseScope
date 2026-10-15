@@ -181,13 +181,9 @@ export const v08Courses: Course[] = [...v08ClosureCourses];
  */
 export const v09Courses: Course[] = [...v09QmulCourses, v09KclBEng];
 export * from './taxonomy';
-export {
-  TUITION_FEES,
-  TUITION_FEE_GAPS,
-  FEE_RESEARCHED_YEARS,
-  feesForCourse,
-  type TuitionFeeGap,
-} from './tuition-fees';
+// Tuition fees are deliberately NOT re-exported here: they are ~280 KB of data used only by the course
+// page and the admin view, and re-exporting them put them in the catalogue chunk every page waits for.
+// Import from '@/data/tuition-fees' instead.
 
 /* ------------------------------------------------------------------ */
 /* Production data versus test fixtures                                */

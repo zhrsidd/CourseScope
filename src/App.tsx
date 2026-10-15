@@ -8,6 +8,7 @@ import { Navbar } from '@/components/Navbar';
 import { EmptyState } from '@/components/ui/primitives';
 import { usePageTitle } from '@/lib/page-title';
 import { LandingPage } from '@/pages/LandingPage';
+import { SearchPage } from '@/pages/SearchPage'; // the product's main screen: in the entry chunk, not behind a second round trip
 import { PageLoading } from '@/components/PageLoading';
 import { hasSearchParams } from '@/lib/search-url';
 import { AppProvider } from '@/state/AppContext';
@@ -19,7 +20,6 @@ import { AppProvider } from '@/state/AppContext';
  * already on its way before they ask for it.
  */
 const routes = {
-  SearchPage: () => import('@/pages/SearchPage'),
   BrowsePage: () => import('@/pages/BrowsePage'),
   UniversitiesPage: () => import('@/pages/UniversitiesPage'),
   UniversityDetailPage: () => import('@/pages/UniversityDetailPage'),
@@ -29,7 +29,6 @@ const routes = {
   AboutPage: () => import('@/pages/AboutPage'),
   AdminPage: () => import('@/pages/AdminPage'),
 };
-const SearchPage = lazy(() => routes.SearchPage().then((m) => ({ default: m.SearchPage })));
 const BrowsePage = lazy(() => routes.BrowsePage().then((m) => ({ default: m.BrowsePage })));
 const UniversitiesPage = lazy(() => routes.UniversitiesPage().then((m) => ({ default: m.UniversitiesPage })));
 const UniversityDetailPage = lazy(() => routes.UniversityDetailPage().then((m) => ({ default: m.UniversityDetailPage })));
@@ -45,8 +44,12 @@ function usePrefetchRoutes() {
     const run = () => Object.entries(routes).forEach(([name, load]) => {
         if (name !== 'AdminPage') void load().catch(() => undefined); // admin is never prefetched
       });
-    if (idle) idle(run, { timeout: 4000 });
-    else setTimeout(run, 2500);
+    // Wait until the first screen has painted and settled (a second after `load`), then use idle time.
+    // Starting at mount competes with the first render for the main thread, which delayed the
+    // first content on a throttled CPU by several hundred milliseconds.
+    const start = () => setTimeout(() => (idle ? idle(run, { timeout: 4000 }) : run()), 1200);
+    if (document.readyState === 'complete') start();
+    else window.addEventListener('load', start, { once: true });
   }, []);
 }
 

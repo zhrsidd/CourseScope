@@ -96,11 +96,29 @@ function fontPreloadPlugin(base0: string): Plugin {
         const names = Object.keys(ctx.bundle ?? {}).filter((f) =>
           /(geist-latin-wght-normal|instrument-serif-latin-400-normal)-.*\.woff2$/.test(f),
         );
-        return names.map((n) => ({
+        const tags = names.map((n) => ({
           tag: 'link',
           attrs: { rel: 'preload', as: 'font', type: 'font/woff2', href: `${base0}${n}`, crossorigin: '' },
           injectTo: 'head' as const,
         }));
+        // The catalogue is a dynamic import started once React mounts; without a hint the browser only
+        // discovers it after the main bundle has been parsed and run. Preloading it lets the two download
+        // in parallel. (The single-file build inlines everything, so there is no such chunk there.)
+        const data = Object.values(ctx.bundle ?? {}).find(
+          (c) => c.type === 'chunk' && c.isDynamicEntry && (c.moduleIds ?? []).some((m) => m.endsWith('/src/data/index.ts')) && (c.moduleIds ?? []).length > 20,
+        );
+        if (data) {
+          tags.push({ tag: 'link', attrs: { rel: 'modulepreload', href: `${base0}${data.fileName}`, crossorigin: '' } as never, injectTo: 'head' as const });
+        }
+        // Route chunks are small (about 30 KB gzipped between them). Without a hint each one is requested
+        // only when the router first renders it, which put a network round trip in front of every
+        // page other than the landing and search pages. Admin is never preloaded.
+        for (const c of Object.values(ctx.bundle ?? {})) {
+          if (c.type === 'chunk' && c.isDynamicEntry && /\/src\/pages\/(?!AdminPage)\w+\.tsx$/.test(c.facadeModuleId ?? '')) {
+            tags.push({ tag: 'link', attrs: { rel: 'modulepreload', href: `${base0}${c.fileName}`, crossorigin: '' } as never, injectTo: 'head' as const });
+          }
+        }
+        return tags;
       },
     },
   };
