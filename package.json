@@ -14,7 +14,8 @@
     "preview": "vite preview",
     "qa": "node smoke.v09.mjs",
     "release:verify": "npm run typecheck && npm run check && npm run build",
-    "qa:routing": "node qa.routing.mjs"
+    "qa:routing": "node qa.routing.mjs",
+    "qa:viz": "node qa.viz.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

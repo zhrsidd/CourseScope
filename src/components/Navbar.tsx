@@ -54,7 +54,7 @@ export function Navbar() {
         <div className="ml-auto flex items-center gap-1.5 sm:gap-2">
           <Link
             to="/compare"
-            className="btn-secondary btn-sm !px-2.5 sm:!px-3"
+            className="btn-secondary btn-sm !px-2 sm:!px-3"
             aria-label={`Comparison: ${compareIds.length} courses`}
           >
             <IconCompare width={14} height={14} />
@@ -65,7 +65,7 @@ export function Navbar() {
               </span>
             ) : null}
           </Link>
-          <Link to="/shortlist" className="btn-secondary btn-sm !px-2.5 sm:!px-3" aria-label="My shortlist">
+          <Link to="/shortlist" className="btn-secondary btn-sm !px-2 sm:!px-3" aria-label="My shortlist">
             <IconHeart width={14} height={14} filled={savedCount > 0} />
             <span className="hidden sm:inline">Shortlist</span>
             {savedCount > 0 ? (
@@ -76,7 +76,7 @@ export function Navbar() {
           </Link>
           <button
             type="button"
-            className="btn-secondary btn-sm !px-2.5 sm:!px-3 lg:hidden"
+            className="btn-secondary btn-sm !px-2 sm:!px-3 lg:hidden"
             onClick={() => setOpen((o) => !o)}
             aria-expanded={open}
           >

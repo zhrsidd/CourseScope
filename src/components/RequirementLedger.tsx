@@ -221,7 +221,7 @@ export function RequirementLedger({
               Admissions test
             </th>
             <td className="rl-pub" data-label="Published">
-              {admissionsTestFullLabel(course.admissionsTest)}
+              {course.admissionsTest.code === 'unknown' ? 'Not recorded' : admissionsTestFullLabel(course.admissionsTest)}
             </td>
             {showYours ? (
               <td className="rl-you" data-label="Your grades">

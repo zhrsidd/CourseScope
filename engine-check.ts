@@ -59,6 +59,8 @@ import {
   getRankings,
   preferredRanking,
   rankingIsVerified,
+  primaryOffer,
+  typicalOfferLabel,
 } from '@/lib/format';
 import { parseQuery } from '@/lib/search';
 import {
@@ -100,6 +102,10 @@ import {
   UCL_A_LEVEL_SUBJECT_GUIDANCE,
   subjectGuidanceFor,
 } from '@/data';
+import { buildLedgerRows } from '@/components/RequirementLedger';
+import { buildStripRows } from '@/components/DifferenceStrip';
+import { buildCoverage } from '@/components/CoverageMatrix';
+import { buildLadder } from '@/components/OfferLadder';
 import type { ApplicationDeadline, Ranking, StudentProfile, University } from '@/types';
 
 const profile = (
@@ -6269,6 +6275,84 @@ check(
   check('private fields are never read from an address', JSON.stringify([P('?eligibility=meets&onlyShortlisted=1').filters.eligibility, P('?eligibility=meets&onlyShortlisted=1').filters.onlyShortlisted]), '[[],false]');
   check('hasSearchParams recognises every legacy key', ['?q=', '?category=x', '?subcategory=x', '?university=x'].every(hasSearchParams), true);
   check('hasSearchParams ignores unrelated parameters', hasSearchParams('?utm_source=x'), false);
+}
+
+
+/* ================================================================== */
+/* Phase 4 visualisations: they must read, never decide                */
+/* ================================================================== */
+{
+  const strong = profile([['Mathematics', 'A*'], ['Physics', 'A'], ['Further Mathematics', 'A'], ['Chemistry', 'B']], true);
+  const weak = profile([['Mathematics', 'B'], ['Physics', 'C'], ['Chemistry', 'B']], true);
+  const none = profile([], null);
+  const y27 = courses.filter((c) => c.applicationYear === '2027' && c.offers.length > 0);
+
+  // Requirement Ledger: every result cell is the engine's own part, and none is invented.
+  let mismatched = 0, emptyPublished = 0, ledgerRows = 0, bareWithResult = 0, verdictClash = 0;
+  for (const c of y27) {
+    for (const [pr, hasGrades] of [[strong, true], [weak, true], [none, false]] as const) {
+      const report = evaluateCourse(c, pr);
+      const { rows, hasGrades: hg } = buildLedgerRows(c, report, pr);
+      const parts = new Map([report.overallGrades, report.mathematics, report.furtherMathematics, report.physics, report.chemistry, report.otherSubjects, ...report.constraints].map((x) => [x.id, x]));
+      if (hg !== hasGrades) mismatched += 1;
+      for (const r of rows) {
+        ledgerRows += 1;
+        if (!r.published.trim()) emptyPublished += 1;
+        if (!hasGrades && (r.outcome !== null || r.yours !== null || r.note !== null)) bareWithResult += 1;
+        if (hasGrades && parts.get(r.id)?.outcome !== r.outcome) mismatched += 1;
+      }
+      if (hasGrades && report.verdict === 'meets' && rows.some((r) => r.outcome === 'fail')) verdictClash += 1;
+    }
+  }
+  check('Ledger: rows exist for the verified catalogue', ledgerRows > 1000, true);
+  check('Ledger: every row shows its result exactly as the engine reports it', mismatched, 0);
+  check('Ledger: every row states what was published', emptyPublished, 0);
+  check('Ledger: with no grades no row carries a result or a student value', bareWithResult, 0);
+  check('Ledger: a "meets" verdict never sits above a failing row', verdictClash, 0);
+  const oxf = byId['oxford-physics-mphys--2027'];
+  if (oxf) {
+    const led = buildLedgerRows(oxf, evaluateCourse(oxf, strong), strong);
+    check('Ledger: overall-grades row publishes the pathway profile verbatim', led.rows.find((r) => r.id === evaluateCourse(oxf, strong).overallGrades.id)?.published, led.offer?.gradeProfile);
+  }
+
+  // Difference Strip: it marks differences and never picks a winner.
+  const a = byId['ucl-physics-bsc--2027'], b = byId['durham-physics-bsc--2027'];
+  if (a && b) {
+    const same = buildStripRows([a, a]);
+    check('Strip: a course against itself differs nowhere', same.every((r) => r.allSame && r.cells.every((x) => x.kind === 'same')), true);
+    const diff = buildStripRows([a, b]);
+    check('Strip: every cell is the displayed text of the record', diff.find((r) => r.id === 'offer')?.cells.map((x) => x.text).join('|'), [a, b].map((c) => typicalOfferLabel(c)).join('|'));
+    check('Strip: allSame is true exactly when all cells are equal', diff.every((r) => r.allSame === (new Set(r.cells.map((x) => x.text)).size === 1)), true);
+    check('Strip: with two courses a differing row marks both sides', diff.filter((r) => !r.allSame).every((r) => r.cells.every((x) => x.kind === 'diff')), true);
+    const withVerdict = buildStripRows([a, b], { id: 'verdict', label: 'Your result', value: (c) => evaluateCourse(c, strong).verdict });
+    check('Strip: the optional result row is placed second', withVerdict[1].id, 'verdict');
+  }
+
+  // Coverage Matrix: totals must equal the catalogue itself.
+  const cov = buildCoverage(courses, universities);
+  const cells = cov.rows.flatMap((r) => Object.values(r.cells));
+  const gridTotal = cells.reduce((n, c) => n + c.total, 0);
+  const recorded = courses.filter((c) => c.applicationYear).length;
+  check('Coverage: every dated record appears in exactly one cell', gridTotal, recorded);
+  check('Coverage: column totals add up to the grid', Object.values(cov.totals).reduce((n, c) => n + c.total, 0), gridTotal);
+  check('Coverage: verified tiles equal the catalogue count (2027)', cov.columns.filter((c) => c.year === '2027').reduce((n, c) => n + cov.totals[c.key].verified, 0), courses.filter((c) => c.applicationYear === '2027' && c.provenance.verificationStatus === 'verified').length);
+  check('Coverage: awaiting-publication tiles equal the catalogue count (2028)', cov.columns.filter((c) => c.year === '2028').reduce((n, c) => n + cov.totals[c.key]['awaiting-publication'], 0), courses.filter((c) => c.applicationYear === '2028' && c.provenance.verificationStatus === 'awaiting-publication').length);
+  check('Coverage: cells split cleanly into states', cells.every((c) => c.verified + c.partial + c['awaiting-data'] + c['awaiting-publication'] + c.other === c.total), true);
+  const names = cov.rows.map((r) => r.short);
+  check('Coverage: universities are alphabetical, not ranked', names.join('|'), [...names].sort((x, y) => x.localeCompare(y)).join('|'));
+  check('Coverage: no university appears twice', new Set(cov.rows.map((r) => r.id)).size, cov.rows.length);
+
+  // Offer Ladder: categories, honestly placed.
+  const lad = buildLadder(y27);
+  check('Ladder: every course is placed, printed as published, or counted as unplaced', lad.placed + lad.asPrinted.length + lad.unplaced.length, y27.length);
+  check('Ladder: every course on a rung has exactly that published grade combination', lad.rungs.every((r) => r.courses.every((c) => (primaryOffer(c)?.gradeProfileGrades ?? []).join('') === r.key)), true);
+  check('Ladder: no rung is empty and no combination repeats', lad.rungs.every((r) => r.courses.length > 0) && new Set(lad.rungs.map((r) => r.key)).size === lad.rungs.length, true);
+  check('Ladder: anything printed as published could not be reduced to grades', lad.asPrinted.every((x) => !(primaryOffer(x.course)?.gradeProfileGrades?.length)), true);
+  const keys = lad.rungs.map((r) => r.key);
+  const at = (k: string) => keys.indexOf(k);
+  check('Ladder: A*A*A sits above A*AA, which sits above AAA', [at('A*A*A'), at('A*AA'), at('AAA')].every((i) => i >= 0) && at('A*A*A') < at('A*AA') && at('A*AA') < at('AAA'), true);
+  check('Ladder: contextual offers are never placed', lad.rungs.every((r) => r.courses.every((c) => !primaryOffer(c)?.isContextual)), true);
+  check('Ladder: 2028 shells have no offer to place', buildLadder(courses.filter((c) => c.applicationYear === '2028')).placed, 0);
 }
 
 console.log(failures === 0 ? '\nAll checks passed.' : `\n${failures} check(s) failed.`);

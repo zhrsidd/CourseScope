@@ -6,6 +6,7 @@ import { CourseRow } from '@/components/CourseRow';
 import { EntryYearSwitch } from '@/components/EntryYearSwitch';
 import { FilterSidebar } from '@/components/FilterSidebar';
 import { SearchBar } from '@/components/SearchBar';
+import { OfferLadder } from '@/components/OfferLadder';
 import { UrlNotice } from '@/components/UrlNotice';
 import { StudentProfileForm } from '@/components/StudentProfilePanel';
 import { Drawer } from '@/components/ui/Drawer';
@@ -397,6 +398,10 @@ export function SearchPage() {
                 Add your A-Levels
               </button>
             </div>
+          ) : null}
+
+          {!loading && !error && results.length > 1 && filters.applicationYear !== '2028' ? (
+            <OfferLadder courses={results} />
           ) : null}
 
           {error ? (
