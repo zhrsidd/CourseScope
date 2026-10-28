@@ -423,7 +423,7 @@ export function SearchPage() {
             <EmptyState
               icon={<IconSearch width={28} height={28} />}
               title={blocked ? 'This link’s filters cannot match any course' : 'No courses match these filters'}
-              description={blocked ? 'A filter in the address is not one CourseScope recognises, so nothing can match it. Remove the unrecognised filters above to see courses.' : 'Try removing a filter, lowering the grade profile, or clearing the search box. The demo catalogue only contains a sample of courses at each university.'}
+              description={blocked ? 'A filter in the address is not one CourseScope recognises, so nothing can match it. Remove the unrecognised filters above to see courses.' : 'Try removing a filter or clearing the search box. The catalogue covers UK Physics and Engineering degrees only.'}
               action={
                 <button type="button" className="btn-secondary" onClick={resetFilters}>
                   Reset all filters

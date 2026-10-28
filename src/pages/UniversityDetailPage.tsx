@@ -138,7 +138,7 @@ function UniversityDetail({ universityId }: { universityId: string }) {
           {courses.length === 0 ? (
             <EmptyState
               title={`No courses recorded for ${profile.applicationYear} entry`}
-              description="Either this university's records have not been added yet, or requirements for this cycle are not published. Try switching the entry year in your profile."
+              description="This university has no courses recorded for this entry year. Try the other entry year."
             />
           ) : (
             showGroups.map((g) => (

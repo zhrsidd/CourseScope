@@ -5,6 +5,10 @@ The student-facing release notes are also shown in the app, on the methodology p
 
 ## CourseScope v2 (in development, not released)
 
+- **Empty-state copy.** The Explorer no-results text no longer calls the catalogue a "demo" with "a sample of
+  courses"; the university empty state no longer says records "have not been added yet". Audited every
+  empty state; the rest were current. `qa:rc` now checks them.
+
 - **Release-candidate validation.** Real-content timings, real-font screenshots and a new `qa:rc` suite
   (mobile menu, sticky header, drawers, suggestions, reduced motion, an end-to-end journey for 2027 and
   2028). Defects found and fixed: the compare tray squeezed its text into a one-word column at 320-400px;

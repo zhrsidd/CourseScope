@@ -82,6 +82,19 @@ for (const [vp, label] of [[{ width: 390, height: 844 }, '390'], [{ width: 1280,
   await ctx.close();
 }
 
+/* C2. Empty states carry no outdated wording */
+{
+  const { ctx, p } = await mk({ width: 390, height: 844 });
+  await go(p, '/search?q=zzzqqxx'); const txt = await p.locator('main').innerText();
+  t('C2: Explorer no-results says so plainly and never calls the catalogue a demo or sample', /No courses match these filters/.test(txt) && !/demo|sample/i.test(txt), txt.match(/Try removing[^\n]*/)?.[0] ?? '');
+  await go(p, '/universities'); await p.getByLabel('Find a university or city').fill('zzzqq'); await p.waitForTimeout(500);
+  t('C2: Universities no-match message is current', /No universities match that search/.test(await p.locator('main').innerText()));
+  await go(p, '/compare'); await p.evaluate(() => localStorage.removeItem('ukcf.compare.v1')); await go(p, '/compare');
+  t('C2: empty comparison explains how to add courses', /No courses selected yet/.test(await p.locator('main').innerText()));
+  await go(p, '/shortlist'); t('C2: empty shortlist explains where saved items live', /Nothing saved yet/.test(await p.locator('main').innerText()) && !/demo|sample/i.test(await p.locator('main').innerText()));
+  await ctx.close();
+}
+
 /* D. Reduced motion */
 {
   const { ctx, p } = await mk({ width: 390, height: 844 }, { reducedMotion: 'reduce' });
