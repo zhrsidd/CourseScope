@@ -18,7 +18,8 @@
     "qa:viz": "node qa.viz.mjs",
     "qa:p5": "node qa.p5.mjs",
     "qa:a11y": "node qa.a11y.mjs",
-    "qa:visual": "node qa.visual.mjs"
+    "qa:visual": "node qa.visual.mjs",
+    "qa:rc": "node qa.rc.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

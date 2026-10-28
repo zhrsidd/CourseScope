@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { useApp } from '@/state/AppContext';
 import { IconCompare, IconHeart } from './ui/icons';
@@ -18,6 +18,19 @@ const LINKS = [
 export function Navbar() {
   const { compareIds, savedCourseIds, savedUniversityIds } = useApp();
   const [open, setOpen] = useState(false);
+  const menuBtn = useRef<HTMLButtonElement>(null);
+
+  // Escape closes the open menu and hands focus back to the button that opened it.
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Escape') return;
+      setOpen(false);
+      menuBtn.current?.focus();
+    };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [open]);
   const savedCount = savedCourseIds.length + savedUniversityIds.length;
 
   return (
@@ -75,10 +88,12 @@ export function Navbar() {
             ) : null}
           </Link>
           <button
+            ref={menuBtn}
             type="button"
             className="btn-secondary btn-sm !px-2 sm:!px-3 lg:hidden"
             onClick={() => setOpen((o) => !o)}
             aria-expanded={open}
+            aria-controls="mobile-nav"
           >
             Menu
           </button>
@@ -86,7 +101,7 @@ export function Navbar() {
       </div>
 
       {open ? (
-        <nav className="border-t border-slate-200 bg-white px-4 py-2 lg:hidden">
+        <nav id="mobile-nav" className="border-t border-slate-200 bg-white px-4 py-2 lg:hidden">
           {LINKS.map((l) => (
             <NavLink
               key={l.to}

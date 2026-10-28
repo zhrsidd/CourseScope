@@ -1088,3 +1088,23 @@
     transform: none;
   }
 }
+
+/* Narrow phones (320-400px): the text, Clear and Compare cannot share one row without squeezing the
+   text into a one-word column. The text takes the first row; the two buttons share the second. */
+@media (max-width: 400px) {
+  .tray {
+    flex-wrap: wrap;
+    row-gap: 8px;
+    padding: 12px;
+  }
+  .tray .txt {
+    flex: 1 1 100%;
+  }
+  .tray .btn-ghost {
+    flex: 0 0 auto;
+  }
+  .tray .btn-secondary {
+    flex: 1 1 0;
+    justify-content: center;
+  }
+}

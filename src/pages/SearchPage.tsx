@@ -329,6 +329,13 @@ export function SearchPage() {
                     ? `Showing ${visible.length} of ${results.length} courses`
                     : `${results.length} courses`}
               </span>
+              {hasProfile && loading ? (
+                /* Reserve the verdict badges so the rows below do not move when they arrive. */
+                <>
+                  <span className="sk res-ph" style={{ width: 206 }} aria-hidden="true" />
+                  <span className="sk res-ph" style={{ width: 112 }} aria-hidden="true" />
+                </>
+              ) : null}
               {hasProfile && !loading ? (
                 <>
                   {matchCounts.meets > 0 ? (

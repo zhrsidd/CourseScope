@@ -43,9 +43,17 @@ const AdminPage = lazy(() => routes.AdminPage().then((m) => ({ default: m.AdminP
 function usePrefetchRoutes() {
   useEffect(() => {
     const idle = (window as unknown as { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => void }).requestIdleCallback;
-    const run = () => Object.entries(routes).forEach(([name, load]) => {
-        if (name !== 'AdminPage') void load().catch(() => undefined); // admin is never prefetched
-      });
+    // One chunk per idle slot, not all at once: evaluating them back to back is a single long burst
+    // on the main thread that a person typing in the first couple of seconds would feel.
+    const queue = Object.entries(routes).filter(([name]) => name !== 'AdminPage'); // admin is never prefetched
+    const next = () => {
+      const item = queue.shift();
+      if (!item) return;
+      void item[1]()
+        .catch(() => undefined)
+        .then(() => (idle ? idle(next, { timeout: 2000 }) : setTimeout(next, 100)));
+    };
+    const run = next;
     // Wait until the first screen has painted and settled (a second after `load`), then use idle time.
     // Starting at mount competes with the first render for the main thread, which delayed the
     // first content on a throttled CPU by several hundred milliseconds.

@@ -32,16 +32,18 @@ const seed = {
   'ukcf.compare.v1': JSON.stringify(ids),
   'ukcf.entryYear.v1': JSON.stringify('2027'),
 };
+// 1440 / 768 / 390 / 320 are the release widths; 1280 is kept from the earlier baselines.
+const W = [1440, 1280, 768, 390, 320];
 const PAGES = [
-  ['landing', '/', null, [1280, 390]],
-  ['search', '/search?q=physics', null, [1280, 390]],
-  ['browse', '/browse', null, [1280, 390]],
-  ['universities', '/universities', null, [1280, 390, 768]],
-  ['university', '/university/imperial', null, [1280, 390, 768]],
-  ['course', '/course/ucl-physics-bsc--2027', null, [1280, 390, 768]],
-  ['compare', '/compare', null, [1280, 390]],
-  ['shortlist', '/shortlist', null, [1280, 390]],
-  ['coverage-matrix', '/about', '[data-testid=coverage-matrix]', [1280, 390]],
+  ['landing', '/', null, W],
+  ['search', '/search?q=physics', null, W],
+  ['browse', '/browse', null, W],
+  ['universities', '/universities', null, W],
+  ['university', '/university/imperial', null, W],
+  ['course', '/course/ucl-physics-bsc--2027', null, W],
+  ['compare', '/compare', null, W],
+  ['shortlist', '/shortlist', null, W],
+  ['coverage-matrix', '/about', '[data-testid=coverage-matrix]', W],
 ];
 const FREEZE = '*,*::before,*::after{animation:none!important;transition:none!important;caret-color:transparent!important}';
 
@@ -56,6 +58,12 @@ for (const [name, hash, sel, widths] of PAGES) {
     await p.addStyleTag({ content: FREEZE });
     await p.evaluate(() => document.fonts.ready);
     await p.waitForTimeout(600);
+    // A baseline taken with fallback fonts would hide exactly the wrapping this check exists to catch,
+    // so the real self-hosted faces must be loaded (and none may have failed) before any screenshot.
+    const fontState = await p.evaluate(() => [...document.fonts].map((f) => `${f.family}|${f.style}|${f.status}`));
+    const need = ['Instrument Serif|normal|loaded', 'Geist|normal|loaded'];
+    const fontsOk = need.every((n) => fontState.includes(n)) && !fontState.some((f) => /^(Instrument Serif|Geist|Geist Mono)\|/.test(f) && f.endsWith('|error')); // the local() fallbacks may be absent on a bare Linux box; that is not a failure
+    if (!fontsOk) { fail++; console.log(`FAIL  ${name} @${w} — real fonts not loaded: ${fontState.join(', ')}`); await ctx.close(); continue; }
     const shot = sel ? await p.locator(sel).first().screenshot() : await p.screenshot();
     await ctx.close();
     const file = `${DIR}${name}-${w}.png`;

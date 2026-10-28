@@ -5,6 +5,17 @@ The student-facing release notes are also shown in the app, on the methodology p
 
 ## CourseScope v2 (in development, not released)
 
+- **Release-candidate validation.** Real-content timings, real-font screenshots and a new `qa:rc` suite
+  (mobile menu, sticky header, drawers, suggestions, reduced motion, an end-to-end journey for 2027 and
+  2028). Defects found and fixed: the compare tray squeezed its text into a one-word column at 320-400px;
+  the sticky header could cover keyboard focus and in-page jumps (the old Coverage Matrix baseline had the
+  header painted over the table: `scroll-padding-top` added); Escape did not close the mobile menu; with
+  grades saved, the verdict badges arrived after load and nudged the results down (reserved space);
+  background route prefetch now loads one chunk per idle slot instead of all at once. Visual baselines now
+  cover 1440, 1280, 768, 390 and 320px and fail if the self-hosted fonts did not load; the nine existing baselines
+  changed (seven for the tray at 390px, two Coverage Matrix for the header fix) were viewed before being replaced. Firefox and WebKit could not be installed in
+  the build sandbox, so cross-browser coverage is Chromium only.
+
 - **Phase 5 (final pass): LCP on Course, About and Universities.** The regression after code splitting was not
   caused by data size. The route fade started at opacity 0 (Chrome does not count transparent elements as
   painted), and the catalogue module evaluation plus the fee-chunk preload competed with first paint on the
