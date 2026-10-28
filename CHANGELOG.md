@@ -3,7 +3,16 @@
 The student-facing release notes are also shown in the app, on the methodology page
 (`src/data/version.ts → RELEASES`). Engineering detail is in `DEVELOPER_NOTES` in the same file.
 
-## CourseScope v2 (in development, not released)
+## CourseScope v2 (released to production 2026-10-28)
+
+- **Known issues (non-blocking).**
+  - *iPhone Safari: A-Level subject suggestions.* The subject box uses the browser's built-in suggestion
+    list (`<datalist>`). Desktop Chrome and Firefox show a dropdown; iPhone Safari does not show one, and
+    Android Chrome only after a letter or two. Typing a subject and choosing grades still works everywhere.
+    Planned fix: a custom type-ahead list that keeps the same typing-and-suggestions design on every device.
+  - *Cross-browser coverage.* Automated browser QA is Chromium only (Firefox and WebKit could not be
+    installed in the build sandbox). Safari, Firefox, screen reader and real-device checks are manual.
+  - *Explorer and About performance.* Total blocking time is about 420-490 ms at 4x CPU throttle.
 
 - **Staging preview (Vercel).** `vercel.json` gives the hashed `/assets/` files a one-year immutable cache; the
   default was revalidate-on-every-visit. It only affects Vercel; Cloudflare Pages production is unchanged.

@@ -346,6 +346,13 @@ only cover for a piece of engine or validation behaviour moved to
 Rows a clean 2028 shell has replaced are suppressed — see
 `obsoletePlaceholderIds` in `src/lib/identity.ts`.
 
+## Known issues
+
+- **iPhone Safari shows no dropdown for the A-Level subject box.** It uses the browser's built-in
+  suggestion list, which iOS Safari does not draw as a dropdown. Typing a subject still works. Planned fix:
+  a custom type-ahead list (same typing-and-suggestions design on every device). Not a release blocker.
+- Automated browser QA is Chromium only; Safari, Firefox and screen-reader checks are manual.
+
 ## Not modelled yet
 
 Deliberate omissions, so the edges are known rather than discovered: International Baccalaureate,
