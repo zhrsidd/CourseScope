@@ -5,6 +5,9 @@ The student-facing release notes are also shown in the app, on the methodology p
 
 ## CourseScope v2 (in development, not released)
 
+- **Staging preview (Vercel).** `vercel.json` gives the hashed `/assets/` files a one-year immutable cache; the
+  default was revalidate-on-every-visit. It only affects Vercel; Cloudflare Pages production is unchanged.
+
 - **Empty-state copy.** The Explorer no-results text no longer calls the catalogue a "demo" with "a sample of
   courses"; the university empty state no longer says records "have not been added yet". Audited every
   empty state; the rest were current. `qa:rc` now checks them.
