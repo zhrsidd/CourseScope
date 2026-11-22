@@ -7,9 +7,10 @@ The student-facing release notes are also shown in the app, on the methodology p
 
 - **Subject colour accents.** Each subject area has its own accent colour (`--cat-physics`,
   `--cat-engineering`, and `--cat-medicine` reserved for the medicine catalogue) in `tokens.css`. It appears
-  only as an 8 px marker beside the subject's name (`CategoryTag`) on course rows, the course page header and
-  the university page's subject groups. The name is always present, so the colour is never the only signal;
-  in forced-colours mode the marker uses the text colour.
+  on course rows as a thin bar down the row's left edge, at 40% opacity at rest and full strength while the row
+  is hovered or holds focus. The row carries the category name as screen-reader text. The course page header
+  and the university page's subject groups show an 8 px marker beside the subject's name (`CategoryTag`). In
+  forced-colours mode both use the text colour.
 - **Course page decluttered.** The cycle note and the research notes now sit behind a disclosure instead of
   printing in full. In course-specific details, fields with nothing recorded (English language, international
   applicants, placement or study abroad, other UCAS codes) no longer take a "Not recorded" row each; the empty

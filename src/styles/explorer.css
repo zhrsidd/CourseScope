@@ -469,6 +469,34 @@
 .row:focus-within::before {
   opacity: 1;
 }
+/* Subject accent: a thin bar in the category colour down the row's left edge.
+   Quiet at rest, full strength while the row is hovered or holds focus. The
+   category is also in the row's text for screen readers. */
+.row::after {
+  content: '';
+  position: absolute;
+  top: 18px;
+  bottom: 14px;
+  left: -12px;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--cat, transparent);
+  opacity: 0.4;
+}
+.row:hover::after,
+.row:focus-within::after {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .row::after {
+    transition: opacity var(--d-quick) var(--e-standard);
+  }
+}
+@media (forced-colors: active) {
+  .row::after {
+    background: CanvasText;
+  }
+}
 .r-main {
   grid-column: 1;
   grid-row: 1 / span 1;
