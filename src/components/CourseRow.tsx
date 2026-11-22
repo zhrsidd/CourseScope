@@ -13,6 +13,7 @@ import {
 import { filledGrades } from '@/lib/grades';
 import { MAX_COMPARE, useApp } from '@/state/AppContext';
 import { announce } from './Announcer';
+import { CategoryTag } from './CategoryTag';
 import { EligibilityBadge } from './EligibilityBadge';
 import { EligibilityReasons } from './EligibilityReasons';
 import { InfoTooltip } from './InfoTooltip';
@@ -114,6 +115,7 @@ export function CourseRow({
           </h3>
           <span className="r-award">{awardLabel(course)}</span>
           <span className="r-meta">
+            <CategoryTag category={course.subjectCategory} />
             <span>{durationLabel(course.durationYears, course.durationYearsMax)}</span>
             <span>{course.applicationYear} entry</span>
             {course.courseCode ? (

@@ -1108,3 +1108,28 @@
     justify-content: center;
   }
 }
+
+/* ---------- Subject category accent ----------
+   A 8px marker in the category colour beside the category's name. Nothing else
+   is tinted: the rows, cards and headings stay neutral. */
+.cat-physics { --cat: var(--cat-physics); }
+.cat-engineering { --cat: var(--cat-engineering); }
+.cat-medicine { --cat: var(--cat-medicine); }
+.cat-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+.cat-mark {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--cat, var(--control));
+}
+@media (forced-colors: active) {
+  .cat-mark {
+    background: CanvasText;
+  }
+}

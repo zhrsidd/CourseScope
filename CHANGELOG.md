@@ -3,6 +3,24 @@
 The student-facing release notes are also shown in the app, on the methodology page
 (`src/data/version.ts → RELEASES`). Engineering detail is in `DEVELOPER_NOTES` in the same file.
 
+## Unreleased
+
+- **Subject colour accents.** Each subject area has its own accent colour (`--cat-physics`,
+  `--cat-engineering`, and `--cat-medicine` reserved for the medicine catalogue) in `tokens.css`. It appears
+  only as an 8 px marker beside the subject's name (`CategoryTag`) on course rows, the course page header and
+  the university page's subject groups. The name is always present, so the colour is never the only signal;
+  in forced-colours mode the marker uses the text colour.
+- **Course page decluttered.** The cycle note and the research notes now sit behind a disclosure instead of
+  printing in full. In course-specific details, fields with nothing recorded (English language, international
+  applicants, placement or study abroad, other UCAS codes) no longer take a "Not recorded" row each; the empty
+  ones are named once in a single line. Admissions-test rows with nothing recorded (modules, details, test
+  page) are omitted. The specialism is no longer repeated in the header when it matches the subject area.
+  Nothing was removed from the data, and the unpublished-cycle and partially-verified notices still show in full.
+- **Not done yet: QS rankings and medicine.** Both need pages read at the source (topuniversities.com and each
+  university's medicine pages), and those could not be fetched from the build session. Only verified rankings
+  are served (`publicUniversities` in `src/data/universities.ts`), so no ranking positions are shown until
+  real QS records with a source URL, title and check date are entered.
+
 ## CourseScope v2 (released to production 2026-10-28)
 
 - **Known issues (non-blocking).**

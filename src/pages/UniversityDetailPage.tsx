@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { usePageTitle } from '@/lib/page-title';
+import { CategoryTag } from '@/components/CategoryTag';
 import { CourseRow } from '@/components/CourseRow';
 import { InfoTooltip } from '@/components/InfoTooltip';
 import { RankingRow } from '@/components/RankingBadge';
@@ -145,7 +146,7 @@ function UniversityDetail({ universityId }: { universityId: string }) {
               <div key={g.key} className="ud-group">
                 {both && focus === 'all' ? (
                   <h3 className="ud-sub">
-                    {g.label} <span>{g.list.length}</span>
+                    <CategoryTag category={g.key} /> <span>{g.list.length}</span>
                   </h3>
                 ) : null}
                 <div className="rows">
