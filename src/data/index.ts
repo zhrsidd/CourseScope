@@ -38,6 +38,10 @@ import { batch8ImperialMedicine } from './courses.real.batch8.imperial';
 import { batch8KclMedicine } from './courses.real.batch8.kcl';
 import { batch8ManchesterMedicine } from './courses.real.batch8.manchester';
 import { batch8BristolMedicine } from './courses.real.batch8.bristol';
+import { batch9CambridgeMedicine } from './courses.real.batch9.cambridge';
+import { batch9EdinburghMedicine } from './courses.real.batch9.edinburgh';
+import { batch9GlasgowMedicine } from './courses.real.batch9.glasgow';
+import { batch9StAndrewsMedicine } from './courses.real.batch9.st-andrews';
 
 export {
   universities,
@@ -196,6 +200,19 @@ export const batch8MedicineCourses: Course[] = [
   batch8ManchesterMedicine,
   batch8BristolMedicine,
 ];
+
+/**
+ * Batch 9 — Medicine at Cambridge, Edinburgh and Glasgow (verified), and St
+ * Andrews (identity only: no A-level grades are printed), read on 2026-11-24.
+ * Oxford returned a bot challenge and was not read. Research note:
+ * research/medicine-b9.md.
+ */
+export const batch9MedicineCourses: Course[] = [
+  batch9CambridgeMedicine,
+  batch9EdinburghMedicine,
+  batch9GlasgowMedicine,
+  batch9StAndrewsMedicine,
+];
 export * from './taxonomy';
 // Tuition fees are deliberately NOT re-exported here: they are ~280 KB of data used only by the course
 // page and the admin view, and re-exporting them put them in the catalogue chunk every page waits for.
@@ -220,6 +237,7 @@ const seedRows: Course[] = [
   ...v08Courses,
   ...v09Courses,
   ...batch8MedicineCourses,
+  ...batch9MedicineCourses,
   ...shells2028,
 ];
 

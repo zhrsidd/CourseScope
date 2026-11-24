@@ -44106,6 +44106,351 @@
       }
     },
     {
+      "slug": "cambridge-medicine-mb-bchir",
+      "universityId": "cambridge",
+      "name": "Medicine",
+      "subjectCategory": "medicine",
+      "subjectSubcategory": "medicine",
+      "degreeType": "MB",
+      "awardLabel": "MB BChir",
+      "durationYears": 6,
+      "durationYearsMax": null,
+      "courseCode": "A100",
+      "alternativeCourseCodes": [],
+      "applicationYear": "2027",
+      "requirementsPublicationStatus": "published",
+      "latestPublishedYear": null,
+      "cycleNote": "“The entry requirements listed are for entry in 2027 or deferred entry in 2028.” Start date October 2027. First-degree students also graduate with a BA (Hons) after the first three years.",
+      "rawRequirementText": "Minimum offer level A level: A*A*A. To apply to any of our Colleges for Medicine you will need A Levels/IB Higher Levels (or the equivalent) in: Chemistry; one or two other science or mathematics subject from: Mathematics, Biology or Human Biology, Physics, Further Mathematics. The number of science or mathematics subjects you need to have will depend on which College you apply to. Colleges usually require A* in Chemistry.",
+      "minimumEntryStandard": "A*A*A",
+      "offers": [
+        {
+          "label": "Chemistry and two other science or mathematics subjects (accepted at every College)",
+          "gradeProfile": "A*A*A",
+          "required": [
+            "Chemistry"
+          ],
+          "recommended": [],
+          "constraints": [
+            {
+              "kind": "min-count-at-grade",
+              "subjects": [
+                "Mathematics",
+                "Biology",
+                "Human Biology",
+                "Physics",
+                "Further Mathematics"
+              ],
+              "grade": "A",
+              "count": 2,
+              "description": "Two of Mathematics, Biology or Human Biology, Physics, Further Mathematics."
+            }
+          ],
+          "rawText": "To apply to any of our Colleges for Medicine you will need A Levels/IB Higher Levels (or the equivalent) in: Chemistry; one or two other science or mathematics subject from: Mathematics, Biology or Human Biology, Physics, Further Mathematics. The number of science or mathematics subjects you need to have will depend on which College you apply to."
+        },
+        {
+          "label": "Chemistry and one other science or mathematics subject (some Colleges only)",
+          "gradeProfile": "A*A*A",
+          "required": [
+            "Chemistry"
+          ],
+          "recommended": [],
+          "constraints": [
+            {
+              "kind": "min-count-at-grade",
+              "subjects": [
+                "Mathematics",
+                "Biology",
+                "Human Biology",
+                "Physics",
+                "Further Mathematics"
+              ],
+              "grade": "A",
+              "count": 1,
+              "description": "One of Mathematics, Biology or Human Biology, Physics, Further Mathematics."
+            },
+            {
+              "kind": "manual-review",
+              "description": "Only these Colleges require Chemistry and just one other science or mathematics subject: Fitzwilliam, Girton, Homerton, Murray Edwards, Newnham, Selwyn and Trinity Hall. Every other College requires two."
+            }
+          ],
+          "rawText": "Colleges that require Chemistry and one other science or mathematics subject: Fitzwilliam, Girton, Homerton, Murray Edwards, Newnham, Selwyn, Trinity Hall."
+        }
+      ],
+      "mathematics": "not-required",
+      "physics": "not-required",
+      "chemistry": "required",
+      "furtherMathematics": "no-stated-preference",
+      "furtherMathematicsNote": "Further Mathematics is named only as one of the accepted science or mathematics subjects.",
+      "admissionsTest": {
+        "code": "ucat",
+        "name": null,
+        "requirement": "required",
+        "modules": [],
+        "moduleNote": null,
+        "details": "Cambridge looks at the overall cognitive subtest score and “will not be using the situational judgement score as part of our assessment for 2027 entry.” Results are used to select for interview and may be used when making offers. “There is no minimum threshold for UCAT score.”",
+        "officialUrl": "https://www.undergraduate.study.cam.ac.uk/apply/how/medicine-admission-test",
+        "notes": null
+      },
+      "interview": "yes",
+      "interviewNote": "“We assess applicants through a mixture of academic record, UCAT and interviews.” No written work is submitted before interview.",
+      "contextualOffer": {
+        "availability": "unknown",
+        "details": null
+      },
+      "gcseRequirements": "No GCSE requirement is published on this course page.",
+      "englishLanguageRequirements": null,
+      "internationalNotes": null,
+      "placementOrStudyAbroad": null,
+      "notes": "COLLEGES SET THE SUBJECT COUNT and usually require A* in Chemistry; some make offers above the minimum, so check the College’s own page. Not available at Hughes Hall. You cannot apply if you will not be 18 on 1 November of year 1, or if you have failed or been excluded from another medical school. Work experience is strongly recommended. Offer holders need a DBS check, vaccinations, a blood test and an occupational health assessment. LIMITATION: the page lists “Biology or Human Biology” as one option, but the two-subject count treats them separately.",
+      "provenance": {
+        "verificationStatus": "verified",
+        "officialUrl": "https://www.undergraduate.study.cam.ac.uk/courses/medicine-mb-bchir",
+        "sourceUrl": "https://www.undergraduate.study.cam.ac.uk/courses/medicine-mb-bchir",
+        "sourceTitle": "Medicine, MB and BChir | Undergraduate Study",
+        "lastVerified": "2026-11-24",
+        "sources": []
+      }
+    },
+    {
+      "slug": "edinburgh-medicine-mbchb",
+      "universityId": "edinburgh",
+      "name": "Medicine",
+      "subjectCategory": "medicine",
+      "subjectSubcategory": "medicine",
+      "degreeType": "MB",
+      "awardLabel": "MBChB",
+      "durationYears": 6,
+      "durationYearsMax": null,
+      "courseCode": "A100",
+      "alternativeCourseCodes": [],
+      "applicationYear": "2027",
+      "requirementsPublicationStatus": "published",
+      "latestPublishedYear": null,
+      "cycleNote": "The page gives “Year of entry: 2027” and a September 2027 start.",
+      "rawRequirementText": "These are the grades most applicants needed to receive an offer in recent years: AAA in one sitting. All examination grades must be obtained at the first attempt of each subject. The grades you use to meet our entry requirements must include the following at A level: Chemistry; one from Biology/Human Biology, Mathematics/Further Mathematics or Physics. Only one of Mathematics or Further Mathematics will be considered. Only one of Biology or Human Biology will be considered.",
+      "minimumEntryStandard": null,
+      "offers": [
+        {
+          "label": "Standard requirements",
+          "gradeProfile": "AAA",
+          "required": [
+            [
+              "Chemistry",
+              "A"
+            ]
+          ],
+          "recommended": [],
+          "constraints": [
+            {
+              "kind": "one-of",
+              "subjects": [
+                "Biology",
+                "Human Biology",
+                "Mathematics",
+                "Further Mathematics",
+                "Physics"
+              ],
+              "minimumGrade": "A",
+              "description": "One of Biology/Human Biology, Mathematics/Further Mathematics or Physics."
+            }
+          ],
+          "rawText": "AAA in one sitting. Chemistry; one from Biology/Human Biology, Mathematics/Further Mathematics or Physics. Only one of Mathematics or Further Mathematics will be considered. Only one of Biology or Human Biology will be considered."
+        },
+        {
+          "label": "Widening access requirements",
+          "gradeProfile": "AAB",
+          "required": [
+            "Chemistry"
+          ],
+          "recommended": [],
+          "constraints": [
+            {
+              "kind": "one-of",
+              "subjects": [
+                "Biology",
+                "Human Biology",
+                "Mathematics",
+                "Further Mathematics",
+                "Physics"
+              ],
+              "minimumGrade": null,
+              "description": "One of Biology/Human Biology, Mathematics/Further Mathematics or Physics."
+            }
+          ],
+          "isContextual": true,
+          "rawText": "AAB in one sitting. Chemistry; one from Biology/Human Biology, Mathematics/Further Mathematics or Physics. Only one of Mathematics or Further Mathematics will be considered. Only one of Biology or Human Biology will be considered."
+        }
+      ],
+      "mathematics": "recommended",
+      "physics": "recommended",
+      "chemistry": "required",
+      "furtherMathematics": "no-stated-preference",
+      "furtherMathematicsNote": "Further Mathematics is accepted in place of Mathematics, but only one of the two is considered.",
+      "admissionsTest": {
+        "code": "ucat",
+        "name": null,
+        "requirement": "required",
+        "modules": [],
+        "moduleNote": null,
+        "details": "Sit the UCAT in 2026, before applying. Edinburgh scores the academic record, then adds weightings for the Situational Judgement Test and the total UCAT score, and ranks applications. Exemptions only in very exceptional circumstances agreed by 15 July 2026.",
+        "officialUrl": "https://www.ucat.ac.uk/",
+        "notes": null
+      },
+      "interview": "yes",
+      "interviewNote": "About the top-scoring 800 applicants are invited to a half-day assessment day (interview), at Edinburgh Medical School or online.",
+      "contextualOffer": {
+        "availability": "yes",
+        "details": "AAB in one sitting with the same required subjects, for applicants eligible for Edinburgh’s widening access Plus Flag offer. GCSEs at B or 6 instead of A or 7."
+      },
+      "gcseRequirements": "Biology, Chemistry, English and Mathematics at A or 7. Double Award combined sciences at AA/77 may replace the science GCSEs. (Widening access: B or 6, and BB/66.)",
+      "englishLanguageRequirements": null,
+      "internationalNotes": null,
+      "placementOrStudyAbroad": null,
+      "notes": "NO RESITS: all grades must be obtained at the first attempt; resit applicants are not entered into selection except in very exceptional, pre-verified circumstances. Edinburgh assesses only the first official attempt at a required subject, even in a different qualification. Graduate entrants can progress from Year 2 to Year 4. UCAS deadline for 2027 entry: 15 October 2026, 6pm.",
+      "provenance": {
+        "verificationStatus": "verified",
+        "officialUrl": "https://study.ed.ac.uk/programmes/undergraduate/354-mbchb-medicine-6-year-programme",
+        "sourceUrl": "https://study.ed.ac.uk/programmes/undergraduate/354-mbchb-medicine-6-year-programme",
+        "sourceTitle": "MBChB Medicine (6-year programme) MBChB - Undergraduate programmes | The University of Edinburgh",
+        "lastVerified": "2026-11-24",
+        "sources": []
+      }
+    },
+    {
+      "slug": "glasgow-medicine-mbchb",
+      "universityId": "glasgow",
+      "name": "Medicine",
+      "subjectCategory": "medicine",
+      "subjectSubcategory": "medicine",
+      "degreeType": "MB",
+      "awardLabel": "MBChB",
+      "durationYears": 5,
+      "durationYearsMax": null,
+      "courseCode": "A100",
+      "alternativeCourseCodes": [],
+      "applicationYear": "2027",
+      "requirementsPublicationStatus": "published",
+      "latestPublishedYear": null,
+      "cycleNote": "The page is in Glasgow’s “2027 Degree programmes A‑Z” and lists entry requirements “for entry in 2027”.",
+      "rawRequirementText": "UK A-level Standard Entry Requirements: AAA. Additional requirements: A-levels Chemistry and one of either Biology, Physics or Mathematics. GCSE English literature or English language at Grade B or 6. GCSE Biology at Grade B or 6 (if not studied at A-level). UCAT. Interview.",
+      "minimumEntryStandard": null,
+      "offers": [
+        {
+          "label": "UK A-level standard entry requirements",
+          "gradeProfile": "AAA",
+          "required": [
+            [
+              "Chemistry",
+              "A"
+            ]
+          ],
+          "recommended": [],
+          "constraints": [
+            {
+              "kind": "one-of",
+              "subjects": [
+                "Biology",
+                "Physics",
+                "Mathematics"
+              ],
+              "minimumGrade": "A",
+              "description": "One of Biology, Physics or Mathematics."
+            }
+          ],
+          "rawText": "AAA. A-levels Chemistry and one of either Biology, Physics or Mathematics."
+        }
+      ],
+      "mathematics": "recommended",
+      "physics": "recommended",
+      "chemistry": "required",
+      "furtherMathematics": "no-stated-preference",
+      "furtherMathematicsNote": "Further Mathematics is not mentioned for A-level applicants.",
+      "admissionsTest": {
+        "code": "ucat",
+        "name": null,
+        "requirement": "required",
+        "modules": [],
+        "moduleNote": null,
+        "details": "“UCAT is a mandatory component of our selection process. We will not consider any applicant who has not sat the UCAT the summer before applying. No exceptions will be made.”",
+        "officialUrl": "https://www.ucat.ac.uk/",
+        "notes": null
+      },
+      "interview": "yes",
+      "interviewNote": "Interview is listed among the requirements for A-level applicants.",
+      "contextualOffer": {
+        "availability": "unknown",
+        "details": "Glasgow prints adjusted requirements only for Scottish Highers (Access Glasgow and Reach). No adjusted A-level offer is published on this page."
+      },
+      "gcseRequirements": "GCSE English Literature or English Language at grade 6 (B). GCSE Biology at grade 6 (B) if Biology is not taken at A-level.",
+      "englishLanguageRequirements": null,
+      "internationalNotes": null,
+      "placementOrStudyAbroad": null,
+      "notes": "NO RESITS: “Re-sits or additional time to sit qualifications is not permitted. The required grades and subjects must be obtained at one sitting and at the first attempt.” International A-level applicants have a different subject rule (Chemistry, Biology and one of Physics or Mathematics), not recorded here. DEADLINE: “All applications must be received by UCAS by 15 October”; the page prints no year beside it, so no dated deadline is recorded. Limit your UCAS choices to four medical schools.",
+      "provenance": {
+        "verificationStatus": "verified",
+        "officialUrl": "https://www.gla.ac.uk/undergraduate/degrees/medicine/",
+        "sourceUrl": "https://www.gla.ac.uk/undergraduate/degrees/medicine/",
+        "sourceTitle": "University of Glasgow - Undergraduate study - 2027 Degree programmes A‑Z - Medicine",
+        "lastVerified": "2026-11-24",
+        "sources": []
+      }
+    },
+    {
+      "slug": "st-andrews-medicine-bsc",
+      "universityId": "st-andrews",
+      "name": "Medicine",
+      "subjectCategory": "medicine",
+      "subjectSubcategory": "medicine",
+      "degreeType": "BSc",
+      "awardLabel": "BSc (Hons) Medicine",
+      "durationYears": 6,
+      "durationYearsMax": null,
+      "courseCode": "A100",
+      "alternativeCourseCodes": [],
+      "applicationYear": "2027",
+      "requirementsPublicationStatus": "unknown",
+      "latestPublishedYear": null,
+      "cycleNote": "The page reads “Medicine BSc (Hons) A100, 2027 entry”, with a September 2027 start and “Application deadline: Thursday 15 October 2026”.",
+      "rawRequirementText": null,
+      "minimumEntryStandard": null,
+      "offers": [],
+      "mathematics": "unknown",
+      "physics": "unknown",
+      "chemistry": "unknown",
+      "furtherMathematics": "unknown",
+      "furtherMathematicsNote": null,
+      "admissionsTest": {
+        "code": "unknown",
+        "name": null,
+        "requirement": "unknown",
+        "modules": [],
+        "moduleNote": null,
+        "details": null,
+        "officialUrl": null,
+        "notes": null
+      },
+      "interview": "not-stated",
+      "interviewNote": null,
+      "contextualOffer": {
+        "availability": "unknown",
+        "details": null
+      },
+      "gcseRequirements": null,
+      "englishLanguageRequirements": null,
+      "internationalNotes": null,
+      "placementOrStudyAbroad": null,
+      "notes": "A SIX-YEAR ROUTE ACROSS TWO UNIVERSITIES: three years at St Andrews for a BSc (Hons) Medicine, then three years at a partner medical school for an MBChB or MBBS (Scotland route: Aberdeen, Dundee, Edinburgh, Glasgow; England route: Manchester, London; Overseas students go to Manchester). REQUIREMENTS NOT RECORDED: no A-level grades are printed on the course page or the Medicine entry-requirements page, read on 2026-11-24. The pages say applicants take the UCAT and give the lowest UCAT scores selected for interview for 2026 entry (1500 Home funded and Scottish, 1640 UK domicile, 1710 Overseas); these are 2026 figures, not a 2027 requirement.",
+      "provenance": {
+        "verificationStatus": "awaiting-data",
+        "officialUrl": "https://www.st-andrews.ac.uk/subjects/medicine/medicine-bsc-a100/",
+        "sourceUrl": null,
+        "sourceTitle": null,
+        "lastVerified": null,
+        "sources": []
+      }
+    },
+    {
       "slug": "oxford-physics-mphys",
       "universityId": "oxford",
       "name": "Physics",

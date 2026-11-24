@@ -284,8 +284,9 @@ for (const [label, h, expect] of legacy) {
   await p.getByRole('button', { name: 'Show another course' }).click(); await p.waitForTimeout(200);
   t('  …and "Show another course" changes it', (await p.locator('.lp-feat blockquote').innerText()) !== quote);
   const nums = await p.evaluate(() => [...document.querySelectorAll('.lp-state b')].map((e) => e.textContent));
-  // 566 verified for 2027 = 562 + the four verified Medicine courses of batch 8.
-  t('record-state counts are computed (566 / 5 / 562 for this catalogue)', nums.join('/') === '566/5/562', nums.join('/'));
+  // 569 verified for 2027 = 562 + four verified Medicine courses (batch 8) + three (batch 9).
+  // 6 awaiting = 5 + St Andrews Medicine (batch 9), whose page prints no A-level grades.
+  t('record-state counts are computed (569 / 6 / 562 for this catalogue)', nums.join('/') === '569/6/562', nums.join('/'));
   await p.getByRole('button', { name: 'View coverage as a table' }).click(); await p.waitForTimeout(400);
   t('coverage can be read as a real table', (await p.locator('.lp-table tbody tr').count()) === 22);
   // keyboard (reload so focus starts at the document, as the existing QA does)

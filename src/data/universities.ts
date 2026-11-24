@@ -469,6 +469,25 @@ const SEEDS: UniversitySeed[] = [
     domain: 'ed.ac.uk',
     departments: ['School of Physics and Astronomy', 'School of Engineering'],
     ranks: { overall: 27, physics: 33, engineering: 36 },
+    deadlines: [
+      {
+        // Read from the 2027-entry MBChB Medicine (A100) page on 2026-11-24:
+        // "2027 entry UCAS deadline: 15 October 2026 (6:00pm GMT)".
+        label: 'UCAS application deadline (Medicine)',
+        date: '2026-10-15',
+        years: ['2027'],
+        appliesTo: { kind: 'subject-category', category: 'medicine' },
+        notes: '6:00pm GMT. Applies to all UK, EU and international applicants.',
+        verification: 'verified',
+        sourceUrl: 'https://study.ed.ac.uk/programmes/undergraduate/354-mbchb-medicine-6-year-programme',
+        sourceTitle: 'MBChB Medicine (6-year programme) MBChB - Undergraduate programmes | The University of Edinburgh',
+        lastVerified: '2026-11-24',
+      },
+      {
+        label: 'UCAS equal consideration deadline',
+        notes: 'The standard UCAS deadline for courses starting the following autumn.',
+      },
+    ],
     overview: {
       typicalOffer: 'A*AA (demo)',
       requiredSubjectsNote: 'Mathematics and Physics required.',

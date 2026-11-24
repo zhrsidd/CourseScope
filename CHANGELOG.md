@@ -23,6 +23,13 @@ The student-facing release notes are also shown in the app, on the methodology p
   UCL's page returns a Cloudflare bot challenge to a scripted request and was not read. Model additions: subject
   category `medicine`, subcategory `medicine`, degree type `MB` (the award title stays per record), admissions
   test `ucat`, and `Human Biology` in the subject list. Search understands "medicine"/"medical" and "UCAT".
+- **Medicine, batch 9.** Read on 2026-11-24 (research note `research/medicine-b9.md`): Cambridge MB BChir (A100),
+  Edinburgh MBChB (A100) and Glasgow MBChB (A100), all verified for 2027 entry. St Andrews Medicine BSc (Hons)
+  (A100) is identity only (awaiting data): neither its course page nor its Medicine entry-requirements page prints
+  A-level grades. Oxford was not read: `www.ox.ac.uk` now returns a Cloudflare bot challenge. Cambridge's
+  College-dependent subject count is two pathways; the "one other subject" pathway is accepted only at seven named
+  Colleges, so it is a manual-review condition. Edinburgh's Medicine deadline (15 October 2026) is a verified
+  medicine-scoped deadline. Edinburgh's requirements were read in a rendered page with each A-level option selected.
 - **Deadline scopes.** New scope `subject-categories`. Imperial's 13 January 2027 deadline, read from physics and
   engineering pages, is now scoped to those subjects, and Imperial's Medicine page date (15 October 2026) is a
   separate verified deadline, so a medicine course never shows the January date.

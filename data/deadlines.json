@@ -63,5 +63,21 @@
     "sourceTitle": "Physics BSc | Study at UCL",
     "lastVerified": "2026-09-01",
     "verificationStatus": "verified"
+  },
+  {
+    "id": "edinburgh--deadline-ucas-application-deadline-medicine-2027-0",
+    "universityId": "edinburgh",
+    "label": "UCAS application deadline (Medicine)",
+    "date": "2026-10-15",
+    "applicationYear": "2027",
+    "appliesTo": {
+      "kind": "subject-category",
+      "category": "medicine"
+    },
+    "notes": "6:00pm GMT. Applies to all UK, EU and international applicants.",
+    "sourceUrl": "https://study.ed.ac.uk/programmes/undergraduate/354-mbchb-medicine-6-year-programme",
+    "sourceTitle": "MBChB Medicine (6-year programme) MBChB - Undergraduate programmes | The University of Edinburgh",
+    "lastVerified": "2026-11-24",
+    "verificationStatus": "verified"
   }
 ]

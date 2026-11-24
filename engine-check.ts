@@ -42,6 +42,7 @@ import {
   FIXTURE_IDS,
   LEEDS_NON_2027_PAGES,
   batch8MedicineCourses,
+  batch9MedicineCourses,
 } from '@/data';
 import { shells2028 } from '@/data/courses.2028-shells';
 import { course, offer, atLeastAt, oneOf } from '@/data/builders';
@@ -115,8 +116,7 @@ import type { ApplicationDeadline, Ranking, StudentProfile, University } from '@
  * so they still prove that adding Medicine changed nothing else. Batch 8's own
  * totals are asserted in section 31.
  */
-const BATCH8_IDS = new Set(batch8MedicineCourses.map((c) => c.id));
-const coursesBeforeMedicine = courses.filter((c) => !BATCH8_IDS.has(c.id));
+const coursesBeforeMedicine = courses.filter((c) => c.subjectCategory !== 'medicine');
 
 const profile = (
   subjects: [string, string][],
@@ -5806,7 +5806,8 @@ check(
 );
 
 /* --- 26f. Every remaining awaiting-data row names a university-side gap --- */
-const stillAwaiting = courses.filter((c) => c.provenance.verificationStatus === 'awaiting-data');
+// Medicine awaiting records are covered in sections 31 and 32.
+const stillAwaiting = coursesBeforeMedicine.filter((c) => c.provenance.verificationStatus === 'awaiting-data');
 check('Five records remain awaiting data (H722 withdrawn in the v1.1.0 Southampton correction)', stillAwaiting.length, 5);
 check(
   '  …all of them blocked by the university’s own cycle, not by our retrieval',
@@ -6399,7 +6400,8 @@ check(
 /* ================================================================== */
 {
   console.log('\n31 — Medicine (batch 8)');
-  const med = courses.filter((c) => c.subjectCategory === 'medicine');
+  const BATCH8 = new Set(batch8MedicineCourses.map((c) => c.id));
+  const med = courses.filter((c) => BATCH8.has(c.id));
   check('Medicine: four standard-entry courses served, all 2027 entry',
     med.map((c) => c.id).sort().join(','),
     'bristol-medicine-mbchb--2027,imperial-medicine-mbbs-bsc--2027,kcl-medicine-mbbs--2027,manchester-medicine-mbchb--2027');
@@ -6461,11 +6463,71 @@ check(
       .filter((d) => d.date && d.date > '2026-10-31').length, 0);
 
   // Search
-  check('Search: “medicine” returns the four Medicine courses', search('medicine').map((c) => c.id).sort().join(','),
-    med.map((c) => c.id).sort().join(','));
-  check('  …“UCAT” finds them by test', search('UCAT').length, 4);
+  check('Search: “medicine” returns the batch 8 Medicine courses',
+    med.every((c) => search('medicine').some((r) => r.id === c.id)), true);
+  check('  …“UCAT” finds them by test', med.every((c) => search('UCAT').some((r) => r.id === c.id)), true);
   check('  …and “biomedical engineering” stays engineering only',
     search('biomedical engineering').some((c) => c.subjectCategory === 'medicine'), false);
+}
+
+/* ================================================================== */
+/* 32. Batch 9 — Medicine: Cambridge, Edinburgh, Glasgow, St Andrews   */
+/* ================================================================== */
+{
+  console.log('\n32 — Medicine (batch 9)');
+  const ids = batch9MedicineCourses.map((c) => c.id).sort();
+  check('Batch 9: four Medicine records, all 2027 entry',
+    ids.join(','), 'cambridge-medicine-mb-bchir--2027,edinburgh-medicine-mbchb--2027,glasgow-medicine-mbchb--2027,st-andrews-medicine-bsc--2027');
+  const verified = ids.filter((id) => courseById[id]?.provenance.verificationStatus === 'verified');
+  check('  …three verified (Cambridge, Edinburgh, Glasgow), each with source URL, title and check date',
+    verified.length === 3 && verified.every((id) => {
+      const p = courseById[id].provenance;
+      return Boolean(p.sourceUrl && p.sourceTitle) && p.lastVerified === '2026-11-24';
+    }), true);
+  const sta = courseById['st-andrews-medicine-bsc--2027'];
+  check('St Andrews is identity only: awaiting data, no offers, no test, no invented grades',
+    `${sta.provenance.verificationStatus}/${sta.offers.length}/${sta.admissionsTest.code}`, 'awaiting-data/0/unknown');
+  check('  …its notes say why: no A-level grades printed on the university’s pages',
+    /no A-level grades are printed/i.test(sta.notes ?? ''), true);
+  check('  …and its award is the BSc (Hons) Medicine, not a medical degree',
+    `${sta.degreeType}:${sta.awardLabel}`, 'BSc:BSc (Hons) Medicine');
+  check('  …and the 2026 UCAT cut-offs are labelled as 2026 figures',
+    /for 2026 entry[^.]*1500[^.]*\. ?these are 2026 figures/i.test((sta.notes ?? '').replace(/\)/g, ')')) || /these are 2026 figures, not a 2027 requirement/.test(sta.notes ?? ''), true);
+  check('No Oxford Medicine record exists (the page was not readable)',
+    courses.some((c) => c.universityId === 'oxford' && c.subjectCategory === 'medicine'), false);
+
+  const v = (id: string, al: [string, string][]) => evaluateCourse(courseById[id], profile(al)).verdict;
+  // Cambridge: College-dependent subject count.
+  check('Cambridge: Chemistry plus two sciences at A*A*A meets (every College)',
+    v('cambridge-medicine-mb-bchir--2027', [['Chemistry', 'A*'], ['Biology', 'A*'], ['Physics', 'A']]), 'meets');
+  check('  …Chemistry plus one science is review, never a pass (only seven Colleges)',
+    v('cambridge-medicine-mb-bchir--2027', [['Chemistry', 'A*'], ['Biology', 'A*'], ['History', 'A']]), 'review-required');
+  check('  …without Chemistry does not meet',
+    v('cambridge-medicine-mb-bchir--2027', [['Biology', 'A*'], ['Physics', 'A*'], ['Mathematics', 'A']]), 'does-not-meet');
+  check('  …and below A*A*A does not meet',
+    v('cambridge-medicine-mb-bchir--2027', [['Chemistry', 'A*'], ['Biology', 'A'], ['Physics', 'A']]), 'does-not-meet');
+  // Edinburgh and Glasgow: Chemistry plus one named subject.
+  check('Edinburgh: Chemistry, Further Mathematics, History at AAA meets',
+    v('edinburgh-medicine-mbchb--2027', [['Chemistry', 'A'], ['Further Mathematics', 'A'], ['History', 'A']]), 'meets');
+  check('  …Chemistry with only Psychology alongside does not',
+    v('edinburgh-medicine-mbchb--2027', [['Chemistry', 'A'], ['Psychology', 'A'], ['History', 'A']]), 'does-not-meet');
+  check('Glasgow: Chemistry, Biology, English at AAA meets',
+    v('glasgow-medicine-mbchb--2027', [['Chemistry', 'A'], ['Biology', 'A'], ['English Literature', 'A']]), 'meets');
+  check('  …Further Mathematics is not on Glasgow’s list, so Chemistry + Further Mathematics alone does not',
+    v('glasgow-medicine-mbchb--2027', [['Chemistry', 'A'], ['Further Mathematics', 'A'], ['History', 'A']]), 'does-not-meet');
+  check('Glasgow publishes no adjusted A-level offer, and none is invented',
+    `${courseById['glasgow-medicine-mbchb--2027'].contextualOffer.availability}/${courseById['glasgow-medicine-mbchb--2027'].offers.filter((o) => o.isContextual).length}`, 'unknown/0');
+
+  // Deadlines
+  const uniById = Object.fromEntries(universities.map((u) => [u.id, u]));
+  check('Edinburgh Medicine shows its 15 October 2026 deadline',
+    deadlinesForCourse(uniById['edinburgh'], courseById['edinburgh-medicine-mbchb--2027']).map((d) => d.date).join(','), '2026-10-15');
+  check('  …which does not reach Edinburgh Physics',
+    deadlinesForCourse(uniById['edinburgh'], courseById['edinburgh-physics-bsc--2027']).some((d) => d.date === '2026-10-15'), false);
+  check('No Medicine course in the catalogue is shown a deadline after October of the year before entry',
+    courses.filter((c) => c.subjectCategory === 'medicine')
+      .flatMap((c) => deadlinesForCourse(uniById[c.universityId], c))
+      .filter((d) => d.date && d.date > '2026-10-31').length, 0);
 }
 
 console.log(failures === 0 ? '\nAll checks passed.' : `\n${failures} check(s) failed.`);
