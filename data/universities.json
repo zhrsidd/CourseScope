@@ -965,5 +965,48 @@
       }
     },
     "verificationStatus": "demo"
+  },
+  {
+    "id": "hyms",
+    "slug": "hyms",
+    "name": "Hull York Medical School",
+    "shortName": "Hull York",
+    "initials": "HYMS",
+    "city": "Hull and York",
+    "region": "Yorkshire and the Humber",
+    "country": "United Kingdom",
+    "website": "https://www.hyms.ac.uk",
+    "admissionsUrl": null,
+    "departments": [
+      "Hull York Medical School (University of Hull and University of York)"
+    ],
+    "admissionsOverview": {
+      "typicalOffer": null,
+      "requiredSubjectsNote": null,
+      "furtherMathematics": "unknown",
+      "furtherMathematicsNote": null,
+      "gcseRequirements": null,
+      "englishLanguageRequirements": null,
+      "admissionsTestsNote": null,
+      "interviews": "not-stated",
+      "interviewsNote": null,
+      "internationalNotes": null,
+      "contextualOffer": {
+        "availability": "unknown",
+        "details": null
+      },
+      "applicationDeadline": null,
+      "provenance": {
+        "verificationStatus": "demo",
+        "identityVerification": "official-page",
+        "identityNote": null,
+        "officialUrl": "https://www.hyms.ac.uk",
+        "sourceUrl": null,
+        "sourceTitle": null,
+        "lastVerified": null,
+        "sources": []
+      }
+    },
+    "verificationStatus": "demo"
   }
 ]

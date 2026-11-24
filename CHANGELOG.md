@@ -23,6 +23,13 @@ The student-facing release notes are also shown in the app, on the methodology p
   UCL's page returns a Cloudflare bot challenge to a scripted request and was not read. Model additions: subject
   category `medicine`, subcategory `medicine`, degree type `MB` (the award title stays per record), admissions
   test `ucat`, and `Human Biology` in the subject list. Search understands "medicine"/"medical" and "UCAT".
+- **Medicine, batches 10 and 11.** Eight standard-entry courses, all verified for 2027 entry on 2026-11-24
+  (research note `research/medicine-b10-b11.md`): Birmingham MBChB, Leeds MBChB, Sheffield MBChB, Nottingham BMBS,
+  Southampton BM5 (BMBS), Queen Mary MBBS, Lancaster MBChB and Hull York Medical School MB BS. Hull York is a new
+  university record (UCAS institution H75), so 23 universities are now served. Birmingham's Medicine deadline
+  (15 October 2026) is a verified medicine-scoped deadline. Sheffield's offer excludes Further Mathematics from the
+  threshold, and its EPQ alternative is in the notes. Queen Mary's page names no interview, so none is recorded.
+  Browser suites that pinned 22 universities, 1,137 courses and 569 verified now pin 23, 1,145 and 577.
 - **Medicine, batch 9.** Read on 2026-11-24 (research note `research/medicine-b9.md`): Cambridge MB BChir (A100),
   Edinburgh MBChB (A100) and Glasgow MBChB (A100), all verified for 2027 entry. St Andrews Medicine BSc (Hons)
   (A100) is identity only (awaiting data): neither its course page nor its Medicine entry-requirements page prints

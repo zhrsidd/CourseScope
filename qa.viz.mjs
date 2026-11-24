@@ -66,11 +66,12 @@ const PROF = (g) => ({ 'ukcf.profile.v1': JSON.stringify(g) });
   const m = p.getByTestId('coverage-matrix');
   t('matrix: is a real table with a caption and column headers', (await m.locator('table caption').count()) === 1 && (await m.locator('thead th[scope=col]').count()) >= 3);
   const rows = await m.locator('tbody tr').count();
-  t('  …one row per university (22)', rows === 22, String(rows));
+  // 23 = 22 + Hull York Medical School, added with Medicine batch 11.
+  t('  …one row per university (23)', rows === 23, String(rows));
   const total = await m.locator('tfoot td').evaluateAll((tds) => tds.reduce((n, td) => n + Number(td.dataset.total), 0));
   const rowTotal = await m.locator('tbody td').evaluateAll((tds) => tds.reduce((n, td) => n + Number(td.dataset.total), 0));
-  // 1,137 = 1,129 + four Medicine records in batch 8 + four in batch 9.
-  t('  …footer totals equal the sum of the rows', total === rowTotal && total === 1137, `${total}/${rowTotal}`);
+  // 1,145 = 1,129 + Medicine records: four (batch 8), four (batch 9), eight (batches 10-11).
+  t('  …footer totals equal the sum of the rows', total === rowTotal && total === 1145, `${total}/${rowTotal}`);
   const tiles = await m.locator('.cm-t').evaluateAll((e) => e.filter((x) => !x.closest('.cm-legend')).length);
   const tileCells = await m.locator('tbody td:not(:has(.cm-count))').evaluateAll((tds) => tds.reduce((n, td) => n + Number(td.dataset.total), 0));
   t('  …tiles drawn equal the records they stand for', tiles === tileCells, `${tiles}/${tileCells}`);

@@ -79,5 +79,21 @@
     "sourceTitle": "MBChB Medicine (6-year programme) MBChB - Undergraduate programmes | The University of Edinburgh",
     "lastVerified": "2026-11-24",
     "verificationStatus": "verified"
+  },
+  {
+    "id": "birmingham--deadline-ucas-application-deadline-medicine-2027-0",
+    "universityId": "birmingham",
+    "label": "UCAS application deadline (Medicine)",
+    "date": "2026-10-15",
+    "applicationYear": "2027",
+    "appliesTo": {
+      "kind": "subject-category",
+      "category": "medicine"
+    },
+    "notes": null,
+    "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/medicine-courses/medicine-and-surgery-mbchb",
+    "sourceTitle": "Medicine and Surgery MBChB - University of Birmingham",
+    "lastVerified": "2026-11-24",
+    "verificationStatus": "verified"
   }
 ]

@@ -570,6 +570,25 @@ const SEEDS: UniversitySeed[] = [
     domain: 'birmingham.ac.uk',
     departments: ['School of Physics and Astronomy', 'School of Engineering'],
     ranks: { overall: 84, physics: 101, engineering: 96 },
+    deadlines: [
+      {
+        // Read from the Medicine and Surgery MBChB (A100) page on 2026-11-24:
+        // "15 October 2026 Application deadline for September 2027 entry."
+        label: 'UCAS application deadline (Medicine)',
+        date: '2026-10-15',
+        years: ['2027'],
+        appliesTo: { kind: 'subject-category', category: 'medicine' },
+        notes: null,
+        verification: 'verified',
+        sourceUrl: 'https://www.birmingham.ac.uk/study/undergraduate/subjects/medicine-courses/medicine-and-surgery-mbchb',
+        sourceTitle: 'Medicine and Surgery MBChB - University of Birmingham',
+        lastVerified: '2026-11-24',
+      },
+      {
+        label: 'UCAS equal consideration deadline',
+        notes: 'The standard UCAS deadline for courses starting the following autumn.',
+      },
+    ],
     overview: {
       typicalOffer: 'AAA (demo)',
       requiredSubjectsNote: 'Mathematics and Physics required for physics.',
@@ -822,6 +841,19 @@ const SEEDS: UniversitySeed[] = [
       contextualOffer: { availability: 'yes', details: null },
       applicationDeadline: 'UCAS equal consideration deadline (late January)',
     },
+  },
+  {
+    // Added with Medicine batch 11. Hull York Medical School is its own UCAS
+    // institution (code H75); its MB BS is awarded jointly by the University of
+    // Hull and the University of York. No ranking positions are seeded.
+    id: 'hyms',
+    name: 'Hull York Medical School',
+    shortName: 'Hull York',
+    initials: 'HYMS',
+    city: 'Hull and York',
+    region: 'Yorkshire and the Humber',
+    domain: 'hyms.ac.uk',
+    departments: ['Hull York Medical School (University of Hull and University of York)'],
   },
 ];
 

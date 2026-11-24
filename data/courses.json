@@ -44451,6 +44451,783 @@
       }
     },
     {
+      "slug": "birmingham-medicine-mbchb",
+      "universityId": "birmingham",
+      "name": "Medicine and Surgery",
+      "subjectCategory": "medicine",
+      "subjectSubcategory": "medicine",
+      "degreeType": "MB",
+      "awardLabel": "MBChB",
+      "durationYears": 5,
+      "durationYearsMax": null,
+      "courseCode": "A100",
+      "alternativeCourseCodes": [],
+      "applicationYear": "2027",
+      "requirementsPublicationStatus": "published",
+      "latestPublishedYear": null,
+      "cycleNote": "The page gives “Start date September 2027” and “15 October 2026 Application deadline for September 2027 entry.”",
+      "rawRequirementText": "AAA with predicted AAB including Chemistry, and a second science from Biology/Human Biology, Physics or Maths. A levels must include Chemistry and a second science from Biology/Human Biology, Physics or Maths. You must be predicted a minimum of AAB.",
+      "minimumEntryStandard": null,
+      "offers": [
+        {
+          "label": "Standard offer",
+          "gradeProfile": "AAA",
+          "required": [
+            [
+              "Chemistry",
+              "A"
+            ]
+          ],
+          "recommended": [],
+          "constraints": [
+            {
+              "kind": "one-of",
+              "subjects": [
+                "Biology",
+                "Human Biology",
+                "Physics",
+                "Mathematics"
+              ],
+              "minimumGrade": "A",
+              "description": "A second science from Biology/Human Biology, Physics or Maths."
+            }
+          ],
+          "rawText": "AAA with predicted AAB including Chemistry, and a second science from Biology/Human Biology, Physics or Maths"
+        },
+        {
+          "label": "Contextual offer",
+          "gradeProfile": "AAB",
+          "required": [
+            "Chemistry"
+          ],
+          "recommended": [],
+          "constraints": [
+            {
+              "kind": "one-of",
+              "subjects": [
+                "Biology",
+                "Human Biology",
+                "Physics",
+                "Mathematics"
+              ],
+              "minimumGrade": null,
+              "description": "A second science from Biology/Human Biology, Physics or Maths."
+            }
+          ],
+          "isContextual": true,
+          "rawText": "AAB to include Chemistry and a second science from Biology/Human Biology, Physics or Maths."
+        }
+      ],
+      "mathematics": "recommended",
+      "physics": "recommended",
+      "chemistry": "required",
+      "furtherMathematics": "no-stated-preference",
+      "furtherMathematicsNote": "Further Mathematics is not mentioned.",
+      "admissionsTest": {
+        "code": "ucat",
+        "name": null,
+        "requirement": "required",
+        "modules": [],
+        "moduleNote": null,
+        "details": "Sit the UCAT in the year of application.",
+        "officialUrl": "https://www.ucat.ac.uk/",
+        "notes": null
+      },
+      "interview": "yes",
+      "interviewNote": "“Attend interview if invited.”",
+      "contextualOffer": {
+        "availability": "yes",
+        "details": "Contextual offer AAB (one grade lower), applied automatically if eligible. Students who complete Pathways to Birmingham receive an alternative offer of ABB. Both keep the Chemistry and second-science rule."
+      },
+      "gcseRequirements": "English Language, Mathematics, and Biology and Chemistry (or dual award science), each at grade 6 (B) or higher.",
+      "englishLanguageRequirements": null,
+      "internationalNotes": null,
+      "placementOrStudyAbroad": null,
+      "notes": "PREDICTED GRADES: you must be predicted at least AAB. EXCLUDED: General Studies, Critical Thinking and EPQ are not accepted as a third A-level. Practical elements in the sciences must normally be passed. AGE: 18 by 1 October of the year of entry.",
+      "provenance": {
+        "verificationStatus": "verified",
+        "officialUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/medicine-courses/medicine-and-surgery-mbchb",
+        "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/medicine-courses/medicine-and-surgery-mbchb",
+        "sourceTitle": "Medicine and Surgery MBChB - University of Birmingham",
+        "lastVerified": "2026-11-24",
+        "sources": []
+      }
+    },
+    {
+      "slug": "leeds-medicine-mbchb",
+      "universityId": "leeds",
+      "name": "Medicine and Surgery",
+      "subjectCategory": "medicine",
+      "subjectSubcategory": "medicine",
+      "degreeType": "MB",
+      "awardLabel": "MBChB",
+      "durationYears": 5,
+      "durationYearsMax": null,
+      "courseCode": "A100",
+      "alternativeCourseCodes": [],
+      "applicationYear": "2027",
+      "requirementsPublicationStatus": "published",
+      "latestPublishedYear": null,
+      "cycleNote": "The page gives “Year of entry 2027” and “Start date September 2027”.",
+      "rawRequirementText": "A-level: AAA including Chemistry and Biology. For the purposes of meeting our entry requirements, an A* cannot compensate for a B in another subject, so we will not accept A*A*B instead of AAA. Certain combinations are not acceptable, specifically: Chemistry with Biology and Human Biology; Chemistry with Biology and Sports Science; Chemistry with Biology and Critical Thinking.",
+      "minimumEntryStandard": null,
+      "offers": [
+        {
+          "label": "Typical offer",
+          "gradeProfile": "AAA",
+          "required": [
+            [
+              "Chemistry",
+              "A"
+            ],
+            [
+              "Biology",
+              "A"
+            ]
+          ],
+          "recommended": [],
+          "rawText": "A-level: AAA including Chemistry and Biology."
+        }
+      ],
+      "mathematics": "not-required",
+      "physics": "not-required",
+      "chemistry": "required",
+      "furtherMathematics": "no-stated-preference",
+      "furtherMathematicsNote": "Further Mathematics is not mentioned.",
+      "admissionsTest": {
+        "code": "ucat",
+        "name": null,
+        "requirement": "required",
+        "modules": [],
+        "moduleNote": null,
+        "details": "Required, taken in the year of application; other aptitude tests are not accepted. Shortlisting is points-based on the top eight GCSEs, the top three predicted grades, the overall UCAT score and contextual information. “There is no fixed UCAT cut-off score.”",
+        "officialUrl": "https://www.ucat.ac.uk/",
+        "notes": null
+      },
+      "interview": "yes",
+      "interviewNote": "Multiple mini-interviews. For 2027 entry, face-to-face interviews are on 4, 5 and 6 January 2027; overseas interviews are online. Offers after interview depend entirely on interview performance.",
+      "contextualOffer": {
+        "availability": "unknown",
+        "details": "Access to Leeds may give priority to an application. No reduced A-level offer is printed on the course page."
+      },
+      "gcseRequirements": "At least six GCSEs at grade 6 or above, including Maths, English Language, and Biology and Chemistry or Dual Science. Leeds notes that applicants with only these minimums are unlikely to be shortlisted; scoring uses eight GCSEs.",
+      "englishLanguageRequirements": null,
+      "internationalNotes": null,
+      "placementOrStudyAbroad": null,
+      "notes": "EXCLUDED COMBINATIONS: Chemistry with Biology and Human Biology; Chemistry with Biology and Sports Science; Chemistry with Biology and Critical Thinking. An A* cannot compensate for a B. EPQ and Level 3 Core Maths are not scored. RESITS: one resit per A-level and per GCSE is accepted without mitigating circumstances. Evidence of full-time education in the last five years is required. DEADLINE: “by 15 October of the year preceding entry” (no year printed); Leeds does not take part in UCAS Extra for this course.",
+      "provenance": {
+        "verificationStatus": "verified",
+        "officialUrl": "https://courses.leeds.ac.uk/5580/medicine-and-surgery-mbchb",
+        "sourceUrl": "https://courses.leeds.ac.uk/5580/medicine-and-surgery-mbchb",
+        "sourceTitle": "Medicine and Surgery MBChB | University of Leeds",
+        "lastVerified": "2026-11-24",
+        "sources": []
+      }
+    },
+    {
+      "slug": "sheffield-medicine-mbchb",
+      "universityId": "sheffield",
+      "name": "Medicine",
+      "subjectCategory": "medicine",
+      "subjectSubcategory": "medicine",
+      "degreeType": "MB",
+      "awardLabel": "MBChB",
+      "durationYears": 5,
+      "durationYearsMax": null,
+      "courseCode": "A100",
+      "alternativeCourseCodes": [],
+      "applicationYear": "2027",
+      "requirementsPublicationStatus": "published",
+      "latestPublishedYear": null,
+      "cycleNote": "The 2027 course page is headed “2027-28 entry” and gives a UCAT threshold “for 2027 entry”.",
+      "rawRequirementText": "AAA including Chemistry or Biology and a second science + pass in the practical element of any science A Levels taken. Second science subjects include Biology/Human Biology, Chemistry, Maths, Physics or Psychology. We do not accept A Level Further Maths when determining whether an applicant meets our A Level academic threshold.",
+      "minimumEntryStandard": null,
+      "offers": [
+        {
+          "label": "Standard offer",
+          "gradeProfile": "AAA",
+          "required": [],
+          "recommended": [],
+          "constraints": [
+            {
+              "kind": "one-of",
+              "subjects": [
+                "Chemistry",
+                "Biology"
+              ],
+              "minimumGrade": "A",
+              "description": "Chemistry or Biology."
+            },
+            {
+              "kind": "min-count-at-grade",
+              "subjects": [
+                "Biology",
+                "Human Biology",
+                "Chemistry",
+                "Mathematics",
+                "Physics",
+                "Psychology"
+              ],
+              "grade": "A",
+              "count": 2,
+              "description": "A second science from Biology/Human Biology, Chemistry, Maths, Physics or Psychology (Further Maths does not count)."
+            }
+          ],
+          "rawText": "AAA including Chemistry or Biology and a second science"
+        },
+        {
+          "label": "Contextual offer (Access Sheffield)",
+          "gradeProfile": "AAB",
+          "required": [],
+          "recommended": [],
+          "constraints": [
+            {
+              "kind": "one-of",
+              "subjects": [
+                "Chemistry",
+                "Biology"
+              ],
+              "minimumGrade": "A",
+              "description": "Chemistry or Biology at grade A."
+            },
+            {
+              "kind": "min-count-at-grade",
+              "subjects": [
+                "Biology",
+                "Human Biology",
+                "Chemistry",
+                "Mathematics",
+                "Physics",
+                "Psychology"
+              ],
+              "grade": "B",
+              "count": 2,
+              "description": "A second science from Biology/Human Biology, Chemistry, Maths, Physics or Psychology."
+            }
+          ],
+          "isContextual": true,
+          "rawText": "AAB including Chemistry or Biology (at grade A) and a second science"
+        }
+      ],
+      "mathematics": "not-required",
+      "physics": "not-required",
+      "chemistry": "recommended",
+      "furtherMathematics": "not-required",
+      "furtherMathematicsNote": "“We do not accept A Level Further Maths when determining whether an applicant meets our A Level academic threshold.”",
+      "admissionsTest": {
+        "code": "ucat",
+        "name": null,
+        "requirement": "required",
+        "modules": [],
+        "moduleNote": null,
+        "details": "“Each year, we set a minimum UCAT score threshold, which is 1800/2700 for 2027 entry.” Applications are then ranked by UCAT score; the Situational Judgement Test is reviewed only for those invited to interview.",
+        "officialUrl": "https://www.ucat.ac.uk/",
+        "notes": null
+      },
+      "interview": "yes",
+      "interviewNote": "Multiple mini-interviews (MMIs).",
+      "contextualOffer": {
+        "availability": "yes",
+        "details": "AAB including Chemistry or Biology at grade A and a second science, through Access Sheffield."
+      },
+      "gcseRequirements": "Five GCSEs at grade 7 (A), with at least grade 6 (B) in Maths, English Language and the science subjects (Dual Award Science acceptable).",
+      "englishLanguageRequirements": null,
+      "internationalNotes": null,
+      "placementOrStudyAbroad": null,
+      "notes": "EPQ ALTERNATIVE: AAB including Chemistry or Biology at grade A and a second science, plus A in the EPQ taken in the same sitting, if Sheffield is your Firm choice. Not checked against your grades because the EPQ is not part of the profile. A pass in the practical element of any science A-level is required.",
+      "provenance": {
+        "verificationStatus": "verified",
+        "officialUrl": "https://www.sheffield.ac.uk/undergraduate/courses/2027/medicine-mbchb",
+        "sourceUrl": "https://www.sheffield.ac.uk/undergraduate/courses/2027/medicine-mbchb",
+        "sourceTitle": "Medicine MBChB | Undergraduate study | The University of Sheffield",
+        "lastVerified": "2026-11-24",
+        "sources": []
+      }
+    },
+    {
+      "slug": "nottingham-medicine-bmbs",
+      "universityId": "nottingham",
+      "name": "Medicine",
+      "subjectCategory": "medicine",
+      "subjectSubcategory": "medicine",
+      "degreeType": "MB",
+      "awardLabel": "BMBS",
+      "durationYears": 5,
+      "durationYearsMax": null,
+      "courseCode": "A100",
+      "alternativeCourseCodes": [],
+      "applicationYear": "2027",
+      "requirementsPublicationStatus": "published",
+      "latestPublishedYear": null,
+      "cycleNote": "“The entrance requirements listed apply to 2027 entry.” The 2027 URL is served at an undated address.",
+      "rawRequirementText": "AAA: must include biology (or human biology) and chemistry. A pass is required in science practical tests, where these are assessed separately.",
+      "minimumEntryStandard": null,
+      "offers": [
+        {
+          "label": "Standard offer",
+          "gradeProfile": "AAA",
+          "required": [
+            [
+              "Biology",
+              "A"
+            ],
+            [
+              "Chemistry",
+              "A"
+            ]
+          ],
+          "recommended": [],
+          "rawText": "AAA: must include biology (or human biology) and chemistry."
+        },
+        {
+          "label": "Standard contextual offer",
+          "gradeProfile": "AAB",
+          "required": [
+            "Biology",
+            "Chemistry"
+          ],
+          "recommended": [],
+          "constraints": [
+            {
+              "kind": "min-count-at-grade",
+              "subjects": [
+                "Biology",
+                "Human Biology",
+                "Chemistry"
+              ],
+              "grade": "A",
+              "count": 1,
+              "description": "At least one A in Biology or Chemistry."
+            }
+          ],
+          "isContextual": true,
+          "rawText": "Standard Contextual Offer: AAB with at least one A in biology or chemistry"
+        }
+      ],
+      "mathematics": "not-required",
+      "physics": "not-required",
+      "chemistry": "required",
+      "furtherMathematics": "no-stated-preference",
+      "furtherMathematicsNote": "Further Mathematics is not mentioned.",
+      "admissionsTest": {
+        "code": "ucat",
+        "name": null,
+        "requirement": "required",
+        "modules": [],
+        "moduleNote": null,
+        "details": "Sit the UCAT in the same year as the application. “Applicants who achieve a UCAT SJT grade of Band 4 will not be considered for this course.”",
+        "officialUrl": "https://www.ucat.ac.uk/",
+        "notes": null
+      },
+      "interview": "yes",
+      "interviewNote": "All applicants must attend an interview before an offer: in person for Home applicants, online for international applicants, between 15 December 2026 and 29 January 2027.",
+      "contextualOffer": {
+        "availability": "yes",
+        "details": "For Home applicants meeting Nottingham’s contextual criteria: Standard Contextual Offer AAB, or Enhanced Contextual Offer ABB, each with at least one A in Biology or Chemistry."
+      },
+      "gcseRequirements": "At least six GCSEs at grade 7 (A), including Biology and Chemistry, with at least grade 6 (B) in Maths and English Language, achieved in one sitting.",
+      "englishLanguageRequirements": null,
+      "internationalNotes": null,
+      "placementOrStudyAbroad": null,
+      "notes": "A-LEVELS IN ONE SITTING over at most two years; resits of up to two A-levels are considered only with at least ABB (one A in Biology or Chemistry) at first sitting. Predicted grades are not used for selection; offers are conditional on the grades. Personal statement and reference are reviewed only after interview. Occupational health assessment and a new DBS check are required. DEADLINE: “apply via UCAS by 15 October” (no year printed). Deferral requests by 1 May.",
+      "provenance": {
+        "verificationStatus": "verified",
+        "officialUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/2027/Medicine-BMBS.html",
+        "sourceUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/2027/Medicine-BMBS.html",
+        "sourceTitle": "Medicine BMBS (Hons) | University of Nottingham",
+        "lastVerified": "2026-11-24",
+        "sources": []
+      }
+    },
+    {
+      "slug": "southampton-medicine-bm5",
+      "universityId": "southampton",
+      "name": "Medicine (BM5)",
+      "subjectCategory": "medicine",
+      "subjectSubcategory": "medicine",
+      "degreeType": "MB",
+      "awardLabel": "BMBS",
+      "durationYears": 5,
+      "durationYearsMax": null,
+      "courseCode": "A100",
+      "alternativeCourseCodes": [],
+      "applicationYear": "2027",
+      "requirementsPublicationStatus": "published",
+      "latestPublishedYear": null,
+      "cycleNote": "The entry requirements are headed “For Academic year 202728”. The page also shows a stale “starting September 2023” label, which is not used.",
+      "rawRequirementText": "AAA to include A level Biology and one additional science (with a pass in the practical element where it is separately endorsed). Please note applicants must offer AAA or above, we do not accept grade or tariff equivalents to AAA. Acceptable science subjects are Chemistry, Physics, Psychology, Sociology, Environmental Studies or Geography.",
+      "minimumEntryStandard": null,
+      "offers": [
+        {
+          "label": "School leaver offer",
+          "gradeProfile": "AAA",
+          "required": [
+            [
+              "Biology",
+              "A"
+            ]
+          ],
+          "recommended": [],
+          "constraints": [
+            {
+              "kind": "one-of",
+              "subjects": [
+                "Chemistry",
+                "Physics",
+                "Psychology",
+                "Sociology",
+                "Environmental Studies",
+                "Geography"
+              ],
+              "minimumGrade": "A",
+              "description": "One additional science: Chemistry, Physics, Psychology, Sociology, Environmental Studies or Geography."
+            }
+          ],
+          "rawText": "AAA to include A level Biology and one additional science"
+        },
+        {
+          "label": "Contextual offer",
+          "gradeProfile": "AAB",
+          "required": [
+            "Biology"
+          ],
+          "recommended": [],
+          "constraints": [
+            {
+              "kind": "one-of",
+              "subjects": [
+                "Chemistry",
+                "Physics",
+                "Psychology",
+                "Sociology",
+                "Environmental Studies",
+                "Geography"
+              ],
+              "minimumGrade": null,
+              "description": "One additional science: Chemistry, Physics, Psychology, Sociology, Environmental Studies or Geography."
+            }
+          ],
+          "isContextual": true,
+          "rawText": "AAB to include A level Biology and one additional science"
+        }
+      ],
+      "mathematics": "not-required",
+      "physics": "recommended",
+      "chemistry": "recommended",
+      "furtherMathematics": "no-stated-preference",
+      "furtherMathematicsNote": "Further Mathematics is not mentioned.",
+      "admissionsTest": {
+        "code": "ucat",
+        "name": null,
+        "requirement": "required",
+        "modules": [],
+        "moduleNote": null,
+        "details": "Sit the UCAT in the year of application, before the 15 October UCAS deadline.",
+        "officialUrl": "https://www.ucat.ac.uk/",
+        "notes": null
+      },
+      "interview": "yes",
+      "interviewNote": "Selection days run from January to the end of February; 2027 dates had not been published when read.",
+      "contextualOffer": {
+        "availability": "yes",
+        "details": "AAB to include Biology and one additional science, for Home school leavers who meet two of Southampton’s contextual admissions criteria. Graduate, mature and international applicants are not eligible."
+      },
+      "gcseRequirements": "Seven GCSEs at grade 6 (B) or above, including English Language, Mathematics, and either Biology and Chemistry, combined science, or science and additional science.",
+      "englishLanguageRequirements": null,
+      "internationalNotes": null,
+      "placementOrStudyAbroad": null,
+      "notes": "NO GRADE EQUIVALENTS: “applicants must offer AAA or above, we do not accept grade or tariff equivalents to AAA.” Offers typically exclude General Studies and Critical Thinking; overlapping subjects are not accepted together (for example Zoology with Biology, or Biology with Sports Studies or PE). AGE: 18 or over at the start; younger applicants may be offered a deferred place.",
+      "provenance": {
+        "verificationStatus": "verified",
+        "officialUrl": "https://www.southampton.ac.uk/courses/medicine-bm5-degree-bmbs",
+        "sourceUrl": "https://www.southampton.ac.uk/courses/medicine-bm5-degree-bmbs",
+        "sourceTitle": "Medicine Degree BM5 | BMBS | University of Southampton",
+        "lastVerified": "2026-11-24",
+        "sources": []
+      }
+    },
+    {
+      "slug": "qmul-medicine-mbbs",
+      "universityId": "qmul",
+      "name": "Medicine (5 Year Programme)",
+      "subjectCategory": "medicine",
+      "subjectSubcategory": "medicine",
+      "degreeType": "MB",
+      "awardLabel": "MBBS",
+      "durationYears": 5,
+      "durationYearsMax": null,
+      "courseCode": "A100",
+      "alternativeCourseCodes": [],
+      "applicationYear": "2027",
+      "requirementsPublicationStatus": "published",
+      "latestPublishedYear": null,
+      "cycleNote": "The page gives “Entry Year: 2027” and “Start September 2027”.",
+      "rawRequirementText": "A*AA (results must be achieved in one sitting over a study period of no longer than two years). Must include Biology or Chemistry, and a second science (Chemistry, Biology, Physics or Mathematics).",
+      "minimumEntryStandard": null,
+      "offers": [
+        {
+          "label": "Standard offer",
+          "gradeProfile": "A*AA",
+          "required": [],
+          "recommended": [],
+          "constraints": [
+            {
+              "kind": "one-of",
+              "subjects": [
+                "Biology",
+                "Chemistry"
+              ],
+              "minimumGrade": "A",
+              "description": "Biology or Chemistry."
+            },
+            {
+              "kind": "min-count-at-grade",
+              "subjects": [
+                "Chemistry",
+                "Biology",
+                "Physics",
+                "Mathematics"
+              ],
+              "grade": "A",
+              "count": 2,
+              "description": "A second science: Chemistry, Biology, Physics or Mathematics."
+            }
+          ],
+          "rawText": "A*AA. Must include Biology or Chemistry, and a second science (Chemistry, Biology, Physics or Mathematics)"
+        },
+        {
+          "label": "Standard contextual offer",
+          "gradeProfile": "AAA",
+          "required": [],
+          "recommended": [],
+          "constraints": [
+            {
+              "kind": "one-of",
+              "subjects": [
+                "Biology",
+                "Chemistry"
+              ],
+              "minimumGrade": "A",
+              "description": "Biology or Chemistry."
+            },
+            {
+              "kind": "min-count-at-grade",
+              "subjects": [
+                "Chemistry",
+                "Biology",
+                "Physics",
+                "Mathematics"
+              ],
+              "grade": "A",
+              "count": 2,
+              "description": "A second science: Chemistry, Biology, Physics or Mathematics."
+            }
+          ],
+          "isContextual": true,
+          "rawText": "Our standard contextual offer: AAA. Must include Biology or Chemistry, and a second science (Chemistry, Biology, Physics or Mathematics)"
+        }
+      ],
+      "mathematics": "not-required",
+      "physics": "not-required",
+      "chemistry": "recommended",
+      "furtherMathematics": "no-stated-preference",
+      "furtherMathematicsNote": "Further Mathematics is not mentioned.",
+      "admissionsTest": {
+        "code": "ucat",
+        "name": null,
+        "requirement": "required",
+        "modules": [],
+        "moduleNote": null,
+        "details": "UCAT “Fourth decile or above, SJT Bands 1- 3.”",
+        "officialUrl": "https://www.ucat.ac.uk/",
+        "notes": null
+      },
+      "interview": "not-stated",
+      "interviewNote": "The course page does not describe an interview.",
+      "contextualOffer": {
+        "availability": "yes",
+        "details": "AAA with the same subject rule, for applicants who meet Queen Mary’s contextualised admissions criteria."
+      },
+      "gcseRequirements": "Six GCSEs at 777666 (AAABBB), including Biology, Chemistry, English Language or English Literature, and Mathematics. Science Double Award may substitute all sciences.",
+      "englishLanguageRequirements": null,
+      "internationalNotes": null,
+      "placementOrStudyAbroad": null,
+      "notes": "ONE SITTING: results must be achieved in one sitting over no more than two years. AGE: 18 or over by mid-September of entry; younger applicants can apply for deferred entry. DEADLINE: “UCAS application deadline: 15 October” (no year printed).",
+      "provenance": {
+        "verificationStatus": "verified",
+        "officialUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/medicine-5-year-programme/",
+        "sourceUrl": "https://www.qmul.ac.uk/undergraduate/coursefinder/courses/2027/medicine-5-year-programme/",
+        "sourceTitle": "Medicine (5 Year Programme) - Queen Mary University of London",
+        "lastVerified": "2026-11-24",
+        "sources": []
+      }
+    },
+    {
+      "slug": "lancaster-medicine-mbchb",
+      "universityId": "lancaster",
+      "name": "Medicine and Surgery",
+      "subjectCategory": "medicine",
+      "subjectSubcategory": "medicine",
+      "degreeType": "MB",
+      "awardLabel": "MBChB",
+      "durationYears": 5,
+      "durationYearsMax": null,
+      "courseCode": "A100",
+      "alternativeCourseCodes": [],
+      "applicationYear": "2027",
+      "requirementsPublicationStatus": "published",
+      "latestPublishedYear": null,
+      "cycleNote": "Read at the 2027 course URL.",
+      "rawRequirementText": "AAA. This should include three subjects taken at one sitting, after two years of study, including any two of Biology, Chemistry and Psychology.",
+      "minimumEntryStandard": null,
+      "offers": [
+        {
+          "label": "Typical offer",
+          "gradeProfile": "AAA",
+          "required": [],
+          "recommended": [],
+          "constraints": [
+            {
+              "kind": "min-count-at-grade",
+              "subjects": [
+                "Biology",
+                "Chemistry",
+                "Psychology"
+              ],
+              "grade": "A",
+              "count": 2,
+              "description": "Any two of Biology, Chemistry and Psychology."
+            }
+          ],
+          "rawText": "AAA ... including any two of Biology, Chemistry and Psychology."
+        }
+      ],
+      "mathematics": "not-required",
+      "physics": "not-required",
+      "chemistry": "not-required",
+      "furtherMathematics": "no-stated-preference",
+      "furtherMathematicsNote": "Further Mathematics is not mentioned.",
+      "admissionsTest": {
+        "code": "ucat",
+        "name": null,
+        "requirement": "required",
+        "modules": [],
+        "moduleNote": null,
+        "details": "“All applicants must take the University Clinical Aptitude Test (UCAT) to be eligible for consideration at Lancaster Medical School.”",
+        "officialUrl": "https://www.ucat.ac.uk/",
+        "notes": null
+      },
+      "interview": "yes",
+      "interviewNote": "“No applicant will be offered a place without being interviewed in person.” Multiple mini interview format.",
+      "contextualOffer": {
+        "availability": "unknown",
+        "details": "The page links to Lancaster’s general contextual admissions scheme; no reduced offer is printed for this course."
+      },
+      "gcseRequirements": "At least 13 points from 8 GCSEs (A/A*/7-9 = 2 points; B/6 = 1 point), including double award Combined Science or Biology, Chemistry and Physics, plus Maths and English Language at grade 6 (B) or above. Biology or Chemistry not taken at A-level must be at least grade 7 (A) at GCSE.",
+      "englishLanguageRequirements": null,
+      "internationalNotes": null,
+      "placementOrStudyAbroad": null,
+      "notes": "ONE SITTING: the three A-levels must be taken at one sitting after two years of study.",
+      "provenance": {
+        "verificationStatus": "verified",
+        "officialUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/medicine-and-surgery-mbchb-a100/2027/",
+        "sourceUrl": "https://www.lancaster.ac.uk/study/undergraduate/courses/medicine-and-surgery-mbchb-a100/2027/",
+        "sourceTitle": "Medicine and Surgery MBChB (A100) - Lancaster University",
+        "lastVerified": "2026-11-24",
+        "sources": []
+      }
+    },
+    {
+      "slug": "hyms-medicine-mbbs",
+      "universityId": "hyms",
+      "name": "Medicine",
+      "subjectCategory": "medicine",
+      "subjectSubcategory": "medicine",
+      "degreeType": "MB",
+      "awardLabel": "MB BS",
+      "durationYears": 5,
+      "durationYearsMax": null,
+      "courseCode": "A100",
+      "alternativeCourseCodes": [],
+      "applicationYear": "2027",
+      "requirementsPublicationStatus": "published",
+      "latestPublishedYear": null,
+      "cycleNote": "The offers page is headed “MB BS Medicine offers for 2027 entry”; the course page gives a September 2027 start.",
+      "rawRequirementText": "Standard offer: AAA at A Level including Biology and Chemistry. The third A level can be any subject (excluding General Studies, Applied Science, Citizenship and Critical Thinking). All three A levels should be taken in one sitting.",
+      "minimumEntryStandard": null,
+      "offers": [
+        {
+          "label": "Standard offer",
+          "gradeProfile": "AAA",
+          "required": [
+            [
+              "Biology",
+              "A"
+            ],
+            [
+              "Chemistry",
+              "A"
+            ]
+          ],
+          "recommended": [],
+          "rawText": "AAA at A Level including Biology and Chemistry."
+        },
+        {
+          "label": "Reduced offer (contextual)",
+          "gradeProfile": "AAB",
+          "required": [
+            "Biology",
+            "Chemistry"
+          ],
+          "recommended": [],
+          "isContextual": true,
+          "rawText": "AAB at A level, to include Biology and Chemistry and meet contextual data requirements. There is no subject restriction for which A Level the B is achieved in."
+        }
+      ],
+      "mathematics": "not-required",
+      "physics": "not-required",
+      "chemistry": "required",
+      "furtherMathematics": "no-stated-preference",
+      "furtherMathematicsNote": "Further Mathematics is not mentioned.",
+      "admissionsTest": {
+        "code": "ucat",
+        "name": null,
+        "requirement": "required",
+        "modules": [],
+        "moduleNote": null,
+        "details": "Sit the UCAT in the year of application and achieve a Situational Judgement Test band of 1, 2 or 3.",
+        "officialUrl": "https://www.ucat.ac.uk/",
+        "notes": null
+      },
+      "interview": "yes",
+      "interviewNote": "Applicants who meet the entry requirements are scored for selection to interview.",
+      "contextualOffer": {
+        "availability": "yes",
+        "details": "Reduced offer AAB including Biology and Chemistry for applicants meeting contextual data requirements, only if Hull York is the firm choice. An alternative offer of ABB applies after a listed widening participation programme."
+      },
+      "gcseRequirements": "Six GCSEs at grades 9 to 4 (A* to C), including English Language and Maths at grade 6 (B) or above. GCSE resits are accepted.",
+      "englishLanguageRequirements": null,
+      "internationalNotes": null,
+      "placementOrStudyAbroad": null,
+      "notes": "EXCLUDED THIRD SUBJECTS: General Studies, Applied Science, Citizenship and Critical Thinking; subjects must be distinct, and Biology and Human Biology are not distinct. All three A-levels in one sitting. Predicted grades no lower than AAB (ABB on the alternative-offer route). EPQ OFFER: AAB with AA in Biology and Chemistry, B in the third subject and A in the EPQ, firm choice only (not checked against your grades). AGE: 18 by 1 October of entry. An Additional Information form is due by 30 October 2026.",
+      "provenance": {
+        "verificationStatus": "verified",
+        "officialUrl": "https://www.hyms.ac.uk/medicine/mbbs-medicine",
+        "sourceUrl": "https://www.hyms.ac.uk/medicine/entry-requirements/offers",
+        "sourceTitle": "Offers for MB BS Medicine and Medicine with a Gateway Year | Hull York Medical School",
+        "lastVerified": "2026-11-24",
+        "sources": [
+          {
+            "url": "https://www.hyms.ac.uk/medicine/entry-requirements/entry-requirements-medicine",
+            "title": "Entry requirements for Medicine | Hull York Medical School",
+            "applicationYear": "2027",
+            "lastVerified": "2026-11-24",
+            "kind": "admissions-page"
+          }
+        ]
+      }
+    },
+    {
       "slug": "oxford-physics-mphys",
       "universityId": "oxford",
       "name": "Physics",

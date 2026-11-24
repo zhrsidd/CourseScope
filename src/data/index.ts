@@ -42,6 +42,14 @@ import { batch9CambridgeMedicine } from './courses.real.batch9.cambridge';
 import { batch9EdinburghMedicine } from './courses.real.batch9.edinburgh';
 import { batch9GlasgowMedicine } from './courses.real.batch9.glasgow';
 import { batch9StAndrewsMedicine } from './courses.real.batch9.st-andrews';
+import { batch10BirminghamMedicine } from './courses.real.batch10.birmingham';
+import { batch10LeedsMedicine } from './courses.real.batch10.leeds';
+import { batch10SheffieldMedicine } from './courses.real.batch10.sheffield';
+import { batch10NottinghamMedicine } from './courses.real.batch10.nottingham';
+import { batch10SouthamptonMedicine } from './courses.real.batch10.southampton';
+import { batch11QmulMedicine } from './courses.real.batch11.qmul';
+import { batch11LancasterMedicine } from './courses.real.batch11.lancaster';
+import { batch11HymsMedicine } from './courses.real.batch11.hyms';
 
 export {
   universities,
@@ -213,6 +221,21 @@ export const batch9MedicineCourses: Course[] = [
   batch9GlasgowMedicine,
   batch9StAndrewsMedicine,
 ];
+
+/**
+ * Batches 10 and 11 — standard-entry Medicine at Birmingham, Leeds, Sheffield,
+ * Nottingham, Southampton, Queen Mary, Lancaster and Hull York Medical School
+ * (a new university record), all verified for 2027 entry on 2026-11-24.
+ * Research note: research/medicine-b10-b11.md.
+ */
+export const batch10MedicineCourses: Course[] = [
+  batch10BirminghamMedicine,
+  batch10LeedsMedicine,
+  batch10SheffieldMedicine,
+  batch10NottinghamMedicine,
+  batch10SouthamptonMedicine,
+];
+export const batch11MedicineCourses: Course[] = [batch11QmulMedicine, batch11LancasterMedicine, batch11HymsMedicine];
 export * from './taxonomy';
 // Tuition fees are deliberately NOT re-exported here: they are ~280 KB of data used only by the course
 // page and the admin view, and re-exporting them put them in the catalogue chunk every page waits for.
@@ -238,6 +261,8 @@ const seedRows: Course[] = [
   ...v09Courses,
   ...batch8MedicineCourses,
   ...batch9MedicineCourses,
+  ...batch10MedicineCourses,
+  ...batch11MedicineCourses,
   ...shells2028,
 ];
 

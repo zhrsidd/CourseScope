@@ -97,7 +97,8 @@ for (const [label, h, expect] of legacy) {
 {
   const { ctx, p } = await mk(); await go(p, '/universities');
   const links = await p.$$eval('a', (as) => as.filter((a) => /View courses/.test(a.textContent ?? '')).map((a) => a.getAttribute('href').replace(/^#/, '')));
-  t('the Universities page has 22 "View courses" links', links.length === 22, `${links.length}`);
+  // 23 = 22 + Hull York Medical School, added with Medicine batch 11.
+  t('the Universities page has 23 "View courses" links', links.length === 23, `${links.length}`);
   let ok = 0; const bad = [];
   for (const href of links) {
     await p.goto(`${BASE}/#${href}`, { waitUntil: 'networkidle' }); await p.waitForTimeout(250);
@@ -107,7 +108,7 @@ for (const [label, h, expect] of legacy) {
     const notFound = /Page not found/.test(await p.locator('main').innerText());
     (!notFound && n > 0 && names.length === 1 && (await hash(p)).includes(`university=${slug}`)) ? ok++ : bad.push(`${slug}: ${n} rows, ${names.length} names`);
   }
-  t('  …each opens #/search with only that university’s courses', ok === 22, bad.join('; ') || 'all 22');
+  t('  …each opens #/search with only that university’s courses', ok === links.length, bad.join('; ') || `all ${ok}`);
   await ctx.close();
 }
 /* 5. year rules */
@@ -284,11 +285,12 @@ for (const [label, h, expect] of legacy) {
   await p.getByRole('button', { name: 'Show another course' }).click(); await p.waitForTimeout(200);
   t('  …and "Show another course" changes it', (await p.locator('.lp-feat blockquote').innerText()) !== quote);
   const nums = await p.evaluate(() => [...document.querySelectorAll('.lp-state b')].map((e) => e.textContent));
-  // 569 verified for 2027 = 562 + four verified Medicine courses (batch 8) + three (batch 9).
+  // 577 verified for 2027 = 562 + verified Medicine: four (batch 8), three (batch 9), eight (batches 10-11).
   // 6 awaiting = 5 + St Andrews Medicine (batch 9), whose page prints no A-level grades.
-  t('record-state counts are computed (569 / 6 / 562 for this catalogue)', nums.join('/') === '569/6/562', nums.join('/'));
+  t('record-state counts are computed (577 / 6 / 562 for this catalogue)', nums.join('/') === '577/6/562', nums.join('/'));
   await p.getByRole('button', { name: 'View coverage as a table' }).click(); await p.waitForTimeout(400);
-  t('coverage can be read as a real table', (await p.locator('.lp-table tbody tr').count()) === 22);
+  // 23 = 22 + Hull York Medical School, added with Medicine batch 11.
+  t('coverage can be read as a real table', (await p.locator('.lp-table tbody tr').count()) === 23);
   // keyboard (reload so focus starts at the document, as the existing QA does)
   await go(p, '/other'); await go(p, '/'); await p.reload({ waitUntil: 'networkidle' }); await p.waitForTimeout(600);
   await p.evaluate(() => document.activeElement?.blur?.());
