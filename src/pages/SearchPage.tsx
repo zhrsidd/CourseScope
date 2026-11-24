@@ -255,7 +255,7 @@ export function SearchPage() {
         <div className="wrap ex-top-in">
           <div>
             <p className="ex-eyebrow">Course explorer · {filters.applicationYear} entry</p>
-            <h1>Find the right UK Physics or Engineering course</h1>
+            <h1>Find the right UK university course</h1>
             <p className="ex-lede">
               Compare published entry requirements, admissions tests and application routes across UK
               universities.
@@ -423,7 +423,7 @@ export function SearchPage() {
             <EmptyState
               icon={<IconSearch width={28} height={28} />}
               title={blocked ? 'This link’s filters cannot match any course' : 'No courses match these filters'}
-              description={blocked ? 'A filter in the address is not one CourseScope recognises, so nothing can match it. Remove the unrecognised filters above to see courses.' : 'Try removing a filter or clearing the search box. The catalogue covers UK Physics and Engineering degrees only.'}
+              description={blocked ? 'A filter in the address is not one CourseScope recognises, so nothing can match it. Remove the unrecognised filters above to see courses.' : 'Try removing a filter or clearing the search box. The catalogue covers only the subjects listed under Subject in the filters.'}
               action={
                 <button type="button" className="btn-secondary" onClick={resetFilters}>
                   Reset all filters

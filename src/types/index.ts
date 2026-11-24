@@ -45,7 +45,17 @@ export const GCSE_GRADES: readonly GcseGrade[] = ['9', '8', '7', '6', '5', '4', 
 /* Subject taxonomy                                                    */
 /* ------------------------------------------------------------------ */
 
-export type SubjectCategory = 'physics' | 'engineering';
+export type SubjectCategory =
+  | 'physics'
+  | 'engineering'
+  | 'medicine'
+  | 'dentistry'
+  | 'veterinary'
+  | 'pharmacy'
+  | 'biomedical-sciences'
+  | 'nursing'
+  | 'physiotherapy'
+  | 'physician-associate';
 
 export type PhysicsSubcategory =
   | 'physics'
@@ -84,7 +94,32 @@ export type EngineeringSubcategory =
   | 'information-engineering'
   | 'computer-engineering';
 
-export type SubjectSubcategory = PhysicsSubcategory | EngineeringSubcategory;
+/**
+ * Medicine starts with one subcategory: the standard-entry primary medical
+ * degree (A100-type). Graduate-entry, gateway and foundation routes are
+ * separate UCAS applications with different requirements and get their own
+ * subcategories when the first of them is read.
+ */
+export type MedicineSubcategory = 'medicine';
+
+/**
+ * Health subjects added after Medicine. Each is its own subject area, with one
+ * subcategory to start (Nursing has the four NMC fields), and grows a new
+ * subcategory only when a real course needs one.
+ */
+export type HealthSubcategory =
+  | 'dentistry'
+  | 'veterinary'
+  | 'pharmacy'
+  | 'biomedical-sciences'
+  | 'nursing-adult'
+  | 'nursing-child'
+  | 'nursing-mental-health'
+  | 'nursing-learning-disability'
+  | 'physiotherapy'
+  | 'physician-associate';
+
+export type SubjectSubcategory = PhysicsSubcategory | EngineeringSubcategory | MedicineSubcategory | HealthSubcategory;
 
 export interface SubcategoryMeta {
   id: SubjectSubcategory;
@@ -105,6 +140,13 @@ export type DegreeType =
   | 'MSci'
   | 'MEng'
   | 'MMath'
+  /** A primary medical qualification: MBBS, MBChB, BMBS, MB BChir and the like. */
+  | 'MB'
+  /** A dental degree: BDS, BChD and the like. */
+  | 'BDS'
+  /** A veterinary degree: BVSc, BVetMed, BVM&S, VetMB and the like. */
+  | 'BVet'
+  | 'MPharm'
   | 'Other';
 
 export interface DegreeTypeMeta {
@@ -171,6 +213,7 @@ export type AdmissionsTestCode =
   | 'step'
   | 'mat'
   | 'tara'
+  | 'ucat'
   | 'university-specific'
   | 'not-announced'
   | 'other'
@@ -411,6 +454,12 @@ export type DeadlineScope =
   | { kind: 'all-courses' }
   | { kind: 'course-slugs'; slugs: string[] }
   | { kind: 'subject-category'; category: SubjectCategory }
+  /**
+   * Several subject areas, for a date read from (say) physics and engineering
+   * pages that must not be shown on a medicine course, whose UCAS deadline is
+   * earlier.
+   */
+  | { kind: 'subject-categories'; categories: SubjectCategory[] }
   | { kind: 'other'; description: string };
 
 export interface ApplicationDeadline {

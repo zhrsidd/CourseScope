@@ -74,7 +74,8 @@ const PROF = { 'ukcf.profile.v1': JSON.stringify(prof) };
   const sw = await cm.locator('.cm-scroll').evaluate((e) => e.scrollWidth - e.clientWidth);
   t('coverage matrix on a phone needs no sideways scrolling', sw <= 1, `${sw}px`);
   const blocks = await cm.locator('tbody tr').count();
-  t('  …all universities are still present, one block each', blocks === 22, `${blocks}`);
+  // 26 = 22 + universities added for Medicine: Hull York (batch 11); Newcastle, Liverpool, Exeter (batch 12).
+  t('  …all universities are still present, one block each', blocks === 26, `${blocks}`);
   t('  …every shown tile group is labelled with its column', await cm.locator('tbody td:not([data-total="0"])').evaluateAll((c) => c.every((x) => getComputedStyle(x, '::before').content.length > 2)));
   const rowCells = await cm.locator('tbody tr').first().locator('td').count();
   t('  …cells keep column labels for assistive tech (table roles retained)', (await cm.locator('table[role=table]').count()) === 1 && rowCells >= 2);

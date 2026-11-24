@@ -469,6 +469,34 @@
 .row:focus-within::before {
   opacity: 1;
 }
+/* Subject accent: a thin bar in the category colour down the row's left edge.
+   Quiet at rest, full strength while the row is hovered or holds focus. The
+   category is also in the row's text for screen readers. */
+.row::after {
+  content: '';
+  position: absolute;
+  top: 18px;
+  bottom: 14px;
+  left: -12px;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--cat, transparent);
+  opacity: 0.4;
+}
+.row:hover::after,
+.row:focus-within::after {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .row::after {
+    transition: opacity var(--d-quick) var(--e-standard);
+  }
+}
+@media (forced-colors: active) {
+  .row::after {
+    background: CanvasText;
+  }
+}
 .r-main {
   grid-column: 1;
   grid-row: 1 / span 1;
@@ -1106,5 +1134,37 @@
   .tray .btn-secondary {
     flex: 1 1 0;
     justify-content: center;
+  }
+}
+
+/* ---------- Subject category accent ----------
+   A 8px marker in the category colour beside the category's name. Nothing else
+   is tinted: the rows, cards and headings stay neutral. */
+.cat-physics { --cat: var(--cat-physics); }
+.cat-engineering { --cat: var(--cat-engineering); }
+.cat-medicine { --cat: var(--cat-medicine); }
+.cat-dentistry { --cat: var(--cat-dentistry); }
+.cat-veterinary { --cat: var(--cat-veterinary); }
+.cat-pharmacy { --cat: var(--cat-pharmacy); }
+.cat-biomedical-sciences { --cat: var(--cat-biomedical-sciences); }
+.cat-nursing { --cat: var(--cat-nursing); }
+.cat-physiotherapy { --cat: var(--cat-physiotherapy); }
+.cat-physician-associate { --cat: var(--cat-physician-associate); }
+.cat-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+.cat-mark {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--cat, var(--control));
+}
+@media (forced-colors: active) {
+  .cat-mark {
+    background: CanvasText;
   }
 }

@@ -34,6 +34,31 @@ import {
 } from './courses.real.batch7.lancaster';
 import { batch7ManchesterCourses } from './courses.real.batch7.manchester';
 import { shells2028 } from './courses.2028-shells';
+import { batch8ImperialMedicine } from './courses.real.batch8.imperial';
+import { batch8KclMedicine } from './courses.real.batch8.kcl';
+import { batch8ManchesterMedicine } from './courses.real.batch8.manchester';
+import { batch8BristolMedicine } from './courses.real.batch8.bristol';
+import { batch9CambridgeMedicine } from './courses.real.batch9.cambridge';
+import { batch9EdinburghMedicine } from './courses.real.batch9.edinburgh';
+import { batch9GlasgowMedicine } from './courses.real.batch9.glasgow';
+import { batch9StAndrewsMedicine } from './courses.real.batch9.st-andrews';
+import { batch10BirminghamMedicine } from './courses.real.batch10.birmingham';
+import { batch10LeedsMedicine } from './courses.real.batch10.leeds';
+import { batch10SheffieldMedicine } from './courses.real.batch10.sheffield';
+import { batch10NottinghamMedicine } from './courses.real.batch10.nottingham';
+import { batch10SouthamptonMedicine } from './courses.real.batch10.southampton';
+import { batch11QmulMedicine } from './courses.real.batch11.qmul';
+import { batch11LancasterMedicine } from './courses.real.batch11.lancaster';
+import { batch11HymsMedicine } from './courses.real.batch11.hyms';
+import { batch12NewcastleMedicine } from './courses.real.batch12.newcastle';
+import { batch12LiverpoolMedicine } from './courses.real.batch12.liverpool';
+import { batch12ExeterMedicine } from './courses.real.batch12.exeter';
+import { dentD1Birmingham } from './courses.dent.d1.birmingham';
+import { dentD1Bristol } from './courses.dent.d1.bristol';
+import { dentD1Glasgow } from './courses.dent.d1.glasgow';
+import { dentD1Kcl } from './courses.dent.d1.kcl';
+import { dentD1Liverpool } from './courses.dent.d1.liverpool';
+import { dentD1Sheffield } from './courses.dent.d1.sheffield';
 
 export {
   universities,
@@ -180,6 +205,66 @@ export const v08Courses: Course[] = [...v08ClosureCourses];
  * held back — is imported alongside the MEng it was always paired with.
  */
 export const v09Courses: Course[] = [...v09QmulCourses, v09KclBEng];
+
+/**
+ * Batch 8 — the first Medicine records: the standard-entry course at
+ * Imperial, King's, Manchester and Bristol, read on 2026-11-22. Research note:
+ * research/medicine-b8.md. UCL was not readable by script and is not included.
+ */
+export const batch8MedicineCourses: Course[] = [
+  batch8ImperialMedicine,
+  batch8KclMedicine,
+  batch8ManchesterMedicine,
+  batch8BristolMedicine,
+];
+
+/**
+ * Batch 9 — Medicine at Cambridge, Edinburgh and Glasgow (verified), and St
+ * Andrews (identity only: no A-level grades are printed), read on 2026-11-24.
+ * Oxford returned a bot challenge and was not read. Research note:
+ * research/medicine-b9.md.
+ */
+export const batch9MedicineCourses: Course[] = [
+  batch9CambridgeMedicine,
+  batch9EdinburghMedicine,
+  batch9GlasgowMedicine,
+  batch9StAndrewsMedicine,
+];
+
+/**
+ * Batches 10 and 11 — standard-entry Medicine at Birmingham, Leeds, Sheffield,
+ * Nottingham, Southampton, Queen Mary, Lancaster and Hull York Medical School
+ * (a new university record), all verified for 2027 entry on 2026-11-24.
+ * Research note: research/medicine-b10-b11.md.
+ */
+export const batch10MedicineCourses: Course[] = [
+  batch10BirminghamMedicine,
+  batch10LeedsMedicine,
+  batch10SheffieldMedicine,
+  batch10NottinghamMedicine,
+  batch10SouthamptonMedicine,
+];
+export const batch11MedicineCourses: Course[] = [batch11QmulMedicine, batch11LancasterMedicine, batch11HymsMedicine];
+
+/**
+ * Batch 12 — Medicine at Newcastle, Liverpool and Exeter, verified on
+ * 2026-11-24; all three are new university records. Keele is NOT added: its
+ * requirements page describes 2026 entry, and a university may not be listed on
+ * identity alone (section 26a). Leicester returned a bot challenge and was not
+ * read. Research note: research/medicine-b12.md.
+ */
+export const batch12MedicineCourses: Course[] = [
+  batch12NewcastleMedicine,
+  batch12LiverpoolMedicine,
+  batch12ExeterMedicine,
+];
+
+/**
+ * Dentistry batch D1 — Birmingham, Bristol, Glasgow, King's, Liverpool and
+ * Sheffield, verified for 2027 entry on 2026-11-24. Research note:
+ * research/dentistry-d1.md.
+ */
+export const dentistryD1Courses: Course[] = [dentD1Birmingham, dentD1Bristol, dentD1Glasgow, dentD1Kcl, dentD1Liverpool, dentD1Sheffield];
 export * from './taxonomy';
 // Tuition fees are deliberately NOT re-exported here: they are ~280 KB of data used only by the course
 // page and the admin view, and re-exporting them put them in the catalogue chunk every page waits for.
@@ -203,6 +288,12 @@ const seedRows: Course[] = [
   ...batch7Courses,
   ...v08Courses,
   ...v09Courses,
+  ...batch8MedicineCourses,
+  ...batch9MedicineCourses,
+  ...batch10MedicineCourses,
+  ...batch11MedicineCourses,
+  ...batch12MedicineCourses,
+  ...dentistryD1Courses,
   ...shells2028,
 ];
 

@@ -11,6 +11,7 @@ import {
   typicalOfferLabel,
 } from '@/lib/format';
 import { filledGrades } from '@/lib/grades';
+import { SUBJECT_CATEGORIES } from '@/data/taxonomy';
 import { MAX_COMPARE, useApp } from '@/state/AppContext';
 import { announce } from './Announcer';
 import { EligibilityBadge } from './EligibilityBadge';
@@ -21,6 +22,8 @@ import { VerificationBadge } from './SourceBadge';
 import { Collapse } from './ui/Collapse';
 import { IconChevron, IconCompare, IconHeart, IconWarning } from './ui/icons';
 import { Badge, cx } from './ui/primitives';
+
+const CATEGORY_LABEL: Record<string, string> = Object.fromEntries(SUBJECT_CATEGORIES.map((c) => [c.id, c.label]));
 
 /** "A*AA" and "AAB" read as grades. Anything longer is a sentence and is set as text. */
 const isGradeOffer = (s: string) => /^(A\*|[A-E]){3,5}$/.test(s);
@@ -99,7 +102,7 @@ export function CourseRow({
   const showVerdict = Boolean(eligibility) && hasGrades && hasRequirements;
 
   return (
-    <article className="row" aria-label={`${uniName}, ${course.name}`}>
+    <article className={cx('row', `cat-${course.subjectCategory}`)} aria-label={`${uniName}, ${course.name}`}>
       <div className="r-main">
         {hideUniversity ? null : (
           <div className="r-uni">
@@ -114,6 +117,7 @@ export function CourseRow({
           </h3>
           <span className="r-award">{awardLabel(course)}</span>
           <span className="r-meta">
+            <span className="sr-only">{CATEGORY_LABEL[course.subjectCategory]}</span>
             <span>{durationLabel(course.durationYears, course.durationYearsMax)}</span>
             <span>{course.applicationYear} entry</span>
             {course.courseCode ? (

@@ -352,11 +352,27 @@ const SEEDS: UniversitySeed[] = [
         label: 'UCAS equal consideration deadline',
         date: '2027-01-13',
         years: ['2027'],
+        // Read from physics and engineering pages, so scoped to them: Imperial's
+        // Medicine page gives an October deadline (below).
+        appliesTo: { kind: 'subject-categories', categories: ['physics', 'engineering'] },
         notes: '18:00 UK time.',
         verification: 'verified',
         sourceUrl: 'https://www.imperial.ac.uk/study/courses/undergraduate/physics-bsc/',
         sourceTitle: 'Physics BSc | Imperial College London',
         lastVerified: '2026-09-01',
+      },
+      {
+        // Read from the 2027-entry Medicine MBBS/BSc (A100) page on 2026-11-22:
+        // "Application deadlines – Thursday 15 October 2026 at 18.00 (UK time)".
+        label: 'UCAS application deadline (Medicine)',
+        date: '2026-10-15',
+        years: ['2027'],
+        appliesTo: { kind: 'subject-category', category: 'medicine' },
+        notes: '18:00 UK time. The page also says applications for this course are now closed.',
+        verification: 'verified',
+        sourceUrl: 'https://www.imperial.ac.uk/study/courses/undergraduate/2027/medicine/',
+        sourceTitle: 'Medicine MBBS/BSc | Study | Imperial College London',
+        lastVerified: '2026-11-22',
       },
       {
         label: 'UCAS equal consideration deadline',
@@ -453,6 +469,25 @@ const SEEDS: UniversitySeed[] = [
     domain: 'ed.ac.uk',
     departments: ['School of Physics and Astronomy', 'School of Engineering'],
     ranks: { overall: 27, physics: 33, engineering: 36 },
+    deadlines: [
+      {
+        // Read from the 2027-entry MBChB Medicine (A100) page on 2026-11-24:
+        // "2027 entry UCAS deadline: 15 October 2026 (6:00pm GMT)".
+        label: 'UCAS application deadline (Medicine)',
+        date: '2026-10-15',
+        years: ['2027'],
+        appliesTo: { kind: 'subject-category', category: 'medicine' },
+        notes: '6:00pm GMT. Applies to all UK, EU and international applicants.',
+        verification: 'verified',
+        sourceUrl: 'https://study.ed.ac.uk/programmes/undergraduate/354-mbchb-medicine-6-year-programme',
+        sourceTitle: 'MBChB Medicine (6-year programme) MBChB - Undergraduate programmes | The University of Edinburgh',
+        lastVerified: '2026-11-24',
+      },
+      {
+        label: 'UCAS equal consideration deadline',
+        notes: 'The standard UCAS deadline for courses starting the following autumn.',
+      },
+    ],
     overview: {
       typicalOffer: 'A*AA (demo)',
       requiredSubjectsNote: 'Mathematics and Physics required.',
@@ -535,6 +570,25 @@ const SEEDS: UniversitySeed[] = [
     domain: 'birmingham.ac.uk',
     departments: ['School of Physics and Astronomy', 'School of Engineering'],
     ranks: { overall: 84, physics: 101, engineering: 96 },
+    deadlines: [
+      {
+        // Read from the Medicine and Surgery MBChB (A100) page on 2026-11-24:
+        // "15 October 2026 Application deadline for September 2027 entry."
+        label: 'UCAS application deadline (Medicine)',
+        date: '2026-10-15',
+        years: ['2027'],
+        appliesTo: { kind: 'subject-category', category: 'medicine' },
+        notes: null,
+        verification: 'verified',
+        sourceUrl: 'https://www.birmingham.ac.uk/study/undergraduate/subjects/medicine-courses/medicine-and-surgery-mbchb',
+        sourceTitle: 'Medicine and Surgery MBChB - University of Birmingham',
+        lastVerified: '2026-11-24',
+      },
+      {
+        label: 'UCAS equal consideration deadline',
+        notes: 'The standard UCAS deadline for courses starting the following autumn.',
+      },
+    ],
     overview: {
       typicalOffer: 'AAA (demo)',
       requiredSubjectsNote: 'Mathematics and Physics required for physics.',
@@ -788,6 +842,81 @@ const SEEDS: UniversitySeed[] = [
       applicationDeadline: 'UCAS equal consideration deadline (late January)',
     },
   },
+  {
+    // Added with Medicine batch 11. Hull York Medical School is its own UCAS
+    // institution (code H75); its MB BS is awarded jointly by the University of
+    // Hull and the University of York. No ranking positions are seeded.
+    id: 'hyms',
+    name: 'Hull York Medical School',
+    shortName: 'Hull York',
+    initials: 'HYMS',
+    city: 'Hull and York',
+    region: 'Yorkshire and the Humber',
+    domain: 'hyms.ac.uk',
+    departments: ['Hull York Medical School (University of Hull and University of York)'],
+  },
+  // Added with Medicine batch 12. No ranking positions are seeded.
+  {
+    id: 'newcastle',
+    name: 'Newcastle University',
+    shortName: 'Newcastle',
+    initials: 'NCL',
+    city: 'Newcastle upon Tyne',
+    region: 'North East England',
+    domain: 'ncl.ac.uk',
+    departments: ['School of Medicine'],
+    deadlines: [
+      {
+        // A100 page, read 2026-11-24: “the closing date for applications is 15 October 2026”.
+        label: 'UCAS application deadline (Medicine)',
+        date: '2026-10-15',
+        years: ['2027'],
+        appliesTo: { kind: 'subject-category', category: 'medicine' },
+        notes: null,
+        verification: 'verified',
+        sourceUrl: 'https://www.ncl.ac.uk/undergraduate/degrees/a100/',
+        sourceTitle: 'Medicine and Surgery MB BS | Undergraduate | Newcastle University',
+        lastVerified: '2026-11-24',
+      },
+      { label: 'UCAS equal consideration deadline', notes: 'The standard UCAS deadline for courses starting the following autumn.' },
+    ],
+  },
+  {
+    id: 'liverpool',
+    name: 'University of Liverpool',
+    shortName: 'Liverpool',
+    initials: 'LIV',
+    city: 'Liverpool',
+    region: 'North West England',
+    domain: 'liverpool.ac.uk',
+    departments: ['School of Medicine'],
+    deadlines: [
+      {
+        // A100 page, read 2026-11-24: “Apply by: 15 October 2026” for a September 2027 start.
+        label: 'UCAS application deadline (Medicine)',
+        date: '2026-10-15',
+        years: ['2027'],
+        appliesTo: { kind: 'subject-category', category: 'medicine' },
+        notes: null,
+        verification: 'verified',
+        sourceUrl: 'https://www.liverpool.ac.uk/courses/medicine-and-surgery-mbchb',
+        sourceTitle: 'Medicine and Surgery MBChB | Courses | University of Liverpool',
+        lastVerified: '2026-11-24',
+      },
+      { label: 'UCAS equal consideration deadline', notes: 'The standard UCAS deadline for courses starting the following autumn.' },
+    ],
+  },
+  {
+    id: 'exeter',
+    name: 'University of Exeter',
+    shortName: 'Exeter',
+    initials: 'EXE',
+    city: 'Exeter',
+    region: 'South West England',
+    domain: 'exeter.ac.uk',
+    departments: ['University of Exeter Medical School'],
+  },
+
 ];
 
 /**

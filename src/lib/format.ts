@@ -10,10 +10,12 @@ import type {
   InterviewPolicy,
   Ranking,
   RankingCategory,
+  SubjectCategory,
   SubjectStatus,
   University,
   VerificationStatus,
 } from '@/types';
+import { SUBJECT_CATEGORIES } from '@/data/taxonomy';
 import {
   ADMISSIONS_TEST_BY_CODE,
   FURTHER_MATHS_LABEL,
@@ -162,6 +164,8 @@ export function deadlinesForCourse(
         return d.appliesTo.slugs.includes(course.slug);
       case 'subject-category':
         return d.appliesTo.category === course.subjectCategory;
+      case 'subject-categories':
+        return d.appliesTo.categories.includes(course.subjectCategory);
       default:
         return false;
     }
@@ -175,6 +179,11 @@ export function deadlinesForYear(
   return university.applicationDeadlines.filter((d) => d.applicationYear === applicationYear);
 }
 
+const CATEGORY_NAME = Object.fromEntries(SUBJECT_CATEGORIES.map((c) => [c.id, c.label])) as Record<
+  SubjectCategory,
+  string
+>;
+
 export function deadlineScopeLabel(scope: DeadlineScope): string {
   switch (scope.kind) {
     case 'all-courses':
@@ -182,7 +191,9 @@ export function deadlineScopeLabel(scope: DeadlineScope): string {
     case 'course-slugs':
       return `${scope.slugs.length} specific course${scope.slugs.length === 1 ? '' : 's'}`;
     case 'subject-category':
-      return scope.category === 'physics' ? 'Physics courses' : 'Engineering courses';
+      return `${CATEGORY_NAME[scope.category]} courses`;
+    case 'subject-categories':
+      return `${scope.categories.map((c) => CATEGORY_NAME[c]).join(' and ')} courses`;
     default:
       return scope.description;
   }

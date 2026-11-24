@@ -3,6 +3,75 @@
 The student-facing release notes are also shown in the app, on the methodology page
 (`src/data/version.ts → RELEASES`). Engineering detail is in `DEVELOPER_NOTES` in the same file.
 
+## Unreleased
+
+- **Subject colour accents.** Each subject area has its own accent colour (`--cat-physics`,
+  `--cat-engineering`, and `--cat-medicine` reserved for the medicine catalogue) in `tokens.css`. It appears
+  on course rows as a thin bar down the row's left edge, at 40% opacity at rest and full strength while the row
+  is hovered or holds focus. The row carries the category name as screen-reader text. The course page header
+  and the university page's subject groups show an 8 px marker beside the subject's name (`CategoryTag`). In
+  forced-colours mode both use the text colour.
+- **Course page decluttered.** The cycle note and the research notes now sit behind a disclosure instead of
+  printing in full. In course-specific details, fields with nothing recorded (English language, international
+  applicants, placement or study abroad, other UCAS codes) no longer take a "Not recorded" row each; the empty
+  ones are named once in a single line. Admissions-test rows with nothing recorded (modules, details, test
+  page) are omitted. The specialism is no longer repeated in the header when it matches the subject area.
+  Nothing was removed from the data, and the unpublished-cycle and partially-verified notices still show in full.
+- **Medicine, batch 8.** The first four Medicine courses, read from each university's own page on
+  2026-11-22: Imperial Medicine MBBS/BSc (A100), King's Medicine MBBS (A100), Manchester MBChB Medicine (A106)
+  and Bristol MB ChB Medicine (A100), all 2027 entry and verified. Research note: `research/medicine-b8.md`.
+  UCL's page returns a Cloudflare bot challenge to a scripted request and was not read. Model additions: subject
+  category `medicine`, subcategory `medicine`, degree type `MB` (the award title stays per record), admissions
+  test `ucat`, and `Human Biology` in the subject list. Search understands "medicine"/"medical" and "UCAT".
+- **Dentistry, batch D1.** Six dental degrees verified for 2027 entry on 2026-11-24 (research note
+  `research/dentistry-d1.md`): Birmingham BDS (A200), Bristol BDS (A206), Glasgow BDS (A200), King's BDS (A205),
+  Liverpool BDS (A200) and Sheffield BDS (A200). Not added: Newcastle (no A-level subject rule on its course page or
+  dental admissions policy); Leeds and Manchester (course pages not located). Pinned snapshots now cover Physics and
+  Engineering only, and "health-only" universities are computed across all health subjects. Section 36.
+- **Health subjects (model only).** Seven new subject areas, each its own subject with its own accent colour:
+  Dentistry, Veterinary Medicine, Pharmacy, Biomedical Sciences, Nursing (four NMC fields as subcategories),
+  Physiotherapy and Physician Associate. New degree types `BDS`, `BVet` and `MPharm`. Subject labels in format,
+  search and the coverage matrix now come from `SUBJECT_CATEGORIES` instead of hard-coded maps. Search understands
+  each subject's words ("dental", "vet", "physio" and so on); health words are matched before specialism words, so
+  "biomedical science" is Biomedical Sciences while "biomedical engineering" stays Engineering, and "veterinary
+  medicine" is Veterinary only. Filters, the Subjects page and university pages show a subject only when it has
+  courses, so no empty subject appears before its first verified record. "Physics or Engineering" copy in the
+  filter heading, search title, empty state and Subjects page is replaced. No course records yet. Section 35.
+- **Medicine, batch 12.** Newcastle MB BS, Liverpool MBChB and Exeter BMBS (all A100), verified for 2027 entry on
+  2026-11-24; all three are new university records (26 universities now served). Newcastle's subject rule comes from
+  its linked 2027 Medicine Admissions Policy, cited as a second source. Liverpool's A*AB alternative is its own
+  pathway. Newcastle and Liverpool get verified medicine-scoped 15 October 2026 deadlines. Not added: Keele (its
+  requirements page describes 2026 entry, and a university is never listed on identity alone) and Leicester
+  (Cloudflare challenge). Pinned physics and engineering university counts now exclude universities added for
+  Medicine alone, computed from the data. Research note `research/medicine-b12.md`.
+- **Medicine, batches 10 and 11.** Eight standard-entry courses, all verified for 2027 entry on 2026-11-24
+  (research note `research/medicine-b10-b11.md`): Birmingham MBChB, Leeds MBChB, Sheffield MBChB, Nottingham BMBS,
+  Southampton BM5 (BMBS), Queen Mary MBBS, Lancaster MBChB and Hull York Medical School MB BS. Hull York is a new
+  university record (UCAS institution H75), so 23 universities are now served. Birmingham's Medicine deadline
+  (15 October 2026) is a verified medicine-scoped deadline. Sheffield's offer excludes Further Mathematics from the
+  threshold, and its EPQ alternative is in the notes. Queen Mary's page names no interview, so none is recorded.
+  Browser suites that pinned 22 universities, 1,137 courses and 569 verified now pin 23, 1,145 and 577.
+- **Medicine, batch 9.** Read on 2026-11-24 (research note `research/medicine-b9.md`): Cambridge MB BChir (A100),
+  Edinburgh MBChB (A100) and Glasgow MBChB (A100), all verified for 2027 entry. St Andrews Medicine BSc (Hons)
+  (A100) is identity only (awaiting data): neither its course page nor its Medicine entry-requirements page prints
+  A-level grades. Oxford was not read: `www.ox.ac.uk` now returns a Cloudflare bot challenge. Cambridge's
+  College-dependent subject count is two pathways; the "one other subject" pathway is accepted only at seven named
+  Colleges, so it is a manual-review condition. Edinburgh's Medicine deadline (15 October 2026) is a verified
+  medicine-scoped deadline. Edinburgh's requirements were read in a rendered page with each A-level option selected.
+- **Deadline scopes.** New scope `subject-categories`. Imperial's 13 January 2027 deadline, read from physics and
+  engineering pages, is now scoped to those subjects, and Imperial's Medicine page date (15 October 2026) is a
+  separate verified deadline, so a medicine course never shows the January date.
+- **Requirement ledger wording.** A subject named only inside a "one of these" or "N of these" rule now reads
+  "One of the accepted subjects, see conditions" instead of "Recommended". This also corrects existing physics
+  and engineering records that use such rules.
+- **Assertions.** Pinned pre-Medicine snapshots (catalogue size, verdict counts, requirement hash, verdict
+  fingerprint, deadline counts) now run against the catalogue without batch 8, so they still prove nothing else
+  changed. New section 31 covers the Medicine records, verdicts, deadlines and search. `qa.viz` and `qa.routing`
+  pinned totals moved by the four new verified courses (1,129 to 1,133; 562 to 566 verified for 2027).
+- **Exported data.** `data/*.json` had not been regenerated since 2026-09-28 (134 courses); it now matches the
+  catalogue (1,213 records), and `rankings.json` is empty because only verified rankings are exported.
+- **Not done yet: QS rankings.** QS serves a Cloudflare bot challenge; positions must be read by hand.
+
 ## CourseScope v2 (released to production 2026-10-28)
 
 - **Known issues (non-blocking).**

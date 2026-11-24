@@ -38,20 +38,25 @@ function BrowsePageInner() {
     return { bySub, uniBySub };
   }, [courses, universityById, eligibility, hasVerifiedData, profile.applicationYear]);
 
+  // Subject areas with no courses recorded for this entry year are not listed.
+  const shown = SUBJECT_CATEGORIES.filter((category) =>
+    SUBCATEGORIES.some((s) => s.category === category.id && (counts.bySub.get(s.id) ?? 0) > 0),
+  );
+
   return (
     <div className="mx-auto max-w-8xl px-4 py-6 md:px-6">
       <header className="pg-head">
         <p className="label">Browse</p>
-        <h1>Physics and Engineering</h1>
+        <h1>Subjects</h1>
         <p className="pg-sub">
-          Two subject areas across {universities.length} universities. Choose a specialism to see the
+          {shown.length} subject areas across {universities.length} universities. Choose a specialism to see the
           courses recorded for {profile.applicationYear} entry.
         </p>
       </header>
 
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-        {SUBJECT_CATEGORIES.map((category) => {
-          const subs = SUBCATEGORIES.filter((s) => s.category === category.id);
+        {shown.map((category) => {
+          const subs = SUBCATEGORIES.filter((s) => s.category === category.id && (counts.bySub.get(s.id) ?? 0) > 0);
           const total = subs.reduce((n, s) => n + (counts.bySub.get(s.id) ?? 0), 0);
           return (
             <section key={category.id}>

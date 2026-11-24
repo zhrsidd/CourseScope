@@ -42,6 +42,20 @@
   --rev-ink: #334155;
   --rev-bg: #f1f5f9;
 
+  /* Subject categories. Accents only: a small marker beside the category's
+     name, never a fill and never the only signal. Each is at least 4.5:1 on
+     white, and none reuses a status hue (ok, wait, no, rev) or the brand teal. */
+  --cat-physics: #4f46e5;
+  --cat-engineering: #a0522d;
+  --cat-medicine: #9d2f8a;
+  --cat-dentistry: #2563eb;
+  --cat-veterinary: #5f7012;
+  --cat-pharmacy: #c2410c;
+  --cat-biomedical-sciences: #0c6a8a;
+  --cat-nursing: #b0306a;
+  --cat-physiotherapy: #6d4fd8;
+  --cat-physician-associate: #8a6d1f;
+
   /* Type families */
   --f-display: 'Instrument Serif', 'Instrument Serif Fallback', Georgia, 'Times New Roman', serif;
   --f-ui: 'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;

@@ -3,6 +3,7 @@ import { Suspense, lazy } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { usePageTitle } from '@/lib/page-title';
 import { ADVISORY_FURTHER_MATHS } from '@/types';
+import { CategoryTag } from '@/components/CategoryTag';
 import { EligibilityBadge } from '@/components/EligibilityBadge';
 import { InfoTooltip } from '@/components/InfoTooltip';
 import { SourceBadge, VerificationBadge } from '@/components/SourceBadge';
@@ -25,9 +26,12 @@ import {
 import {
   ADMISSIONS_TEST_BY_CODE,
   DEGREE_TYPE_BY_ID,
+  SUBJECT_CATEGORIES,
   TEST_REQUIREMENT_LABEL,
   subcategoryLabel,
 } from '@/data/taxonomy';
+
+const categoryLabel = (id: string) => SUBJECT_CATEGORIES.find((c) => c.id === id)?.label ?? id;
 import {
   FURTHER_MATHS_LABEL,
   INTERVIEW_LABEL,
@@ -99,6 +103,13 @@ export function CourseDetailPage() {
   const officialLink = course.provenance.sourceUrl ?? course.provenance.officialUrl;
   const deadlines = deadlinesForCourse(university, course);
   const subjectGuidance = course ? subjectGuidanceFor(course.universityId) : null;
+  // Fields with nothing recorded are named once, in a single line, instead of
+  // each taking a row that says "Not recorded".
+  const notRecorded = [
+    course.englishLanguageRequirements ? null : 'English language',
+    course.internationalNotes ? null : 'international applicants',
+    course.placementOrStudyAbroad ? null : 'placement or study abroad',
+  ].filter((x): x is string => x !== null);
   usePageTitle(
     course ? `${course.name} (${course.awardLabel ?? course.degreeType}), ${university?.name ?? ''} ${course.applicationYear}` : 'Course',
   );
@@ -126,9 +137,13 @@ export function CourseDetailPage() {
         title={course.name}
         description={
           <span className="flex flex-wrap items-center gap-x-4 gap-y-1.5">
+            <CategoryTag category={course.subjectCategory} />
             <span title={degreeMeta?.description}>{awardLabel(course)}</span>
             <span>{durationLabel(course.durationYears, course.durationYearsMax)}</span>
-            <span>{subcategoryLabel(course.subjectSubcategory)}</span>
+            {/* The specialism, unless it only repeats the subject area beside it. */}
+            {subcategoryLabel(course.subjectSubcategory) !== categoryLabel(course.subjectCategory) ? (
+              <span>{subcategoryLabel(course.subjectSubcategory)}</span>
+            ) : null}
             <span>{course.applicationYear} entry</span>
             {course.courseCode ? (
               <>
@@ -190,11 +205,14 @@ export function CourseDetailPage() {
 
       <div className="grid grid-cols-1 gap-x-12 gap-y-12 lg:grid-cols-[minmax(0,1fr)_340px]">
         <div className="cd-main min-w-0">
+          {/* The cycle note is research evidence, often several sentences long. It
+              stays one click away rather than sitting between the title and the
+              requirements; the unpublished-cycle warning below is never folded. */}
           {course.cycleNote ? (
-            <div className="cd-note">
-              <h2>Which cycle this record covers</h2>
+            <details className="cd-more" data-testid="course-cycle-note">
+              <summary>Which entry year this record covers</summary>
               <p>{course.cycleNote}</p>
-            </div>
+            </details>
           ) : null}
 
           {notPublished ? (
@@ -305,8 +323,7 @@ export function CourseDetailPage() {
                 {course.rawRequirementText}
               </blockquote>
               <p className="mt-2 text-xs text-ink-muted">
-                Kept verbatim so you can check it against the structured version below. If the two ever
-                disagree, the university’s wording is the one that counts.
+                Verbatim. If it ever disagrees with the structured version below, this wording counts.
               </p>
             </Card>
           ) : null}
@@ -491,6 +508,10 @@ export function CourseDetailPage() {
                     <NoData>No entry year recorded</NoData>
                   )}
                 </DataRow>
+                {course.admissionsTest.code === 'none' ||
+                (course.admissionsTest.modules.length === 0 &&
+                  !course.admissionsTest.moduleChoice &&
+                  !course.admissionsTest.moduleNote) ? null : (
                 <DataRow label="Modules sat">
                   {course.admissionsTest.modules.length > 0 ? (
                     <ul className="flex flex-wrap gap-1.5">
@@ -524,11 +545,12 @@ export function CourseDetailPage() {
                     </span>
                   ) : null}
                 </DataRow>
-                <DataRow label="Details">
-                  {course.admissionsTest.details ?? <NoData>None recorded</NoData>}
-                </DataRow>
-                <DataRow label="Official test page">
-                  {course.admissionsTest.officialUrl ? (
+                )}
+                {course.admissionsTest.details ? (
+                  <DataRow label="Details">{course.admissionsTest.details}</DataRow>
+                ) : null}
+                {course.admissionsTest.officialUrl ? (
+                  <DataRow label="Official test page">
                     <a
                       href={course.admissionsTest.officialUrl}
                       target="_blank"
@@ -537,10 +559,8 @@ export function CourseDetailPage() {
                     >
                       Test information <IconExternal width={12} height={12} />
                     </a>
-                  ) : (
-                    <NoData>No link recorded</NoData>
-                  )}
-                </DataRow>
+                  </DataRow>
+                ) : null}
                 {course.admissionsTest.notes ? (
                   <DataRow label="Notes">{course.admissionsTest.notes}</DataRow>
                 ) : null}
@@ -599,15 +619,15 @@ export function CourseDetailPage() {
               <DataRow label="GCSE requirements">
                 {course.gcseRequirements ?? <NoData>None specifically published</NoData>}
               </DataRow>
-              <DataRow label="English language">
-                {course.englishLanguageRequirements ?? <NoData>Not recorded</NoData>}
-              </DataRow>
-              <DataRow label="International applicants">
-                {course.internationalNotes ?? <NoData>Not recorded</NoData>}
-              </DataRow>
-              <DataRow label="Placement / study abroad">
-                {course.placementOrStudyAbroad ?? <NoData>Not recorded</NoData>}
-              </DataRow>
+              {course.englishLanguageRequirements ? (
+                <DataRow label="English language">{course.englishLanguageRequirements}</DataRow>
+              ) : null}
+              {course.internationalNotes ? (
+                <DataRow label="International applicants">{course.internationalNotes}</DataRow>
+              ) : null}
+              {course.placementOrStudyAbroad ? (
+                <DataRow label="Placement / study abroad">{course.placementOrStudyAbroad}</DataRow>
+              ) : null}
               <DataRow label="Application deadlines">
                 {deadlines.length > 0 ? (
                   <ul className="space-y-2">
@@ -638,8 +658,8 @@ export function CourseDetailPage() {
                   <NoData>No checked deadline recorded — see the official page</NoData>
                 )}
               </DataRow>
+              {course.alternativeCourseCodes.length > 0 ? (
               <DataRow label="Other UCAS codes">
-                {course.alternativeCourseCodes.length > 0 ? (
                   <>
                     <ul className="space-y-0.5">
                       {course.alternativeCourseCodes.map((a) => (
@@ -653,12 +673,23 @@ export function CourseDetailPage() {
                       requirements. They are not separate courses.
                     </span>
                   </>
-                ) : (
-                  <NoData>None</NoData>
-                )}
               </DataRow>
-              <DataRow label="Notes">{course.notes ?? <NoData>None</NoData>}</DataRow>
+              ) : null}
             </dl>
+            {notRecorded.length > 0 ? (
+              <p className="cd-unrecorded" data-testid="course-not-recorded">
+                <span>Not recorded for this course:</span> {notRecorded.join(', ')}. Check the university’s
+                own page for these.
+              </p>
+            ) : null}
+            {/* Partially verified records already print their notes above, where
+                they explain what could not be confirmed. */}
+            {course.notes && course.provenance.verificationStatus !== 'partially-verified' ? (
+              <details className="cd-more cd-more-in" data-testid="course-research-notes">
+                <summary>Research notes from reading the university’s page</summary>
+                <p>{course.notes}</p>
+              </details>
+            ) : null}
           </Card>
 
           {/* v1.1: fees sit after every admissions card, in their own card, so

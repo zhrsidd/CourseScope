@@ -1,4 +1,5 @@
 import type { Course, SubjectCategory, University, VerificationStatus } from '@/types';
+import { SUBJECT_CATEGORIES } from '@/data/taxonomy';
 
 /**
  * COVERAGE MATRIX
@@ -37,7 +38,10 @@ export type CoverageColumn = { key: string; category: SubjectCategory; year: str
 export type CoverageCell = Record<CoverageState, number> & { total: number };
 export type CoverageRow = { id: string; name: string; short: string; cells: Record<string, CoverageCell> };
 
-const CATEGORY_LABEL: Record<SubjectCategory, string> = { physics: 'Physics', engineering: 'Engineering' };
+const CATEGORY_LABEL = Object.fromEntries(SUBJECT_CATEGORIES.map((c) => [c.id, c.label])) as Record<
+  SubjectCategory,
+  string
+>;
 
 const empty = (): CoverageCell => ({
   verified: 0,
@@ -51,7 +55,7 @@ const empty = (): CoverageCell => ({
 export function buildCoverage(courses: Course[], universities: University[]) {
   const columns: CoverageColumn[] = [];
   for (const year of [...new Set(courses.map((c) => c.applicationYear).filter(Boolean) as string[])].sort()) {
-    for (const category of ['physics', 'engineering'] as SubjectCategory[]) {
+    for (const category of SUBJECT_CATEGORIES.map((c) => c.id)) {
       if (courses.some((c) => c.applicationYear === year && c.subjectCategory === category)) {
         columns.push({ key: `${category}-${year}`, category, year, label: `${CATEGORY_LABEL[category]} ${year}` });
       }

@@ -84,6 +84,46 @@
   line-height: 21px;
   color: var(--navy-900);
 }
+/* Secondary detail folded behind a plain disclosure: research notes and the
+   cycle note. The summary is an ordinary 24px+ target with the one focus ring. */
+.cd-more {
+  padding: 0 0 0 16px;
+  border-left: 3px solid var(--line);
+}
+.cd-more-in {
+  margin-top: var(--s-4);
+}
+.cd-more summary {
+  display: flex;
+  align-items: center;
+  min-height: 24px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent);
+}
+.cd-more summary:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.cd-more p {
+  margin: 6px 0 0;
+  max-width: 70ch;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--muted);
+}
+.cd-unrecorded {
+  margin: var(--s-3) 0 0;
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--muted);
+}
+.cd-unrecorded span {
+  font-weight: 500;
+  color: var(--ink);
+}
+
 /* Source strip: the evidence for the page, directly under its title. */
 .cd-source {
   display: flex;
