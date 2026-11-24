@@ -23,6 +23,11 @@ The student-facing release notes are also shown in the app, on the methodology p
   UCL's page returns a Cloudflare bot challenge to a scripted request and was not read. Model additions: subject
   category `medicine`, subcategory `medicine`, degree type `MB` (the award title stays per record), admissions
   test `ucat`, and `Human Biology` in the subject list. Search understands "medicine"/"medical" and "UCAT".
+- **Dentistry, batch D1.** Six dental degrees verified for 2027 entry on 2026-11-24 (research note
+  `research/dentistry-d1.md`): Birmingham BDS (A200), Bristol BDS (A206), Glasgow BDS (A200), King's BDS (A205),
+  Liverpool BDS (A200) and Sheffield BDS (A200). Not added: Newcastle (no A-level subject rule on its course page or
+  dental admissions policy); Leeds and Manchester (course pages not located). Pinned snapshots now cover Physics and
+  Engineering only, and "health-only" universities are computed across all health subjects. Section 36.
 - **Health subjects (model only).** Seven new subject areas, each its own subject with its own accent colour:
   Dentistry, Veterinary Medicine, Pharmacy, Biomedical Sciences, Nursing (four NMC fields as subcategories),
   Physiotherapy and Physician Associate. New degree types `BDS`, `BVet` and `MPharm`. Subject labels in format,

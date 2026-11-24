@@ -45559,6 +45559,504 @@
       }
     },
     {
+      "slug": "birmingham-dental-surgery-bds",
+      "universityId": "birmingham",
+      "name": "Dental Surgery",
+      "subjectCategory": "dentistry",
+      "subjectSubcategory": "dentistry",
+      "degreeType": "BDS",
+      "awardLabel": "BDS",
+      "durationYears": 5,
+      "durationYearsMax": null,
+      "courseCode": "A200",
+      "alternativeCourseCodes": [],
+      "applicationYear": "2027",
+      "requirementsPublicationStatus": "published",
+      "latestPublishedYear": null,
+      "cycleNote": "The page gives “Start date September 2027” and a 15 October 2026 application deadline.",
+      "rawRequirementText": "AAA to include Chemistry and Biology.",
+      "minimumEntryStandard": null,
+      "offers": [
+        {
+          "label": "Standard offer",
+          "gradeProfile": "AAA",
+          "required": [
+            [
+              "Chemistry",
+              "A"
+            ],
+            [
+              "Biology",
+              "A"
+            ]
+          ],
+          "recommended": [],
+          "rawText": "AAA to include Chemistry and Biology"
+        },
+        {
+          "label": "Contextual offer",
+          "gradeProfile": "AAB",
+          "required": [
+            "Chemistry",
+            "Biology"
+          ],
+          "recommended": [],
+          "isContextual": true,
+          "rawText": "AAB to include Chemistry and Biology"
+        }
+      ],
+      "mathematics": "not-required",
+      "physics": "not-required",
+      "chemistry": "required",
+      "furtherMathematics": "no-stated-preference",
+      "furtherMathematicsNote": "Further Mathematics is not mentioned as a preference.",
+      "admissionsTest": {
+        "code": "ucat",
+        "name": null,
+        "requirement": "required",
+        "modules": [],
+        "moduleNote": null,
+        "details": "Sit the UCAT in the year of application.",
+        "officialUrl": "https://www.ucat.ac.uk/",
+        "notes": null
+      },
+      "interview": "yes",
+      "interviewNote": "“Attend interview if invited.”",
+      "contextualOffer": {
+        "availability": "yes",
+        "details": "Contextual offer AAB, or ABB through Pathways to Birmingham, each including Chemistry and Biology."
+      },
+      "gcseRequirements": "GCSE Biology and Chemistry at A*/8, and Mathematics and English Language or Literature at A/7. GCSE resits are not considered.",
+      "englishLanguageRequirements": null,
+      "internationalNotes": null,
+      "placementOrStudyAbroad": null,
+      "notes": "AGE: 18 by 1 October of the year of entry. DEADLINE: 15 October 2026 for September 2027 entry.",
+      "provenance": {
+        "verificationStatus": "verified",
+        "officialUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/dentistry-courses/dental-surgery-bds",
+        "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/dentistry-courses/dental-surgery-bds",
+        "sourceTitle": "Dental Surgery BDS - University of Birmingham",
+        "lastVerified": "2026-11-24",
+        "sources": []
+      }
+    },
+    {
+      "slug": "bristol-dentistry-bds",
+      "universityId": "bristol",
+      "name": "Dentistry",
+      "subjectCategory": "dentistry",
+      "subjectSubcategory": "dentistry",
+      "degreeType": "BDS",
+      "awardLabel": "BDS",
+      "durationYears": 5,
+      "durationYearsMax": null,
+      "courseCode": "A206",
+      "alternativeCourseCodes": [],
+      "applicationYear": "2027",
+      "requirementsPublicationStatus": "published",
+      "latestPublishedYear": null,
+      "cycleNote": "The page is headed “2027 entry”.",
+      "rawRequirementText": "AAA including Chemistry and one of Biology, Physics, Mathematics or Further Mathematics.",
+      "minimumEntryStandard": null,
+      "offers": [
+        {
+          "label": "Standard offer",
+          "gradeProfile": "AAA",
+          "required": [
+            [
+              "Chemistry",
+              "A"
+            ]
+          ],
+          "recommended": [],
+          "constraints": [
+            {
+              "kind": "one-of",
+              "subjects": [
+                "Biology",
+                "Physics",
+                "Mathematics",
+                "Further Mathematics"
+              ],
+              "minimumGrade": "A",
+              "description": "One of Biology, Physics, Mathematics or Further Mathematics."
+            }
+          ],
+          "rawText": "AAA including Chemistry and one of Biology, Physics, Mathematics or Further Mathematics."
+        },
+        {
+          "label": "Contextual offer",
+          "gradeProfile": "ABB",
+          "required": [
+            [
+              "Chemistry",
+              "A"
+            ]
+          ],
+          "recommended": [],
+          "constraints": [
+            {
+              "kind": "one-of",
+              "subjects": [
+                "Biology",
+                "Physics",
+                "Mathematics",
+                "Further Mathematics"
+              ],
+              "minimumGrade": "B",
+              "description": "B in one of Biology, Physics, Mathematics or Further Mathematics."
+            }
+          ],
+          "isContextual": true,
+          "rawText": "ABB including A in Chemistry and B in one of Biology, Physics, Mathematics or Further Mathematics."
+        }
+      ],
+      "mathematics": "recommended",
+      "physics": "recommended",
+      "chemistry": "required",
+      "furtherMathematics": "no-stated-preference",
+      "furtherMathematicsNote": "Further Mathematics is not mentioned as a preference.",
+      "admissionsTest": {
+        "code": "ucat",
+        "name": null,
+        "requirement": "required",
+        "modules": [],
+        "moduleNote": null,
+        "details": "The combined score from all subtests except Situational Judgement selects for interview. For 2026 entry the final threshold was 2340 for Home and 1970 for Overseas applicants; Bristol says it changes year to year.",
+        "officialUrl": "https://www.ucat.ac.uk/",
+        "notes": null
+      },
+      "interview": "yes",
+      "interviewNote": "Applicants must be available for interview from November to April.",
+      "contextualOffer": {
+        "availability": "yes",
+        "details": "ABB including A in Chemistry and B in one of Biology, Physics, Mathematics or Further Mathematics."
+      },
+      "gcseRequirements": "GCSE Mathematics at 7 (A) and GCSE English at 4 (C), or equivalent.",
+      "englishLanguageRequirements": null,
+      "internationalNotes": null,
+      "placementOrStudyAbroad": null,
+      "notes": "Graduates need a 2:1 degree plus BBB at A-level including Chemistry and one of Biology, Physics, Mathematics or Further Mathematics.",
+      "provenance": {
+        "verificationStatus": "verified",
+        "officialUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/dentistry/bds-dentistry/",
+        "sourceUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/dentistry/bds-dentistry/",
+        "sourceTitle": "BDS Dentistry | Study at Bristol | University of Bristol",
+        "lastVerified": "2026-11-24",
+        "sources": []
+      }
+    },
+    {
+      "slug": "glasgow-dentistry-bds",
+      "universityId": "glasgow",
+      "name": "Dentistry",
+      "subjectCategory": "dentistry",
+      "subjectSubcategory": "dentistry",
+      "degreeType": "BDS",
+      "awardLabel": "BDS",
+      "durationYears": 5,
+      "durationYearsMax": null,
+      "courseCode": "A200",
+      "alternativeCourseCodes": [],
+      "applicationYear": "2027",
+      "requirementsPublicationStatus": "published",
+      "latestPublishedYear": null,
+      "cycleNote": "The page is in Glasgow’s “2027 Degree programmes A‑Z”.",
+      "rawRequirementText": "A-level standard entry requirements: AAA. Additional requirements: Chemistry and Biology at grade A. 6 GCSE subjects at Grade A/7. Maths/Physics and English language/literature (English accepted at grade B/6 provided all other GCSEs are attained at grade A/7). UCAT. Interview.",
+      "minimumEntryStandard": null,
+      "offers": [
+        {
+          "label": "A-level standard entry requirements",
+          "gradeProfile": "AAA",
+          "required": [
+            [
+              "Chemistry",
+              "A"
+            ],
+            [
+              "Biology",
+              "A"
+            ]
+          ],
+          "recommended": [],
+          "rawText": "AAA. Chemistry and Biology at grade A."
+        }
+      ],
+      "mathematics": "not-required",
+      "physics": "not-required",
+      "chemistry": "required",
+      "furtherMathematics": "no-stated-preference",
+      "furtherMathematicsNote": "Further Mathematics is not mentioned as a preference.",
+      "admissionsTest": {
+        "code": "ucat",
+        "name": null,
+        "requirement": "required",
+        "modules": [],
+        "moduleNote": null,
+        "details": "UCAT is required.",
+        "officialUrl": "https://www.ucat.ac.uk/",
+        "notes": null
+      },
+      "interview": "yes",
+      "interviewNote": "Selected applicants are invited to interview in late January or early February.",
+      "contextualOffer": {
+        "availability": "unknown",
+        "details": "Adjusted requirements are printed for Scottish Highers only (Access Glasgow, Reach). No adjusted A-level offer is published on this page."
+      },
+      "gcseRequirements": "Six GCSEs at grade A/7, including Maths or Physics and English Language or Literature (English accepted at B/6 if all other GCSEs are A/7).",
+      "englishLanguageRequirements": null,
+      "internationalNotes": null,
+      "placementOrStudyAbroad": null,
+      "notes": "DEADLINE: “The deadlines for applications to Medicine, Vet Medicine and Dentistry is 15 October” (no year printed). Limit UCAS choices to four dental schools.",
+      "provenance": {
+        "verificationStatus": "verified",
+        "officialUrl": "https://www.gla.ac.uk/undergraduate/degrees/dentistry/",
+        "sourceUrl": "https://www.gla.ac.uk/undergraduate/degrees/dentistry/",
+        "sourceTitle": "University of Glasgow - Undergraduate study - 2027 Degree programmes A‑Z - Dentistry",
+        "lastVerified": "2026-11-24",
+        "sources": []
+      }
+    },
+    {
+      "slug": "kcl-dentistry-bds",
+      "universityId": "kcl",
+      "name": "Dentistry",
+      "subjectCategory": "dentistry",
+      "subjectSubcategory": "dentistry",
+      "degreeType": "BDS",
+      "awardLabel": "BDS",
+      "durationYears": null,
+      "durationYearsMax": null,
+      "courseCode": "A205",
+      "alternativeCourseCodes": [],
+      "applicationYear": "2027",
+      "requirementsPublicationStatus": "published",
+      "latestPublishedYear": null,
+      "cycleNote": "Read from KCL’s course page and its entry-requirements page; neither carries a note that details apply to 2026 entry.",
+      "rawRequirementText": "Required subjects: A-level (or equivalent) grade A in Biology or Chemistry, in addition to grade A in one of Biology, Chemistry, Physics, Mathematics or Psychology. Required grades: A*AA.",
+      "minimumEntryStandard": null,
+      "offers": [
+        {
+          "label": "Required grades",
+          "gradeProfile": "A*AA",
+          "required": [],
+          "recommended": [],
+          "constraints": [
+            {
+              "kind": "one-of",
+              "subjects": [
+                "Biology",
+                "Chemistry"
+              ],
+              "minimumGrade": "A",
+              "description": "Grade A in Biology or Chemistry."
+            },
+            {
+              "kind": "min-count-at-grade",
+              "subjects": [
+                "Biology",
+                "Chemistry",
+                "Physics",
+                "Mathematics",
+                "Psychology"
+              ],
+              "grade": "A",
+              "count": 2,
+              "description": "Plus grade A in one of Biology, Chemistry, Physics, Mathematics or Psychology."
+            }
+          ],
+          "rawText": "A*AA. Must include grade A in Biology or Chemistry, in addition to grade A in one of Biology, Chemistry, Physics, Mathematics or Psychology."
+        }
+      ],
+      "mathematics": "not-required",
+      "physics": "not-required",
+      "chemistry": "recommended",
+      "furtherMathematics": "no-stated-preference",
+      "furtherMathematicsNote": "Further Mathematics is not mentioned as a preference.",
+      "admissionsTest": {
+        "code": "ucat",
+        "name": null,
+        "requirement": "required",
+        "modules": [],
+        "moduleNote": null,
+        "details": "Applications are ranked on GCSE performance, UCAT score and contextual information before the rest of the application is reviewed.",
+        "officialUrl": "https://www.ucat.ac.uk/",
+        "notes": null
+      },
+      "interview": "yes",
+      "interviewNote": "The interview period generally runs from December to March.",
+      "contextualOffer": {
+        "availability": "no",
+        "details": "“Contextual requirements N/A.”"
+      },
+      "gcseRequirements": "English Language and Mathematics at grade 6 (B).",
+      "englishLanguageRequirements": null,
+      "internationalNotes": null,
+      "placementOrStudyAbroad": null,
+      "notes": "UCAS CODE: A205 is read from the course page’s printed UCAS code field.",
+      "provenance": {
+        "verificationStatus": "verified",
+        "officialUrl": "https://www.kcl.ac.uk/study/undergraduate/courses/dentistry-bds",
+        "sourceUrl": "https://www.kcl.ac.uk/study/undergraduate/courses/dentistry-bds/entry-requirements",
+        "sourceTitle": "Dentistry - Entry Requirements - Dentistry BDS | King’s College London",
+        "lastVerified": "2026-11-24",
+        "sources": []
+      }
+    },
+    {
+      "slug": "liverpool-dental-surgery-bds",
+      "universityId": "liverpool",
+      "name": "Dental Surgery",
+      "subjectCategory": "dentistry",
+      "subjectSubcategory": "dentistry",
+      "degreeType": "BDS",
+      "awardLabel": "BDS",
+      "durationYears": 5,
+      "durationYearsMax": null,
+      "courseCode": "A200",
+      "alternativeCourseCodes": [],
+      "applicationYear": "2027",
+      "requirementsPublicationStatus": "published",
+      "latestPublishedYear": null,
+      "cycleNote": "The page shows a 2027 start and “15 October 2026” as the application date.",
+      "rawRequirementText": "AAA including Chemistry and Biology, taken at first sitting, after two years of study. We do not accept A level resits or consider applicants who have retaken either Year 12 or Year 13. A level Chemistry and Biology are required. The 3rd subject may be from the Arts or Sciences.",
+      "minimumEntryStandard": null,
+      "offers": [
+        {
+          "label": "Standard offer",
+          "gradeProfile": "AAA",
+          "required": [
+            [
+              "Chemistry",
+              "A"
+            ],
+            [
+              "Biology",
+              "A"
+            ]
+          ],
+          "recommended": [],
+          "rawText": "AAA including Chemistry and Biology, taken at first sitting, after two years of study."
+        }
+      ],
+      "mathematics": "not-required",
+      "physics": "not-required",
+      "chemistry": "required",
+      "furtherMathematics": "no-stated-preference",
+      "furtherMathematicsNote": "Further Mathematics is not mentioned as a preference.",
+      "admissionsTest": {
+        "code": "ucat",
+        "name": null,
+        "requirement": "required",
+        "modules": [],
+        "moduleNote": null,
+        "details": "All applicants sit the UCAT in the year of application.",
+        "officialUrl": "https://www.ucat.ac.uk/",
+        "notes": null
+      },
+      "interview": "not-stated",
+      "interviewNote": "The course page does not describe an interview.",
+      "contextualOffer": {
+        "availability": "yes",
+        "details": "Eligible applicants may automatically qualify for up to a two-grade reduction; no specific reduced offer is printed."
+      },
+      "gcseRequirements": "GCSE requirements apply; the course page refers to the School of Dentistry’s admissions information for the detail.",
+      "englishLanguageRequirements": null,
+      "internationalNotes": null,
+      "placementOrStudyAbroad": null,
+      "notes": "NO RESITS: A-level resits are not accepted, nor applicants who retook Year 12 or Year 13. General Studies, Critical Thinking and vocational/applied A-levels are not accepted. A pass in the science practical is required.",
+      "provenance": {
+        "verificationStatus": "verified",
+        "officialUrl": "https://www.liverpool.ac.uk/courses/dental-surgery-bds",
+        "sourceUrl": "https://www.liverpool.ac.uk/courses/dental-surgery-bds",
+        "sourceTitle": "Dental Surgery BDS | Courses | University of Liverpool",
+        "lastVerified": "2026-11-24",
+        "sources": []
+      }
+    },
+    {
+      "slug": "sheffield-dental-surgery-bds",
+      "universityId": "sheffield",
+      "name": "Dental Surgery",
+      "subjectCategory": "dentistry",
+      "subjectSubcategory": "dentistry",
+      "degreeType": "BDS",
+      "awardLabel": "BDS",
+      "durationYears": 5,
+      "durationYearsMax": null,
+      "courseCode": "A200",
+      "alternativeCourseCodes": [],
+      "applicationYear": "2027",
+      "requirementsPublicationStatus": "published",
+      "latestPublishedYear": null,
+      "cycleNote": "Read at the 2027 course URL. The page notes the programme structure is changing for 2027 entry.",
+      "rawRequirementText": "AAA including Chemistry and Biology + pass in the practical element of any science A Levels taken. Human Biology is acceptable in lieu of Biology.",
+      "minimumEntryStandard": null,
+      "offers": [
+        {
+          "label": "Standard offer",
+          "gradeProfile": "AAA",
+          "required": [
+            [
+              "Chemistry",
+              "A"
+            ],
+            [
+              "Biology",
+              "A"
+            ]
+          ],
+          "recommended": [],
+          "rawText": "AAA including Chemistry and Biology"
+        },
+        {
+          "label": "Access Sheffield offer",
+          "gradeProfile": "AAB",
+          "required": [
+            "Chemistry",
+            "Biology"
+          ],
+          "recommended": [],
+          "isContextual": true,
+          "rawText": "AAB including Chemistry and Biology"
+        }
+      ],
+      "mathematics": "not-required",
+      "physics": "not-required",
+      "chemistry": "required",
+      "furtherMathematics": "no-stated-preference",
+      "furtherMathematicsNote": "Further Mathematics is not mentioned as a preference.",
+      "admissionsTest": {
+        "code": "ucat",
+        "name": null,
+        "requirement": "required",
+        "modules": [],
+        "moduleNote": null,
+        "details": "All applicants must take the UCAT; it is used with Sheffield’s selection procedure.",
+        "officialUrl": "https://www.ucat.ac.uk/",
+        "notes": null
+      },
+      "interview": "yes",
+      "interviewNote": "Shortlisted applicants are interviewed as part of selection.",
+      "contextualOffer": {
+        "availability": "yes",
+        "details": "Access Sheffield offer: AAB including Chemistry and Biology."
+      },
+      "gcseRequirements": "Six GCSEs at grade 7 (A), including English, Maths and Science (Chemistry and Biology, or dual science).",
+      "englishLanguageRequirements": null,
+      "internationalNotes": null,
+      "placementOrStudyAbroad": null,
+      "notes": "EPQ ALTERNATIVE: AAB with AA in Chemistry and Biology plus B in the EPQ, same sitting, firm choice only (not checked against your grades). PROGRAMME CHANGE: Sheffield is restructuring the course for 2027 entry and working with the GDC to maintain accreditation.",
+      "provenance": {
+        "verificationStatus": "verified",
+        "officialUrl": "https://www.sheffield.ac.uk/undergraduate/courses/2027/dental-surgery-bds",
+        "sourceUrl": "https://www.sheffield.ac.uk/undergraduate/courses/2027/dental-surgery-bds",
+        "sourceTitle": "Dental Surgery BDS | Undergraduate study | The University of Sheffield",
+        "lastVerified": "2026-11-24",
+        "sources": []
+      }
+    },
+    {
       "slug": "oxford-physics-mphys",
       "universityId": "oxford",
       "name": "Physics",

@@ -285,9 +285,10 @@ for (const [label, h, expect] of legacy) {
   await p.getByRole('button', { name: 'Show another course' }).click(); await p.waitForTimeout(200);
   t('  …and "Show another course" changes it', (await p.locator('.lp-feat blockquote').innerText()) !== quote);
   const nums = await p.evaluate(() => [...document.querySelectorAll('.lp-state b')].map((e) => e.textContent));
-  // 580 verified for 2027 = 562 + verified Medicine: four (batch 8), three (batch 9), eight (batches 10-11), three (batch 12).
+  // 586 verified for 2027 = 562 + verified Medicine: four (batch 8), three (batch 9), eight (batches 10-11), three (batch 12)
+  // + six verified Dentistry (batch D1).
   // 6 awaiting = 5 + St Andrews Medicine (batch 9), whose page prints no A-level grades.
-  t('record-state counts are computed (580 / 6 / 562 for this catalogue)', nums.join('/') === '580/6/562', nums.join('/'));
+  t('record-state counts are computed (586 / 6 / 562 for this catalogue)', nums.join('/') === '586/6/562', nums.join('/'));
   await p.getByRole('button', { name: 'View coverage as a table' }).click(); await p.waitForTimeout(400);
   // 26 = 22 + universities added for Medicine: Hull York (batch 11); Newcastle, Liverpool, Exeter (batch 12).
   t('coverage can be read as a real table', (await p.locator('.lp-table tbody tr').count()) === 26);

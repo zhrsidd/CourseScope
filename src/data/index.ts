@@ -53,6 +53,12 @@ import { batch11HymsMedicine } from './courses.real.batch11.hyms';
 import { batch12NewcastleMedicine } from './courses.real.batch12.newcastle';
 import { batch12LiverpoolMedicine } from './courses.real.batch12.liverpool';
 import { batch12ExeterMedicine } from './courses.real.batch12.exeter';
+import { dentD1Birmingham } from './courses.dent.d1.birmingham';
+import { dentD1Bristol } from './courses.dent.d1.bristol';
+import { dentD1Glasgow } from './courses.dent.d1.glasgow';
+import { dentD1Kcl } from './courses.dent.d1.kcl';
+import { dentD1Liverpool } from './courses.dent.d1.liverpool';
+import { dentD1Sheffield } from './courses.dent.d1.sheffield';
 
 export {
   universities,
@@ -252,6 +258,13 @@ export const batch12MedicineCourses: Course[] = [
   batch12LiverpoolMedicine,
   batch12ExeterMedicine,
 ];
+
+/**
+ * Dentistry batch D1 — Birmingham, Bristol, Glasgow, King's, Liverpool and
+ * Sheffield, verified for 2027 entry on 2026-11-24. Research note:
+ * research/dentistry-d1.md.
+ */
+export const dentistryD1Courses: Course[] = [dentD1Birmingham, dentD1Bristol, dentD1Glasgow, dentD1Kcl, dentD1Liverpool, dentD1Sheffield];
 export * from './taxonomy';
 // Tuition fees are deliberately NOT re-exported here: they are ~280 KB of data used only by the course
 // page and the admin view, and re-exporting them put them in the catalogue chunk every page waits for.
@@ -280,6 +293,7 @@ const seedRows: Course[] = [
   ...batch10MedicineCourses,
   ...batch11MedicineCourses,
   ...batch12MedicineCourses,
+  ...dentistryD1Courses,
   ...shells2028,
 ];
 

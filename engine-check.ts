@@ -46,6 +46,7 @@ import {
   batch10MedicineCourses,
   batch11MedicineCourses,
   batch12MedicineCourses,
+  dentistryD1Courses,
 } from '@/data';
 import { shells2028 } from '@/data/courses.2028-shells';
 import { course, offer, atLeastAt, oneOf } from '@/data/builders';
@@ -120,10 +121,11 @@ import type { ApplicationDeadline, Ranking, StudentProfile, University } from '@
  * so they still prove that adding Medicine changed nothing else. Batch 8's own
  * totals are asserted in section 31.
  */
-const coursesBeforeMedicine = courses.filter((c) => c.subjectCategory !== 'medicine');
-// Universities added for Medicine alone (Hull York, Newcastle, Liverpool, Exeter…), computed, not listed.
+// Physics and Engineering only: every health subject (Medicine onwards) is excluded.
+const coursesBeforeMedicine = courses.filter((c) => c.subjectCategory === 'physics' || c.subjectCategory === 'engineering');
+// Universities added for health subjects alone (Hull York, Newcastle, Liverpool, Exeter…), computed, not listed.
 const medicineOnlyUniversityIds = new Set(
-  courses.filter((c) => c.subjectCategory === 'medicine').map((c) => c.universityId)
+  courses.map((c) => c.universityId)
     .filter((id) => !coursesBeforeMedicine.some((c) => c.universityId === id)),
 );
 
@@ -6603,7 +6605,7 @@ check(
         && c.provenance.sourceTitle && c.provenance.lastVerified === '2026-11-24'), true);
   check('  …three new universities, each served, none with ranking positions',
     ['newcastle', 'liverpool', 'exeter'].every((id) => universities.some((u) => u.id === id) && allUniversities.find((u) => u.id === id)!.rankings.length === 0), true);
-  check('Universities added for Medicine alone: Hull York, Newcastle, Liverpool, Exeter',
+  check('Universities added for health subjects alone: Hull York, Newcastle, Liverpool, Exeter',
     [...medicineOnlyUniversityIds].sort().join(','), 'exeter,hyms,liverpool,newcastle');
   check('Keele and Leicester are not listed (2026-cycle page; bot challenge)',
     universities.some((u) => u.id === 'keele' || u.id === 'leicester'), false);
@@ -6656,6 +6658,39 @@ check(
   check('  …“veterinary medicine” is Veterinary only, not also Medicine', cats('veterinary medicine'), 'veterinary');
   check('  …“biomedical engineering” stays Engineering', cats('biomedical engineering'), 'engineering');
   check('  …“medicine” is still Medicine', cats('medicine'), 'medicine');
+}
+
+/* ================================================================== */
+/* 36. Dentistry batch D1                                              */
+/* ================================================================== */
+{
+  console.log('\n36 — Dentistry (batch D1)');
+  const recs = dentistryD1Courses;
+  check('D1: six Dentistry records, verified for 2027 with source, title and date',
+    recs.length === 6 && recs.every((c) => c.subjectCategory === 'dentistry' && c.degreeType === 'BDS'
+      && c.provenance.verificationStatus === 'verified' && c.provenance.sourceUrl && c.provenance.sourceTitle
+      && c.provenance.lastVerified === '2026-11-24' && c.applicationYear === '2027'), true);
+  check('  …each served, UCAT-required', recs.every((c) => courseById[c.id] && c.admissionsTest.code === 'ucat'), true);
+  check('  …UCAS codes as printed (Bristol A206, King’s A205)',
+    recs.map((c) => `${c.universityId}:${c.courseCode}`).sort().join(','),
+    'birmingham:A200,bristol:A206,glasgow:A200,kcl:A205,liverpool:A200,sheffield:A200');
+  check('Dentistry and Medicine at one university are separate subjects, never merged',
+    courses.filter((c) => c.universityId === 'birmingham' && ['medicine', 'dentistry'].includes(c.subjectCategory)).map((c) => c.subjectCategory).sort().join(','),
+    'dentistry,medicine');
+  const v = (id: string, al: [string, string][]) => evaluateCourse(courseById[id], profile(al)).verdict;
+  check('King’s: Chemistry and Psychology at A*AA meets; Physics and Maths without Biology or Chemistry does not',
+    `${v('kcl-dentistry-bds--2027', [['Chemistry', 'A*'], ['Psychology', 'A'], ['History', 'A']])}/${v('kcl-dentistry-bds--2027', [['Physics', 'A*'], ['Mathematics', 'A'], ['History', 'A']])}`,
+    'meets/does-not-meet');
+  check('Bristol: Chemistry with Further Maths meets; without Chemistry does not',
+    `${v('bristol-dentistry-bds--2027', [['Chemistry', 'A'], ['Further Mathematics', 'A'], ['History', 'A']])}/${v('bristol-dentistry-bds--2027', [['Biology', 'A'], ['Physics', 'A'], ['Mathematics', 'A']])}`,
+    'meets/does-not-meet');
+  check('Sheffield: Human Biology is accepted in place of Biology',
+    v('sheffield-dental-surgery-bds--2027', [['Chemistry', 'A'], ['Human Biology', 'A'], ['History', 'A']]), 'meets');
+  check('Search: “dentistry” returns all six', recs.every((c) => search('dentistry').some((r) => r.id === c.id)), true);
+  check('  …and no Medicine course', search('dentistry').some((r) => r.subjectCategory === 'medicine'), false);
+  const uniById = Object.fromEntries(universities.map((u) => [u.id, u]));
+  check('No Dentistry course is shown a deadline after October of the year before entry',
+    recs.flatMap((c) => deadlinesForCourse(uniById[c.universityId], c)).filter((d) => d.date && d.date > '2026-10-31').length, 0);
 }
 
 console.log(failures === 0 ? '\nAll checks passed.' : `\n${failures} check(s) failed.`);
