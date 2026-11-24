@@ -20,7 +20,7 @@ import {
 import { useApp } from '@/state/AppContext';
 import { PageLoading } from '@/components/PageLoading';
 
-type Focus = 'all' | 'physics' | 'engineering';
+type Focus = 'all' | 'physics' | 'engineering' | 'medicine';
 
 export function UniversityDetailPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -63,6 +63,7 @@ function UniversityDetail({ universityId }: { universityId: string }) {
   const courses = all.filter((c) => c.applicationYear === profile.applicationYear);
   const physics = courses.filter((c) => c.subjectCategory === 'physics');
   const engineering = courses.filter((c) => c.subjectCategory === 'engineering');
+  const medicine = courses.filter((c) => c.subjectCategory === 'medicine');
   const saved = savedUniversityIds.includes(university.id);
   const overview = university.admissionsOverview;
   const deadlines = deadlinesForYear(university, profile.applicationYear);
@@ -73,9 +74,12 @@ function UniversityDetail({ universityId }: { universityId: string }) {
   const groups: { key: Exclude<Focus, 'all'>; label: string; list: typeof courses }[] = [
     { key: 'physics', label: 'Physics', list: physics },
     { key: 'engineering', label: 'Engineering', list: engineering },
+    { key: 'medicine', label: 'Medicine', list: medicine },
   ];
   const showGroups = groups.filter((g) => g.list.length > 0 && (focus === 'all' || focus === g.key));
-  const both = physics.length > 0 && engineering.length > 0;
+  // More than one subject area: show the switch and the group headings.
+  const present = groups.filter((g) => g.list.length > 0);
+  const both = present.length > 1;
 
   return (
     <div className="mx-auto max-w-8xl px-4 py-6 md:px-6">
@@ -124,8 +128,7 @@ function UniversityDetail({ universityId }: { universityId: string }) {
                 {(
                   [
                     ['all', `All ${courses.length}`],
-                    ['physics', `Physics ${physics.length}`],
-                    ['engineering', `Engineering ${engineering.length}`],
+                    ...present.map((g) => [g.key, `${g.label} ${g.list.length}`]),
                   ] as [Focus, string][]
                 ).map(([k, label]) => (
                   <button key={k} type="button" aria-pressed={focus === k} onClick={() => setFocus(k)}>

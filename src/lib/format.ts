@@ -10,6 +10,7 @@ import type {
   InterviewPolicy,
   Ranking,
   RankingCategory,
+  SubjectCategory,
   SubjectStatus,
   University,
   VerificationStatus,
@@ -162,6 +163,8 @@ export function deadlinesForCourse(
         return d.appliesTo.slugs.includes(course.slug);
       case 'subject-category':
         return d.appliesTo.category === course.subjectCategory;
+      case 'subject-categories':
+        return d.appliesTo.categories.includes(course.subjectCategory);
       default:
         return false;
     }
@@ -175,6 +178,12 @@ export function deadlinesForYear(
   return university.applicationDeadlines.filter((d) => d.applicationYear === applicationYear);
 }
 
+const CATEGORY_NAME: Record<SubjectCategory, string> = {
+  physics: 'Physics',
+  engineering: 'Engineering',
+  medicine: 'Medicine',
+};
+
 export function deadlineScopeLabel(scope: DeadlineScope): string {
   switch (scope.kind) {
     case 'all-courses':
@@ -182,7 +191,9 @@ export function deadlineScopeLabel(scope: DeadlineScope): string {
     case 'course-slugs':
       return `${scope.slugs.length} specific course${scope.slugs.length === 1 ? '' : 's'}`;
     case 'subject-category':
-      return scope.category === 'physics' ? 'Physics courses' : 'Engineering courses';
+      return `${CATEGORY_NAME[scope.category]} courses`;
+    case 'subject-categories':
+      return `${scope.categories.map((c) => CATEGORY_NAME[c]).join(' and ')} courses`;
     default:
       return scope.description;
   }

@@ -69,7 +69,8 @@ const PROF = (g) => ({ 'ukcf.profile.v1': JSON.stringify(g) });
   t('  …one row per university (22)', rows === 22, String(rows));
   const total = await m.locator('tfoot td').evaluateAll((tds) => tds.reduce((n, td) => n + Number(td.dataset.total), 0));
   const rowTotal = await m.locator('tbody td').evaluateAll((tds) => tds.reduce((n, td) => n + Number(td.dataset.total), 0));
-  t('  …footer totals equal the sum of the rows', total === rowTotal && total === 1129, `${total}/${rowTotal}`);
+  // 1,133 = 1,129 + the four verified Medicine courses of batch 8.
+  t('  …footer totals equal the sum of the rows', total === rowTotal && total === 1133, `${total}/${rowTotal}`);
   const tiles = await m.locator('.cm-t').evaluateAll((e) => e.filter((x) => !x.closest('.cm-legend')).length);
   const tileCells = await m.locator('tbody td:not(:has(.cm-count))').evaluateAll((tds) => tds.reduce((n, td) => n + Number(td.dataset.total), 0));
   t('  …tiles drawn equal the records they stand for', tiles === tileCells, `${tiles}/${tileCells}`);

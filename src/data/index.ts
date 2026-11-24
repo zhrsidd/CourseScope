@@ -34,6 +34,10 @@ import {
 } from './courses.real.batch7.lancaster';
 import { batch7ManchesterCourses } from './courses.real.batch7.manchester';
 import { shells2028 } from './courses.2028-shells';
+import { batch8ImperialMedicine } from './courses.real.batch8.imperial';
+import { batch8KclMedicine } from './courses.real.batch8.kcl';
+import { batch8ManchesterMedicine } from './courses.real.batch8.manchester';
+import { batch8BristolMedicine } from './courses.real.batch8.bristol';
 
 export {
   universities,
@@ -180,6 +184,18 @@ export const v08Courses: Course[] = [...v08ClosureCourses];
  * held back — is imported alongside the MEng it was always paired with.
  */
 export const v09Courses: Course[] = [...v09QmulCourses, v09KclBEng];
+
+/**
+ * Batch 8 — the first Medicine records: the standard-entry course at
+ * Imperial, King's, Manchester and Bristol, read on 2026-11-22. Research note:
+ * research/medicine-b8.md. UCL was not readable by script and is not included.
+ */
+export const batch8MedicineCourses: Course[] = [
+  batch8ImperialMedicine,
+  batch8KclMedicine,
+  batch8ManchesterMedicine,
+  batch8BristolMedicine,
+];
 export * from './taxonomy';
 // Tuition fees are deliberately NOT re-exported here: they are ~280 KB of data used only by the course
 // page and the admin view, and re-exporting them put them in the catalogue chunk every page waits for.
@@ -203,6 +219,7 @@ const seedRows: Course[] = [
   ...batch7Courses,
   ...v08Courses,
   ...v09Courses,
+  ...batch8MedicineCourses,
   ...shells2028,
 ];
 

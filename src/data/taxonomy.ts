@@ -109,6 +109,12 @@ export const SUBJECT_CATEGORIES: { id: SubjectCategory; label: string; blurb: st
     blurb:
       'General engineering and the named disciplines, including mechanical, electrical, civil, chemical and aerospace.',
   },
+  {
+    id: 'medicine',
+    label: 'Medicine',
+    blurb:
+      'Standard-entry medicine leading to a primary medical qualification (MBBS, MBChB and equivalents).',
+  },
 ];
 
 export const SUBCATEGORIES: SubcategoryMeta[] = [
@@ -155,6 +161,13 @@ export const SUBCATEGORIES: SubcategoryMeta[] = [
     category: 'physics',
     label: 'Natural Sciences (Physical)',
     blurb: 'Broad first-year science routes that lead to a physics specialisation.',
+  },
+  // Medicine
+  {
+    id: 'medicine',
+    category: 'medicine',
+    label: 'Medicine',
+    blurb: 'Standard-entry medicine (A100-type). Usually requires Chemistry, an admissions test and an interview.',
   },
   // Engineering
   {
@@ -275,6 +288,13 @@ export const DEGREE_TYPES: DegreeTypeMeta[] = [
     description: 'Integrated Master’s in Mathematics, used by some mathematical physics routes.',
     integratedMasters: true,
   },
+  {
+    id: 'MB',
+    label: 'Medical degree',
+    description:
+      'A primary medical qualification (MBBS, MBChB, BMBS or equivalent). It leads to provisional registration with the General Medical Council. The exact award title is shown on each course.',
+    integratedMasters: false,
+  },
   { id: 'Other', label: 'Other', description: 'Another award title.', integratedMasters: false },
 ];
 
@@ -293,6 +313,14 @@ export const ADMISSIONS_TESTS: AdmissionsTestMeta[] = [
     fullName: 'No admissions test',
     description: 'The course does not use a pre-interview or pre-offer admissions test.',
     infoUrl: null,
+  },
+  {
+    code: 'ucat',
+    shortName: 'UCAT',
+    fullName: 'University Clinical Aptitude Test',
+    description:
+      'Computer-based test used by most UK medical schools. Each university decides how it uses the score; the course record says what that university publishes.',
+    infoUrl: 'https://www.ucat.ac.uk/',
   },
   {
     code: 'esat',
@@ -385,6 +413,7 @@ export const COMMON_A_LEVEL_SUBJECTS = [
   'Physics',
   'Chemistry',
   'Biology',
+  'Human Biology',
   'Computer Science',
   'Economics',
   'Design and Technology',

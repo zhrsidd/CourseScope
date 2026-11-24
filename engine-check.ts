@@ -41,6 +41,7 @@ import {
   allUniversities,
   FIXTURE_IDS,
   LEEDS_NON_2027_PAGES,
+  batch8MedicineCourses,
 } from '@/data';
 import { shells2028 } from '@/data/courses.2028-shells';
 import { course, offer, atLeastAt, oneOf } from '@/data/builders';
@@ -107,6 +108,15 @@ import { buildStripRows } from '@/components/DifferenceStrip';
 import { buildCoverage } from '@/components/CoverageMatrix';
 import { buildLadder } from '@/components/OfferLadder';
 import type { ApplicationDeadline, Ranking, StudentProfile, University } from '@/types';
+
+/*
+ * Pinned catalogue snapshots below were taken before Medicine was added. They
+ * keep checking exactly what they did, against the catalogue WITHOUT batch 8,
+ * so they still prove that adding Medicine changed nothing else. Batch 8's own
+ * totals are asserted in section 31.
+ */
+const BATCH8_IDS = new Set(batch8MedicineCourses.map((c) => c.id));
+const coursesBeforeMedicine = courses.filter((c) => !BATCH8_IDS.has(c.id));
 
 const profile = (
   subjects: [string, string][],
@@ -5877,15 +5887,15 @@ check(
     .some((t) => /guarantee|you'?ll get in|dream|perfect match|predict/i.test(t)), false);
 
   /* Branding changes nothing the student relies on. Pinned from the v0.9 build. */
-  check('Brand does not alter the catalogue: 1,129 served applications', courses.length, 1129);
-  check('  …562 verified', courses.filter((c) => c.provenance.verificationStatus === 'verified').length, 562);
+  check('Brand does not alter the catalogue: 1,129 served applications (before Medicine)', coursesBeforeMedicine.length, 1129);
+  check('  …562 verified', coursesBeforeMedicine.filter((c) => c.provenance.verificationStatus === 'verified').length, 562);
   check('  …“Physics” search still returns 206 (2027)', search('Physics').length, 206);
   check('  …“Engineering” search still returns 356 (2027; HH72 withdrawn in v1.1.0)', search('Engineering').length, 356);
   check('  …study-option search for “Astrophysics” still returns 40', search('Astrophysics').length, 40);
   const brandProfile = profile([['Mathematics', 'A*'], ['Physics', 'A'], ['Chemistry', 'A']]);
   const brandVerdicts: Record<string, number> = {};
   for (const r of Object.values(
-    evaluateCatalogue(courses.filter((c) => c.applicationYear === '2027'), { ...brandProfile, applicationYear: '2027' }),
+    evaluateCatalogue(coursesBeforeMedicine.filter((c) => c.applicationYear === '2027'), { ...brandProfile, applicationYear: '2027' }),
   )) {
     brandVerdicts[r.verdict] = (brandVerdicts[r.verdict] ?? 0) + 1;
   }
@@ -5943,7 +5953,7 @@ check(
       .digest('hex'),
     '71ed1a2075456dd5e20ed04329ae5fbcb456667e7114e337c8efe9bf935b018b');
   check('  …and so is every course’s requirement set across the catalogue, aside from the v1.1.0 Southampton withdrawal',
-    createHash('sha256').update(JSON.stringify(courses.map((c) => ({ id: c.id, offers: c.offers })))).digest('hex'),
+    createHash('sha256').update(JSON.stringify(coursesBeforeMedicine.map((c) => ({ id: c.id, offers: c.offers })))).digest('hex'),
     'f7d97298a11085f0462195f6bd55aa648b82cf59756149b5f28074e1957706a6');
   const uclPhysics = courses.find((c) => c.id === 'ucl-physics-bsc--2027')!;
   check('UCL Physics still requires Mathematics and Physics — the general list does not dilute it',
@@ -5971,15 +5981,18 @@ check(
     universities.flatMap((u) => u.applicationDeadlines).filter((d) => d.verificationStatus !== 'verified').length, 0);
   check('  …and no “(demo)” overview text',
     universities.filter((u) => JSON.stringify(u.admissionsOverview).includes('(demo)')).length, 0);
+  // Batch 8 added one seed and one verified deadline: Imperial's Medicine date.
+  const medicineDeadline = (d: ApplicationDeadline) =>
+    d.appliesTo.kind === 'subject-category' && d.appliesTo.category === 'medicine';
   check('  …while every seed is still kept, unpublished, for when it is verified',
-    `${allUniversities.flatMap((u) => u.rankings).length}/${allUniversities.flatMap((u) => u.applicationDeadlines).length}`, '67/49');
+    `${allUniversities.flatMap((u) => u.rankings).length}/${allUniversities.flatMap((u) => u.applicationDeadlines).filter((d) => !medicineDeadline(d)).length}`, '67/49');
   check('  …and the three verified deadlines are still shown',
-    universities.flatMap((u) => u.applicationDeadlines).length, 3);
+    universities.flatMap((u) => u.applicationDeadlines).filter((d) => !medicineDeadline(d)).length, 3);
   check('  …with the same 22 universities served', universities.length, 22);
 
   /* 28d. Polish changed nothing a student relies on */
   check('Polish pass: catalogue still 1,129 applications, 562 verified',
-    `${courses.length}/${courses.filter((c) => c.provenance.verificationStatus === 'verified').length}`, '1129/562');
+    `${coursesBeforeMedicine.length}/${coursesBeforeMedicine.filter((c) => c.provenance.verificationStatus === 'verified').length}`, '1129/562');
   check('  …search still returns Physics 206, Engineering 356, Astrophysics 40',
     `${search('Physics').length}/${search('Engineering').length}/${search('Astrophysics').length}`, '206/356/40');
   check('  …University filter still narrows search as before (UCL: 21)',
@@ -6199,7 +6212,7 @@ check(
 
   /* 30j. Fees change nothing a student relied on before */
   check('Changed by the Southampton correction: catalogue now 1,129 applications (567 for 2027, 562 for 2028)',
-    `${courses.length}/${courses.filter((c) => c.applicationYear === '2027').length}/${courses.filter((c) => c.applicationYear === '2028').length}`, '1129/567/562');
+    `${coursesBeforeMedicine.length}/${coursesBeforeMedicine.filter((c) => c.applicationYear === '2027').length}/${coursesBeforeMedicine.filter((c) => c.applicationYear === '2028').length}`, '1129/567/562');
   const P = (al: [string, string][], fm: boolean | null, y: '2027' | '2028') =>
     ({ aLevels: al.map(([subject, grade], i) => ({ id: `a${i}`, subject, grade })), gcses: [], applicationYear: y, schoolOffersFurtherMathematics: fm, notes: '' }) as Parameters<typeof evaluateCatalogue>[1];
   const fp = createHash('sha256');
@@ -6209,7 +6222,7 @@ check(
     P([['Mathematics', 'B'], ['Biology', 'C'], ['English Literature', 'A']], null, '2027'),
     P([['Mathematics', 'A*'], ['Physics', 'A'], ['Chemistry', 'A']], null, '2028'),
   ]) {
-    const r = evaluateCatalogue(courses, p);
+    const r = evaluateCatalogue(coursesBeforeMedicine, p);
     for (const id of Object.keys(r).sort()) fp.update(`${id}:${r[id].verdict};`);
   }
   check('  …eligibility verdicts for four reference profiles unchanged except for the v1.1.0 Southampton withdrawal',
@@ -6379,6 +6392,80 @@ check(
   }
   check('lazy eligibility equals eager for every course under four profiles (incl. no grades)', differing, 0);
   check('  …and exposes the same set of course ids', keysDiffer, 0);
+}
+
+/* ================================================================== */
+/* 31. Batch 8 — Medicine                                               */
+/* ================================================================== */
+{
+  console.log('\n31 — Medicine (batch 8)');
+  const med = courses.filter((c) => c.subjectCategory === 'medicine');
+  check('Medicine: four standard-entry courses served, all 2027 entry',
+    med.map((c) => c.id).sort().join(','),
+    'bristol-medicine-mbchb--2027,imperial-medicine-mbbs-bsc--2027,kcl-medicine-mbbs--2027,manchester-medicine-mbchb--2027');
+  check('  …each verified with a source URL, title, check date and cycle',
+    med.every((c) => c.provenance.verificationStatus === 'verified' && c.provenance.sourceUrl && c.provenance.sourceTitle
+      && c.provenance.lastVerified === '2026-11-22' && c.applicationYear === '2027'), true);
+  check('  …each from the university’s own domain',
+    med.every((c) => /^https:\/\/www\.(imperial|kcl|manchester|bristol)\.ac\.uk\//.test(c.provenance.sourceUrl ?? '')), true);
+  check('  …each requires the UCAT and an interview',
+    med.every((c) => c.admissionsTest.code === 'ucat' && c.admissionsTest.requirement === 'required' && c.interview === 'yes'), true);
+  check('  …UCAS codes as printed (Manchester is A106, not A100)',
+    med.map((c) => `${c.universityId}:${c.courseCode}`).sort().join(','), 'bristol:A100,imperial:A100,kcl:A100,manchester:A106');
+  check('  …and the medical award type with the university’s own award title',
+    med.map((c) => `${c.degreeType}:${c.awardLabel}`).sort().join(','), 'MB:MB ChB,MB:MBBS,MB:MBBS/BSc,MB:MBChB');
+  check('  …and no 2028 Medicine record exists, so nothing is carried forward',
+    allCourses.filter((c) => c.subjectCategory === 'medicine' && c.applicationYear === '2028').length, 0);
+
+  const v = (id: string, al: [string, string][]) => evaluateCourse(courseById[id], profile(al)).verdict;
+  // Imperial: A* must be in Biology or Chemistry; an A* elsewhere does not do.
+  check('Imperial Medicine: A* Biology, A Chemistry, A Maths meets',
+    v('imperial-medicine-mbbs-bsc--2027', [['Biology', 'A*'], ['Chemistry', 'A'], ['Mathematics', 'A']]), 'meets');
+  check('  …A* only in Mathematics does not (that is the contextual route, never matched)',
+    v('imperial-medicine-mbbs-bsc--2027', [['Biology', 'A'], ['Chemistry', 'A'], ['Mathematics', 'A*']]), 'does-not-meet');
+  check('  …and without Chemistry does not',
+    v('imperial-medicine-mbbs-bsc--2027', [['Biology', 'A*'], ['Physics', 'A'], ['Mathematics', 'A']]), 'does-not-meet');
+  check('KCL Medicine publishes no contextual offer, and none is invented',
+    `${courseById['kcl-medicine-mbbs--2027'].contextualOffer.availability}/${courseById['kcl-medicine-mbbs--2027'].offers.filter((o) => o.isContextual).length}`, 'no/0');
+  // Bristol: Chemistry plus one of Biology, Physics, Mathematics, Further Mathematics.
+  check('Bristol Medicine: Chemistry, Physics, English at AAA meets',
+    v('bristol-medicine-mbchb--2027', [['Chemistry', 'A'], ['Physics', 'A'], ['English Literature', 'A']]), 'meets');
+  check('  …Biology, Physics, Mathematics without Chemistry does not',
+    v('bristol-medicine-mbchb--2027', [['Biology', 'A*'], ['Physics', 'A*'], ['Mathematics', 'A*']]), 'does-not-meet');
+  // Manchester: the very-similar-subjects rule cannot be checked, so it is never a clean pass.
+  check('Manchester Medicine: a qualifying profile is review, never a pass (similar-subjects rule)',
+    v('manchester-medicine-mbchb--2027', [['Chemistry', 'A'], ['Psychology', 'A'], ['English Literature', 'A']]), 'review-required');
+  check('  …a profile with only one listed science still fails',
+    v('manchester-medicine-mbchb--2027', [['Biology', 'A'], ['History', 'A'], ['English Literature', 'A']]), 'does-not-meet');
+
+  // The ledger never calls a subject that is one accepted option "Recommended".
+  {
+    const c = courseById['manchester-medicine-mbchb--2027'];
+    const pr = profile([]);
+    const rows = buildLedgerRows(c, evaluateCourse(c, pr), pr).rows;
+    const pub = (label: string) => rows.find((r) => r.label === label)?.published;
+    check('Ledger: Manchester Chemistry reads as one accepted option, not “Recommended”',
+      pub('Chemistry'), 'One of the accepted subjects, see conditions');
+    check('  …and so does Mathematics', pub('Mathematics'), 'One of the accepted subjects, see conditions');
+  }
+
+  // Deadlines: a January date read from physics/engineering pages never reaches Medicine.
+  const uniById = Object.fromEntries(universities.map((u) => [u.id, u]));
+  const imperial = uniById['imperial'];
+  const medDates = deadlinesForCourse(imperial, courseById['imperial-medicine-mbbs-bsc--2027']).map((d) => d.date);
+  check('Imperial Medicine shows only its own 15 October 2026 deadline', medDates.join(','), '2026-10-15');
+  check('  …while Imperial Physics keeps the 13 January 2027 deadline',
+    deadlinesForCourse(imperial, courseById['imperial-physics-bsc--2027']).map((d) => d.date).join(','), '2027-01-13');
+  check('No Medicine course is shown any deadline later than October of the year before entry',
+    med.flatMap((c) => deadlinesForCourse(uniById[c.universityId], c))
+      .filter((d) => d.date && d.date > '2026-10-31').length, 0);
+
+  // Search
+  check('Search: “medicine” returns the four Medicine courses', search('medicine').map((c) => c.id).sort().join(','),
+    med.map((c) => c.id).sort().join(','));
+  check('  …“UCAT” finds them by test', search('UCAT').length, 4);
+  check('  …and “biomedical engineering” stays engineering only',
+    search('biomedical engineering').some((c) => c.subjectCategory === 'medicine'), false);
 }
 
 console.log(failures === 0 ? '\nAll checks passed.' : `\n${failures} check(s) failed.`);

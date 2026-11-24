@@ -7,6 +7,13 @@
     "infoUrl": null
   },
   {
+    "code": "ucat",
+    "shortName": "UCAT",
+    "fullName": "University Clinical Aptitude Test",
+    "description": "Computer-based test used by most UK medical schools. Each university decides how it uses the score; the course record says what that university publishes.",
+    "infoUrl": "https://www.ucat.ac.uk/"
+  },
+  {
     "code": "esat",
     "shortName": "ESAT",
     "fullName": "Engineering and Science Admissions Test",
@@ -32,6 +39,13 @@
     "shortName": "STEP",
     "fullName": "Sixth Term Examination Paper",
     "description": "Advanced mathematics examination usually taken after the A-Level exams and attached to an offer condition.",
+    "infoUrl": null
+  },
+  {
+    "code": "tara",
+    "shortName": "TARA",
+    "fullName": "Test of Academic Reasoning for Admissions",
+    "description": "Reasoning test run by University Admissions Tests UK, used by some engineering courses from the 2027 cycle.",
     "infoUrl": null
   },
   {

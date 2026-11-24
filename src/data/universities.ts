@@ -352,11 +352,27 @@ const SEEDS: UniversitySeed[] = [
         label: 'UCAS equal consideration deadline',
         date: '2027-01-13',
         years: ['2027'],
+        // Read from physics and engineering pages, so scoped to them: Imperial's
+        // Medicine page gives an October deadline (below).
+        appliesTo: { kind: 'subject-categories', categories: ['physics', 'engineering'] },
         notes: '18:00 UK time.',
         verification: 'verified',
         sourceUrl: 'https://www.imperial.ac.uk/study/courses/undergraduate/physics-bsc/',
         sourceTitle: 'Physics BSc | Imperial College London',
         lastVerified: '2026-09-01',
+      },
+      {
+        // Read from the 2027-entry Medicine MBBS/BSc (A100) page on 2026-11-22:
+        // "Application deadlines – Thursday 15 October 2026 at 18.00 (UK time)".
+        label: 'UCAS application deadline (Medicine)',
+        date: '2026-10-15',
+        years: ['2027'],
+        appliesTo: { kind: 'subject-category', category: 'medicine' },
+        notes: '18:00 UK time. The page also says applications for this course are now closed.',
+        verification: 'verified',
+        sourceUrl: 'https://www.imperial.ac.uk/study/courses/undergraduate/2027/medicine/',
+        sourceTitle: 'Medicine MBBS/BSc | Study | Imperial College London',
+        lastVerified: '2026-11-22',
       },
       {
         label: 'UCAS equal consideration deadline',

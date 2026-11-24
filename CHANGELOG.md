@@ -17,10 +17,25 @@ The student-facing release notes are also shown in the app, on the methodology p
   ones are named once in a single line. Admissions-test rows with nothing recorded (modules, details, test
   page) are omitted. The specialism is no longer repeated in the header when it matches the subject area.
   Nothing was removed from the data, and the unpublished-cycle and partially-verified notices still show in full.
-- **Not done yet: QS rankings and medicine.** Both need pages read at the source (topuniversities.com and each
-  university's medicine pages), and those could not be fetched from the build session. Only verified rankings
-  are served (`publicUniversities` in `src/data/universities.ts`), so no ranking positions are shown until
-  real QS records with a source URL, title and check date are entered.
+- **Medicine, batch 8.** The first four Medicine courses, read from each university's own page on
+  2026-11-22: Imperial Medicine MBBS/BSc (A100), King's Medicine MBBS (A100), Manchester MBChB Medicine (A106)
+  and Bristol MB ChB Medicine (A100), all 2027 entry and verified. Research note: `research/medicine-b8.md`.
+  UCL's page returns a Cloudflare bot challenge to a scripted request and was not read. Model additions: subject
+  category `medicine`, subcategory `medicine`, degree type `MB` (the award title stays per record), admissions
+  test `ucat`, and `Human Biology` in the subject list. Search understands "medicine"/"medical" and "UCAT".
+- **Deadline scopes.** New scope `subject-categories`. Imperial's 13 January 2027 deadline, read from physics and
+  engineering pages, is now scoped to those subjects, and Imperial's Medicine page date (15 October 2026) is a
+  separate verified deadline, so a medicine course never shows the January date.
+- **Requirement ledger wording.** A subject named only inside a "one of these" or "N of these" rule now reads
+  "One of the accepted subjects, see conditions" instead of "Recommended". This also corrects existing physics
+  and engineering records that use such rules.
+- **Assertions.** Pinned pre-Medicine snapshots (catalogue size, verdict counts, requirement hash, verdict
+  fingerprint, deadline counts) now run against the catalogue without batch 8, so they still prove nothing else
+  changed. New section 31 covers the Medicine records, verdicts, deadlines and search. `qa.viz` and `qa.routing`
+  pinned totals moved by the four new verified courses (1,129 to 1,133; 562 to 566 verified for 2027).
+- **Exported data.** `data/*.json` had not been regenerated since 2026-09-28 (134 courses); it now matches the
+  catalogue (1,213 records), and `rankings.json` is empty because only verified rankings are exported.
+- **Not done yet: QS rankings.** QS serves a Cloudflare bot challenge; positions must be read by hand.
 
 ## CourseScope v2 (released to production 2026-10-28)
 

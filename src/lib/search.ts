@@ -38,6 +38,12 @@ export interface ParsedQuery {
   chips: { id: string; label: string }[];
 }
 
+const CATEGORY_CHIP: Record<SubjectCategory, string> = {
+  physics: 'Physics',
+  engineering: 'Engineering',
+  medicine: 'Medicine',
+};
+
 const SUBJECT_WORDS: Record<string, string> = {
   'further mathematics': 'Further Mathematics',
   'further maths': 'Further Mathematics',
@@ -53,6 +59,7 @@ const SUBJECT_WORDS: Record<string, string> = {
 
 const TEST_WORDS: Record<string, AdmissionsTestCode> = {
   esat: 'esat',
+  ucat: 'ucat',
   pat: 'pat',
   tmua: 'tmua',
   step: 'step',
@@ -208,6 +215,10 @@ export function parseQuery(raw: string): ParsedQuery {
     result.categories.push('engineering');
     consume(/\bengineering\b/g);
   }
+  if (/\b(medicine|medical)\b/.test(working)) {
+    result.categories.push('medicine');
+    consume(/\b(medicine|medical)\b/g);
+  }
   if (/\bphysics\b/.test(working) || result.subcategories.some((s) => PHYSICS_SUBS.has(s))) {
     result.categories.push('physics');
     consume(/\bphysics\b/g);
@@ -227,7 +238,7 @@ export function parseQuery(raw: string): ParsedQuery {
   result.text = working.replace(/\s+/g, ' ').trim();
 
   for (const c of result.categories) {
-    result.chips.unshift({ id: `cat-${c}`, label: c === 'physics' ? 'Physics' : 'Engineering' });
+    result.chips.unshift({ id: `cat-${c}`, label: CATEGORY_CHIP[c] });
   }
 
   return result;

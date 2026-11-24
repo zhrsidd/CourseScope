@@ -66,6 +66,14 @@ function publishedForSubject(course: Course, offer: OfferPathway | null, subject
     const alt = req.acceptedAlternatives.length ? `, or ${req.acceptedAlternatives.join(' / ')}` : '';
     return `${word}${min}${alt}`;
   }
+  // Named only inside a "one of these" or "N of these" rule: it is one accepted
+  // option, not a recommendation and not a requirement on its own.
+  const inChoice = (offer?.constraints ?? []).some(
+    (c) =>
+      (c.kind === 'one-of' || c.kind === 'min-count-at-grade') &&
+      c.subjects.some((x) => subjectsMatch(x, subject)),
+  );
+  if (inChoice) return 'One of the accepted subjects, see conditions';
   if (subjectsMatch(subject, 'Further Mathematics')) return FURTHER_MATHS_LABEL[course.furtherMathematics];
   return subjectSummary(course, subject);
 }
