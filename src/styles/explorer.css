@@ -1143,6 +1143,13 @@
 .cat-physics { --cat: var(--cat-physics); }
 .cat-engineering { --cat: var(--cat-engineering); }
 .cat-medicine { --cat: var(--cat-medicine); }
+.cat-dentistry { --cat: var(--cat-dentistry); }
+.cat-veterinary { --cat: var(--cat-veterinary); }
+.cat-pharmacy { --cat: var(--cat-pharmacy); }
+.cat-biomedical-sciences { --cat: var(--cat-biomedical-sciences); }
+.cat-nursing { --cat: var(--cat-nursing); }
+.cat-physiotherapy { --cat: var(--cat-physiotherapy); }
+.cat-physician-associate { --cat: var(--cat-physician-associate); }
 .cat-tag {
   display: inline-flex;
   align-items: center;

@@ -277,8 +277,12 @@ export function FilterSidebar({
         </FilterSection>
       ) : null}
 
-      <FilterSection title="Physics or Engineering" defaultOpen selected={filters.categories.length}>
-        {SUBJECT_CATEGORIES.map((c) => (
+      <FilterSection title="Subject" defaultOpen selected={filters.categories.length}>
+        {/* A subject with no courses in this view is not offered as a filter,
+            unless it is already selected (so it can be cleared). */}
+        {SUBJECT_CATEGORIES.filter(
+          (c) => filters.categories.includes(c.id) || visibleUniverse.some((x) => x.subjectCategory === c.id),
+        ).map((c) => (
           <CheckboxRow
             key={c.id}
             checked={filters.categories.includes(c.id)}
@@ -291,10 +295,16 @@ export function FilterSidebar({
 
       <FilterSection title="Course subject" selected={filters.subcategories.length}>
         <div className="max-h-72 overflow-y-auto pr-1">
-          {SUBJECT_CATEGORIES.map((cat) => (
+          {SUBJECT_CATEGORIES.filter((cat) =>
+            SUBCATEGORIES.some(
+              (s) => s.category === cat.id && ((subCounts.get(s.id) ?? 0) > 0 || filters.subcategories.includes(s.id)),
+            ),
+          ).map((cat) => (
             <div key={cat.id}>
               <div className="rail-label">{cat.label}</div>
-              {SUBCATEGORIES.filter((s) => s.category === cat.id).map((s) => (
+              {SUBCATEGORIES.filter(
+                (s) => s.category === cat.id && ((subCounts.get(s.id) ?? 0) > 0 || filters.subcategories.includes(s.id)),
+              ).map((s) => (
                 <CheckboxRow
                   key={s.id}
                   checked={filters.subcategories.includes(s.id)}

@@ -45,7 +45,17 @@ export const GCSE_GRADES: readonly GcseGrade[] = ['9', '8', '7', '6', '5', '4', 
 /* Subject taxonomy                                                    */
 /* ------------------------------------------------------------------ */
 
-export type SubjectCategory = 'physics' | 'engineering' | 'medicine';
+export type SubjectCategory =
+  | 'physics'
+  | 'engineering'
+  | 'medicine'
+  | 'dentistry'
+  | 'veterinary'
+  | 'pharmacy'
+  | 'biomedical-sciences'
+  | 'nursing'
+  | 'physiotherapy'
+  | 'physician-associate';
 
 export type PhysicsSubcategory =
   | 'physics'
@@ -92,7 +102,24 @@ export type EngineeringSubcategory =
  */
 export type MedicineSubcategory = 'medicine';
 
-export type SubjectSubcategory = PhysicsSubcategory | EngineeringSubcategory | MedicineSubcategory;
+/**
+ * Health subjects added after Medicine. Each is its own subject area, with one
+ * subcategory to start (Nursing has the four NMC fields), and grows a new
+ * subcategory only when a real course needs one.
+ */
+export type HealthSubcategory =
+  | 'dentistry'
+  | 'veterinary'
+  | 'pharmacy'
+  | 'biomedical-sciences'
+  | 'nursing-adult'
+  | 'nursing-child'
+  | 'nursing-mental-health'
+  | 'nursing-learning-disability'
+  | 'physiotherapy'
+  | 'physician-associate';
+
+export type SubjectSubcategory = PhysicsSubcategory | EngineeringSubcategory | MedicineSubcategory | HealthSubcategory;
 
 export interface SubcategoryMeta {
   id: SubjectSubcategory;
@@ -115,6 +142,11 @@ export type DegreeType =
   | 'MMath'
   /** A primary medical qualification: MBBS, MBChB, BMBS, MB BChir and the like. */
   | 'MB'
+  /** A dental degree: BDS, BChD and the like. */
+  | 'BDS'
+  /** A veterinary degree: BVSc, BVetMed, BVM&S, VetMB and the like. */
+  | 'BVet'
+  | 'MPharm'
   | 'Other';
 
 export interface DegreeTypeMeta {

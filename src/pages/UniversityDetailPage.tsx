@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import type { SubjectCategory } from '@/types';
+import { SUBJECT_CATEGORIES } from '@/data/taxonomy';
 import { Link, useParams } from 'react-router-dom';
 import { usePageTitle } from '@/lib/page-title';
 import { CategoryTag } from '@/components/CategoryTag';
@@ -20,7 +22,7 @@ import {
 import { useApp } from '@/state/AppContext';
 import { PageLoading } from '@/components/PageLoading';
 
-type Focus = 'all' | 'physics' | 'engineering' | 'medicine';
+type Focus = 'all' | SubjectCategory;
 
 export function UniversityDetailPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -61,9 +63,6 @@ function UniversityDetail({ universityId }: { universityId: string }) {
   const university = universityById[universityId];
   const all = coursesByUniversity[university.id] ?? [];
   const courses = all.filter((c) => c.applicationYear === profile.applicationYear);
-  const physics = courses.filter((c) => c.subjectCategory === 'physics');
-  const engineering = courses.filter((c) => c.subjectCategory === 'engineering');
-  const medicine = courses.filter((c) => c.subjectCategory === 'medicine');
   const saved = savedUniversityIds.includes(university.id);
   const overview = university.admissionsOverview;
   const deadlines = deadlinesForYear(university, profile.applicationYear);
@@ -71,11 +70,11 @@ function UniversityDetail({ universityId }: { universityId: string }) {
   const awaitingCount = courses.filter((c) => c.provenance.verificationStatus === 'awaiting-data').length;
   const unpublishedCount = courses.filter((c) => c.provenance.verificationStatus === 'awaiting-publication').length;
 
-  const groups: { key: Exclude<Focus, 'all'>; label: string; list: typeof courses }[] = [
-    { key: 'physics', label: 'Physics', list: physics },
-    { key: 'engineering', label: 'Engineering', list: engineering },
-    { key: 'medicine', label: 'Medicine', list: medicine },
-  ];
+  const groups: { key: SubjectCategory; label: string; list: typeof courses }[] = SUBJECT_CATEGORIES.map((c) => ({
+    key: c.id,
+    label: c.label,
+    list: courses.filter((x) => x.subjectCategory === c.id),
+  }));
   const showGroups = groups.filter((g) => g.list.length > 0 && (focus === 'all' || focus === g.key));
   // More than one subject area: show the switch and the group headings.
   const present = groups.filter((g) => g.list.length > 0);

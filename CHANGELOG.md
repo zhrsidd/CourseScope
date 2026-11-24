@@ -23,6 +23,15 @@ The student-facing release notes are also shown in the app, on the methodology p
   UCL's page returns a Cloudflare bot challenge to a scripted request and was not read. Model additions: subject
   category `medicine`, subcategory `medicine`, degree type `MB` (the award title stays per record), admissions
   test `ucat`, and `Human Biology` in the subject list. Search understands "medicine"/"medical" and "UCAT".
+- **Health subjects (model only).** Seven new subject areas, each its own subject with its own accent colour:
+  Dentistry, Veterinary Medicine, Pharmacy, Biomedical Sciences, Nursing (four NMC fields as subcategories),
+  Physiotherapy and Physician Associate. New degree types `BDS`, `BVet` and `MPharm`. Subject labels in format,
+  search and the coverage matrix now come from `SUBJECT_CATEGORIES` instead of hard-coded maps. Search understands
+  each subject's words ("dental", "vet", "physio" and so on); health words are matched before specialism words, so
+  "biomedical science" is Biomedical Sciences while "biomedical engineering" stays Engineering, and "veterinary
+  medicine" is Veterinary only. Filters, the Subjects page and university pages show a subject only when it has
+  courses, so no empty subject appears before its first verified record. "Physics or Engineering" copy in the
+  filter heading, search title, empty state and Subjects page is replaced. No course records yet. Section 35.
 - **Medicine, batch 12.** Newcastle MB BS, Liverpool MBChB and Exeter BMBS (all A100), verified for 2027 entry on
   2026-11-24; all three are new university records (26 universities now served). Newcastle's subject rule comes from
   its linked 2027 Medicine Admissions Policy, cited as a second source. Liverpool's A*AB alternative is its own

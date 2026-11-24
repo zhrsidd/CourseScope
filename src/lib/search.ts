@@ -19,6 +19,7 @@ import type {
   SubjectSubcategory,
 } from '@/types';
 import { parseProfileString } from './grades';
+import { SUBJECT_CATEGORIES } from '@/data/taxonomy';
 
 export interface ParsedQuery {
   raw: string;
@@ -38,11 +39,22 @@ export interface ParsedQuery {
   chips: { id: string; label: string }[];
 }
 
-const CATEGORY_CHIP: Record<SubjectCategory, string> = {
-  physics: 'Physics',
-  engineering: 'Engineering',
-  medicine: 'Medicine',
-};
+const CATEGORY_CHIP = Object.fromEntries(SUBJECT_CATEGORIES.map((c) => [c.id, c.label])) as Record<
+  SubjectCategory,
+  string
+>;
+
+/** Words that name one of the health subjects. Checked before the subcategory
+ *  words; "biomedical engineering" matches none of them, so it stays engineering. */
+const HEALTH_WORDS: [RegExp, SubjectCategory][] = [
+  [/\b(dentistry|dental)\b/g, 'dentistry'],
+  [/\b(veterinary( medicine| science)?|vet|vets)\b/g, 'veterinary'],
+  [/\b(pharmacy|mpharm)\b/g, 'pharmacy'],
+  [/\bbiomedical sciences?\b/g, 'biomedical-sciences'],
+  [/\bnursing\b/g, 'nursing'],
+  [/\b(physiotherapy|physio)\b/g, 'physiotherapy'],
+  [/\bphysician associates?\b/g, 'physician-associate'],
+];
 
 const SUBJECT_WORDS: Record<string, string> = {
   'further mathematics': 'Further Mathematics',
@@ -205,6 +217,15 @@ export function parseQuery(raw: string): ParsedQuery {
   }
 
   /* 6 — subject taxonomy */
+  // Health subjects first, so "biomedical science" is not read as Biomedical
+  // Engineering by the specialism word "biomedical" below.
+  for (const [re, cat] of HEALTH_WORDS) {
+    if (re.test(working)) {
+      result.categories.push(cat);
+      consume(re);
+    }
+    re.lastIndex = 0;
+  }
   for (const [word, sub] of SUBCATEGORY_WORDS) {
     if (working.includes(word)) {
       result.subcategories.push(sub);

@@ -111,6 +111,7 @@ import { buildLedgerRows } from '@/components/RequirementLedger';
 import { buildStripRows } from '@/components/DifferenceStrip';
 import { buildCoverage } from '@/components/CoverageMatrix';
 import { buildLadder } from '@/components/OfferLadder';
+import { SUBJECT_CATEGORIES, SUBCATEGORIES } from '@/data/taxonomy';
 import type { ApplicationDeadline, Ranking, StudentProfile, University } from '@/types';
 
 /*
@@ -6631,6 +6632,30 @@ check(
     courses.filter((c) => c.subjectCategory === 'medicine')
       .flatMap((c) => deadlinesForCourse(uniById[c.universityId], c))
       .filter((d) => d.date && d.date > '2026-10-31').length, 0);
+}
+
+/* ================================================================== */
+/* 35. Health subjects: the model before any record                    */
+/* ================================================================== */
+{
+  console.log('\n35 — Health subjects');
+  const fs = await import('node:fs');
+  const tokens = fs.readFileSync('src/styles/tokens.css', 'utf8');
+  const css = fs.readFileSync('src/styles/explorer.css', 'utf8');
+  const ids = SUBJECT_CATEGORIES.map((c) => c.id);
+  check('Ten subject areas, each its own subject',
+    ids.join(','), 'physics,engineering,medicine,dentistry,veterinary,pharmacy,biomedical-sciences,nursing,physiotherapy,physician-associate');
+  check('  …each has an accent token and a row class',
+    ids.filter((id) => !tokens.includes(`--cat-${id}:`) || !css.includes(`.cat-${id} {`)).join(','), '');
+  check('  …and every subcategory belongs to one of them',
+    SUBCATEGORIES.every((x) => ids.includes(x.category)), true);
+  const cats = (q: string) => parseQuery(q).categories.slice().sort().join(',');
+  check('Search: subject words map to their subject',
+    ['dentistry', 'dental', 'vet', 'pharmacy', 'biomedical science', 'nursing', 'physio', 'physician associate'].map(cats).join('|'),
+    'dentistry|dentistry|veterinary|pharmacy|biomedical-sciences|nursing|physiotherapy|physician-associate');
+  check('  …“veterinary medicine” is Veterinary only, not also Medicine', cats('veterinary medicine'), 'veterinary');
+  check('  …“biomedical engineering” stays Engineering', cats('biomedical engineering'), 'engineering');
+  check('  …“medicine” is still Medicine', cats('medicine'), 'medicine');
 }
 
 console.log(failures === 0 ? '\nAll checks passed.' : `\n${failures} check(s) failed.`);

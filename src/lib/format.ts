@@ -15,6 +15,7 @@ import type {
   University,
   VerificationStatus,
 } from '@/types';
+import { SUBJECT_CATEGORIES } from '@/data/taxonomy';
 import {
   ADMISSIONS_TEST_BY_CODE,
   FURTHER_MATHS_LABEL,
@@ -178,11 +179,10 @@ export function deadlinesForYear(
   return university.applicationDeadlines.filter((d) => d.applicationYear === applicationYear);
 }
 
-const CATEGORY_NAME: Record<SubjectCategory, string> = {
-  physics: 'Physics',
-  engineering: 'Engineering',
-  medicine: 'Medicine',
-};
+const CATEGORY_NAME = Object.fromEntries(SUBJECT_CATEGORIES.map((c) => [c.id, c.label])) as Record<
+  SubjectCategory,
+  string
+>;
 
 export function deadlineScopeLabel(scope: DeadlineScope): string {
   switch (scope.kind) {

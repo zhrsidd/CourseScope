@@ -115,6 +115,41 @@ export const SUBJECT_CATEGORIES: { id: SubjectCategory; label: string; blurb: st
     blurb:
       'Standard-entry medicine leading to a primary medical qualification (MBBS, MBChB and equivalents).',
   },
+  {
+    id: 'dentistry',
+    label: 'Dentistry',
+    blurb: 'Five-year dental degrees (BDS and equivalents) leading to registration as a dentist.',
+  },
+  {
+    id: 'veterinary',
+    label: 'Veterinary Medicine',
+    blurb: 'Veterinary degrees (BVSc, BVetMed, BVM&S and equivalents) leading to registration as a vet.',
+  },
+  {
+    id: 'pharmacy',
+    label: 'Pharmacy',
+    blurb: 'The four-year MPharm, the degree that leads to registration as a pharmacist.',
+  },
+  {
+    id: 'biomedical-sciences',
+    label: 'Biomedical Sciences',
+    blurb: 'Biomedical science degrees: the science of human health and disease, without clinical registration.',
+  },
+  {
+    id: 'nursing',
+    label: 'Nursing',
+    blurb: 'Pre-registration nursing degrees in the four NMC fields: adult, children’s, mental health and learning disability.',
+  },
+  {
+    id: 'physiotherapy',
+    label: 'Physiotherapy',
+    blurb: 'Pre-registration physiotherapy degrees leading to HCPC registration.',
+  },
+  {
+    id: 'physician-associate',
+    label: 'Physician Associate',
+    blurb: 'Undergraduate physician associate degrees (MPAS and equivalents).',
+  },
 ];
 
 export const SUBCATEGORIES: SubcategoryMeta[] = [
@@ -168,6 +203,32 @@ export const SUBCATEGORIES: SubcategoryMeta[] = [
     category: 'medicine',
     label: 'Medicine',
     blurb: 'Standard-entry medicine (A100-type). Usually requires Chemistry, an admissions test and an interview.',
+  },
+  // Health subjects added after Medicine
+  { id: 'dentistry', category: 'dentistry', label: 'Dentistry', blurb: 'Standard-entry dental degree.' },
+  { id: 'veterinary', category: 'veterinary', label: 'Veterinary Medicine', blurb: 'Standard-entry veterinary degree.' },
+  { id: 'pharmacy', category: 'pharmacy', label: 'Pharmacy', blurb: 'The MPharm.' },
+  {
+    id: 'biomedical-sciences',
+    category: 'biomedical-sciences',
+    label: 'Biomedical Sciences',
+    blurb: 'Biomedical science, including IBMS-accredited routes.',
+  },
+  { id: 'nursing-adult', category: 'nursing', label: 'Adult Nursing', blurb: 'NMC field: adult nursing.' },
+  { id: 'nursing-child', category: 'nursing', label: 'Children’s Nursing', blurb: 'NMC field: children’s nursing.' },
+  { id: 'nursing-mental-health', category: 'nursing', label: 'Mental Health Nursing', blurb: 'NMC field: mental health nursing.' },
+  {
+    id: 'nursing-learning-disability',
+    category: 'nursing',
+    label: 'Learning Disability Nursing',
+    blurb: 'NMC field: learning disability nursing.',
+  },
+  { id: 'physiotherapy', category: 'physiotherapy', label: 'Physiotherapy', blurb: 'Pre-registration physiotherapy.' },
+  {
+    id: 'physician-associate',
+    category: 'physician-associate',
+    label: 'Physician Associate',
+    blurb: 'Undergraduate physician associate studies.',
   },
   // Engineering
   {
@@ -294,6 +355,24 @@ export const DEGREE_TYPES: DegreeTypeMeta[] = [
     description:
       'A primary medical qualification (MBBS, MBChB, BMBS or equivalent). It leads to provisional registration with the General Medical Council. The exact award title is shown on each course.',
     integratedMasters: false,
+  },
+  {
+    id: 'BDS',
+    label: 'Dental degree',
+    description: 'A dental degree (BDS, BChD or equivalent) leading to registration with the General Dental Council. The exact award title is shown on each course.',
+    integratedMasters: false,
+  },
+  {
+    id: 'BVet',
+    label: 'Veterinary degree',
+    description: 'A veterinary degree (BVSc, BVetMed, BVM&S or equivalent) leading to membership of the Royal College of Veterinary Surgeons. The exact award title is shown on each course.',
+    integratedMasters: false,
+  },
+  {
+    id: 'MPharm',
+    label: 'MPharm',
+    description: 'Master of Pharmacy, a four-year integrated degree that leads towards registration as a pharmacist.',
+    integratedMasters: true,
   },
   { id: 'Other', label: 'Other', description: 'Another award title.', integratedMasters: false },
 ];

@@ -48,6 +48,13 @@
   --cat-physics: #4f46e5;
   --cat-engineering: #a0522d;
   --cat-medicine: #9d2f8a;
+  --cat-dentistry: #2563eb;
+  --cat-veterinary: #5f7012;
+  --cat-pharmacy: #c2410c;
+  --cat-biomedical-sciences: #0c6a8a;
+  --cat-nursing: #b0306a;
+  --cat-physiotherapy: #6d4fd8;
+  --cat-physician-associate: #8a6d1f;
 
   /* Type families */
   --f-display: 'Instrument Serif', 'Instrument Serif Fallback', Georgia, 'Times New Roman', serif;
