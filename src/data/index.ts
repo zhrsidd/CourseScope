@@ -50,6 +50,9 @@ import { batch10SouthamptonMedicine } from './courses.real.batch10.southampton';
 import { batch11QmulMedicine } from './courses.real.batch11.qmul';
 import { batch11LancasterMedicine } from './courses.real.batch11.lancaster';
 import { batch11HymsMedicine } from './courses.real.batch11.hyms';
+import { batch12NewcastleMedicine } from './courses.real.batch12.newcastle';
+import { batch12LiverpoolMedicine } from './courses.real.batch12.liverpool';
+import { batch12ExeterMedicine } from './courses.real.batch12.exeter';
 
 export {
   universities,
@@ -236,6 +239,19 @@ export const batch10MedicineCourses: Course[] = [
   batch10SouthamptonMedicine,
 ];
 export const batch11MedicineCourses: Course[] = [batch11QmulMedicine, batch11LancasterMedicine, batch11HymsMedicine];
+
+/**
+ * Batch 12 — Medicine at Newcastle, Liverpool and Exeter, verified on
+ * 2026-11-24; all three are new university records. Keele is NOT added: its
+ * requirements page describes 2026 entry, and a university may not be listed on
+ * identity alone (section 26a). Leicester returned a bot challenge and was not
+ * read. Research note: research/medicine-b12.md.
+ */
+export const batch12MedicineCourses: Course[] = [
+  batch12NewcastleMedicine,
+  batch12LiverpoolMedicine,
+  batch12ExeterMedicine,
+];
 export * from './taxonomy';
 // Tuition fees are deliberately NOT re-exported here: they are ~280 KB of data used only by the course
 // page and the admin view, and re-exporting them put them in the catalogue chunk every page waits for.
@@ -263,6 +279,7 @@ const seedRows: Course[] = [
   ...batch9MedicineCourses,
   ...batch10MedicineCourses,
   ...batch11MedicineCourses,
+  ...batch12MedicineCourses,
   ...shells2028,
 ];
 

@@ -95,5 +95,37 @@
     "sourceTitle": "Medicine and Surgery MBChB - University of Birmingham",
     "lastVerified": "2026-11-24",
     "verificationStatus": "verified"
+  },
+  {
+    "id": "newcastle--deadline-ucas-application-deadline-medicine-2027-0",
+    "universityId": "newcastle",
+    "label": "UCAS application deadline (Medicine)",
+    "date": "2026-10-15",
+    "applicationYear": "2027",
+    "appliesTo": {
+      "kind": "subject-category",
+      "category": "medicine"
+    },
+    "notes": null,
+    "sourceUrl": "https://www.ncl.ac.uk/undergraduate/degrees/a100/",
+    "sourceTitle": "Medicine and Surgery MB BS | Undergraduate | Newcastle University",
+    "lastVerified": "2026-11-24",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "liverpool--deadline-ucas-application-deadline-medicine-2027-0",
+    "universityId": "liverpool",
+    "label": "UCAS application deadline (Medicine)",
+    "date": "2026-10-15",
+    "applicationYear": "2027",
+    "appliesTo": {
+      "kind": "subject-category",
+      "category": "medicine"
+    },
+    "notes": null,
+    "sourceUrl": "https://www.liverpool.ac.uk/courses/medicine-and-surgery-mbchb",
+    "sourceTitle": "Medicine and Surgery MBChB | Courses | University of Liverpool",
+    "lastVerified": "2026-11-24",
+    "verificationStatus": "verified"
   }
 ]

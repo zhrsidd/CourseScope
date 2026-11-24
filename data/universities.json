@@ -1008,5 +1008,134 @@
       }
     },
     "verificationStatus": "demo"
+  },
+  {
+    "id": "newcastle",
+    "slug": "newcastle",
+    "name": "Newcastle University",
+    "shortName": "Newcastle",
+    "initials": "NCL",
+    "city": "Newcastle upon Tyne",
+    "region": "North East England",
+    "country": "United Kingdom",
+    "website": "https://www.ncl.ac.uk",
+    "admissionsUrl": null,
+    "departments": [
+      "School of Medicine"
+    ],
+    "admissionsOverview": {
+      "typicalOffer": null,
+      "requiredSubjectsNote": null,
+      "furtherMathematics": "unknown",
+      "furtherMathematicsNote": null,
+      "gcseRequirements": null,
+      "englishLanguageRequirements": null,
+      "admissionsTestsNote": null,
+      "interviews": "not-stated",
+      "interviewsNote": null,
+      "internationalNotes": null,
+      "contextualOffer": {
+        "availability": "unknown",
+        "details": null
+      },
+      "applicationDeadline": null,
+      "provenance": {
+        "verificationStatus": "demo",
+        "identityVerification": "official-page",
+        "identityNote": null,
+        "officialUrl": "https://www.ncl.ac.uk",
+        "sourceUrl": null,
+        "sourceTitle": null,
+        "lastVerified": null,
+        "sources": []
+      }
+    },
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "liverpool",
+    "slug": "liverpool",
+    "name": "University of Liverpool",
+    "shortName": "Liverpool",
+    "initials": "LIV",
+    "city": "Liverpool",
+    "region": "North West England",
+    "country": "United Kingdom",
+    "website": "https://www.liverpool.ac.uk",
+    "admissionsUrl": null,
+    "departments": [
+      "School of Medicine"
+    ],
+    "admissionsOverview": {
+      "typicalOffer": null,
+      "requiredSubjectsNote": null,
+      "furtherMathematics": "unknown",
+      "furtherMathematicsNote": null,
+      "gcseRequirements": null,
+      "englishLanguageRequirements": null,
+      "admissionsTestsNote": null,
+      "interviews": "not-stated",
+      "interviewsNote": null,
+      "internationalNotes": null,
+      "contextualOffer": {
+        "availability": "unknown",
+        "details": null
+      },
+      "applicationDeadline": null,
+      "provenance": {
+        "verificationStatus": "demo",
+        "identityVerification": "official-page",
+        "identityNote": null,
+        "officialUrl": "https://www.liverpool.ac.uk",
+        "sourceUrl": null,
+        "sourceTitle": null,
+        "lastVerified": null,
+        "sources": []
+      }
+    },
+    "verificationStatus": "demo"
+  },
+  {
+    "id": "exeter",
+    "slug": "exeter",
+    "name": "University of Exeter",
+    "shortName": "Exeter",
+    "initials": "EXE",
+    "city": "Exeter",
+    "region": "South West England",
+    "country": "United Kingdom",
+    "website": "https://www.exeter.ac.uk",
+    "admissionsUrl": null,
+    "departments": [
+      "University of Exeter Medical School"
+    ],
+    "admissionsOverview": {
+      "typicalOffer": null,
+      "requiredSubjectsNote": null,
+      "furtherMathematics": "unknown",
+      "furtherMathematicsNote": null,
+      "gcseRequirements": null,
+      "englishLanguageRequirements": null,
+      "admissionsTestsNote": null,
+      "interviews": "not-stated",
+      "interviewsNote": null,
+      "internationalNotes": null,
+      "contextualOffer": {
+        "availability": "unknown",
+        "details": null
+      },
+      "applicationDeadline": null,
+      "provenance": {
+        "verificationStatus": "demo",
+        "identityVerification": "official-page",
+        "identityNote": null,
+        "officialUrl": "https://www.exeter.ac.uk",
+        "sourceUrl": null,
+        "sourceTitle": null,
+        "lastVerified": null,
+        "sources": []
+      }
+    },
+    "verificationStatus": "demo"
   }
 ]

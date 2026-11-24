@@ -45,6 +45,7 @@ import {
   batch9MedicineCourses,
   batch10MedicineCourses,
   batch11MedicineCourses,
+  batch12MedicineCourses,
 } from '@/data';
 import { shells2028 } from '@/data/courses.2028-shells';
 import { course, offer, atLeastAt, oneOf } from '@/data/builders';
@@ -119,6 +120,11 @@ import type { ApplicationDeadline, Ranking, StudentProfile, University } from '@
  * totals are asserted in section 31.
  */
 const coursesBeforeMedicine = courses.filter((c) => c.subjectCategory !== 'medicine');
+// Universities added for Medicine alone (Hull York, Newcastle, Liverpool, Exeter…), computed, not listed.
+const medicineOnlyUniversityIds = new Set(
+  courses.filter((c) => c.subjectCategory === 'medicine').map((c) => c.universityId)
+    .filter((id) => !coursesBeforeMedicine.some((c) => c.universityId === id)),
+);
 
 const profile = (
   subjects: [string, string][],
@@ -5988,11 +5994,11 @@ check(
   const medicineDeadline = (d: ApplicationDeadline) =>
     d.appliesTo.kind === 'subject-category' && d.appliesTo.category === 'medicine';
   check('  …while every seed is still kept, unpublished, for when it is verified',
-    `${allUniversities.flatMap((u) => u.rankings).length}/${allUniversities.filter((u) => u.id !== 'hyms').flatMap((u) => u.applicationDeadlines).filter((d) => !medicineDeadline(d)).length}`, '67/49');
+    `${allUniversities.flatMap((u) => u.rankings).length}/${allUniversities.filter((u) => !medicineOnlyUniversityIds.has(u.id)).flatMap((u) => u.applicationDeadlines).filter((d) => !medicineDeadline(d)).length}`, '67/49');
   check('  …and the three verified deadlines are still shown',
     universities.flatMap((u) => u.applicationDeadlines).filter((d) => !medicineDeadline(d)).length, 3);
-  // Hull York Medical School was added with Medicine batch 11; see section 33.
-  check('  …with the same 22 universities served', universities.filter((u) => u.id !== 'hyms').length, 22);
+  // Universities added for Medicine alone are covered in sections 33 and 34.
+  check('  …with the same 22 universities served', universities.filter((u) => !medicineOnlyUniversityIds.has(u.id)).length, 22);
 
   /* 28d. Polish changed nothing a student relies on */
   check('Polish pass: catalogue still 1,129 applications, 562 verified',
@@ -6580,6 +6586,48 @@ check(
   check('Birmingham Medicine shows its 15 October 2026 deadline',
     deadlinesForCourse(uniById['birmingham'], courseById['birmingham-medicine-mbchb--2027']).map((d) => d.date).join(','), '2026-10-15');
   check('No Medicine course in the catalogue is shown a deadline after October of the year before entry (batches 8–11)',
+    courses.filter((c) => c.subjectCategory === 'medicine')
+      .flatMap((c) => deadlinesForCourse(uniById[c.universityId], c))
+      .filter((d) => d.date && d.date > '2026-10-31').length, 0);
+}
+
+/* ================================================================== */
+/* 34. Batch 12 — Medicine: Newcastle, Liverpool, Exeter               */
+/* ================================================================== */
+{
+  console.log('\n34 — Medicine (batch 12)');
+  check('Batch 12: three Medicine records, verified for 2027 with source, title and date',
+    batch12MedicineCourses.map((c) => c.id).sort().join(',') === 'exeter-medicine-bmbs--2027,liverpool-medicine-mbchb--2027,newcastle-medicine-mbbs--2027'
+      && batch12MedicineCourses.every((c) => c.provenance.verificationStatus === 'verified' && c.provenance.sourceUrl
+        && c.provenance.sourceTitle && c.provenance.lastVerified === '2026-11-24'), true);
+  check('  …three new universities, each served, none with ranking positions',
+    ['newcastle', 'liverpool', 'exeter'].every((id) => universities.some((u) => u.id === id) && allUniversities.find((u) => u.id === id)!.rankings.length === 0), true);
+  check('Universities added for Medicine alone: Hull York, Newcastle, Liverpool, Exeter',
+    [...medicineOnlyUniversityIds].sort().join(','), 'exeter,hyms,liverpool,newcastle');
+  check('Keele and Leicester are not listed (2026-cycle page; bot challenge)',
+    universities.some((u) => u.id === 'keele' || u.id === 'leicester'), false);
+  check('Newcastle cites its 2027 Admissions Policy as a second source',
+    courseById['newcastle-medicine-mbbs--2027'].provenance.sources.some((x) => /2027%20Admissions%20Policy/.test(x.url) && x.applicationYear === '2027'), true);
+
+  const v = (id: string, al: [string, string][]) => evaluateCourse(courseById[id], profile(al)).verdict;
+  check('Newcastle: Biology with Statistics at AAA meets',
+    v('newcastle-medicine-mbbs--2027', [['Biology', 'A'], ['Statistics', 'A'], ['History', 'A']]), 'meets');
+  check('  …Physics and Maths without Biology or Chemistry does not',
+    v('newcastle-medicine-mbbs--2027', [['Physics', 'A'], ['Mathematics', 'A'], ['History', 'A']]), 'does-not-meet');
+  check('Liverpool: A*AB with the A* in Chemistry and A in Biology meets',
+    v('liverpool-medicine-mbchb--2027', [['Chemistry', 'A*'], ['Biology', 'A'], ['History', 'B']]), 'meets');
+  check('  …A*AB with the A* in the third subject does not',
+    v('liverpool-medicine-mbchb--2027', [['History', 'A*'], ['Chemistry', 'A'], ['Biology', 'B']]), 'does-not-meet');
+  check('Exeter: A*AA with A in Chemistry and Biology meets; without Biology does not',
+    `${v('exeter-medicine-bmbs--2027', [['Chemistry', 'A*'], ['Biology', 'A'], ['Physics', 'A']])}/${v('exeter-medicine-bmbs--2027', [['Chemistry', 'A*'], ['Physics', 'A'], ['Mathematics', 'A']])}`,
+    'meets/does-not-meet');
+
+  const uniById = Object.fromEntries(universities.map((u) => [u.id, u]));
+  check('Newcastle and Liverpool Medicine show their 15 October 2026 deadlines',
+    ['newcastle-medicine-mbbs--2027', 'liverpool-medicine-mbchb--2027']
+      .map((id) => deadlinesForCourse(uniById[courseById[id].universityId], courseById[id]).map((d) => d.date).join()).join('|'),
+    '2026-10-15|2026-10-15');
+  check('No Medicine course in the catalogue is shown a deadline after October of the year before entry (batches 8–12)',
     courses.filter((c) => c.subjectCategory === 'medicine')
       .flatMap((c) => deadlinesForCourse(uniById[c.universityId], c))
       .filter((d) => d.date && d.date > '2026-10-31').length, 0);

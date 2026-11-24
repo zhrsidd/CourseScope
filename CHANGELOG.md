@@ -23,6 +23,13 @@ The student-facing release notes are also shown in the app, on the methodology p
   UCL's page returns a Cloudflare bot challenge to a scripted request and was not read. Model additions: subject
   category `medicine`, subcategory `medicine`, degree type `MB` (the award title stays per record), admissions
   test `ucat`, and `Human Biology` in the subject list. Search understands "medicine"/"medical" and "UCAT".
+- **Medicine, batch 12.** Newcastle MB BS, Liverpool MBChB and Exeter BMBS (all A100), verified for 2027 entry on
+  2026-11-24; all three are new university records (26 universities now served). Newcastle's subject rule comes from
+  its linked 2027 Medicine Admissions Policy, cited as a second source. Liverpool's A*AB alternative is its own
+  pathway. Newcastle and Liverpool get verified medicine-scoped 15 October 2026 deadlines. Not added: Keele (its
+  requirements page describes 2026 entry, and a university is never listed on identity alone) and Leicester
+  (Cloudflare challenge). Pinned physics and engineering university counts now exclude universities added for
+  Medicine alone, computed from the data. Research note `research/medicine-b12.md`.
 - **Medicine, batches 10 and 11.** Eight standard-entry courses, all verified for 2027 entry on 2026-11-24
   (research note `research/medicine-b10-b11.md`): Birmingham MBChB, Leeds MBChB, Sheffield MBChB, Nottingham BMBS,
   Southampton BM5 (BMBS), Queen Mary MBBS, Lancaster MBChB and Hull York Medical School MB BS. Hull York is a new

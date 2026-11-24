@@ -45228,6 +45228,337 @@
       }
     },
     {
+      "slug": "newcastle-medicine-mbbs",
+      "universityId": "newcastle",
+      "name": "Medicine and Surgery",
+      "subjectCategory": "medicine",
+      "subjectSubcategory": "medicine",
+      "degreeType": "MB",
+      "awardLabel": "MB BS",
+      "durationYears": 5,
+      "durationYearsMax": null,
+      "courseCode": "A100",
+      "alternativeCourseCodes": [],
+      "applicationYear": "2027",
+      "requirementsPublicationStatus": "published",
+      "latestPublishedYear": null,
+      "cycleNote": "The course page gives “2027 entry information” and a September 2027 start; the subject rule is in the linked 2027 Medicine Admissions Policy.",
+      "rawRequirementText": "Typical entry requirements A-Level: AAA. A level subjects should include Biology or Chemistry plus one of Biology, Chemistry, Mathematics, Further Mathematics, Statistics or Physics. For Biology, Chemistry and Physics A levels, a pass in the practical element is required.",
+      "minimumEntryStandard": null,
+      "offers": [
+        {
+          "label": "Typical offer",
+          "gradeProfile": "AAA",
+          "required": [],
+          "recommended": [],
+          "constraints": [
+            {
+              "kind": "one-of",
+              "subjects": [
+                "Biology",
+                "Chemistry"
+              ],
+              "minimumGrade": "A",
+              "description": "Biology or Chemistry."
+            },
+            {
+              "kind": "min-count-at-grade",
+              "subjects": [
+                "Biology",
+                "Chemistry",
+                "Mathematics",
+                "Further Mathematics",
+                "Statistics",
+                "Physics"
+              ],
+              "grade": "A",
+              "count": 2,
+              "description": "Plus one of Biology, Chemistry, Mathematics, Further Mathematics, Statistics or Physics."
+            }
+          ],
+          "rawText": "AAA. A level subjects should include Biology or Chemistry plus one of Biology, Chemistry, Mathematics, Further Mathematics, Statistics or Physics."
+        },
+        {
+          "label": "Contextual offer",
+          "gradeProfile": "ABB",
+          "required": [],
+          "recommended": [],
+          "constraints": [
+            {
+              "kind": "one-of",
+              "subjects": [
+                "Biology",
+                "Chemistry"
+              ],
+              "minimumGrade": null,
+              "description": "Biology or Chemistry."
+            },
+            {
+              "kind": "min-count-at-grade",
+              "subjects": [
+                "Biology",
+                "Chemistry",
+                "Mathematics",
+                "Further Mathematics",
+                "Statistics",
+                "Physics"
+              ],
+              "grade": "B",
+              "count": 2,
+              "description": "Plus one of Biology, Chemistry, Mathematics, Further Mathematics, Statistics or Physics."
+            }
+          ],
+          "isContextual": true,
+          "rawText": "For students entering with A levels this is typically AAA, ABB for contextual offer students or through one of our supported entry programmes."
+        }
+      ],
+      "mathematics": "not-required",
+      "physics": "not-required",
+      "chemistry": "recommended",
+      "furtherMathematics": "no-stated-preference",
+      "furtherMathematicsNote": "Further Mathematics is one of the accepted second subjects; no preference is stated.",
+      "admissionsTest": {
+        "code": "ucat",
+        "name": null,
+        "requirement": "required",
+        "modules": [],
+        "moduleNote": null,
+        "details": "Required for A100. “The UCAT threshold may differ in each admissions cycle.” Home A100 applicants are ranked on achieved academic results and UCAT.",
+        "officialUrl": "https://www.ucat.ac.uk/",
+        "notes": null
+      },
+      "interview": "yes",
+      "interviewNote": "Home applicants: Multiple Mini Interviews (MMIs) on campus.",
+      "contextualOffer": {
+        "availability": "yes",
+        "details": "ABB for contextual offer students or through Newcastle’s supported entry programmes (PARTNERS). The course page says offers can be up to three grades lower than typical."
+      },
+      "gcseRequirements": "GCSEs are scored (best eight) for Home applicants; no minimum grades are printed on the course page.",
+      "englishLanguageRequirements": null,
+      "internationalNotes": null,
+      "placementOrStudyAbroad": null,
+      "notes": "UCAS CODE: A100 is read from the course page’s printed “UCAS code” key-facts field, not from the URL. RESITS are accepted only from previous Newcastle applicants, at one grade higher (AAA becomes A*AA). AGE: you must turn 18 by the end of the first semester. Maximum four medicine choices on UCAS.",
+      "provenance": {
+        "verificationStatus": "verified",
+        "officialUrl": "https://www.ncl.ac.uk/undergraduate/degrees/a100/",
+        "sourceUrl": "https://www.ncl.ac.uk/undergraduate/degrees/a100/",
+        "sourceTitle": "Medicine and Surgery MB BS | Undergraduate | Newcastle University",
+        "lastVerified": "2026-11-24",
+        "sources": [
+          {
+            "title": "2027 Medicine Admissions Policy (Newcastle University)",
+            "url": "https://www.ncl.ac.uk/mediav8/fms/files/2027%20Admissions%20Policy%20FINAL.pdf",
+            "applicationYear": "2027",
+            "lastVerified": "2026-11-24",
+            "kind": "admissions-page"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "liverpool-medicine-mbchb",
+      "universityId": "liverpool",
+      "name": "Medicine and Surgery",
+      "subjectCategory": "medicine",
+      "subjectSubcategory": "medicine",
+      "degreeType": "MB",
+      "awardLabel": "MBChB",
+      "durationYears": 5,
+      "durationYearsMax": null,
+      "courseCode": "A100",
+      "alternativeCourseCodes": [],
+      "applicationYear": "2027",
+      "requirementsPublicationStatus": "published",
+      "latestPublishedYear": null,
+      "cycleNote": "The page gives a September 2027 start and “Apply by: 15 October 2026”.",
+      "rawRequirementText": "AAA to include Chemistry together with either Biology, Physics or Mathematics and a third academic subject. Alternatively A*AB also accepted but the A* A grades must include Chemistry together with either Biology, Physics or Maths; and a B grade required in the third academic subject.",
+      "minimumEntryStandard": null,
+      "offers": [
+        {
+          "label": "Standard offer",
+          "gradeProfile": "AAA",
+          "required": [
+            [
+              "Chemistry",
+              "A"
+            ]
+          ],
+          "recommended": [],
+          "constraints": [
+            {
+              "kind": "one-of",
+              "subjects": [
+                "Biology",
+                "Physics",
+                "Mathematics"
+              ],
+              "minimumGrade": "A",
+              "description": "Biology, Physics or Mathematics."
+            }
+          ],
+          "rawText": "AAA to include Chemistry together with either Biology, Physics or Mathematics and a third academic subject."
+        },
+        {
+          "label": "Alternative grades (A*AB)",
+          "gradeProfile": "A*AB",
+          "required": [
+            [
+              "Chemistry",
+              "A"
+            ]
+          ],
+          "recommended": [],
+          "constraints": [
+            {
+              "kind": "one-of",
+              "subjects": [
+                "Biology",
+                "Physics",
+                "Mathematics"
+              ],
+              "minimumGrade": "A",
+              "description": "Biology, Physics or Mathematics at grade A or above."
+            },
+            {
+              "kind": "min-count-at-grade",
+              "subjects": [
+                "Chemistry",
+                "Biology",
+                "Physics",
+                "Mathematics"
+              ],
+              "grade": "A*",
+              "count": 1,
+              "description": "The A* must be in Chemistry or in the Biology, Physics or Mathematics subject."
+            }
+          ],
+          "rawText": "Alternatively A*AB also accepted but the A* A grades must include Chemistry together with either Biology, Physics or Maths; and a B grade required in the third academic subject."
+        }
+      ],
+      "mathematics": "recommended",
+      "physics": "recommended",
+      "chemistry": "required",
+      "furtherMathematics": "no-stated-preference",
+      "furtherMathematicsNote": "Further Mathematics is not mentioned.",
+      "admissionsTest": {
+        "code": "ucat",
+        "name": null,
+        "requirement": "required",
+        "modules": [],
+        "moduleNote": null,
+        "details": "“Non-graduate applicants applying to the A100 programme must sit the UCAT admissions test.” Graduates applying to A100 currently take GAMSAT instead.",
+        "officialUrl": "https://www.ucat.ac.uk/",
+        "notes": null
+      },
+      "interview": "not-stated",
+      "interviewNote": "The course page does not describe an interview.",
+      "contextualOffer": {
+        "availability": "unknown",
+        "details": "The page says “Alternative offer conditions may apply” but prints no reduced offer."
+      },
+      "gcseRequirements": "Nine GCSEs by the end of Year 11, including English Language, Maths, Biology and Chemistry (or combined or triple science) at grade 6 (B) or above, and at least 15 points from the best nine (A*/A/7-9 = 2 points; B/6 = 1 point).",
+      "englishLanguageRequirements": null,
+      "internationalNotes": null,
+      "placementOrStudyAbroad": null,
+      "notes": "ONE SITTING: three A-levels taken at one sitting, usually after two years of study. The third subject must be “academic”; the page does not define the term. T levels and BTEC National Extended Diploma are not accepted in place of A-levels.",
+      "provenance": {
+        "verificationStatus": "verified",
+        "officialUrl": "https://www.liverpool.ac.uk/courses/medicine-and-surgery-mbchb",
+        "sourceUrl": "https://www.liverpool.ac.uk/courses/medicine-and-surgery-mbchb",
+        "sourceTitle": "Medicine and Surgery MBChB | Courses | University of Liverpool",
+        "lastVerified": "2026-11-24",
+        "sources": []
+      }
+    },
+    {
+      "slug": "exeter-medicine-bmbs",
+      "universityId": "exeter",
+      "name": "Medicine",
+      "subjectCategory": "medicine",
+      "subjectSubcategory": "medicine",
+      "degreeType": "MB",
+      "awardLabel": "BMBS",
+      "durationYears": 5,
+      "durationYearsMax": null,
+      "courseCode": "A100",
+      "alternativeCourseCodes": [],
+      "applicationYear": "2027",
+      "requirementsPublicationStatus": "published",
+      "latestPublishedYear": null,
+      "cycleNote": "The page gives “Entry year 2027” and “Entry requirements for 2027 entry (typical offer)”.",
+      "rawRequirementText": "A-Level: A*AA. A in Chemistry and A in Biology. Contextual Offer A-Level: AAB. Specific subject requirements must still be achieved where stated above.",
+      "minimumEntryStandard": null,
+      "offers": [
+        {
+          "label": "Typical offer",
+          "gradeProfile": "A*AA",
+          "required": [
+            [
+              "Chemistry",
+              "A"
+            ],
+            [
+              "Biology",
+              "A"
+            ]
+          ],
+          "recommended": [],
+          "rawText": "A*AA. A in Chemistry and A in Biology."
+        },
+        {
+          "label": "Contextual offer",
+          "gradeProfile": "AAB",
+          "required": [
+            [
+              "Chemistry",
+              "A"
+            ],
+            [
+              "Biology",
+              "A"
+            ]
+          ],
+          "recommended": [],
+          "isContextual": true,
+          "rawText": "A-Level: AAB. Specific subject requirements must still be achieved where stated above."
+        }
+      ],
+      "mathematics": "not-required",
+      "physics": "not-required",
+      "chemistry": "required",
+      "furtherMathematics": "no-stated-preference",
+      "furtherMathematicsNote": "Further Mathematics is not mentioned.",
+      "admissionsTest": {
+        "code": "ucat",
+        "name": null,
+        "requirement": "required",
+        "modules": [],
+        "moduleNote": null,
+        "details": "A-level applicants must sit the UCAT. Applications are sorted by academic profile and overall UCAT score to decide who is offered an interview. (Graduates may take GAMSAT instead.)",
+        "officialUrl": "https://www.ucat.ac.uk/",
+        "notes": null
+      },
+      "interview": "yes",
+      "interviewNote": "Multiple Mini Interview (MMI), in person or online, between December and March.",
+      "contextualOffer": {
+        "availability": "yes",
+        "details": "AAB, still with A in Chemistry and A in Biology."
+      },
+      "gcseRequirements": "English Language at grade 6 (B).",
+      "englishLanguageRequirements": null,
+      "internationalNotes": null,
+      "placementOrStudyAbroad": null,
+      "notes": "General Studies is not included in any offer. T-Levels are not accepted. BTEC Extended Diploma applicants also need A-level Biology and Chemistry at grade A. DEADLINE: “The deadline for applications to UCAS is 15 October” (no year printed). Offers are made by the end of March. Successful applicants complete a health questionnaire and occupational health screening.",
+      "provenance": {
+        "verificationStatus": "verified",
+        "officialUrl": "https://www.exeter.ac.uk/undergraduate-degrees/bmbs-medicine/",
+        "sourceUrl": "https://www.exeter.ac.uk/undergraduate-degrees/bmbs-medicine/",
+        "sourceTitle": "BMBS Medicine | 5-Year Medical Degree | University of Exeter",
+        "lastVerified": "2026-11-24",
+        "sources": []
+      }
+    },
+    {
       "slug": "oxford-physics-mphys",
       "universityId": "oxford",
       "name": "Physics",

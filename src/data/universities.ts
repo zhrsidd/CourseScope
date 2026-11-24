@@ -855,6 +855,68 @@ const SEEDS: UniversitySeed[] = [
     domain: 'hyms.ac.uk',
     departments: ['Hull York Medical School (University of Hull and University of York)'],
   },
+  // Added with Medicine batch 12. No ranking positions are seeded.
+  {
+    id: 'newcastle',
+    name: 'Newcastle University',
+    shortName: 'Newcastle',
+    initials: 'NCL',
+    city: 'Newcastle upon Tyne',
+    region: 'North East England',
+    domain: 'ncl.ac.uk',
+    departments: ['School of Medicine'],
+    deadlines: [
+      {
+        // A100 page, read 2026-11-24: “the closing date for applications is 15 October 2026”.
+        label: 'UCAS application deadline (Medicine)',
+        date: '2026-10-15',
+        years: ['2027'],
+        appliesTo: { kind: 'subject-category', category: 'medicine' },
+        notes: null,
+        verification: 'verified',
+        sourceUrl: 'https://www.ncl.ac.uk/undergraduate/degrees/a100/',
+        sourceTitle: 'Medicine and Surgery MB BS | Undergraduate | Newcastle University',
+        lastVerified: '2026-11-24',
+      },
+      { label: 'UCAS equal consideration deadline', notes: 'The standard UCAS deadline for courses starting the following autumn.' },
+    ],
+  },
+  {
+    id: 'liverpool',
+    name: 'University of Liverpool',
+    shortName: 'Liverpool',
+    initials: 'LIV',
+    city: 'Liverpool',
+    region: 'North West England',
+    domain: 'liverpool.ac.uk',
+    departments: ['School of Medicine'],
+    deadlines: [
+      {
+        // A100 page, read 2026-11-24: “Apply by: 15 October 2026” for a September 2027 start.
+        label: 'UCAS application deadline (Medicine)',
+        date: '2026-10-15',
+        years: ['2027'],
+        appliesTo: { kind: 'subject-category', category: 'medicine' },
+        notes: null,
+        verification: 'verified',
+        sourceUrl: 'https://www.liverpool.ac.uk/courses/medicine-and-surgery-mbchb',
+        sourceTitle: 'Medicine and Surgery MBChB | Courses | University of Liverpool',
+        lastVerified: '2026-11-24',
+      },
+      { label: 'UCAS equal consideration deadline', notes: 'The standard UCAS deadline for courses starting the following autumn.' },
+    ],
+  },
+  {
+    id: 'exeter',
+    name: 'University of Exeter',
+    shortName: 'Exeter',
+    initials: 'EXE',
+    city: 'Exeter',
+    region: 'South West England',
+    domain: 'exeter.ac.uk',
+    departments: ['University of Exeter Medical School'],
+  },
+
 ];
 
 /**
